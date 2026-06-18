@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+
+# Local archive material not part of this project
+analysis/
+recovered/
+
+# Build outputs
+dist/
+*.exe
+*.apk
+android/.gradle/
+android/build/
+android/app/build/

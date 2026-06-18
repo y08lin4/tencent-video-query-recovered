@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tencent Video Query</string>
+    <string name="app_title">Tencent Video Query</string>
+    <string name="input_hint">Paste a Tencent Video URL</string>
+    <string name="query_button">Query</string>
+    <string name="result_placeholder">Results will appear here.</string>
+</resources>

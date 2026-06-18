@@ -22,6 +22,8 @@
 
 项目主线不再讨论来源背景，直接聚焦接口本身和可运行示例。
 
+当前仓库里的字段说明和示例实现，基于 2026-06-18 对 4 个真实样本 URL 的 live 测试结果整理，不再只是单样本猜测。
+
 ## 接口链路
 
 ```text
@@ -39,6 +41,8 @@ URL -> CID -> 接口1 -> VID -> 接口2 -> 结果
   - Python 标准库示例
 - [examples/go/main.go](C:/Users/lin/Documents/YM查询工具还原/examples/go/main.go)
   - Go 标准库示例
+- [tools/tencent_video_field_survey.py](C:/Users/lin/Documents/YM查询工具还原/tools/tencent_video_field_survey.py)
+  - 多 URL 字段巡检脚本，会输出 cover / video / defn 字段矩阵
 - [android](C:/Users/lin/Documents/YM查询工具还原/android)
   - 最小 Android 客户端工程
 - [.github/workflows/build-artifacts.yml](C:/Users/lin/Documents/YM查询工具还原/.github/workflows/build-artifacts.yml)
@@ -49,6 +53,7 @@ URL -> CID -> 接口1 -> VID -> 接口2 -> 结果
 - URL 可先提取 `CID`
 - 接口 1 返回 XML，核心字段是 `video_ids`
 - 接口 2 返回 XML，但 `defn` 字段本身是 JSON 字符串
+- 接口 2 的批量返回是重复 `<results>` 块，不是旧假设里的 `<field>` 列表
 - `defn` 里的关键键包括：
   - `audio`
   - `sd`
@@ -57,6 +62,13 @@ URL -> CID -> 接口1 -> VID -> 接口2 -> 结果
   - `fhd`
   - `uhd`
   - `source`
+
+当前已经确认：
+
+- `video_ids` 是重复 XML 标签
+- `nomal_ids` / `vip_ids` 是 XML 里的 JSON 数组字符串
+- `cover_list` / `category_map` / `vWH` 在接口 2 里都可能是重复标签
+- `hd` 和 `shd` 需要拆开理解，不能再合并成一列“高清”
 
 ## 实测样例
 

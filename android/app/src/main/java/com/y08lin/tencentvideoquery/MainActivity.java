@@ -106,9 +106,10 @@ public class MainActivity extends AppCompatActivity {
             + "&appkey=0d1a9ddd94de871b";
 
         Document document = parseXml(httpGet(url));
-        String apiError = firstTagText(document, "error");
-        if (!apiError.isEmpty()) {
-            throw new IllegalStateException(apiError);
+        String apiError = firstTagText(document, "errormsg");
+        String errorNo = firstTagText(document, "errorno");
+        if (!apiError.isEmpty() || (!errorNo.isEmpty() && !"0".equals(errorNo))) {
+            throw new IllegalStateException(apiError.isEmpty() ? "API1 errorno=" + errorNo : apiError);
         }
 
         List<String> videoIds = new ArrayList<>();
@@ -150,21 +151,32 @@ public class MainActivity extends AppCompatActivity {
             + "&idlist=" + URLEncoder.encode(String.join(",", vids), StandardCharsets.UTF_8);
 
         Document document = parseXml(httpGet(url));
-        String apiError = firstTagText(document, "error");
-        if (!apiError.isEmpty()) {
-            throw new IllegalStateException(apiError);
+        String apiError = firstTagText(document, "errormsg");
+        String errorNo = firstTagText(document, "errorno");
+        if (!apiError.isEmpty() || (!errorNo.isEmpty() && !"0".equals(errorNo))) {
+            throw new IllegalStateException(apiError.isEmpty() ? "API2 errorno=" + errorNo : apiError);
         }
 
-        NodeList fieldNodes = document.getElementsByTagName("field");
-        for (int i = 0; i < fieldNodes.getLength(); i++) {
-            VideoDetail detail = new VideoDetail();
-            detail.vid = nestedTagText(document, "field", i, "vid");
-            detail.title = nestedTagText(document, "field", i, "title");
-            detail.durationSeconds = nestedTagText(document, "field", i, "duration");
-            detail.duration = formatDuration(detail.durationSeconds);
-            detail.url = nestedTagText(document, "field", i, "url");
+        NodeList resultNodes = document.getElementsByTagName("results");
+        for (int i = 0; i < resultNodes.getLength(); i++) {
+            org.w3c.dom.Element resultElement = (org.w3c.dom.Element) resultNodes.item(i);
+            NodeList fieldsNodes = resultElement.getElementsByTagName("fields");
+            if (fieldsNodes.getLength() == 0) {
+                continue;
+            }
 
-            String defnRaw = nestedTagText(document, "field", i, "defn");
+            org.w3c.dom.Element fieldsElement = (org.w3c.dom.Element) fieldsNodes.item(0);
+            VideoDetail detail = new VideoDetail();
+            detail.vid = firstChildTagText(fieldsElement, "vid");
+            if (detail.vid.isEmpty()) {
+                detail.vid = firstChildTagText(resultElement, "id");
+            }
+            detail.title = firstChildTagText(fieldsElement, "title");
+            detail.durationSeconds = firstChildTagText(fieldsElement, "duration");
+            detail.duration = formatDuration(detail.durationSeconds);
+            detail.url = firstChildTagText(fieldsElement, "url");
+
+            String defnRaw = firstChildTagText(fieldsElement, "defn");
             JSONObject defn = defnRaw.isEmpty() ? new JSONObject() : new JSONObject(defnRaw);
             detail.audio = formatSize(defn.optDouble("audio", -1));
             detail.sd = formatSize(defn.optDouble("sd", -1));
@@ -235,12 +247,8 @@ public class MainActivity extends AppCompatActivity {
         return nodes.item(0).getTextContent().trim();
     }
 
-    private String nestedTagText(Document document, String parentTag, int index, String childTag) {
-        NodeList parents = document.getElementsByTagName(parentTag);
-        if (index >= parents.getLength()) {
-            return "";
-        }
-        NodeList children = ((org.w3c.dom.Element) parents.item(index)).getElementsByTagName(childTag);
+    private String firstChildTagText(org.w3c.dom.Element parent, String childTag) {
+        NodeList children = parent.getElementsByTagName(childTag);
         if (children.getLength() == 0) {
             return "";
         }

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import re
 import urllib.parse
@@ -82,9 +83,10 @@ def build_api_2_url(vids: list[str]) -> str:
 
 def fetch_cover_info(cid: str) -> dict:
     root = ET.fromstring(http_get(build_api_1_url(cid)))
-    error_node = root.find(".//error")
-    if error_node is not None and error_node.text:
-        raise RuntimeError(error_node.text.strip())
+    error_text = (root.findtext(".//errormsg") or root.findtext(".//error") or "").strip()
+    error_no = (root.findtext(".//errorno") or "").strip()
+    if error_text or (error_no and error_no != "0"):
+        raise RuntimeError(error_text or f"API1 errorno={error_no}")
 
     video_ids: list[str] = []
     for node in root.findall(".//video_ids"):
@@ -118,21 +120,37 @@ def fetch_video_details(vids: list[str], batch_size: int = 10) -> list[dict]:
     for start in range(0, len(vids), batch_size):
         batch = vids[start : start + batch_size]
         root = ET.fromstring(http_get(build_api_2_url(batch)))
-        error_node = root.find(".//error")
-        if error_node is not None and error_node.text:
-            raise RuntimeError(error_node.text.strip())
+        error_text = (root.findtext(".//errormsg") or root.findtext(".//error") or "").strip()
+        error_no = (root.findtext(".//errorno") or "").strip()
+        if error_text or (error_no and error_no != "0"):
+            raise RuntimeError(error_text or f"API2 errorno={error_no}")
 
-        for field in root.findall(".//field"):
-            defn = parse_defn((field.findtext(".//defn") or "").strip())
+        for result_node in root.findall(".//results"):
+            field = result_node.find("./fields")
+            if field is None:
+                continue
+
+            defn_raw = html.unescape((field.findtext("./defn") or "").strip())
+            defn = parse_defn(defn_raw)
+            cover_list = [(node.text or "").strip() for node in field.findall("./cover_list") if (node.text or "").strip()]
+            category_map = [(node.text or "").strip() for node in field.findall("./category_map") if (node.text or "").strip()]
+            vwh = [(node.text or "").strip() for node in field.findall("./vWH") if (node.text or "").strip()]
+
             results.append(
                 {
-                    "vid": (field.findtext(".//vid") or "").strip(),
-                    "title": (field.findtext(".//title") or "").strip(),
-                    "duration_seconds": (field.findtext(".//duration") or "").strip(),
-                    "duration": format_duration(field.findtext(".//duration")),
-                    "url": (field.findtext(".//url") or "").strip(),
-                    "cover_list": (field.findtext(".//cover_list") or "").strip(),
+                    "vid": (field.findtext("./vid") or result_node.findtext("./id") or "").strip(),
+                    "title": (field.findtext("./title") or "").strip(),
+                    "duration_seconds": (field.findtext("./duration") or "").strip(),
+                    "duration": format_duration(field.findtext("./duration")),
+                    "url": (field.findtext("./url") or "").strip(),
+                    "cover_list": cover_list,
+                    "category_map": category_map,
+                    "vwh": vwh,
                     "defn": defn,
+                    "state": (field.findtext("./state") or "").strip(),
+                    "upload_src": (field.findtext("./upload_src") or "").strip(),
+                    "create_time": (field.findtext("./create_time") or "").strip(),
+                    "modify_time": (field.findtext("./modify_time") or "").strip(),
                     "audio": format_size(defn.get("audio")),
                     "sd": format_size(defn.get("sd")),
                     "hd": format_size(defn.get("hd")),

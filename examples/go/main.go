@@ -35,8 +35,14 @@ type videoDetail struct {
 	DurationSeconds string         `json:"duration_seconds"`
 	Duration        string         `json:"duration"`
 	URL             string         `json:"url"`
-	CoverList       string         `json:"cover_list"`
+	CoverList       []string       `json:"cover_list"`
+	CategoryMap     []string       `json:"category_map"`
+	VWH             []string       `json:"vwh"`
 	Defn            map[string]any `json:"defn"`
+	State           string         `json:"state"`
+	UploadSrc       string         `json:"upload_src"`
+	CreateTime      string         `json:"create_time"`
+	ModifyTime      string         `json:"modify_time"`
 	Audio           string         `json:"audio"`
 	SD              string         `json:"sd"`
 	HD              string         `json:"hd"`
@@ -173,8 +179,13 @@ func fetchCoverInfo(cid string) (*coverInfo, error) {
 	if err != nil {
 		return nil, err
 	}
-	if apiErr := firstTagValue(xmlText, "error"); apiErr != "" {
-		return nil, fmt.Errorf("api1 error: %s", apiErr)
+	apiErr := firstTagValue(xmlText, "errormsg")
+	errorNo := firstTagValue(xmlText, "errorno")
+	if apiErr != "" || (errorNo != "" && errorNo != "0") {
+		if apiErr == "" {
+			apiErr = "api1 errorno=" + errorNo
+		}
+		return nil, fmt.Errorf(apiErr)
 	}
 
 	videoIDs := []string{}
@@ -203,27 +214,42 @@ func fetchVideoDetails(vids []string) ([]videoDetail, error) {
 	if err != nil {
 		return nil, err
 	}
-	if apiErr := firstTagValue(xmlText, "error"); apiErr != "" {
-		return nil, fmt.Errorf("api2 error: %s", apiErr)
+	apiErr := firstTagValue(xmlText, "errormsg")
+	errorNo := firstTagValue(xmlText, "errorno")
+	if apiErr != "" || (errorNo != "" && errorNo != "0") {
+		if apiErr == "" {
+			apiErr = "api2 errorno=" + errorNo
+		}
+		return nil, fmt.Errorf(apiErr)
 	}
 
-	fieldPattern := regexp.MustCompile(`(?s)<field\b[^>]*>(.*?)</field>`)
-	matches := fieldPattern.FindAllStringSubmatch(xmlText, -1)
+	resultPattern := regexp.MustCompile(`(?s)<results>(.*?)</results>`)
+	matches := resultPattern.FindAllStringSubmatch(xmlText, -1)
 	results := make([]videoDetail, 0, len(matches))
 
 	for _, match := range matches {
-		fieldXML := match[1]
-		defnRaw := firstTagValue(fieldXML, "defn")
+		resultXML := match[1]
+		fieldsXML := firstTagValue(resultXML, "fields")
+		if strings.TrimSpace(fieldsXML) == "" {
+			continue
+		}
+		defnRaw := firstTagValue(fieldsXML, "defn")
 		defn := parseDefn(defnRaw)
 
 		results = append(results, videoDetail{
-			VID:             firstTagValue(fieldXML, "vid"),
-			Title:           firstTagValue(fieldXML, "title"),
-			DurationSeconds: firstTagValue(fieldXML, "duration"),
-			Duration:        formatDuration(firstTagValue(fieldXML, "duration")),
-			URL:             firstTagValue(fieldXML, "url"),
-			CoverList:       firstTagValue(fieldXML, "cover_list"),
+			VID:             firstNonEmpty(firstTagValue(fieldsXML, "vid"), firstTagValue(resultXML, "id")),
+			Title:           firstTagValue(fieldsXML, "title"),
+			DurationSeconds: firstTagValue(fieldsXML, "duration"),
+			Duration:        formatDuration(firstTagValue(fieldsXML, "duration")),
+			URL:             firstTagValue(fieldsXML, "url"),
+			CoverList:       allTagValues(fieldsXML, "cover_list"),
+			CategoryMap:     allTagValues(fieldsXML, "category_map"),
+			VWH:             allTagValues(fieldsXML, "vWH"),
 			Defn:            defn,
+			State:           firstTagValue(fieldsXML, "state"),
+			UploadSrc:       firstTagValue(fieldsXML, "upload_src"),
+			CreateTime:      firstTagValue(fieldsXML, "create_time"),
+			ModifyTime:      firstTagValue(fieldsXML, "modify_time"),
 			Audio:           formatSize(defn["audio"]),
 			SD:              formatSize(defn["sd"]),
 			HD:              formatSize(defn["hd"]),
@@ -235,6 +261,15 @@ func fetchVideoDetails(vids []string) ([]videoDetail, error) {
 	}
 
 	return results, nil
+}
+
+func firstNonEmpty(values ...string) string {
+	for _, value := range values {
+		if strings.TrimSpace(value) != "" {
+			return value
+		}
+	}
+	return ""
 }
 
 func parseDefn(raw string) map[string]any {
@@ -274,6 +309,7 @@ func htmlUnescape(text string) string {
 		"&gt;", ">",
 		"&amp;", "&",
 		"&quot;", "\"",
+		"&#34;", "\"",
 		"&#39;", "'",
 	)
 	return replacer.Replace(text)

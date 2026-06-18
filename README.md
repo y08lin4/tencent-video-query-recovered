@@ -42,7 +42,7 @@ URL -> CID -> 接口1 -> VID -> 接口2 -> 结果
 - [examples/go/main.go](C:/Users/lin/Documents/YM查询工具还原/examples/go/main.go)
   - Go 标准库示例
 - [tools/tencent_video_field_survey.py](C:/Users/lin/Documents/YM查询工具还原/tools/tencent_video_field_survey.py)
-  - 多 URL 字段巡检脚本，会输出 cover / video / defn 字段矩阵
+  - 多 URL 字段巡检脚本，支持 `clips_ids` 抽样、HTTP 重试、cover / video / clip 异常值摘要
 - [android](C:/Users/lin/Documents/YM查询工具还原/android)
   - 最小 Android 客户端工程
 - [.github/workflows/build-artifacts.yml](C:/Users/lin/Documents/YM查询工具还原/.github/workflows/build-artifacts.yml)
@@ -69,7 +69,7 @@ URL -> CID -> 接口1 -> VID -> 接口2 -> 结果
 - `nomal_ids` / `vip_ids` 是 XML 里的 JSON 数组字符串
 - `cover_list` / `category_map` / `vWH` 在接口 2 里都可能是重复标签
 - `hd` 和 `shd` 需要拆开理解，不能再合并成一列“高清”
-- `pay_status` 目前已实测到 `6` 和 `8`
+- `pay_status` 目前已实测到 `6`、`8`、`16`
 - `positive_trailer` 目前已实测到 `0` 和 `1`
 - `type` 目前已实测到：
   - `1` = 电影
@@ -79,6 +79,7 @@ URL -> CID -> 接口1 -> VID -> 接口2 -> 结果
   - `10` = 综艺
   - `106` = 少儿
 - `F=0/F=4` 明显偏预告类，`F=2/F=7` 都会命中长视频条目，但分工不能简单翻译成“正片/花絮”或“免费/VIP”
+- `upload_src` 目前已实测到 `20`、`107`、`108`、`129`、`138`
 
 ## 实测样例
 

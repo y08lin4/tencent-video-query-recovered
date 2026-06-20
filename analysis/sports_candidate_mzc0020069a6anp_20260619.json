@@ -1,0 +1,3191 @@
+{
+  "meta": {
+    "tool": "tencent_video_field_survey",
+    "generated_at": "2026-06-19T20:21:04+08:00",
+    "input_count": 1,
+    "timeout_seconds": 10.0,
+    "batch_size": 10,
+    "http_retries": 1,
+    "retry_sleep_seconds": 0.5,
+    "clip_sample_head": 0,
+    "clip_sample_tail": 0
+  },
+  "samples": [
+    {
+      "input_url": "https://v.qq.com/x/cover/mzc0020069a6anp.html",
+      "cid": "mzc0020069a6anp",
+      "cover_request": {
+        "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc0020069a6anp&appid=10001005&appkey=0d1a9ddd94de871b"
+      },
+      "cover": {
+        "field_names": [
+          "clips_ids",
+          "column_id",
+          "copyright_negotiation_id",
+          "costtime",
+          "cover_checkup_grade",
+          "cover_id",
+          "downright",
+          "episode_all",
+          "episode_updated",
+          "errormsg",
+          "errorno",
+          "id",
+          "imgtag_ver",
+          "new_pic_hz",
+          "new_pic_vt",
+          "nomal_ids",
+          "pay_status",
+          "pc_client_imgtag",
+          "positive_content_id",
+          "positive_trailer",
+          "resptime",
+          "retcode",
+          "title",
+          "topic_id_list",
+          "type",
+          "type_name",
+          "video_ids",
+          "vip_ids"
+        ],
+        "fields": {
+          "costtime": "9",
+          "errormsg": "",
+          "errorno": "0",
+          "resptime": "1781871664",
+          "clips_ids": "",
+          "column_id": "32090",
+          "copyright_negotiation_id": "",
+          "cover_checkup_grade": "4",
+          "cover_id": "mzc0020069a6anp",
+          "downright": [
+            "20",
+            "30"
+          ],
+          "episode_all": "",
+          "episode_updated": "",
+          "imgtag_ver": "",
+          "new_pic_hz": "http://puui.qpic.cn/vcover_hz_pic/0/mzc0020069a6anp1678831364408/0",
+          "new_pic_vt": "http://puui.qpic.cn/vcover_vt_pic/0/mzc0020069a6anp1678831353275/0",
+          "nomal_ids": "[{\"F\":2,\"V\":\"o0045dresjo\"},{\"F\":2,\"V\":\"m0045vpuwi6\"},{\"F\":2,\"V\":\"v00451jwv65\"},{\"F\":2,\"V\":\"y00453z0z7w\"},{\"F\":2,\"V\":\"g0045ym7vks\"},{\"F\":2,\"V\":\"y0045up0g9e\"},{\"F\":2,\"V\":\"w0045dm0tng\"},{\"F\":2,\"V\":\"j0045gft0av\"},{\"F\":2,\"V\":\"m0045z2uw07\"},{\"F\":2,\"V\":\"a0045ya5lzk\"},{\"F\":2,\"V\":\"y0045bs7mew\"},{\"F\":2,\"V\":\"z00458djx39\"},{\"F\":2,\"V\":\"b0045cyirdk\"},{\"F\":2,\"V\":\"r0045valxxq\"},{\"F\":2,\"V\":\"r0045qqxr17\"},{\"F\":2,\"V\":\"p00455q6m0d\"},{\"F\":2,\"V\":\"n0045qvix3h\"},{\"F\":2,\"V\":\"n0045iqod34\"},{\"F\":2,\"V\":\"f0045sx5278\"},{\"F\":2,\"V\":\"m0045k0iwfp\"},{\"F\":2,\"V\":\"b0045brvllm\"},{\"F\":2,\"V\":\"s0045604prb\"},{\"F\":2,\"V\":\"b0045rm11tn\"},{\"F\":2,\"V\":\"c004547i6iu\"},{\"F\":2,\"V\":\"h0045rzn8cb\"},{\"F\":2,\"V\":\"w0045cwoxea\"},{\"F\":2,\"V\":\"t0045jjm72w\"},{\"F\":2,\"V\":\"f00459evxrr\"},{\"F\":2,\"V\":\"p0045aw0ojq\"},{\"F\":2,\"V\":\"y0045pwjqv1\"},{\"F\":2,\"V\":\"y35064wnhzg\"}]",
+          "pay_status": "8",
+          "pc_client_imgtag": "",
+          "positive_content_id": "1543606",
+          "positive_trailer": "1",
+          "title": "22/23赛季欧冠1/8决赛次回合：曼城7-0RB莱比锡（总比分8-1）",
+          "topic_id_list": "",
+          "type": "4",
+          "type_name": "体育",
+          "video_ids": [
+            "o0045dresjo",
+            "m0045vpuwi6",
+            "v00451jwv65",
+            "y00453z0z7w",
+            "g0045ym7vks",
+            "y0045up0g9e",
+            "w0045dm0tng",
+            "j0045gft0av",
+            "m0045z2uw07",
+            "a0045ya5lzk",
+            "y0045bs7mew",
+            "z00458djx39",
+            "b0045cyirdk",
+            "r0045valxxq",
+            "r0045qqxr17",
+            "p00455q6m0d",
+            "n0045qvix3h",
+            "n0045iqod34",
+            "f0045sx5278",
+            "m0045k0iwfp",
+            "b0045brvllm",
+            "s0045604prb",
+            "b0045rm11tn",
+            "c004547i6iu",
+            "h0045rzn8cb",
+            "w0045cwoxea",
+            "t0045jjm72w",
+            "f00459evxrr",
+            "p0045aw0ojq",
+            "y0045pwjqv1",
+            "y35064wnhzg"
+          ],
+          "vip_ids": "[{\"F\":2,\"V\":\"o0045dresjo\"},{\"F\":2,\"V\":\"m0045vpuwi6\"},{\"F\":2,\"V\":\"v00451jwv65\"},{\"F\":2,\"V\":\"y00453z0z7w\"},{\"F\":2,\"V\":\"g0045ym7vks\"},{\"F\":2,\"V\":\"y0045up0g9e\"},{\"F\":2,\"V\":\"w0045dm0tng\"},{\"F\":2,\"V\":\"j0045gft0av\"},{\"F\":2,\"V\":\"m0045z2uw07\"},{\"F\":2,\"V\":\"a0045ya5lzk\"},{\"F\":2,\"V\":\"y0045bs7mew\"},{\"F\":2,\"V\":\"z00458djx39\"},{\"F\":2,\"V\":\"b0045cyirdk\"},{\"F\":2,\"V\":\"r0045valxxq\"},{\"F\":2,\"V\":\"r0045qqxr17\"},{\"F\":2,\"V\":\"p00455q6m0d\"},{\"F\":2,\"V\":\"n0045qvix3h\"},{\"F\":2,\"V\":\"n0045iqod34\"},{\"F\":2,\"V\":\"f0045sx5278\"},{\"F\":2,\"V\":\"m0045k0iwfp\"},{\"F\":2,\"V\":\"b0045brvllm\"},{\"F\":2,\"V\":\"s0045604prb\"},{\"F\":2,\"V\":\"b0045rm11tn\"},{\"F\":2,\"V\":\"c004547i6iu\"},{\"F\":2,\"V\":\"h0045rzn8cb\"},{\"F\":2,\"V\":\"w0045cwoxea\"},{\"F\":2,\"V\":\"t0045jjm72w\"},{\"F\":2,\"V\":\"f00459evxrr\"},{\"F\":2,\"V\":\"p0045aw0ojq\"},{\"F\":2,\"V\":\"y0045pwjqv1\"},{\"F\":2,\"V\":\"y35064wnhzg\"}]",
+          "id": "mzc0020069a6anp",
+          "retcode": "0"
+        }
+      },
+      "video_ids": [
+        "o0045dresjo",
+        "m0045vpuwi6",
+        "v00451jwv65",
+        "y00453z0z7w",
+        "g0045ym7vks",
+        "y0045up0g9e",
+        "w0045dm0tng",
+        "j0045gft0av",
+        "m0045z2uw07",
+        "a0045ya5lzk",
+        "y0045bs7mew",
+        "z00458djx39",
+        "b0045cyirdk",
+        "r0045valxxq",
+        "r0045qqxr17",
+        "p00455q6m0d",
+        "n0045qvix3h",
+        "n0045iqod34",
+        "f0045sx5278",
+        "m0045k0iwfp",
+        "b0045brvllm",
+        "s0045604prb",
+        "b0045rm11tn",
+        "c004547i6iu",
+        "h0045rzn8cb",
+        "w0045cwoxea",
+        "t0045jjm72w",
+        "f00459evxrr",
+        "p0045aw0ojq",
+        "y0045pwjqv1",
+        "y35064wnhzg"
+      ],
+      "video_request_batches": [
+        {
+          "vids": [
+            "o0045dresjo",
+            "m0045vpuwi6",
+            "v00451jwv65",
+            "y00453z0z7w",
+            "g0045ym7vks",
+            "y0045up0g9e",
+            "w0045dm0tng",
+            "j0045gft0av",
+            "m0045z2uw07",
+            "a0045ya5lzk"
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=o0045dresjo%2Cm0045vpuwi6%2Cv00451jwv65%2Cy00453z0z7w%2Cg0045ym7vks%2Cy0045up0g9e%2Cw0045dm0tng%2Cj0045gft0av%2Cm0045z2uw07%2Ca0045ya5lzk"
+        },
+        {
+          "vids": [
+            "y0045bs7mew",
+            "z00458djx39",
+            "b0045cyirdk",
+            "r0045valxxq",
+            "r0045qqxr17",
+            "p00455q6m0d",
+            "n0045qvix3h",
+            "n0045iqod34",
+            "f0045sx5278",
+            "m0045k0iwfp"
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=y0045bs7mew%2Cz00458djx39%2Cb0045cyirdk%2Cr0045valxxq%2Cr0045qqxr17%2Cp00455q6m0d%2Cn0045qvix3h%2Cn0045iqod34%2Cf0045sx5278%2Cm0045k0iwfp"
+        },
+        {
+          "vids": [
+            "b0045brvllm",
+            "s0045604prb",
+            "b0045rm11tn",
+            "c004547i6iu",
+            "h0045rzn8cb",
+            "w0045cwoxea",
+            "t0045jjm72w",
+            "f00459evxrr",
+            "p0045aw0ojq",
+            "y0045pwjqv1"
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=b0045brvllm%2Cs0045604prb%2Cb0045rm11tn%2Cc004547i6iu%2Ch0045rzn8cb%2Cw0045cwoxea%2Ct0045jjm72w%2Cf00459evxrr%2Cp0045aw0ojq%2Cy0045pwjqv1"
+        },
+        {
+          "vids": [
+            "y35064wnhzg"
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=y35064wnhzg"
+        }
+      ],
+      "videos": [
+        {
+          "vid": "o0045dresjo",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp+mzc002003fh665c",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": [
+              "mzc0020069a6anp",
+              "mzc002003fh665c"
+            ],
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 06:05:01",
+            "defn": "{\"audio\":3363508,\"fhd\":162128152,\"hd\":57221895,\"sd\":26614987,\"shd\":89243574,\"source\":634994243}",
+            "desc": "",
+            "duration": "494",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 06:05:01",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/o0045dresjo/o0045dresjo_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/o0045dresjo/o0045dresjo_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/o0045dresjo/o0045dresjo_hz.jpg/640",
+            "pioneer_tag": "欧洲冠军联赛+足球+曼城+莱比锡RB",
+            "pioneer_tag_ids": "841480+87728+58119+845472",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147984564",
+            "title": "【全场集锦】曼城7-0RB莱比锡总比分8-1晋级 哈兰德五子登科 丁丁世界波建功",
+            "type": "4",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/o0045dresjo.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "o0045dresjo"
+          },
+          "defn_raw": "{\"audio\":3363508,\"fhd\":162128152,\"hd\":57221895,\"sd\":26614987,\"shd\":89243574,\"source\":634994243}",
+          "defn_expanded": {
+            "audio": 3363508,
+            "fhd": 162128152,
+            "hd": 57221895,
+            "sd": 26614987,
+            "shd": 89243574,
+            "source": 634994243
+          }
+        },
+        {
+          "vid": "m0045vpuwi6",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp+mzc002003fh665c",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": [
+              "mzc0020069a6anp",
+              "mzc002003fh665c"
+            ],
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 06:36:49",
+            "defn": "{\"audio\":3743456,\"fhd\":181102138,\"hd\":64902803,\"sd\":29461057,\"shd\":100880432,\"source\":706569466}",
+            "desc": "",
+            "duration": "549",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 06:36:49",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/m0045vpuwi6/m0045vpuwi6_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/m0045vpuwi6/m0045vpuwi6_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/m0045vpuwi6/m0045vpuwi6_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119+845472",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147988861",
+            "title": "【球队集锦】已杀红眼！7-0狂胜莱比锡平队史欧战最大分差",
+            "type": "4",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/m0045vpuwi6.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "m0045vpuwi6"
+          },
+          "defn_raw": "{\"audio\":3743456,\"fhd\":181102138,\"hd\":64902803,\"sd\":29461057,\"shd\":100880432,\"source\":706569466}",
+          "defn_expanded": {
+            "audio": 3743456,
+            "fhd": 181102138,
+            "hd": 64902803,
+            "sd": 29461057,
+            "shd": 100880432,
+            "source": 706569466
+          }
+        },
+        {
+          "vid": "v00451jwv65",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp+mzc002003fh665c",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": [
+              "mzc0020069a6anp",
+              "mzc002003fh665c"
+            ],
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 06:32:31",
+            "defn": "{\"audio\":2605868,\"fhd\":127985073,\"hd\":46855478,\"sd\":21139339,\"shd\":71982596,\"source\":491099896}",
+            "desc": "",
+            "duration": "382",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 06:32:31",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/v00451jwv65/v00451jwv65_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/v00451jwv65/v00451jwv65_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/v00451jwv65/v00451jwv65_hz.jpg/640",
+            "pioneer_tag": "欧洲冠军联赛+足球+曼城+莱比锡RB",
+            "pioneer_tag_ids": "841480+87728+58119+845472",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147988870",
+            "title": "【进球集锦】曼城vsRB莱比锡 哈兰德独中五元领衔进球盛宴",
+            "type": "4",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/v00451jwv65.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "v00451jwv65"
+          },
+          "defn_raw": "{\"audio\":2605868,\"fhd\":127985073,\"hd\":46855478,\"sd\":21139339,\"shd\":71982596,\"source\":491099896}",
+          "defn_expanded": {
+            "audio": 2605868,
+            "fhd": 127985073,
+            "hd": 46855478,
+            "sd": 21139339,
+            "shd": 71982596,
+            "source": 491099896
+          }
+        },
+        {
+          "vid": "y00453z0z7w",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp+mzc002003fh665c",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": [
+              "mzc0020069a6anp",
+              "mzc002003fh665c"
+            ],
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 06:32:48",
+            "defn": "{\"audio\":2114248,\"fhd\":106608042,\"hd\":39037676,\"sd\":17679058,\"shd\":60101727,\"source\":398188989}",
+            "desc": "",
+            "duration": "310",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 06:32:48",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/y00453z0z7w/y00453z0z7w_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/y00453z0z7w/y00453z0z7w_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/y00453z0z7w/y00453z0z7w_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119+56059719",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147988873",
+            "title": "【球星集锦】哈兰德vsRB莱比锡集锦 五子登科闪耀全场！半场戴帽比肩梅西",
+            "type": "4",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/y00453z0z7w.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "y00453z0z7w"
+          },
+          "defn_raw": "{\"audio\":2114248,\"fhd\":106608042,\"hd\":39037676,\"sd\":17679058,\"shd\":60101727,\"source\":398188989}",
+          "defn_expanded": {
+            "audio": 2114248,
+            "fhd": 106608042,
+            "hd": 39037676,
+            "sd": 17679058,
+            "shd": 60101727,
+            "source": 398188989
+          }
+        },
+        {
+          "vid": "g0045ym7vks",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 04:24:36",
+            "defn": "{\"audio\":1779232,\"fhd\":99391723,\"hd\":31815558,\"sd\":13544980,\"shd\":52089630,\"source\":1148712294}",
+            "desc": "",
+            "duration": "262",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 04:24:36",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/g0045ym7vks/g0045ym7vks_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/g0045ym7vks/g0045ym7vks_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/g0045ym7vks/g0045ym7vks_hz.jpg/640",
+            "pioneer_tag": "欧洲冠军联赛+足球+曼城+莱比锡RB+埃尔林·哈兰德+本杰明·亨里希斯",
+            "pioneer_tag_ids": "841480+87728+58119+845472+56059719+56194209",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985048",
+            "title": "【进球】VAR明察秋毫！亨里希斯禁区内手球被抓 哈兰德操刀打入死角",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/g0045ym7vks.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "g0045ym7vks"
+          },
+          "defn_raw": "{\"audio\":1779232,\"fhd\":99391723,\"hd\":31815558,\"sd\":13544980,\"shd\":52089630,\"source\":1148712294}",
+          "defn_expanded": {
+            "audio": 1779232,
+            "fhd": 99391723,
+            "hd": 31815558,
+            "sd": 13544980,
+            "shd": 52089630,
+            "source": 1148712294
+          }
+        },
+        {
+          "vid": "y0045up0g9e",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 04:26:11",
+            "defn": "{\"audio\":591072,\"fhd\":31983902,\"hd\":11210472,\"sd\":4884197,\"shd\":17279018,\"source\":378090280}",
+            "desc": "",
+            "duration": "87",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 04:26:11",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/y0045up0g9e/y0045up0g9e_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/y0045up0g9e/y0045up0g9e_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/y0045up0g9e/y0045up0g9e_hz.jpg/640",
+            "pioneer_tag": "欧洲冠军联赛+足球+曼城+凯文·德布劳内+埃尔林·哈兰德",
+            "pioneer_tag_ids": "841480+87728+58119+28936+56059719",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985052",
+            "title": "【进球】魔童降临！德布劳内远射中楣弹出 哈兰德头槌砸入网窝",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/y0045up0g9e.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "y0045up0g9e"
+          },
+          "defn_raw": "{\"audio\":591072,\"fhd\":31983902,\"hd\":11210472,\"sd\":4884197,\"shd\":17279018,\"source\":378090280}",
+          "defn_expanded": {
+            "audio": 591072,
+            "fhd": 31983902,
+            "hd": 11210472,
+            "sd": 4884197,
+            "shd": 17279018,
+            "source": 378090280
+          }
+        },
+        {
+          "vid": "w0045dm0tng",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 04:49:55",
+            "defn": "{\"audio\":556668,\"fhd\":33503857,\"hd\":11217206,\"sd\":4820981,\"shd\":17688681,\"source\":356334140}",
+            "desc": "",
+            "duration": "81",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 04:49:55",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/w0045dm0tng/w0045dm0tng_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/w0045dm0tng/w0045dm0tng_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/w0045dm0tng/w0045dm0tng_hz.jpg/640",
+            "pioneer_tag": "欧洲冠军联赛+足球+曼城+鲁本·迪亚斯+埃尔林·哈兰德",
+            "pioneer_tag_ids": "841480+87728+58119+55793371+56059719",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985057",
+            "title": "【进球】半场戴帽！鲁本-迪亚斯头槌中柱 哈兰德机敏补射完成帽子戏法",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/w0045dm0tng.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "w0045dm0tng"
+          },
+          "defn_raw": "{\"audio\":556668,\"fhd\":33503857,\"hd\":11217206,\"sd\":4820981,\"shd\":17688681,\"source\":356334140}",
+          "defn_expanded": {
+            "audio": 556668,
+            "fhd": 33503857,
+            "hd": 11217206,
+            "sd": 4820981,
+            "shd": 17688681,
+            "source": 356334140
+          }
+        },
+        {
+          "vid": "j0045gft0av",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 05:12:26",
+            "defn": "{\"audio\":662512,\"fhd\":31051572,\"hd\":10717085,\"sd\":4970918,\"shd\":16538493,\"source\":406486730}",
+            "desc": "",
+            "duration": "97",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 05:12:26",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/j0045gft0av/j0045gft0av_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/j0045gft0av/j0045gft0av_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/j0045gft0av/j0045gft0av_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119+56068206+23972",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8203078318",
+            "title": "【进球】丝滑的团队表演！格拉利什横敲助攻 京多安低射远角破门",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/j0045gft0av.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "j0045gft0av"
+          },
+          "defn_raw": "{\"audio\":662512,\"fhd\":31051572,\"hd\":10717085,\"sd\":4970918,\"shd\":16538493,\"source\":406486730}",
+          "defn_expanded": {
+            "audio": 662512,
+            "fhd": 31051572,
+            "hd": 10717085,
+            "sd": 4970918,
+            "shd": 16538493,
+            "source": 406486730
+          }
+        },
+        {
+          "vid": "m0045z2uw07",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 05:15:26",
+            "defn": "{\"audio\":592764,\"fhd\":37155863,\"hd\":11992402,\"sd\":5017905,\"shd\":19360249,\"source\":391835039}",
+            "desc": "",
+            "duration": "86",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 05:15:26",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/m0045z2uw07/m0045z2uw07_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/m0045z2uw07/m0045z2uw07_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/m0045z2uw07/m0045z2uw07_hz.jpg/640",
+            "pioneer_tag": "欧洲冠军联赛+足球+曼城+埃尔林·哈兰德",
+            "pioneer_tag_ids": "841480+87728+58119+56059719",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985069",
+            "title": "【进球】恐怖的进球机器！哈兰德门前头顶脚踢收获大四喜",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/m0045z2uw07.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "m0045z2uw07"
+          },
+          "defn_raw": "{\"audio\":592764,\"fhd\":37155863,\"hd\":11992402,\"sd\":5017905,\"shd\":19360249,\"source\":391835039}",
+          "defn_expanded": {
+            "audio": 592764,
+            "fhd": 37155863,
+            "hd": 11992402,
+            "sd": 5017905,
+            "shd": 19360249,
+            "source": 391835039
+          }
+        },
+        {
+          "vid": "a0045ya5lzk",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 05:19:42",
+            "defn": "{\"audio\":487672,\"fhd\":28243701,\"hd\":9974058,\"sd\":4286940,\"shd\":15213820,\"source\":323921848}",
+            "desc": "",
+            "duration": "71",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 05:19:42",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/a0045ya5lzk/a0045ya5lzk_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/a0045ya5lzk/a0045ya5lzk_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/a0045ya5lzk/a0045ya5lzk_hz.jpg/640",
+            "pioneer_tag": "欧洲冠军联赛+足球+曼城+埃尔林·哈兰德+曼努埃尔·阿坎吉",
+            "pioneer_tag_ids": "841480+87728+58119+56059719+56209935",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985076",
+            "title": "【进球】根本停不下来！阿坎吉门前抢点被扑 哈兰德二点补射达成五子登科",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/a0045ya5lzk.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "a0045ya5lzk"
+          },
+          "defn_raw": "{\"audio\":487672,\"fhd\":28243701,\"hd\":9974058,\"sd\":4286940,\"shd\":15213820,\"source\":323921848}",
+          "defn_expanded": {
+            "audio": 487672,
+            "fhd": 28243701,
+            "hd": 9974058,
+            "sd": 4286940,
+            "shd": 15213820,
+            "source": 323921848
+          }
+        },
+        {
+          "vid": "y0045bs7mew",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 05:52:08",
+            "defn": "{\"audio\":479400,\"fhd\":22012750,\"hd\":7716317,\"sd\":3624851,\"shd\":11749205,\"source\":301065352}",
+            "desc": "",
+            "duration": "70",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 05:52:08",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/y0045bs7mew/y0045bs7mew_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/y0045bs7mew/y0045bs7mew_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/y0045bs7mew/y0045bs7mew_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119+28936",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985154",
+            "title": "【进球】画上完美句号！德布劳内弧顶兜出美妙弧线打入绝对死角",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/y0045bs7mew.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "y0045bs7mew"
+          },
+          "defn_raw": "{\"audio\":479400,\"fhd\":22012750,\"hd\":7716317,\"sd\":3624851,\"shd\":11749205,\"source\":301065352}",
+          "defn_expanded": {
+            "audio": 479400,
+            "fhd": 22012750,
+            "hd": 7716317,
+            "sd": 3624851,
+            "shd": 11749205,
+            "source": 301065352
+          }
+        },
+        {
+          "vid": "z00458djx39",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 03:40:30",
+            "defn": "{\"audio\":1019336,\"fhd\":64652179,\"hd\":21534065,\"sd\":8980495,\"shd\":35127171,\"source\":647243970}",
+            "desc": "",
+            "duration": "151",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 03:40:30",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/z00458djx39/z00458djx39_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/z00458djx39/z00458djx39_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/z00458djx39/z00458djx39_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+845472+58119+56059719",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985080",
+            "title": "连线前方记者青书：德布劳内伤愈归队 莱比锡主帅为哈兰德不平",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/z00458djx39.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "z00458djx39"
+          },
+          "defn_raw": "{\"audio\":1019336,\"fhd\":64652179,\"hd\":21534065,\"sd\":8980495,\"shd\":35127171,\"source\":647243970}",
+          "defn_expanded": {
+            "audio": 1019336,
+            "fhd": 64652179,
+            "hd": 21534065,
+            "sd": 8980495,
+            "shd": 35127171,
+            "source": 647243970
+          }
+        },
+        {
+          "vid": "b0045cyirdk",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc002002amqpft+mzc0020069a6anp",
+            "category_map": [
+              "10929",
+              "欧冠",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": [
+              "mzc002002amqpft",
+              "mzc0020069a6anp"
+            ],
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 13:53:34",
+            "defn": "{\"audio\":5094612,\"fhd\":356908772,\"hd\":135515974,\"sd\":58882913,\"shd\":198598006,\"source\":1195109890}",
+            "desc": "",
+            "duration": "742",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 13:53:34",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/b0045cyirdk/b0045cyirdk_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/b0045cyirdk/b0045cyirdk_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/b0045cyirdk/b0045cyirdk_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8148155592",
+            "title": "青书欧冠vlog：现场见证哈兰德之夜 创曼城队史单赛季纪录",
+            "type": "4",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/b0045cyirdk.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "b0045cyirdk"
+          },
+          "defn_raw": "{\"audio\":5094612,\"fhd\":356908772,\"hd\":135515974,\"sd\":58882913,\"shd\":198598006,\"source\":1195109890}",
+          "defn_expanded": {
+            "audio": 5094612,
+            "fhd": 356908772,
+            "hd": 135515974,
+            "sd": 58882913,
+            "shd": 198598006,
+            "source": 1195109890
+          }
+        },
+        {
+          "vid": "r0045valxxq",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 03:57:25",
+            "defn": "{\"audio\":332948,\"fhd\":5412753,\"hd\":1945694,\"sd\":866082,\"shd\":3033914,\"source\":65751395}",
+            "desc": "",
+            "duration": "49",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 03:57:25",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/r0045valxxq/r0045valxxq_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/r0045valxxq/r0045valxxq_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/r0045valxxq/r0045valxxq_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119+845472",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985091",
+            "title": "值回票价！伊蒂哈德球场绚丽灯光秀为蓝月助威",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/r0045valxxq.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "r0045valxxq"
+          },
+          "defn_raw": "{\"audio\":332948,\"fhd\":5412753,\"hd\":1945694,\"sd\":866082,\"shd\":3033914,\"source\":65751395}",
+          "defn_expanded": {
+            "audio": 332948,
+            "fhd": 5412753,
+            "hd": 1945694,
+            "sd": 866082,
+            "shd": 3033914,
+            "source": 65751395
+          }
+        },
+        {
+          "vid": "r0045qqxr17",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 04:04:23",
+            "defn": "{\"audio\":315840,\"fhd\":15225724,\"hd\":4665708,\"sd\":2352690,\"shd\":7559985,\"source\":202846387}",
+            "desc": "",
+            "duration": "46",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 04:04:23",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/r0045qqxr17/r0045qqxr17_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/r0045qqxr17/r0045qqxr17_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/r0045qqxr17/r0045qqxr17_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+845472+56171973",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985095",
+            "title": "开场不用试探！莱比锡前场多名球员高压逼抢 索博斯洛伊铲球犯规表明态度",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/r0045qqxr17.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "r0045qqxr17"
+          },
+          "defn_raw": "{\"audio\":315840,\"fhd\":15225724,\"hd\":4665708,\"sd\":2352690,\"shd\":7559985,\"source\":202846387}",
+          "defn_expanded": {
+            "audio": 315840,
+            "fhd": 15225724,
+            "hd": 4665708,
+            "sd": 2352690,
+            "shd": 7559985,
+            "source": 202846387
+          }
+        },
+        {
+          "vid": "p00455q6m0d",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 04:05:26",
+            "defn": "{\"audio\":288392,\"fhd\":13119577,\"hd\":4709863,\"sd\":2266106,\"shd\":7106641,\"source\":172725321}",
+            "desc": "",
+            "duration": "42",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 04:05:26",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/p00455q6m0d/p00455q6m0d_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/p00455q6m0d/p00455q6m0d_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/p00455q6m0d/p00455q6m0d_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119+23972+50663",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985101",
+            "title": "德布劳内边路传中打向禁区 京多安迎球推射可惜偏出",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/p00455q6m0d.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "p00455q6m0d"
+          },
+          "defn_raw": "{\"audio\":288392,\"fhd\":13119577,\"hd\":4709863,\"sd\":2266106,\"shd\":7106641,\"source\":172725321}",
+          "defn_expanded": {
+            "audio": 288392,
+            "fhd": 13119577,
+            "hd": 4709863,
+            "sd": 2266106,
+            "shd": 7106641,
+            "source": 172725321
+          }
+        },
+        {
+          "vid": "n0045qvix3h",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 04:12:39",
+            "defn": "{\"audio\":413976,\"fhd\":18826396,\"hd\":6591977,\"sd\":3206583,\"shd\":10042761,\"source\":250722555}",
+            "desc": "",
+            "duration": "61",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 04:12:39",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/n0045qvix3h/n0045qvix3h_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/n0045qvix3h/n0045qvix3h_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/n0045qvix3h/n0045qvix3h_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119+56059719",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985104",
+            "title": "速度太恐怖了！阿克后场 突然长传打防线身后 哈兰德后发先至捅射可惜被门将封堵",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/n0045qvix3h.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "n0045qvix3h"
+          },
+          "defn_raw": "{\"audio\":413976,\"fhd\":18826396,\"hd\":6591977,\"sd\":3206583,\"shd\":10042761,\"source\":250722555}",
+          "defn_expanded": {
+            "audio": 413976,
+            "fhd": 18826396,
+            "hd": 6591977,
+            "sd": 3206583,
+            "shd": 10042761,
+            "source": 250722555
+          }
+        },
+        {
+          "vid": "n0045iqod34",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 04:16:00",
+            "defn": "{\"audio\":220336,\"fhd\":9344483,\"hd\":3233072,\"sd\":1627796,\"shd\":4936822,\"source\":131903269}",
+            "desc": "",
+            "duration": "32",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 04:16:00",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/n0045iqod34/n0045iqod34_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/n0045iqod34/n0045iqod34_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/n0045iqod34/n0045iqod34_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119+845472+55757866+56194212",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985109",
+            "title": "曼城后场低级失误丢球 劳姆边路下底传中被埃德森倒地没收",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/n0045iqod34.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "n0045iqod34"
+          },
+          "defn_raw": "{\"audio\":220336,\"fhd\":9344483,\"hd\":3233072,\"sd\":1627796,\"shd\":4936822,\"source\":131903269}",
+          "defn_expanded": {
+            "audio": 220336,
+            "fhd": 9344483,
+            "hd": 3233072,
+            "sd": 1627796,
+            "shd": 4936822,
+            "source": 131903269
+          }
+        },
+        {
+          "vid": "f0045sx5278",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 04:18:08",
+            "defn": "{\"audio\":292904,\"fhd\":13227272,\"hd\":4660702,\"sd\":2390908,\"shd\":7022931,\"source\":188474172}",
+            "desc": "",
+            "duration": "42",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 04:18:08",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/f0045sx5278/f0045sx5278_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/f0045sx5278/f0045sx5278_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/f0045sx5278/f0045sx5278_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119+56068206+50663",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985112",
+            "title": "德布劳内禁区内做墙分球 格拉利什推射变线飞出底线",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/f0045sx5278.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "f0045sx5278"
+          },
+          "defn_raw": "{\"audio\":292904,\"fhd\":13227272,\"hd\":4660702,\"sd\":2390908,\"shd\":7022931,\"source\":188474172}",
+          "defn_expanded": {
+            "audio": 292904,
+            "fhd": 13227272,
+            "hd": 4660702,
+            "sd": 2390908,
+            "shd": 7022931,
+            "source": 188474172
+          }
+        },
+        {
+          "vid": "m0045k0iwfp",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 04:32:47",
+            "defn": "{\"audio\":258312,\"fhd\":13374204,\"hd\":4597973,\"sd\":2027588,\"shd\":7130197,\"source\":164047681}",
+            "desc": "",
+            "duration": "37",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 04:32:47",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/m0045k0iwfp/m0045k0iwfp_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/m0045k0iwfp/m0045k0iwfp_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/m0045k0iwfp/m0045k0iwfp_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119+56059719",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985117",
+            "title": "拒绝帽子戏法！哈兰德转身抽射直奔球门死角 门将封锁路线化解险情",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/m0045k0iwfp.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "m0045k0iwfp"
+          },
+          "defn_raw": "{\"audio\":258312,\"fhd\":13374204,\"hd\":4597973,\"sd\":2027588,\"shd\":7130197,\"source\":164047681}",
+          "defn_expanded": {
+            "audio": 258312,
+            "fhd": 13374204,
+            "hd": 4597973,
+            "sd": 2027588,
+            "shd": 7130197,
+            "source": 164047681
+          }
+        },
+        {
+          "vid": "b0045brvllm",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 04:36:30",
+            "defn": "{\"audio\":487484,\"fhd\":25775300,\"hd\":8423594,\"sd\":3652384,\"shd\":13295739,\"source\":296184922}",
+            "desc": "",
+            "duration": "71",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 04:36:30",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/b0045brvllm/b0045brvllm_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/b0045brvllm/b0045brvllm_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/b0045brvllm/b0045brvllm_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119+845472+55757866+56104000",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985121",
+            "title": "这球你怎么看？埃德森冒失出击禁区外撞倒莱默尔逃牌 维尔纳投诉被黄牌警告",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/b0045brvllm.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "b0045brvllm"
+          },
+          "defn_raw": "{\"audio\":487484,\"fhd\":25775300,\"hd\":8423594,\"sd\":3652384,\"shd\":13295739,\"source\":296184922}",
+          "defn_expanded": {
+            "audio": 487484,
+            "fhd": 25775300,
+            "hd": 8423594,
+            "sd": 3652384,
+            "shd": 13295739,
+            "source": 296184922
+          }
+        },
+        {
+          "vid": "s0045604prb",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 04:37:35",
+            "defn": "{\"audio\":237820,\"fhd\":9785238,\"hd\":3221807,\"sd\":1603799,\"shd\":5117262,\"source\":140925553}",
+            "desc": "",
+            "duration": "35",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 04:37:35",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/s0045604prb/s0045604prb_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/s0045604prb/s0045604prb_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/s0045604prb/s0045604prb_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+845472+56104000",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985124",
+            "title": "天降巨饼也不吃！蓝月后场传球失误 维尔纳门前推射踢呲",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/s0045604prb.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "s0045604prb"
+          },
+          "defn_raw": "{\"audio\":237820,\"fhd\":9785238,\"hd\":3221807,\"sd\":1603799,\"shd\":5117262,\"source\":140925553}",
+          "defn_expanded": {
+            "audio": 237820,
+            "fhd": 9785238,
+            "hd": 3221807,
+            "sd": 1603799,
+            "shd": 5117262,
+            "source": 140925553
+          }
+        },
+        {
+          "vid": "b0045rm11tn",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 04:39:56",
+            "defn": "{\"audio\":142880,\"fhd\":6247992,\"hd\":1823861,\"sd\":896041,\"shd\":3022432,\"source\":81712362}",
+            "desc": "",
+            "duration": "20",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 04:39:56",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/b0045rm11tn/b0045rm11tn_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/b0045rm11tn/b0045rm11tn_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/b0045rm11tn/b0045rm11tn_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119+28936+23972",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985131",
+            "title": "德布劳内定位球快发直塞打穿防线 京多安心领神会前插推射被扑",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/b0045rm11tn.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "b0045rm11tn"
+          },
+          "defn_raw": "{\"audio\":142880,\"fhd\":6247992,\"hd\":1823861,\"sd\":896041,\"shd\":3022432,\"source\":81712362}",
+          "defn_expanded": {
+            "audio": 142880,
+            "fhd": 6247992,
+            "hd": 1823861,
+            "sd": 896041,
+            "shd": 3022432,
+            "source": 81712362
+          }
+        },
+        {
+          "vid": "c004547i6iu",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 05:22:33",
+            "defn": "{\"audio\":624348,\"fhd\":30478655,\"hd\":10892381,\"sd\":5098542,\"shd\":16758979,\"source\":406618283}",
+            "desc": "",
+            "duration": "91",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 05:22:33",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/c004547i6iu/c004547i6iu_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/c004547i6iu/c004547i6iu_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/c004547i6iu/c004547i6iu_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+845472+58119+56059719",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985135",
+            "title": "莱比锡的噩梦终于结束了！哈兰德一小时贡献五个进球后被换下",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/c004547i6iu.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "c004547i6iu"
+          },
+          "defn_raw": "{\"audio\":624348,\"fhd\":30478655,\"hd\":10892381,\"sd\":5098542,\"shd\":16758979,\"source\":406618283}",
+          "defn_expanded": {
+            "audio": 624348,
+            "fhd": 30478655,
+            "hd": 10892381,
+            "sd": 5098542,
+            "shd": 16758979,
+            "source": 406618283
+          }
+        },
+        {
+          "vid": "h0045rzn8cb",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 05:40:49",
+            "defn": "{\"audio\":180292,\"fhd\":7240924,\"hd\":2326247,\"sd\":1108299,\"shd\":3786637,\"source\":102260850}",
+            "desc": "",
+            "duration": "26",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 05:40:49",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/h0045rzn8cb/h0045rzn8cb_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/h0045rzn8cb/h0045rzn8cb_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/h0045rzn8cb/h0045rzn8cb_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119+28936+56270319",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985146",
+            "title": "德布劳内肋部横敲被挡出 阿尔瓦雷斯二点远射变线弹出底线",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/h0045rzn8cb.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "h0045rzn8cb"
+          },
+          "defn_raw": "{\"audio\":180292,\"fhd\":7240924,\"hd\":2326247,\"sd\":1108299,\"shd\":3786637,\"source\":102260850}",
+          "defn_expanded": {
+            "audio": 180292,
+            "fhd": 7240924,
+            "hd": 2326247,
+            "sd": 1108299,
+            "shd": 3786637,
+            "source": 102260850
+          }
+        },
+        {
+          "vid": "w0045cwoxea",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 05:41:58",
+            "defn": "{\"audio\":155476,\"fhd\":8014987,\"hd\":2400460,\"sd\":1100615,\"shd\":4008307,\"source\":97574211}",
+            "desc": "",
+            "duration": "22",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 05:41:58",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/w0045cwoxea/w0045cwoxea_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/w0045cwoxea/w0045cwoxea_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/w0045cwoxea/w0045cwoxea_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119+56209935",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985149",
+            "title": "丝毫没有收手的意思！B席传中精准制导 阿坎吉后点头槌攻门被门将没收",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/w0045cwoxea.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "w0045cwoxea"
+          },
+          "defn_raw": "{\"audio\":155476,\"fhd\":8014987,\"hd\":2400460,\"sd\":1100615,\"shd\":4008307,\"source\":97574211}",
+          "defn_expanded": {
+            "audio": 155476,
+            "fhd": 8014987,
+            "hd": 2400460,
+            "sd": 1100615,
+            "shd": 4008307,
+            "source": 97574211
+          }
+        },
+        {
+          "vid": "t0045jjm72w",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200wodff18+mzc0020069a6anp+mzc00200fqd6811",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": [
+              "mzc00200wodff18",
+              "mzc0020069a6anp",
+              "mzc00200fqd6811"
+            ],
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-14 11:53:04",
+            "defn": "{\"audio\":936804,\"fhd\":44986471,\"hd\":17682678,\"sd\":8037960,\"shd\":26118013,\"source\":176448061}",
+            "desc": "",
+            "duration": "137",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-14 11:53:04",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/t0045jjm72w/t0045jjm72w_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/t0045jjm72w/t0045jjm72w_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/t0045jjm72w/t0045jjm72w_hz.jpg/640",
+            "pioneer_tag": "欧洲冠军联赛+足球",
+            "pioneer_tag_ids": "841480+87728",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985086",
+            "title": "蓝月军团能否顶住压力拿下对手 老冤家皇马vs利物浦晋级走个过场？",
+            "type": "4",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/t0045jjm72w.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "t0045jjm72w"
+          },
+          "defn_raw": "{\"audio\":936804,\"fhd\":44986471,\"hd\":17682678,\"sd\":8037960,\"shd\":26118013,\"source\":176448061}",
+          "defn_expanded": {
+            "audio": 936804,
+            "fhd": 44986471,
+            "hd": 17682678,
+            "sd": 8037960,
+            "shd": 26118013,
+            "source": 176448061
+          }
+        },
+        {
+          "vid": "f00459evxrr",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 04:50:25",
+            "defn": "{\"audio\":19719696,\"fhd\":1003618280,\"hd\":319796820,\"sd\":150845070,\"shd\":508939765,\"source\":13048741118}",
+            "desc": "",
+            "duration": "2914",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 04:50:25",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/f00459evxrr/f00459evxrr_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/f00459evxrr/f00459evxrr_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/f00459evxrr/f00459evxrr_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119+845472",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147985142",
+            "title": "【回放】22/23赛季欧冠1/8决赛次回合：曼城vsRB莱比锡 上半场",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/f00459evxrr.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "f00459evxrr"
+          },
+          "defn_raw": "{\"audio\":19719696,\"fhd\":1003618280,\"hd\":319796820,\"sd\":150845070,\"shd\":508939765,\"source\":13048741118}",
+          "defn_expanded": {
+            "audio": 19719696,
+            "fhd": 1003618280,
+            "hd": 319796820,
+            "sd": 150845070,
+            "shd": 508939765,
+            "source": 13048741118
+          }
+        },
+        {
+          "vid": "p0045aw0ojq",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 05:52:36",
+            "defn": "{\"audio\":19485636,\"fhd\":937924844,\"hd\":291363727,\"sd\":140105003,\"shd\":472113390,\"source\":12911508059}",
+            "desc": "",
+            "duration": "2877",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 05:52:36",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/p0045aw0ojq/p0045aw0ojq_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/p0045aw0ojq/p0045aw0ojq_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/p0045aw0ojq/p0045aw0ojq_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+58119+845472",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147988880",
+            "title": "【回放】22/23赛季欧冠1/8决赛次回合：曼城vsRB莱比锡 下半场",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/p0045aw0ojq.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "p0045aw0ojq"
+          },
+          "defn_raw": "{\"audio\":19485636,\"fhd\":937924844,\"hd\":291363727,\"sd\":140105003,\"shd\":472113390,\"source\":12911508059}",
+          "defn_expanded": {
+            "audio": 19485636,
+            "fhd": 937924844,
+            "hd": 291363727,
+            "sd": 140105003,
+            "shd": 472113390,
+            "source": 12911508059
+          }
+        },
+        {
+          "vid": "y0045pwjqv1",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 06:03:48",
+            "defn": "{\"audio\":61023296,\"fhd\":2627024956,\"hd\":840207100,\"sd\":394814570,\"shd\":1344342580,\"source\":37735675601}",
+            "desc": "",
+            "duration": "9012",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 06:03:48",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/y0045pwjqv1/y0045pwjqv1_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/y0045pwjqv1/y0045pwjqv1_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/y0045pwjqv1/y0045pwjqv1_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "841480+87728+845472+58119",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8147994009",
+            "title": "【回放】22/23赛季欧冠1/8决赛次回合：曼城vsRB莱比锡 全场回放",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/y0045pwjqv1.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "y0045pwjqv1"
+          },
+          "defn_raw": "{\"audio\":61023296,\"fhd\":2627024956,\"hd\":840207100,\"sd\":394814570,\"shd\":1344342580,\"source\":37735675601}",
+          "defn_expanded": {
+            "audio": 61023296,
+            "fhd": 2627024956,
+            "hd": 840207100,
+            "sd": 394814570,
+            "shd": 1344342580,
+            "source": 37735675601
+          }
+        },
+        {
+          "vid": "y35064wnhzg",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc0020069a6anp",
+            "category_map": [
+              "11923",
+              "足球正赛正片",
+              "1118",
+              "天下足球",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc0020069a6anp",
+            "cover_pic_resolution": "",
+            "create_time": "2023-03-15 17:32:50",
+            "defn": "{\"hd\":13088257,\"shd\":19360851,\"source\":228094675}",
+            "desc": "",
+            "duration": "176",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2023-03-15 17:32:50",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/y35064wnhzg/y35064wnhzg_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/y35064wnhzg/y35064wnhzg_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/y35064wnhzg/y35064wnhzg_hz.jpg/640",
+            "pioneer_tag": "足球",
+            "pioneer_tag_ids": "87728",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "8148244327",
+            "title": "历史唯三，盘点欧冠赛场“五子登科”神迹，哈兰德上榜比肩梅西",
+            "type": "4",
+            "upload_src": "108",
+            "url": "https://v.qq.com/x/page/y35064wnhzg.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "y35064wnhzg"
+          },
+          "defn_raw": "{\"hd\":13088257,\"shd\":19360851,\"source\":228094675}",
+          "defn_expanded": {
+            "hd": 13088257,
+            "shd": 19360851,
+            "source": 228094675
+          }
+        }
+      ],
+      "video_field_names": [
+        "c_covers",
+        "category_map",
+        "cover_list",
+        "cover_pic_resolution",
+        "create_time",
+        "defn",
+        "desc",
+        "duration",
+        "is_normalized",
+        "keyword",
+        "leading_actor",
+        "modify_time",
+        "pic160x90",
+        "pic496x280",
+        "pic_640_360",
+        "pioneer_tag",
+        "pioneer_tag_ids",
+        "publish_date",
+        "state",
+        "tag",
+        "targetid",
+        "title",
+        "type",
+        "upload_src",
+        "url",
+        "vWH",
+        "vid"
+      ],
+      "derived": {
+        "cover": {
+          "video_ids_count": 31,
+          "clips_ids_count": 0,
+          "downright_count": 2,
+          "downright_unique": [
+            "20",
+            "30"
+          ],
+          "nomal_f_counts": {
+            "2": 31
+          },
+          "vip_f_counts": {
+            "2": 31
+          }
+        },
+        "videos": {
+          "video_count": 31,
+          "state_counts": {
+            "4": 31
+          },
+          "upload_src_counts": {
+            "108": 1,
+            "20": 6,
+            "31": 24
+          },
+          "defn_key_counts": {
+            "audio": 30,
+            "fhd": 30,
+            "hd": 31,
+            "sd": 30,
+            "shd": 31,
+            "source": 31
+          },
+          "targetid_nonempty_count": 31,
+          "publish_date_nonempty_count": 0,
+          "publish_date_examples": [],
+          "targetid_examples": [
+            {
+              "vid": "o0045dresjo",
+              "title": "【全场集锦】曼城7-0RB莱比锡总比分8-1晋级 哈兰德五子登科 丁丁世界波建功",
+              "targetid": "8147984564"
+            },
+            {
+              "vid": "m0045vpuwi6",
+              "title": "【球队集锦】已杀红眼！7-0狂胜莱比锡平队史欧战最大分差",
+              "targetid": "8147988861"
+            },
+            {
+              "vid": "v00451jwv65",
+              "title": "【进球集锦】曼城vsRB莱比锡 哈兰德独中五元领衔进球盛宴",
+              "targetid": "8147988870"
+            },
+            {
+              "vid": "y00453z0z7w",
+              "title": "【球星集锦】哈兰德vsRB莱比锡集锦 五子登科闪耀全场！半场戴帽比肩梅西",
+              "targetid": "8147988873"
+            },
+            {
+              "vid": "g0045ym7vks",
+              "title": "【进球】VAR明察秋毫！亨里希斯禁区内手球被抓 哈兰德操刀打入死角",
+              "targetid": "8147985048"
+            },
+            {
+              "vid": "y0045up0g9e",
+              "title": "【进球】魔童降临！德布劳内远射中楣弹出 哈兰德头槌砸入网窝",
+              "targetid": "8147985052"
+            },
+            {
+              "vid": "w0045dm0tng",
+              "title": "【进球】半场戴帽！鲁本-迪亚斯头槌中柱 哈兰德机敏补射完成帽子戏法",
+              "targetid": "8147985057"
+            },
+            {
+              "vid": "j0045gft0av",
+              "title": "【进球】丝滑的团队表演！格拉利什横敲助攻 京多安低射远角破门",
+              "targetid": "8203078318"
+            },
+            {
+              "vid": "m0045z2uw07",
+              "title": "【进球】恐怖的进球机器！哈兰德门前头顶脚踢收获大四喜",
+              "targetid": "8147985069"
+            },
+            {
+              "vid": "a0045ya5lzk",
+              "title": "【进球】根本停不下来！阿坎吉门前抢点被扑 哈兰德二点补射达成五子登科",
+              "targetid": "8147985076"
+            },
+            {
+              "vid": "y0045bs7mew",
+              "title": "【进球】画上完美句号！德布劳内弧顶兜出美妙弧线打入绝对死角",
+              "targetid": "8147985154"
+            },
+            {
+              "vid": "z00458djx39",
+              "title": "连线前方记者青书：德布劳内伤愈归队 莱比锡主帅为哈兰德不平",
+              "targetid": "8147985080"
+            }
+          ],
+          "unusual_upload_examples": [
+            {
+              "vid": "g0045ym7vks",
+              "title": "【进球】VAR明察秋毫！亨里希斯禁区内手球被抓 哈兰德操刀打入死角",
+              "upload_src": "31"
+            },
+            {
+              "vid": "y0045up0g9e",
+              "title": "【进球】魔童降临！德布劳内远射中楣弹出 哈兰德头槌砸入网窝",
+              "upload_src": "31"
+            },
+            {
+              "vid": "w0045dm0tng",
+              "title": "【进球】半场戴帽！鲁本-迪亚斯头槌中柱 哈兰德机敏补射完成帽子戏法",
+              "upload_src": "31"
+            },
+            {
+              "vid": "j0045gft0av",
+              "title": "【进球】丝滑的团队表演！格拉利什横敲助攻 京多安低射远角破门",
+              "upload_src": "31"
+            },
+            {
+              "vid": "m0045z2uw07",
+              "title": "【进球】恐怖的进球机器！哈兰德门前头顶脚踢收获大四喜",
+              "upload_src": "31"
+            },
+            {
+              "vid": "a0045ya5lzk",
+              "title": "【进球】根本停不下来！阿坎吉门前抢点被扑 哈兰德二点补射达成五子登科",
+              "upload_src": "31"
+            },
+            {
+              "vid": "y0045bs7mew",
+              "title": "【进球】画上完美句号！德布劳内弧顶兜出美妙弧线打入绝对死角",
+              "upload_src": "31"
+            },
+            {
+              "vid": "z00458djx39",
+              "title": "连线前方记者青书：德布劳内伤愈归队 莱比锡主帅为哈兰德不平",
+              "upload_src": "31"
+            },
+            {
+              "vid": "r0045valxxq",
+              "title": "值回票价！伊蒂哈德球场绚丽灯光秀为蓝月助威",
+              "upload_src": "31"
+            },
+            {
+              "vid": "r0045qqxr17",
+              "title": "开场不用试探！莱比锡前场多名球员高压逼抢 索博斯洛伊铲球犯规表明态度",
+              "upload_src": "31"
+            },
+            {
+              "vid": "p00455q6m0d",
+              "title": "德布劳内边路传中打向禁区 京多安迎球推射可惜偏出",
+              "upload_src": "31"
+            },
+            {
+              "vid": "n0045qvix3h",
+              "title": "速度太恐怖了！阿克后场 突然长传打防线身后 哈兰德后发先至捅射可惜被门将封堵",
+              "upload_src": "31"
+            },
+            {
+              "vid": "n0045iqod34",
+              "title": "曼城后场低级失误丢球 劳姆边路下底传中被埃德森倒地没收",
+              "upload_src": "31"
+            },
+            {
+              "vid": "f0045sx5278",
+              "title": "德布劳内禁区内做墙分球 格拉利什推射变线飞出底线",
+              "upload_src": "31"
+            },
+            {
+              "vid": "m0045k0iwfp",
+              "title": "拒绝帽子戏法！哈兰德转身抽射直奔球门死角 门将封锁路线化解险情",
+              "upload_src": "31"
+            },
+            {
+              "vid": "b0045brvllm",
+              "title": "这球你怎么看？埃德森冒失出击禁区外撞倒莱默尔逃牌 维尔纳投诉被黄牌警告",
+              "upload_src": "31"
+            }
+          ]
+        }
+      },
+      "status": "ok"
+    }
+  ],
+  "summary": {
+    "sample_count": 1,
+    "successful_sample_count": 1,
+    "failed_sample_count": 0,
+    "video_count": 31,
+    "clip_video_count": 0,
+    "videos_with_defn_count": 31,
+    "cover_field_frequency": {
+      "denominator": "successful_samples",
+      "total": 1,
+      "fields": {
+        "clips_ids": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "column_id": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "copyright_negotiation_id": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "costtime": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "cover_checkup_grade": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "cover_id": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "downright": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "episode_all": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "episode_updated": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "errormsg": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "errorno": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "id": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "imgtag_ver": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "new_pic_hz": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "new_pic_vt": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "nomal_ids": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "pay_status": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "pc_client_imgtag": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "positive_content_id": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "positive_trailer": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "resptime": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "retcode": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "title": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "topic_id_list": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "type": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "type_name": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "video_ids": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "vip_ids": {
+          "count": 1,
+          "ratio": 1.0
+        }
+      }
+    },
+    "video_field_frequency": {
+      "denominator": "videos",
+      "total": 31,
+      "fields": {
+        "c_covers": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "category_map": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "cover_list": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "cover_pic_resolution": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "create_time": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "defn": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "desc": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "duration": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "is_normalized": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "keyword": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "leading_actor": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "modify_time": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "pic160x90": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "pic496x280": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "pic_640_360": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "pioneer_tag": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "pioneer_tag_ids": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "publish_date": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "state": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "tag": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "targetid": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "title": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "type": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "upload_src": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "url": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "vWH": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "vid": {
+          "count": 31,
+          "ratio": 1.0
+        }
+      }
+    },
+    "clip_video_field_frequency": {
+      "denominator": "clip_videos",
+      "total": 0,
+      "fields": {}
+    },
+    "defn_field_frequency": {
+      "denominator": "videos_with_defn",
+      "total": 31,
+      "fields": {
+        "hd": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "shd": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "source": {
+          "count": 31,
+          "ratio": 1.0
+        },
+        "audio": {
+          "count": 30,
+          "ratio": 0.967742
+        },
+        "fhd": {
+          "count": 30,
+          "ratio": 0.967742
+        },
+        "sd": {
+          "count": 30,
+          "ratio": 0.967742
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "generated_at": "2026-06-20T08:39:54.164Z",
+  "source_script": "tools/tencent_frontend_targetid_report_identity_audit.js",
+  "scope": "owner-prop bridge followup on anonymous report/comment nodes against commentInfo targetid/commentid families",
+  "probe_config": {
+    "wait_ms": 12000,
+    "cases": [
+      "kids_dualfull_targetid",
+      "tv_season_second",
+      "sports_collection_shell",
+      "variety_topic_pay15_targetid_uploadsrc"
+    ],
+    "owner_bridge_scope": [
+      "dataset",
+      "__reactProps$*",
+      "__reactFiber$*",
+      "__vue*"
+    ],
+    "interesting_key_regex": "targetid|commentid|feed_id|father_feed_id|cp_id|dokiid|ftid"
+  },
+  "cases": [
+    {
+      "label": "kids_dualfull_targetid",
+      "input_url": "https://v.qq.com/x/cover/jynqzy9n3wfrsfp/l0020z7maus.html",
+      "classification": "positive",
+      "commentinfo_family": {
+        "nonempty_hits": 10,
+        "targetid_decoded_values": [
+          "7652145698",
+          "7651921070",
+          "7650573812",
+          "1409064448"
+        ],
+        "commentid_decoded_values": [
+          "6770912520198877582",
+          "6859292919723872651",
+          "6896402705382234285"
+        ],
+        "pg_dokiid_values": [
+          "2100140789"
+        ]
+      },
+      "owner_bridge_numeric_values": [
+        "148618794347661961",
+        "148618791781555830",
+        "148618791812290313",
+        "148618791869913815",
+        "148618791665454391",
+        "148618791667743298",
+        "148618791855467605",
+        "148618791960760766"
+      ],
+      "intersections": {
+        "targetid_vs_owner_bridge": [],
+        "commentid_vs_owner_bridge": [],
+        "dokiid_ftid_vs_owner_bridge": []
+      },
+      "request_hits_count": 6,
+      "open_call_count": 0,
+      "interesting_iframe_count": 0,
+      "judgment": "Owner-bridge scanning still exposed a feed_id-family identity set rather than the positive commentInfo targetid/commentid family."
+    },
+    {
+      "label": "tv_season_second",
+      "input_url": "https://v.qq.com/x/cover/mzc00200dfbfsrw.html",
+      "classification": "positive",
+      "commentinfo_family": {
+        "nonempty_hits": 24,
+        "targetid_decoded_values": [
+          "5868283771",
+          "5975589641",
+          "6061389597",
+          "5994708987"
+        ],
+        "commentid_decoded_values": [
+          "6709790764822624863",
+          "6709816745823554421",
+          "6709793486222596316",
+          "6746004025419267854"
+        ],
+        "pg_dokiid_values": [
+          "2100084287"
+        ]
+      },
+      "owner_bridge_numeric_values": [
+        "100000991482708",
+        "100000991591546",
+        "100000991492883",
+        "148618791864340055",
+        "148618791878082678",
+        "148618793230782410",
+        "100001044128290",
+        "148618792618383475"
+      ],
+      "intersections": {
+        "targetid_vs_owner_bridge": [],
+        "commentid_vs_owner_bridge": [],
+        "dokiid_ftid_vs_owner_bridge": []
+      },
+      "request_hits_count": 6,
+      "open_call_count": 0,
+      "interesting_iframe_count": 0,
+      "judgment": "Even on a non-kids positive page, the owner bridge stayed disjoint from commentInfo targetid/commentid and from the observed dokiid family."
+    },
+    {
+      "label": "sports_collection_shell",
+      "input_url": "https://v.qq.com/x/cover/mzc002003fh665c.html",
+      "classification": "positive",
+      "commentinfo_family": {
+        "nonempty_hits": 1,
+        "targetid_decoded_values": [
+          "8149102728"
+        ],
+        "commentid_decoded_values": [],
+        "relate_doki_decoded_values": [
+          "2101191593"
+        ]
+      },
+      "owner_bridge_numeric_values": [
+        "148618792253595169"
+      ],
+      "intersections": {
+        "targetid_vs_owner_bridge": [],
+        "commentid_vs_owner_bridge": [],
+        "dokiid_ftid_vs_owner_bridge": []
+      },
+      "request_hits_count": 5,
+      "open_call_count": 0,
+      "interesting_iframe_count": 0,
+      "judgment": "The sports positive shell reproduced the same split: owner-bridge ids stayed separate from the single positive commentInfo targetid value."
+    },
+    {
+      "label": "variety_topic_pay15_targetid_uploadsrc",
+      "input_url": "https://v.qq.com/x/cover/mzc002001u873es/k004768pj4j.html",
+      "classification": "negative",
+      "commentinfo_family": {
+        "nonempty_hits": 0,
+        "targetid_decoded_values": [],
+        "commentid_decoded_values": [],
+        "pg_dokiid_values": [
+          "2101258574"
+        ]
+      },
+      "owner_bridge_numeric_values": [
+        "148618792652885713",
+        "148618792580423252",
+        "148618792788184432",
+        "148618792579526024",
+        "148618792615529869",
+        "148618792834271640",
+        "148618792616304681",
+        "148618792623202092"
+      ],
+      "intersections": {
+        "targetid_vs_owner_bridge": [],
+        "commentid_vs_owner_bridge": [],
+        "dokiid_ftid_vs_owner_bridge": []
+      },
+      "request_hits_count": 5,
+      "open_call_count": 0,
+      "interesting_iframe_count": 0,
+      "judgment": "The negative variety shell stayed negative after the owner-bridge followup as well; no convergence with commentInfo targetid/commentid emerged."
+    }
+  ],
+  "takeaways": [
+    "Even the added dataset and owner-prop bridge scan around anonymous report/comment nodes still did not surface the same targetid/commentid values from the positive commentInfo family.",
+    "On pages where root.base.commentInfo.targetid/commentid is non-empty, the sampled comment report buttons still expose a different identity family (feed_id / cp_id / counters) rather than the decoded commentInfo targetid/commentid values.",
+    "The anonymous comment-report DOM identity tags also stay disjoint from the currently observed dokiid/ftid discussion chain on the sampled positive pages.",
+    "This narrows the natural-producer gap: in the tested anonymous DOM path, commentInfo targetid/commentid survives as a neighboring payload family, but the sampled report-button producer surface still does not expose or consume those same ids directly."
+  ],
+  "current_judgment": "The owner-bridge followup upgrades the anonymous report-button negative evidence from plain dt-params audit to shallow framework-owner audit. The tested PC Web natural path still stays inside a feed_id/cp_id identity family rather than the commentInfo targetid/commentid family."
+}

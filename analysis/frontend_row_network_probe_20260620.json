@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "detail/page row-shell followup network probe for F/upload_src frontend semantics",
+  "cases": [
+    {
+      "bucket": "tv_season_f_mixed",
+      "input_url": "https://v.qq.com/x/cover/mzc00200whxf2zp.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200whxf2zp/k41026bh3p0.html",
+      "tabs_seen": [
+        "精彩片花",
+        "更多短视频"
+      ],
+      "matching_responses": [
+        {
+          "url": "https://v.qq.com/x/cover/mzc00200whxf2zp.html",
+          "resource_type": "document",
+          "matched_terms": [
+            "normal_ids",
+            "vip_ids",
+            "positive_trailer"
+          ],
+          "note": "Rendered detail document already kept normal_ids and vip_ids as empty strings, while positive_trailer and video_ids context still survived."
+        },
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.universal_backend_service.union_extra_data.UnionExtraData/FillUnionInfo?video_appid=3000010&vversion_name=8.2.95&vversion_platform=2",
+          "resource_type": "xhr",
+          "matched_terms": [
+            "\"state\":"
+          ],
+          "note": "FillUnionInfo still surfaced state, type, playright and cover linkage, but this round did not surface F or upload_src."
+        },
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.vector_layout.page_view.PageService/getPage?vdevice_guid=0b975a295b10e1b9&video_appid=3000010&vversion_name=8.5.96&vversion_platform=2",
+          "resource_type": "xhr",
+          "matched_terms": [
+            "\"state\":",
+            "positive_trailer"
+          ],
+          "note": "The vector-layout followup still surfaced state and positive_trailer constants, but not F or upload_src."
+        }
+      ]
+    },
+    {
+      "bucket": "variety_topic_uploadsrc_mixed",
+      "input_url": "https://v.qq.com/x/cover/mzc00200iy331ds.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200iy331ds/f41023gibme.html",
+      "tabs_seen": [],
+      "matching_responses": [
+        {
+          "url": "https://v.qq.com/x/cover/mzc00200iy331ds.html",
+          "resource_type": "document",
+          "matched_terms": [
+            "normal_ids",
+            "vip_ids",
+            "positive_trailer"
+          ],
+          "note": "Rendered detail document already kept normal_ids and vip_ids as empty strings, while positive_trailer and video_ids context still survived."
+        },
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.universal_backend_service.union_extra_data.UnionExtraData/FillUnionInfo?video_appid=3000010&vversion_name=8.2.95&vversion_platform=2",
+          "resource_type": "xhr",
+          "matched_terms": [
+            "\"state\":"
+          ],
+          "note": "FillUnionInfo still surfaced state, cover_list and topic_id_list context, but this round did not surface upload_src or F."
+        },
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.vector_layout.page_view.PageService/getPage?vdevice_guid=436c3edd24ca1f2e&video_appid=3000010&vversion_name=8.5.96&vversion_platform=2",
+          "resource_type": "xhr",
+          "matched_terms": [
+            "positive_trailer"
+          ],
+          "note": "The vector-layout followup still surfaced positive_trailer and adjacent pay_status constants, but not upload_src or F."
+        }
+      ]
+    }
+  ],
+  "takeaways": [
+    "The tested detail followup requests still surfaced positive_trailer and state, but this round did not surface upload_src or F in the captured document/xhr/script responses for the two representative pages.",
+    "The initial HTML for both representative pages exposed positive_trailer and video_ids context, but normal_ids and vip_ids were already empty strings in the rendered document payload on these redirected detail pages.",
+    "This is negative evidence for the current tested detail plus row-shell followup paths; it does not yet rule out a later lazy bundle or a non-detail list-page consumer."
+  ]
+}

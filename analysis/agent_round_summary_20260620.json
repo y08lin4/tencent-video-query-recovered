@@ -1,0 +1,314 @@
+{
+  "generated_at": "2026-06-20T06:10:00+08:00",
+  "round": "20260620_multi_agent_followup",
+  "focus": [
+    "API2 JSONP batch closure",
+    "pay_status=15 escape test",
+    "pay_status=16 escape test",
+    "upload_src=2048 family boundary",
+    "state=8 sports/kids boundary",
+    "frontend semantics / F-upload_src next-hop trace",
+    "counterevidence / overclaim audit"
+  ],
+  "findings": {
+    "pay_status_15": {
+      "status": "small_family",
+      "bounded_to_type_10_in_this_round": true,
+      "observed_cover_count": 4,
+      "observed_page_shape_hints": [
+        "综艺专题/赛事专题-like 壳",
+        "综艺第一视角-like 壳",
+        "综艺专场/活动运营-like 壳"
+      ],
+      "new_cover_sample": {
+        "cid": "mzc00200sd1b239",
+        "title": "推市营业中·与凤行专场",
+        "type": "10/综艺",
+        "pay_status": "15",
+        "positive_trailer": "1",
+        "positive_content_id": "1543606"
+      },
+      "counterexample_notes": [
+        "Not implied by type=10 + positive_trailer=0 + positive_content_id=1543606.",
+        "Not limited to the 战至巅峰 family.",
+        "Still no positive cross-type escape found in this round."
+      ]
+    },
+    "pay_status_16": {
+      "status": "small_family",
+      "bounded_to_type_10_in_this_round": true,
+      "observed_cover_count": 9,
+      "observed_page_shape_hints": [
+        "综艺主季页-like 壳",
+        "综艺衍生页-like 壳",
+        "综艺活动页-like 壳"
+      ],
+      "representative_covers": [
+        "mzc00200h90vcfw",
+        "mzc002003dx2kq5",
+        "mzc00200u2ay1kj",
+        "mzc00200c24ypkp",
+        "mzc002005od4txd",
+        "mzc00200x172sej",
+        "mzc00200tzs7ig5",
+        "mzc00200urn78dn",
+        "mzc00200lwn6df7"
+      ],
+      "counterexample_notes": [
+        "Do not overname it as a fixed regular-season code.",
+        "Compared with pay_status=15, the difference is still a distribution preference, not a proven hard business partition.",
+        "Current designated archive evidence for raw frontend parse-layer retention is stronger for 15 than for 16."
+      ]
+    },
+    "api2_jsonp_batch": {
+      "status": "closed_in_tested_8_env_focus_matrix",
+      "artifact": "analysis/api2_jsonp_batch_matrix_20260620.json",
+      "stable_across_8_env": true,
+      "mirror_cases_closed": [
+        "mixed_valid_invalid_vid_json",
+        "duplicate_and_empty_slots_json",
+        "dup32_json",
+        "dup33_json"
+      ],
+      "current_judgment": "On the tested 8-environment focused matrix, `otype=json` only changes the wrapper/content-type, not the batch semantics: mixed valid+invalid preserves order with an empty-shell invalid row, duplicate items still count, empty slots are ignored, `dup32` succeeds, and `dup33` still returns `-111001`.",
+      "guardrails": [
+        "This closes the tested `otype=json` mirror batch cases, not real-session/login-cookie environments.",
+        "Null-like JSONP invalid fields should be read as empty-shell equivalents, not as a semantic drift from XML."
+      ]
+    },
+    "upload_src_2048": {
+      "status": "small_family",
+      "still_type_111_bounded_in_this_round": true,
+      "search_expansion_artifact": "analysis/upload_src_2048_type111_search_expansion_20260620.json",
+      "pure_2048_positive_covers": [
+        "mzc00200s6oqemg",
+        "mzc00200ua6uec2",
+        "mzc00200fq96jcg",
+        "mzc00200jehmwr1",
+        "mzc00200q2oseni",
+        "mzc002005kpqrxs",
+        "mzc00200qh0bh8s",
+        "mzc00200tjnrzs3"
+      ],
+      "mixed_cover_examples": [
+        {
+          "cid": "mzc002008tghx9y",
+          "upload_counts": {
+            "2048": 21,
+            "108": 2
+          }
+        },
+        {
+          "cid": "mzc00200fi5unqc",
+          "upload_counts": {
+            "0": 12,
+            "2048": 13
+          }
+        },
+        {
+          "cid": "mzc00200bsbieyl",
+          "upload_counts": {
+            "108": 2,
+            "2048": 17
+          }
+        }
+      ],
+      "same_type_negative_controls": [
+        {
+          "cid": "mzc00200rcuv1sy",
+          "upload_counts": {
+            "0": 7
+          }
+        },
+        {
+          "cid": "mzc00200l0svlgo",
+          "upload_counts": {
+            "0": 7
+          }
+        },
+        {
+          "cid": "mzc00200q9c4iok",
+          "upload_counts": {
+            "0": 7
+          }
+        },
+        {
+          "cid": "yz6io1b8ozb6ddh",
+          "upload_counts": {
+            "108": 4
+          }
+        },
+        {
+          "cid": "26f3e59734hb74d",
+          "upload_counts": {
+            "108": 61
+          }
+        }
+      ],
+      "environment_matrix_artifact": "analysis/upload_src_2048_environment_20260620.json",
+      "environment_tested_core_set": [
+        "mzc00200s6oqemg",
+        "mzc00200ua6uec2",
+        "mzc002008tghx9y",
+        "mzc00200rcuv1sy"
+      ],
+      "environment_stable_across_8_env_for_core_set": true,
+      "observed_cover_breakdown": {
+        "covers_with_any_2048_rows": 35,
+        "complete_pure_2048": 20,
+        "partial_only_2048": 3,
+        "mixed_with_other_upload_src": 12
+      },
+      "counterexample_notes": [
+        "type=111 is not a sufficient condition for upload_src=2048.",
+        "pay_status=7 / positive_trailer=0 / state=4 are not sufficient conditions either.",
+        "Even inside the same type=111 cover, 2048 can mix with 108 or with 0.",
+        "The broader sampled type=111 slice already contains pure 2048, mixed 2048/108, mixed 2048/0, pure 108, and pure 0 branches.",
+        "`mzc00200tjnrzs3` is a complete pure-2048 cover with targetid empty across sampled rows, so `upload_src=2048 => targetid non-empty` no longer holds."
+      ],
+      "candidate_correlation": "The earlier targetid hint no longer survives the broader same-type sweep: `mzc00200tjnrzs3` is pure 2048 with targetid empty, while several pure-108 and mixed covers keep targetid non-empty."
+    },
+    "state_8_sports_kids": {
+      "status": "small_family",
+      "current_judgment": "row-level small-family signal, not a sports/kids page-bucket marker",
+      "clean_sports_representative": {
+        "cid": "mzc002003fh665c",
+        "label": "sports collection shell clean representative",
+        "signature": {
+          "state": {
+            "4": 23
+          },
+          "upload_src": {
+            "20": 23
+          },
+          "publish_date_nonempty": 0,
+          "targetid_nonempty": 23
+        }
+      },
+      "mixed_sports_sibling": {
+        "cid": "mzc0020069a6anp",
+        "label": "mixed sibling event hub",
+        "signature": {
+          "state": {
+            "4": 31
+          },
+          "upload_src": {
+            "20": 6,
+            "31": 24,
+            "108": 1
+          },
+          "publish_date_nonempty": 0,
+          "targetid_nonempty": 31
+        }
+      },
+      "kids_bucket_notes": [
+        "double-zero: publish_date=0 and targetid=0",
+        "clean dual-full: publish_date and targetid both full",
+        "hybrid/aggregation-adjacent: targetid can stay full while publish_date is only partial"
+      ],
+      "positive_state_8_examples": [
+        {
+          "vid": "n3122jif99n",
+          "cover_list": "mzc002006tgfqvp",
+          "state": "8",
+          "upload_src": "108"
+        },
+        {
+          "vid": "l3119lm045g",
+          "cover_list": "mzc00200q00mv2h",
+          "state": "8",
+          "upload_src": "108"
+        }
+      ],
+      "positive_environment_retest": {
+        "artifact": "analysis/state8_positive_environment_20260620.json",
+        "stable_positive_covers": [
+          {
+            "cid": "482396nuyaelv0e",
+            "environments": 8,
+            "cross_day_match_20260619": true,
+            "state": {
+              "4": 8,
+              "8": 73
+            },
+            "upload_src": {
+              "20": 3,
+              "108": 78
+            }
+          },
+          {
+            "cid": "mzc002006tgfqvp",
+            "environments": 8,
+            "cross_day_match_20260619": true,
+            "state": {
+              "4": 238,
+              "8": 3
+            },
+            "upload_src": {
+              "108": 240,
+              "141": 1
+            }
+          }
+        ],
+        "guardrail": "This closes positive-family environment evidence for two kids-side covers, not the whole observed universe and not a page-bucket claim."
+      },
+      "environment_scope": [
+        "contract layer is already 8-environment cross-day stable",
+        "two positive state=8 kids-side covers are now 8-environment same-day stable and match their 2026-06-19 state/upload distributions",
+        "sports/kids page-shape conclusions remain mainly base-4 stable",
+        "real login/aged-cookie environment is still open"
+      ]
+    },
+    "frontend_semantic_closure": {
+      "pay_status": "Frontend reads raw-side `pay_status` for `report_cover_pay_status` / `report_vid_pay_status` and keeps adjacent `pay_status_exchange -> showGive` gating, but the first exposed `union.coverInfoMap.pay_status` still collapses to `0` on tested PC Web detail pages.",
+      "downright": "The download toolbar reads `downright` directly; missing codes fall back to `前往客户端下载`, and the positive path then performs permission-style checks.",
+    "cover_merge_path": "The detail bundle's `Une(e)` helper merges `c_covers / topic_id_list / cover_list` into a CID set and points to a candidate `getCoverInfoBatch` follow-up path, but even after request-level capture plus tab-priority and lazy scroll on the two strongest redirected-detail candidates, the tested slice still only observed `PageService/getPage + FillUnionInfo`, not a real `getCoverInfoBatch` request/response.",
+    "targetid": "Current strongest runtime evidence is `commentInfo-layer + synthetic consumer closure`: visible-row / exposed-union layers can stay at `targetid=0` or omit the field, stronger non-zero evidence sits in `root.base.commentInfo.targetid`, raw `DANMAKU_REPORT` payloads already close `targetId -> popup query targetid` at the consumer side, and the new owner-bridge followup still keeps anonymous report/comment DOM identities disjoint from the positive commentInfo targetid/commentid family."
+    },
+    "frontend_f_upload_src": {
+      "current_negative_scope": "two representative redirected detail paths plus three stronger non-detail candidates that still redirected into detail",
+      "new_diff_artifact": "analysis/frontend_startup_vs_runtime_diff_20260620.json",
+      "startup_runtime_diff_takeaway": "The new cross-artifact diff now pins the tested redirected-detail slice more tightly: `positive_trailer` survives startup/SSR -> getPage, `state` can re-enter at FillUnionInfo on cover-only/topic-shell paths, while `F` stays startup-visible only and `upload_src` stays absent across startup/SSR, sampled getPage, sampled FillUnionInfo, and named detail-bundle string hits.",
+      "known_negative_layers": [
+        "tested detail startup/main/runtime slice",
+        "tested row-shell followup",
+      "tested visible-card PageService/getPage row schema",
+      "request-level capture with tab-priority/lazy-scroll on the strongest redirected-detail candidates",
+        "request/response-level getPage + FillUnionInfo on `mzc00200bhj36oq` / `mzc00200nkzol5n` / `mzc00200apbfiqs`"
+      ],
+      "next_high_yield_paths": [
+        "tagged shaping layer after PageService/getPage response",
+        "a path that actually emits the getCoverInfoBatch network request rather than only bundle code references",
+        "stronger non-redirected aggregation / cover-only families if they can be found",
+        "targeted runtime hook at the `c_covers/topic_id_list/cover_list` merge helper or the shaping boundary just after getPage"
+      ],
+    "bundle_code_reference_note": "The refined 2026-06-20 true non-detail candidate probe plus the stronger request-level capture still saw `getCoverInfoBatch` only as bundle/script code reference together with the `c_covers/topic_id_list/cover_list` merge path, not as an actual request/response hit.",
+      "guardrail": "Do not overstate this as a global frontend conclusion; current evidence is strong but still bounded to redirected-detail runtime paths, even when the inputs start from stronger non-detail candidates."
+    },
+    "overclaim_guardrails": [
+      "pay_status=15/16 page-shape naming should stay one level softer than official naming.",
+      "upload_src=2048 evidence should separate independent covers from total matching videos.",
+      "state=8 current observed positive types are not the full observed universe."
+    ]
+  },
+  "source_artifacts": [
+    "analysis/enum_escape_search_parent_20260620.json",
+    "analysis/pay_status_15_family_expansion_20260620.json",
+    "analysis/api2_jsonp_batch_matrix_20260620.json",
+    "analysis/frontend_nondetail_chain_probe_20260620.json",
+    "analysis/frontend_true_nondetail_probe_20260620.json",
+    "analysis/frontend_row_network_request_capture_20260620.json",
+    "analysis/state8_positive_environment_20260620.json",
+    "analysis/gap_ledger_20260620.json",
+    "analysis/frontend_row_schema_probe_20260620.json",
+    "analysis/frontend_row_shell_probe_20260620.json",
+    "analysis/frontend_targetid_report_identity_owner_bridge_20260620.json",
+    "analysis/frontend_runtime_scan_20260619.json",
+    "analysis/upload_src_2048_followup_20260619.json",
+    "analysis/environment_page_shape_sports_kids_crossday_20260620.json",
+    "analysis/sports_candidate_mzc0020069a6anp_20260619.json",
+    "analysis/kids_hybrid_family_followup_20260619.json",
+    "analysis/kids_regular_candidate_mzc00200qrzj493_20260619.json",
+    "analysis/kids_regular_candidate_zkbp0mrqhy0x1hl_20260619.json"
+  ]
+}

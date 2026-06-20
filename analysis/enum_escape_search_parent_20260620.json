@@ -1,0 +1,339 @@
+{
+  "generated_at": "2026-06-20T05:33:13+08:00",
+  "purpose": "focused enum escape spot-check for pay_status=15/16 and upload_src=2048 family",
+  "method": {
+    "search_backend": "pbaccess.video.qq.com trpc.videosearch.mobile_search.MultiTerminalSearch/MbSearch",
+    "api1": "https://data.video.qq.com/fcgi-bin/data",
+    "api2": "https://union.video.qq.com/fcgi-bin/data",
+    "notes": [
+      "Used targeted search terms derived from the current pay_status=15/16 and upload_src=2048 representative families.",
+      "Resolved discovered CIDs through API1, then fetched a small API2 sample for covers that matched pay_status=15, pay_status=16, or type=111."
+    ]
+  },
+  "queries": [
+    {
+      "query": "战至巅峰",
+      "cid_count": 9,
+      "sample_cids": [
+        "mzc00200h90vcfw",
+        "mzc002003dx2kq5",
+        "mzc00200319a0rc",
+        "mzc00200g3ehgxj",
+        "mzc00200g8jl3yj",
+        "mzc00200bkbyma9",
+        "mzc00200o2cedff",
+        "mzc00200ugcqq94",
+        "mzc002001u873es"
+      ]
+    },
+    {
+      "query": "第一视角",
+      "cid_count": 29,
+      "sample_cids": [
+        "mzc0033a9f3u9op",
+        "mzc0039qb84s1ku",
+        "mzc003a86mau8ai",
+        "mzc003okwvjkgy3",
+        "mzc003dxcdpckjp",
+        "mzc0031la2injeu",
+        "mzc003yumuijvfu",
+        "mzc003g9t8kzc8q",
+        "detfud9xaypxeji",
+        "mzc003c6se21bte",
+        "mzc003kp7my49vk",
+        "mzc0020081c19hy"
+      ]
+    },
+    {
+      "query": "赛事全局看",
+      "cid_count": 0,
+      "sample_cids": []
+    },
+    {
+      "query": "推市营业中",
+      "cid_count": 2,
+      "sample_cids": [
+        "mzc00200k1tze71",
+        "mzc00200sd1b239"
+      ]
+    },
+    {
+      "query": "开始推理吧",
+      "cid_count": 4,
+      "sample_cids": [
+        "mzc00200u2ay1kj",
+        "mzc002008rxvoxh",
+        "mzc00200dyitrcy",
+        "mzc00200ynivua7"
+      ]
+    },
+    {
+      "query": "五十公里桃花坞",
+      "cid_count": 7,
+      "sample_cids": [
+        "mzc00200c24ypkp",
+        "mzc002005od4txd",
+        "mzc00200x172sej",
+        "mzc00200t7i1qwp",
+        "mzc00200ljlpzr3",
+        "mzc00200k9i34np",
+        "mzc003c1b7j811h"
+      ]
+    },
+    {
+      "query": "脱口秀和Ta的朋友们",
+      "cid_count": 10,
+      "sample_cids": [
+        "mzc00200tzs7ig5",
+        "mzc00200fezovrj",
+        "mzc00200li7mfpr",
+        "mzc00200urn78dn",
+        "mzc00200lwn6df7",
+        "mzc00200hf5gm6l",
+        "mzc002009axojya",
+        "mzc00200zqq33eq",
+        "mzc00200ku6cgbm",
+        "mzc00200jwkltmo"
+      ]
+    },
+    {
+      "query": "中国舞 基本功",
+      "cid_count": 0,
+      "sample_cids": []
+    },
+    {
+      "query": "软开度",
+      "cid_count": 0,
+      "sample_cids": []
+    },
+    {
+      "query": "身韵",
+      "cid_count": 0,
+      "sample_cids": []
+    }
+  ],
+  "summary": {
+    "unique_cid_count": 60,
+    "resolved_type_counts": {
+      "10/综艺": 51,
+      "2/电视剧": 2,
+      "29/汽车": 1,
+      "4/体育": 3,
+      "9/纪录片": 3
+    },
+    "resolved_pay_status_counts": {
+      "6": 25,
+      "8": 3,
+      "15": 4,
+      "16": 9,
+      "<empty>": 19
+    }
+  },
+  "findings": {
+    "pay_status_15": {
+      "current_result": "still_type_10_bounded_in_this_round",
+      "new_cover_samples_from_this_probe": [
+        {
+          "cid": "mzc00200sd1b239",
+          "title": "推市营业中·与凤行专场",
+          "type": "10/综艺",
+          "pay_status": "15",
+          "positive_trailer": "1",
+          "positive_content_id": "1543606",
+          "video_sample": [
+            {
+              "vid": "x41005iss0f",
+              "upload_src": "20",
+              "state": "4",
+              "targetid": "",
+              "publish_date": "2024-04-11 00:00:00",
+              "title": "团综上集：众神下凡抓魑魅，王爷神君再合体"
+            },
+            {
+              "vid": "e4100faoy0i",
+              "upload_src": "20",
+              "state": "4",
+              "targetid": "",
+              "publish_date": "2024-04-11 00:00:00",
+              "title": "团综下集：甜疯！赵丽颖林更新还原摸头抱"
+            },
+            {
+              "vid": "x4100z2ocgl",
+              "upload_src": "20",
+              "state": "4",
+              "targetid": "",
+              "publish_date": "2024-04-11 00:00:00",
+              "title": "推市剧组小采访：赵丽颖林更新回忆抓衣领吻"
+            }
+          ]
+        }
+      ],
+      "representative_hits": [
+        {
+          "cid": "mzc002001u873es",
+          "title": "战至巅峰之赛事全局看",
+          "positive_trailer": "0",
+          "video_upload_src_sample": [
+            "31",
+            "31",
+            "31",
+            "20"
+          ]
+        },
+        {
+          "cid": "mzc0020081c19hy",
+          "title": "战至巅峰之第一视角",
+          "positive_trailer": "0",
+          "video_upload_src_sample": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "cid": "mzc00200k1tze71",
+          "title": "推市营业中·大奉打更人专场",
+          "positive_trailer": "1",
+          "video_upload_src_sample": [
+            "20",
+            "20",
+            "107",
+            "20"
+          ]
+        }
+      ],
+      "takeaway": [
+        "This round increased the observed pay_status=15 cover sample count from 3 to 4.",
+        "All observed pay_status=15 covers in this focused search round are still type=10/综艺.",
+        "Within the type=10 family, pay_status=15 already spans at least battle-view, first-view-angle, and marketing/team-special variants."
+      ]
+    },
+    "pay_status_16": {
+      "current_result": "expanded_within_type_10_only",
+      "representative_hits": [
+        {
+          "cid": "mzc00200h90vcfw",
+          "title": "战至巅峰 第4季",
+          "positive_trailer": "1",
+          "video_upload_src_sample": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "cid": "mzc002003dx2kq5",
+          "title": "战至巅峰 第3季",
+          "positive_trailer": "1",
+          "video_upload_src_sample": [
+            "20",
+            "20",
+            "31",
+            "20"
+          ]
+        },
+        {
+          "cid": "mzc00200u2ay1kj",
+          "title": "开始推理吧 第4季",
+          "positive_trailer": "1",
+          "video_upload_src_sample": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "cid": "mzc00200c24ypkp",
+          "title": "五十公里桃花坞 第6季",
+          "positive_trailer": "1",
+          "video_upload_src_sample": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "cid": "mzc002005od4txd",
+          "title": "五十公里桃花坞 第5季",
+          "positive_trailer": "1",
+          "video_upload_src_sample": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "cid": "mzc00200x172sej",
+          "title": "五十公里桃花坞 第4季",
+          "positive_trailer": "1",
+          "video_upload_src_sample": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "cid": "mzc00200tzs7ig5",
+          "title": "脱口秀和Ta的朋友们 第3季",
+          "positive_trailer": "2",
+          "video_upload_src_sample": [
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "cid": "mzc00200urn78dn",
+          "title": "脱口秀和Ta的朋友们",
+          "positive_trailer": "1",
+          "video_upload_src_sample": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "cid": "mzc00200lwn6df7",
+          "title": "主咖和Ta的朋友们",
+          "positive_trailer": "1",
+          "video_upload_src_sample": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ]
+        }
+      ],
+      "takeaway": [
+        "This round increased the observed pay_status=16 representative family well beyond the previous 3-cover baseline.",
+        "All observed pay_status=16 covers in this focused search round are still type=10/综艺.",
+        "pay_status=16 already spans multiple subfamilies inside variety, including battle-season, mystery-reality, camp-season, and talk-show branches."
+      ]
+    },
+    "upload_src_2048": {
+      "current_result": "no_new_search_backend_hit_from_title_terms",
+      "searched_terms": [
+        "中国舞 基本功",
+        "软开度",
+        "身韵"
+      ],
+      "takeaway": [
+        "This search-backend round did not return new cover CIDs for the current upload_src=2048 family title terms.",
+        "The current probe therefore does not add new cross-type evidence for upload_src=2048.",
+        "The lack of hits here is search-surface negative evidence only, not a proof that the family cannot expand beyond type=111."
+      ]
+    }
+  },
+  "open_interpretation_notes": [
+    "This artifact is a focused escape probe, not a global coverage pass.",
+    "The pay_status=15 and pay_status=16 findings in this round strengthen the current type=10-bounded interpretation, but do not prove the values can never escape variety.",
+    "The upload_src=2048 section remains open because the search backend did not surface the current type=111 titles with the tested terms."
+  ]
+}

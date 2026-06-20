@@ -1,0 +1,135 @@
+{
+  "generated_at": "2026-06-19",
+  "scope": "state=8 sibling-cover follow-up after the initial q00mv2h discovery",
+  "seed_cover": {
+    "cid": "mzc00200q00mv2h",
+    "type": "113/表演演出",
+    "pay_status": "8",
+    "positive_trailer": "0",
+    "video_count": 283,
+    "state_counts": {
+      "4": 281,
+      "8": 2
+    }
+  },
+  "confirmed_positive_covers": [
+    {
+      "cid": "mzc002006tgfqvp",
+      "type": "106/少儿",
+      "pay_status": "8",
+      "positive_trailer": "0",
+      "video_count": 241,
+      "state_counts": {
+        "4": 238,
+        "8": 3
+      },
+      "upload_src_counts": {
+        "108": 240,
+        "141": 1
+      }
+    },
+    {
+      "cid": "482396nuyaelv0e",
+      "type": "106/少儿",
+      "pay_status": "8",
+      "positive_trailer": "1",
+      "video_count": 81,
+      "state_counts": {
+        "4": 8,
+        "8": 73
+      },
+      "upload_src_counts": {
+        "20": 3,
+        "108": 78
+      }
+    },
+    {
+      "cid": "mzc002007tdpv87",
+      "type": "113/表演演出",
+      "pay_status": "8",
+      "positive_trailer": "0",
+      "video_count": 355,
+      "state_counts": {
+        "4": 350,
+        "8": 5
+      },
+      "upload_src_counts": {
+        "20": 7,
+        "108": 316,
+        "141": 32
+      }
+    },
+    {
+      "cid": "mzc00200dd7dwn2",
+      "pay_status": "8",
+      "positive_trailer": "1",
+      "video_count": 7,
+      "state_counts": {
+        "8": 7
+      }
+    },
+    {
+      "cid": "mzc00200seycm50",
+      "pay_status": "8",
+      "positive_trailer": "1",
+      "video_count": 143,
+      "state_counts": {
+        "4": 135,
+        "8": 8
+      }
+    }
+  ],
+  "contrast_covers": [
+    {
+      "cid": "mzc002000xmvpgy",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "video_count": 104,
+      "state_counts": {
+        "4": 104
+      },
+      "judgment": "strong_negative"
+    },
+    {
+      "cid": "mzc00200nlxxm5m",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "video_count": 26,
+      "state_counts": {
+        "4": 26
+      },
+      "judgment": "strong_negative"
+    },
+    {
+      "cid": "mzc00200axsj6bx",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "video_count": 41,
+      "state_counts": {
+        "4": 37,
+        "8": 4
+      },
+      "judgment": "proves_state8_not_equal_pay_status8"
+    },
+    {
+      "cid": "mzc00200tuupfc2",
+      "pay_status": "8",
+      "video_count": 137,
+      "state_counts": {
+        "4": 137
+      },
+      "judgment": "proves_pay_status8_not_equal_state8"
+    }
+  ],
+  "current_judgments": [
+    "state=8 is no longer a single-cover anomaly.",
+    "state=8 has at least one stable child-heavy family under `type=106/少儿` and one mixed family under `type=113/表演演出`.",
+    "state=8 is sparse inside some covers and dominant inside others, so it should be modeled as a row-level family signal rather than a cover-level always-on marker.",
+    "state=8 does not equal pay_status=8, and pay_status=8 does not imply state=8."
+  ],
+  "next_best_paths": [
+    "mzc002006tgfqvp -> u30147lnar0 -> mzc00200axsj6bx / mzc00200ts7o7io",
+    "mzc00200q00mv2h -> n3122jif99n -> 482396nuyaelv0e -> mzc00200seycm50",
+    "mzc002007tdpv87 -> mzc00200dd7dwn2 / mzc002005fjztu9 / mzc00200cncbmcl"
+  ]
+}

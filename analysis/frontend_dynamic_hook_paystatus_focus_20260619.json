@@ -1,0 +1,246 @@
+{
+  "generated_at": "2026-06-19T15:09:05.864Z",
+  "scope": "focused pay_status runtime summary",
+  "pages": [
+    {
+      "bucket": "movie_single_pay6_exchange_true",
+      "cid": "mzc00200idzf2m8",
+      "vid": "z4102qfi0x4",
+      "title": "飞驰人生3_电影_高清完整版视频在线观看_腾讯视频",
+      "exposed_union_snapshot": {
+        "cover_pay_status": "0",
+        "pay_status_exchange": true,
+        "show_gift": false,
+        "cover_positive_trailer": 1,
+        "cover_positive_content_id": "1543606",
+        "cover_has_F": false,
+        "video_state": 4,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_has_F": false
+      },
+      "parsed_pay_status_values": ["0", 6],
+      "parsed_positive_trailer_values": [1],
+      "parsed_targetid_values": ["0"],
+      "get_counts": {
+        "pay_status": 23,
+        "pay_status_exchange": 22,
+        "show_gift": 22,
+        "positive_trailer": 23,
+        "state": 23,
+        "targetid": 1,
+        "upload_src": 0,
+        "F": 0
+      },
+      "current_takeaways": [
+        "first exposed union cover pay_status was already \"0\"",
+        "JSON.parse saw pay_status values \"0\", 6",
+        "JSON.parse saw targetId/targetid values \"0\"",
+        "logged 23 runtime get(s) on pay_status",
+        "logged 22 runtime get(s) on pay_status_exchange",
+        "logged 1 runtime get(s) on targetId/targetid"
+      ]
+    },
+    {
+      "bucket": "tv_season_pay6_exchange_false",
+      "cid": "mzc00200whxf2zp",
+      "vid": "k41026bh3p0",
+      "title": "问心2_01_电视剧_高清完整版视频在线观看_腾讯视频",
+      "exposed_union_snapshot": {
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 1,
+        "cover_positive_content_id": "1543606",
+        "cover_has_F": false,
+        "video_state": 4,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_has_F": false
+      },
+      "parsed_pay_status_values": ["0", 6, 8],
+      "parsed_positive_trailer_values": [1],
+      "parsed_targetid_values": ["0"],
+      "get_counts": {
+        "pay_status": 22,
+        "pay_status_exchange": 22,
+        "show_gift": 22,
+        "positive_trailer": 23,
+        "state": 9,
+        "targetid": 0,
+        "upload_src": 0,
+        "F": 0
+      },
+      "current_takeaways": [
+        "first exposed union cover pay_status was already \"0\"",
+        "JSON.parse saw pay_status values \"0\", 6, 8",
+        "JSON.parse saw targetId/targetid values \"0\"",
+        "logged 22 runtime get(s) on pay_status",
+        "logged 22 runtime get(s) on pay_status_exchange"
+      ]
+    },
+    {
+      "bucket": "variety_topic_pay15",
+      "cid": "mzc002001u873es",
+      "vid": "k004768pj4j",
+      "title": "EP10战局纯享：WindVSS.Carry决赛第一场_综艺_高清完整版视频在线观看_腾讯视频",
+      "exposed_union_snapshot": {
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 0,
+        "cover_positive_content_id": "1543606",
+        "cover_has_F": false,
+        "video_state": 4,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_has_F": false
+      },
+      "parsed_pay_status_values": ["0", 15],
+      "parsed_positive_trailer_values": [0],
+      "parsed_targetid_values": ["0"],
+      "get_counts": {
+        "pay_status": 17,
+        "pay_status_exchange": 17,
+        "show_gift": 17,
+        "positive_trailer": 18,
+        "state": 13,
+        "targetid": 4,
+        "upload_src": 0,
+        "F": 0
+      },
+      "current_takeaways": [
+        "first exposed union cover pay_status was already \"0\"",
+        "JSON.parse saw pay_status values \"0\", 15",
+        "JSON.parse saw targetId/targetid values \"0\"",
+        "logged 17 runtime get(s) on pay_status",
+        "logged 17 runtime get(s) on pay_status_exchange",
+        "logged 4 runtime get(s) on targetId/targetid"
+      ]
+    },
+    {
+      "bucket": "kids_free_pack_pay8",
+      "cid": "mzc002002cxp3uh",
+      "vid": "h0044rruc7z",
+      "title": "美国游_01_少儿_动画片大全_腾讯视频",
+      "exposed_union_snapshot": {
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 1,
+        "cover_positive_content_id": "1543606",
+        "cover_has_F": false,
+        "video_state": 4,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_has_F": false
+      },
+      "parsed_pay_status_values": ["0", 8],
+      "parsed_positive_trailer_values": [1],
+      "parsed_targetid_values": ["0"],
+      "get_counts": {
+        "pay_status": 20,
+        "pay_status_exchange": 19,
+        "show_gift": 19,
+        "positive_trailer": 20,
+        "state": 13,
+        "targetid": 1,
+        "upload_src": 0,
+        "F": 0
+      },
+      "current_takeaways": [
+        "first exposed union cover pay_status was already \"0\"",
+        "JSON.parse saw pay_status values \"0\", 8",
+        "JSON.parse saw targetId/targetid values \"0\"",
+        "logged 20 runtime get(s) on pay_status",
+        "logged 19 runtime get(s) on pay_status_exchange",
+        "logged 1 runtime get(s) on targetId/targetid"
+      ]
+    },
+    {
+      "bucket": "sports_replay_pay8",
+      "cid": "mzc00200k9sp5r2",
+      "vid": "q4101u7frq2",
+      "title": "FE赛车_2026FE电动方程式世界锦标赛迈阿密站正赛_【集锦】P9toP1！米奇·埃文斯毫不妥协连续上演超越好戏赢得迈阿密站冠军_高清1080P在线观看平台_腾讯视频",
+      "exposed_union_snapshot": {
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 1,
+        "cover_positive_content_id": "1543606",
+        "cover_has_F": false,
+        "video_state": 4,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_has_F": false
+      },
+      "parsed_pay_status_values": ["0"],
+      "parsed_positive_trailer_values": [1],
+      "parsed_targetid_values": ["0"],
+      "get_counts": {
+        "pay_status": 23,
+        "pay_status_exchange": 23,
+        "show_gift": 22,
+        "positive_trailer": 23,
+        "state": 23,
+        "targetid": 1,
+        "upload_src": 0,
+        "F": 0
+      },
+      "current_takeaways": [
+        "first exposed union cover pay_status was already \"0\"",
+        "JSON.parse saw pay_status values \"0\"",
+        "JSON.parse saw targetId/targetid values \"0\"",
+        "logged 23 runtime get(s) on pay_status",
+        "logged 23 runtime get(s) on pay_status_exchange",
+        "logged 1 runtime get(s) on targetId/targetid"
+      ]
+    },
+    {
+      "bucket": "education_coveronly_pay8",
+      "cid": "mzc00200bhj36oq",
+      "vid": "e3075bgqeto",
+      "title": "01小学英语科学：我们的知觉_高清1080P在线观看平台_腾讯视频",
+      "exposed_union_snapshot": {
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 0,
+        "cover_positive_content_id": "1543606",
+        "cover_has_F": false,
+        "video_state": 4,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_has_F": false
+      },
+      "parsed_pay_status_values": ["0"],
+      "parsed_positive_trailer_values": [0],
+      "parsed_targetid_values": ["0"],
+      "get_counts": {
+        "pay_status": 22,
+        "pay_status_exchange": 22,
+        "show_gift": 22,
+        "positive_trailer": 23,
+        "state": 16,
+        "targetid": 4,
+        "upload_src": 0,
+        "F": 0
+      },
+      "current_takeaways": [
+        "first exposed union cover pay_status was already \"0\"",
+        "JSON.parse saw pay_status values \"0\"",
+        "JSON.parse saw targetId/targetid values \"0\"",
+        "logged 22 runtime get(s) on pay_status",
+        "logged 22 runtime get(s) on pay_status_exchange",
+        "logged 4 runtime get(s) on targetId/targetid"
+      ]
+    }
+  ],
+  "cross_page_takeaways": [
+    "First observed exposed union pay_status values: \"0\".",
+    "JSON.parse still saw raw pay_status-like values: \"0\", 6, 8, 15.",
+    "Runtime getter access on targetId/targetid was captured on: movie_single_pay6_exchange_true, variety_topic_pay15, kids_free_pack_pay8, sports_replay_pay8, education_coveronly_pay8.",
+    "No runtime getter access on upload_src was captured in this round.",
+    "No runtime getter access on F was captured in this round."
+  ]
+}

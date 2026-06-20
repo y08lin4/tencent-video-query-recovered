@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-06-19",
+  "mismatches": [
+    {
+      "field": "pay_status",
+      "api_shape": "API1 cover-side evidence currently carries raw text codes such as `6`, `8`, and `15` on representative pages.",
+      "frontend_shape": "The 2026-06-19 dynamic hook probe shows sampled exposed `union.coverInfoMap` rows already at `pay_status=0`, while `JSON.parse`-layer objects still see raw-like values such as `0/6/8/15`; adjacent booleans such as `pay_status_exchange` and `show_gift` remain available.",
+      "example": "Movie `mzc00200idzf2m8` keeps raw-side `pay_status=6`, but sampled runtime union store exposes `pay_status=0` plus `pay_status_exchange=true`; education `mzc00200bhj36oq` and variety `mzc002001u873es` also expose runtime `pay_status=0`.",
+      "current_judgment": "On the tested 2026-06-19 PC Web detail pages, the exposed union-store slot does not preserve raw pay_status verbatim; current evidence points to remap/defaulting/shaping before or during exposed union-store construction, plus adjacent gating booleans. Raw `pay_status` therefore survives long enough for reporting/adjacent gates, but the first exposed union slot is already post-shaped and raw `pay_status` itself is not the sole frontend branch switch."
+    },
+    {
+      "field": "positive_trailer",
+      "api_shape": "API1 returns XML text values such as `0/1/2`.",
+      "frontend_shape": "Frontend normalization converts it with `ko(...)` before storing it in cover info state, but sampled runtime union rows still preserve the current `0/1/2` family values.",
+      "current_judgment": "This is a type-level remap rather than a semantic mismatch."
+    },
+    {
+      "field": "type",
+      "api_shape": "API1 returns XML text values such as `1/3/10/...`.",
+      "frontend_shape": "Frontend normalization converts it with `ko(...)` before storing it in cover info state.",
+      "current_judgment": "This is a type-level remap rather than a semantic mismatch."
+    },
+    {
+      "field": "publish_date",
+      "api_shape": "API1 cover info may contain a non-empty `publish_date`.",
+      "frontend_shape": "Frontend maps it to `publishDate` and can suppress surface display with `usePublishDate=false`.",
+      "example": "Film page `mzc00200idzf2m8 / 飞驰人生3` carries cover-level `publish_date=2026-02-17`, but currentVideo SSR shows `publishDate=\"\"` plus `usePublishDate=false`.",
+      "current_judgment": "The frontend can intentionally hide a backend date."
+    },
+    {
+      "field": "cover_list + c_covers + topic_id_list",
+      "api_shape": "API2 returns raw fields separately, with `c_covers` as `+`-joined text and `cover_list` as an array-like value.",
+      "frontend_shape": "Frontend merges and deduplicates them via helper `Une(e)` before pointing the merged CID set toward a candidate follow-up path.",
+      "current_judgment": "The frontend does not consume the raw shape directly, but on the tested redirected-detail slice the evidence is currently stronger for the merge path than for the exact downstream request target: a real `getCoverInfoBatch` request/response is still unobserved there."
+    },
+    {
+      "field": "targetid",
+      "api_shape": "API2 uses snake_case `targetid`.",
+      "frontend_shape": "Static bundle sinks consume camelCase `targetId`. On the tested runtime slice, visible-row / exposed-union layers can still stay at shell-level `targetid=0` or omit the field, while the stronger non-zero runtime evidence now sits in `root.base.commentInfo.targetid/commentid` and synthetic runtime probing already closes the downstream `targetId -> popup query targetid` consumer mapping.",
+      "current_judgment": "The field is reshaped and its strongest current runtime home is the comment/community-side `commentInfo` layer rather than the exposed detail union row. The remaining open gap is the natural live producer, not the downstream consumer mapping."
+    },
+    {
+      "field": "upload_src",
+      "api_shape": "API2 returns `upload_src` for many page families.",
+      "frontend_shape": "The field is omitted from tested startup / SSR payloads, was not observed in the tested modern/legacy detail bundles, sampled `FillUnionInfo` responses, sampled runtime union store rows, the 2026-06-20 row-shell followup, the matched visible-card `PageService/getPage` row schema, or the new startup-vs-runtime diff on `mzc00200bhj36oq` / `mzc00200nkzol5n` / `mzc00200apbfiqs`; the tested detail bundle string audit also kept `upload_src` / `uploadSrc` at zero named hits.",
+      "current_judgment": "Current evidence from the tested redirected-detail startup/main/runtime plus visible-card row-schema slice says the field may be omitted there entirely and only exposed or consumed in an earlier hidden shaping step, a later lazy bundle, or a non-detail runtime path."
+    },
+    {
+      "field": "F",
+      "api_shape": "API2 returns per-video `F` values that matter for black-box clustering.",
+      "frontend_shape": "Representative pages already carry raw `F` in startup / SSR payloads, but no direct named read was isolated in tested detail bundles, sampled `txv.core.js` / `superplayer-txv.js`, sampled `FillUnionInfo` responses, sampled runtime union store rows, the 2026-06-19 dynamic hook probe, the matched visible-card `PageService/getPage` row schema, or the new startup-vs-runtime diff on the three redirected-detail candidates; the tested detail bundle string audit also kept named `\"F\":` / `[\"F\"]` / `['F']` business-field hits at zero.",
+      "current_judgment": "The field survives into frontend startup payloads, but current tested detail-page startup/main/runtime plus visible-card row-schema evidence still does not show it surviving into the exposed union store, the visible-card row schema, or a named main-chain consumer."
+    }
+  ]
+}

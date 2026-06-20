@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "vector-layout getPage row schema probe for visible detail-page cards",
+  "cases": [
+    {
+      "bucket": "tv_season_f_mixed",
+      "input_url": "https://v.qq.com/x/cover/mzc00200whxf2zp.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200whxf2zp/k41026bh3p0.html",
+      "matched_row_field_presence_union": {
+        "has_positive_trailer": true,
+        "has_targetid": false,
+        "has_state": true,
+        "has_upload_src": false,
+        "has_F": false
+      },
+      "matched_rows_sample": [
+        {
+          "path": "payload.data.CardList[5].children_list.0.cards[0].params",
+          "field_values": {
+            "vid": "w3283ms0i2f",
+            "c_title_detail": "那是生死，怎么可能看淡",
+            "positive_trailer": "2",
+            "state": "4",
+            "type": "2"
+          }
+        },
+        {
+          "path": "payload.data.CardList[5].children_list.1.cards[0].params",
+          "field_values": {
+            "vid": "i3283aev84x",
+            "c_title_detail": "妹妹一句话让哥哥猛男落泪 亲兄妹从来没有隔夜仇",
+            "positive_trailer": "2",
+            "state": "4",
+            "type": "2"
+          }
+        }
+      ]
+    },
+    {
+      "bucket": "variety_topic_uploadsrc_mixed",
+      "input_url": "https://v.qq.com/x/cover/mzc00200iy331ds.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200iy331ds/f41023gibme.html",
+      "matched_row_field_presence_union": {
+        "has_positive_trailer": true,
+        "has_targetid": true,
+        "has_state": false,
+        "has_upload_src": false,
+        "has_F": false
+      },
+      "matched_rows_sample": [
+        {
+          "path": "payload.data.CardList[3].children_list.0.cards[0].params",
+          "field_values": {
+            "vid": "f41023gibme",
+            "title_new": "邓超说霸总台词 一分钟八百个动作",
+            "positive_trailer": "0",
+            "targetid": "0",
+            "type": "0"
+          }
+        },
+        {
+          "path": "payload.data.CardList[3].children_list.1.cards[0].params",
+          "field_values": {
+            "vid": "g4102k4sv6b",
+            "title_new": "金志文被泼满脸泥反应亮了",
+            "positive_trailer": "0",
+            "targetid": "0",
+            "type": "0"
+          }
+        }
+      ]
+    }
+  ],
+  "takeaways": [
+    "The matched getPage row schema for visible cards on `tv_season_f_mixed` still carried `vid`, `c_title_detail`, `positive_trailer`, and `state`, but omitted both `upload_src` and `F`.",
+    "The matched getPage row schema for visible cards on `variety_topic_uploadsrc_mixed` still carried `vid`, `title_new`, `positive_trailer`, and `targetid`, but omitted both `upload_src` and `F`.",
+    "Across the current representative detail pages, the visible-card row schema itself now looks like another omission point for `upload_src` and `F`, not just the exposed union store."
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "detail-page visible module / tab / card-surface probe for positive_trailer frontend semantics",
+  "method": {
+    "browser": "system Chrome via Playwright",
+    "browser_executable": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "wait_ms_after_domcontentloaded": 12000,
+    "cases": [
+      {
+        "bucket": "tv_topic_positive_trailer_2_pay8",
+        "url": "https://v.qq.com/x/cover/mzc00200nkzol5n.html"
+      },
+      {
+        "bucket": "tv_season_positive_trailer_2_pay6",
+        "url": "https://v.qq.com/x/cover/mzc002001w361jz.html"
+      },
+      {
+        "bucket": "variety_topic_positive_trailer_0",
+        "url": "https://v.qq.com/x/cover/mzc002001u873es/k004768pj4j.html"
+      },
+      {
+        "bucket": "kids_positive_trailer_1",
+        "url": "https://v.qq.com/x/cover/jynqzy9n3wfrsfp/l0020z7maus.html"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "bucket": "tv_topic_positive_trailer_2_pay8",
+      "final_url": "https://v.qq.com/x/cover/mzc00200nkzol5n/d4101fbbch2.html",
+      "title": "李昀锐腾讯视频马年拜年祝福_电视剧_高清完整版视频在线观看_腾讯视频",
+      "union_snapshot": {
+        "cover_positive_trailer": 2,
+        "cover_positive_content_id": "1543606",
+        "cover_pay_status": "0",
+        "cover_type": 2,
+        "cover_type_name": "电视剧",
+        "video_state": 4
+      },
+      "module_titles": [
+        "精彩预告",
+        "相关短视频",
+        "看《合成令》的也喜欢"
+      ],
+      "tab_nodes": [
+        {
+          "text": "更多短视频",
+          "selected": true
+        }
+      ],
+      "card_samples": [
+        {
+          "badge": "预告",
+          "title": "合则强！《合成令》超燃预告 见证年轻士兵军营蜕变！"
+        }
+      ],
+      "module_keyword_counts": {
+        "预告": 1,
+        "精彩预告": 1
+      },
+      "card_badge_keyword_counts": {
+        "预告": 1
+      }
+    },
+    {
+      "bucket": "tv_season_positive_trailer_2_pay6",
+      "final_url": "https://v.qq.com/x/cover/mzc002001w361jz/p3194lmiwjg.html",
+      "title": "《尚公主》同风起满月特辑_电视剧_高清完整版视频在线观看_腾讯视频",
+      "union_snapshot": {
+        "cover_positive_trailer": 2,
+        "cover_positive_content_id": "1543606",
+        "cover_pay_status": "0",
+        "cover_type": 2,
+        "cover_type_name": "电视剧",
+        "video_state": 4
+      },
+      "module_titles": [
+        "精彩预告",
+        "相关短视频",
+        "更多内容打包看",
+        "看《尚公主》的也喜欢"
+      ],
+      "tab_nodes": [
+        {
+          "text": "1-30",
+          "selected": true
+        },
+        {
+          "text": "31-31",
+          "selected": false
+        },
+        {
+          "text": "更多短视频",
+          "selected": true
+        }
+      ],
+      "card_samples": [
+        {
+          "badge": "预告",
+          "title": "《尚公主》首发预告，孟子义李昀锐曳影夜话。"
+        },
+        {
+          "badge": "VIP",
+          "title": "会员福利：探班《尚公主》剧组VLOG"
+        }
+      ],
+      "module_keyword_counts": {
+        "预告": 1,
+        "精彩预告": 1
+      },
+      "card_badge_keyword_counts": {
+        "预告": 1
+      }
+    },
+    {
+      "bucket": "variety_topic_positive_trailer_0",
+      "final_url": "https://v.qq.com/x/cover/mzc002001u873es/k004768pj4j.html",
+      "title": "EP10战局纯享：WindVSS.Carry决赛第一场_综艺_高清完整版视频在线观看_腾讯视频",
+      "union_snapshot": {
+        "cover_positive_trailer": 0,
+        "cover_positive_content_id": "1543606",
+        "cover_pay_status": "0",
+        "cover_type": 10,
+        "cover_type_name": "综艺",
+        "video_state": 4
+      },
+      "module_titles": [
+        "选集",
+        "看《战至巅峰之赛事全局看》的也喜欢",
+        "更多短视频"
+      ],
+      "tab_nodes": [],
+      "card_samples": [
+        {
+          "badge": "SVIP",
+          "title": "EP10战局纯享：Wind VS S.Carry决赛第一场"
+        },
+        {
+          "badge": "SVIP",
+          "title": "EP10战局纯享：Wind VS S.Carry决赛第二场"
+        }
+      ],
+      "module_keyword_counts": {
+        "选集": 1,
+        "更多短视频": 1
+      },
+      "card_badge_keyword_counts": {
+        "SVIP": 7
+      },
+      "card_title_keyword_counts": {
+        "纯享": 7
+      }
+    },
+    {
+      "bucket": "kids_positive_trailer_1",
+      "final_url": "https://v.qq.com/x/cover/jynqzy9n3wfrsfp/l0020z7maus.html",
+      "title": "捉迷藏_少儿_动画片大全_腾讯视频",
+      "union_snapshot": {
+        "cover_positive_trailer": 1,
+        "cover_positive_content_id": "1543606",
+        "cover_pay_status": "0",
+        "cover_type": 106,
+        "cover_type_name": "少儿",
+        "video_state": 4
+      },
+      "module_titles": [
+        "相关短视频",
+        "看《小猪佩奇之快乐假期》的也喜欢"
+      ],
+      "tab_nodes": [
+        {
+          "text": "精彩片花",
+          "selected": true
+        },
+        {
+          "text": "更多短视频",
+          "selected": false
+        }
+      ],
+      "card_samples": [
+        {
+          "badge": "VIP",
+          "title": "捉迷藏"
+        },
+        {
+          "badge": "00:34",
+          "title": "佩奇一家开着新车去兜风~"
+        }
+      ],
+      "tab_keyword_counts": {
+        "片花": 1,
+        "精彩片花": 1,
+        "更多短视频": 1
+      }
+    }
+  ],
+  "takeaways": [
+    "positive_trailer=2 representative pages now show a concrete UI-side pattern: the adjacent content module headline becomes `精彩预告`, and the first sampled cards carry explicit `预告` badges.",
+    "positive_trailer=1 representative kids page surfaces a `精彩片花` branch instead of a `精彩预告` headline.",
+    "positive_trailer=0 representative variety topic page stays on an `选集` / program-list surface, and the first sampled cards are dominated by `SVIP` pay badges plus `纯享` titles rather than `预告` badges.",
+    "This remains page-shape-correlated evidence rather than a strict same-layout causal proof: the current probe closes the first visible module/card pattern, not the final backend enum naming."
+  ]
+}

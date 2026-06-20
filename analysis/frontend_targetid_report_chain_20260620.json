@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "static bridge from magic-danmaku REQUEST_REPORT producer to detail-page DANMAKU_REPORT consumer and report iframe attachIframe sink",
+  "source_bundles": {
+    "detail_bundle": "https://vfiles.gtimg.cn/tvideo2/video-detail-vue/assets/index-KKOIl-Tg.js",
+    "magic_danmaku_bundle": "https://vfiles.gtimg.cn/tvideo2/video-detail-vue/assets/index.esm-CRBh1UgF.js",
+    "report_popup_bundle": "https://vfiles.gtimg.cn/tvideo2/video-detail-vue/assets/main-DCF1X-vF.js"
+  },
+  "static_chain": [
+    {
+      "step": 1,
+      "role": "detail bundle loads the magic-danmaku plugin and forwards its REQUEST_REPORT event into the detail-page player event bus",
+      "bundle": "index-KKOIl-Tg.js",
+      "evidence_excerpt": "this.magicDanmakuLoader=new jh(this,{importFn:()=>ea(()=>import(\"./index.esm-CRBh1UgF.js\"),[]),...}); this.magicDanmakuLoader.onload((r,n)=>{const{DanmakuEvents:o}=r; n.on(o.REQUEST_REPORT,a=>{const s=a.data; this.emit(Bt.DANMAKU_REPORT,s)})"
+    },
+    {
+      "step": 2,
+      "role": "current live magic-danmaku REPORT click producer emits REQUEST_REPORT with id only",
+      "bundle": "index.esm-CRBh1UgF.js",
+      "payload_shape": {
+        "present_keys": [
+          "id"
+        ],
+        "absent_static_hits": [
+          "targetId",
+          "targetid",
+          "commentid",
+          "commentInfo"
+        ]
+      },
+      "evidence_excerpt": "case CCClickOperationType.REPORT:this.emit(DanmakuEvents.REQUEST_REPORT,{id:getDanmakuId(R)});break;"
+    },
+    {
+      "step": 3,
+      "role": "detail-page DANMAKU_REPORT consumer expects targetId on incoming data and forwards it as targetid to the report popup",
+      "bundle": "index-KKOIl-Tg.js",
+      "expected_input_keys": [
+        "id",
+        "targetId"
+      ],
+      "evidence_excerpt": "const g=async b=>{... (await import(\"./main-DCF1X-vF.js\").then(x=>x.m)).default.attachIframe(5,{id:b.data.id,targetid:b.data.targetId})}; i.on(Bt.DANMAKU_REPORT,g)"
+    },
+    {
+      "step": 4,
+      "role": "report popup attachIframe serializes object keys verbatim into the iframe query string",
+      "bundle": "main-DCF1X-vF.js",
+      "serialization_rule": "https://m.v.qq.com/z/app/video-report-h5/index.html?reportType=<type>&\" + Object.keys(u).map(h => h + \"=\" + u[h]).join(\"&\")",
+      "value_cases": {
+        "key_missing": "targetid omitted entirely",
+        "targetid_undefined": "targetid=undefined",
+        "targetid_empty_string": "targetid=",
+        "targetid_null": "targetid=null"
+      },
+      "evidence_excerpt": "attachIframe:function(a,u){... var d=\"https://m.v.qq.com/z/app/video-report-h5/index.html?reportType=\"+a+\"&\"+(typeof u==\"object\"?Object.keys(u).map(function(h){return h+\"=\"+u[h]}).join(\"&\"):\"id=\"+u) ...}"
+    }
+  ],
+  "current_judgment": [
+    "The current live magic-danmaku REPORT-click producer and the immediate REQUEST_REPORT -> Bt.DANMAKU_REPORT forwarder do not statically populate targetId/targetid/commentid.",
+    "The downstream DANMAKU_REPORT consumer does expect b.data.targetId, so the current static chain contains a shape discontinuity: sink expects targetId, while the currently observed producer path only emits id.",
+    "This makes the known runtime clue root.base.commentInfo.targetid harder to explain through the currently observed REPORT-click producer path.",
+    "If the current producer path reached attachIframe unchanged, the popup URL would only include targetid when the caller actually places that key in the object; if the key is present with undefined, it would serialize as targetid=undefined."
+  ],
+  "related_runtime_artifacts": [
+    "analysis/frontend_targetid_runtime_followup_20260620.json",
+    "analysis/frontend_targetid_interaction_network_20260620.json",
+    "analysis/frontend_targetid_semantics_20260620.json"
+  ],
+  "open_questions": [
+    "Whether a different lazy-loaded DANMAKU_REPORT producer populates targetId on current or other environments.",
+    "Whether the attachIframe(5,{id,targetid}) sink is usually driven by a path outside the currently observed REQUEST_REPORT click producer.",
+    "Whether comment/community-side commentInfo.targetid/commentid are permanently disjoint from the active dokiid/ftid chain and from the report-popup path."
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "generated_at": "2026-06-19",
+  "pages": [
+    {
+      "cid": "mzc00200q00mv2h",
+      "title": "暑期作战大联盟，全员待命去冒险！",
+      "video_count": 283,
+      "state_counts": {"4": 281, "8": 2},
+      "upload_counts": {"20": 71, "105": 2, "108": 199, "141": 11},
+      "state8_rows": [
+        {
+          "vid": "n3122jif99n",
+          "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+          "state": "8",
+          "upload_src": "108",
+          "category_map": "11249,正片,1251,玩具,106,少儿",
+          "url": "https://v.qq.com/x/page/n3122jif99n.html"
+        },
+        {
+          "vid": "l3119lm045g",
+          "title": "舒克贝塔飞机坦克玩具套装玩玩乐！团结合作完成救援恐龙任务！",
+          "state": "8",
+          "upload_src": "108",
+          "category_map": "11244,正片,1250,动画,106,少儿",
+          "url": "https://v.qq.com/x/page/l3119lm045g.html"
+        }
+      ]
+    },
+    {
+      "cid": "mzc00200iy331ds",
+      "title": "五哈热点一网打尽",
+      "video_count": 114,
+      "state_counts": {"4": 114},
+      "upload_counts": {"20": 28, "107": 18, "108": 63, "138": 5},
+      "upload_src_107_examples": [
+        "f41023gibme / 邓超说霸总台词 一分钟八百个动作 / state=4 / 10001,正片,1001,栏目,10,综艺",
+        "g4102k4sv6b / 金志文被泼满脸泥反应亮了 / state=4 / 10001,正片,1001,栏目,10,综艺",
+        "r4102i22si5 / 感谢“鹿角”先生给孩子们的足球装备 / state=4 / 10010,片段,1001,栏目,10,综艺",
+        "j4102f0hj42 / 邓超庆祝五哈6定档，与小黑人共舞被强制下班 / state=4 / 10004,预告片,1001,栏目,10,综艺"
+      ],
+      "upload_src_138_examples": [
+        "g31977cqq04 / 五哈铁三角邓超陈赫鹿晗合体，谁的下饭伴侣回归了《五哈6》 / state=4 / 11881,评论解读,1001,栏目,10,综艺",
+        "f3197n42wk9 / 《五哈6》官宣，鹿晗回归后“铁三角”终于重聚，依旧是熟悉的面孔 / state=4 / 11880,资讯节目,1001,栏目,10,综艺",
+        "r31970xkhnb / 邓超陈赫鹿晗“铁三角”再度合体，快乐都要溢出屏幕啦《五哈6》 / state=4 / 11922,微综艺,1001,栏目,10,综艺",
+        "d3197nta6q6 / 《五哈6》官宣定档4月4日，鹿晗邓超陈赫再合体，泥地摔跤放飞自我 / state=4 / 11880,资讯节目,1001,栏目,10,综艺"
+      ]
+    },
+    {
+      "cid": "mzc00200j7l2u0p",
+      "title": "免费动画屋",
+      "video_count": 356,
+      "state_counts": {"4": 356},
+      "upload_counts": {"7": 21, "20": 225, "107": 104, "116": 5, "129": 1},
+      "upload_src_107_examples": [
+        "s0025v443sh / 雪地搜索 / state=4 / 11244,正片,1250,动画,106,少儿",
+        "l002517vjlb / 海上救援 / state=4 / 11244,正片,1250,动画,106,少儿",
+        "g0025x0npkg / 狗狗拯救海龟 / state=4 / 11244,正片,1250,动画,106,少儿",
+        "w002527exh2 / 冰上救援 / state=4 / 11244,正片,1250,动画,106,少儿"
+      ]
+    },
+    {
+      "cid": "mzc00200pfna6wj",
+      "title": "鹅友新春来拜年【群星祝福视频】",
+      "video_count": 33,
+      "state_counts": {"4": 33},
+      "upload_counts": {"20": 33},
+      "matches_for_state8_or_107_138": 0
+    }
+  ],
+  "new_type_subset": [
+    {
+      "cid": "mzc002005shizp0",
+      "title": "《庆余年》手游虚拟直播发布会",
+      "type": "6/游戏",
+      "state_counts": {"4": 11},
+      "upload_counts": {"31": 1, "108": 10}
+    },
+    {
+      "cid": "mzc00200tp4rwup",
+      "title": "2026腾讯游戏发布会",
+      "type": "6/游戏",
+      "state_counts": {"4": 40},
+      "upload_counts": {"20": 40}
+    },
+    {
+      "cid": "mzc00200vzc9y78",
+      "title": "2023TMEA腾讯音乐娱乐盛典",
+      "type": "22/音乐",
+      "state_counts": {"4": 32},
+      "upload_counts": {"20": 32}
+    },
+    {
+      "cid": "j5wzdu7t6vu3ute",
+      "title": "BIGBANG十周年演唱会首尔站",
+      "type": "22/音乐",
+      "state_counts": {"4": 29},
+      "upload_counts": {"20": 1, "31": 28}
+    },
+    {
+      "cid": "mzc00200hrq1mru",
+      "title": "音乐会《黄河大合唱》中国交响乐团",
+      "type": "31/生活",
+      "state_counts": {"4": 1},
+      "upload_counts": {"0": 1}
+    },
+    {
+      "cid": "mzc00200bhj36oq",
+      "title": "小学自然科学",
+      "type": "27/教育",
+      "state_counts": {"4": 10},
+      "upload_counts": {"108": 10}
+    }
+  ],
+  "sports_subset": {
+    "sample_count": 4,
+    "video_count": 228,
+    "state_union": ["4"],
+    "state_counts": {"4": 228},
+    "upload_src_union": ["20", "31", "138", "146"],
+    "upload_counts": {"20": 50, "31": 31, "138": 130, "146": 17},
+    "publish_date_nonempty_count": 31,
+    "targetid_nonempty_count": 0,
+    "covers": [
+      {
+        "cid": "mzc00383lw807hq",
+        "title": "体育人物",
+        "type": "4/体育",
+        "state_counts": {"4": 41},
+        "upload_counts": {"138": 24, "146": 17},
+        "publish_date_nonempty_count": 0,
+        "targetid_nonempty_count": 0
+      },
+      {
+        "cid": "mzc003t8r55x4z7",
+        "title": "影说赛事",
+        "type": "4/体育",
+        "state_counts": {"4": 106},
+        "upload_counts": {"138": 106},
+        "publish_date_nonempty_count": 0,
+        "targetid_nonempty_count": 0
+      },
+      {
+        "cid": "mzc00200ti1wj2i",
+        "title": "NBA总决赛名局纪录片：星耀传奇",
+        "type": "4/体育",
+        "state_counts": {"4": 50},
+        "upload_counts": {"20": 50},
+        "publish_date_nonempty_count": 0,
+        "targetid_nonempty_count": 0
+      },
+      {
+        "cid": "mzc002003u0t3rl",
+        "title": "2026NBA总冠军巡游",
+        "type": "4/体育",
+        "state_counts": {"4": 31},
+        "upload_counts": {"31": 31},
+        "publish_date_nonempty_count": 31,
+        "targetid_nonempty_count": 0
+      }
+    ]
+  },
+  "pay_status_5_and_9_field_shapes": [
+    {
+      "cid": "mzc00200ls5y7z0",
+      "title": "奔跑的少年",
+      "type": "1/电影",
+      "pay_status": "5",
+      "state_counts": {"4": 1},
+      "upload_counts": {"20": 1},
+      "publish_date_nonempty_count": 0,
+      "targetid_nonempty_count": 1
+    },
+    {
+      "cid": "mzc002006g6kqo4",
+      "title": "黑鹰少年",
+      "type": "1/电影",
+      "pay_status": "5",
+      "state_counts": {"4": 1},
+      "upload_counts": {"20": 1},
+      "publish_date_nonempty_count": 0,
+      "targetid_nonempty_count": 1
+    },
+    {
+      "cid": "mzc003ikavbkqa7",
+      "title": "逐风少年：决胜篮途",
+      "type": "3/动漫",
+      "pay_status": "9",
+      "state_counts": {"4": 61},
+      "upload_counts": {"149": 61},
+      "publish_date_nonempty_count": 0,
+      "targetid_nonempty_count": 0
+    },
+    {
+      "cid": "mzc003nlcrbtvub",
+      "title": "趣界篮球单挑王",
+      "type": "3/动漫",
+      "pay_status": "9",
+      "state_counts": {"4": 20},
+      "upload_counts": {"149": 20},
+      "publish_date_nonempty_count": 0,
+      "targetid_nonempty_count": 0
+    }
+  ]
+}

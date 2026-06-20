@@ -1,0 +1,375 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "browser-level commentInfo/targetid scan focused on parse-layer root.base.commentInfo payloads",
+  "method": {
+    "browser": "system Chrome via Playwright",
+    "browser_executable": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "wait_ms_after_domcontentloaded": 12000,
+    "cases": [
+      {
+        "bucket": "kids_dualfull_targetid",
+        "url": "https://v.qq.com/x/cover/jynqzy9n3wfrsfp/l0020z7maus.html"
+      },
+      {
+        "bucket": "tv_season_second",
+        "url": "https://v.qq.com/x/cover/mzc00200dfbfsrw.html"
+      },
+      {
+        "bucket": "tv_season_qyn2",
+        "url": "https://v.qq.com/x/cover/mzc002002kqssyu/q4100dpkd26.html"
+      },
+      {
+        "bucket": "sports_collection_shell",
+        "url": "https://v.qq.com/x/cover/mzc002003fh665c.html"
+      },
+      {
+        "bucket": "show_perspective_pay15",
+        "url": "https://v.qq.com/x/cover/mzc0020081c19hy.html"
+      },
+      {
+        "bucket": "topic_page_second",
+        "url": "https://v.qq.com/x/cover/mzc00200apbfiqs.html"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "bucket": "kids_dualfull_targetid",
+      "input_url": "https://v.qq.com/x/cover/jynqzy9n3wfrsfp/l0020z7maus.html",
+      "final_url": "https://v.qq.com/x/cover/jynqzy9n3wfrsfp/l0020z7maus.html",
+      "title": "捉迷藏_少儿_动画片大全_腾讯视频",
+      "cid": "jynqzy9n3wfrsfp",
+      "vid": "l0020z7maus",
+      "classification": "positive",
+      "reason_code": "ids_found",
+      "commentinfo_container_present": true,
+      "nonempty_commentinfo_hits": 10,
+      "commentinfo_owner_shape": [
+        [
+          "id",
+          "time",
+          "seq",
+          "scene",
+          "platfrom",
+          "commentInfo",
+          "relation",
+          "shareInfo",
+          "msgId"
+        ]
+      ],
+      "commentinfo_variant_samples": [
+        {
+          "commentInfo_keys_head": [
+            "targetid"
+          ],
+          "targetid_raw": "NzY1MjE0NTY5OA==",
+          "targetid_decoded": "7652145698",
+          "commentid_raw": null,
+          "commentid_decoded": null
+        },
+        {
+          "commentInfo_keys_head": [
+            "targetid",
+            "commentid"
+          ],
+          "targetid_raw": "MTQwOTA2NDQ0OA==",
+          "targetid_decoded": "1409064448",
+          "commentid_raw": "Njc3MDkxMjUyMDE5ODg3NzU4Mg==",
+          "commentid_decoded": "6770912520198877582"
+        },
+        {
+          "commentInfo_keys_head": [
+            "targetid",
+            "commentid"
+          ],
+          "targetid_raw": "MTQwOTA2MzYxMw==",
+          "targetid_decoded": "1409063613",
+          "commentid_raw": "Njg1OTI5MjkxOTcyMzg3MjY1MQ==",
+          "commentid_decoded": "6859292919723872651"
+        }
+      ],
+      "targetid_decoded_values": [
+        "7652145698",
+        "7651921070",
+        "7650573812",
+        "1409064448",
+        "1409063613",
+        "7649839234",
+        "7649690961",
+        "7648975508"
+      ],
+      "commentid_decoded_values": [
+        "6770912520198877582",
+        "6859292919723872651",
+        "6896402705382234285"
+      ],
+      "pg_dokiid_values": [
+        "2100140789"
+      ],
+      "relate_doki_decoded_values": [
+        "2100140789",
+        "2100141096"
+      ]
+    },
+    {
+      "bucket": "tv_season_second",
+      "input_url": "https://v.qq.com/x/cover/mzc00200dfbfsrw.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200dfbfsrw/e003452crbe.html",
+      "title": "长安诺_01_电视剧_高清完整版视频在线观看_腾讯视频",
+      "cid": "mzc00200dfbfsrw",
+      "vid": "e003452crbe",
+      "classification": "positive",
+      "reason_code": "ids_found",
+      "commentinfo_container_present": true,
+      "nonempty_commentinfo_hits": 24,
+      "commentinfo_owner_shape": [
+        [
+          "id",
+          "time",
+          "seq",
+          "scene",
+          "platfrom",
+          "commentInfo",
+          "relation",
+          "shareInfo",
+          "msgId"
+        ],
+        [
+          "id",
+          "time",
+          "seq",
+          "platfrom",
+          "commentInfo",
+          "relation",
+          "shareInfo",
+          "msgId"
+        ],
+        [
+          "id",
+          "time",
+          "scene",
+          "platfrom",
+          "commentInfo",
+          "relation",
+          "shareInfo",
+          "msgId"
+        ]
+      ],
+      "commentinfo_variant_samples": [
+        {
+          "commentInfo_keys_head": [
+            "targetid",
+            "commentid"
+          ],
+          "targetid_raw": "NTg2ODI4Mzc3MQ==",
+          "targetid_decoded": "5868283771",
+          "commentid_raw": "NjcwOTc5MDc2NDgyMjYyNDg2Mw==",
+          "commentid_decoded": "6709790764822624863"
+        },
+        {
+          "commentInfo_keys_head": [
+            "targetid"
+          ],
+          "targetid_raw": "NTk3NTU4OTY0MQ==",
+          "targetid_decoded": "5975589641",
+          "commentid_raw": null,
+          "commentid_decoded": null
+        },
+        {
+          "commentInfo_keys_head": [
+            "targetid",
+            "commentid"
+          ],
+          "targetid_raw": "NTk5NDcwODk4Nw==",
+          "targetid_decoded": "5994708987",
+          "commentid_raw": "NjgzMDE4NTg0MDUyNjYyOTAwNA==",
+          "commentid_decoded": "6830185840526629004"
+        }
+      ],
+      "targetid_decoded_values": [
+        "5868283771",
+        "5975589641",
+        "6061389597",
+        "5994708987",
+        "5868385930",
+        "5868329230",
+        "2088972224",
+        "5975601944",
+        "6021168970"
+      ],
+      "commentid_decoded_values": [
+        "6709790764822624863",
+        "6709816745823554421",
+        "6709793486222596316",
+        "6746004025419267854",
+        "6830185840526629004",
+        "6709797354913430717",
+        "6709797728257813436",
+        "6709797775413375166",
+        "6877427853740859364",
+        "6709793090598106602",
+        "6709795091747687692",
+        "6710051506872319778",
+        "6709805494769842432",
+        "6709949474191641147",
+        "6720565098550857701",
+        "6723558054999652556",
+        "6721951587428192019",
+        "6827684191178463203"
+      ],
+      "pg_dokiid_values": [
+        "2100084287"
+      ],
+      "relate_doki_decoded_values": [
+        "2100084287"
+      ]
+    },
+    {
+      "bucket": "tv_season_qyn2",
+      "input_url": "https://v.qq.com/x/cover/mzc002002kqssyu/q4100dpkd26.html",
+      "final_url": "https://v.qq.com/x/cover/mzc002002kqssyu/q4100dpkd26.html",
+      "title": "庆余年第二季_01_电视剧_高清完整版视频在线观看_腾讯视频",
+      "cid": "mzc002002kqssyu",
+      "vid": "q4100dpkd26",
+      "classification": "negative",
+      "reason_code": "container_empty",
+      "commentinfo_container_present": true,
+      "nonempty_commentinfo_hits": 0,
+      "commentinfo_owner_shape": [
+        [
+          "id",
+          "time",
+          "seq",
+          "scene",
+          "platfrom",
+          "commentInfo",
+          "relation",
+          "shareInfo",
+          "msgId"
+        ],
+        [
+          "id",
+          "time",
+          "seq",
+          "scene",
+          "platfrom",
+          "starPick",
+          "commentInfo",
+          "relation",
+          "shareInfo",
+          "msgId"
+        ],
+        [
+          "id",
+          "time",
+          "seq",
+          "scene",
+          "commentInfo",
+          "relation",
+          "shareInfo",
+          "msgId"
+        ]
+      ],
+      "pg_dokiid_values": [
+        "2101078602"
+      ],
+      "relate_doki_decoded_values": [
+        "2101078602"
+      ]
+    },
+    {
+      "bucket": "sports_collection_shell",
+      "input_url": "https://v.qq.com/x/cover/mzc002003fh665c.html",
+      "final_url": "https://v.qq.com/x/cover/mzc002003fh665c/c0045bl6qpx.html",
+      "title": "全景欧冠_22/23赛季欧冠1/8决赛次回合视频集锦_欧冠1/8决赛十佳球：哈兰德五子登科神迹努涅斯天秀开场_高清1080P在线观看平台_腾讯视频",
+      "cid": "mzc002003fh665c",
+      "vid": "c0045bl6qpx",
+      "classification": "positive",
+      "reason_code": "ids_found",
+      "commentinfo_container_present": true,
+      "nonempty_commentinfo_hits": 1,
+      "commentinfo_owner_shape": [
+        [
+          "id",
+          "time",
+          "seq",
+          "scene",
+          "platfrom",
+          "commentInfo",
+          "relation",
+          "shareInfo",
+          "msgId"
+        ]
+      ],
+      "commentinfo_variant_samples": [
+        {
+          "commentInfo_keys_head": [
+            "targetid"
+          ],
+          "targetid_raw": "ODE0OTEwMjcyOA==",
+          "targetid_decoded": "8149102728",
+          "commentid_raw": null,
+          "commentid_decoded": null
+        }
+      ],
+      "targetid_decoded_values": [
+        "8149102728"
+      ],
+      "commentid_decoded_values": [],
+      "pg_dokiid_values": [],
+      "relate_doki_decoded_values": [
+        "2101191593"
+      ]
+    },
+    {
+      "bucket": "show_perspective_pay15",
+      "input_url": "https://v.qq.com/x/cover/mzc0020081c19hy.html",
+      "final_url": "https://v.qq.com/x/cover/mzc0020081c19hy/z0047w712qa.html",
+      "title": "赖美云第一视角：西施精准预判拉人，控制技能拉满_综艺_高清完整版视频在线观看_腾讯视频",
+      "cid": "mzc0020081c19hy",
+      "vid": "z0047w712qa",
+      "classification": "negative",
+      "reason_code": "container_empty",
+      "commentinfo_container_present": true,
+      "nonempty_commentinfo_hits": 0,
+      "commentinfo_owner_shape": [
+        [
+          "id",
+          "time",
+          "seq",
+          "scene",
+          "platfrom",
+          "commentInfo",
+          "relation",
+          "shareInfo",
+          "msgId"
+        ]
+      ],
+      "pg_dokiid_values": [
+        "2101261725"
+      ],
+      "relate_doki_decoded_values": [
+        "2101261725"
+      ]
+    },
+    {
+      "bucket": "topic_page_second",
+      "input_url": "https://v.qq.com/x/cover/mzc00200apbfiqs.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200apbfiqs/p41013w37rt.html",
+      "title": "畅游天下·云南篇_第12集：昆明·花花世界_高清完整版视频在线观看_腾讯视频",
+      "cid": "mzc00200apbfiqs",
+      "vid": "p41013w37rt",
+      "classification": "negative",
+      "reason_code": "container_missing",
+      "commentinfo_container_present": false,
+      "nonempty_commentinfo_hits": 0
+    }
+  ],
+  "takeaways": [
+    "Positive commentInfo targetid/commentid evidence now spans 3 scanned pages: kids_dualfull_targetid, tv_season_second, sports_collection_shell.",
+    "The second non-kids positive page is now closed: tv_season_second / 长安诺_01 exposes repeated non-empty root.base.commentInfo.targetid/commentid samples and decodes to stable numeric-looking IDs.",
+    "sports_collection_shell adds a second non-kids positive family branch: root.base.commentInfo can carry a non-empty targetid there even when commentid stays empty.",
+    "Backend targetid-heavy shells do not automatically imply positive commentInfo payloads: tv_season_qyn2 and show_perspective_pay15 both kept an empty commentInfo container.",
+    "topic_page_second gives a stronger boundary negative: this generic topic page did not expose a commentInfo container in the scanned parse payloads."
+  ]
+}

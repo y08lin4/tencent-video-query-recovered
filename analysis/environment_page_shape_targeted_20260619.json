@@ -1,0 +1,903 @@
+{
+  "generated_at": "2026-06-19",
+  "scope": "same-day second-representative environment matrix for main page-shape buckets",
+  "environments_tested": [
+    "pc_web_ua",
+    "mobile_h5_ua",
+    "minimal_headers",
+    "referer_origin"
+  ],
+  "bucket_urls": {
+    "film_single_second": "https://v.qq.com/x/cover/mzc002009qyd7nv/m4102tgsa8d.html",
+    "anime_season_second": "https://v.qq.com/x/cover/mzc00200fobieel/u41010ju5vc.html",
+    "tv_season_second": "https://v.qq.com/x/cover/mzc00200dfbfsrw.html",
+    "variety_season_second": "https://v.qq.com/x/cover/mzc00200c2gydkd.html",
+    "kids_regular_season": "https://v.qq.com/x/cover/mzc00200lyd87zd.html",
+    "kids_free_pack_second": "https://v.qq.com/x/cover/mzc002002cxp3uh.html",
+    "topic_page_second": "https://v.qq.com/x/cover/mzc00200apbfiqs.html",
+    "sports_replay_second": "https://v.qq.com/x/cover/mzc00200k9sp5r2.html"
+  },
+  "buckets": {
+    "film_single_second": {
+      "url": "https://v.qq.com/x/cover/mzc002009qyd7nv/m4102tgsa8d.html",
+      "unique_signature_count": 1,
+      "environments": {
+        "pc_web_ua": {
+          "cover_video_ids_count": 1,
+          "cover_downright_count": 26,
+          "state_counts": {
+            "4": 1
+          },
+          "upload_src_counts": {
+            "20": 1
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 0,
+          "selected_row_vid": "m4102tgsa8d",
+          "selected_row_source": "url_vid",
+          "selected_row_cover_list": [
+            "mzc002009qyd7nv",
+            "mzc002001y5ofqy"
+          ],
+          "selected_row_category_map": [
+            "10139",
+            "正片",
+            "1037",
+            "电影",
+            "1",
+            "电影"
+          ]
+        },
+        "mobile_h5_ua": {
+          "cover_video_ids_count": 1,
+          "cover_downright_count": 26,
+          "state_counts": {
+            "4": 1
+          },
+          "upload_src_counts": {
+            "20": 1
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 0,
+          "selected_row_vid": "m4102tgsa8d",
+          "selected_row_source": "url_vid",
+          "selected_row_cover_list": [
+            "mzc002009qyd7nv",
+            "mzc002001y5ofqy"
+          ],
+          "selected_row_category_map": [
+            "10139",
+            "正片",
+            "1037",
+            "电影",
+            "1",
+            "电影"
+          ]
+        },
+        "minimal_headers": {
+          "cover_video_ids_count": 1,
+          "cover_downright_count": 26,
+          "state_counts": {
+            "4": 1
+          },
+          "upload_src_counts": {
+            "20": 1
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 0,
+          "selected_row_vid": "m4102tgsa8d",
+          "selected_row_source": "url_vid",
+          "selected_row_cover_list": [
+            "mzc002009qyd7nv",
+            "mzc002001y5ofqy"
+          ],
+          "selected_row_category_map": [
+            "10139",
+            "正片",
+            "1037",
+            "电影",
+            "1",
+            "电影"
+          ]
+        },
+        "referer_origin": {
+          "cover_video_ids_count": 1,
+          "cover_downright_count": 26,
+          "state_counts": {
+            "4": 1
+          },
+          "upload_src_counts": {
+            "20": 1
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 0,
+          "selected_row_vid": "m4102tgsa8d",
+          "selected_row_source": "url_vid",
+          "selected_row_cover_list": [
+            "mzc002009qyd7nv",
+            "mzc002001y5ofqy"
+          ],
+          "selected_row_category_map": [
+            "10139",
+            "正片",
+            "1037",
+            "电影",
+            "1",
+            "电影"
+          ]
+        }
+      }
+    },
+    "anime_season_second": {
+      "url": "https://v.qq.com/x/cover/mzc00200fobieel/u41010ju5vc.html",
+      "unique_signature_count": 1,
+      "environments": {
+        "pc_web_ua": {
+          "cover_video_ids_count": 48,
+          "cover_downright_count": 30,
+          "state_counts": {
+            "4": 48
+          },
+          "upload_src_counts": {
+            "108": 1,
+            "20": 47
+          },
+          "publish_date_nonempty_count": 1,
+          "targetid_nonempty_count": 1,
+          "selected_row_vid": "u41010ju5vc",
+          "selected_row_source": "url_vid",
+          "selected_row_cover_list": "mzc00200fobieel",
+          "selected_row_category_map": [
+            "10994",
+            "正片",
+            "1204",
+            "动漫",
+            "3",
+            "动漫"
+          ]
+        },
+        "mobile_h5_ua": {
+          "cover_video_ids_count": 48,
+          "cover_downright_count": 30,
+          "state_counts": {
+            "4": 48
+          },
+          "upload_src_counts": {
+            "108": 1,
+            "20": 47
+          },
+          "publish_date_nonempty_count": 1,
+          "targetid_nonempty_count": 1,
+          "selected_row_vid": "u41010ju5vc",
+          "selected_row_source": "url_vid",
+          "selected_row_cover_list": "mzc00200fobieel",
+          "selected_row_category_map": [
+            "10994",
+            "正片",
+            "1204",
+            "动漫",
+            "3",
+            "动漫"
+          ]
+        },
+        "minimal_headers": {
+          "cover_video_ids_count": 48,
+          "cover_downright_count": 30,
+          "state_counts": {
+            "4": 48
+          },
+          "upload_src_counts": {
+            "108": 1,
+            "20": 47
+          },
+          "publish_date_nonempty_count": 1,
+          "targetid_nonempty_count": 1,
+          "selected_row_vid": "u41010ju5vc",
+          "selected_row_source": "url_vid",
+          "selected_row_cover_list": "mzc00200fobieel",
+          "selected_row_category_map": [
+            "10994",
+            "正片",
+            "1204",
+            "动漫",
+            "3",
+            "动漫"
+          ]
+        },
+        "referer_origin": {
+          "cover_video_ids_count": 48,
+          "cover_downright_count": 30,
+          "state_counts": {
+            "4": 48
+          },
+          "upload_src_counts": {
+            "108": 1,
+            "20": 47
+          },
+          "publish_date_nonempty_count": 1,
+          "targetid_nonempty_count": 1,
+          "selected_row_vid": "u41010ju5vc",
+          "selected_row_source": "url_vid",
+          "selected_row_cover_list": "mzc00200fobieel",
+          "selected_row_category_map": [
+            "10994",
+            "正片",
+            "1204",
+            "动漫",
+            "3",
+            "动漫"
+          ]
+        }
+      }
+    },
+    "tv_season_second": {
+      "url": "https://v.qq.com/x/cover/mzc00200dfbfsrw.html",
+      "unique_signature_count": 1,
+      "environments": {
+        "pc_web_ua": {
+          "cover_video_ids_count": 56,
+          "cover_downright_count": 27,
+          "state_counts": {
+            "4": 56
+          },
+          "upload_src_counts": {
+            "20": 56
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 56,
+          "selected_row_vid": "e003452crbe",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": "mzc00200dfbfsrw",
+          "selected_row_category_map": [
+            "10470",
+            "正片",
+            "1089",
+            "连续剧",
+            "2",
+            "电视剧"
+          ]
+        },
+        "mobile_h5_ua": {
+          "cover_video_ids_count": 56,
+          "cover_downright_count": 27,
+          "state_counts": {
+            "4": 56
+          },
+          "upload_src_counts": {
+            "20": 56
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 56,
+          "selected_row_vid": "e003452crbe",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": "mzc00200dfbfsrw",
+          "selected_row_category_map": [
+            "10470",
+            "正片",
+            "1089",
+            "连续剧",
+            "2",
+            "电视剧"
+          ]
+        },
+        "minimal_headers": {
+          "cover_video_ids_count": 56,
+          "cover_downright_count": 27,
+          "state_counts": {
+            "4": 56
+          },
+          "upload_src_counts": {
+            "20": 56
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 56,
+          "selected_row_vid": "e003452crbe",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": "mzc00200dfbfsrw",
+          "selected_row_category_map": [
+            "10470",
+            "正片",
+            "1089",
+            "连续剧",
+            "2",
+            "电视剧"
+          ]
+        },
+        "referer_origin": {
+          "cover_video_ids_count": 56,
+          "cover_downright_count": 27,
+          "state_counts": {
+            "4": 56
+          },
+          "upload_src_counts": {
+            "20": 56
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 56,
+          "selected_row_vid": "e003452crbe",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": "mzc00200dfbfsrw",
+          "selected_row_category_map": [
+            "10470",
+            "正片",
+            "1089",
+            "连续剧",
+            "2",
+            "电视剧"
+          ]
+        }
+      }
+    },
+    "variety_season_second": {
+      "url": "https://v.qq.com/x/cover/mzc00200c2gydkd.html",
+      "unique_signature_count": 1,
+      "environments": {
+        "pc_web_ua": {
+          "cover_video_ids_count": 64,
+          "cover_downright_count": 28,
+          "state_counts": {
+            "4": 64
+          },
+          "upload_src_counts": {
+            "20": 64
+          },
+          "publish_date_nonempty_count": 57,
+          "targetid_nonempty_count": 0,
+          "selected_row_vid": "o4102l8tb51",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "mzc00200c2gydkd",
+            "mzc00200w4wivil",
+            "mzc002002gminu7",
+            "mzc00200jt1mw96"
+          ],
+          "selected_row_category_map": [
+            "10001",
+            "正片",
+            "1001",
+            "栏目",
+            "10",
+            "综艺"
+          ]
+        },
+        "mobile_h5_ua": {
+          "cover_video_ids_count": 64,
+          "cover_downright_count": 28,
+          "state_counts": {
+            "4": 64
+          },
+          "upload_src_counts": {
+            "20": 64
+          },
+          "publish_date_nonempty_count": 57,
+          "targetid_nonempty_count": 0,
+          "selected_row_vid": "o4102l8tb51",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "mzc00200c2gydkd",
+            "mzc00200w4wivil",
+            "mzc002002gminu7",
+            "mzc00200jt1mw96"
+          ],
+          "selected_row_category_map": [
+            "10001",
+            "正片",
+            "1001",
+            "栏目",
+            "10",
+            "综艺"
+          ]
+        },
+        "minimal_headers": {
+          "cover_video_ids_count": 64,
+          "cover_downright_count": 28,
+          "state_counts": {
+            "4": 64
+          },
+          "upload_src_counts": {
+            "20": 64
+          },
+          "publish_date_nonempty_count": 57,
+          "targetid_nonempty_count": 0,
+          "selected_row_vid": "o4102l8tb51",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "mzc00200c2gydkd",
+            "mzc00200w4wivil",
+            "mzc002002gminu7",
+            "mzc00200jt1mw96"
+          ],
+          "selected_row_category_map": [
+            "10001",
+            "正片",
+            "1001",
+            "栏目",
+            "10",
+            "综艺"
+          ]
+        },
+        "referer_origin": {
+          "cover_video_ids_count": 64,
+          "cover_downright_count": 28,
+          "state_counts": {
+            "4": 64
+          },
+          "upload_src_counts": {
+            "20": 64
+          },
+          "publish_date_nonempty_count": 57,
+          "targetid_nonempty_count": 0,
+          "selected_row_vid": "o4102l8tb51",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "mzc00200c2gydkd",
+            "mzc00200w4wivil",
+            "mzc002002gminu7",
+            "mzc00200jt1mw96"
+          ],
+          "selected_row_category_map": [
+            "10001",
+            "正片",
+            "1001",
+            "栏目",
+            "10",
+            "综艺"
+          ]
+        }
+      }
+    },
+    "kids_regular_season": {
+      "url": "https://v.qq.com/x/cover/mzc00200lyd87zd.html",
+      "unique_signature_count": 1,
+      "environments": {
+        "pc_web_ua": {
+          "cover_video_ids_count": 26,
+          "cover_downright_count": 28,
+          "state_counts": {
+            "4": 26
+          },
+          "upload_src_counts": {
+            "129": 26
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 0,
+          "selected_row_vid": "o4100en2kx2",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "mzc00200lyd87zd",
+            "zlrjvoan5acz3gs"
+          ],
+          "selected_row_category_map": [
+            "11244",
+            "正片",
+            "1250",
+            "动画",
+            "106",
+            "少儿"
+          ]
+        },
+        "mobile_h5_ua": {
+          "cover_video_ids_count": 26,
+          "cover_downright_count": 28,
+          "state_counts": {
+            "4": 26
+          },
+          "upload_src_counts": {
+            "129": 26
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 0,
+          "selected_row_vid": "o4100en2kx2",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "mzc00200lyd87zd",
+            "zlrjvoan5acz3gs"
+          ],
+          "selected_row_category_map": [
+            "11244",
+            "正片",
+            "1250",
+            "动画",
+            "106",
+            "少儿"
+          ]
+        },
+        "minimal_headers": {
+          "cover_video_ids_count": 26,
+          "cover_downright_count": 28,
+          "state_counts": {
+            "4": 26
+          },
+          "upload_src_counts": {
+            "129": 26
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 0,
+          "selected_row_vid": "o4100en2kx2",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "mzc00200lyd87zd",
+            "zlrjvoan5acz3gs"
+          ],
+          "selected_row_category_map": [
+            "11244",
+            "正片",
+            "1250",
+            "动画",
+            "106",
+            "少儿"
+          ]
+        },
+        "referer_origin": {
+          "cover_video_ids_count": 26,
+          "cover_downright_count": 28,
+          "state_counts": {
+            "4": 26
+          },
+          "upload_src_counts": {
+            "129": 26
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 0,
+          "selected_row_vid": "o4100en2kx2",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "mzc00200lyd87zd",
+            "zlrjvoan5acz3gs"
+          ],
+          "selected_row_category_map": [
+            "11244",
+            "正片",
+            "1250",
+            "动画",
+            "106",
+            "少儿"
+          ]
+        }
+      }
+    },
+    "kids_free_pack_second": {
+      "url": "https://v.qq.com/x/cover/mzc002002cxp3uh.html",
+      "unique_signature_count": 1,
+      "environments": {
+        "pc_web_ua": {
+          "cover_video_ids_count": 38,
+          "cover_downright_count": 26,
+          "state_counts": {
+            "4": 38
+          },
+          "upload_src_counts": {
+            "20": 38
+          },
+          "publish_date_nonempty_count": 23,
+          "targetid_nonempty_count": 38,
+          "selected_row_vid": "h0044rruc7z",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "mzc00200br3t1zr",
+            "bzfkv5se8qaqel2",
+            "mzc002002cxp3uh",
+            "mzc00200j7l2u0p"
+          ],
+          "selected_row_category_map": [
+            "11244",
+            "正片",
+            "1250",
+            "动画",
+            "106",
+            "少儿"
+          ]
+        },
+        "mobile_h5_ua": {
+          "cover_video_ids_count": 38,
+          "cover_downright_count": 26,
+          "state_counts": {
+            "4": 38
+          },
+          "upload_src_counts": {
+            "20": 38
+          },
+          "publish_date_nonempty_count": 23,
+          "targetid_nonempty_count": 38,
+          "selected_row_vid": "h0044rruc7z",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "mzc00200br3t1zr",
+            "bzfkv5se8qaqel2",
+            "mzc002002cxp3uh",
+            "mzc00200j7l2u0p"
+          ],
+          "selected_row_category_map": [
+            "11244",
+            "正片",
+            "1250",
+            "动画",
+            "106",
+            "少儿"
+          ]
+        },
+        "minimal_headers": {
+          "cover_video_ids_count": 38,
+          "cover_downright_count": 26,
+          "state_counts": {
+            "4": 38
+          },
+          "upload_src_counts": {
+            "20": 38
+          },
+          "publish_date_nonempty_count": 23,
+          "targetid_nonempty_count": 38,
+          "selected_row_vid": "h0044rruc7z",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "mzc00200br3t1zr",
+            "bzfkv5se8qaqel2",
+            "mzc002002cxp3uh",
+            "mzc00200j7l2u0p"
+          ],
+          "selected_row_category_map": [
+            "11244",
+            "正片",
+            "1250",
+            "动画",
+            "106",
+            "少儿"
+          ]
+        },
+        "referer_origin": {
+          "cover_video_ids_count": 38,
+          "cover_downright_count": 26,
+          "state_counts": {
+            "4": 38
+          },
+          "upload_src_counts": {
+            "20": 38
+          },
+          "publish_date_nonempty_count": 23,
+          "targetid_nonempty_count": 38,
+          "selected_row_vid": "h0044rruc7z",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "mzc00200br3t1zr",
+            "bzfkv5se8qaqel2",
+            "mzc002002cxp3uh",
+            "mzc00200j7l2u0p"
+          ],
+          "selected_row_category_map": [
+            "11244",
+            "正片",
+            "1250",
+            "动画",
+            "106",
+            "少儿"
+          ]
+        }
+      }
+    },
+    "topic_page_second": {
+      "url": "https://v.qq.com/x/cover/mzc00200apbfiqs.html",
+      "unique_signature_count": 1,
+      "environments": {
+        "pc_web_ua": {
+          "cover_video_ids_count": 22,
+          "cover_downright_count": 26,
+          "state_counts": {
+            "4": 22
+          },
+          "upload_src_counts": {
+            "116": 6,
+            "20": 16
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 7,
+          "selected_row_vid": "p41013w37rt",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "mzc00200cx6wi3r",
+            "mzc00200apbfiqs"
+          ],
+          "selected_row_category_map": [
+            "10720",
+            "正片",
+            "1113",
+            "国产纪录片",
+            "9",
+            "纪录片"
+          ]
+        },
+        "mobile_h5_ua": {
+          "cover_video_ids_count": 22,
+          "cover_downright_count": 26,
+          "state_counts": {
+            "4": 22
+          },
+          "upload_src_counts": {
+            "116": 6,
+            "20": 16
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 7,
+          "selected_row_vid": "p41013w37rt",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "mzc00200cx6wi3r",
+            "mzc00200apbfiqs"
+          ],
+          "selected_row_category_map": [
+            "10720",
+            "正片",
+            "1113",
+            "国产纪录片",
+            "9",
+            "纪录片"
+          ]
+        },
+        "minimal_headers": {
+          "cover_video_ids_count": 22,
+          "cover_downright_count": 26,
+          "state_counts": {
+            "4": 22
+          },
+          "upload_src_counts": {
+            "116": 6,
+            "20": 16
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 7,
+          "selected_row_vid": "p41013w37rt",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "mzc00200cx6wi3r",
+            "mzc00200apbfiqs"
+          ],
+          "selected_row_category_map": [
+            "10720",
+            "正片",
+            "1113",
+            "国产纪录片",
+            "9",
+            "纪录片"
+          ]
+        },
+        "referer_origin": {
+          "cover_video_ids_count": 22,
+          "cover_downright_count": 26,
+          "state_counts": {
+            "4": 22
+          },
+          "upload_src_counts": {
+            "116": 6,
+            "20": 16
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 7,
+          "selected_row_vid": "p41013w37rt",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "mzc00200cx6wi3r",
+            "mzc00200apbfiqs"
+          ],
+          "selected_row_category_map": [
+            "10720",
+            "正片",
+            "1113",
+            "国产纪录片",
+            "9",
+            "纪录片"
+          ]
+        }
+      }
+    },
+    "sports_replay_second": {
+      "url": "https://v.qq.com/x/cover/mzc00200k9sp5r2.html",
+      "unique_signature_count": 1,
+      "environments": {
+        "pc_web_ua": {
+          "cover_video_ids_count": 22,
+          "cover_downright_count": 2,
+          "state_counts": {
+            "4": 22
+          },
+          "upload_src_counts": {
+            "20": 1,
+            "31": 21
+          },
+          "publish_date_nonempty_count": 22,
+          "targetid_nonempty_count": 0,
+          "selected_row_vid": "q4101u7frq2",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": "mzc00200k9sp5r2",
+          "selected_row_category_map": [
+            "11924",
+            "综合正赛正片",
+            "1119",
+            "综合体育",
+            "4",
+            "体育"
+          ]
+        },
+        "mobile_h5_ua": {
+          "cover_video_ids_count": 22,
+          "cover_downright_count": 2,
+          "state_counts": {
+            "4": 22
+          },
+          "upload_src_counts": {
+            "20": 1,
+            "31": 21
+          },
+          "publish_date_nonempty_count": 22,
+          "targetid_nonempty_count": 0,
+          "selected_row_vid": "q4101u7frq2",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": "mzc00200k9sp5r2",
+          "selected_row_category_map": [
+            "11924",
+            "综合正赛正片",
+            "1119",
+            "综合体育",
+            "4",
+            "体育"
+          ]
+        },
+        "minimal_headers": {
+          "cover_video_ids_count": 22,
+          "cover_downright_count": 2,
+          "state_counts": {
+            "4": 22
+          },
+          "upload_src_counts": {
+            "20": 1,
+            "31": 21
+          },
+          "publish_date_nonempty_count": 22,
+          "targetid_nonempty_count": 0,
+          "selected_row_vid": "q4101u7frq2",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": "mzc00200k9sp5r2",
+          "selected_row_category_map": [
+            "11924",
+            "综合正赛正片",
+            "1119",
+            "综合体育",
+            "4",
+            "体育"
+          ]
+        },
+        "referer_origin": {
+          "cover_video_ids_count": 22,
+          "cover_downright_count": 2,
+          "state_counts": {
+            "4": 22
+          },
+          "upload_src_counts": {
+            "20": 1,
+            "31": 21
+          },
+          "publish_date_nonempty_count": 22,
+          "targetid_nonempty_count": 0,
+          "selected_row_vid": "q4101u7frq2",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": "mzc00200k9sp5r2",
+          "selected_row_category_map": [
+            "11924",
+            "综合正赛正片",
+            "1119",
+            "综合体育",
+            "4",
+            "体育"
+          ]
+        }
+      }
+    }
+  },
+  "current_takeaways": [
+    "Same-day second-representative rechecks stayed environment-stable for: film_single_second, anime_season_second, tv_season_second, variety_season_second, kids_regular_season, kids_free_pack_second, topic_page_second, sports_replay_second.",
+    "This extension closes part of the 'second representative page' gap for film/anime/tv/variety/kids/topic buckets, but sports replay still needs a curated second representative page."
+  ],
+  "still_open": [
+    "cross-day retest is still pending",
+    "sports_replay still needs a curated second representative page",
+    "browser-like sec-ch-ua / sec-fetch-* / cookie requests are still outside the current matrix"
+  ]
+}

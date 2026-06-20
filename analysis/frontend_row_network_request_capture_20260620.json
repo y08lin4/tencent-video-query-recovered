@@ -1,0 +1,125 @@
+{
+  "generated_at": "2026-06-20T08:37:13.922Z",
+  "source_script": "tools/tencent_frontend_row_network_probe.js",
+  "scope": "request-level + response-level network capture on strong redirected-detail candidates with tab-priority and lazy scroll",
+  "probe_config": {
+    "wait_ms": 12000,
+    "click_wait_ms": 2800,
+    "scroll_loops": 3,
+    "scroll_step": 900,
+    "chain_url_terms": [
+      "getCoverInfoBatch",
+      "PageService/getPage",
+      "FillUnionInfo"
+    ],
+    "tab_keywords": [
+      "选集",
+      "预告",
+      "片花",
+      "花絮",
+      "看点",
+      "正片",
+      "纯享",
+      "更多短视频"
+    ]
+  },
+  "cases": [
+    {
+      "label": "tv_season_f_mixed",
+      "input_url": "https://v.qq.com/x/cover/mzc00200whxf2zp.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200whxf2zp/k41026bh3p0.html",
+      "tabs_seen": [
+        "精彩片花",
+        "更多短视频"
+      ],
+      "request_counts": {
+        "total": 3,
+        "getPage": 2,
+        "FillUnionInfo": 1,
+        "getCoverInfoBatch": 0
+      },
+      "response_counts": {
+        "total": 6,
+        "getPage": 2,
+        "FillUnionInfo": 1,
+        "getCoverInfoBatch": 0
+      },
+      "matching_requests": [
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.universal_backend_service.union_extra_data.UnionExtraData/FillUnionInfo?video_appid=3000010&vversion_name=8.2.95&vversion_platform=2",
+          "method": "POST",
+          "resource_type": "xhr",
+          "post_data_excerpt": "{\"vids\":[\"k41026bh3p0\"],\"appid\":\"10001\"}"
+        },
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.vector_layout.page_view.PageService/getPage?vdevice_guid=d891ec77b0638f85&video_appid=3000010&vversion_name=8.5.96&vversion_platform=2",
+          "method": "POST",
+          "resource_type": "xhr",
+          "post_data_excerpt": "{\"page_params\":{\"cid\":\"mzc00200whxf2zp\",\"vid\":\"k41026bh3p0\",\"is_pc_new_detail_page\":\"0\",\"is_from_web_flyflow\":\"1\"},\"page_bypass_params\":{\"scene\":\"desk_detail\""
+        },
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.vector_layout.page_view.PageService/getPage?vdevice_guid=d891ec77b0638f85&video_appid=3000010&vversion_name=8.5.96&vversion_platform=2",
+          "method": "POST",
+          "resource_type": "xhr",
+          "post_data_excerpt": "{\"page_params\":{\"cid\":\"mzc00200whxf2zp\",\"vid\":\"k41026bh3p0\",\"is_pc_new_detail_page\":\"0\",\"is_from_web_flyflow\":\"1\"},\"page_bypass_params\":{\"scene\":\"desk_detail\""
+        }
+      ],
+      "response_hints": [
+        "Rendered detail document still kept positive_trailer context, while normal_ids and vip_ids were already empty strings.",
+        "FillUnionInfo exposed state, type, and cover linkage but not F or upload_src.",
+        "PageService/getPage exposed state plus positive_trailer, but no real getCoverInfoBatch follow-up."
+      ],
+      "judgment": "No real getCoverInfoBatch request or response was observed in this tested slice."
+    },
+    {
+      "label": "variety_topic_uploadsrc_mixed",
+      "input_url": "https://v.qq.com/x/cover/mzc00200iy331ds.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200iy331ds/y410245tr2c.html",
+      "tabs_seen": [],
+      "request_counts": {
+        "total": 3,
+        "getPage": 2,
+        "FillUnionInfo": 1,
+        "getCoverInfoBatch": 0
+      },
+      "response_counts": {
+        "total": 6,
+        "getPage": 2,
+        "FillUnionInfo": 1,
+        "getCoverInfoBatch": 0
+      },
+      "matching_requests": [
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.universal_backend_service.union_extra_data.UnionExtraData/FillUnionInfo?video_appid=3000010&vversion_name=8.2.95&vversion_platform=2",
+          "method": "POST",
+          "resource_type": "xhr",
+          "post_data_excerpt": "{\"vids\":[\"y410245tr2c\"],\"appid\":\"10001\"}"
+        },
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.vector_layout.page_view.PageService/getPage?vdevice_guid=644bf24d59b3d6e7&video_appid=3000010&vversion_name=8.5.96&vversion_platform=2",
+          "method": "POST",
+          "resource_type": "xhr",
+          "post_data_excerpt": "{\"page_params\":{\"cid\":\"mzc00200iy331ds\",\"vid\":\"y410245tr2c\",\"is_pc_new_detail_page\":\"0\",\"is_from_web_flyflow\":\"1\"},\"page_bypass_params\":{\"scene\":\"desk_detail\""
+        },
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.vector_layout.page_view.PageService/getPage?vdevice_guid=644bf24d59b3d6e7&video_appid=3000010&vversion_name=8.5.96&vversion_platform=2",
+          "method": "POST",
+          "resource_type": "xhr",
+          "post_data_excerpt": "{\"page_params\":{\"cid\":\"mzc00200iy331ds\",\"vid\":\"y410245tr2c\",\"page_id\":\"detail_rec_for_you\",\"page_type\":\"detail_operation\",\"is_pc_new_detail_page\":\"0\"},\"page_bypass_params\":{\"scene\":\"desk_detail\""
+        }
+      ],
+      "response_hints": [
+        "Rendered detail document still kept positive_trailer context, while normal_ids and vip_ids were already empty strings.",
+        "FillUnionInfo exposed state plus c_covers/cover_list/topic_id_list context but not upload_src or F.",
+        "PageService/getPage still surfaced a pc_sv_mixed_feeds-style response body, but no real getCoverInfoBatch follow-up."
+      ],
+      "judgment": "The likely miss remains deeper shaping or a later lazy follow-up, not initial request capture."
+    }
+  ],
+  "takeaways": [
+    "Improved request-level capture plus tab-priority and lazy scroll observed 4 PageService/getPage requests and 2 FillUnionInfo requests across the two strongest redirected-detail candidates.",
+    "No real getCoverInfoBatch request or response was observed in this rerun (requests=0, responses=0).",
+    "This round strengthens the negative runtime boundary for the tested redirected-detail request chain, not a global claim that getCoverInfoBatch is never used by the frontend."
+  ],
+  "current_judgment": "The current strongest redirected-detail request-side slice still emits only PageService/getPage plus FillUnionInfo. getCoverInfoBatch remains a candidate chain hinted by bundle/runtime-adjacent evidence rather than an observed live request in this tested slice."
+}

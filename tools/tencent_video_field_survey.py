@@ -5,6 +5,7 @@ from collections import Counter, OrderedDict
 import datetime as dt
 import html
 import json
+from pathlib import Path
 import re
 import sys
 import time
@@ -47,6 +48,10 @@ def parse_args() -> argparse.Namespace:
         type=int,
         default=2,
         help="JSON indentation",
+    )
+    parser.add_argument(
+        "--output",
+        help="Optional output file path; when omitted, write JSON to stdout",
     )
     parser.add_argument(
         "--http-retries",
@@ -658,8 +663,12 @@ def main() -> int:
         clip_sample_head=args.clip_sample_head,
         clip_sample_tail=args.clip_sample_tail,
     )
-    sys.stdout.write(json.dumps(report, ensure_ascii=False, indent=args.indent))
-    sys.stdout.write("\n")
+    rendered = json.dumps(report, ensure_ascii=False, indent=args.indent)
+    if args.output:
+        Path(args.output).write_text(rendered + "\n", encoding="utf-8")
+    else:
+        sys.stdout.write(rendered)
+        sys.stdout.write("\n")
     return 0
 
 

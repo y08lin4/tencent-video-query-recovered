@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "tool": "tencent_search_seed_probe",
+    "generated_at": "2026-06-19T22:05:50+08:00",
+    "query_count": 6,
+    "pagesize": 50,
+    "max_resolve": 160,
+    "timeout_seconds": 20.0,
+    "http_retries": 2,
+    "retry_sleep_seconds": 0.75,
+    "version": "26022601",
+    "client_type": 1,
+    "front_version": "26060108"
+  },
+  "queries": [
+    {
+      "query": "NBA全明星正赛",
+      "cid_count": 3,
+      "sample_cids": [
+        "mzc0020086fhhzs",
+        "mzc002001vdtbzr",
+        "mzc00200vmj4rsa"
+      ],
+      "sample_urls": [
+        "https://v.qq.com/x/cover/mzc0020086fhhzs.html",
+        "https://v.qq.com/x/cover/mzc002001vdtbzr.html",
+        "https://v.qq.com/x/cover/mzc00200vmj4rsa.html"
+      ]
+    },
+    {
+      "query": "回放 上半场",
+      "cid_count": 0,
+      "sample_cids": [],
+      "sample_urls": []
+    },
+    {
+      "query": "回放 下半场",
+      "cid_count": 0,
+      "sample_cids": [],
+      "sample_urls": []
+    },
+    {
+      "query": "正赛",
+      "cid_count": 6,
+      "sample_cids": [
+        "mzc00200cwga7ep",
+        "mzc0020053y1e3y",
+        "mzc00200ec95zty",
+        "mzc00200k9sp5r2",
+        "mzc00200kgiaxqp",
+        "mzc00200xiv2zow"
+      ],
+      "sample_urls": [
+        "https://v.qq.com/x/cover/mzc00200cwga7ep.html",
+        "https://v.qq.com/x/cover/mzc0020053y1e3y.html",
+        "https://v.qq.com/x/cover/mzc00200ec95zty.html",
+        "https://v.qq.com/x/cover/mzc00200k9sp5r2.html",
+        "https://v.qq.com/x/cover/mzc00200kgiaxqp.html",
+        "https://v.qq.com/x/cover/mzc00200xiv2zow.html"
+      ]
+    },
+    {
+      "query": "欧冠1/8决赛次回合",
+      "cid_count": 0,
+      "sample_cids": [],
+      "sample_urls": []
+    },
+    {
+      "query": "篮球正赛正片",
+      "cid_count": 0,
+      "sample_cids": [],
+      "sample_urls": []
+    }
+  ],
+  "unique_cid_count": 9,
+  "resolved": [
+    {
+      "cid": "mzc0020086fhhzs",
+      "title": "NBA全明星正赛",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "8",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc002001vdtbzr",
+      "title": "2022NBA全明星正赛：杜兰特队160-163詹姆斯队",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200vmj4rsa",
+      "title": "2023NBA全明星正赛：字母哥队184-175詹姆斯队",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200cwga7ep",
+      "title": "2026F1中国大奖赛 正赛",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc0020053y1e3y",
+      "title": "2025F1比利时大奖赛正赛",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200ec95zty",
+      "title": "2025F1阿塞拜疆大奖赛正赛",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200k9sp5r2",
+      "title": "2026FE电动方程式世界锦标赛迈阿密站 正赛",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "8",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200kgiaxqp",
+      "title": "2025F1新加坡大奖赛正赛",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200xiv2zow",
+      "title": "2025F1卡塔尔大奖赛正赛",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    }
+  ],
+  "summary": {
+    "resolved_count": 9,
+    "type_counts": {
+      "4/体育": 9
+    },
+    "pay_status_counts": {
+      "6": 7,
+      "8": 2
+    },
+    "positive_trailer_counts": {
+      "1": 9
+    },
+    "positive_content_id_counts": {
+      "1543606": 9
+    }
+  },
+  "errors": []
+}

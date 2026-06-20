@@ -1,0 +1,359 @@
+{
+  "meta": {
+    "tool": "tencent_search_seed_probe",
+    "generated_at": "2026-06-19T22:11:18+08:00",
+    "query_count": 5,
+    "pagesize": 30,
+    "max_resolve": 120,
+    "timeout_seconds": 20.0,
+    "http_retries": 2,
+    "retry_sleep_seconds": 0.75,
+    "version": "26022601",
+    "client_type": 1,
+    "front_version": "26060108"
+  },
+  "queries": [
+    {
+      "query": "汪汪队立大功第六季 普通话版",
+      "cid_count": 0,
+      "sample_cids": [],
+      "sample_urls": []
+    },
+    {
+      "query": "汪汪队立大功第七季 普通话版",
+      "cid_count": 0,
+      "sample_cids": [],
+      "sample_urls": []
+    },
+    {
+      "query": "汪汪队立大功 普通话版",
+      "cid_count": 0,
+      "sample_cids": [],
+      "sample_urls": []
+    },
+    {
+      "query": "超级飞侠 普通话版",
+      "cid_count": 0,
+      "sample_cids": [],
+      "sample_urls": []
+    },
+    {
+      "query": "小猪佩奇 普通话版",
+      "cid_count": 30,
+      "sample_cids": [
+        "mzc002002cxp3uh",
+        "bzfkv5se8qaqel2",
+        "mzc00200qrzj493",
+        "mzc002006huuuiu",
+        "mzc00200br3t1zr",
+        "mzc00200wlsdhl2",
+        "mzc00200uiuyxf1",
+        "mzc00200sqw6k6u",
+        "zkbp0mrqhy0x1hl",
+        "lyox8gm9cqgmayu",
+        "uqt7am9f9dmvoss",
+        "mzc002008cpzvbi"
+      ],
+      "sample_urls": [
+        "https://v.qq.com/x/cover/mzc002002cxp3uh.html",
+        "https://v.qq.com/x/cover/bzfkv5se8qaqel2.html",
+        "https://v.qq.com/x/cover/mzc00200qrzj493.html",
+        "https://v.qq.com/x/cover/mzc002006huuuiu.html",
+        "https://v.qq.com/x/cover/mzc00200br3t1zr.html",
+        "https://v.qq.com/x/cover/mzc00200wlsdhl2.html",
+        "https://v.qq.com/x/cover/mzc00200uiuyxf1.html",
+        "https://v.qq.com/x/cover/mzc00200sqw6k6u.html"
+      ]
+    }
+  ],
+  "unique_cid_count": 30,
+  "resolved": [
+    {
+      "cid": "mzc002002cxp3uh",
+      "title": "小猪佩奇免费合集",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "8",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "bzfkv5se8qaqel2",
+      "title": "小猪佩奇合集[普通话版]",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200qrzj493",
+      "title": "小猪佩奇 第11季[普通话版]",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc002006huuuiu",
+      "title": "小猪佩奇第10季[普通话版]",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200br3t1zr",
+      "title": "小猪佩奇第9季",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200wlsdhl2",
+      "title": "小猪佩奇第9季续集",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200uiuyxf1",
+      "title": "小猪佩奇第8季",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200sqw6k6u",
+      "title": "小猪佩奇第7季",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "zkbp0mrqhy0x1hl",
+      "title": "小猪佩奇第6季[普通话版]",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "lyox8gm9cqgmayu",
+      "title": "小猪佩奇第5季[普通话版]",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "uqt7am9f9dmvoss",
+      "title": "小猪佩奇第4季[普通话版]",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc002008cpzvbi",
+      "title": "小猪佩奇迷你剧第3季[普通话版]",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "zbxd3sjpfcnfwzi",
+      "title": "小猪佩奇第3季[普通话版]",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "z8njmlc1opwgxoa",
+      "title": "小猪佩奇第2季[普通话版]",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200g9sam2w",
+      "title": "小猪佩奇迷你剧 第二季[普通话版]",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "e3t4g6wgd3z8uq0",
+      "title": "小猪佩奇第1季[普通话版]",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200zek9fkk",
+      "title": "小猪佩奇迷你剧第一季[普通话版]",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200fd7f31b",
+      "title": "小猪佩奇爱的礼物-充满爱的暖心故事",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "83rr3wu5e1ln2oz",
+      "title": "小猪佩奇之欢乐一家人",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "zh20tq626ff7x6e",
+      "title": "小猪佩奇之友谊的童年",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "x2rq5qf58u4u7k4",
+      "title": "小猪佩奇之校园生活",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc002007m9idgm",
+      "title": "小猪佩奇特别篇：金色的靴子",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "8",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "jynqzy9n3wfrsfp",
+      "title": "小猪佩奇之快乐假期",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200t3rvgnk",
+      "title": "小猪佩奇好习惯童谣",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "8",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200e4ouohu",
+      "title": "小猪佩奇家庭创意活力游戏",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "8",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc002000si6tch",
+      "title": "小猪佩奇家庭健康活力操",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "8",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200pqbaqrp",
+      "title": "五分佩奇，十分快乐",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "8",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200yokeal4",
+      "title": "小猪佩奇快乐旅行",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200mlr3i0m",
+      "title": "小猪佩奇职业新探索",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200o0m2d4t",
+      "title": "小猪佩奇宅家亲子好时光",
+      "type": "106",
+      "type_name": "少儿",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    }
+  ],
+  "summary": {
+    "resolved_count": 30,
+    "type_counts": {
+      "106/少儿": 30
+    },
+    "pay_status_counts": {
+      "6": 24,
+      "8": 6
+    },
+    "positive_trailer_counts": {
+      "1": 30
+    },
+    "positive_content_id_counts": {
+      "1543606": 30
+    }
+  },
+  "errors": []
+}

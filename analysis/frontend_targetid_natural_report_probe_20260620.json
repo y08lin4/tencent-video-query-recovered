@@ -1,0 +1,109 @@
+{
+  "generated_at": "2026-06-20T02:33:46+08:00",
+  "scope": "natural anonymous PC-Web report/feedback path probe for targetid-related popup handoff",
+  "source_tool": "tools/tencent_frontend_targetid_natural_report_probe.js",
+  "method": {
+    "browser": "system Chrome via Playwright",
+    "ua_surface": "PC Web anonymous session",
+    "natural_actions": [
+      "inspect hidden comment report buttons",
+      "hover sampled .at-feed cards",
+      "programmatic click on the first hidden comment report button",
+      "right-click the player container and inspect the context menu"
+    ]
+  },
+  "cases": [
+    {
+      "bucket": "kids_dualfull_targetid",
+      "input_url": "https://v.qq.com/x/cover/jynqzy9n3wfrsfp/l0020z7maus.html",
+      "report_button_count": 46,
+      "first_report_button_visibility": "hidden",
+      "first_report_button_dt_params": "mod_id=dissc_area&sub_tab_id=hot&father_id=feed_area&feed_id=148618791781555830&cp_id=38644117&curr_comm_cnt=21&curr_like_cnt=52&pic_num=1&feed_pic_type=in_order&feed_type=image_text&item_idx=0&is_inserted=0",
+      "hover_result": {
+        "sampled_feed_count": 6,
+        "visible_after_hover": false
+      },
+      "programmatic_click": {
+        "click_called": true,
+        "dispatch_click": true,
+        "feedback_popup_created": false
+      },
+      "player_context_menu": {
+        "menu_visible": false,
+        "contains_feedback_item": true,
+        "feedback_item_visible": false
+      },
+      "final_state": {
+        "open_call_count": 0,
+        "interesting_iframe_count": 0,
+        "popup_hit_count": 0,
+        "request_hit_urls": [
+          "https://staticfile.qq.com/datong/universalReportH5/v4.5.10/universal-report.min.js?max_age=7776000",
+          "https://vfiles.gtimg.cn/tvideo2/p/component/feedback/lib/latest/tv-feedback.umd.js",
+          "https://cache.wuji.qq.com/x/api/wuji_cache/object/66a1befbd0194001b7fc575e?appid=vqqcom&schemaid=config_user_feedback&schemakey=e2f159c455cc4a4e92e0a3f0a3d3745a"
+        ]
+      },
+      "takeaways": [
+        "Comment-area report buttons exist in DOM but stay hidden in the tested anonymous PC-Web path.",
+        "Hovering sampled .at-feed cards did not reveal a clickable report entry.",
+        "Programmatic click on the first hidden report button still produced no report/feedback popup or iframe.",
+        "The player context menu stayed hidden, so the built-in feedback entry did not become a natural path either."
+      ]
+    },
+    {
+      "bucket": "variety_topic_pay15_targetid_uploadsrc",
+      "input_url": "https://v.qq.com/x/cover/mzc002001u873es/k004768pj4j.html",
+      "report_button_count": 35,
+      "first_report_button_visibility": "hidden",
+      "first_report_button_dt_params": "mod_id=dissc_area&sub_tab_id=hot&father_id=feed_area&feed_id=148618792652885713&cp_id=2010648539&curr_comm_cnt=2&curr_like_cnt=58&pic_num=0&feed_pic_type=in_order&feed_type=word&item_idx=0&is_inserted=0",
+      "hover_result": {
+        "sampled_feed_count": 6,
+        "visible_after_hover": false
+      },
+      "programmatic_click": {
+        "click_called": true,
+        "dispatch_click": true,
+        "feedback_popup_created": false
+      },
+      "player_context_menu": {
+        "menu_visible": false,
+        "contains_feedback_item": true,
+        "feedback_item_visible": false
+      },
+      "final_state": {
+        "open_call_count": 0,
+        "interesting_iframe_count": 0,
+        "popup_hit_count": 0,
+        "request_hit_urls": [
+          "https://staticfile.qq.com/datong/universalReportH5/v4.5.10/universal-report.min.js?max_age=7776000",
+          "https://vfiles.gtimg.cn/tvideo2/p/component/feedback/lib/latest/tv-feedback.umd.js",
+          "https://cache.wuji.qq.com/x/api/wuji_cache/object/66a1befbd0194001b7fc575e?appid=vqqcom&schemaid=config_user_feedback&schemakey=e2f159c455cc4a4e92e0a3f0a3d3745a"
+        ]
+      },
+      "takeaways": [
+        "The same hidden-comment-report pattern repeats on the pay_status=15 variety topic page.",
+        "Natural anonymous PC-Web attempts still produced no targetid-bearing popup, iframe, or window.open report flow.",
+        "The feedback/report infrastructure is loaded, but this probe did not find an exposed natural producer."
+      ]
+    }
+  ],
+  "cross_page_takeaways": [
+    "Both representative pages load generic feedback/report infrastructure (`universalReportH5`, `tv-feedback.umd.js`), but the tested anonymous natural path did not expose a targetid-bearing producer.",
+    "Comment report buttons are present in DOM on both pages, yet remain hidden after sampled hover and stay inert under programmatic click.",
+    "The player context menu contains a feedback item in DOM shape, but the menu itself stayed hidden in the tested path.",
+    "This round strengthens the negative side of the closure: consumer mapping is now known from synthetic runtime, but anonymous natural producer evidence is still absent."
+  ],
+  "status_upgrade": {
+    "frontend_targetid_runtime_callsite": "natural_path_still_open",
+    "what_is_now_confirmed": [
+      "anonymous PC-Web natural attempts on the tested pages do not currently produce report popup / iframe handoff with targetid",
+      "comment report buttons exist but remain hidden and inert in the tested path",
+      "generic feedback infrastructure loads independently of a visible targetid producer"
+    ],
+    "what_remains_open": [
+      "login-state or hover-reveal variants",
+      "player menu or other lazy natural producer branches that require a different interaction surface",
+      "whether commentInfo.targetid/commentid can ever flow into a natural report popup"
+    ]
+  }
+}

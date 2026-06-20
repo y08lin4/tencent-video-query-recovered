@@ -1,0 +1,513 @@
+{
+  "generated_at": "2026-06-19T11:18:40.355Z",
+  "scope": "browser-level dynamic hook on JSON.parse plus exposed union store field access",
+  "method": {
+    "browser": "system Chrome via Playwright",
+    "browser_executable": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "wait_ms_after_domcontentloaded": 12000,
+    "hook_targets": [
+      "JSON.parse result objects",
+      "window.__vikor__context__.ssrPayloads._piniaState.union.coverInfoMap",
+      "window.__vikor__context__.ssrPayloads._piniaState.union.videoInfoMap"
+    ],
+    "cases": [
+      {
+        "bucket": "movie_single_pay6_exchange_true",
+        "url": "https://v.qq.com/x/cover/mzc00200idzf2m8/z4102qfi0x4.html"
+      },
+      {
+        "bucket": "tv_season_pay6_exchange_false",
+        "url": "https://v.qq.com/x/cover/mzc00200whxf2zp.html"
+      },
+      {
+        "bucket": "variety_topic_pay15_targetid_uploadsrc",
+        "url": "https://v.qq.com/x/cover/mzc002001u873es.html"
+      },
+      {
+        "bucket": "education_coveronly_pay8_targetid_uploadsrc",
+        "url": "https://v.qq.com/x/cover/mzc00200bhj36oq.html"
+      }
+    ]
+  },
+  "capture_limits": {
+    "max_events": 180,
+    "max_hits": 160,
+    "max_errors": 20,
+    "max_depth": 5,
+    "max_children": 24
+  },
+  "claim_boundaries": [
+    "This probe only covers PC Web detail-page runtime behavior on 2026-06-19.",
+    "The probe only sees the current init-hook surface: JSON.parse-layer objects plus the exposed union cover/video maps.",
+    "Negative results are bounded by the capture limits above and by the default wait window after domcontentloaded.",
+    "Static bundle findings such as downright download gating and targetId sink placement remain separate evidence classes and are not upgraded by this file alone."
+  ],
+  "pages": [
+    {
+      "bucket": "movie_single_pay6_exchange_true",
+      "input_url": "https://v.qq.com/x/cover/mzc00200idzf2m8/z4102qfi0x4.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200idzf2m8/z4102qfi0x4.html",
+      "cid": "mzc00200idzf2m8",
+      "vid": "z4102qfi0x4",
+      "first_union_snapshot": {
+        "cid": "mzc00200idzf2m8",
+        "vid": "z4102qfi0x4",
+        "cover_pay_status": "0",
+        "pay_status_exchange": true,
+        "show_gift": false,
+        "cover_positive_trailer": 1,
+        "cover_positive_content_id": "1543606",
+        "cover_has_F": false,
+        "video_state": 4,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_has_F": false
+      },
+      "parsed_pay_status_values": [
+        "0",
+        6
+      ],
+      "parsed_positive_trailer_values": [
+        1
+      ],
+      "parsed_targetid_values": [
+        "0"
+      ],
+      "parsed_upload_src_values": [],
+      "parsed_F_values": [],
+      "get_counts": {
+        "pay_status": 23,
+        "pay_status_exchange": 22,
+        "show_gift": 22,
+        "positive_trailer": 23,
+        "positive_content_id": 23,
+        "state": 23,
+        "publish_date": 8,
+        "type": 28,
+        "type_name": 5,
+        "downright": 2,
+        "targetid": 1
+      },
+      "set_counts": {},
+      "interesting_event_samples": {
+        "pay_status": [
+          {
+            "elapsed_ms": 251,
+            "kind": "get",
+            "label": "union.coverInfoMap[mzc00200idzf2m8]",
+            "key": "pay_status",
+            "value": "0"
+          },
+          {
+            "elapsed_ms": 313,
+            "kind": "get",
+            "label": "union.coverInfoMap[mzc00200idzf2m8]",
+            "key": "pay_status",
+            "value": "0"
+          }
+        ],
+        "pay_status_exchange": [
+          {
+            "elapsed_ms": 251,
+            "kind": "get",
+            "label": "union.coverInfoMap[mzc00200idzf2m8]",
+            "key": "pay_status_exchange",
+            "value": true
+          },
+          {
+            "elapsed_ms": 313,
+            "kind": "get",
+            "label": "union.coverInfoMap[mzc00200idzf2m8]",
+            "key": "pay_status_exchange",
+            "value": true
+          }
+        ],
+        "targetid": [
+          {
+            "elapsed_ms": 2033,
+            "kind": "get",
+            "label": "json_parse:root.vl.vi.0",
+            "key": "targetid",
+            "value": "0"
+          }
+        ],
+        "upload_src": [],
+        "F": []
+      },
+      "current_takeaways": [
+        "first exposed union cover pay_status was already \"0\"",
+        "JSON.parse saw pay_status values \"0\", 6",
+        "JSON.parse saw targetId/targetid values \"0\"",
+        "logged 23 runtime get(s) on pay_status",
+        "logged 22 runtime get(s) on pay_status_exchange",
+        "logged 1 runtime get(s) on targetId/targetid"
+      ]
+    },
+    {
+      "bucket": "tv_season_pay6_exchange_false",
+      "input_url": "https://v.qq.com/x/cover/mzc00200whxf2zp.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200whxf2zp/k41026bh3p0.html",
+      "cid": "mzc00200whxf2zp",
+      "vid": "k41026bh3p0",
+      "first_union_snapshot": {
+        "cid": "mzc00200whxf2zp",
+        "vid": "",
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 1,
+        "cover_positive_content_id": "1543606",
+        "cover_has_F": false,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_has_F": false
+      },
+      "last_union_snapshot": {
+        "cid": "mzc00200whxf2zp",
+        "vid": "k41026bh3p0",
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 1,
+        "cover_positive_content_id": "1543606",
+        "cover_has_F": false,
+        "video_state": 4,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_has_F": false
+      },
+      "parsed_pay_status_values": [
+        "0",
+        6,
+        8
+      ],
+      "parsed_positive_trailer_values": [
+        1
+      ],
+      "parsed_targetid_values": [
+        "0"
+      ],
+      "parsed_upload_src_values": [],
+      "parsed_F_values": [],
+      "get_counts": {
+        "pay_status": 21,
+        "pay_status_exchange": 21,
+        "show_gift": 21,
+        "positive_trailer": 22,
+        "positive_content_id": 22,
+        "publish_date": 15,
+        "type": 35,
+        "type_name": 7,
+        "downright": 2,
+        "state": 14
+      },
+      "set_counts": {},
+      "interesting_event_samples": {
+        "pay_status": [
+          {
+            "elapsed_ms": 209,
+            "kind": "get",
+            "label": "union.coverInfoMap[mzc00200whxf2zp]",
+            "key": "pay_status",
+            "value": "0"
+          },
+          {
+            "elapsed_ms": 269,
+            "kind": "get",
+            "label": "union.coverInfoMap[mzc00200whxf2zp]",
+            "key": "pay_status",
+            "value": "0"
+          }
+        ],
+        "pay_status_exchange": [
+          {
+            "elapsed_ms": 209,
+            "kind": "get",
+            "label": "union.coverInfoMap[mzc00200whxf2zp]",
+            "key": "pay_status_exchange",
+            "value": false
+          },
+          {
+            "elapsed_ms": 269,
+            "kind": "get",
+            "label": "union.coverInfoMap[mzc00200whxf2zp]",
+            "key": "pay_status_exchange",
+            "value": false
+          }
+        ],
+        "targetid": [],
+        "upload_src": [],
+        "F": []
+      },
+      "current_takeaways": [
+        "first exposed union cover pay_status was already \"0\"",
+        "JSON.parse saw pay_status values \"0\", 6, 8",
+        "JSON.parse saw targetId/targetid values \"0\"",
+        "logged 21 runtime get(s) on pay_status",
+        "logged 21 runtime get(s) on pay_status_exchange"
+      ]
+    },
+    {
+      "bucket": "variety_topic_pay15_targetid_uploadsrc",
+      "input_url": "https://v.qq.com/x/cover/mzc002001u873es.html",
+      "final_url": "https://v.qq.com/x/cover/mzc002001u873es/k004768pj4j.html",
+      "cid": "mzc002001u873es",
+      "vid": "k004768pj4j",
+      "first_union_snapshot": {
+        "cid": "mzc002001u873es",
+        "vid": "",
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 0,
+        "cover_positive_content_id": "1543606",
+        "cover_has_F": false,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_has_F": false
+      },
+      "last_union_snapshot": {
+        "cid": "mzc002001u873es",
+        "vid": "k004768pj4j",
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 0,
+        "cover_positive_content_id": "1543606",
+        "cover_has_F": false,
+        "video_state": 4,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_has_F": false
+      },
+      "parsed_pay_status_values": [
+        "0",
+        15
+      ],
+      "parsed_positive_trailer_values": [
+        0
+      ],
+      "parsed_targetid_values": [
+        "0"
+      ],
+      "parsed_upload_src_values": [],
+      "parsed_F_values": [],
+      "get_counts": {
+        "pay_status": 18,
+        "pay_status_exchange": 18,
+        "show_gift": 18,
+        "positive_trailer": 19,
+        "positive_content_id": 19,
+        "publish_date": 15,
+        "type": 49,
+        "type_name": 7,
+        "downright": 2,
+        "state": 11,
+        "targetid": 4
+      },
+      "set_counts": {},
+      "interesting_event_samples": {
+        "pay_status": [
+          {
+            "elapsed_ms": 283,
+            "kind": "get",
+            "label": "union.coverInfoMap[mzc002001u873es]",
+            "key": "pay_status",
+            "value": "0"
+          },
+          {
+            "elapsed_ms": 331,
+            "kind": "get",
+            "label": "union.coverInfoMap[mzc002001u873es]",
+            "key": "pay_status",
+            "value": "0"
+          }
+        ],
+        "pay_status_exchange": [
+          {
+            "elapsed_ms": 283,
+            "kind": "get",
+            "label": "union.coverInfoMap[mzc002001u873es]",
+            "key": "pay_status_exchange",
+            "value": false
+          },
+          {
+            "elapsed_ms": 331,
+            "kind": "get",
+            "label": "union.coverInfoMap[mzc002001u873es]",
+            "key": "pay_status_exchange",
+            "value": false
+          }
+        ],
+        "targetid": [
+          {
+            "elapsed_ms": 1763,
+            "kind": "get",
+            "label": "json_parse:root.vl.vi.0",
+            "key": "targetid",
+            "value": "0"
+          },
+          {
+            "elapsed_ms": 1781,
+            "kind": "get",
+            "label": "json_parse:root.vl.vi.0",
+            "key": "targetid",
+            "value": "0"
+          }
+        ],
+        "upload_src": [],
+        "F": []
+      },
+      "current_takeaways": [
+        "first exposed union cover pay_status was already \"0\"",
+        "JSON.parse saw pay_status values \"0\", 15",
+        "JSON.parse saw targetId/targetid values \"0\"",
+        "logged 18 runtime get(s) on pay_status",
+        "logged 18 runtime get(s) on pay_status_exchange",
+        "logged 4 runtime get(s) on targetId/targetid"
+      ]
+    },
+    {
+      "bucket": "education_coveronly_pay8_targetid_uploadsrc",
+      "input_url": "https://v.qq.com/x/cover/mzc00200bhj36oq.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200bhj36oq/e3075bgqeto.html",
+      "cid": "mzc00200bhj36oq",
+      "vid": "e3075bgqeto",
+      "first_union_snapshot": {
+        "cid": "mzc00200bhj36oq",
+        "vid": "",
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 0,
+        "cover_positive_content_id": "1543606",
+        "cover_has_F": false,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_has_F": false
+      },
+      "last_union_snapshot": {
+        "cid": "mzc00200bhj36oq",
+        "vid": "e3075bgqeto",
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 0,
+        "cover_positive_content_id": "1543606",
+        "cover_has_F": false,
+        "video_state": 4,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_has_F": false
+      },
+      "parsed_pay_status_values": [
+        "0"
+      ],
+      "parsed_positive_trailer_values": [
+        0
+      ],
+      "parsed_targetid_values": [
+        "0"
+      ],
+      "parsed_upload_src_values": [],
+      "parsed_F_values": [],
+      "get_counts": {
+        "pay_status": 23,
+        "pay_status_exchange": 23,
+        "show_gift": 23,
+        "positive_trailer": 24,
+        "positive_content_id": 24,
+        "publish_date": 12,
+        "type": 24,
+        "type_name": 7,
+        "downright": 1,
+        "state": 15,
+        "targetid": 4
+      },
+      "set_counts": {},
+      "interesting_event_samples": {
+        "pay_status": [
+          {
+            "elapsed_ms": 235,
+            "kind": "get",
+            "label": "union.coverInfoMap[mzc00200bhj36oq]",
+            "key": "pay_status",
+            "value": "0"
+          },
+          {
+            "elapsed_ms": 306,
+            "kind": "get",
+            "label": "union.coverInfoMap[mzc00200bhj36oq]",
+            "key": "pay_status",
+            "value": "0"
+          }
+        ],
+        "pay_status_exchange": [
+          {
+            "elapsed_ms": 235,
+            "kind": "get",
+            "label": "union.coverInfoMap[mzc00200bhj36oq]",
+            "key": "pay_status_exchange",
+            "value": false
+          },
+          {
+            "elapsed_ms": 306,
+            "kind": "get",
+            "label": "union.coverInfoMap[mzc00200bhj36oq]",
+            "key": "pay_status_exchange",
+            "value": false
+          }
+        ],
+        "targetid": [
+          {
+            "elapsed_ms": 1790,
+            "kind": "get",
+            "label": "json_parse:root.vl.vi.0",
+            "key": "targetid",
+            "value": "0"
+          },
+          {
+            "elapsed_ms": 1807,
+            "kind": "get",
+            "label": "json_parse:root.vl.vi.0",
+            "key": "targetid",
+            "value": "0"
+          }
+        ],
+        "upload_src": [],
+        "F": []
+      },
+      "current_takeaways": [
+        "first exposed union cover pay_status was already \"0\"",
+        "JSON.parse saw pay_status values \"0\"",
+        "JSON.parse saw targetId/targetid values \"0\"",
+        "logged 23 runtime get(s) on pay_status",
+        "logged 23 runtime get(s) on pay_status_exchange",
+        "logged 4 runtime get(s) on targetId/targetid"
+      ]
+    }
+  ],
+  "cross_page_takeaways": [
+    "First observed exposed union pay_status values: \"0\".",
+    "JSON.parse still saw raw pay_status-like values: \"0\", 6, 8, 15.",
+    "Runtime getter access on targetId/targetid was captured on: movie_single_pay6_exchange_true, variety_topic_pay15_targetid_uploadsrc, education_coveronly_pay8_targetid_uploadsrc.",
+    "No runtime getter access on upload_src was captured in this round.",
+    "No runtime getter access on F was captured in this round."
+  ],
+  "dynamic_probe_direct_findings": [
+    "On the tested 2026-06-19 PC Web detail pages, raw pay_status-like values still survived into JSON.parse-layer objects, but the first exposed union.coverInfoMap slot already showed cover_pay_status=\"0\".",
+    "positive_trailer remained visible in the parse/store path on the tested cases, but this file alone does not prove a specific page branch.",
+    "Dynamic targetid evidence is currently limited to parsed-object-layer getter access labels like json_parse:root.vl.vi.0, not a clean attachIframe callsite proof.",
+    "No runtime getter access on upload_src or F was captured in this round."
+  ],
+  "cross_checked_interpretation": [
+    "The exposed union slot is not a verbatim raw API pay_status mirror; the collapse/defaulting/remap happens before or during exposed union-store shaping.",
+    "The current detail runtime slice strengthens the idea that upload_src and F are not directly exposed on the main startup/runtime path, but it does not prove frontend-wide non-use.",
+    "Static bundle evidence for downright download gating and targetId sink placement should be read together with this file, not collapsed into the same direct-evidence tier."
+  ],
+  "not_safe_to_generalize": [
+    "Do not generalize pay_status=0 collapse to all page families, all environments, or all frontend stages from this file alone.",
+    "Do not infer that upload_src or F are globally unused by the frontend.",
+    "Do not treat this file as the sole proof that targetid reaches attachIframe(...)."
+  ]
+}

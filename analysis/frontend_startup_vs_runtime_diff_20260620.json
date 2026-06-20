@@ -1,0 +1,506 @@
+{
+  "generated_at": "2026-06-20T07:00:00+08:00",
+  "scope": "cross-artifact startup/SSR -> getPage -> FillUnionInfo field-presence and shape diff for representative redirected-detail paths",
+  "method": "derived from existing 2026-06-19 startup/SSR artifact + 2026-06-20 runtime non-detail probe + live string-level bundle audit",
+  "source_artifacts": [
+    "analysis/frontend_startup_payload_probe_20260619.json",
+    "analysis/frontend_true_nondetail_probe_20260620.json",
+    "analysis/frontend_semantic_map_20260619.json"
+  ],
+  "representative_fields": [
+    "positive_trailer",
+    "state",
+    "F",
+    "upload_src",
+    "targetid",
+    "cover_list",
+    "c_covers",
+    "topic_id_list",
+    "publish_date",
+    "downright"
+  ],
+  "cases": [
+    {
+      "bucket": "education_cover_only",
+      "input_url": "https://v.qq.com/x/cover/mzc00200bhj36oq.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200bhj36oq/e3075bgqeto.html",
+      "redirected_to_detail": true,
+      "final_page_family_guess": "detail",
+      "title": "01小学英语科学：我们的知觉_高清1080P在线观看平台_腾讯视频",
+      "source_artifact_dates": {
+        "startup_ssr_artifact": "2026-06-19",
+        "runtime_probe_artifact": "2026-06-20"
+      },
+      "startup_ssr_presence": {
+        "cid": "mzc00200bhj36oq",
+        "selected_vid": "e3075bgqeto",
+        "startup_takeaway": {
+          "has_F": true,
+          "has_upload_src": false,
+          "has_state": false,
+          "has_targetid": false
+        },
+        "cover_fields": {
+          "pay_status": "8",
+          "positive_trailer": "0",
+          "type": "27",
+          "type_name": "教育",
+          "downright_nonempty": true
+        },
+        "api2_video_fields_reference": {
+          "state": "4",
+          "upload_src": "108",
+          "targetid": "4876290992"
+        },
+        "inline_fields_present": [
+          "pay_status",
+          "positive_trailer",
+          "F",
+          "downright",
+          "publish_date",
+          "category_map"
+        ],
+        "presence": {
+          "positive_trailer": true,
+          "state": false,
+          "F": true,
+          "upload_src": false,
+          "targetid": false,
+          "cover_list": false,
+          "c_covers": false,
+          "topic_id_list": false,
+          "publish_date": true,
+          "downright": true
+        }
+      },
+      "getPage_presence": {
+        "status": 200,
+        "matched_terms": [
+          "positive_trailer"
+        ],
+        "shape": {
+          "contains_positive_trailer": true,
+          "contains_state": false,
+          "contains_F": false,
+          "contains_upload_src": false,
+          "contains_targetid": true,
+          "contains_cover_list": false,
+          "contains_c_covers": false,
+          "contains_topic_id_list": false
+        },
+        "sample_cids": [
+          "mzc00200bhj36o"
+        ],
+        "sample_vids": [
+          "e3075bgqeto",
+          "g3075u5qjfd",
+          "x3075rxp4o3",
+          "m30758s9prf",
+          "k30759xrfsj"
+        ]
+      },
+      "FillUnionInfo_presence": {
+        "status": 200,
+        "matched_terms": [
+          "\"state\":",
+          "cover_list",
+          "c_covers",
+          "topic_id_list"
+        ],
+        "shape": {
+          "contains_positive_trailer": false,
+          "contains_state": true,
+          "contains_F": false,
+          "contains_upload_src": false,
+          "contains_targetid": false,
+          "contains_cover_list": true,
+          "contains_c_covers": true,
+          "contains_topic_id_list": true
+        },
+        "sample_cids": [
+          "mzc00200bhj36o"
+        ],
+        "sample_vids": [
+          "e3075bgqeto"
+        ]
+      },
+      "commentInfo_neighbor_hit": null,
+      "request_chain_summary": {
+        "request_tags": [
+          "FillUnionInfo",
+          "PageService/getPage"
+        ],
+        "response_url_tags": [
+          "FillUnionInfo",
+          "PageService/getPage"
+        ],
+        "response_text_tags": [
+          "FillUnionInfo",
+          "PageService/getPage",
+          "c_covers",
+          "coverInfoMap",
+          "cover_list",
+          "getCoverInfoBatch",
+          "normal_ids",
+          "pc_sv_mixed_feeds",
+          "topic_id_list",
+          "videoInfoMap",
+          "vip_ids"
+        ],
+        "actual_getCoverInfoBatch_request_observed": false,
+        "bundle_getCoverInfoBatch_code_reference_hit": true
+      },
+      "field_level_notes": [
+        "`F` is visible in startup/SSR for this page family but absent from the sampled getPage and FillUnionInfo runtime payloads.",
+        "`upload_src` is absent from startup/SSR and also absent from sampled getPage/FillUnionInfo runtime payloads on this tested path.",
+        "`state` is not exposed in startup/SSR here, but it reappears in FillUnionInfo after redirect into detail.",
+        "`positive_trailer` survives from startup cover-side data into sampled getPage runtime payloads."
+      ],
+      "diff_takeaway": "Best clean main sample: startup is cover-only and exposes `F/positive_trailer` but no concrete `state/upload_src/targetid`; after redirect, FillUnionInfo adds `state + c_covers + cover_list` while `F/upload_src` remain absent from sampled runtime payloads."
+    },
+    {
+      "bucket": "drama_topic_shell",
+      "input_url": "https://v.qq.com/x/cover/mzc00200nkzol5n.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200nkzol5n/x3099to4umi.html",
+      "redirected_to_detail": true,
+      "final_page_family_guess": "detail",
+      "title": "#电视剧合成令合成战斗群集合倒计时，青春团聚，蓄势待发！_电视剧_高清完整版视频在线观看_腾讯视频",
+      "source_artifact_dates": {
+        "startup_ssr_artifact": "2026-06-19",
+        "runtime_probe_artifact": "2026-06-20"
+      },
+      "startup_ssr_presence": null,
+      "getPage_presence": {
+        "status": 200,
+        "matched_terms": [
+          "positive_trailer"
+        ],
+        "shape": {
+          "contains_positive_trailer": true,
+          "contains_state": false,
+          "contains_F": false,
+          "contains_upload_src": false,
+          "contains_targetid": false,
+          "contains_cover_list": false,
+          "contains_c_covers": false,
+          "contains_topic_id_list": false
+        },
+        "sample_cids": [
+          "mzc00200nkzol5",
+          "mzc003aycf7meu",
+          "mzc003v6h8kwr8",
+          "mzc003xbg88dze",
+          "mzc003bb29lzn6"
+        ],
+        "sample_vids": [
+          "nextPlayTab",
+          "d4101fbbch2",
+          "x3099to4umi",
+          "f4100zd2y81",
+          "m4100e0vx72"
+        ]
+      },
+      "FillUnionInfo_presence": {
+        "status": 200,
+        "matched_terms": [
+          "\"state\":",
+          "cover_list",
+          "c_covers",
+          "topic_id_list"
+        ],
+        "shape": {
+          "contains_positive_trailer": false,
+          "contains_state": true,
+          "contains_F": false,
+          "contains_upload_src": false,
+          "contains_targetid": false,
+          "contains_cover_list": true,
+          "contains_c_covers": true,
+          "contains_topic_id_list": true
+        },
+        "sample_cids": [
+          "mzc00200r6yznx",
+          "mzc00200dzho2a",
+          "mzc002001w361j",
+          "mzc00200nkzol5"
+        ],
+        "sample_vids": [
+          "d4101fbbch2"
+        ]
+      },
+      "commentInfo_neighbor_hit": {
+        "status": 200,
+        "contains_commentInfo": true,
+        "contains_targetid": false
+      },
+      "request_chain_summary": {
+        "request_tags": [
+          "FillUnionInfo",
+          "PageService/getPage"
+        ],
+        "response_url_tags": [
+          "FillUnionInfo",
+          "PageService/getPage"
+        ],
+        "response_text_tags": [
+          "FillUnionInfo",
+          "PageService/getPage",
+          "c_covers",
+          "commentInfo",
+          "coverInfoMap",
+          "cover_list",
+          "getCoverInfoBatch",
+          "normal_ids",
+          "pc_sv_mixed_feeds",
+          "topic_id_list",
+          "videoInfoMap",
+          "vip_ids"
+        ],
+        "actual_getCoverInfoBatch_request_observed": false,
+        "bundle_getCoverInfoBatch_code_reference_hit": true
+      },
+      "field_level_notes": [
+        "`upload_src` is absent from sampled getPage/FillUnionInfo runtime payloads on this tested path.",
+        "`state` is not exposed in the sampled getPage payload, but it reappears in FillUnionInfo after redirect into detail.",
+        "`commentInfo` appears as a nearby runtime layer, but it does not close the `targetid` consumer chain by itself here."
+      ],
+      "diff_takeaway": "Topic shell also redirects into detail; getPage keeps `positive_trailer`, FillUnionInfo adds `state + cover graph` neighbors, and commentInfo appears as a nearby runtime layer, but `F/upload_src` still do not surface in sampled request/response payloads."
+    },
+    {
+      "bucket": "doc_topic_shell",
+      "input_url": "https://v.qq.com/x/cover/mzc00200apbfiqs.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200apbfiqs/p41013w37rt.html",
+      "redirected_to_detail": true,
+      "final_page_family_guess": "detail",
+      "title": "畅游天下·云南篇_第12集：昆明·花花世界_高清完整版视频在线观看_腾讯视频",
+      "source_artifact_dates": {
+        "startup_ssr_artifact": "2026-06-19",
+        "runtime_probe_artifact": "2026-06-20"
+      },
+      "startup_ssr_presence": null,
+      "getPage_presence": {
+        "status": 200,
+        "matched_terms": [
+          "positive_trailer"
+        ],
+        "shape": {
+          "contains_positive_trailer": true,
+          "contains_state": false,
+          "contains_F": false,
+          "contains_upload_src": false,
+          "contains_targetid": false,
+          "contains_cover_list": false,
+          "contains_c_covers": false,
+          "contains_topic_id_list": false
+        },
+        "sample_cids": [
+          "mzc00200apbfiq",
+          "mzc00200cx6wi3"
+        ],
+        "sample_vids": [
+          "p41013w37rt",
+          "c4101m3ig0a",
+          "j4101v2zpdq",
+          "u4101emsazt",
+          "c4101mk9i0g"
+        ]
+      },
+      "FillUnionInfo_presence": {
+        "status": 200,
+        "matched_terms": [
+          "\"state\":",
+          "cover_list",
+          "c_covers",
+          "topic_id_list"
+        ],
+        "shape": {
+          "contains_positive_trailer": false,
+          "contains_state": true,
+          "contains_F": false,
+          "contains_upload_src": false,
+          "contains_targetid": false,
+          "contains_cover_list": true,
+          "contains_c_covers": true,
+          "contains_topic_id_list": true
+        },
+        "sample_cids": [
+          "mzc00200cx6wi3",
+          "mzc00200apbfiq"
+        ],
+        "sample_vids": [
+          "p41013w37rt"
+        ]
+      },
+      "commentInfo_neighbor_hit": null,
+      "request_chain_summary": {
+        "request_tags": [
+          "FillUnionInfo",
+          "PageService/getPage"
+        ],
+        "response_url_tags": [
+          "FillUnionInfo",
+          "PageService/getPage"
+        ],
+        "response_text_tags": [
+          "FillUnionInfo",
+          "PageService/getPage",
+          "c_covers",
+          "coverInfoMap",
+          "cover_list",
+          "getCoverInfoBatch",
+          "normal_ids",
+          "pc_sv_mixed_feeds",
+          "topic_id_list",
+          "videoInfoMap",
+          "vip_ids"
+        ],
+        "actual_getCoverInfoBatch_request_observed": false,
+        "bundle_getCoverInfoBatch_code_reference_hit": true
+      },
+      "field_level_notes": [
+        "`upload_src` is absent from sampled getPage/FillUnionInfo runtime payloads on this tested path.",
+        "`state` is not exposed in the sampled getPage payload, but it reappears in FillUnionInfo after redirect into detail."
+      ],
+      "diff_takeaway": "Second topic-shell control reproduces the same broad pattern: `positive_trailer` survives into getPage, `state + cover_list/c_covers` show in FillUnionInfo, and `F/upload_src` stay absent from sampled runtime payloads."
+    }
+  ],
+  "detail_controls": [
+    {
+      "cid": "mzc00200idzf2m8",
+      "url": "https://v.qq.com/x/cover/mzc00200idzf2m8/z4102qfi0x4.html",
+      "selected_vid": "z4102qfi0x4",
+      "bucket": "电影单片",
+      "startup_ssr_presence": {
+        "cover_fields": {
+          "pay_status": "6",
+          "positive_trailer": "1",
+          "type": "1",
+          "type_name": "电影",
+          "downright_nonempty": true
+        },
+        "api2_video_fields_reference": {
+          "state": "4",
+          "upload_src": "20",
+          "targetid": ""
+        },
+        "inline_fields_present": [
+          "pay_status",
+          "positive_trailer",
+          "state",
+          "F",
+          "downright",
+          "publish_date",
+          "cover_list",
+          "c_covers",
+          "category_map"
+        ],
+        "presence": {
+          "positive_trailer": true,
+          "state": true,
+          "F": true,
+          "upload_src": false,
+          "targetid": false,
+          "cover_list": true,
+          "c_covers": true,
+          "topic_id_list": false,
+          "publish_date": true,
+          "downright": true
+        }
+      },
+      "control_note": "Detail controls already expose concrete videoInfoMap rows in startup/SSR, so they show that `state/F/cover_list/c_covers` can exist before runtime on detail pages; the 2026-06-20 non-detail probe pages differ by needing redirect-driven runtime enrichment."
+    },
+    {
+      "cid": "mzc00200xxpsogl",
+      "url": "https://v.qq.com/x/cover/mzc00200xxpsogl/j4101ouc4ve.html",
+      "selected_vid": "j4101ouc4ve",
+      "bucket": "动漫分集页",
+      "startup_ssr_presence": {
+        "cover_fields": {
+          "pay_status": "6",
+          "positive_trailer": "1",
+          "type": "3",
+          "type_name": "动漫",
+          "downright_nonempty": true
+        },
+        "api2_video_fields_reference": {
+          "state": "4",
+          "upload_src": "129",
+          "targetid": ""
+        },
+        "inline_fields_present": [
+          "pay_status",
+          "positive_trailer",
+          "state",
+          "F",
+          "downright",
+          "publish_date",
+          "cover_list",
+          "c_covers",
+          "category_map"
+        ],
+        "presence": {
+          "positive_trailer": true,
+          "state": true,
+          "F": true,
+          "upload_src": false,
+          "targetid": false,
+          "cover_list": true,
+          "c_covers": true,
+          "topic_id_list": false,
+          "publish_date": true,
+          "downright": true
+        }
+      },
+      "control_note": "Detail controls already expose concrete videoInfoMap rows in startup/SSR, so they show that `state/F/cover_list/c_covers` can exist before runtime on detail pages; the 2026-06-20 non-detail probe pages differ by needing redirect-driven runtime enrichment."
+    }
+  ],
+  "bundle_callsite_audit": {
+    "bundle_url": "https://vfiles.gtimg.cn/tvideo2/video-detail-vue/assets/index-KKOIl-Tg.js",
+    "fetched_at": "2026-06-20T07:00:00+08:00",
+    "counts": {
+      "getCoverInfoBatch": 4,
+      "positive_trailer": 2,
+      "publish_date": 7,
+      "publishDate": 3,
+      "targetId": 1,
+      "targetid": 1,
+      "downright": 1,
+      "upload_src": 0,
+      "uploadSrc": 0,
+      "cover_list": 1,
+      "c_covers": 1,
+      "topic_id_list": 1
+    },
+    "selected_snippets": {
+      "getCoverInfoBatch": "async function Yne(e,t){const{cid:r,vid:n}=e,{getCoverInfo:o,getCoverInfoBatch:i,getVideoInfo:a,getVideoReviewable:s}=t; ... }",
+      "positive_trailer": "function Zie(e,t){return{...t,cid:e,positive_trailer:ko(t.positive_trailer),type:ko(t.type),...}}",
+      "publish_date": "const ooe=(e={})=>e.publish_date?`${bS(e.publish_date)}期`:e.date&&bS(e.date)||\"\"",
+      "cover_merge_helper": "function Une(e){const t=(e.c_covers||\"\").split(\"+\").filter(Boolean),r=(e.topic_id_list||\"\").split(\"+\").filter(Boolean),n=e.cover_list||[];return[...new Set([...t,...r,...n])].filter(Boolean)}",
+      "FillUnionInfo": "url:\"//pbaccess.video.qq.com/trpc.universal_backend_service.union_extra_data.UnionExtraData/FillUnionInfo\"",
+      "targetId": "attachIframe(5,{id:b.data.id,targetid:b.data.targetId})",
+      "downright": "const j=M==null?void 0:M.downright;if(!j){...}p.value=j.includes(S)"
+    },
+    "explicit_negative_terms": [
+      "upload_src",
+      "uploadSrc",
+      "\"F\":",
+      "[\"F\"]",
+      "['F']"
+    ],
+    "caveat": "String-level audit can prove tested detail-bundle named mentions, not whole-site global consumption, and it can still miss minified computed-property access."
+  },
+  "current_takeaways": [
+    "For the three tested stronger non-detail candidates, the visible runtime path still redirected into detail and only produced request/response-level hits for getPage and FillUnionInfo, not a real getCoverInfoBatch network request.",
+    "positive_trailer is the cleanest carry-through field in this slice: it is present in startup/SSR and remains visible in sampled getPage payloads.",
+    "state is split by page family: detail-style controls already have it in startup/SSR, while cover-only/topic-shell pages may only surface it after redirect in FillUnionInfo.",
+    "F remains a startup/SSR-visible field on the tested page families, but this slice still does not show it in sampled getPage / FillUnionInfo payloads or as a named string-level bundle field access.",
+    "upload_src remains absent across startup/SSR, sampled getPage / FillUnionInfo payloads, runtime request hits, and the current detail bundle string audit on these tested paths.",
+    "cover_list / c_covers / topic_id_list now have stronger evidence as runtime chain neighbors because FillUnionInfo exposes them directly and the detail bundle includes a helper that merges them before a candidate getCoverInfoBatch follow-up path."
+  ],
+  "guardrails": [
+    "This artifact is a cross-artifact presence/shape diff, not a same-run end-to-end capture.",
+    "Bundle string hits prove tested detail-bundle named mentions, not whole-site global consumption.",
+    "Absence from the sampled runtime slice does not prove the frontend never consumes the field in some other lazy bundle, SSR-only step, or non-detail runtime path.",
+    "getCoverInfoBatch remains a code-reference/bundle-path finding here; no real network request was observed in these three runtime cases."
+  ]
+}

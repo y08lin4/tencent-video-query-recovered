@@ -1,0 +1,348 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "search-backed type=111 upload_src family expansion across dance / painting / calligraphy learning covers",
+  "queries": [
+    "中国舞",
+    "中国画",
+    "书法",
+    "历史课"
+  ],
+  "summary_counts": {
+    "type111_candidate_count": 43,
+    "pure_2048_complete_cover_count": 20,
+    "only_2048_partial_cover_count": 3,
+    "mixed_2048_cover_count": 12,
+    "pure_108_complete_cover_count": 2,
+    "pure_0_complete_cover_count": 6
+  },
+  "query_seed_rows": [
+    {
+      "query": "中国舞",
+      "cid_count": 30,
+      "first_cids": [
+        "mzc003tz0rbt7cv",
+        "mzc00200v6n0dlq",
+        "mzc00352hvfpq15",
+        "mzc00200rcuv1sy",
+        "mzc002008tghx9y",
+        "mzc00200jehmwr1",
+        "mzc00200l0svlgo",
+        "mzc00200q9c4iok",
+        "mzc00200c5xru39",
+        "mzc00200q2oseni",
+        "mzc003m57wozy8q",
+        "mzc00200axmp9nc"
+      ]
+    },
+    {
+      "query": "中国画",
+      "cid_count": 30,
+      "first_cids": [
+        "mzc00200hqs7fdh",
+        "mzc00200mzog0l1",
+        "mzc003lfcpxnxyl",
+        "mzc003xghsg8jm2",
+        "mzc002003lpxdml",
+        "mzc003omyw8se2c",
+        "mzc00200r8ravfe",
+        "mzc003rwbj7q7ml",
+        "mzc00200dpdbnbl",
+        "mzc00200x1fxkx2",
+        "mzc003pyto8pif6",
+        "mzc003w53eei7h4"
+      ]
+    },
+    {
+      "query": "书法",
+      "cid_count": 30,
+      "first_cids": [
+        "mzc002005kpqrxs",
+        "mzc00200qh0bh8s",
+        "mzc00200bsbieyl",
+        "mzc00200qb5x0z5",
+        "mzc002003n9yez2",
+        "mzc00200u4u8b9p",
+        "mzc002008zax03n",
+        "mzc002006aocb6z",
+        "mzc0020068i0sua",
+        "mzc00200t4vsyxv",
+        "mzc00200mjajbhk",
+        "mzc00200501at32"
+      ]
+    },
+    {
+      "query": "历史课",
+      "cid_count": 2,
+      "first_cids": [
+        "mzc003bilbb6dwh",
+        "mzc002003aabv2a"
+      ]
+    }
+  ],
+  "notable_examples": {
+    "pure_2048_complete": [
+      {
+        "cid": "mzc00200s6oqemg",
+        "title": "零基础入门中国舞必备基本功—软开度教学",
+        "pay_status": "7",
+        "video_count": 7,
+        "upload_src_counts": {
+          "2048": 7
+        },
+        "targetid_nonempty_count": 7
+      },
+      {
+        "cid": "mzc00200ua6uec2",
+        "title": "中国舞基本功入门软开度-身韵系列课",
+        "pay_status": "7",
+        "video_count": 7,
+        "upload_src_counts": {
+          "2048": 7
+        },
+        "targetid_nonempty_count": 7
+      },
+      {
+        "cid": "mzc00200dpdbnbl",
+        "title": "国画课教你学画梅兰竹菊四君子",
+        "pay_status": "6",
+        "video_count": 12,
+        "upload_src_counts": {
+          "2048": 12
+        },
+        "targetid_nonempty_count": 12
+      },
+      {
+        "cid": "mzc00200fq96jcg",
+        "title": "中国画起源与发展",
+        "pay_status": "7",
+        "video_count": 16,
+        "upload_src_counts": {
+          "2048": 16
+        },
+        "targetid_nonempty_count": 16
+      },
+      {
+        "cid": "mzc002005kpqrxs",
+        "title": "楷书入门从《多宝塔碑》学书法",
+        "pay_status": "6",
+        "video_count": 10,
+        "upload_src_counts": {
+          "2048": 10
+        },
+        "targetid_nonempty_count": 10
+      },
+      {
+        "cid": "mzc00200tjnrzs3",
+        "title": "邹方程《少儿书法行书教学》",
+        "pay_status": "7",
+        "video_count": 18,
+        "upload_src_counts": {
+          "2048": 18
+        },
+        "targetid_nonempty_count": 0,
+        "row_examples": [
+          {
+            "vid": "n3345971a8u",
+            "title": "第01集 笔法概论（一）",
+            "upload_src": "2048",
+            "targetid": ""
+          },
+          {
+            "vid": "g3345tbkaer",
+            "title": "第02集 笔法概论（二）",
+            "upload_src": "2048",
+            "targetid": ""
+          }
+        ]
+      }
+    ],
+    "mixed_2048": [
+      {
+        "cid": "mzc002008tghx9y",
+        "title": "古典舞爱好者必修的全方位中国舞跟练课",
+        "pay_status": "7",
+        "video_count": 23,
+        "upload_src_counts": {
+          "108": 2,
+          "2048": 21
+        },
+        "targetid_nonempty_count": 23
+      },
+      {
+        "cid": "mzc00200zhnnjjj",
+        "title": "超惊艳的绸扇中国舞《醉太平》教学",
+        "pay_status": "7",
+        "video_count": 8,
+        "upload_src_counts": {
+          "108": 1,
+          "2048": 7
+        },
+        "targetid_nonempty_count": 8
+      },
+      {
+        "cid": "ckpb8828p5r8i2u",
+        "title": "跟我学国画",
+        "pay_status": "7",
+        "video_count": 30,
+        "upload_src_counts": {
+          "108": 1,
+          "2048": 29
+        },
+        "targetid_nonempty_count": 30
+      },
+      {
+        "cid": "mzc00200bsbieyl",
+        "title": "零起点学好字-成人书法入门",
+        "pay_status": "7",
+        "video_count": 19,
+        "upload_src_counts": {
+          "108": 2,
+          "2048": 17
+        },
+        "targetid_nonempty_count": 19
+      },
+      {
+        "cid": "mzc00200fi5unqc",
+        "title": "同步小学语文教材书法课程二年级上册",
+        "pay_status": "7",
+        "video_count": 28,
+        "upload_src_counts": {
+          "0": 12,
+          "2048": 13
+        },
+        "targetid_nonempty_count": 16
+      },
+      {
+        "cid": "mzc00200prld57x",
+        "title": "同步小学语文教材书法课程五年级下册",
+        "pay_status": "7",
+        "video_count": 16,
+        "upload_src_counts": {
+          "0": 8,
+          "2048": 8
+        },
+        "targetid_nonempty_count": 8
+      }
+    ],
+    "pure_108_complete": [
+      {
+        "cid": "yz6io1b8ozb6ddh",
+        "title": "中国舞《礼仪之邦》教学——承汉唐之韵，舞灵动之美",
+        "pay_status": "7",
+        "video_count": 4,
+        "upload_src_counts": {
+          "108": 4
+        },
+        "targetid_nonempty_count": 4
+      },
+      {
+        "cid": "26f3e59734hb74d",
+        "title": "国画系列教程入门到精通",
+        "pay_status": "7",
+        "video_count": 61,
+        "upload_src_counts": {
+          "108": 61
+        },
+        "targetid_nonempty_count": 61
+      }
+    ],
+    "pure_0_complete": [
+      {
+        "cid": "mzc00200rcuv1sy",
+        "title": "零基础学跳中国舞《谪仙》",
+        "pay_status": "7",
+        "video_count": 7,
+        "upload_src_counts": {
+          "0": 7
+        },
+        "targetid_nonempty_count": 0
+      },
+      {
+        "cid": "mzc00200l0svlgo",
+        "title": "零基础学跳中国舞《伊人唱》",
+        "pay_status": "7",
+        "video_count": 7,
+        "upload_src_counts": {
+          "0": 7
+        },
+        "targetid_nonempty_count": 0
+      },
+      {
+        "cid": "mzc00200q9c4iok",
+        "title": "零基础学跳中国舞《茉莉花》",
+        "pay_status": "7",
+        "video_count": 7,
+        "upload_src_counts": {
+          "0": 7
+        },
+        "targetid_nonempty_count": 0
+      },
+      {
+        "cid": "mzc00200foqv54e",
+        "title": "零基础学跳中国舞《万疆》",
+        "pay_status": "7",
+        "video_count": 9,
+        "upload_src_counts": {
+          "0": 9
+        },
+        "targetid_nonempty_count": 0
+      },
+      {
+        "cid": "mzc00200bjyni12",
+        "title": "中国画--基础课程",
+        "pay_status": "7",
+        "video_count": 82,
+        "upload_src_counts": {
+          "0": 82
+        },
+        "targetid_nonempty_count": 2
+      },
+      {
+        "cid": "mzc0020068i0sua",
+        "title": "同步小学语文教材书法课程一年级上册",
+        "pay_status": "7",
+        "video_count": 25,
+        "upload_src_counts": {
+          "0": 25
+        },
+        "targetid_nonempty_count": 0
+      }
+    ]
+  },
+  "explicit_counterexamples": [
+    {
+      "claim": "`type=111` implies `upload_src=2048`",
+      "counterexamples": [
+        "mzc00200rcuv1sy",
+        "mzc00200l0svlgo",
+        "mzc00200q9c4iok",
+        "mzc00200bjyni12",
+        "mzc0020068i0sua",
+        "yz6io1b8ozb6ddh",
+        "26f3e59734hb74d"
+      ]
+    },
+    {
+      "claim": "`targetid` non-empty implies `upload_src=2048`",
+      "counterexamples": [
+        "mzc002008tghx9y",
+        "mzc00200zhnnjjj",
+        "ckpb8828p5r8i2u",
+        "yz6io1b8ozb6ddh",
+        "26f3e59734hb74d"
+      ]
+    },
+    {
+      "claim": "`upload_src=2048` implies `targetid` non-empty",
+      "counterexamples": [
+        "mzc00200tjnrzs3"
+      ]
+    }
+  ],
+  "takeaways": [
+    "The sampled type=111 search slice now contains complete pure-2048, partial 2048-only, mixed 2048/108, mixed 2048/0, pure 108, and pure 0 branches.",
+    "`upload_src=2048` is still type=111-bounded in this round, but it is no longer explainable as a dance-only or two-cover-only phenomenon: the same sampled slice already extends into painting and calligraphy teaching covers.",
+    "The earlier targetid correlation hint no longer holds as a family-level heuristic: `mzc00200tjnrzs3` is a complete pure-2048 cover with targetid empty across sampled rows, while multiple pure-108 and mixed covers keep targetid non-empty.",
+    "The next high-yield gap is no longer whether same-type pure-0 or mixed covers exist; it is whether this broader culture/history teaching family can escape type=111 at all, and whether the current dance / painting / calligraphy sub-branches should be split more explicitly."
+  ]
+}

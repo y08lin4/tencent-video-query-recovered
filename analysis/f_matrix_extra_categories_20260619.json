@@ -1,0 +1,164 @@
+{
+  "generated_at": "2026-06-19",
+  "global_known_f_values": ["0", "2", "4", "7"],
+  "subset_union_this_round": ["0", "2", "7"],
+  "covers": [
+    {
+      "cid": "mzc00200lyd87zd",
+      "title": "汪汪队立大功第五季[普通话版]",
+      "nomal_f_counts": {"2": 3, "7": 23},
+      "vip_f_counts": {"2": 3, "7": 23}
+    },
+    {
+      "cid": "mzc00200tuupfc2",
+      "title": "汪汪队立大功免费合集",
+      "nomal_f_counts": {"2": 137},
+      "vip_f_counts": {"2": 137}
+    },
+    {
+      "cid": "mzc002002cxp3uh",
+      "title": "小猪佩奇免费合集",
+      "nomal_f_counts": {"2": 38},
+      "vip_f_counts": {"2": 38}
+    },
+    {
+      "cid": "mzc00200nkzol5n",
+      "title": "合成令",
+      "nomal_f_counts": {"0": 2, "2": 10},
+      "vip_f_counts": {"0": 2, "2": 10}
+    },
+    {
+      "cid": "mzc00200apbfiqs",
+      "title": "畅游天下·云南篇",
+      "nomal_f_counts": {"2": 6, "7": 16},
+      "vip_f_counts": {"2": 6, "7": 16}
+    },
+    {
+      "cid": "mzc00200j7l2u0p",
+      "title": "免费动画屋",
+      "nomal_f_counts": {"2": 355, "7": 1},
+      "vip_f_counts": {"2": 355, "7": 1}
+    }
+  ],
+  "new_type_subset": [
+    {
+      "cid": "mzc002005shizp0",
+      "title": "《庆余年》手游虚拟直播发布会",
+      "type": "6/游戏",
+      "nomal_f_counts": {"2": 11},
+      "vip_f_counts": {"2": 11}
+    },
+    {
+      "cid": "mzc00200tp4rwup",
+      "title": "2026腾讯游戏发布会",
+      "type": "6/游戏",
+      "nomal_f_counts": {"2": 40},
+      "vip_f_counts": {"2": 40}
+    },
+    {
+      "cid": "mzc00200vzc9y78",
+      "title": "2023TMEA腾讯音乐娱乐盛典",
+      "type": "22/音乐",
+      "nomal_f_counts": {"2": 32},
+      "vip_f_counts": {"2": 32}
+    },
+    {
+      "cid": "j5wzdu7t6vu3ute",
+      "title": "BIGBANG十周年演唱会首尔站",
+      "type": "22/音乐",
+      "nomal_f_counts": {"7": 29},
+      "vip_f_counts": {"7": 29}
+    },
+    {
+      "cid": "mzc00200hrq1mru",
+      "title": "音乐会《黄河大合唱》中国交响乐团",
+      "type": "31/生活",
+      "nomal_f_counts": {"7": 1},
+      "vip_f_counts": {"7": 1}
+    },
+    {
+      "cid": "mzc00200q00mv2h",
+      "title": "暑期作战大联盟，全员待命去冒险！",
+      "type": "113/表演演出",
+      "nomal_f_counts": {"2": 222, "7": 61},
+      "vip_f_counts": {"2": 222, "7": 61}
+    }
+  ],
+  "sports_subset": {
+    "union_this_round": ["2", "7"],
+    "nomal_totals": {"2": 178, "7": 50},
+    "vip_totals": {"2": 178, "7": 50},
+    "covers": [
+      {
+        "cid": "mzc00383lw807hq",
+        "title": "体育人物",
+        "type": "4/体育",
+        "nomal_f_counts": {"2": 41},
+        "vip_f_counts": {"2": 41}
+      },
+      {
+        "cid": "mzc003t8r55x4z7",
+        "title": "影说赛事",
+        "type": "4/体育",
+        "nomal_f_counts": {"2": 106},
+        "vip_f_counts": {"2": 106}
+      },
+      {
+        "cid": "mzc00200ti1wj2i",
+        "title": "NBA总决赛名局纪录片：星耀传奇",
+        "type": "4/体育",
+        "nomal_f_counts": {"7": 50},
+        "vip_f_counts": {"7": 50}
+      },
+      {
+        "cid": "mzc002003u0t3rl",
+        "title": "2026NBA总冠军巡游",
+        "type": "4/体育",
+        "nomal_f_counts": {"2": 31},
+        "vip_f_counts": {"2": 31}
+      }
+    ]
+  },
+  "pay_status_5_and_9_samples": [
+    {
+      "cid": "mzc00200ls5y7z0",
+      "title": "奔跑的少年",
+      "type": "1/电影",
+      "pay_status": "5",
+      "nomal_f_counts": {"7": 1},
+      "vip_f_counts": {"7": 1}
+    },
+    {
+      "cid": "mzc002006g6kqo4",
+      "title": "黑鹰少年",
+      "type": "1/电影",
+      "pay_status": "5",
+      "nomal_f_counts": {"7": 1},
+      "vip_f_counts": {"7": 1}
+    },
+    {
+      "cid": "mzc003ikavbkqa7",
+      "title": "逐风少年：决胜篮途",
+      "type": "3/动漫",
+      "pay_status": "9",
+      "nomal_f_counts": {"2": 11, "7": 50},
+      "vip_f_counts": {"2": 11, "7": 50}
+    },
+    {
+      "cid": "mzc003nlcrbtvub",
+      "title": "趣界篮球单挑王",
+      "type": "3/动漫",
+      "pay_status": "9",
+      "nomal_f_counts": {"2": 2, "7": 18},
+      "vip_f_counts": {"2": 2, "7": 18}
+    },
+    {
+      "cid": "mzc00200bhj36oq",
+      "title": "小学自然科学",
+      "type": "27/教育",
+      "pay_status": "8",
+      "nomal_f_counts": {"2": 10},
+      "vip_f_counts": {"2": 10}
+    }
+  ]
+}

@@ -1,0 +1,774 @@
+{
+  "generated_at": "2026-06-20T07:00:19+08:00",
+  "scope": "upload_src=2048 environment matrix for pure positive, mixed, and same-type negative covers",
+  "method": "8-environment replay over two pure 2048 positives, one mixed 2048/108 cover, and one same-type pure-0 negative",
+  "environments_tested": [
+    "pc_web_ua",
+    "mobile_h5_ua",
+    "minimal_headers",
+    "referer_origin",
+    "pc_web_browser_like",
+    "pc_web_browser_like_cookie",
+    "mobile_h5_browser_like",
+    "mobile_h5_browser_like_cookie"
+  ],
+  "covers": {
+    "mzc00200s6oqemg": {
+      "label": "pure_2048_positive_a",
+      "expected_baseline": {
+        "expected_type": "111",
+        "expected_pay_status": "7",
+        "expected_positive_trailer": "0",
+        "expected_upload_src_counts": {
+          "2048": 7
+        },
+        "expected_state_counts": {
+          "4": 7
+        },
+        "expected_targetid_nonempty_count": 7
+      },
+      "unique_signature_count": 1,
+      "baseline_match": true,
+      "canonical_summary": {
+        "status": "ok",
+        "type": "111",
+        "type_name": "文化历史",
+        "pay_status": "7",
+        "positive_trailer": "0",
+        "video_count": 7,
+        "state_counts": {
+          "4": 7
+        },
+        "upload_src_counts": {
+          "2048": 7
+        },
+        "targetid_nonempty_count": 7,
+        "publish_date_nonempty_count": 0
+      },
+      "targetid_examples": [
+        {
+          "vid": "p3232rltzwj",
+          "upload_src": "2048",
+          "targetid": "6571739605"
+        },
+        {
+          "vid": "n3232223f5l",
+          "upload_src": "2048",
+          "targetid": "6571943031"
+        },
+        {
+          "vid": "z3232lij4e6",
+          "upload_src": "2048",
+          "targetid": "6571690841"
+        },
+        {
+          "vid": "x3232vscsyu",
+          "upload_src": "2048",
+          "targetid": "6571713339"
+        }
+      ],
+      "per_environment": {
+        "pc_web_ua": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0
+        },
+        "mobile_h5_ua": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0
+        },
+        "minimal_headers": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0
+        },
+        "referer_origin": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0
+        },
+        "pc_web_browser_like": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0
+        },
+        "pc_web_browser_like_cookie": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0
+        },
+        "mobile_h5_browser_like": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0
+        },
+        "mobile_h5_browser_like_cookie": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0
+        }
+      }
+    },
+    "mzc00200ua6uec2": {
+      "label": "pure_2048_positive_b",
+      "expected_baseline": {
+        "expected_type": "111",
+        "expected_pay_status": "7",
+        "expected_positive_trailer": "0",
+        "expected_upload_src_counts": {
+          "2048": 7
+        },
+        "expected_state_counts": {
+          "4": 7
+        },
+        "expected_targetid_nonempty_count": 7
+      },
+      "unique_signature_count": 1,
+      "baseline_match": true,
+      "canonical_summary": {
+        "status": "ok",
+        "type": "111",
+        "type_name": "文化历史",
+        "pay_status": "7",
+        "positive_trailer": "0",
+        "video_count": 7,
+        "state_counts": {
+          "4": 7
+        },
+        "upload_src_counts": {
+          "2048": 7
+        },
+        "targetid_nonempty_count": 7,
+        "publish_date_nonempty_count": 0
+      },
+      "targetid_examples": [
+        {
+          "vid": "e3333t406o0",
+          "upload_src": "2048",
+          "targetid": "7775116243"
+        },
+        {
+          "vid": "z3333knm52e",
+          "upload_src": "2048",
+          "targetid": "7775116276"
+        },
+        {
+          "vid": "f3333itpy6x",
+          "upload_src": "2048",
+          "targetid": "7790779780"
+        },
+        {
+          "vid": "d3333w3cvix",
+          "upload_src": "2048",
+          "targetid": "7790779754"
+        }
+      ],
+      "per_environment": {
+        "pc_web_ua": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0
+        },
+        "mobile_h5_ua": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0
+        },
+        "minimal_headers": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0
+        },
+        "referer_origin": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0
+        },
+        "pc_web_browser_like": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0
+        },
+        "pc_web_browser_like_cookie": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0
+        },
+        "mobile_h5_browser_like": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0
+        },
+        "mobile_h5_browser_like_cookie": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0
+        }
+      }
+    },
+    "mzc002008tghx9y": {
+      "label": "mixed_2048_108_cover",
+      "expected_baseline": {
+        "expected_type": "111",
+        "expected_pay_status": "",
+        "expected_positive_trailer": "",
+        "expected_upload_src_counts": {
+          "108": 2,
+          "2048": 21
+        },
+        "expected_state_counts": null,
+        "expected_targetid_nonempty_count": null
+      },
+      "unique_signature_count": 1,
+      "baseline_match": true,
+      "canonical_summary": {
+        "status": "ok",
+        "type": "111",
+        "type_name": "文化历史",
+        "pay_status": "7",
+        "positive_trailer": "0",
+        "video_count": 23,
+        "state_counts": {
+          "4": 23
+        },
+        "upload_src_counts": {
+          "108": 2,
+          "2048": 21
+        },
+        "targetid_nonempty_count": 23,
+        "publish_date_nonempty_count": 0
+      },
+      "targetid_examples": [
+        {
+          "vid": "s31112v45cd",
+          "upload_src": "2048",
+          "targetid": "5514142983"
+        },
+        {
+          "vid": "s311130gutg",
+          "upload_src": "2048",
+          "targetid": "5514186359"
+        },
+        {
+          "vid": "p3111jza09x",
+          "upload_src": "2048",
+          "targetid": "5514171244"
+        },
+        {
+          "vid": "o3111a6jovy",
+          "upload_src": "2048",
+          "targetid": "5514172733"
+        }
+      ],
+      "per_environment": {
+        "pc_web_ua": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 23,
+          "state_counts": {
+            "4": 23
+          },
+          "upload_src_counts": {
+            "108": 2,
+            "2048": 21
+          },
+          "targetid_nonempty_count": 23,
+          "publish_date_nonempty_count": 0
+        },
+        "mobile_h5_ua": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 23,
+          "state_counts": {
+            "4": 23
+          },
+          "upload_src_counts": {
+            "108": 2,
+            "2048": 21
+          },
+          "targetid_nonempty_count": 23,
+          "publish_date_nonempty_count": 0
+        },
+        "minimal_headers": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 23,
+          "state_counts": {
+            "4": 23
+          },
+          "upload_src_counts": {
+            "108": 2,
+            "2048": 21
+          },
+          "targetid_nonempty_count": 23,
+          "publish_date_nonempty_count": 0
+        },
+        "referer_origin": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 23,
+          "state_counts": {
+            "4": 23
+          },
+          "upload_src_counts": {
+            "108": 2,
+            "2048": 21
+          },
+          "targetid_nonempty_count": 23,
+          "publish_date_nonempty_count": 0
+        },
+        "pc_web_browser_like": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 23,
+          "state_counts": {
+            "4": 23
+          },
+          "upload_src_counts": {
+            "108": 2,
+            "2048": 21
+          },
+          "targetid_nonempty_count": 23,
+          "publish_date_nonempty_count": 0
+        },
+        "pc_web_browser_like_cookie": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 23,
+          "state_counts": {
+            "4": 23
+          },
+          "upload_src_counts": {
+            "108": 2,
+            "2048": 21
+          },
+          "targetid_nonempty_count": 23,
+          "publish_date_nonempty_count": 0
+        },
+        "mobile_h5_browser_like": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 23,
+          "state_counts": {
+            "4": 23
+          },
+          "upload_src_counts": {
+            "108": 2,
+            "2048": 21
+          },
+          "targetid_nonempty_count": 23,
+          "publish_date_nonempty_count": 0
+        },
+        "mobile_h5_browser_like_cookie": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 23,
+          "state_counts": {
+            "4": 23
+          },
+          "upload_src_counts": {
+            "108": 2,
+            "2048": 21
+          },
+          "targetid_nonempty_count": 23,
+          "publish_date_nonempty_count": 0
+        }
+      }
+    },
+    "mzc00200rcuv1sy": {
+      "label": "same_type_negative_control_a",
+      "expected_baseline": {
+        "expected_type": "111",
+        "expected_pay_status": "",
+        "expected_positive_trailer": "",
+        "expected_upload_src_counts": {
+          "0": 7
+        },
+        "expected_state_counts": null,
+        "expected_targetid_nonempty_count": null
+      },
+      "unique_signature_count": 1,
+      "baseline_match": true,
+      "canonical_summary": {
+        "status": "ok",
+        "type": "111",
+        "type_name": "文化历史",
+        "pay_status": "7",
+        "positive_trailer": "0",
+        "video_count": 7,
+        "state_counts": {
+          "4": 7
+        },
+        "upload_src_counts": {
+          "0": 7
+        },
+        "targetid_nonempty_count": 0,
+        "publish_date_nonempty_count": 0
+      },
+      "targetid_examples": [
+        {
+          "vid": "a30906qill4",
+          "upload_src": "0",
+          "targetid": ""
+        },
+        {
+          "vid": "g3090yb6755",
+          "upload_src": "0",
+          "targetid": ""
+        },
+        {
+          "vid": "f3090v1l2c3",
+          "upload_src": "0",
+          "targetid": ""
+        },
+        {
+          "vid": "l3090tnbryw",
+          "upload_src": "0",
+          "targetid": ""
+        }
+      ],
+      "per_environment": {
+        "pc_web_ua": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "0": 7
+          },
+          "targetid_nonempty_count": 0,
+          "publish_date_nonempty_count": 0
+        },
+        "mobile_h5_ua": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "0": 7
+          },
+          "targetid_nonempty_count": 0,
+          "publish_date_nonempty_count": 0
+        },
+        "minimal_headers": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "0": 7
+          },
+          "targetid_nonempty_count": 0,
+          "publish_date_nonempty_count": 0
+        },
+        "referer_origin": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "0": 7
+          },
+          "targetid_nonempty_count": 0,
+          "publish_date_nonempty_count": 0
+        },
+        "pc_web_browser_like": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "0": 7
+          },
+          "targetid_nonempty_count": 0,
+          "publish_date_nonempty_count": 0
+        },
+        "pc_web_browser_like_cookie": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "0": 7
+          },
+          "targetid_nonempty_count": 0,
+          "publish_date_nonempty_count": 0
+        },
+        "mobile_h5_browser_like": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "0": 7
+          },
+          "targetid_nonempty_count": 0,
+          "publish_date_nonempty_count": 0
+        },
+        "mobile_h5_browser_like_cookie": {
+          "status": "ok",
+          "type": "111",
+          "type_name": "文化历史",
+          "pay_status": "7",
+          "positive_trailer": "0",
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "0": 7
+          },
+          "targetid_nonempty_count": 0,
+          "publish_date_nonempty_count": 0
+        }
+      }
+    }
+  },
+  "current_takeaways": [
+    "Both pure 2048 positives stayed unchanged across all 8 tested environments and kept targetid_nonempty_count=7.",
+    "The mixed cover stayed 2048/108 mixed across all 8 tested environments; the runtime environment did not collapse it into a single upload_src value.",
+    "The same-type pure-0 negative stayed unchanged across all 8 tested environments and kept targetid_nonempty_count=0.",
+    "This closes environment stability for the tested 4-cover slice, but does not by itself prove that the family escapes current type=111 knowledge-style covers."
+  ],
+  "guardrails": [
+    "Environment stability is now tested for this 4-cover slice; family boundary beyond current type=111 evidence is still open.",
+    "targetid remains a strong correlation in this slice, not a proven sufficient or necessary rule for upload_src=2048.",
+    "Mixed-cover stability proves row-level coexistence is real in the tested slice; it does not yet tell us what upstream business rule produces the split."
+  ]
+}

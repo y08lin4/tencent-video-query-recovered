@@ -1,0 +1,98 @@
+{
+  "generated_at": "2026-06-20",
+  "compare_to": "analysis/environment_page_shape_sports_kids_followup_20260619.json",
+  "buckets": {
+    "sports_provisional_followup": {
+      "today_unique_signature_count": 1,
+      "yesterday_unique_signature_count": 1,
+      "environments": {
+        "pc_web_ua": {
+          "same_as_yesterday": true,
+          "diffs": {}
+        },
+        "mobile_h5_ua": {
+          "same_as_yesterday": true,
+          "diffs": {}
+        },
+        "minimal_headers": {
+          "same_as_yesterday": true,
+          "diffs": {}
+        },
+        "referer_origin": {
+          "same_as_yesterday": true,
+          "diffs": {}
+        }
+      },
+      "cross_day_same": true
+    },
+    "kids_hybrid_seed": {
+      "today_unique_signature_count": 1,
+      "yesterday_unique_signature_count": 1,
+      "environments": {
+        "pc_web_ua": {
+          "same_as_yesterday": true,
+          "diffs": {}
+        },
+        "mobile_h5_ua": {
+          "same_as_yesterday": true,
+          "diffs": {}
+        },
+        "minimal_headers": {
+          "same_as_yesterday": true,
+          "diffs": {}
+        },
+        "referer_origin": {
+          "same_as_yesterday": true,
+          "diffs": {}
+        }
+      },
+      "cross_day_same": true
+    },
+    "kids_hybrid_pack": {
+      "today_unique_signature_count": 1,
+      "yesterday_unique_signature_count": 1,
+      "environments": {
+        "pc_web_ua": {
+          "same_as_yesterday": true,
+          "diffs": {}
+        },
+        "mobile_h5_ua": {
+          "same_as_yesterday": true,
+          "diffs": {}
+        },
+        "minimal_headers": {
+          "same_as_yesterday": true,
+          "diffs": {}
+        },
+        "referer_origin": {
+          "same_as_yesterday": true,
+          "diffs": {}
+        }
+      },
+      "cross_day_same": true
+    },
+    "kids_hybrid_trip": {
+      "today_unique_signature_count": 1,
+      "yesterday_unique_signature_count": 1,
+      "environments": {
+        "pc_web_ua": {
+          "same_as_yesterday": true,
+          "diffs": {}
+        },
+        "mobile_h5_ua": {
+          "same_as_yesterday": true,
+          "diffs": {}
+        },
+        "minimal_headers": {
+          "same_as_yesterday": true,
+          "diffs": {}
+        },
+        "referer_origin": {
+          "same_as_yesterday": true,
+          "diffs": {}
+        }
+      },
+      "cross_day_same": true
+    }
+  }
+}

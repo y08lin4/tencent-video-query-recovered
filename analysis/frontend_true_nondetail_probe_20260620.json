@@ -1,0 +1,733 @@
+{
+  "generated_at": "2026-06-19T22:32:45.693Z",
+  "scope": "true non-detail candidate probe with request/response chain separation",
+  "method": {
+    "browser": "system Chrome via Playwright",
+    "browser_executable": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "wait_ms_after_domcontentloaded": 12000,
+    "click_wait_ms_after_tab_switch": 2500,
+    "scroll_step": 1200,
+    "scroll_loops": 4,
+    "cases": [
+      {
+        "bucket": "education_cover_only",
+        "url": "https://v.qq.com/x/cover/mzc00200bhj36oq.html"
+      },
+      {
+        "bucket": "drama_topic_shell",
+        "url": "https://v.qq.com/x/cover/mzc00200nkzol5n.html"
+      },
+      {
+        "bucket": "doc_topic_shell",
+        "url": "https://v.qq.com/x/cover/mzc00200apbfiqs.html"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "bucket": "education_cover_only",
+      "input_url": "https://v.qq.com/x/cover/mzc00200bhj36oq.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200bhj36oq/e3075bgqeto.html",
+      "redirected_to_detail": true,
+      "final_page_family_guess": "detail",
+      "title": "01小学英语科学：我们的知觉_高清1080P在线观看平台_腾讯视频",
+      "tabs_seen": [],
+      "response_summary": {
+        "getPage_response_count": 2,
+        "getCoverInfoBatch_response_count": 0,
+        "FillUnionInfo_response_count": 1,
+        "any_response_with_F": false,
+        "any_response_with_upload_src": false,
+        "any_response_with_state": true,
+        "any_response_with_positive_trailer": true,
+        "getPage_with_F": false,
+        "getPage_with_upload_src": false,
+        "getCoverInfoBatch_with_F": false,
+        "getCoverInfoBatch_with_upload_src": false
+      },
+      "request_tag_summary": [
+        "FillUnionInfo",
+        "PageService/getPage"
+      ],
+      "response_url_tag_summary": [
+        "FillUnionInfo",
+        "PageService/getPage"
+      ],
+      "response_text_tag_summary": [
+        "FillUnionInfo",
+        "PageService/getPage",
+        "c_covers",
+        "coverInfoMap",
+        "cover_list",
+        "getCoverInfoBatch",
+        "normal_ids",
+        "pc_sv_mixed_feeds",
+        "topic_id_list",
+        "videoInfoMap",
+        "vip_ids"
+      ],
+      "actual_getCoverInfoBatch_request_observed": false,
+      "getPage_url_hit": {
+        "phase": "navigation",
+        "url": "https://pbaccess.video.qq.com/trpc.vector_layout.page_view.PageService/getPage?vdevice_guid=d524dbc15358a618&video_appid=3000010&vversion_name=8.5.96&vversion_platform=2",
+        "status": 200,
+        "url_chain_tags": [
+          "PageService/getPage"
+        ],
+        "text_chain_tags": [
+          "pc_sv_mixed_feeds"
+        ],
+        "matched_terms": [
+          "positive_trailer"
+        ],
+        "shape": {
+          "json_top_keys": [
+            "data",
+            "ret",
+            "msg"
+          ],
+          "contains_coverInfoMap": false,
+          "contains_videoInfoMap": false,
+          "contains_commentInfo": false,
+          "contains_cover_list": false,
+          "contains_c_covers": false,
+          "contains_topic_id_list": false,
+          "contains_normal_ids": false,
+          "contains_vip_ids": false,
+          "contains_F": false,
+          "contains_upload_src": false,
+          "contains_state": false,
+          "contains_positive_trailer": true,
+          "contains_targetid": true,
+          "sample_cids": [
+            "mzc00200bhj36o"
+          ],
+          "sample_vids": [
+            "e3075bgqeto",
+            "g3075u5qjfd",
+            "x3075rxp4o3",
+            "m30758s9prf",
+            "k30759xrfsj"
+          ]
+        },
+        "snippets": [
+          {
+            "term": "PageService/getPage",
+            "snippet": "{\"data\":{\"CardList\":[{\"id\":\"a2ede_14a4e\",\"type\":\"pc_introduction\",\"params\":{\"card_render@item_source_type\":\"0\",\"card_render@item_type\":\"-1\",\"desk_attent_state\":\"0\",\"desk_module_type\":\"detail_introduction\",\"is_new_pc_layout\":\"false\",\"mod_title\":\"小学自然科学\",\"modul"
+          },
+          {
+            "term": "pc_sv_mixed_feeds",
+            "snippet": "eral_conf\\\":{}},\\\"info_map\\\":{},\\\"mix_data\\\":null,\\\"data_type\\\":0,\\\"data_style_type\\\":0,\\\"data\\\":null},{\\\"id\\\":\\\"ced23f_123d\\\",\\\"type\\\":\\\"pc_sv_mixed_feeds\\\",\\\"params\\\":{\\\"card_render@item_source_type\\\":\\\"0\\\",\\\"card_render@item_type\\\":\\\"-1\\\",\\\"desk_module_type\\\":\\\"poster\\\",\\\"front_page_context\""
+          }
+        ]
+      },
+      "fillUnionInfo_url_hit": {
+        "phase": "navigation",
+        "url": "https://pbaccess.video.qq.com/trpc.universal_backend_service.union_extra_data.UnionExtraData/FillUnionInfo?video_appid=3000010&vversion_name=8.2.95&vversion_platform=2",
+        "status": 200,
+        "url_chain_tags": [
+          "FillUnionInfo"
+        ],
+        "text_chain_tags": [
+          "topic_id_list",
+          "cover_list",
+          "c_covers"
+        ],
+        "matched_terms": [
+          "\"state\":",
+          "cover_list",
+          "c_covers",
+          "topic_id_list"
+        ],
+        "shape": {
+          "json_top_keys": [
+            "data",
+            "ret",
+            "msg"
+          ],
+          "contains_coverInfoMap": false,
+          "contains_videoInfoMap": false,
+          "contains_commentInfo": false,
+          "contains_cover_list": true,
+          "contains_c_covers": true,
+          "contains_topic_id_list": true,
+          "contains_normal_ids": false,
+          "contains_vip_ids": false,
+          "contains_F": false,
+          "contains_upload_src": false,
+          "contains_state": true,
+          "contains_positive_trailer": false,
+          "contains_targetid": false,
+          "sample_cids": [
+            "mzc00200bhj36o"
+          ],
+          "sample_vids": [
+            "e3075bgqeto"
+          ]
+        },
+        "snippets": [
+          {
+            "term": "FillUnionInfo",
+            "snippet": "{\"data\":{\"cover_infos\":{},\"video_infos\":{\"e3075bgqeto\":{\"c_title_detail\":\"01小学英语科学：我们的知觉\",\"c_title_output\":\"01小学英语科学：我们的知觉\",\"c_covers\":\"mzc00200bhj36oq\",\"topic_id_list\":\"\",\"cover_list\":[\"mzc00200bhj36oq\"],\"state\":\"4\",\"playright\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"8\",\""
+          },
+          {
+            "term": "topic_id_list",
+            "snippet": "nfos\\\":{\\\"e3075bgqeto\\\":{\\\"c_title_detail\\\":\\\"01小学英语科学：我们的知觉\\\",\\\"c_title_output\\\":\\\"01小学英语科学：我们的知觉\\\",\\\"c_covers\\\":\\\"mzc00200bhj36oq\\\",\\\"topic_id_list\\\":\\\"\\\",\\\"cover_list\\\":[\\\"mzc00200bhj36oq\\\"],\\\"state\\\":\\\"4\\\",\\\"playright\\\":[\\\"1\\\",\\\"2\\\",\\\"3\\\",\\\"4\\\",\\\"5\\\",\\\"6\\\",\\\"8\\\",\\\"9\\\",\\\"10\\\",\\\"20\\\",\\\"21\\\",\\\"22\\\",\\\"23\\\",\\\"25\\\",\\\"3\""
+          }
+        ]
+      },
+      "commentInfo_hit": null,
+      "bundle_getCoverInfoBatch_code_reference_hit": {
+        "phase": "navigation",
+        "url": "https://vfiles.gtimg.cn/tvideo2/video-detail-vue/assets/index-KKOIl-Tg.js",
+        "status": 200,
+        "url_chain_tags": [],
+        "text_chain_tags": [
+          "PageService/getPage",
+          "getCoverInfoBatch",
+          "FillUnionInfo",
+          "coverInfoMap",
+          "videoInfoMap",
+          "pc_sv_mixed_feeds",
+          "topic_id_list",
+          "cover_list",
+          "c_covers"
+        ],
+        "matched_terms": [
+          "positive_trailer",
+          "cover_list",
+          "c_covers",
+          "topic_id_list"
+        ],
+        "shape": {
+          "json_top_keys": [],
+          "contains_coverInfoMap": true,
+          "contains_videoInfoMap": true,
+          "contains_commentInfo": false,
+          "contains_cover_list": true,
+          "contains_c_covers": true,
+          "contains_topic_id_list": true,
+          "contains_normal_ids": false,
+          "contains_vip_ids": false,
+          "contains_F": false,
+          "contains_upload_src": false,
+          "contains_state": false,
+          "contains_positive_trailer": true,
+          "contains_targetid": true,
+          "sample_cids": [
+            "mZCKhAMrhRCvgF",
+            "MZcL51eno6c4g4",
+            "mzc001005q5c1p"
+          ],
+          "sample_vids": [
+            "toStringTag",
+            "crossOrigin",
+            "credentials",
+            "appendChild",
+            "constructor"
+          ]
+        },
+        "snippets": [
+          {
+            "term": "PageService/getPage",
+            "snippet": "etail use backup guid for getPageData: \".concat(t)}),t},_ie=\"https://pbaccess.video.qq.com/trpc.vector_layout.page_view.PageService/getPage?video_appid=3000010&vversion_platform=2&vversion_name=8.5.96\",wie=\"https://tpbaccess.video.qq.com/trpc.vector_layout.pag"
+          },
+          {
+            "term": "getCoverInfoBatch",
+            "snippet": "ATUS_DELETED_OR_OFFLINE:\\\"STATUS_DELETED_OR_OFFLINE\\\"};async function Yne(e,t){var E;const{cid:r,vid:n}=e,{getCoverInfo:o,getCoverInfoBatch:i,getVideoInfo:a,getVideoReviewable:s,playrightWeb:l=\\\"2\\\",enableDeletedVidCheck:u=!0}=t;let c,A;const d=n&&s?s(n):void 0;if"
+          }
+        ]
+      }
+    },
+    {
+      "bucket": "drama_topic_shell",
+      "input_url": "https://v.qq.com/x/cover/mzc00200nkzol5n.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200nkzol5n/x3099to4umi.html",
+      "redirected_to_detail": true,
+      "final_page_family_guess": "detail",
+      "title": "#电视剧合成令合成战斗群集合倒计时，青春团聚，蓄势待发！_电视剧_高清完整版视频在线观看_腾讯视频",
+      "tabs_seen": [
+        "更多短视频"
+      ],
+      "response_summary": {
+        "getPage_response_count": 3,
+        "getCoverInfoBatch_response_count": 0,
+        "FillUnionInfo_response_count": 2,
+        "any_response_with_F": false,
+        "any_response_with_upload_src": false,
+        "any_response_with_state": true,
+        "any_response_with_positive_trailer": true,
+        "getPage_with_F": false,
+        "getPage_with_upload_src": false,
+        "getCoverInfoBatch_with_F": false,
+        "getCoverInfoBatch_with_upload_src": false
+      },
+      "request_tag_summary": [
+        "FillUnionInfo",
+        "PageService/getPage"
+      ],
+      "response_url_tag_summary": [
+        "FillUnionInfo",
+        "PageService/getPage"
+      ],
+      "response_text_tag_summary": [
+        "FillUnionInfo",
+        "PageService/getPage",
+        "c_covers",
+        "commentInfo",
+        "coverInfoMap",
+        "cover_list",
+        "getCoverInfoBatch",
+        "normal_ids",
+        "pc_sv_mixed_feeds",
+        "topic_id_list",
+        "videoInfoMap",
+        "vip_ids"
+      ],
+      "actual_getCoverInfoBatch_request_observed": false,
+      "getPage_url_hit": {
+        "phase": "navigation",
+        "url": "https://pbaccess.video.qq.com/trpc.vector_layout.page_view.PageService/getPage?vdevice_guid=1c744230b11af569&video_appid=3000010&vversion_name=8.5.96&vversion_platform=2",
+        "status": 200,
+        "url_chain_tags": [
+          "PageService/getPage"
+        ],
+        "text_chain_tags": [],
+        "matched_terms": [
+          "positive_trailer"
+        ],
+        "shape": {
+          "json_top_keys": [
+            "data",
+            "ret",
+            "msg"
+          ],
+          "contains_coverInfoMap": false,
+          "contains_videoInfoMap": false,
+          "contains_commentInfo": false,
+          "contains_cover_list": false,
+          "contains_c_covers": false,
+          "contains_topic_id_list": false,
+          "contains_normal_ids": false,
+          "contains_vip_ids": false,
+          "contains_F": false,
+          "contains_upload_src": false,
+          "contains_state": false,
+          "contains_positive_trailer": true,
+          "contains_targetid": false,
+          "sample_cids": [
+            "mzc00200nkzol5",
+            "mzc003aycf7meu",
+            "mzc003v6h8kwr8",
+            "mzc003xbg88dze",
+            "mzc003bb29lzn6"
+          ],
+          "sample_vids": [
+            "nextPlayTab",
+            "d4101fbbch2",
+            "x3099to4umi",
+            "f4100zd2y81",
+            "m4100e0vx72"
+          ]
+        },
+        "snippets": [
+          {
+            "term": "PageService/getPage",
+            "snippet": "{\"data\":{\"CardList\":[{\"id\":\"a2ede_14a4e\",\"type\":\"pc_introduction\",\"params\":{\"card_render@item_source_type\":\"0\",\"card_render@item_type\":\"-1\",\"desk_attent_state\":\"0\",\"desk_module_type\":\"detail_introduction\",\"is_new_pc_layout\":\"false\",\"mod_title\":\"合成令\",\"module_t"
+          },
+          {
+            "term": "positive_trailer",
+            "snippet": "etail_recommend\\\",\\\"page_params\\\":\\\"multi_tab_focus_id=\\\\u0026history_video_skip_start=\\\\u0026union_const_2001={\\\\\\\"state\\\\\\\":4,\\\\\\\"positive_trailer\\\\\\\":0}\\\\u0026is_pay_knowledge_page=0\\\\u0026for_rec_uuid=ace96210-6c2e-11f1-a8fa-52540074cbf6\\\\u0026unsdk_page_type=2\\\\u0026select"
+          }
+        ]
+      },
+      "fillUnionInfo_url_hit": {
+        "phase": "navigation",
+        "url": "https://pbaccess.video.qq.com/trpc.universal_backend_service.union_extra_data.UnionExtraData/FillUnionInfo?video_appid=3000010&vversion_name=8.2.95&vversion_platform=2",
+        "status": 200,
+        "url_chain_tags": [
+          "FillUnionInfo"
+        ],
+        "text_chain_tags": [
+          "topic_id_list",
+          "cover_list",
+          "c_covers"
+        ],
+        "matched_terms": [
+          "\"state\":",
+          "cover_list",
+          "c_covers",
+          "topic_id_list"
+        ],
+        "shape": {
+          "json_top_keys": [
+            "data",
+            "ret",
+            "msg"
+          ],
+          "contains_coverInfoMap": false,
+          "contains_videoInfoMap": false,
+          "contains_commentInfo": false,
+          "contains_cover_list": true,
+          "contains_c_covers": true,
+          "contains_topic_id_list": true,
+          "contains_normal_ids": false,
+          "contains_vip_ids": false,
+          "contains_F": false,
+          "contains_upload_src": false,
+          "contains_state": true,
+          "contains_positive_trailer": false,
+          "contains_targetid": false,
+          "sample_cids": [
+            "mzc00200r6yznx",
+            "mzc00200dzho2a",
+            "mzc002001w361j",
+            "mzc00200nkzol5"
+          ],
+          "sample_vids": [
+            "d4101fbbch2"
+          ]
+        },
+        "snippets": [
+          {
+            "term": "FillUnionInfo",
+            "snippet": "{\"data\":{\"cover_infos\":{},\"video_infos\":{\"d4101fbbch2\":{\"c_title_detail\":\"李昀锐 腾讯视频马年拜年祝福\",\"c_title_output\":\"李昀锐 腾讯视频马年拜年祝福\",\"c_covers\":\"mzc00200r6yznxn+mzc00200dzho2a9+mzc002001w361jz+mzc00200nkzol5n\",\"topic_id_list\":\"\",\"cover_list\":[\"mzc00200r6yznxn\",\"mzc002"
+          },
+          {
+            "term": "topic_id_list",
+            "snippet": "马年拜年祝福\\\",\\\"c_title_output\\\":\\\"李昀锐 腾讯视频马年拜年祝福\\\",\\\"c_covers\\\":\\\"mzc00200r6yznxn+mzc00200dzho2a9+mzc002001w361jz+mzc00200nkzol5n\\\",\\\"topic_id_list\\\":\\\"\\\",\\\"cover_list\\\":[\\\"mzc00200r6yznxn\\\",\\\"mzc00200dzho2a9\\\",\\\"mzc002001w361jz\\\",\\\"mzc00200nkzol5n\\\"],\\\"state\\\":\\\"4\\\",\\\"playright\\\":[\\\"1\\\",\\\"2\\\",\\\"3\""
+          }
+        ]
+      },
+      "commentInfo_hit": {
+        "phase": "navigation",
+        "url": "https://pbaccess.video.qq.com/trpc.universal_backend_service.page_server_rpc.PageServer/GetPageData?video_appid=1000005&vversion_name=1.0.0&vversion_platform=2&guid=1c744230b11af569&video_omgid=1c744230b11af569",
+        "status": 200,
+        "url_chain_tags": [],
+        "text_chain_tags": [
+          "commentInfo"
+        ],
+        "matched_terms": [],
+        "shape": {
+          "json_top_keys": [
+            "data",
+            "ret",
+            "msg"
+          ],
+          "contains_coverInfoMap": false,
+          "contains_videoInfoMap": false,
+          "contains_commentInfo": true,
+          "contains_cover_list": false,
+          "contains_c_covers": false,
+          "contains_topic_id_list": false,
+          "contains_normal_ids": false,
+          "contains_vip_ids": false,
+          "contains_F": false,
+          "contains_upload_src": false,
+          "contains_state": false,
+          "contains_positive_trailer": false,
+          "contains_targetid": false,
+          "sample_cids": [
+            "mzc00200nkzol5",
+            "Mzc3YWQwNDA4JT"
+          ],
+          "sample_vids": [
+            "fansclubnew",
+            "d4101fbbch2",
+            "commentInfo",
+            "accountType",
+            "relateVideo"
+          ]
+        },
+        "snippets": [
+          {
+            "term": "commentInfo",
+            "snippet": "2\\\\\\\",\\\\\\\"time\\\\\\\":\\\\\\\"1741836992\\\\\\\",\\\\\\\"seq\\\\\\\":\\\\\\\"NzRjMTU5ZjgtNmIyZC00M2NkLTkyMjItYWEwNWJjM2JjNTM5\\\\\\\",\\\\\\\"scene\\\\\\\":133,\\\\\\\"platfrom\\\\\\\":3,\\\\\\\"commentInfo\\\\\\\":{},\\\\\\\"relation\\\\\\\":{\\\\\\\"rootId\\\\\\\":\\\\\\\"148618796215313783\\\\\\\",\\\\\\\"parentId\\\\\\\":\\\\\\\"148618796215313783\\\\\\\",\\\\\\\"rootUserid\\\\\\\":\\\\\\\"689362776\\\\\\\",\\\\\\\"parentUs"
+          }
+        ]
+      },
+      "bundle_getCoverInfoBatch_code_reference_hit": {
+        "phase": "navigation",
+        "url": "https://vfiles.gtimg.cn/tvideo2/video-detail-vue/assets/index-KKOIl-Tg.js",
+        "status": 200,
+        "url_chain_tags": [],
+        "text_chain_tags": [
+          "PageService/getPage",
+          "getCoverInfoBatch",
+          "FillUnionInfo",
+          "coverInfoMap",
+          "videoInfoMap",
+          "pc_sv_mixed_feeds",
+          "topic_id_list",
+          "cover_list",
+          "c_covers"
+        ],
+        "matched_terms": [
+          "positive_trailer",
+          "cover_list",
+          "c_covers",
+          "topic_id_list"
+        ],
+        "shape": {
+          "json_top_keys": [],
+          "contains_coverInfoMap": true,
+          "contains_videoInfoMap": true,
+          "contains_commentInfo": false,
+          "contains_cover_list": true,
+          "contains_c_covers": true,
+          "contains_topic_id_list": true,
+          "contains_normal_ids": false,
+          "contains_vip_ids": false,
+          "contains_F": false,
+          "contains_upload_src": false,
+          "contains_state": false,
+          "contains_positive_trailer": true,
+          "contains_targetid": true,
+          "sample_cids": [
+            "mZCKhAMrhRCvgF",
+            "MZcL51eno6c4g4",
+            "mzc001005q5c1p"
+          ],
+          "sample_vids": [
+            "toStringTag",
+            "crossOrigin",
+            "credentials",
+            "appendChild",
+            "constructor"
+          ]
+        },
+        "snippets": [
+          {
+            "term": "PageService/getPage",
+            "snippet": "etail use backup guid for getPageData: \".concat(t)}),t},_ie=\"https://pbaccess.video.qq.com/trpc.vector_layout.page_view.PageService/getPage?video_appid=3000010&vversion_platform=2&vversion_name=8.5.96\",wie=\"https://tpbaccess.video.qq.com/trpc.vector_layout.pag"
+          },
+          {
+            "term": "getCoverInfoBatch",
+            "snippet": "ATUS_DELETED_OR_OFFLINE:\\\"STATUS_DELETED_OR_OFFLINE\\\"};async function Yne(e,t){var E;const{cid:r,vid:n}=e,{getCoverInfo:o,getCoverInfoBatch:i,getVideoInfo:a,getVideoReviewable:s,playrightWeb:l=\\\"2\\\",enableDeletedVidCheck:u=!0}=t;let c,A;const d=n&&s?s(n):void 0;if"
+          }
+        ]
+      }
+    },
+    {
+      "bucket": "doc_topic_shell",
+      "input_url": "https://v.qq.com/x/cover/mzc00200apbfiqs.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200apbfiqs/p41013w37rt.html",
+      "redirected_to_detail": true,
+      "final_page_family_guess": "detail",
+      "title": "畅游天下·云南篇_第12集：昆明·花花世界_高清完整版视频在线观看_腾讯视频",
+      "tabs_seen": [],
+      "response_summary": {
+        "getPage_response_count": 2,
+        "getCoverInfoBatch_response_count": 0,
+        "FillUnionInfo_response_count": 1,
+        "any_response_with_F": false,
+        "any_response_with_upload_src": false,
+        "any_response_with_state": true,
+        "any_response_with_positive_trailer": true,
+        "getPage_with_F": false,
+        "getPage_with_upload_src": false,
+        "getCoverInfoBatch_with_F": false,
+        "getCoverInfoBatch_with_upload_src": false
+      },
+      "request_tag_summary": [
+        "FillUnionInfo",
+        "PageService/getPage"
+      ],
+      "response_url_tag_summary": [
+        "FillUnionInfo",
+        "PageService/getPage"
+      ],
+      "response_text_tag_summary": [
+        "FillUnionInfo",
+        "PageService/getPage",
+        "c_covers",
+        "coverInfoMap",
+        "cover_list",
+        "getCoverInfoBatch",
+        "normal_ids",
+        "pc_sv_mixed_feeds",
+        "topic_id_list",
+        "videoInfoMap",
+        "vip_ids"
+      ],
+      "actual_getCoverInfoBatch_request_observed": false,
+      "getPage_url_hit": {
+        "phase": "navigation",
+        "url": "https://pbaccess.video.qq.com/trpc.vector_layout.page_view.PageService/getPage?vdevice_guid=30bb620faefafd0c&video_appid=3000010&vversion_name=8.5.96&vversion_platform=2",
+        "status": 200,
+        "url_chain_tags": [
+          "PageService/getPage"
+        ],
+        "text_chain_tags": [],
+        "matched_terms": [
+          "positive_trailer"
+        ],
+        "shape": {
+          "json_top_keys": [
+            "data",
+            "ret",
+            "msg"
+          ],
+          "contains_coverInfoMap": false,
+          "contains_videoInfoMap": false,
+          "contains_commentInfo": false,
+          "contains_cover_list": false,
+          "contains_c_covers": false,
+          "contains_topic_id_list": false,
+          "contains_normal_ids": false,
+          "contains_vip_ids": false,
+          "contains_F": false,
+          "contains_upload_src": false,
+          "contains_state": false,
+          "contains_positive_trailer": true,
+          "contains_targetid": false,
+          "sample_cids": [
+            "mzc00200apbfiq",
+            "mzc00200cx6wi3"
+          ],
+          "sample_vids": [
+            "p41013w37rt",
+            "c4101m3ig0a",
+            "j4101v2zpdq",
+            "u4101emsazt",
+            "c4101mk9i0g"
+          ]
+        },
+        "snippets": [
+          {
+            "term": "PageService/getPage",
+            "snippet": "{\"data\":{\"CardList\":[{\"id\":\"a2ede_12187\",\"type\":\"pc_introduction\",\"params\":{\"card_render@item_source_type\":\"0\",\"card_render@item_type\":\"-1\",\"desk_attent_state\":\"0\",\"desk_module_type\":\"detail_introduction\",\"is_new_pc_layout\":\"false\",\"mod_title\":\"畅游天下·云南篇\",\"mod"
+          },
+          {
+            "term": "positive_trailer",
+            "snippet": "\\\",\\\\\\\"22\\\\\\\",\\\\\\\"23\\\\\\\",\\\\\\\"24\\\\\\\",\\\\\\\"26\\\\\\\",\\\\\\\"30\\\\\\\",\\\\\\\"34\\\\\\\",\\\\\\\"35\\\\\\\",\\\\\\\"37\\\\\\\",\\\\\\\"39\\\\\\\",\\\\\\\"40\\\\\\\",\\\\\\\"45\\\\\\\",\\\\\\\"46\\\\\\\",\\\\\\\"57\\\\\\\",\\\\\\\"61\\\\\\\"],\\\\\\\"pay_status\\\\\\\":8,\\\\\\\"positive_trailer\\\\\\\":0}\\\\u0026click_data_key=\\\\u0026type=9\\\\u0026lid=\\\\u0026siteName=\\\\u0026highrisk_content_mark=0\\\\u0026is_nocopyright=0\\\\u0026no_a"
+          }
+        ]
+      },
+      "fillUnionInfo_url_hit": {
+        "phase": "navigation",
+        "url": "https://pbaccess.video.qq.com/trpc.universal_backend_service.union_extra_data.UnionExtraData/FillUnionInfo?video_appid=3000010&vversion_name=8.2.95&vversion_platform=2",
+        "status": 200,
+        "url_chain_tags": [
+          "FillUnionInfo"
+        ],
+        "text_chain_tags": [
+          "topic_id_list",
+          "cover_list",
+          "c_covers"
+        ],
+        "matched_terms": [
+          "\"state\":",
+          "cover_list",
+          "c_covers",
+          "topic_id_list"
+        ],
+        "shape": {
+          "json_top_keys": [
+            "data",
+            "ret",
+            "msg"
+          ],
+          "contains_coverInfoMap": false,
+          "contains_videoInfoMap": false,
+          "contains_commentInfo": false,
+          "contains_cover_list": true,
+          "contains_c_covers": true,
+          "contains_topic_id_list": true,
+          "contains_normal_ids": false,
+          "contains_vip_ids": false,
+          "contains_F": false,
+          "contains_upload_src": false,
+          "contains_state": true,
+          "contains_positive_trailer": false,
+          "contains_targetid": false,
+          "sample_cids": [
+            "mzc00200cx6wi3",
+            "mzc00200apbfiq"
+          ],
+          "sample_vids": [
+            "p41013w37rt"
+          ]
+        },
+        "snippets": [
+          {
+            "term": "FillUnionInfo",
+            "snippet": "{\"data\":{\"cover_infos\":{},\"video_infos\":{\"p41013w37rt\":{\"c_title_detail\":\"第12集：昆明·花花世界\",\"c_title_output\":\"第12集：昆明·花花世界\",\"c_covers\":\"mzc00200cx6wi3r+mzc00200apbfiqs\",\"topic_id_list\":\"\",\"cover_list\":[\"mzc00200cx6wi3r\",\"mzc00200apbfiqs\"],\"state\":\"4\",\"playright\":"
+          },
+          {
+            "term": "topic_id_list",
+            "snippet": "13w37rt\\\":{\\\"c_title_detail\\\":\\\"第12集：昆明·花花世界\\\",\\\"c_title_output\\\":\\\"第12集：昆明·花花世界\\\",\\\"c_covers\\\":\\\"mzc00200cx6wi3r+mzc00200apbfiqs\\\",\\\"topic_id_list\\\":\\\"\\\",\\\"cover_list\\\":[\\\"mzc00200cx6wi3r\\\",\\\"mzc00200apbfiqs\\\"],\\\"state\\\":\\\"4\\\",\\\"playright\\\":[\\\"1\\\",\\\"2\\\",\\\"3\\\",\\\"4\\\",\\\"5\\\",\\\"6\\\",\\\"8\\\",\\\"9\\\",\\\"10\\\",\\\"18\\\",\\\"20\\\""
+          }
+        ]
+      },
+      "commentInfo_hit": null,
+      "bundle_getCoverInfoBatch_code_reference_hit": {
+        "phase": "navigation",
+        "url": "https://vfiles.gtimg.cn/tvideo2/video-detail-vue/assets/index-KKOIl-Tg.js",
+        "status": 200,
+        "url_chain_tags": [],
+        "text_chain_tags": [
+          "PageService/getPage",
+          "getCoverInfoBatch",
+          "FillUnionInfo",
+          "coverInfoMap",
+          "videoInfoMap",
+          "pc_sv_mixed_feeds",
+          "topic_id_list",
+          "cover_list",
+          "c_covers"
+        ],
+        "matched_terms": [
+          "positive_trailer",
+          "cover_list",
+          "c_covers",
+          "topic_id_list"
+        ],
+        "shape": {
+          "json_top_keys": [],
+          "contains_coverInfoMap": true,
+          "contains_videoInfoMap": true,
+          "contains_commentInfo": false,
+          "contains_cover_list": true,
+          "contains_c_covers": true,
+          "contains_topic_id_list": true,
+          "contains_normal_ids": false,
+          "contains_vip_ids": false,
+          "contains_F": false,
+          "contains_upload_src": false,
+          "contains_state": false,
+          "contains_positive_trailer": true,
+          "contains_targetid": true,
+          "sample_cids": [
+            "mZCKhAMrhRCvgF",
+            "MZcL51eno6c4g4",
+            "mzc001005q5c1p"
+          ],
+          "sample_vids": [
+            "toStringTag",
+            "crossOrigin",
+            "credentials",
+            "appendChild",
+            "constructor"
+          ]
+        },
+        "snippets": [
+          {
+            "term": "PageService/getPage",
+            "snippet": "etail use backup guid for getPageData: \".concat(t)}),t},_ie=\"https://pbaccess.video.qq.com/trpc.vector_layout.page_view.PageService/getPage?video_appid=3000010&vversion_platform=2&vversion_name=8.5.96\",wie=\"https://tpbaccess.video.qq.com/trpc.vector_layout.pag"
+          },
+          {
+            "term": "getCoverInfoBatch",
+            "snippet": "ATUS_DELETED_OR_OFFLINE:\\\"STATUS_DELETED_OR_OFFLINE\\\"};async function Yne(e,t){var E;const{cid:r,vid:n}=e,{getCoverInfo:o,getCoverInfoBatch:i,getVideoInfo:a,getVideoReviewable:s,playrightWeb:l=\\\"2\\\",enableDeletedVidCheck:u=!0}=t;let c,A;const d=n&&s?s(n):void 0;if"
+          }
+        ]
+      }
+    }
+  ],
+  "current_takeaways": [
+    "All three stronger non-detail candidates still redirected into detail final URLs.",
+    "Request-side chain evidence only hit PageService/getPage and FillUnionInfo; no actual getCoverInfoBatch network request was observed.",
+    "Bundle/script text still contains the getCoverInfoBatch call path plus c_covers/topic_id_list/cover_list merge logic, so the path exists in code even where this runtime path did not trigger it.",
+    "Across these redirected-detail paths, F/upload_src still did not surface in sampled request/response payloads."
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "cross-day comparison of the five canonical representative field-drift pages across the tested 8-environment matrix",
+  "sources": {
+    "baseline": "analysis/environment_matrix_browserlike_20260619.json",
+    "retest": "analysis/environment_matrix_20260620.json"
+  },
+  "environment_scope": [
+    "pc_web_ua",
+    "mobile_h5_ua",
+    "minimal_headers",
+    "referer_origin",
+    "pc_web_browser_like",
+    "pc_web_browser_like_cookie",
+    "mobile_h5_browser_like",
+    "mobile_h5_browser_like_cookie"
+  ],
+  "buckets": {
+    "film_single": {
+      "cross_day_same": true,
+      "unique_signature_count_20260619": 1,
+      "unique_signature_count_20260620": 1,
+      "selected_row_vid": "z4102qfi0x4",
+      "selected_row_source": "url_vid",
+      "cover_video_ids_count": 1,
+      "cover_downright_count": 26,
+      "publish_date_nonempty_count": 0,
+      "targetid_nonempty_count": 0,
+      "upload_src_counts": {
+        "20": 1
+      }
+    },
+    "anime_season": {
+      "cross_day_same": true,
+      "unique_signature_count_20260619": 1,
+      "unique_signature_count_20260620": 1,
+      "selected_row_vid": "j4101ouc4ve",
+      "selected_row_source": "url_vid",
+      "cover_video_ids_count": 31,
+      "cover_downright_count": 29,
+      "publish_date_nonempty_count": 0,
+      "targetid_nonempty_count": 0,
+      "upload_src_counts": {
+        "20": 4,
+        "129": 27
+      }
+    },
+    "variety_topic": {
+      "cross_day_same": true,
+      "unique_signature_count_20260619": 1,
+      "unique_signature_count_20260620": 1,
+      "selected_row_vid": "k004768pj4j",
+      "selected_row_source": "cover_video_ids_first",
+      "cover_video_ids_count": 29,
+      "cover_downright_count": 20,
+      "publish_date_nonempty_count": 0,
+      "targetid_nonempty_count": 29,
+      "upload_src_counts": {
+        "20": 26,
+        "31": 3
+      }
+    },
+    "sports_replay": {
+      "cross_day_same": true,
+      "unique_signature_count_20260619": 1,
+      "unique_signature_count_20260620": 1,
+      "selected_row_vid": "j4102xwdyib",
+      "selected_row_source": "cover_video_ids_first",
+      "cover_video_ids_count": 31,
+      "cover_downright_count": 2,
+      "publish_date_nonempty_count": 31,
+      "targetid_nonempty_count": 0,
+      "upload_src_counts": {
+        "31": 31
+      }
+    },
+    "kids_free_pack": {
+      "cross_day_same": true,
+      "unique_signature_count_20260619": 1,
+      "unique_signature_count_20260620": 1,
+      "selected_row_vid": "k002652nnbl",
+      "selected_row_source": "cover_video_ids_first",
+      "cover_video_ids_count": 137,
+      "cover_downright_count": 26,
+      "publish_date_nonempty_count": 100,
+      "targetid_nonempty_count": 128,
+      "upload_src_counts": {
+        "20": 33,
+        "107": 104
+      }
+    }
+  },
+  "overall_verdict": "all five representative field-drift pages stayed cross-day stable across the tested 8-environment matrix",
+  "notes": [
+    "This artifact tracks the same five canonical representative pages already used by the browser-like same-day matrix.",
+    "The comparison is on selected-row signature and aggregate field counts, not on every row of every page.",
+    "This does not yet mean every page-shape bucket or every second representative has an 8-environment cross-day rerun."
+  ]
+}

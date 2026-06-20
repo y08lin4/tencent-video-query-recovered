@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-06-19",
+  "rule": "publish_date and targetid are explained better by page shape first, then type",
+  "samples": [
+    {
+      "bucket": "常规电视剧季页",
+      "cid": "mzc00200dfbfsrw",
+      "title": "长安诺",
+      "publish_date_nonempty": "0/56",
+      "targetid_nonempty": "56/56",
+      "example": "e003452crbe / 长安诺_01 / publish_date='' / targetid=5868283771"
+    },
+    {
+      "bucket": "综艺季页",
+      "cid": "mzc00200u2ay1kj + mzc00200c2gydkd",
+      "title": "开始推理吧 第4季 + 哈哈哈哈哈 第6季",
+      "publish_date_nonempty": "95/99",
+      "targetid_nonempty": "0/99",
+      "example": "m4102c2eh31 / 直播高清版回放：开始吃早饭吧 / publish_date=2026-03-24 00:00:00 / targetid=''"
+    },
+    {
+      "bucket": "电影单片",
+      "cid": "mzc00200idzf2m8 + mzc002009qyd7nv",
+      "title": "飞驰人生3 + 熊出没·年年有熊",
+      "publish_date_nonempty": "0/2",
+      "targetid_nonempty": "0/2",
+      "example": "z4102qfi0x4 / 飞驰人生3 / publish_date='' / targetid=''"
+    },
+    {
+      "bucket": "动漫季页",
+      "cid": "mzc00200fobieel + mzc00200xxpsogl",
+      "title": "一人之下 第6季 + 剑来 第二季",
+      "publish_date_nonempty": "1/77",
+      "targetid_nonempty": "1/77",
+      "example": "r0860oqchhr / 番外篇 天师下山 / publish_date=2010-01-01 00:00:00 / targetid=3836141253"
+    },
+    {
+      "bucket": "少儿常规季页",
+      "cid": "mzc00200lyd87zd",
+      "title": "汪汪队立大功第五季[普通话版]",
+      "publish_date_nonempty": "0/26",
+      "targetid_nonempty": "0/26"
+    },
+    {
+      "bucket": "少儿免费合集",
+      "cid": "mzc00200tuupfc2 + mzc002002cxp3uh",
+      "title": "汪汪队立大功免费合集 + 小猪佩奇免费合集",
+      "publish_date_nonempty": "123/175",
+      "targetid_nonempty": "166/175",
+      "example": "k002652nnbl / 海上救援_01 / publish_date=2010-01-01 00:00:00 / targetid=7648970696"
+    },
+    {
+      "bucket": "专题页",
+      "cid": "mzc00200nkzol5n + mzc00200apbfiqs",
+      "title": "合成令 + 畅游天下·云南篇",
+      "publish_date_nonempty": "0/34",
+      "targetid_nonempty": "7/34",
+      "example": "o0044pa9u34 / 第2集：西双版纳，自由生长 / publish_date='' / targetid=8027356567"
+    }
+  ]
+}

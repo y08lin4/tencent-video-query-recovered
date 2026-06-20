@@ -1,0 +1,122 @@
+{
+  "generated_at": "2026-06-19",
+  "fields": [
+    {
+      "field": "pay_status",
+      "frontend_status": "logic_branch_and_reporting",
+      "evidence": [
+        "VIP button report builder emits `report_cover_pay_status` and `report_vid_pay_status`.",
+        "SSR-side adjacent flag `pay_status_exchange` drives `showGive`.",
+        "The 2026-06-19 dynamic hook probe shows `JSON.parse`-layer objects still carrying raw-like `pay_status` values `0/6/8/15`, while the first exposed `union.coverInfoMap` slot was already `pay_status=0` on the tested PC Web detail cases."
+      ],
+      "current_judgment": "Raw `pay_status` is not just displayed: the frontend reads it for VIP-related reporting and keeps adjacent `pay_status_exchange -> showGive` gating nearby. But on the tested 2026-06-19 PC Web detail pages the first exposed union-store slot was already normalized/defaulted to `0`, so that exposed slot is not raw API `pay_status` passthrough and raw `pay_status` itself is not the sole frontend branch switch."
+    },
+    {
+      "field": "positive_trailer",
+      "frontend_status": "normalized_then_stored",
+      "evidence": [
+        "Bundle function `Zie(e,t)` converts `positive_trailer` via `ko(...)` during cover-info normalization.",
+        "Playwright runtime probe still sees `positive_trailer` surviving as `0/1/2` in sampled `union.coverInfoMap` rows.",
+        "2026-06-20 same-type control groups push the evidence into visible first-screen divergence: type=10 splits `pt=0/1/2` across `选集/SVIP/纯享`, short-video-forward, and preview-badge surfaces; type=106 reproduces `pt=1 -> 精彩片花` vs `pt=0 -> collection-like`; type=4 `pt=0/1` also does not collapse into the same first-screen pattern."
+      ],
+      "current_judgment": "The field is explicitly normalized into frontend state and now has repeatable same-type surface correlation, but it is still not isolated as the sole frontend branch switch."
+    },
+    {
+      "field": "state",
+      "frontend_status": "logic_branch_validation_gate",
+      "evidence": [
+        "Bundle normalizer `$ie(e,t)` writes `state:ko(t.state)` into the `union` store video map.",
+        "Validator branches like `Vne(...)` / `Kne(...)` use that state to produce unavailable/offline/deleted/not-playable frontend errors.",
+        "Episode-page SSR and sampled `FillUnionInfo` responses both carry `state`, so the branch is not SSR-only residue."
+      ],
+      "current_judgment": "The field is actively consumed by the detail frontend and directly affects unavailable/offline/error UI paths."
+    },
+    {
+      "field": "upload_src",
+      "frontend_status": "omitted_from_tested_startup_payload_and_not_named_in_bundle",
+      "evidence": [
+        "Representative page startup / SSR payloads still omit `upload_src` even when the corresponding API2 row carries a non-empty value.",
+        "No direct `upload_src` hit was found in the tested modern detail bundle, legacy detail bundle, or sampled `FillUnionInfo` path.",
+        "Sampled `FillUnionInfo` responses carried `state` but did not carry `upload_src` in the tested detail-page path.",
+        "Playwright runtime probe also did not expose `upload_src` in sampled `union.coverInfoMap` / `union.videoInfoMap` rows.",
+        "The 2026-06-20 row-shell followup still found zero visible-card/runtime object mappings carrying `upload_src` on `tv_season_f_mixed` and `variety_topic_uploadsrc_mixed`.",
+      "The 2026-06-20 network followup still surfaced `positive_trailer` and `state` in the representative detail followup requests, but did not surface `upload_src`.",
+      "The new `frontend_row_network_request_capture_20260620.json` followup tightens that request-side negative scope further: even with tab-priority and lazy scroll on the strongest redirected-detail candidates, the tested slice still emitted only `PageService/getPage + FillUnionInfo` and no `upload_src` hit.",
+        "The 2026-06-20 row-schema probe matched visible detail cards back to `PageService/getPage` row params: the tested TV row schema still exposed `state/positive_trailer`, the tested variety row schema still exposed `positive_trailer/targetid`, and neither family exposed `upload_src`.",
+        "The new `frontend_startup_vs_runtime_diff_20260620.json` cross-artifact diff shows the same absence on three redirected-detail candidates (`mzc00200bhj36oq` / `mzc00200nkzol5n` / `mzc00200apbfiqs`) across startup/SSR, sampled getPage, sampled FillUnionInfo, and tested detail-bundle string audit.",
+        "The 2026-06-20 detail bundle string audit on `index-KKOIl-Tg.js` still found `upload_src` / `uploadSrc` count = 0."
+      ],
+    "current_judgment": "Current evidence from the tested redirected-detail startup/main/runtime plus row-shell followup slice says the field does not directly expose or read here, and the tested visible-card `getPage` row schema also omits it. The new startup-vs-runtime diff plus the stronger request-level capture push that negative scope up to the tested redirected-detail startup/getPage/FillUnionInfo boundary as well. If it is consumed at all, it is more likely in an earlier hidden shaping step, a later lazy bundle, a later request path, or a non-detail runtime slice."
+    },
+    {
+      "field": "targetid",
+      "frontend_status": "commentInfo_layer_plus_synthetic_consumer_closure",
+      "evidence": [
+        "A player/danmaku flow passes `targetId` into `attachIframe(...)` after a snake_case -> camelCase reshape.",
+        "The 2026-06-19 dynamic hook probe captured parsed-object-layer `targetid` getter access labels such as `json_parse:root.vl.vi.0`, but sampled `union.coverInfoMap` / `union.videoInfoMap` rows still did not expose `targetid` directly.",
+      "The 2026-06-20 followups move the strongest runtime evidence into `root.base.commentInfo.targetid/commentid` across kids, TV-season, and sports positive pages, while the anonymous comment-report button audit shows only disjoint `feed_id/cp_id/father_feed_id` identities in `dt-params`, with empty intersections against `commentInfo.targetid/commentid` and `dokiid/ftid`.",
+      "The new `frontend_targetid_report_identity_owner_bridge_20260620.json` followup extends that negative result into shallow framework-owner data as well: even dataset / owner-prop scans around anonymous report/comment nodes still stayed inside a `feed_id/cp_id` family rather than the positive `commentInfo.targetid/commentid` family.",
+        "On the tested runtime slice, visible-row / exposed-union layers can still stay at shell-level `targetid=0` or omit the field entirely, while synthetic runtime probing already closes the downstream `targetId -> popup query targetid` consumer mapping."
+      ],
+    "current_judgment": "Static bundle evidence plus synthetic runtime probing already close the downstream `targetId -> popup query targetid` consumer mapping, while runtime evidence now stably places backend `targetid/commentid` in the comment/community-side `commentInfo` layer. The remaining open question is the natural live producer, and current negative evidence is still mainly bounded to anonymous PC Web report/comment DOM paths rather than every possible login or later lazy path."
+    },
+    {
+      "field": "F",
+      "frontend_status": "startup_payload_present_but_named_logic_not_yet_located",
+      "evidence": [
+        "Representative movie / anime / cover-only pages already carry raw `F` in inline startup / SSR payloads.",
+        "No clean named `.F` / `[\"F\"]` / `['F']` business-field read was isolated in the tested detail bundles.",
+        "The same negative result currently holds for sampled `txv.core.js` and `superplayer-txv.js` field-access patterns.",
+        "Sampled `FillUnionInfo` responses also did not expose a named `F` read in the tested detail-page path.",
+        "Playwright runtime probe did not expose `F` on sampled `union.coverInfoMap` / `union.videoInfoMap` rows, including a drama family page that docs had already marked as an `F=0/2/4/7` mixed cover.",
+        "The 2026-06-20 row-shell followup still found zero visible-card-to-`F` bucket mappings on `tv_season_f_mixed`, and no matching row runtime objects on `variety_topic_uploadsrc_mixed`.",
+      "The 2026-06-20 network followup still surfaced `positive_trailer` and `state` in the representative detail followup requests, but did not surface `F`.",
+      "The new `frontend_row_network_request_capture_20260620.json` followup tightens that request-side negative scope further: even with tab-priority and lazy scroll on the strongest redirected-detail candidates, the tested slice still emitted only `PageService/getPage + FillUnionInfo` and no `F` hit.",
+        "The 2026-06-20 row-schema probe matched visible detail cards back to `PageService/getPage` row params, and the matched visible-card rows still omitted `F` even where backend-side black-box evidence for the same cover family already showed meaningful `F` splits.",
+        "The new `frontend_startup_vs_runtime_diff_20260620.json` cross-artifact diff now shows the cleanest version of this gap on `mzc00200bhj36oq`: `F` is present in startup/SSR, but absent from sampled getPage and FillUnionInfo.",
+        "The 2026-06-20 detail bundle string audit on `index-KKOIl-Tg.js` still found no named `\"F\":` / `[\"F\"]` / `['F']` business-field string hits."
+      ],
+    "current_judgment": "The frontend does receive raw `F` in startup payloads, but within the current tested detail startup/main/runtime plus row-shell followup slice there is still no named consumer, and the tested visible-card `getPage` row schema also omits `F`. The new startup-vs-runtime diff plus the stronger request-level capture narrow that absence to the tested redirected-detail startup/getPage/FillUnionInfo boundary as well. If it matters semantically, that logic is more likely upstream of the visible-card schema, generic-row shaping, or outside the tested runtime slice."
+    },
+    {
+      "field": "downright",
+      "frontend_status": "direct_ui_gate",
+      "evidence": [
+        "Toolbar logic fetches cover info, reads `downright`, falls back to `前往客户端下载` when permission is absent, and uses permission-style checks on the positive path."
+      ],
+      "current_judgment": "This field directly controls download-toolbar button state/text and is clearly a frontend logic field, even though the individual numeric code meanings are still not fully named."
+    },
+    {
+      "field": "publish_date",
+      "frontend_status": "formatted_display_with_gate",
+      "evidence": [
+        "Frontend derives `publishDate` from raw `publish_date`.",
+        "Display is separately gated by `usePublishDate`."
+      ],
+      "current_judgment": "The field is consumed, but only after frontend-side formatting and an additional display switch."
+    },
+    {
+      "field": "cover_list",
+      "frontend_status": "request_chain_input",
+      "evidence": [
+      "Bundle helper `Une(e)` merges `cover_list`, `c_covers`, and `topic_id_list`, then points the merged CID set toward a candidate related-cover follow-up path.",
+      "The 2026-06-20 enhanced row-network request/response capture still observed only `PageService/getPage + FillUnionInfo` on the strongest redirected-detail candidates and did not observe a real `getCoverInfoBatch` request/response."
+      ],
+    "current_judgment": "The merge path is confirmed more strongly than the live follow-up request target. On the tested redirected-detail runtime slice, the frontend still only exposes a candidate next-hop path here; a real `getCoverInfoBatch` request/response remains unobserved."
+    },
+    {
+      "field": "category_map",
+      "frontend_status": "environment_specific_ui_branch",
+      "evidence": [
+        "Bundle function `HL(e)` combines `category_map` with `navigator.userAgent` to decide whether to show a client-environment warning."
+      ],
+      "current_judgment": "This field is actively used in environment-specific UI logic."
+    }
+  ],
+  "still_needs_tracing": [
+    "how hydration-time derived booleans differ from raw `pay_status / positive_trailer / state` on representative pages",
+    "whether `upload_src` is consumed in a later lazy bundle or on non-detail page families after the currently negative tested detail plus row-shell followup slice and the tested visible-card getPage row schema omission",
+    "whether `F` only matters to generic row shaping / downstream player state and never reaches named frontend reads after the currently negative tested detail plus row-shell followup slice and the tested visible-card getPage row schema omission",
+    "whether player-side or external runtime scripts (`txv.core.js` / superplayer-related code) consume either field"
+  ]
+}

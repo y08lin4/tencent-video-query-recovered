@@ -1,0 +1,421 @@
+{
+  "generated_at": "2026-06-19",
+  "source": "node_repl_playwright_runtime_followup",
+  "browser_executable": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+  "wait_ms": 12000,
+  "takeaways": [
+    "Focused runtime followup now directly covers normalized positive_trailer=0/1/2 representative pages.",
+    "On these pages, exposed union.coverInfoMap.positive_trailer keeps the normalized 0/1/2 value and runtime getter access repeatedly hits that field.",
+    "Exposed union cover pay_status still collapses to 0 on all sampled pages, even when parse-layer pay_status can still surface raw 6 or 15 on some cases.",
+    "Even on targetid-heavy representative pages, sampled exposed union rows still do not expose targetid directly; current runtime evidence still closes only to parsed-object-layer getter hits.",
+    "F and upload_src remain absent from sampled exposed union rows and from named runtime getter hits in this focused round.",
+    "Downright stays exposed and receives repeated runtime getter hits.",
+    "Sampled visible DOM/button flags still do not show a direct trailer/try-watch/download/gift split attributable to positive_trailer alone."
+  ],
+  "cases": [
+    {
+      "bucket": "tv_topic_positive_trailer_2_pay8",
+      "cid": "mzc00200nkzol5n",
+      "vid": "d4101fbbch2",
+      "exposed_union_snapshot": {
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 2,
+        "cover_positive_content_id": "1543606",
+        "cover_downright_head": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "8",
+          "9",
+          "10",
+          "18",
+          "20",
+          "21"
+        ],
+        "cover_has_F": false,
+        "video_state": 4,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_downright_head": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "8",
+          "9",
+          "10",
+          "18",
+          "20",
+          "21"
+        ],
+        "video_has_F": false
+      },
+      "dom_flags": {
+        "has_vip_cta": true,
+        "has_try_watch_cta": false,
+        "has_trailer_badge": false,
+        "has_download_entry": false,
+        "has_gift_entry": false
+      },
+      "parsed_values": {
+        "pay_status": [
+          "0"
+        ],
+        "pay_status_exchange": [
+          false
+        ],
+        "show_gift": [
+          false
+        ],
+        "positive_trailer": [
+          2
+        ],
+        "state": [
+          "4"
+        ],
+        "targetid": [
+          "0"
+        ],
+        "upload_src": [],
+        "F": [],
+        "downright": [
+          {
+            "type": "array",
+            "length": 26,
+            "head": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ]
+          },
+          {
+            "type": "array",
+            "length": 28,
+            "head": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ]
+          }
+        ]
+      },
+      "runtime_get_counts": {
+        "pay_status": 20,
+        "pay_status_exchange": 20,
+        "positive_trailer": 20,
+        "targetid": 0,
+        "upload_src": 0,
+        "F": 0,
+        "downright": 4
+      }
+    },
+    {
+      "bucket": "tv_season_positive_trailer_2_pay6",
+      "cid": "mzc002001w361jz",
+      "vid": "p3194lmiwjg",
+      "exposed_union_snapshot": {
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 2,
+        "cover_positive_content_id": "1543606",
+        "cover_downright_head": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "8",
+          "9",
+          "10",
+          "18",
+          "20",
+          "21"
+        ],
+        "cover_has_F": false,
+        "video_state": 4,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_downright_head": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "8",
+          "9",
+          "10",
+          "18",
+          "20",
+          "21"
+        ],
+        "video_has_F": false
+      },
+      "dom_flags": {
+        "has_vip_cta": true,
+        "has_try_watch_cta": false,
+        "has_trailer_badge": false,
+        "has_download_entry": false,
+        "has_gift_entry": false
+      },
+      "parsed_values": {
+        "pay_status": [
+          "0",
+          6
+        ],
+        "pay_status_exchange": [
+          false
+        ],
+        "show_gift": [
+          false
+        ],
+        "positive_trailer": [
+          2
+        ],
+        "state": [
+          "4"
+        ],
+        "targetid": [
+          "0"
+        ],
+        "upload_src": [],
+        "F": [],
+        "downright": [
+          {
+            "type": "array",
+            "length": 26,
+            "head": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ]
+          },
+          {
+            "type": "array",
+            "length": 27,
+            "head": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ]
+          }
+        ]
+      },
+      "runtime_get_counts": {
+        "pay_status": 20,
+        "pay_status_exchange": 20,
+        "positive_trailer": 20,
+        "targetid": 1,
+        "upload_src": 0,
+        "F": 0,
+        "downright": 4
+      }
+    },
+    {
+      "bucket": "variety_topic_pay15_targetid",
+      "cid": "mzc002001u873es",
+      "vid": "k004768pj4j",
+      "exposed_union_snapshot": {
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 0,
+        "cover_positive_content_id": "1543606",
+        "cover_downright_head": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "8",
+          "9",
+          "10",
+          "21",
+          "22",
+          "23"
+        ],
+        "cover_has_F": false,
+        "video_state": 4,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_downright_head": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "8",
+          "9",
+          "10",
+          "21",
+          "22",
+          "23"
+        ],
+        "video_has_F": false
+      },
+      "dom_flags": {
+        "has_vip_cta": true,
+        "has_try_watch_cta": false,
+        "has_trailer_badge": false,
+        "has_download_entry": false,
+        "has_gift_entry": false
+      },
+      "parsed_values": {
+        "pay_status": [
+          "0",
+          15
+        ],
+        "pay_status_exchange": [
+          false
+        ],
+        "show_gift": [
+          false
+        ],
+        "positive_trailer": [
+          0
+        ],
+        "state": [
+          "4"
+        ],
+        "targetid": [
+          "0"
+        ],
+        "upload_src": [],
+        "F": [],
+        "downright": [
+          {
+            "type": "array",
+            "length": 20,
+            "head": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ]
+          }
+        ]
+      },
+      "runtime_get_counts": {
+        "pay_status": 18,
+        "pay_status_exchange": 18,
+        "positive_trailer": 18,
+        "targetid": 4,
+        "upload_src": 0,
+        "F": 0,
+        "downright": 4
+      }
+    },
+    {
+      "bucket": "kids_dualfull_targetid",
+      "cid": "jynqzy9n3wfrsfp",
+      "vid": "l0020z7maus",
+      "exposed_union_snapshot": {
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 1,
+        "cover_positive_content_id": "1543606",
+        "cover_downright_head": [
+          "45",
+          "46"
+        ],
+        "cover_has_F": false,
+        "video_state": 4,
+        "video_has_upload_src": false,
+        "video_has_targetid": false,
+        "video_downright_head": [
+          "41",
+          "45",
+          "46"
+        ],
+        "video_has_F": false
+      },
+      "dom_flags": {
+        "has_vip_cta": true,
+        "has_try_watch_cta": false,
+        "has_trailer_badge": false,
+        "has_download_entry": false,
+        "has_gift_entry": false
+      },
+      "parsed_values": {
+        "pay_status": [
+          "0",
+          6
+        ],
+        "pay_status_exchange": [
+          false
+        ],
+        "show_gift": [
+          false
+        ],
+        "positive_trailer": [
+          1
+        ],
+        "state": [
+          "4"
+        ],
+        "targetid": [
+          "0",
+          "NzY1MjE0NTY5OA==",
+          "NzY1MTkyMTA3MA==",
+          "NzY1MDU3MzgxMg==",
+          "MTQwOTA2NDQ0OA==",
+          "MTQwOTA2MzYxMw==",
+          "NzY0OTgzOTIzNA==",
+          "NzY0OTY5MDk2MQ==",
+          "NzY0ODk3NTUwOA=="
+        ],
+        "upload_src": [],
+        "F": [],
+        "downright": [
+          {
+            "type": "array",
+            "length": 2,
+            "head": [
+              "45",
+              "46"
+            ]
+          },
+          {
+            "type": "array",
+            "length": 3,
+            "head": [
+              "41",
+              "45",
+              "46"
+            ]
+          }
+        ]
+      },
+      "runtime_get_counts": {
+        "pay_status": 19,
+        "pay_status_exchange": 19,
+        "positive_trailer": 19,
+        "targetid": 4,
+        "upload_src": 0,
+        "F": 0,
+        "downright": 4
+      }
+    }
+  ]
+}

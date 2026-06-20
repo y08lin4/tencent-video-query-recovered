@@ -1,0 +1,177 @@
+{
+  "generated_at": "2026-06-20T02:11:03+08:00",
+  "scope": "runtime synthetic DANMAKU_REPORT probe for targetid handoff into report popup URLs",
+  "source_tool": "tools/tencent_frontend_dynamic_hook_probe.js",
+  "method": {
+    "browser": "system Chrome via Playwright",
+    "ua_surface": "PC Web anonymous session",
+    "core_patch": [
+      "wrap window.SuperPlayer.EvtEmitter.prototype on/once/addListener/emit",
+      "register live report listener instances in report_listener_regs + _reportBusRefs",
+      "run synthetic DANMAKU_REPORT payloads against chosen Dte listener bus"
+    ],
+    "payload_shapes": [
+      "raw_missing",
+      "raw_present",
+      "nested_present"
+    ]
+  },
+  "cases": [
+    {
+      "bucket": "kids_dualfull_targetid",
+      "input_url": "https://v.qq.com/x/cover/jynqzy9n3wfrsfp.html",
+      "final_url": "https://v.qq.com/x/cover/jynqzy9n3wfrsfp/l0020z7maus.html",
+      "title": "捉迷藏_少儿_动画片大全_腾讯视频",
+      "listener_registry": {
+        "report_listener_reg_count": 3,
+        "wrapped_event_bus_labels": [
+          "window.SuperPlayer.EvtEmitter.prototype:on",
+          "window.SuperPlayer.EvtEmitter.prototype:once",
+          "window.SuperPlayer.EvtEmitter.prototype:addListener",
+          "window.SuperPlayer.EvtEmitter.prototype:emit"
+        ],
+        "registrations": [
+          {
+            "ref_index": 0,
+            "event_name": "danmaku:requestReport",
+            "ctor_name": "Y"
+          },
+          {
+            "ref_index": 0,
+            "event_name": "danmaku:report",
+            "ctor_name": "Y"
+          },
+          {
+            "ref_index": 1,
+            "event_name": "DANMAKU_REPORT",
+            "ctor_name": "Dte"
+          }
+        ]
+      },
+      "synthetic_report_probe": {
+        "attempted": true,
+        "candidate_count": 2,
+        "chosen_bus_index": 1,
+        "chosen_bus_ctor": "Dte",
+        "listener_events": [
+          "DANMAKU_REPORT"
+        ],
+        "cases": [
+          {
+            "shape": "raw_missing",
+            "payload_preview": "{\"id\":\"synthetic_raw_missing\"}",
+            "last_popup_src": "https://m.v.qq.com/z/app/video-report-h5/index.html?reportType=5&id=synthetic_raw_missing&targetid=undefined",
+            "popup_contains_expected_id": true,
+            "popup_contains_expected_targetid": false
+          },
+          {
+            "shape": "raw_present",
+            "payload_preview": "{\"id\":\"synthetic_raw_present\",\"targetId\":\"7652145698\"}",
+            "last_popup_src": "https://m.v.qq.com/z/app/video-report-h5/index.html?reportType=5&id=synthetic_raw_present&targetid=7652145698",
+            "popup_contains_expected_id": true,
+            "popup_contains_expected_targetid": true
+          },
+          {
+            "shape": "nested_present",
+            "payload_preview": "{\"data\":{\"id\":\"synthetic_nested_present\",\"targetId\":\"7652145698\"}}",
+            "last_popup_src": "https://m.v.qq.com/z/app/video-report-h5/index.html?reportType=5&id=undefined&targetid=undefined",
+            "popup_contains_expected_id": false,
+            "popup_contains_expected_targetid": true
+          }
+        ]
+      },
+      "takeaways": [
+        "live listener registry exposed a real Dte bus that owns DANMAKU_REPORT",
+        "raw payload propagated both id and targetId into the popup URL",
+        "nested payload collapsed to id=undefined&targetid=undefined"
+      ]
+    },
+    {
+      "bucket": "variety_topic_pay15_targetid_uploadsrc",
+      "input_url": "https://v.qq.com/x/cover/mzc002001u873es.html",
+      "final_url": "https://v.qq.com/x/cover/mzc002001u873es/k004768pj4j.html",
+      "title": "EP10战局纯享：WindVSS.Carry决赛第一场_综艺_高清完整版视频在线观看_腾讯视频",
+      "listener_registry": {
+        "report_listener_reg_count": 3,
+        "wrapped_event_bus_labels": [
+          "window.SuperPlayer.EvtEmitter.prototype:on",
+          "window.SuperPlayer.EvtEmitter.prototype:once",
+          "window.SuperPlayer.EvtEmitter.prototype:addListener",
+          "window.SuperPlayer.EvtEmitter.prototype:emit"
+        ],
+        "registrations": [
+          {
+            "ref_index": 0,
+            "event_name": "danmaku:requestReport",
+            "ctor_name": "Y"
+          },
+          {
+            "ref_index": 0,
+            "event_name": "danmaku:report",
+            "ctor_name": "Y"
+          },
+          {
+            "ref_index": 1,
+            "event_name": "DANMAKU_REPORT",
+            "ctor_name": "Dte"
+          }
+        ]
+      },
+      "synthetic_report_probe": {
+        "attempted": true,
+        "candidate_count": 2,
+        "chosen_bus_index": 1,
+        "chosen_bus_ctor": "Dte",
+        "listener_events": [
+          "DANMAKU_REPORT"
+        ],
+        "cases": [
+          {
+            "shape": "raw_missing",
+            "payload_preview": "{\"id\":\"synthetic_raw_missing\"}",
+            "last_popup_src": "https://m.v.qq.com/z/app/video-report-h5/index.html?reportType=5&id=synthetic_raw_missing&targetid=undefined",
+            "popup_contains_expected_id": true,
+            "popup_contains_expected_targetid": false
+          },
+          {
+            "shape": "raw_present",
+            "payload_preview": "{\"id\":\"synthetic_raw_present\",\"targetId\":\"7652145698\"}",
+            "last_popup_src": "https://m.v.qq.com/z/app/video-report-h5/index.html?reportType=5&id=synthetic_raw_present&targetid=7652145698",
+            "popup_contains_expected_id": true,
+            "popup_contains_expected_targetid": true
+          },
+          {
+            "shape": "nested_present",
+            "payload_preview": "{\"data\":{\"id\":\"synthetic_nested_present\",\"targetId\":\"7652145698\"}}",
+            "last_popup_src": "https://m.v.qq.com/z/app/video-report-h5/index.html?reportType=5&id=undefined&targetid=undefined",
+            "popup_contains_expected_id": false,
+            "popup_contains_expected_targetid": true
+          }
+        ]
+      },
+      "takeaways": [
+        "the same Dte listener shape was exposed on the pay_status=15 variety topic page",
+        "raw payload again propagated both id and targetId into the popup URL",
+        "nested payload again collapsed to id=undefined&targetid=undefined"
+      ]
+    }
+  ],
+  "cross_page_takeaways": [
+    "Both representative pages exposed the same report listener topology: Y owns danmaku:requestReport / danmaku:report, and Dte owns DANMAKU_REPORT.",
+    "Synthetic raw DANMAKU_REPORT payloads proved that the live listener path expects raw payload input and consumes it as b.data.* downstream.",
+    "Synthetic nested payloads reproduced the undefined/undefined popup shape, which is consistent with a higher-layer facade adding the .data wrapper before the listener callback.",
+    "This closes the runtime mapping from raw DANMAKU_REPORT payload -> popup query string for id/targetid, but it still does not prove that any natural live producer currently supplies targetId."
+  ],
+  "status_upgrade": {
+    "frontend_targetid_runtime_callsite": "partially_closed",
+    "what_is_now_confirmed": [
+      "real runtime Dte listener instance exists",
+      "raw DANMAKU_REPORT payload with targetId reaches popup targetid query parameter",
+      "nested payload produces undefined id/targetid"
+    ],
+    "what_remains_open": [
+      "which natural producer, if any, supplies targetId in live traffic",
+      "whether commentInfo.targetid/commentid can ever converge into this report path under login or hover-reveal conditions"
+    ]
+  }
+}

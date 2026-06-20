@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "manual Playwright interaction followup on a targetid-heavy variety page after dismissing the popup overlay",
+  "page": "https://v.qq.com/x/cover/mzc002001u873es.html",
+  "overlay_info_before_removal": {
+    "has_popup_mask": true,
+    "has_popup_container": true,
+    "popup_kind": "txv-client-service-popup"
+  },
+  "forced_click_targets": [
+    "讨论",
+    "热门",
+    "最新",
+    "查看更多评论",
+    "登录参与讨论",
+    "写长文",
+    "登录发个友善的弹幕吧！"
+  ],
+  "matched_network_hits": [
+    {
+      "kind": "request",
+      "url": "https://pbaccess.video.qq.com/trpc.barrage.word_shield.WordShield/GetWordShield"
+    },
+    {
+      "kind": "request",
+      "url": "https://pbaccess.video.qq.com/trpc.barrage.custom_barrage.CustomBarrage/GetDMEffectConfig",
+      "payload_excerpt": "{\"danmu_key\":\"type=2&bubble_flag=1&cid=mzc002001u873es&vid=k004768pj4j&lid=&dokiid=2101258574\",\"engine_version\":\"2.1.10\"}"
+    },
+    {
+      "kind": "request",
+      "url": "https://pbaccess.video.qq.com/trpc.video_app_doki.extra_info.ExtraInfo",
+      "payload_excerpt": "{\"params\":{\"data_key\":\"cid=mzc002001u873es&vid=k004768pj4j\"},\"scene\":1}"
+    }
+  ],
+  "iframe_snapshot_after_actions": [
+    "https://film.video.qq.com/player/payview/txvideo-pc/index.html?cid=mzc002001u873es&vid=k004768pj4j",
+    "https://video.qq.com/getcookie/1.0.6/cookie.html?max_age=86400&v=20250423",
+    "https://v.qq.com/thumbplayer-offline-log.html?max_age=3600"
+  ],
+  "takeaways": [
+    "Before removing the client-service popup mask, discussion-related elements were present but pointer events were intercepted.",
+    "After removing the overlay and forcing clicks, the secondary request chain that became visible was barrage/doki/community-adjacent, not a literal targetId URL handoff.",
+    "No request URL or iframe src carrying literal targetId/targetid was observed in this interaction round."
+  ]
+}

@@ -1,0 +1,498 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "same-day second-representative environment matrix for main page-shape buckets",
+  "environments_tested": [
+    "pc_web_ua",
+    "mobile_h5_ua",
+    "minimal_headers",
+    "referer_origin"
+  ],
+  "bucket_urls": {
+    "sports_collection_shell": "https://v.qq.com/x/cover/mzc002003fh665c.html",
+    "kids_clean_dualfull_seed": "https://v.qq.com/x/cover/jynqzy9n3wfrsfp.html",
+    "kids_hybrid_pack": "https://v.qq.com/x/cover/bzfkv5se8qaqel2.html",
+    "kids_hybrid_trip": "https://v.qq.com/x/cover/mzc00200yokeal4.html"
+  },
+  "buckets": {
+    "sports_collection_shell": {
+      "url": "https://v.qq.com/x/cover/mzc002003fh665c.html",
+      "unique_signature_count": 1,
+      "environments": {
+        "pc_web_ua": {
+          "sample_status": "ok",
+          "sample_error": "",
+          "cover_video_ids_count": 23,
+          "cover_downright_count": 2,
+          "state_counts": {
+            "4": 23
+          },
+          "upload_src_counts": {
+            "20": 23
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 23,
+          "selected_row_vid": "c0045bl6qpx",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": "mzc002003fh665c",
+          "selected_row_category_map": [
+            "11923",
+            "足球正赛正片",
+            "1118",
+            "天下足球",
+            "4",
+            "体育"
+          ]
+        },
+        "mobile_h5_ua": {
+          "sample_status": "ok",
+          "sample_error": "",
+          "cover_video_ids_count": 23,
+          "cover_downright_count": 2,
+          "state_counts": {
+            "4": 23
+          },
+          "upload_src_counts": {
+            "20": 23
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 23,
+          "selected_row_vid": "c0045bl6qpx",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": "mzc002003fh665c",
+          "selected_row_category_map": [
+            "11923",
+            "足球正赛正片",
+            "1118",
+            "天下足球",
+            "4",
+            "体育"
+          ]
+        },
+        "minimal_headers": {
+          "sample_status": "ok",
+          "sample_error": "",
+          "cover_video_ids_count": 23,
+          "cover_downright_count": 2,
+          "state_counts": {
+            "4": 23
+          },
+          "upload_src_counts": {
+            "20": 23
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 23,
+          "selected_row_vid": "c0045bl6qpx",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": "mzc002003fh665c",
+          "selected_row_category_map": [
+            "11923",
+            "足球正赛正片",
+            "1118",
+            "天下足球",
+            "4",
+            "体育"
+          ]
+        },
+        "referer_origin": {
+          "sample_status": "ok",
+          "sample_error": "",
+          "cover_video_ids_count": 23,
+          "cover_downright_count": 2,
+          "state_counts": {
+            "4": 23
+          },
+          "upload_src_counts": {
+            "20": 23
+          },
+          "publish_date_nonempty_count": 0,
+          "targetid_nonempty_count": 23,
+          "selected_row_vid": "c0045bl6qpx",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": "mzc002003fh665c",
+          "selected_row_category_map": [
+            "11923",
+            "足球正赛正片",
+            "1118",
+            "天下足球",
+            "4",
+            "体育"
+          ]
+        }
+      }
+    },
+    "kids_clean_dualfull_seed": {
+      "url": "https://v.qq.com/x/cover/jynqzy9n3wfrsfp.html",
+      "unique_signature_count": 1,
+      "environments": {
+        "pc_web_ua": {
+          "sample_status": "ok",
+          "sample_error": "",
+          "cover_video_ids_count": 20,
+          "cover_downright_count": 2,
+          "state_counts": {
+            "4": 20
+          },
+          "upload_src_counts": {
+            "20": 20
+          },
+          "publish_date_nonempty_count": 20,
+          "targetid_nonempty_count": 20,
+          "selected_row_vid": "l0020z7maus",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "e3t4g6wgd3z8uq0",
+            "bzfkv5se8qaqel2",
+            "iu529t54sbo0v8r",
+            "jynqzy9n3wfrsfp",
+            "mzc002000twpc85"
+          ],
+          "selected_row_category_map": [
+            "11244",
+            "正片",
+            "1250",
+            "动画",
+            "106",
+            "少儿"
+          ]
+        },
+        "mobile_h5_ua": {
+          "sample_status": "ok",
+          "sample_error": "",
+          "cover_video_ids_count": 20,
+          "cover_downright_count": 2,
+          "state_counts": {
+            "4": 20
+          },
+          "upload_src_counts": {
+            "20": 20
+          },
+          "publish_date_nonempty_count": 20,
+          "targetid_nonempty_count": 20,
+          "selected_row_vid": "l0020z7maus",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "e3t4g6wgd3z8uq0",
+            "bzfkv5se8qaqel2",
+            "iu529t54sbo0v8r",
+            "jynqzy9n3wfrsfp",
+            "mzc002000twpc85"
+          ],
+          "selected_row_category_map": [
+            "11244",
+            "正片",
+            "1250",
+            "动画",
+            "106",
+            "少儿"
+          ]
+        },
+        "minimal_headers": {
+          "sample_status": "ok",
+          "sample_error": "",
+          "cover_video_ids_count": 20,
+          "cover_downright_count": 2,
+          "state_counts": {
+            "4": 20
+          },
+          "upload_src_counts": {
+            "20": 20
+          },
+          "publish_date_nonempty_count": 20,
+          "targetid_nonempty_count": 20,
+          "selected_row_vid": "l0020z7maus",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "e3t4g6wgd3z8uq0",
+            "bzfkv5se8qaqel2",
+            "iu529t54sbo0v8r",
+            "jynqzy9n3wfrsfp",
+            "mzc002000twpc85"
+          ],
+          "selected_row_category_map": [
+            "11244",
+            "正片",
+            "1250",
+            "动画",
+            "106",
+            "少儿"
+          ]
+        },
+        "referer_origin": {
+          "sample_status": "ok",
+          "sample_error": "",
+          "cover_video_ids_count": 20,
+          "cover_downright_count": 2,
+          "state_counts": {
+            "4": 20
+          },
+          "upload_src_counts": {
+            "20": 20
+          },
+          "publish_date_nonempty_count": 20,
+          "targetid_nonempty_count": 20,
+          "selected_row_vid": "l0020z7maus",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "e3t4g6wgd3z8uq0",
+            "bzfkv5se8qaqel2",
+            "iu529t54sbo0v8r",
+            "jynqzy9n3wfrsfp",
+            "mzc002000twpc85"
+          ],
+          "selected_row_category_map": [
+            "11244",
+            "正片",
+            "1250",
+            "动画",
+            "106",
+            "少儿"
+          ]
+        }
+      }
+    },
+    "kids_hybrid_pack": {
+      "url": "https://v.qq.com/x/cover/bzfkv5se8qaqel2.html",
+      "unique_signature_count": 2,
+      "environments": {
+        "pc_web_ua": {
+          "sample_status": "ok",
+          "sample_error": "",
+          "cover_video_ids_count": 354,
+          "cover_downright_count": 3,
+          "state_counts": {
+            "4": 354
+          },
+          "upload_src_counts": {
+            "129": 13,
+            "20": 341
+          },
+          "publish_date_nonempty_count": 221,
+          "targetid_nonempty_count": 354,
+          "selected_row_vid": "n0020yrnly7",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "e3t4g6wgd3z8uq0",
+            "83rr3wu5e1ln2oz",
+            "bzfkv5se8qaqel2",
+            "iu529t54sbo0v8r",
+            "mzc00200oewalnz",
+            "mzc002003d5qc2l",
+            "mzc002002cxp3uh",
+            "mzc00200j7l2u0p"
+          ],
+          "selected_row_category_map": [
+            "11244",
+            "正片",
+            "1250",
+            "动画",
+            "106",
+            "少儿"
+          ]
+        },
+        "mobile_h5_ua": {
+          "sample_status": "error",
+          "sample_error": "<urlopen error timed out>",
+          "cover_video_ids_count": null,
+          "cover_downright_count": null,
+          "state_counts": {},
+          "upload_src_counts": {},
+          "publish_date_nonempty_count": null,
+          "targetid_nonempty_count": null,
+          "selected_row_vid": "",
+          "selected_row_source": "no_video_rows",
+          "selected_row_cover_list": [],
+          "selected_row_category_map": []
+        },
+        "minimal_headers": {
+          "sample_status": "ok",
+          "sample_error": "",
+          "cover_video_ids_count": 354,
+          "cover_downright_count": 3,
+          "state_counts": {
+            "4": 354
+          },
+          "upload_src_counts": {
+            "129": 13,
+            "20": 341
+          },
+          "publish_date_nonempty_count": 221,
+          "targetid_nonempty_count": 354,
+          "selected_row_vid": "n0020yrnly7",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "e3t4g6wgd3z8uq0",
+            "83rr3wu5e1ln2oz",
+            "bzfkv5se8qaqel2",
+            "iu529t54sbo0v8r",
+            "mzc00200oewalnz",
+            "mzc002003d5qc2l",
+            "mzc002002cxp3uh",
+            "mzc00200j7l2u0p"
+          ],
+          "selected_row_category_map": [
+            "11244",
+            "正片",
+            "1250",
+            "动画",
+            "106",
+            "少儿"
+          ]
+        },
+        "referer_origin": {
+          "sample_status": "ok",
+          "sample_error": "",
+          "cover_video_ids_count": 354,
+          "cover_downright_count": 3,
+          "state_counts": {
+            "4": 354
+          },
+          "upload_src_counts": {
+            "129": 13,
+            "20": 341
+          },
+          "publish_date_nonempty_count": 221,
+          "targetid_nonempty_count": 354,
+          "selected_row_vid": "n0020yrnly7",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "e3t4g6wgd3z8uq0",
+            "83rr3wu5e1ln2oz",
+            "bzfkv5se8qaqel2",
+            "iu529t54sbo0v8r",
+            "mzc00200oewalnz",
+            "mzc002003d5qc2l",
+            "mzc002002cxp3uh",
+            "mzc00200j7l2u0p"
+          ],
+          "selected_row_category_map": [
+            "11244",
+            "正片",
+            "1250",
+            "动画",
+            "106",
+            "少儿"
+          ]
+        }
+      }
+    },
+    "kids_hybrid_trip": {
+      "url": "https://v.qq.com/x/cover/mzc00200yokeal4.html",
+      "unique_signature_count": 2,
+      "environments": {
+        "pc_web_ua": {
+          "sample_status": "ok",
+          "sample_error": "",
+          "cover_video_ids_count": 41,
+          "cover_downright_count": 25,
+          "state_counts": {
+            "4": 41
+          },
+          "upload_src_counts": {
+            "20": 41
+          },
+          "publish_date_nonempty_count": 24,
+          "targetid_nonempty_count": 41,
+          "selected_row_vid": "r0042x7js9f",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "bzfkv5se8qaqel2",
+            "mzc00200yokeal4",
+            "mzc00200s44wkqc",
+            "mzc002009zldgi8"
+          ],
+          "selected_row_category_map": [
+            "11239",
+            "正片",
+            "1248",
+            "儿童音乐",
+            "106",
+            "少儿"
+          ]
+        },
+        "mobile_h5_ua": {
+          "sample_status": "ok",
+          "sample_error": "",
+          "cover_video_ids_count": 41,
+          "cover_downright_count": 25,
+          "state_counts": {
+            "4": 41
+          },
+          "upload_src_counts": {
+            "20": 41
+          },
+          "publish_date_nonempty_count": 24,
+          "targetid_nonempty_count": 41,
+          "selected_row_vid": "r0042x7js9f",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "bzfkv5se8qaqel2",
+            "mzc00200yokeal4",
+            "mzc00200s44wkqc",
+            "mzc002009zldgi8"
+          ],
+          "selected_row_category_map": [
+            "11239",
+            "正片",
+            "1248",
+            "儿童音乐",
+            "106",
+            "少儿"
+          ]
+        },
+        "minimal_headers": {
+          "sample_status": "error",
+          "sample_error": "<urlopen error timed out>",
+          "cover_video_ids_count": null,
+          "cover_downright_count": null,
+          "state_counts": {},
+          "upload_src_counts": {},
+          "publish_date_nonempty_count": null,
+          "targetid_nonempty_count": null,
+          "selected_row_vid": "",
+          "selected_row_source": "no_video_rows",
+          "selected_row_cover_list": [],
+          "selected_row_category_map": []
+        },
+        "referer_origin": {
+          "sample_status": "ok",
+          "sample_error": "",
+          "cover_video_ids_count": 41,
+          "cover_downright_count": 25,
+          "state_counts": {
+            "4": 41
+          },
+          "upload_src_counts": {
+            "20": 41
+          },
+          "publish_date_nonempty_count": 24,
+          "targetid_nonempty_count": 41,
+          "selected_row_vid": "r0042x7js9f",
+          "selected_row_source": "cover_video_ids_first",
+          "selected_row_cover_list": [
+            "bzfkv5se8qaqel2",
+            "mzc00200yokeal4",
+            "mzc00200s44wkqc",
+            "mzc002009zldgi8"
+          ],
+          "selected_row_category_map": [
+            "11239",
+            "正片",
+            "1248",
+            "儿童音乐",
+            "106",
+            "少儿"
+          ]
+        }
+      }
+    }
+  },
+  "current_takeaways": [
+    "Same-day second-representative rechecks stayed environment-stable for: sports_collection_shell, kids_clean_dualfull_seed.",
+    "Some environments hit survey/probe errors rather than clean field drift for: kids_hybrid_pack, kids_hybrid_trip."
+  ],
+  "still_open": [
+    "cross-day retest is still pending",
+    "browser-like sec-ch-ua / sec-fetch-* / synthetic-cookie requests have been covered separately, but real-session cookie / login-state / aged-cookie environments are still outside the current matrix",
+    "inspect probe-level failures before classifying them as field drift: kids_hybrid_pack, kids_hybrid_trip"
+  ]
+}

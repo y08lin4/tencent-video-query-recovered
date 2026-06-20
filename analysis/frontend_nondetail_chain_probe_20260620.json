@@ -1,0 +1,183 @@
+{
+  "generated_at": "2026-06-20T06:02:08+08:00",
+  "scope": "non-detail-targeted frontend chain probe for getPage/getCoverInfoBatch and F/upload_src evidence",
+  "method": {
+    "browser": "system Chrome via Playwright (node_repl runtime)",
+    "representative_inputs": [
+      "https://v.qq.com/x/cover/mzc002001u873es.html",
+      "https://v.qq.com/x/cover/mzc002003fh665c.html",
+      "https://v.qq.com/x/cover/mzc00200q00mv2h.html"
+    ],
+    "search_terms": [
+      "upload_src",
+      "uploadSrc",
+      "\"F\":",
+      "\"state\":",
+      "positive_trailer",
+      "cover_list",
+      "c_covers",
+      "topic_id_list"
+    ],
+    "chain_patterns": [
+      "PageService/getPage",
+      "getCoverInfoBatch"
+    ],
+    "note": "This run moved the probe off the earlier redirected-detail row-shell focus and instead watched getPage / FillUnionInfo / mixed-feed responses starting from three representative cover-like inputs."
+  },
+  "takeaways": [
+    "All three representative cover-like inputs still redirected into video-detail final URLs, so this run did not yet reach a truly non-redirected frontend family.",
+    "Across the three cases, getPage responses continued to surface positive_trailer-related evidence, but still did not surface F/upload_src.",
+    "The kids_free_pack_shell case did surface a large merged c_covers/cover_list chain inside FillUnionInfo, but that response still did not expose F/upload_src.",
+    "No getCoverInfoBatch response was observed in this run, so the next frontend step is still to target getPage shaping or a truer non-detail family."
+  ],
+  "cases": [
+    {
+      "bucket": "variety_pay15_topic_shell",
+      "input_url": "https://v.qq.com/x/cover/mzc002001u873es.html",
+      "final_url": "https://v.qq.com/x/cover/mzc002001u873es/k004768pj4j.html",
+      "title": "EP10战局纯享：WindVSS.Carry决赛第一场_综艺_高清完整版视频在线观看_腾讯视频",
+      "response_summary": {
+        "getPage_response_count": 7,
+        "getCoverInfoBatch_response_count": 0,
+        "any_response_with_F": false,
+        "any_response_with_upload_src": false,
+        "any_response_with_state": true,
+        "any_response_with_positive_trailer": true,
+        "getPage_with_F": false,
+        "getPage_with_upload_src": false,
+        "getCoverInfoBatch_with_F": false,
+        "getCoverInfoBatch_with_upload_src": false
+      },
+      "evidence": [
+        {
+          "layer": "document startup",
+          "observed": [
+            "positive_trailer=0",
+            "topic_id_list empty",
+            "normal_ids empty",
+            "vip_ids empty",
+            "page-level pay_status already shown as 0 in startup payload"
+          ]
+        },
+        {
+          "layer": "FillUnionInfo",
+          "observed": [
+            "matched_terms=state/cover_list/c_covers/topic_id_list",
+            "c_covers=mzc002001u873es",
+            "cover_list=[mzc002001u873es]",
+            "state=4",
+            "no F/upload_src hit"
+          ]
+        },
+        {
+          "layer": "PageService/getPage",
+          "observed": [
+            "matched_terms=positive_trailer only",
+            "page_params snippet carried pay_status=15 and positive_trailer=0",
+            "getPage still did not expose F/upload_src"
+          ]
+        }
+      ]
+    },
+    {
+      "bucket": "sports_collection_shell",
+      "input_url": "https://v.qq.com/x/cover/mzc002003fh665c.html",
+      "final_url": "https://v.qq.com/x/cover/mzc002003fh665c/c0045bl6qpx.html",
+      "title": "全景欧冠_22/23赛季欧冠1/8决赛次回合视频集锦_欧冠1/8决赛十佳球：哈兰德五子登科神迹努涅斯天秀开场_高清1080P在线观看平台_腾讯视频",
+      "response_summary": {
+        "getPage_response_count": 3,
+        "getCoverInfoBatch_response_count": 0,
+        "any_response_with_F": false,
+        "any_response_with_upload_src": false,
+        "any_response_with_state": true,
+        "any_response_with_positive_trailer": true,
+        "getPage_with_F": false,
+        "getPage_with_upload_src": false,
+        "getCoverInfoBatch_with_F": false,
+        "getCoverInfoBatch_with_upload_src": false
+      },
+      "evidence": [
+        {
+          "layer": "document startup",
+          "observed": [
+            "positive_trailer=1",
+            "topic_id_list empty",
+            "normal_ids empty",
+            "vip_ids empty"
+          ]
+        },
+        {
+          "layer": "FillUnionInfo",
+          "observed": [
+            "matched_terms=state/cover_list/c_covers/topic_id_list",
+            "c_covers=mzc002003fh665c",
+            "cover_list=[mzc002003fh665c]",
+            "state=4",
+            "no F/upload_src hit"
+          ]
+        },
+        {
+          "layer": "PageService/getPage",
+          "observed": [
+            "matched_terms=positive_trailer only",
+            "page params carried union_const_2001={state:4, positive_trailer:1}",
+            "getPage still did not expose F/upload_src"
+          ]
+        }
+      ]
+    },
+    {
+      "bucket": "kids_free_pack_shell",
+      "input_url": "https://v.qq.com/x/cover/mzc00200q00mv2h.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200q00mv2h/b00222sfb0h.html",
+      "title": "企鹅任务_01_高清1080P在线观看平台_腾讯视频",
+      "response_summary": {
+        "getPage_response_count": 6,
+        "getCoverInfoBatch_response_count": 0,
+        "any_response_with_F": false,
+        "any_response_with_upload_src": false,
+        "any_response_with_state": true,
+        "any_response_with_positive_trailer": true,
+        "getPage_with_F": false,
+        "getPage_with_upload_src": false,
+        "getCoverInfoBatch_with_F": false,
+        "getCoverInfoBatch_with_upload_src": false
+      },
+      "evidence": [
+        {
+          "layer": "document startup",
+          "observed": [
+            "positive_trailer=0",
+            "topic_id_list empty",
+            "normal_ids empty",
+            "vip_ids empty",
+            "startup pay_status shown as 0"
+          ]
+        },
+        {
+          "layer": "FillUnionInfo",
+          "observed": [
+            "matched_terms=state/cover_list/c_covers/topic_id_list",
+            "video c_covers expanded into a large merged cover chain including mzc00200q00mv2h, mzc00200tuupfc2, mzc00200j7l2u0p and others",
+            "state=4 on the sampled video info row",
+            "no F/upload_src hit despite the larger merged cover graph"
+          ]
+        },
+        {
+          "layer": "PageService/getPage mixed feeds",
+          "observed": [
+            "matched_terms=positive_trailer only",
+            "pc_sv_mixed_feeds responses carried positive_trailer=0 and targetid=0 style rows",
+            "getPage still did not expose F/upload_src even after scrolling deeper into mixed-feed modules"
+          ]
+        }
+      ]
+    }
+  ],
+  "next_frontend_targets": [
+    "tagged shaping immediately after getPage response objects",
+    "a truly non-redirected aggregation family instead of cover URLs that still bounce into detail video pages",
+    "getCoverInfoBatch-specific triggering path",
+    "SSR/vector-layout diffing between sibling covers with different backend F/upload_src signatures"
+  ]
+}

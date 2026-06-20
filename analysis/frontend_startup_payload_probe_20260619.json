@@ -1,0 +1,174 @@
+{
+  "generated_at": "2026-06-19",
+  "scope": "same-day representative-page startup payload and bundle semantic scan",
+  "pages": [
+    {
+      "url": "https://v.qq.com/x/cover/mzc00200idzf2m8/z4102qfi0x4.html",
+      "cid": "mzc00200idzf2m8",
+      "selected_vid": "z4102qfi0x4",
+      "cover_fields": {
+        "pay_status": "6",
+        "positive_trailer": "1",
+        "type": "1",
+        "type_name": "电影",
+        "downright_nonempty": true
+      },
+      "video_fields": {
+        "state": "4",
+        "upload_src": "20",
+        "targetid": ""
+      },
+      "inline_fields_present": [
+        "pay_status",
+        "positive_trailer",
+        "state",
+        "F",
+        "downright",
+        "publish_date",
+        "cover_list",
+        "c_covers",
+        "category_map"
+      ],
+      "startup_takeaway": {
+        "has_F": true,
+        "has_upload_src": false,
+        "has_state": true,
+        "has_targetid": false
+      }
+    },
+    {
+      "url": "https://v.qq.com/x/cover/mzc00200xxpsogl/j4101ouc4ve.html",
+      "cid": "mzc00200xxpsogl",
+      "selected_vid": "j4101ouc4ve",
+      "cover_fields": {
+        "pay_status": "6",
+        "positive_trailer": "1",
+        "type": "3",
+        "type_name": "动漫",
+        "downright_nonempty": true
+      },
+      "video_fields": {
+        "state": "4",
+        "upload_src": "129",
+        "targetid": ""
+      },
+      "inline_fields_present": [
+        "pay_status",
+        "positive_trailer",
+        "state",
+        "F",
+        "downright",
+        "publish_date",
+        "cover_list",
+        "c_covers",
+        "category_map"
+      ],
+      "startup_takeaway": {
+        "has_F": true,
+        "has_upload_src": false,
+        "has_state": true,
+        "has_targetid": false
+      }
+    },
+    {
+      "url": "https://v.qq.com/x/cover/mzc00200bhj36oq.html",
+      "cid": "mzc00200bhj36oq",
+      "selected_vid": "e3075bgqeto",
+      "cover_fields": {
+        "pay_status": "8",
+        "positive_trailer": "0",
+        "type": "27",
+        "type_name": "教育",
+        "downright_nonempty": true
+      },
+      "video_fields": {
+        "state": "4",
+        "upload_src": "108",
+        "targetid": "4876290992"
+      },
+      "inline_fields_present": [
+        "pay_status",
+        "positive_trailer",
+        "F",
+        "downright",
+        "publish_date",
+        "category_map"
+      ],
+      "startup_takeaway": {
+        "has_F": true,
+        "has_upload_src": false,
+        "has_state": false,
+        "has_targetid": false
+      }
+    },
+    {
+      "url": "https://v.qq.com/x/cover/mzc002001u873es.html",
+      "cid": "mzc002001u873es",
+      "selected_vid": "k004768pj4j",
+      "cover_fields": {
+        "pay_status": "15",
+        "positive_trailer": "0",
+        "type": "10",
+        "type_name": "综艺",
+        "downright_nonempty": true
+      },
+      "video_fields": {
+        "state": "4",
+        "upload_src": "31",
+        "targetid": "8205904798"
+      },
+      "inline_fields_present": [
+        "pay_status",
+        "positive_trailer",
+        "F",
+        "downright",
+        "publish_date",
+        "category_map"
+      ],
+      "startup_takeaway": {
+        "has_F": true,
+        "has_upload_src": false,
+        "has_state": false,
+        "has_targetid": false
+      }
+    },
+    {
+      "url": "https://v.qq.com/x/cover/mzc00200q00mv2h.html",
+      "cid": "mzc00200q00mv2h",
+      "selected_vid": "q00341pb1cq",
+      "cover_fields": {
+        "pay_status": "8",
+        "positive_trailer": "0",
+        "type": "113",
+        "type_name": "表演演出",
+        "downright_nonempty": true
+      },
+      "video_fields": {
+        "state": "4",
+        "upload_src": "20",
+        "targetid": "5667034417"
+      },
+      "inline_fields_present": [
+        "pay_status",
+        "positive_trailer",
+        "F",
+        "downright",
+        "publish_date",
+        "category_map"
+      ],
+      "startup_takeaway": {
+        "has_F": true,
+        "has_upload_src": false,
+        "has_state": false,
+        "has_targetid": false
+      }
+    }
+  ],
+  "cross_page_takeaways": [
+    "All five representative pages expose pay_status, positive_trailer, downright, publish_date, and category_map in inline startup / SSR script text.",
+    "Movie and anime representative pages also expose per-video state, cover_list, and c_covers in startup payload text.",
+    "Representative pages now show raw F in startup payload text, including movie, anime, education cover-only, variety topic, and state=8-family pages.",
+    "Representative pages still do not expose upload_src or targetid in inline startup payload text, even when API2 returns non-empty upload_src or targetid.",
+    "Detail-bundle semantic hits remain stable across the sampled pages because they share the same rotating video-detail-vue bundle."
+  ]
+}

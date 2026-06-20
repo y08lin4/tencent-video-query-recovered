@@ -1,0 +1,226 @@
+{
+  "generated_at": "2026-06-19",
+  "scope": "playwright runtime probe against detail-page `window.__vikor__context__.ssrPayloads._piniaState.union` store",
+  "method": {
+    "browser": "system Chrome via Playwright",
+    "wait_ms_after_domcontentloaded": 10000,
+    "runtime_roots_scanned": [
+      "_piniaState.union.coverInfoMap",
+      "_piniaState.union.videoInfoMap",
+      "_piniaState",
+      "_async_data",
+      "__vikor__context__"
+    ]
+  },
+  "pages": [
+    {
+      "bucket": "电影单片",
+      "input_url": "https://v.qq.com/x/cover/mzc00200idzf2m8/z4102qfi0x4.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200idzf2m8/z4102qfi0x4.html",
+      "cid": "mzc00200idzf2m8",
+      "vid": "z4102qfi0x4",
+      "raw_reference": {
+        "cover_pay_status": "6",
+        "cover_positive_trailer": "1",
+        "video_state": "4",
+        "video_upload_src": "20",
+        "video_targetid": "",
+        "startup_has_F": true
+      },
+      "runtime_store": {
+        "cover_pay_status": "0",
+        "pay_status_exchange": true,
+        "show_gift": false,
+        "cover_positive_trailer": 1,
+        "cover_positive_content_id": "1543606",
+        "cover_type": "1/电影",
+        "cover_publish_date": "2026-02-17",
+        "cover_downright_count": 26,
+        "video_state": 4,
+        "video_positive_content_id": [
+          "1543606"
+        ],
+        "video_type": "1/电影",
+        "video_downright_count": 25,
+        "cover_list_count": 3,
+        "has_F": false,
+        "has_upload_src": false,
+        "has_targetid": false
+      }
+    },
+    {
+      "bucket": "综艺专题页",
+      "input_url": "https://v.qq.com/x/cover/mzc002001u873es.html",
+      "final_url": "https://v.qq.com/x/cover/mzc002001u873es/k004768pj4j.html",
+      "cid": "mzc002001u873es",
+      "vid": "k004768pj4j",
+      "raw_reference": {
+        "cover_pay_status": "15",
+        "cover_positive_trailer": "0",
+        "video_state": "4",
+        "video_upload_src": "31",
+        "video_targetid": "8205904798",
+        "startup_has_F": true
+      },
+      "runtime_store": {
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 0,
+        "cover_positive_content_id": "1543606",
+        "cover_type": "10/综艺",
+        "cover_publish_date": "2023-07-08",
+        "cover_downright_count": 20,
+        "video_state": 4,
+        "video_positive_content_id": [
+          "1543606"
+        ],
+        "video_type": "10/综艺",
+        "video_downright_count": 20,
+        "cover_list_count": 1,
+        "has_F": false,
+        "has_upload_src": false,
+        "has_targetid": false
+      }
+    },
+    {
+      "bucket": "教育 cover-only 页",
+      "input_url": "https://v.qq.com/x/cover/mzc00200bhj36oq.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200bhj36oq/e3075bgqeto.html",
+      "cid": "mzc00200bhj36oq",
+      "vid": "e3075bgqeto",
+      "raw_reference": {
+        "cover_pay_status": "8",
+        "cover_positive_trailer": "0",
+        "video_state": "4",
+        "video_upload_src": "108",
+        "video_targetid": "4876290992",
+        "startup_has_F": true
+      },
+      "runtime_store": {
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 0,
+        "cover_positive_content_id": "1543606",
+        "cover_type": "27/教育",
+        "cover_publish_date": "",
+        "cover_downright_count": 19,
+        "video_state": 4,
+        "video_positive_content_id": [
+          "1543607"
+        ],
+        "video_type": "27/教育",
+        "video_downright_count": 19,
+        "cover_list_count": 1,
+        "has_F": false,
+        "has_upload_src": false,
+        "has_targetid": false
+      },
+      "deep_search_note": "Recursive scan across `_piniaState`, `_async_data`, and `__vikor__context__` also found no `F`, `upload_src`, `targetid`, or `targetId` key in the exposed runtime state."
+    },
+    {
+      "bucket": "电视剧季页",
+      "input_url": "https://v.qq.com/x/cover/mzc00200whxf2zp.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200whxf2zp/k41026bh3p0.html",
+      "cid": "mzc00200whxf2zp",
+      "vid": "k41026bh3p0",
+      "raw_reference": {
+        "cover_pay_status": "6",
+        "cover_positive_trailer": "1",
+        "raw_notes": [
+          "docs sample matrix marks this page as a `F=0/2/4/7` mixed family page"
+        ]
+      },
+      "runtime_store": {
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 1,
+        "cover_positive_content_id": "1543606",
+        "cover_type": "2/电视剧",
+        "cover_publish_date": "2026-06-18",
+        "cover_downright_count": 27,
+        "video_state": 4,
+        "video_positive_content_id": [
+          "1543606"
+        ],
+        "video_type": "2/电视剧",
+        "video_downright_count": 26,
+        "cover_list_count": 1,
+        "has_F": false,
+        "has_upload_src": false,
+        "has_targetid": false
+      }
+    },
+    {
+      "bucket": "positive_trailer=2 代表页A",
+      "input_url": "https://v.qq.com/x/cover/mzc002001w361jz.html",
+      "final_url": "https://v.qq.com/x/cover/mzc002001w361jz/p3194lmiwjg.html",
+      "cid": "mzc002001w361jz",
+      "vid": "p3194lmiwjg",
+      "raw_reference": {
+        "cover_pay_status": "6",
+        "cover_positive_trailer": "2"
+      },
+      "runtime_store": {
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 2,
+        "cover_positive_content_id": "1543606",
+        "cover_type": "2/电视剧",
+        "cover_publish_date": "",
+        "cover_downright_count": 26,
+        "video_state": 4,
+        "video_positive_content_id": [
+          "1543607"
+        ],
+        "video_type": "2/电视剧",
+        "video_downright_count": 27,
+        "cover_list_count": 1,
+        "has_F": false,
+        "has_upload_src": false,
+        "has_targetid": false
+      }
+    },
+    {
+      "bucket": "positive_trailer=2 代表页B",
+      "input_url": "https://v.qq.com/x/cover/mzc00200nkzol5n.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200nkzol5n/d4101fbbch2.html",
+      "cid": "mzc00200nkzol5n",
+      "vid": "d4101fbbch2",
+      "raw_reference": {
+        "cover_pay_status": "8",
+        "cover_positive_trailer": "2"
+      },
+      "runtime_store": {
+        "cover_pay_status": "0",
+        "pay_status_exchange": false,
+        "show_gift": false,
+        "cover_positive_trailer": 2,
+        "cover_positive_content_id": "1543606",
+        "cover_type": "2/电视剧",
+        "cover_publish_date": "",
+        "cover_downright_count": 26,
+        "video_state": 4,
+        "video_positive_content_id": [
+          "1543607"
+        ],
+        "video_type": "2/电视剧",
+        "video_downright_count": 28,
+        "cover_list_count": 4,
+        "has_F": false,
+        "has_upload_src": false,
+        "has_targetid": false
+      }
+    }
+  ],
+  "cross_page_takeaways": [
+    "Sampled runtime `union.coverInfoMap.pay_status` collapsed to `0` on every tested page, including raw cover branches that were `6`, `8`, and `15` in the API/startup-side evidence.",
+    "Sampled runtime `union.coverInfoMap.positive_trailer` preserved the current raw family values `0/1/2`, so this field survives normalization more faithfully than `pay_status` in the exposed union store slot.",
+    "Sampled runtime union store preserved `positive_content_id`, `type`, `type_name`, `publish_date`, `downright`, `state`, `cover_list`, and `c_covers`.",
+    "Sampled runtime union store did not expose `F`, `upload_src`, or `targetid` on the selected cover/video rows, even on pages where earlier API/startup-side evidence had shown non-empty `upload_src`, non-empty `targetid`, or startup-side `F`.",
+    "Movie raw `pay_status=6` currently maps to exposed store `pay_status=0` plus `pay_status_exchange=true`; the sampled education / variety / drama pages also map to `pay_status=0`, but keep `pay_status_exchange=false`, so the exposed runtime gating looks more dependent on adjacent booleans than on preserving raw pay_status codes."
+  ]
+}

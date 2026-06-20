@@ -1,0 +1,326 @@
+{
+  "generated_at": "2026-06-19",
+  "scope": "same-day environment matrix for API1/API2 contract behavior and representative field drift",
+  "environments_tested": [
+    "pc_web_ua",
+    "mobile_h5_ua",
+    "minimal_headers",
+    "referer_origin"
+  ],
+  "matrix_dimensions": {
+    "format": [
+      "api2_xml",
+      "api2_jsonp"
+    ],
+    "call_shape": [
+      "single_id",
+      "batch_ids"
+    ],
+    "id_quality": [
+      "all_valid",
+      "all_invalid",
+      "valid_plus_invalid",
+      "empty_shell_plus_valid",
+      "duplicate",
+      "32_item_boundary",
+      "33_item_boundary"
+    ],
+    "time_window": [
+      "same_day_repeat_done",
+      "cross_day_repeat_pending"
+    ]
+  },
+  "api1": {
+    "current_judgment": "No environment-specific branch was observed in the 2026-06-19 same-day matrix. Query parameters still dominate API1 behavior.",
+    "stable_rules": [
+      "`tid` and `idlist` remain hard parameters across all four tested request environments.",
+      "`appid`/`appkey` remain branch-style validation rather than simple always-required auth.",
+      "Single-request `idlist` limit is 32 non-empty items; 33 non-empty items returns `-111001 / idlist个数错误, 为0或超过限制`.",
+      "Duplicates count toward the 32-item limit and are not deduplicated.",
+      "Empty comma slots are ignored and do not count toward the 32-item limit.",
+      "Mixed `invalidcid123,valid` still returns top-level `errorno=0`; the bad item falls to per-item `retcode=10010045`."
+    ],
+    "cases": [
+      {
+        "case": "baseline_single_valid",
+        "sample": "mzc00200idzf2m8",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "stable_success"
+      },
+      {
+        "case": "missing_appid",
+        "sample": "mzc00200idzf2m8",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "stable_success"
+      },
+      {
+        "case": "appid_99999",
+        "sample": "mzc00200idzf2m8",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "10010108 / appid no find"
+      },
+      {
+        "case": "canonical_appid_missing_appkey",
+        "sample": "mzc00200idzf2m8",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "10010110 / appkey error"
+      },
+      {
+        "case": "mixed_valid_invalid_batch",
+        "sample": "invalidcid123,mzc00200idzf2m8",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "top-level success, invalid item retcode=10010045, result order stable"
+      },
+      {
+        "case": "duplicate_and_empty_slots",
+        "sample": ",mzc00200idzf2m8,,mzc00200idzf2m8,mzc00200xxpsogl,",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "duplicates preserved, empty slots ignored"
+      },
+      {
+        "case": "dup32",
+        "sample": "32 non-empty duplicate CIDs",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "stable_success"
+      },
+      {
+        "case": "dup33",
+        "sample": "33 non-empty duplicate CIDs",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "-111001 / idlist个数错误, 为0或超过限制"
+      }
+    ]
+  },
+  "api2": {
+    "current_judgment": "No environment-specific branch was observed in the 2026-06-19 same-day matrix. Query parameters still dominate API2 behavior.",
+    "stable_rules": [
+      "HTTP 200 still does not imply success; success/failure must be judged from `errorno`/`errormsg` in the body.",
+      "Only exact lowercase `otype=json` switches API2 into JSONP `QZOutputJson=...;` mode.",
+      "Missing `otype` or weird values like `text` still return XML success bodies.",
+      "`union_platform` remained ignored in all tested environments.",
+      "`appid`/`appkey` validation remained branch-style in all tested environments.",
+      "Single-request `idlist` limit is 32 non-empty items; 33 non-empty items returns `-111001 / idlist个数错误, 为0或超过限制`.",
+      "Mixed valid+invalid VIDs remain top-level `errorno=0`; the invalid item preserves `id` but leaves `vid/title` empty and still reports per-item `retcode=0`.",
+      "Even an all-invalid JSONP batch can stay at top-level `errorno=0`; callers still have to detect failure from empty-shell item fields rather than per-item `retcode`."
+    ],
+    "cases": [
+      {
+        "case": "otype_json_single",
+        "sample": "z4102qfi0x4 and j4101ouc4ve",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "stable JSONP wrapper QZOutputJson=...; with application/x-javascript"
+      },
+      {
+        "case": "otype_json_upper",
+        "sample": "z4102qfi0x4",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "stable XML success body; JSONP switch is case-sensitive"
+      },
+      {
+        "case": "otype_missing_or_text",
+        "sample": "z4102qfi0x4",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "stable XML success body"
+      },
+      {
+        "case": "union_platform_missing_and_999",
+        "sample": "z4102qfi0x4",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "stable_success"
+      },
+      {
+        "case": "missing_appid",
+        "sample": "z4102qfi0x4",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "stable_success"
+      },
+      {
+        "case": "appid_99999",
+        "sample": "z4102qfi0x4",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "10010108 / appid no find"
+      },
+      {
+        "case": "canonical_appid_missing_appkey",
+        "sample": "z4102qfi0x4",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "10010110 / appkey error"
+      },
+      {
+        "case": "mixed_valid_invalid_batch",
+        "sample": "z4102qfi0x4,zzzzzzzzzzz,j4101ouc4ve",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "top-level success, invalid item empty shell, result order stable"
+      },
+      {
+        "case": "all_invalid_jsonp_batch",
+        "sample": "zzzzzzzzzzz,yyyyyyyyyyy",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "top-level success, each item is an empty shell, per-item retcode still 0"
+      },
+      {
+        "case": "duplicate_and_empty_slots",
+        "sample": ",z4102qfi0x4,,z4102qfi0x4,j4101ouc4ve,",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "duplicates preserved, empty slots ignored"
+      },
+      {
+        "case": "dup32",
+        "sample": "32 non-empty duplicate VIDs",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "stable_success"
+      },
+      {
+        "case": "dup33",
+        "sample": "33 non-empty duplicate VIDs",
+        "applies_to": [
+          "pc_web_ua",
+          "mobile_h5_ua",
+          "minimal_headers",
+          "referer_origin"
+        ],
+        "result": "-111001 / idlist个数错误, 为0或超过限制"
+      }
+    ]
+  },
+  "same_page_multi_env": {
+    "current_status": "After switching the probe signature from unstable `videos[0]` to a stable selected-row strategy (`URL vid -> video_ids[0] -> deterministic fallback`), all five representative buckets stayed at `unique_signature_count=1` across the four same-day request environments.",
+    "representative_samples": [
+      {
+        "bucket": "电影单片",
+        "sample": "mzc00200idzf2m8 / z4102qfi0x4",
+        "selected_row_vid": "z4102qfi0x4",
+        "unique_signature_count": 1,
+        "field_drift_status": "no same-day drift observed in `state / upload_src / publish_date / targetid / cover_list / category_map`"
+      },
+      {
+        "bucket": "动漫季页",
+        "sample": "mzc00200xxpsogl / j4101ouc4ve",
+        "selected_row_vid": "j4101ouc4ve",
+        "unique_signature_count": 1,
+        "field_drift_status": "no same-day drift observed in selected-row fields or aggregate counts"
+      },
+      {
+        "bucket": "综艺专题页",
+        "sample": "mzc002001u873es / k004768pj4j",
+        "selected_row_vid": "k004768pj4j",
+        "unique_signature_count": 1,
+        "field_drift_status": "same-day multi-header live recheck is now complete and stable"
+      },
+      {
+        "bucket": "体育活动回放页",
+        "sample": "mzc002003u0t3rl / j4102xwdyib",
+        "selected_row_vid": "j4102xwdyib",
+        "unique_signature_count": 1,
+        "field_drift_status": "same-day multi-header live recheck is now complete and stable"
+      },
+      {
+        "bucket": "少儿免费合集",
+        "sample": "mzc00200tuupfc2 / k002652nnbl",
+        "selected_row_vid": "k002652nnbl",
+        "unique_signature_count": 1,
+        "field_drift_status": "same-day multi-header live recheck is now complete and stable"
+      }
+    ]
+  },
+  "open_items": [
+    "cross-day retest is still pending",
+    "browser-like `sec-ch-ua / sec-fetch-* / cookie` requests were not included in this same-day matrix",
+    "each page-shape bucket still needs a second representative page before promoting the result to bucket-wide stability"
+  ]
+}

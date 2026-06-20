@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-06-20",
+  "completion_model": "black_box_closure_plus_frontend_semantics_plus_environment_matrix_plus_enum_cards",
+  "confirmed_now": {
+    "api_contract": [
+      "API1 and API2 both have a 32 non-empty item limit; 33 returns -111001.",
+      "Headers and UA did not change the tested API1/API2 contract branches across the current same-day plus next-day retest matrix, including the browser-like header and synthetic-cookie followup.",
+      "API2 only switches to JSONP on exact lowercase `otype=json`.",
+      "The new focused 8-environment `analysis/api2_jsonp_batch_matrix_20260620.json` closes the `otype=json` mirror batch cases as well: mixed valid+invalid preserves order with an empty-shell invalid row, duplicate items still count, empty slots are ignored, `dup32` succeeds, and `dup33` still returns `-111001`."
+    ],
+    "frontend_semantics": [
+      "`pay_status` is read for VIP-related reporting and adjacent gift gating, but the first exposed `union.coverInfoMap.pay_status` slot is already post-shaped and raw `pay_status` itself is not the sole frontend branch switch.",
+      "Dynamic hook evidence shows raw-like `pay_status` values still survive at `JSON.parse` layer, while the first exposed `union.coverInfoMap.pay_status` slot is already `0` on tested PC Web detail pages.",
+      "Focused runtime followup now captures parse-layer raw `6/8/15` on selected pages, while the exposed `union.coverInfoMap.pay_status` slot still stays `0` across those same cases.",
+      "Focused runtime followup also shows `pay_status=6` does not imply one frontend branch by itself: the movie sample keeps `pay_status_exchange=true`, while the TV-season sample keeps `pay_status_exchange=false` even though both pages expose `cover_pay_status=0`.",
+      "Focused branch runtime followup now also covers normalized `positive_trailer=0/1/2`, and the 2026-06-20 same-type control groups extend that into visible first-screen divergence: type=10 splits `pt=0/1/2` across `选集/SVIP/纯享`, short-video-forward, and preview-badge surfaces; type=106 and type=4 also reproduce pt-dependent divergence. This is still correlation, not sole-cause proof.",
+      "`state` is normalized into the `union` store and directly drives unavailable/offline/deleted/not-playable validation branches.",
+      "`downright` directly gates download-toolbar button state/text rather than acting as a pure display field.",
+      "`cover_list / c_covers / topic_id_list` are merged before a candidate related-cover follow-up path, but even after the stronger request-level capture with tab-priority and lazy scroll on the two strongest redirected-detail candidates, the tested slice still has not produced a real `getCoverInfoBatch` request/response.",
+      "`publish_date` is reformatted and gated before display.",
+      "`targetid` now has a static player/danmaku sink, runtime getter hits, stronger comment/community-side evidence, and a partially closed runtime consumer path: non-empty `root.base.commentInfo.targetid/commentid` samples are no longer kids-only, their decoded values stay disjoint from the observed `dokiid/ftid` request chain, and the current live magic-danmaku REPORT-click producer still only emits `{id}` while the downstream sink expects `b.data.targetId`; a synthetic runtime probe proves that raw `DANMAKU_REPORT` payloads on the real `Dte` listener bus do map through to popup `targetid=` query values, while nested payloads collapse to `id=undefined&targetid=undefined`. A separate report-identity audit plus owner-bridge followup narrow the natural-producer gap further: tested anonymous comment-report buttons on positive pages expose disjoint `feed_id/cp_id` identities rather than `commentInfo.targetid/commentid` or `dokiid/ftid`, shallow framework-owner scans stay in that same identity family, and these paths still do not open a targetid-bearing popup. The remaining open question is the natural producer, not the downstream consumer mapping.",
+      "`positive_trailer` is normalized into frontend state and now has repeatable same-type surface correlation, but it is not yet isolated as the sole branch switch.",
+      "`F` is present in tested startup / SSR payloads, but on the two currently tested representative redirected detail paths the startup/main/runtime plus row-shell followup slices still do not expose a named consumer, the stronger request-level capture still emits only `PageService/getPage + FillUnionInfo`, and the tested visible-card getPage row schema also omits it.",
+      "`upload_src` is still absent from the tested redirected-detail startup/main/runtime plus row-shell followup slice, the stronger request-level capture still emits only `PageService/getPage + FillUnionInfo`, and the tested visible-card getPage row schema also omits it; the next highest-yield frontend trace now looks more like getPage shaping, getCoverInfoBatch, non-detail families, or SSR/vector-layout consumption."
+    ],
+    "enum_progress": [
+      "pay_status=5 remains a stable_value within a narrow movie branch",
+      "pay_status=6 can no longer be summarized as one single kids regular-season shape; the current type=106 family already splits into at least a double-zero branch, a clean season-style dual-full branch, and a narrower hybrid/aggregation neighborhood, while `jynqzy9n3wfrsfp` now reinforces that not every theme/travel-looking kids page belongs to hybrid",
+      "pay_status=9 is now a broader small_family and is no longer explainable as anime-only or upload_src=149-only",
+      "pay_status=15 now has 4 observed covers and still remains variety-bounded in the current round; its current shells look more like battle-topic / first-view-angle / special-operation-like shapes inside type=10 than like a fixed official category tree.",
+      "pay_status=16 now has at least 9 observed representative covers in the current round and still remains variety-bounded; its current shells look more like variety main-season / derivative / activity-like shapes inside type=10 than like a fixed official category tree.",
+      "upload_src=2048 still looks type=111-bounded in the current round, but it is now clearly not a type=111-wide uniform value: same-type pure-0 negatives, same-cover 2048/108 mixed cases, and a `35 = 20 complete pure-2048 + 3 partial-only-2048 + 12 mixed` observed-cover breakdown already exist.",
+      "type universe expanded to 15 observed values including 28/29/111"
+    ]
+  },
+  "open_gaps": [
+    {
+      "field": "pay_status=15",
+      "needs": [
+        "confirm whether it can stably escape the current variety-bounded family beyond the current 4 observed covers",
+        "the 2026-06-20 depth-1 family expansion around `mzc00200k1tze71` and `mzc00200sd1b239` did not grow to new related covers, so the next gain is more likely to come from broader sibling hunting than from this local graph neighborhood",
+        "decide whether the current battle-topic / first-view-angle / special-operation wording is stable enough to keep as black-box page-shape hints, rather than overnaming them",
+        "official naming still unknown"
+      ]
+    },
+    {
+      "field": "pay_status=16",
+      "needs": [
+        "confirm whether it can cross out of variety beyond the current 9 observed representative covers",
+        "confirm whether its current season / derivative / activity distribution is a real family preference or just a sampling bias",
+        "official naming still unknown"
+      ]
+    },
+    {
+      "field": "pay_status=9",
+      "needs": [
+        "backfill cleaner type/page-shape labels for the new dance/long-tail samples",
+        "determine whether it should stay small_family or eventually upgrade"
+      ]
+    },
+    {
+      "field": "upload_src=2048",
+      "needs": [
+        "the new 8-environment replay on `mzc00200s6oqemg` / `mzc00200ua6uec2` / `mzc002008tghx9y` / `mzc00200rcuv1sy` shows no environment drift across pure positive, mixed, and same-type negative anchors",
+        "the new search-backed `upload_src_2048_type111_search_expansion_20260620.json` already broadens the sampled type=111 slice into dance / painting / calligraphy teaching branches, with complete pure-2048, partial 2048-only, mixed 2048/108, mixed 2048/0, pure 108, and pure 0 families",
+        "determine whether the family escapes current type=111 / 文化历史 covers at all",
+        "decide whether the current type=111 family should now be split more explicitly into dance / painting / calligraphy teaching sub-branches",
+        "explain the partial-only-2048 covers where some rows still omit upload_src even though the cover stays 2048-only on non-empty rows",
+        "official naming still unknown"
+      ]
+    },
+    {
+      "field": "frontend_upload_src_trace",
+      "needs": [
+      "the new startup-vs-runtime diff now strongly suggests that `upload_src` is already erased or omitted before the sampled redirected-detail `getPage` / `FillUnionInfo` payloads on the tested `mzc00200bhj36oq` / `mzc00200nkzol5n` / `mzc00200apbfiqs` slice",
+      "the stronger `frontend_row_network_request_capture_20260620.json` followup now closes the initial request-capture question more tightly for the two strongest redirected-detail candidates, so the next step should shift toward tagged `getPage` shaping, a later lazy follow-up, or a path that truly emits the follow-up `getCoverInfoBatch` request"
+      ]
+    },
+    {
+      "field": "frontend_F_trace",
+      "needs": [
+      "the new startup-vs-runtime diff now narrows the gap to this question: does startup-payload `F` only shape rows before the visible-card `getPage` schema on the tested redirected-detail paths, or is it consumed in an earlier SSR/vector-layout step that never survives into sampled request/response payloads",
+      "the 2026-06-20 true non-detail candidate probe, bundle string audit, and stronger `frontend_row_network_request_capture_20260620.json` followup still saw no request/response-level `F` hit, while the bundle retained the `getCoverInfoBatch` code path, so the browser-side runtime path may be earlier or absent altogether"
+      ]
+    },
+    {
+      "field": "frontend_positive_trailer_branch",
+      "needs": [
+        "separate positive_trailer effect from type/page-shell carry-over; current same-type controls prove correlation, not sole causality",
+        "expand representatives until `pt=0/1/2` maps cleanly to stable first-screen modules across major type buckets"
+      ]
+    },
+    {
+      "field": "frontend_targetid_runtime_callsite",
+      "needs": [
+      "find the real live producer that bridges into the already-closed popup sink; the tested anonymous report-button DOM path only exposes disjoint `feed_id/cp_id` identities",
+      "the new owner-bridge followup keeps that same negative result even after shallow dataset / framework-owner scanning on kids, TV-season, and sports positive pages",
+      "confirm whether `commentInfo.targetid/commentid` ever converges with either `dokiid/ftid` or `feed_id/cp_id` in a later lazy/login path",
+      "retest login / hover-reveal / menu-open paths to see whether any natural report entry upgrades into a non-empty targetid popup"
+      ]
+    },
+    {
+      "field": "state=8_family",
+      "needs": [
+        "explain why some sibling covers only have sparse `state=8` rows while others are `state=8`-heavy",
+        "extend beyond the current positive environment-closed pair (`482396nuyaelv0e`, `mzc002006tgfqvp`) if a third independent family becomes high-yield",
+        "keep separating row-level state=8 signals from sports/kids page-shape buckets; current evidence says it is not a clean page-bucket marker"
+      ]
+    },
+    {
+      "field": "environment_matrix_closure",
+      "needs": [
+      "real-session cookie / login-state / aged-cookie environments are still outside the current matrix; the current browser-like cookie check is synthetic only",
+      "the main `analysis/environment_matrix_20260620.json` artifact is still lagging the four API2 JSONP mirror cases already closed in `analysis/api2_jsonp_batch_matrix_20260620.json`, so a schema-safe rebuild or rerun is still pending",
+      "representative field-drift cross-day closure is now available for the five canonical pages, but it is not yet expanded to every page-shape bucket or every second representative",
+        "type=4 sports pages now split across replay, person/info shell, feature-doc, and a stronger match-highlights/collection shell family; the remaining sports gap is whether mixed event hubs like `mzc0020069a6anp` should be modeled as sibling to the cleaner `mzc002003fh665c` bucket",
+        "type=106 kids pages now include at least a double-zero branch, a clean season-style dual-full branch, and a narrower hybrid/aggregation neighborhood; `jynqzy9n3wfrsfp` no longer looks like hybrid and instead reinforces clean dual-full",
+        "state=8 positives currently look more like row-level sparse signals inside aggregation-heavy kids covers than like a sports/kids page bucket of their own"
+      ]
+    },
+    {
+      "field": "downright_full_index",
+      "needs": [
+        "extract the complete code universe instead of only high-signal rare codes",
+        "reconcile current representative samples for 31/41/44/62/184"
+      ]
+    }
+  ],
+  "stop_condition_upgrade": {
+    "rule": "Require two consecutive six-agent rounds with no new contract branch, no new non-empty enum value, no stable counterexample, and no new page-shape explanation branch.",
+    "extra_requirements": [
+      "main type buckets covered",
+      "main page-shape buckets covered",
+      "every non-empty pay_status classified",
+      "every new upload_src either replicated or marked anomaly"
+    ]
+  }
+}

@@ -3,7 +3,9 @@ __pycache__/
 *.pyo
 
 # Local archive material not part of this project
-analysis/
+analysis/*
+!analysis/*_20260619.json
+!analysis/*_20260620.json
 recovered/
 
 # Build outputs

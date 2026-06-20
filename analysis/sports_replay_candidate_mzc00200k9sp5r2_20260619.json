@@ -1,0 +1,2422 @@
+{
+  "meta": {
+    "tool": "tencent_video_field_survey",
+    "generated_at": "2026-06-19T21:32:40+08:00",
+    "input_count": 1,
+    "timeout_seconds": 10.0,
+    "batch_size": 10,
+    "http_retries": 2,
+    "retry_sleep_seconds": 0.75,
+    "clip_sample_head": 0,
+    "clip_sample_tail": 0
+  },
+  "samples": [
+    {
+      "input_url": "https://v.qq.com/x/cover/mzc00200k9sp5r2.html",
+      "cid": "mzc00200k9sp5r2",
+      "cover_request": {
+        "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200k9sp5r2&appid=10001005&appkey=0d1a9ddd94de871b"
+      },
+      "cover": {
+        "field_names": [
+          "clips_ids",
+          "column_id",
+          "copyright_negotiation_id",
+          "costtime",
+          "cover_checkup_grade",
+          "cover_id",
+          "downright",
+          "episode_all",
+          "episode_updated",
+          "errormsg",
+          "errorno",
+          "id",
+          "imgtag_ver",
+          "new_pic_hz",
+          "new_pic_vt",
+          "nomal_ids",
+          "pay_status",
+          "pc_client_imgtag",
+          "positive_content_id",
+          "positive_trailer",
+          "resptime",
+          "retcode",
+          "title",
+          "topic_id_list",
+          "type",
+          "type_name",
+          "video_ids",
+          "vip_ids"
+        ],
+        "fields": {
+          "costtime": "7",
+          "errormsg": "",
+          "errorno": "0",
+          "resptime": "1781875960",
+          "clips_ids": "",
+          "column_id": "91444",
+          "copyright_negotiation_id": "",
+          "cover_checkup_grade": "4",
+          "cover_id": "mzc00200k9sp5r2",
+          "downright": [
+            "20",
+            "30"
+          ],
+          "episode_all": "",
+          "episode_updated": "",
+          "imgtag_ver": "",
+          "new_pic_hz": "https://vcover-hz-pic.puui.qpic.cn/vcover_hz_pic/0/mzc002000gyofsr1769814852875/0",
+          "new_pic_vt": "https://vcover-vt-pic.puui.qpic.cn/vcover_vt_pic/0/mzc002000gyofsr1769814839996/0",
+          "nomal_ids": "[{\"F\":2,\"V\":\"q4101u7frq2\"},{\"F\":2,\"V\":\"f4101s5jdj4\"},{\"F\":2,\"V\":\"w4101lm22lr\"},{\"F\":2,\"V\":\"q41015kdvjc\"},{\"F\":2,\"V\":\"l41019ni6iq\"},{\"F\":2,\"V\":\"w41012ctwkr\"},{\"F\":2,\"V\":\"n4101t0kehk\"},{\"F\":2,\"V\":\"u41010hfwti\"},{\"F\":2,\"V\":\"s4101xhh453\"},{\"F\":2,\"V\":\"c4101en1562\"},{\"F\":2,\"V\":\"e4101uengfe\"},{\"F\":2,\"V\":\"o4101cvfbqw\"},{\"F\":2,\"V\":\"h4101m5e068\"},{\"F\":2,\"V\":\"c41014888w4\"},{\"F\":2,\"V\":\"g4101bbchlx\"},{\"F\":2,\"V\":\"e41018l43my\"},{\"F\":2,\"V\":\"b41018xqwo5\"},{\"F\":2,\"V\":\"a41014sccyt\"},{\"F\":2,\"V\":\"j4101g8707i\"},{\"F\":2,\"V\":\"m4101nne2vm\"},{\"F\":2,\"V\":\"d4101chijxf\"},{\"F\":2,\"V\":\"a4101u2ihcg\"}]",
+          "pay_status": "8",
+          "pc_client_imgtag": "",
+          "positive_content_id": "1543606",
+          "positive_trailer": "1",
+          "title": "2026FE电动方程式世界锦标赛迈阿密站 正赛",
+          "topic_id_list": "mzc00100h0pkg4b",
+          "type": "4",
+          "type_name": "体育",
+          "video_ids": [
+            "q4101u7frq2",
+            "f4101s5jdj4",
+            "w4101lm22lr",
+            "q41015kdvjc",
+            "l41019ni6iq",
+            "w41012ctwkr",
+            "n4101t0kehk",
+            "u41010hfwti",
+            "s4101xhh453",
+            "c4101en1562",
+            "e4101uengfe",
+            "o4101cvfbqw",
+            "h4101m5e068",
+            "c41014888w4",
+            "g4101bbchlx",
+            "e41018l43my",
+            "b41018xqwo5",
+            "a41014sccyt",
+            "j4101g8707i",
+            "m4101nne2vm",
+            "d4101chijxf",
+            "a4101u2ihcg"
+          ],
+          "vip_ids": "[{\"F\":2,\"V\":\"q4101u7frq2\"},{\"F\":2,\"V\":\"f4101s5jdj4\"},{\"F\":2,\"V\":\"w4101lm22lr\"},{\"F\":2,\"V\":\"q41015kdvjc\"},{\"F\":2,\"V\":\"l41019ni6iq\"},{\"F\":2,\"V\":\"w41012ctwkr\"},{\"F\":2,\"V\":\"n4101t0kehk\"},{\"F\":2,\"V\":\"u41010hfwti\"},{\"F\":2,\"V\":\"s4101xhh453\"},{\"F\":2,\"V\":\"c4101en1562\"},{\"F\":2,\"V\":\"e4101uengfe\"},{\"F\":2,\"V\":\"o4101cvfbqw\"},{\"F\":2,\"V\":\"h4101m5e068\"},{\"F\":2,\"V\":\"c41014888w4\"},{\"F\":2,\"V\":\"g4101bbchlx\"},{\"F\":2,\"V\":\"e41018l43my\"},{\"F\":2,\"V\":\"b41018xqwo5\"},{\"F\":2,\"V\":\"a41014sccyt\"},{\"F\":2,\"V\":\"j4101g8707i\"},{\"F\":2,\"V\":\"m4101nne2vm\"},{\"F\":2,\"V\":\"d4101chijxf\"},{\"F\":2,\"V\":\"a4101u2ihcg\"}]",
+          "id": "mzc00200k9sp5r2",
+          "retcode": "0"
+        }
+      },
+      "video_ids": [
+        "q4101u7frq2",
+        "f4101s5jdj4",
+        "w4101lm22lr",
+        "q41015kdvjc",
+        "l41019ni6iq",
+        "w41012ctwkr",
+        "n4101t0kehk",
+        "u41010hfwti",
+        "s4101xhh453",
+        "c4101en1562",
+        "e4101uengfe",
+        "o4101cvfbqw",
+        "h4101m5e068",
+        "c41014888w4",
+        "g4101bbchlx",
+        "e41018l43my",
+        "b41018xqwo5",
+        "a41014sccyt",
+        "j4101g8707i",
+        "m4101nne2vm",
+        "d4101chijxf",
+        "a4101u2ihcg"
+      ],
+      "video_request_batches": [
+        {
+          "vids": [
+            "q4101u7frq2",
+            "f4101s5jdj4",
+            "w4101lm22lr",
+            "q41015kdvjc",
+            "l41019ni6iq",
+            "w41012ctwkr",
+            "n4101t0kehk",
+            "u41010hfwti",
+            "s4101xhh453",
+            "c4101en1562"
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=q4101u7frq2%2Cf4101s5jdj4%2Cw4101lm22lr%2Cq41015kdvjc%2Cl41019ni6iq%2Cw41012ctwkr%2Cn4101t0kehk%2Cu41010hfwti%2Cs4101xhh453%2Cc4101en1562"
+        },
+        {
+          "vids": [
+            "e4101uengfe",
+            "o4101cvfbqw",
+            "h4101m5e068",
+            "c41014888w4",
+            "g4101bbchlx",
+            "e41018l43my",
+            "b41018xqwo5",
+            "a41014sccyt",
+            "j4101g8707i",
+            "m4101nne2vm"
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=e4101uengfe%2Co4101cvfbqw%2Ch4101m5e068%2Cc41014888w4%2Cg4101bbchlx%2Ce41018l43my%2Cb41018xqwo5%2Ca41014sccyt%2Cj4101g8707i%2Cm4101nne2vm"
+        },
+        {
+          "vids": [
+            "d4101chijxf",
+            "a4101u2ihcg"
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=d4101chijxf%2Ca4101u2ihcg"
+        }
+      ],
+      "videos": [
+        {
+          "vid": "q4101u7frq2",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518779",
+            "create_time": "2026-02-01 04:44:04",
+            "defn": "{\"audio\":1666432,\"fhd\":77571061,\"hd\":28764922,\"sd\":11827342,\"shd\":43977536,\"source\":716756081}",
+            "desc": "",
+            "duration": "248",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 04:44:04",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/q4101u7frq2/q4101u7frq2_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/q4101u7frq2/q4101u7frq2_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/q4101u7frq2/q4101u7frq2_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+86927+9778227",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "【集锦】P9 to P1！米奇·埃文斯毫不妥协连续上演超越好戏赢得迈阿密站冠军",
+            "type": "4",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/q4101u7frq2.html",
+            "vWH": [
+              "3840",
+              "2160"
+            ],
+            "vid": "q4101u7frq2"
+          },
+          "defn_raw": "{\"audio\":1666432,\"fhd\":77571061,\"hd\":28764922,\"sd\":11827342,\"shd\":43977536,\"source\":716756081}",
+          "defn_expanded": {
+            "audio": 1666432,
+            "fhd": 77571061,
+            "hd": 28764922,
+            "sd": 11827342,
+            "shd": 43977536,
+            "source": 716756081
+          }
+        },
+        {
+          "vid": "f4101s5jdj4",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 04:23:26",
+            "defn": "{\"audio\":691276,\"fhd\":49558526,\"hd\":18465730,\"sd\":4656224,\"shd\":30063040,\"source\":316221448}",
+            "desc": "",
+            "duration": "103",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 04:23:26",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/f4101s5jdj4/f4101s5jdj4_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/f4101s5jdj4/f4101s5jdj4_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/f4101s5jdj4/f4101s5jdj4_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+86927+9778227",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "【颁奖】恭喜米奇·埃文斯拿下迈阿密站冠军 穆勒亚军 维尔莱茵季军",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/f4101s5jdj4.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "f4101s5jdj4"
+          },
+          "defn_raw": "{\"audio\":691276,\"fhd\":49558526,\"hd\":18465730,\"sd\":4656224,\"shd\":30063040,\"source\":316221448}",
+          "defn_expanded": {
+            "audio": 691276,
+            "fhd": 49558526,
+            "hd": 18465730,
+            "sd": 4656224,
+            "shd": 30063040,
+            "source": 316221448
+          }
+        },
+        {
+          "vid": "w4101lm22lr",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 04:11:33",
+            "defn": "{\"audio\":487108,\"fhd\":20293096,\"hd\":7068655,\"sd\":2025346,\"shd\":10827607,\"source\":159524954}",
+            "desc": "",
+            "duration": "74",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 04:11:33",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/w4101lm22lr/w4101lm22lr_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/w4101lm22lr/w4101lm22lr_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/w4101lm22lr/w4101lm22lr_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+4747797+86927+9778227",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "【采访】维尔莱茵：这是我们这赛季最好的一场比赛，赛季还很长，我们需要继续努力",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/w4101lm22lr.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "w4101lm22lr"
+          },
+          "defn_raw": "{\"audio\":487108,\"fhd\":20293096,\"hd\":7068655,\"sd\":2025346,\"shd\":10827607,\"source\":159524954}",
+          "defn_expanded": {
+            "audio": 487108,
+            "fhd": 20293096,
+            "hd": 7068655,
+            "sd": 2025346,
+            "shd": 10827607,
+            "source": 159524954
+          }
+        },
+        {
+          "vid": "q41015kdvjc",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 04:10:35",
+            "defn": "{\"audio\":303996,\"fhd\":14244454,\"hd\":5034049,\"sd\":1609101,\"shd\":7823948,\"source\":108123256}",
+            "desc": "",
+            "duration": "46",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 04:10:35",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/q41015kdvjc/q41015kdvjc_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/q41015kdvjc/q41015kdvjc_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/q41015kdvjc/q41015kdvjc_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+4747797+86927+9778227",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "【采访】穆勒：非常为保时捷感到高兴，我们收获了大量积分，已经非常满意",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/q41015kdvjc.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "q41015kdvjc"
+          },
+          "defn_raw": "{\"audio\":303996,\"fhd\":14244454,\"hd\":5034049,\"sd\":1609101,\"shd\":7823948,\"source\":108123256}",
+          "defn_expanded": {
+            "audio": 303996,
+            "fhd": 14244454,
+            "hd": 5034049,
+            "sd": 1609101,
+            "shd": 7823948,
+            "source": 108123256
+          }
+        },
+        {
+          "vid": "l41019ni6iq",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 04:09:29",
+            "defn": "{\"audio\":569452,\"fhd\":22004555,\"hd\":7829076,\"sd\":2748748,\"shd\":12051277,\"source\":188127940}",
+            "desc": "",
+            "duration": "86",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 04:09:29",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/l41019ni6iq/l41019ni6iq_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/l41019ni6iq/l41019ni6iq_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/l41019ni6iq/l41019ni6iq_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+4747797+86927+9778227",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "【采访】埃文斯：感谢车队的帮助，希望这能重启我们的赛季，朝着世界冠军努力",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/l41019ni6iq.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "l41019ni6iq"
+          },
+          "defn_raw": "{\"audio\":569452,\"fhd\":22004555,\"hd\":7829076,\"sd\":2748748,\"shd\":12051277,\"source\":188127940}",
+          "defn_expanded": {
+            "audio": 569452,
+            "fhd": 22004555,
+            "hd": 7829076,
+            "sd": 2748748,
+            "shd": 12051277,
+            "source": 188127940
+          }
+        },
+        {
+          "vid": "w41012ctwkr",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 04:01:45",
+            "defn": "{\"audio\":203604,\"fhd\":9240703,\"hd\":3396546,\"sd\":1153873,\"shd\":5288102,\"source\":60877529}",
+            "desc": "",
+            "duration": "30",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 04:01:45",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/w41012ctwkr/w41012ctwkr_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/w41012ctwkr/w41012ctwkr_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/w41012ctwkr/w41012ctwkr_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+86927+9778227",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "15个冠军拿下！米奇·埃文斯拿下迈阿密站冠军 为捷豹带回赛季首个积分",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/w41012ctwkr.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "w41012ctwkr"
+          },
+          "defn_raw": "{\"audio\":203604,\"fhd\":9240703,\"hd\":3396546,\"sd\":1153873,\"shd\":5288102,\"source\":60877529}",
+          "defn_expanded": {
+            "audio": 203604,
+            "fhd": 9240703,
+            "hd": 3396546,
+            "sd": 1153873,
+            "shd": 5288102,
+            "source": 60877529
+          }
+        },
+        {
+          "vid": "n4101t0kehk",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 03:56:46",
+            "defn": "{\"audio\":153784,\"fhd\":7989440,\"hd\":2711982,\"sd\":861465,\"shd\":4377032,\"source\":41115534}",
+            "desc": "",
+            "duration": "22",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 03:56:46",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/n4101t0kehk/n4101t0kehk_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/n4101t0kehk/n4101t0kehk_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/n4101t0kehk/n4101t0kehk_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+86927",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "决战开始！前三名赛车都激活了最后一次攻击模式",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/n4101t0kehk.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "n4101t0kehk"
+          },
+          "defn_raw": "{\"audio\":153784,\"fhd\":7989440,\"hd\":2711982,\"sd\":861465,\"shd\":4377032,\"source\":41115534}",
+          "defn_expanded": {
+            "audio": 153784,
+            "fhd": 7989440,
+            "hd": 2711982,
+            "sd": 861465,
+            "shd": 4377032,
+            "source": 41115534
+          }
+        },
+        {
+          "vid": "u41010hfwti",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 03:54:33",
+            "defn": "{\"audio\":391228,\"fhd\":21094281,\"hd\":7311316,\"sd\":2296942,\"shd\":11736690,\"source\":123850945}",
+            "desc": "",
+            "duration": "58",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 03:54:33",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/u41010hfwti/u41010hfwti_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/u41010hfwti/u41010hfwti_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/u41010hfwti/u41010hfwti_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+4747797+86927+9778227",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "德鲁戈维奇追尾达科斯塔！ 达科斯塔继续比赛 德鲁戈维奇驶回维修区",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/u41010hfwti.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "u41010hfwti"
+          },
+          "defn_raw": "{\"audio\":391228,\"fhd\":21094281,\"hd\":7311316,\"sd\":2296942,\"shd\":11736690,\"source\":123850945}",
+          "defn_expanded": {
+            "audio": 391228,
+            "fhd": 21094281,
+            "hd": 7311316,
+            "sd": 2296942,
+            "shd": 11736690,
+            "source": 123850945
+          }
+        },
+        {
+          "vid": "s4101xhh453",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 03:45:31",
+            "defn": "{\"audio\":244588,\"fhd\":14042380,\"hd\":4957698,\"sd\":1695185,\"shd\":8023032,\"source\":77303531}",
+            "desc": "",
+            "duration": "36",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 03:45:31",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/s4101xhh453/s4101xhh453_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/s4101xhh453/s4101xhh453_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/s4101xhh453/s4101xhh453_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+86927",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "队内竞争吗！捷豹TCS车队两辆赛车互相缠斗",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/s4101xhh453.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "s4101xhh453"
+          },
+          "defn_raw": "{\"audio\":244588,\"fhd\":14042380,\"hd\":4957698,\"sd\":1695185,\"shd\":8023032,\"source\":77303531}",
+          "defn_expanded": {
+            "audio": 244588,
+            "fhd": 14042380,
+            "hd": 4957698,
+            "sd": 1695185,
+            "shd": 8023032,
+            "source": 77303531
+          }
+        },
+        {
+          "vid": "c4101en1562",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 03:43:12",
+            "defn": "{\"audio\":256620,\"fhd\":12931322,\"hd\":4592392,\"sd\":1465671,\"shd\":7381877,\"source\":81998854}",
+            "desc": "",
+            "duration": "38",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 03:43:12",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/c4101en1562/c4101en1562_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/c4101en1562/c4101en1562_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/c4101en1562/c4101en1562_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+4747797+86927+9778227",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "进攻防守的完美体现！穆勒在一号弯超越达科斯塔领跑比赛并成功防守",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/c4101en1562.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "c4101en1562"
+          },
+          "defn_raw": "{\"audio\":256620,\"fhd\":12931322,\"hd\":4592392,\"sd\":1465671,\"shd\":7381877,\"source\":81998854}",
+          "defn_expanded": {
+            "audio": 256620,
+            "fhd": 12931322,
+            "hd": 4592392,
+            "sd": 1465671,
+            "shd": 7381877,
+            "source": 81998854
+          }
+        },
+        {
+          "vid": "e4101uengfe",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 03:39:48",
+            "defn": "{\"audio\":146076,\"fhd\":9654014,\"hd\":3665840,\"sd\":1260457,\"shd\":5599182,\"source\":63268867}",
+            "desc": "",
+            "duration": "21",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 03:39:48",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/e4101uengfe/e4101uengfe_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/e4101uengfe/e4101uengfe_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/e4101uengfe/e4101uengfe_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+4747797+86927+9778227",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "撑不住了！提克图姆进站更换湿地胎压轮胎",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/e4101uengfe.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "e4101uengfe"
+          },
+          "defn_raw": "{\"audio\":146076,\"fhd\":9654014,\"hd\":3665840,\"sd\":1260457,\"shd\":5599182,\"source\":63268867}",
+          "defn_expanded": {
+            "audio": 146076,
+            "fhd": 9654014,
+            "hd": 3665840,
+            "sd": 1260457,
+            "shd": 5599182,
+            "source": 63268867
+          }
+        },
+        {
+          "vid": "o4101cvfbqw",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518779",
+            "create_time": "2026-02-01 03:36:54",
+            "defn": "{\"audio\":598404,\"fhd\":27420460,\"hd\":10005092,\"sd\":4376383,\"shd\":15547581,\"source\":155758280}",
+            "desc": "",
+            "duration": "91",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 03:36:54",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/o4101cvfbqw/o4101cvfbqw_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/o4101cvfbqw/o4101cvfbqw_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/o4101cvfbqw/o4101cvfbqw_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+4747797+86927+9778227",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "要超就连续超！埃文斯连续超越4辆赛车闯入前三名",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/o4101cvfbqw.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "o4101cvfbqw"
+          },
+          "defn_raw": "{\"audio\":598404,\"fhd\":27420460,\"hd\":10005092,\"sd\":4376383,\"shd\":15547581,\"source\":155758280}",
+          "defn_expanded": {
+            "audio": 598404,
+            "fhd": 27420460,
+            "hd": 10005092,
+            "sd": 4376383,
+            "shd": 15547581,
+            "source": 155758280
+          }
+        },
+        {
+          "vid": "h4101m5e068",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 03:34:10",
+            "defn": "{\"audio\":280684,\"fhd\":13574007,\"hd\":4732740,\"sd\":1453752,\"shd\":7542511,\"source\":83393210}",
+            "desc": "",
+            "duration": "41",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 03:34:10",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/h4101m5e068/h4101m5e068_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/h4101m5e068/h4101m5e068_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/h4101m5e068/h4101m5e068_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+4747797+86927+9778227+9809511",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "充满侵略性！达科斯塔利用攻击模式连续超越两辆赛车上到领跑位置",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/h4101m5e068.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "h4101m5e068"
+          },
+          "defn_raw": "{\"audio\":280684,\"fhd\":13574007,\"hd\":4732740,\"sd\":1453752,\"shd\":7542511,\"source\":83393210}",
+          "defn_expanded": {
+            "audio": 280684,
+            "fhd": 13574007,
+            "hd": 4732740,
+            "sd": 1453752,
+            "shd": 7542511,
+            "source": 83393210
+          }
+        },
+        {
+          "vid": "c41014888w4",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 03:23:16",
+            "defn": "{\"audio\":128404,\"fhd\":7366438,\"hd\":2661434,\"sd\":685823,\"shd\":4454821,\"source\":51522754}",
+            "desc": "",
+            "duration": "19",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 03:23:16",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/c41014888w4/c41014888w4_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/c41014888w4/c41014888w4_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/c41014888w4/c41014888w4_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+86927+9778227",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "你来我往！德鲁戈维奇在一号弯晚刹车回到领跑位置",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/c41014888w4.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "c41014888w4"
+          },
+          "defn_raw": "{\"audio\":128404,\"fhd\":7366438,\"hd\":2661434,\"sd\":685823,\"shd\":4454821,\"source\":51522754}",
+          "defn_expanded": {
+            "audio": 128404,
+            "fhd": 7366438,
+            "hd": 2661434,
+            "sd": 685823,
+            "shd": 4454821,
+            "source": 51522754
+          }
+        },
+        {
+          "vid": "g4101bbchlx",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 03:21:07",
+            "defn": "{\"audio\":148520,\"fhd\":7213429,\"hd\":2465597,\"sd\":829033,\"shd\":3971725,\"source\":46344180}",
+            "desc": "",
+            "duration": "22",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 03:21:07",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/g4101bbchlx/g4101bbchlx_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/g4101bbchlx/g4101bbchlx_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/g4101bbchlx/g4101bbchlx_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+78395+86927",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "重回首位！穆勒利用最后10秒攻击模式夺回领跑",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/g4101bbchlx.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "g4101bbchlx"
+          },
+          "defn_raw": "{\"audio\":148520,\"fhd\":7213429,\"hd\":2465597,\"sd\":829033,\"shd\":3971725,\"source\":46344180}",
+          "defn_expanded": {
+            "audio": 148520,
+            "fhd": 7213429,
+            "hd": 2465597,
+            "sd": 829033,
+            "shd": 3971725,
+            "source": 46344180
+          }
+        },
+        {
+          "vid": "e41018l43my",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 03:18:23",
+            "defn": "{\"audio\":163748,\"fhd\":6620252,\"hd\":2421476,\"sd\":697396,\"shd\":3862912,\"source\":44449365}",
+            "desc": "",
+            "duration": "24",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 03:18:23",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/e41018l43my/e41018l43my_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/e41018l43my/e41018l43my_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/e41018l43my/e41018l43my_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+86927+9809511",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "效仿战术！穆勒和德弗里斯相继激活攻击模式防守德鲁戈维奇",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/e41018l43my.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "e41018l43my"
+          },
+          "defn_raw": "{\"audio\":163748,\"fhd\":6620252,\"hd\":2421476,\"sd\":697396,\"shd\":3862912,\"source\":44449365}",
+          "defn_expanded": {
+            "audio": 163748,
+            "fhd": 6620252,
+            "hd": 2421476,
+            "sd": 697396,
+            "shd": 3862912,
+            "source": 44449365
+          }
+        },
+        {
+          "vid": "b41018xqwo5",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 03:16:42",
+            "defn": "{\"audio\":115808,\"fhd\":6865058,\"hd\":2507709,\"sd\":876067,\"shd\":4029796,\"source\":38335922}",
+            "desc": "",
+            "duration": "17",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 03:16:42",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/b41018xqwo5/b41018xqwo5_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/b41018xqwo5/b41018xqwo5_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/b41018xqwo5/b41018xqwo5_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+78395+86927",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "率先发力！德鲁戈维奇率先激活2分钟攻击模式",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/b41018xqwo5.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "b41018xqwo5"
+          },
+          "defn_raw": "{\"audio\":115808,\"fhd\":6865058,\"hd\":2507709,\"sd\":876067,\"shd\":4029796,\"source\":38335922}",
+          "defn_expanded": {
+            "audio": 115808,
+            "fhd": 6865058,
+            "hd": 2507709,
+            "sd": 876067,
+            "shd": 4029796,
+            "source": 38335922
+          }
+        },
+        {
+          "vid": "a41014sccyt",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 03:15:16",
+            "defn": "{\"audio\":179728,\"fhd\":8281029,\"hd\":3074291,\"sd\":892113,\"shd\":4799700,\"source\":64047974}",
+            "desc": "",
+            "duration": "27",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 03:15:16",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/a41014sccyt/a41014sccyt_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/a41014sccyt/a41014sccyt_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/a41014sccyt/a41014sccyt_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+4747797+86927+9778227",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "五盏红灯熄灭！FE电动方程式首次在迈阿密国际赛道起跑",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/a41014sccyt.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "a41014sccyt"
+          },
+          "defn_raw": "{\"audio\":179728,\"fhd\":8281029,\"hd\":3074291,\"sd\":892113,\"shd\":4799700,\"source\":64047974}",
+          "defn_expanded": {
+            "audio": 179728,
+            "fhd": 8281029,
+            "hd": 3074291,
+            "sd": 892113,
+            "shd": 4799700,
+            "source": 64047974
+          }
+        },
+        {
+          "vid": "j4101g8707i",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518779",
+            "create_time": "2026-02-01 03:10:22",
+            "defn": "{\"audio\":201348,\"fhd\":8617851,\"hd\":3196507,\"sd\":1101375,\"shd\":4913442,\"source\":56957334}",
+            "desc": "",
+            "duration": "30",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 03:10:22",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/j4101g8707i/j4101g8707i_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/j4101g8707i/j4101g8707i_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/j4101g8707i/j4101g8707i_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+4747797+86927+9778227",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "雨水还是有影响！布埃米在暖胎圈4号弯就出现打滑",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/j4101g8707i.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "j4101g8707i"
+          },
+          "defn_raw": "{\"audio\":201348,\"fhd\":8617851,\"hd\":3196507,\"sd\":1101375,\"shd\":4913442,\"source\":56957334}",
+          "defn_expanded": {
+            "audio": 201348,
+            "fhd": 8617851,
+            "hd": 3196507,
+            "sd": 1101375,
+            "shd": 4913442,
+            "source": 56957334
+          }
+        },
+        {
+          "vid": "m4101nne2vm",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 03:08:02",
+            "defn": "{\"audio\":154348,\"fhd\":7507951,\"hd\":2852777,\"sd\":768217,\"shd\":4342775,\"source\":55932289}",
+            "desc": "",
+            "duration": "23",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 03:08:02",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/m4101nne2vm/m4101nne2vm_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/m4101nne2vm/m4101nne2vm_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/m4101nne2vm/m4101nne2vm_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+54927+86927+9778227",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "绿灯亮起！迈阿密站在安全车带领下起步",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/m4101nne2vm.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "m4101nne2vm"
+          },
+          "defn_raw": "{\"audio\":154348,\"fhd\":7507951,\"hd\":2852777,\"sd\":768217,\"shd\":4342775,\"source\":55932289}",
+          "defn_expanded": {
+            "audio": 154348,
+            "fhd": 7507951,
+            "hd": 2852777,
+            "sd": 768217,
+            "shd": 4342775,
+            "source": 55932289
+          }
+        },
+        {
+          "vid": "d4101chijxf",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 03:05:45",
+            "defn": "{\"audio\":640328,\"fhd\":36193351,\"hd\":13401693,\"sd\":3610577,\"shd\":20619147,\"source\":266294949}",
+            "desc": "",
+            "duration": "97",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 03:05:45",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/d4101chijxf/d4101chijxf_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/d4101chijxf/d4101chijxf_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/d4101chijxf/d4101chijxf_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+54927+86927+9809511",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "发车顺位来袭！正赛即将准备开始",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/d4101chijxf.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "d4101chijxf"
+          },
+          "defn_raw": "{\"audio\":640328,\"fhd\":36193351,\"hd\":13401693,\"sd\":3610577,\"shd\":20619147,\"source\":266294949}",
+          "defn_expanded": {
+            "audio": 640328,
+            "fhd": 36193351,
+            "hd": 13401693,
+            "sd": 3610577,
+            "shd": 20619147,
+            "source": 266294949
+          }
+        },
+        {
+          "vid": "a4101u2ihcg",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200k9sp5r2",
+            "category_map": [
+              "11924",
+              "综合正赛正片",
+              "1119",
+              "综合体育",
+              "4",
+              "体育"
+            ],
+            "cover_list": "mzc00200k9sp5r2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2026-02-01 04:27:44",
+            "defn": "{\"audio\":34004124,\"fhd\":1759617912,\"hd\":649878684,\"sd\":205982485,\"shd\":1017104487,\"source\":11383793103}",
+            "desc": "",
+            "duration": "5132",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2026-02-01 04:27:44",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/a4101u2ihcg/a4101u2ihcg_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/a4101u2ihcg/a4101u2ihcg_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/a4101u2ihcg/a4101u2ihcg_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "37446+86927",
+            "publish_date": "2026-02-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "",
+            "title": "【回放】2026FE电动方程式世界锦标赛迈阿密站 正赛 全场回放",
+            "type": "4",
+            "upload_src": "31",
+            "url": "https://v.qq.com/x/page/a4101u2ihcg.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "a4101u2ihcg"
+          },
+          "defn_raw": "{\"audio\":34004124,\"fhd\":1759617912,\"hd\":649878684,\"sd\":205982485,\"shd\":1017104487,\"source\":11383793103}",
+          "defn_expanded": {
+            "audio": 34004124,
+            "fhd": 1759617912,
+            "hd": 649878684,
+            "sd": 205982485,
+            "shd": 1017104487,
+            "source": 11383793103
+          }
+        }
+      ],
+      "video_field_names": [
+        "c_covers",
+        "category_map",
+        "cover_list",
+        "cover_pic_resolution",
+        "create_time",
+        "defn",
+        "desc",
+        "duration",
+        "is_normalized",
+        "keyword",
+        "leading_actor",
+        "modify_time",
+        "pic160x90",
+        "pic496x280",
+        "pic_640_360",
+        "pioneer_tag",
+        "pioneer_tag_ids",
+        "publish_date",
+        "state",
+        "tag",
+        "targetid",
+        "title",
+        "type",
+        "upload_src",
+        "url",
+        "vWH",
+        "vid"
+      ],
+      "derived": {
+        "cover": {
+          "video_ids_count": 22,
+          "clips_ids_count": 0,
+          "downright_count": 2,
+          "downright_unique": [
+            "20",
+            "30"
+          ],
+          "nomal_f_counts": {
+            "2": 22
+          },
+          "vip_f_counts": {
+            "2": 22
+          }
+        },
+        "videos": {
+          "video_count": 22,
+          "state_counts": {
+            "4": 22
+          },
+          "upload_src_counts": {
+            "20": 1,
+            "31": 21
+          },
+          "defn_key_counts": {
+            "audio": 22,
+            "fhd": 22,
+            "hd": 22,
+            "sd": 22,
+            "shd": 22,
+            "source": 22
+          },
+          "targetid_nonempty_count": 0,
+          "publish_date_nonempty_count": 22,
+          "publish_date_examples": [
+            {
+              "vid": "q4101u7frq2",
+              "title": "【集锦】P9 to P1！米奇·埃文斯毫不妥协连续上演超越好戏赢得迈阿密站冠军",
+              "publish_date": "2026-02-01 00:00:00"
+            },
+            {
+              "vid": "f4101s5jdj4",
+              "title": "【颁奖】恭喜米奇·埃文斯拿下迈阿密站冠军 穆勒亚军 维尔莱茵季军",
+              "publish_date": "2026-02-01 00:00:00"
+            },
+            {
+              "vid": "w4101lm22lr",
+              "title": "【采访】维尔莱茵：这是我们这赛季最好的一场比赛，赛季还很长，我们需要继续努力",
+              "publish_date": "2026-02-01 00:00:00"
+            },
+            {
+              "vid": "q41015kdvjc",
+              "title": "【采访】穆勒：非常为保时捷感到高兴，我们收获了大量积分，已经非常满意",
+              "publish_date": "2026-02-01 00:00:00"
+            },
+            {
+              "vid": "l41019ni6iq",
+              "title": "【采访】埃文斯：感谢车队的帮助，希望这能重启我们的赛季，朝着世界冠军努力",
+              "publish_date": "2026-02-01 00:00:00"
+            },
+            {
+              "vid": "w41012ctwkr",
+              "title": "15个冠军拿下！米奇·埃文斯拿下迈阿密站冠军 为捷豹带回赛季首个积分",
+              "publish_date": "2026-02-01 00:00:00"
+            },
+            {
+              "vid": "n4101t0kehk",
+              "title": "决战开始！前三名赛车都激活了最后一次攻击模式",
+              "publish_date": "2026-02-01 00:00:00"
+            },
+            {
+              "vid": "u41010hfwti",
+              "title": "德鲁戈维奇追尾达科斯塔！ 达科斯塔继续比赛 德鲁戈维奇驶回维修区",
+              "publish_date": "2026-02-01 00:00:00"
+            },
+            {
+              "vid": "s4101xhh453",
+              "title": "队内竞争吗！捷豹TCS车队两辆赛车互相缠斗",
+              "publish_date": "2026-02-01 00:00:00"
+            },
+            {
+              "vid": "c4101en1562",
+              "title": "进攻防守的完美体现！穆勒在一号弯超越达科斯塔领跑比赛并成功防守",
+              "publish_date": "2026-02-01 00:00:00"
+            },
+            {
+              "vid": "e4101uengfe",
+              "title": "撑不住了！提克图姆进站更换湿地胎压轮胎",
+              "publish_date": "2026-02-01 00:00:00"
+            },
+            {
+              "vid": "o4101cvfbqw",
+              "title": "要超就连续超！埃文斯连续超越4辆赛车闯入前三名",
+              "publish_date": "2026-02-01 00:00:00"
+            }
+          ],
+          "targetid_examples": [],
+          "unusual_upload_examples": [
+            {
+              "vid": "f4101s5jdj4",
+              "title": "【颁奖】恭喜米奇·埃文斯拿下迈阿密站冠军 穆勒亚军 维尔莱茵季军",
+              "upload_src": "31"
+            },
+            {
+              "vid": "w4101lm22lr",
+              "title": "【采访】维尔莱茵：这是我们这赛季最好的一场比赛，赛季还很长，我们需要继续努力",
+              "upload_src": "31"
+            },
+            {
+              "vid": "q41015kdvjc",
+              "title": "【采访】穆勒：非常为保时捷感到高兴，我们收获了大量积分，已经非常满意",
+              "upload_src": "31"
+            },
+            {
+              "vid": "l41019ni6iq",
+              "title": "【采访】埃文斯：感谢车队的帮助，希望这能重启我们的赛季，朝着世界冠军努力",
+              "upload_src": "31"
+            },
+            {
+              "vid": "w41012ctwkr",
+              "title": "15个冠军拿下！米奇·埃文斯拿下迈阿密站冠军 为捷豹带回赛季首个积分",
+              "upload_src": "31"
+            },
+            {
+              "vid": "n4101t0kehk",
+              "title": "决战开始！前三名赛车都激活了最后一次攻击模式",
+              "upload_src": "31"
+            },
+            {
+              "vid": "u41010hfwti",
+              "title": "德鲁戈维奇追尾达科斯塔！ 达科斯塔继续比赛 德鲁戈维奇驶回维修区",
+              "upload_src": "31"
+            },
+            {
+              "vid": "s4101xhh453",
+              "title": "队内竞争吗！捷豹TCS车队两辆赛车互相缠斗",
+              "upload_src": "31"
+            },
+            {
+              "vid": "c4101en1562",
+              "title": "进攻防守的完美体现！穆勒在一号弯超越达科斯塔领跑比赛并成功防守",
+              "upload_src": "31"
+            },
+            {
+              "vid": "e4101uengfe",
+              "title": "撑不住了！提克图姆进站更换湿地胎压轮胎",
+              "upload_src": "31"
+            },
+            {
+              "vid": "o4101cvfbqw",
+              "title": "要超就连续超！埃文斯连续超越4辆赛车闯入前三名",
+              "upload_src": "31"
+            },
+            {
+              "vid": "h4101m5e068",
+              "title": "充满侵略性！达科斯塔利用攻击模式连续超越两辆赛车上到领跑位置",
+              "upload_src": "31"
+            },
+            {
+              "vid": "c41014888w4",
+              "title": "你来我往！德鲁戈维奇在一号弯晚刹车回到领跑位置",
+              "upload_src": "31"
+            },
+            {
+              "vid": "g4101bbchlx",
+              "title": "重回首位！穆勒利用最后10秒攻击模式夺回领跑",
+              "upload_src": "31"
+            },
+            {
+              "vid": "e41018l43my",
+              "title": "效仿战术！穆勒和德弗里斯相继激活攻击模式防守德鲁戈维奇",
+              "upload_src": "31"
+            },
+            {
+              "vid": "b41018xqwo5",
+              "title": "率先发力！德鲁戈维奇率先激活2分钟攻击模式",
+              "upload_src": "31"
+            }
+          ]
+        }
+      },
+      "status": "ok"
+    }
+  ],
+  "summary": {
+    "sample_count": 1,
+    "successful_sample_count": 1,
+    "failed_sample_count": 0,
+    "video_count": 22,
+    "clip_video_count": 0,
+    "videos_with_defn_count": 22,
+    "cover_field_frequency": {
+      "denominator": "successful_samples",
+      "total": 1,
+      "fields": {
+        "clips_ids": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "column_id": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "copyright_negotiation_id": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "costtime": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "cover_checkup_grade": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "cover_id": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "downright": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "episode_all": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "episode_updated": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "errormsg": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "errorno": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "id": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "imgtag_ver": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "new_pic_hz": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "new_pic_vt": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "nomal_ids": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "pay_status": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "pc_client_imgtag": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "positive_content_id": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "positive_trailer": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "resptime": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "retcode": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "title": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "topic_id_list": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "type": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "type_name": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "video_ids": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "vip_ids": {
+          "count": 1,
+          "ratio": 1.0
+        }
+      }
+    },
+    "video_field_frequency": {
+      "denominator": "videos",
+      "total": 22,
+      "fields": {
+        "c_covers": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "category_map": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "cover_list": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "cover_pic_resolution": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "create_time": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "defn": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "desc": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "duration": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "is_normalized": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "keyword": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "leading_actor": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "modify_time": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "pic160x90": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "pic496x280": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "pic_640_360": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "pioneer_tag": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "pioneer_tag_ids": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "publish_date": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "state": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "tag": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "targetid": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "title": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "type": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "upload_src": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "url": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "vWH": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "vid": {
+          "count": 22,
+          "ratio": 1.0
+        }
+      }
+    },
+    "clip_video_field_frequency": {
+      "denominator": "clip_videos",
+      "total": 0,
+      "fields": {}
+    },
+    "defn_field_frequency": {
+      "denominator": "videos_with_defn",
+      "total": 22,
+      "fields": {
+        "audio": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "fhd": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "hd": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "sd": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "shd": {
+          "count": 22,
+          "ratio": 1.0
+        },
+        "source": {
+          "count": 22,
+          "ratio": 1.0
+        }
+      }
+    }
+  }
+}

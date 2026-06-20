@@ -1,0 +1,2879 @@
+{
+  "meta": {
+    "tool": "tencent_video_field_survey",
+    "generated_at": "2026-06-19T22:12:02+08:00",
+    "input_count": 1,
+    "timeout_seconds": 10.0,
+    "batch_size": 10,
+    "http_retries": 2,
+    "retry_sleep_seconds": 0.75,
+    "clip_sample_head": 0,
+    "clip_sample_tail": 0
+  },
+  "samples": [
+    {
+      "input_url": "https://v.qq.com/x/cover/zkbp0mrqhy0x1hl.html",
+      "cid": "zkbp0mrqhy0x1hl",
+      "cover_request": {
+        "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=zkbp0mrqhy0x1hl&appid=10001005&appkey=0d1a9ddd94de871b"
+      },
+      "cover": {
+        "field_names": [
+          "clips_ids",
+          "column_id",
+          "copyright_negotiation_id",
+          "costtime",
+          "cover_checkup_grade",
+          "cover_id",
+          "downright",
+          "episode_all",
+          "episode_updated",
+          "errormsg",
+          "errorno",
+          "id",
+          "imgtag_ver",
+          "new_pic_hz",
+          "new_pic_vt",
+          "nomal_ids",
+          "pay_status",
+          "pc_client_imgtag",
+          "positive_content_id",
+          "positive_trailer",
+          "resptime",
+          "retcode",
+          "title",
+          "topic_id_list",
+          "type",
+          "type_name",
+          "video_ids",
+          "vip_ids"
+        ],
+        "fields": {
+          "costtime": "8",
+          "errormsg": "",
+          "errorno": "0",
+          "resptime": "1781878322",
+          "clips_ids": "g00428gntff",
+          "column_id": "0",
+          "copyright_negotiation_id": "",
+          "cover_checkup_grade": "4",
+          "cover_id": "zkbp0mrqhy0x1hl",
+          "downright": [
+            "45",
+            "46"
+          ],
+          "episode_all": "26",
+          "episode_updated": "全26集",
+          "imgtag_ver": "",
+          "new_pic_hz": "http://puui.qpic.cn/vcover_hz_pic/0/zkbp0mrqhy0x1hl1537931595/0",
+          "new_pic_vt": "https://vcover-vt-pic.puui.qpic.cn/vcover_vt_pic/0/zkbp0mrqhy0x1hl1722999781176/0",
+          "nomal_ids": "[{\"F\":2,\"V\":\"p0027jbwye1\"},{\"F\":2,\"V\":\"z00275gbro8\"},{\"F\":2,\"V\":\"k0027wwijz7\"},{\"F\":7,\"V\":\"d0027ki6iu3\"},{\"F\":7,\"V\":\"o0027s6upqj\"},{\"F\":7,\"V\":\"t0027buybo3\"},{\"F\":7,\"V\":\"y0027ixzc8e\"},{\"F\":7,\"V\":\"t0027usczw1\"},{\"F\":7,\"V\":\"z0027aiqysb\"},{\"F\":7,\"V\":\"z00270m1wou\"},{\"F\":7,\"V\":\"e0027f36hpe\"},{\"F\":7,\"V\":\"p0027xzpitn\"},{\"F\":7,\"V\":\"m0027k62jsq\"},{\"F\":7,\"V\":\"m002919fdt8\"},{\"F\":7,\"V\":\"x002937gvde\"},{\"F\":7,\"V\":\"m0029vltmzx\"},{\"F\":7,\"V\":\"d0029v92n6w\"},{\"F\":7,\"V\":\"o0029s9v3v3\"},{\"F\":7,\"V\":\"z0029t4f5kh\"},{\"F\":7,\"V\":\"n0029s0s5ol\"},{\"F\":7,\"V\":\"c0029ea8zf7\"},{\"F\":7,\"V\":\"p00292a2v6s\"},{\"F\":7,\"V\":\"g0029jahlkt\"},{\"F\":7,\"V\":\"a0029uod6kv\"},{\"F\":7,\"V\":\"q0029hvfxwr\"},{\"F\":7,\"V\":\"y0029x6kkin\"}]",
+          "pay_status": "6",
+          "pc_client_imgtag": "{\"tag_1\":{\"id\":\"-1\",\"param\":\"\",\"param2\":\"\",\"text\":\"\"},\"tag_2\":{\"id\":\"-1\",\"param\":\"\",\"param2\":\"\",\"text\":\"\"},\"tag_3\":{\"id\":\"30003\",\"param\":\"\",\"param2\":\"\",\"text\":\"\"},\"tag_4\":{\"id\":\"40003\",\"param\":\"\",\"param2\":\"\",\"text\":\"\"}}",
+          "positive_content_id": "1543606",
+          "positive_trailer": "1",
+          "title": "小猪佩奇第6季[普通话版]",
+          "topic_id_list": "mzc001000u8aqws+mzc001001ndp7tj+mzc001001zdx7br+mzc001002y0oih6+mzc00100329ypie+mzc001003m7k97m+mzc001005qtwjdm+mzc0010061q5vna+mzc001006feje8j+mzc001006k0ealo+mzc001006osa7ap+mzc001006w6km00+mzc0010086kaxjn+mzc001008falwf7+mzc001009e9kvx6+mzc00100axobev1+mzc00100b1rn9z5+mzc00100b8r622h+mzc00100bht1psx+mzc00100bv1zal8+mzc00100c9ib9u2+mzc00100e6cc727+mzc00100ej0xutr+mzc00100ezi7n5c+mzc00100fop8a7t+mzc00100g4wgciw+mzc00100gee45uv+mzc00100guucwpe+mzc00100hc1mnx8+mzc00100hpdvycg+mzc00100i60wf0b+mzc00100iswyjwl+mzc00100j1zblxx+mzc00100j6fk5va+mzc00100jqzce0r+mzc00100k3ah8rf+mzc00100kuqglab+mzc00100l1pfr7h+mzc00100lahssk3+mzc00100lb9d7rb+mzc00100lg7gry0+mzc00100m78169z+mzc00100mio8q7a+mzc00100mumi3hz+mzc00100o54dh1q+mzc00100omw2pbv+mzc00100orq5kbz+mzc00100oym0op2+mzc00100pjrnspo+mzc00100pmtwfxi+mzc00100q4ic6e0+mzc00100qzi728r+mzc00100rr3xuco+mzc00100s22stuj+mzc00100sk66lal+mzc00100slolwmt+mzc00100tjpd40s+mzc00100tm329k8+mzc00100u00eru5+mzc00100v2du1ei+mzc00100vhjzdtt+mzc00100vijk6w7+mzc00100w167ohp+mzc00100wgui0no+mzc00100wrml8x7+mzc00100wwie5e1+mzc00100wxqvxm2+mzc00100wzc3tzk+mzc00100xi5whh8+mzc00100xsbgszx+mzc00100xzfvv0b+mzc00100ygwuu9s+mzc00100yigg3e3+mzc00100yk86efc+mzc00100yvkh6x3+mzc00100l1llysy+mzc00100q6mywi8+mzc00100js18259+mzc00100xlf32dq+mzc00100anqd11o+mzc00100c8aove9+mzc00100oyq6ro7+mzc0010080ewzeh+mzc00100sgisr21+mzc00100b8lq4x9+mzc001005kl8y0l+mzc00100xzv9mb0+mzc001009xh5pxd+mzc001000wuum9m+mzc00100l11oxgk+mzc00100lwft13f+mzc00100upmic18+mzc00100gv2u6cy+mzc00100b196r5o+mzc00100kwinbzg+mzc00100og8pv2c+mzc00100hnluezn+mzc00100xxlvf9p+mzc00100va9edmi",
+          "type": "106",
+          "type_name": "少儿",
+          "video_ids": [
+            "p0027jbwye1",
+            "z00275gbro8",
+            "k0027wwijz7",
+            "d0027ki6iu3",
+            "o0027s6upqj",
+            "t0027buybo3",
+            "y0027ixzc8e",
+            "t0027usczw1",
+            "z0027aiqysb",
+            "z00270m1wou",
+            "e0027f36hpe",
+            "p0027xzpitn",
+            "m0027k62jsq",
+            "m002919fdt8",
+            "x002937gvde",
+            "m0029vltmzx",
+            "d0029v92n6w",
+            "o0029s9v3v3",
+            "z0029t4f5kh",
+            "n0029s0s5ol",
+            "c0029ea8zf7",
+            "p00292a2v6s",
+            "g0029jahlkt",
+            "a0029uod6kv",
+            "q0029hvfxwr",
+            "y0029x6kkin"
+          ],
+          "vip_ids": "[{\"F\":2,\"V\":\"p0027jbwye1\"},{\"F\":2,\"V\":\"z00275gbro8\"},{\"F\":2,\"V\":\"k0027wwijz7\"},{\"F\":7,\"V\":\"d0027ki6iu3\"},{\"F\":7,\"V\":\"o0027s6upqj\"},{\"F\":7,\"V\":\"t0027buybo3\"},{\"F\":7,\"V\":\"y0027ixzc8e\"},{\"F\":7,\"V\":\"t0027usczw1\"},{\"F\":7,\"V\":\"z0027aiqysb\"},{\"F\":7,\"V\":\"z00270m1wou\"},{\"F\":7,\"V\":\"e0027f36hpe\"},{\"F\":7,\"V\":\"p0027xzpitn\"},{\"F\":7,\"V\":\"m0027k62jsq\"},{\"F\":7,\"V\":\"m002919fdt8\"},{\"F\":7,\"V\":\"x002937gvde\"},{\"F\":7,\"V\":\"m0029vltmzx\"},{\"F\":7,\"V\":\"d0029v92n6w\"},{\"F\":7,\"V\":\"o0029s9v3v3\"},{\"F\":7,\"V\":\"z0029t4f5kh\"},{\"F\":7,\"V\":\"n0029s0s5ol\"},{\"F\":7,\"V\":\"c0029ea8zf7\"},{\"F\":7,\"V\":\"p00292a2v6s\"},{\"F\":7,\"V\":\"g0029jahlkt\"},{\"F\":7,\"V\":\"a0029uod6kv\"},{\"F\":7,\"V\":\"q0029hvfxwr\"},{\"F\":7,\"V\":\"y0029x6kkin\"}]",
+          "id": "zkbp0mrqhy0x1hl",
+          "retcode": "0"
+        }
+      },
+      "video_ids": [
+        "p0027jbwye1",
+        "z00275gbro8",
+        "k0027wwijz7",
+        "d0027ki6iu3",
+        "o0027s6upqj",
+        "t0027buybo3",
+        "y0027ixzc8e",
+        "t0027usczw1",
+        "z0027aiqysb",
+        "z00270m1wou",
+        "e0027f36hpe",
+        "p0027xzpitn",
+        "m0027k62jsq",
+        "m002919fdt8",
+        "x002937gvde",
+        "m0029vltmzx",
+        "d0029v92n6w",
+        "o0029s9v3v3",
+        "z0029t4f5kh",
+        "n0029s0s5ol",
+        "c0029ea8zf7",
+        "p00292a2v6s",
+        "g0029jahlkt",
+        "a0029uod6kv",
+        "q0029hvfxwr",
+        "y0029x6kkin"
+      ],
+      "video_request_batches": [
+        {
+          "vids": [
+            "p0027jbwye1",
+            "z00275gbro8",
+            "k0027wwijz7",
+            "d0027ki6iu3",
+            "o0027s6upqj",
+            "t0027buybo3",
+            "y0027ixzc8e",
+            "t0027usczw1",
+            "z0027aiqysb",
+            "z00270m1wou"
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=p0027jbwye1%2Cz00275gbro8%2Ck0027wwijz7%2Cd0027ki6iu3%2Co0027s6upqj%2Ct0027buybo3%2Cy0027ixzc8e%2Ct0027usczw1%2Cz0027aiqysb%2Cz00270m1wou"
+        },
+        {
+          "vids": [
+            "e0027f36hpe",
+            "p0027xzpitn",
+            "m0027k62jsq",
+            "m002919fdt8",
+            "x002937gvde",
+            "m0029vltmzx",
+            "d0029v92n6w",
+            "o0029s9v3v3",
+            "z0029t4f5kh",
+            "n0029s0s5ol"
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=e0027f36hpe%2Cp0027xzpitn%2Cm0027k62jsq%2Cm002919fdt8%2Cx002937gvde%2Cm0029vltmzx%2Cd0029v92n6w%2Co0029s9v3v3%2Cz0029t4f5kh%2Cn0029s0s5ol"
+        },
+        {
+          "vids": [
+            "c0029ea8zf7",
+            "p00292a2v6s",
+            "g0029jahlkt",
+            "a0029uod6kv",
+            "q0029hvfxwr",
+            "y0029x6kkin"
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=c0029ea8zf7%2Cp00292a2v6s%2Cg0029jahlkt%2Ca0029uod6kv%2Cq0029hvfxwr%2Cy0029x6kkin"
+        }
+      ],
+      "videos": [
+        {
+          "vid": "p0027jbwye1",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc002002cxp3uh+mzc00200j7l2u0p",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc002002cxp3uh",
+              "mzc00200j7l2u0p"
+            ],
+            "cover_pic_resolution": "1518780",
+            "create_time": "2018-09-27 12:11:57",
+            "defn": "{\"audio\":1508888,\"fhd\":116488184,\"hd\":22577040,\"sd\":7194572,\"shd\":22436030,\"source\":113099744,\"uhd\":106194000}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-18 08:13:54",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/p0027jbwye1/p0027jbwye1_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/p0027jbwye1/p0027jbwye1_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/p0027jbwye1/p0027jbwye1_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+55776852+4915002+55831501+56108082+55789140+449749",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3146954853",
+            "title": "女王",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/p0027jbwye1.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "p0027jbwye1"
+          },
+          "defn_raw": "{\"audio\":1508888,\"fhd\":116488184,\"hd\":22577040,\"sd\":7194572,\"shd\":22436030,\"source\":113099744,\"uhd\":106194000}",
+          "defn_expanded": {
+            "audio": 1508888,
+            "fhd": 116488184,
+            "hd": 22577040,
+            "sd": 7194572,
+            "shd": 22436030,
+            "source": 113099744,
+            "uhd": 106194000
+          }
+        },
+        {
+          "vid": "z00275gbro8",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc00200yokeal4+mzc002002cxp3uh+mzc00200j7l2u0p",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc00200yokeal4",
+              "mzc002002cxp3uh",
+              "mzc00200j7l2u0p"
+            ],
+            "cover_pic_resolution": "1518780",
+            "create_time": "2018-09-27 12:12:33",
+            "defn": "{\"audio\":1533704,\"fhd\":118563140,\"hd\":22513712,\"sd\":5655331,\"shd\":15243953,\"source\":113278778,\"uhd\":73312957}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2020-10-21 12:01:32",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/z00275gbro8/z00275gbro8_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/z00275gbro8/z00275gbro8_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/z00275gbro8/z00275gbro8_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55775311+3578887+56116018+55776852+449749+55831501+56108082",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3146957527",
+            "title": "荒岛",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/z00275gbro8.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "z00275gbro8"
+          },
+          "defn_raw": "{\"audio\":1533704,\"fhd\":118563140,\"hd\":22513712,\"sd\":5655331,\"shd\":15243953,\"source\":113278778,\"uhd\":73312957}",
+          "defn_expanded": {
+            "audio": 1533704,
+            "fhd": 118563140,
+            "hd": 22513712,
+            "sd": 5655331,
+            "shd": 15243953,
+            "source": 113278778,
+            "uhd": 73312957
+          }
+        },
+        {
+          "vid": "k0027wwijz7",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc00200o0m2d4t+mzc002000twpc85+mzc002002cxp3uh+mzc00200j7l2u0p",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc00200o0m2d4t",
+              "mzc002000twpc85",
+              "mzc002002cxp3uh",
+              "mzc00200j7l2u0p"
+            ],
+            "cover_pic_resolution": "1518780",
+            "create_time": "2018-09-27 12:13:06",
+            "defn": "{\"audio\":1538968,\"fhd\":115289496,\"hd\":22228045,\"sd\":5646422,\"shd\":13693049,\"source\":112903376,\"uhd\":72221248}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-18 08:13:55",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/k0027wwijz7/k0027wwijz7_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/k0027wwijz7/k0027wwijz7_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/k0027wwijz7/k0027wwijz7_hz.jpg/640",
+            "pioneer_tag": "小猪佩奇6+小猪佩奇+佩奇+搞笑卖萌",
+            "pioneer_tag_ids": "55809580+55776852+3578887+56116018+449749+56108082+55789140+55831501",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3146959230",
+            "title": "香水",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/k0027wwijz7.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "k0027wwijz7"
+          },
+          "defn_raw": "{\"audio\":1538968,\"fhd\":115289496,\"hd\":22228045,\"sd\":5646422,\"shd\":13693049,\"source\":112903376,\"uhd\":72221248}",
+          "defn_expanded": {
+            "audio": 1538968,
+            "fhd": 115289496,
+            "hd": 22228045,
+            "sd": 5646422,
+            "shd": 13693049,
+            "source": 112903376,
+            "uhd": 72221248
+          }
+        },
+        {
+          "vid": "d0027ki6iu3",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc00200x3jbgj8",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc00200x3jbgj8"
+            ],
+            "cover_pic_resolution": "1518779",
+            "create_time": "2018-09-28 09:46:35",
+            "defn": "{\"audio\":1443464,\"fhd\":116888436,\"hd\":22668116,\"sd\":6122220,\"shd\":17807522,\"source\":343800253,\"uhd\":75107568}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2020-10-21 11:51:38",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/d0027ki6iu3/d0027ki6iu3_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/d0027ki6iu3/d0027ki6iu3_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/d0027ki6iu3/d0027ki6iu3_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+55776852+4915002+56108082+55831501+449749+55789140",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3150269255",
+            "title": "孩子们的游园会",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/d0027ki6iu3.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "d0027ki6iu3"
+          },
+          "defn_raw": "{\"audio\":1443464,\"fhd\":116888436,\"hd\":22668116,\"sd\":6122220,\"shd\":17807522,\"source\":343800253,\"uhd\":75107568}",
+          "defn_expanded": {
+            "audio": 1443464,
+            "fhd": 116888436,
+            "hd": 22668116,
+            "sd": 6122220,
+            "shd": 17807522,
+            "source": 343800253,
+            "uhd": 75107568
+          }
+        },
+        {
+          "vid": "o0027s6upqj",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc00200yokeal4",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc00200yokeal4"
+            ],
+            "cover_pic_resolution": "1518779",
+            "create_time": "2018-09-27 12:14:15",
+            "defn": "{\"audio\":1531072,\"fhd\":116981308,\"hd\":22406811,\"sd\":6012992,\"shd\":17366053,\"source\":112884483,\"uhd\":79175982}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2020-10-21 11:46:30",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/o0027s6upqj/o0027s6upqj_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/o0027s6upqj/o0027s6upqj_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/o0027s6upqj/o0027s6upqj_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55775311+3578887+56116018+55776852+55831501+56108082+449749+55789140",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3146963884",
+            "title": "海洋馆",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/o0027s6upqj.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "o0027s6upqj"
+          },
+          "defn_raw": "{\"audio\":1531072,\"fhd\":116981308,\"hd\":22406811,\"sd\":6012992,\"shd\":17366053,\"source\":112884483,\"uhd\":79175982}",
+          "defn_expanded": {
+            "audio": 1531072,
+            "fhd": 116981308,
+            "hd": 22406811,
+            "sd": 6012992,
+            "shd": 17366053,
+            "source": 112884483,
+            "uhd": 79175982
+          }
+        },
+        {
+          "vid": "t0027buybo3",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc00200o0m2d4t",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc00200o0m2d4t"
+            ],
+            "cover_pic_resolution": "1518779",
+            "create_time": "2018-09-27 12:14:56",
+            "defn": "{\"audio\":1452112,\"fhd\":117260488,\"hd\":22424352,\"sd\":6466448,\"shd\":19117605,\"source\":111791574,\"uhd\":71005847}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-18 08:13:55",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/t0027buybo3/t0027buybo3_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/t0027buybo3/t0027buybo3_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/t0027buybo3/t0027buybo3_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+55776852+4915002+55789140+449749+55831501+56108082",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3146966852",
+            "title": "乔治的赛车",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/t0027buybo3.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "t0027buybo3"
+          },
+          "defn_raw": "{\"audio\":1452112,\"fhd\":117260488,\"hd\":22424352,\"sd\":6466448,\"shd\":19117605,\"source\":111791574,\"uhd\":71005847}",
+          "defn_expanded": {
+            "audio": 1452112,
+            "fhd": 117260488,
+            "hd": 22424352,
+            "sd": 6466448,
+            "shd": 19117605,
+            "source": 111791574,
+            "uhd": 71005847
+          }
+        },
+        {
+          "vid": "y0027ixzc8e",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc00200yokeal4",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc00200yokeal4"
+            ],
+            "cover_pic_resolution": "1518780",
+            "create_time": "2018-09-27 12:15:30",
+            "defn": "{\"audio\":1547240,\"fhd\":118360664,\"hd\":22503447,\"sd\":6296120,\"shd\":18716130,\"source\":113442397,\"uhd\":80100461}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-18 08:14:28",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/y0027ixzc8e/y0027ixzc8e_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/y0027ixzc8e/y0027ixzc8e_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/y0027ixzc8e/y0027ixzc8e_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+55776852+56108082+55831501+55789140+449749",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3146969079",
+            "title": "小船",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/y0027ixzc8e.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "y0027ixzc8e"
+          },
+          "defn_raw": "{\"audio\":1547240,\"fhd\":118360664,\"hd\":22503447,\"sd\":6296120,\"shd\":18716130,\"source\":113442397,\"uhd\":80100461}",
+          "defn_expanded": {
+            "audio": 1547240,
+            "fhd": 118360664,
+            "hd": 22503447,
+            "sd": 6296120,
+            "shd": 18716130,
+            "source": 113442397,
+            "uhd": 80100461
+          }
+        },
+        {
+          "vid": "t0027usczw1",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2"
+            ],
+            "cover_pic_resolution": "1518779",
+            "create_time": "2018-09-27 12:16:03",
+            "defn": "{\"audio\":2080032,\"fhd\":114875332,\"hd\":22726672,\"sd\":6002652,\"shd\":17212941,\"source\":112375497,\"uhd\":70353655}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2020-10-21 11:47:53",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/t0027usczw1/t0027usczw1_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/t0027usczw1/t0027usczw1_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/t0027usczw1/t0027usczw1_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55775311+3578887+56116018+55776852+4915002+449749+55831501+56108082",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3146970864",
+            "title": "沙坑",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/t0027usczw1.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "t0027usczw1"
+          },
+          "defn_raw": "{\"audio\":2080032,\"fhd\":114875332,\"hd\":22726672,\"sd\":6002652,\"shd\":17212941,\"source\":112375497,\"uhd\":70353655}",
+          "defn_expanded": {
+            "audio": 2080032,
+            "fhd": 114875332,
+            "hd": 22726672,
+            "sd": 6002652,
+            "shd": 17212941,
+            "source": 112375497,
+            "uhd": 70353655
+          }
+        },
+        {
+          "vid": "z0027aiqysb",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc00200o0m2d4t+mzc002000twpc85",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc00200o0m2d4t",
+              "mzc002000twpc85"
+            ],
+            "cover_pic_resolution": "1518780",
+            "create_time": "2018-09-27 12:16:37",
+            "defn": "{\"audio\":2074580,\"fhd\":116680696,\"hd\":22531223,\"sd\":5633205,\"shd\":15154969,\"source\":113509238,\"uhd\":81661600}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-18 08:13:55",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/z0027aiqysb/z0027aiqysb_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/z0027aiqysb/z0027aiqysb_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/z0027aiqysb/z0027aiqysb_hz.jpg/640",
+            "pioneer_tag": "小猪佩奇6+小猪佩奇+佩奇+搞笑卖萌",
+            "pioneer_tag_ids": "55809580+55776852+3578887+56116018+449749+55789140+56108082+55831501",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3146973369",
+            "title": "夜行动物",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/z0027aiqysb.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "z0027aiqysb"
+          },
+          "defn_raw": "{\"audio\":2074580,\"fhd\":116680696,\"hd\":22531223,\"sd\":5633205,\"shd\":15154969,\"source\":113509238,\"uhd\":81661600}",
+          "defn_expanded": {
+            "audio": 2074580,
+            "fhd": 116680696,
+            "hd": 22531223,
+            "sd": 5633205,
+            "shd": 15154969,
+            "source": 113509238,
+            "uhd": 81661600
+          }
+        },
+        {
+          "vid": "z00270m1wou",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+mzc00200pvv3k5s+bzfkv5se8qaqel2+mzc00200yokeal4+mzc00200s44wkqc+mzc002009zldgi8",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "mzc00200pvv3k5s",
+              "bzfkv5se8qaqel2",
+              "mzc00200yokeal4",
+              "mzc00200s44wkqc",
+              "mzc002009zldgi8"
+            ],
+            "cover_pic_resolution": "1518780",
+            "create_time": "2018-09-27 12:17:11",
+            "defn": "{\"audio\":1444592,\"fhd\":119290700,\"hd\":22597987,\"sd\":6012804,\"shd\":17172573,\"source\":113470866,\"uhd\":72973963}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-18 08:13:55",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/z00270m1wou/z00270m1wou_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/z00270m1wou/z00270m1wou_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/z00270m1wou/z00270m1wou_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+55776852+56108082+55831501",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3146975119",
+            "title": "坐飞机去度假",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/z00270m1wou.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "z00270m1wou"
+          },
+          "defn_raw": "{\"audio\":1444592,\"fhd\":119290700,\"hd\":22597987,\"sd\":6012804,\"shd\":17172573,\"source\":113470866,\"uhd\":72973963}",
+          "defn_expanded": {
+            "audio": 1444592,
+            "fhd": 119290700,
+            "hd": 22597987,
+            "sd": 6012804,
+            "shd": 17172573,
+            "source": 113470866,
+            "uhd": 72973963
+          }
+        },
+        {
+          "vid": "e0027f36hpe",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200pvv3k5s+zkbp0mrqhy0x1hl+bzfkv5se8qaqel2",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "mzc00200pvv3k5s",
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2"
+            ],
+            "cover_pic_resolution": "1518780",
+            "create_time": "2018-09-27 12:17:45",
+            "defn": "{\"audio\":2083604,\"fhd\":116794060,\"hd\":22644505,\"sd\":7176148,\"shd\":22153741,\"source\":113310377,\"uhd\":90686632}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-18 08:14:29",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/e0027f36hpe/e0027f36hpe_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/e0027f36hpe/e0027f36hpe_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/e0027f36hpe/e0027f36hpe_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+55776852+4915002+56108082+55831501+449749+55789140",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3146977456",
+            "title": "度假小屋",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/e0027f36hpe.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "e0027f36hpe"
+          },
+          "defn_raw": "{\"audio\":2083604,\"fhd\":116794060,\"hd\":22644505,\"sd\":7176148,\"shd\":22153741,\"source\":113310377,\"uhd\":90686632}",
+          "defn_expanded": {
+            "audio": 2083604,
+            "fhd": 116794060,
+            "hd": 22644505,
+            "sd": 7176148,
+            "shd": 22153741,
+            "source": 113310377,
+            "uhd": 90686632
+          }
+        },
+        {
+          "vid": "p0027xzpitn",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc00200yokeal4+mzc00200s44wkqc+mzc002009zldgi8",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc00200yokeal4",
+              "mzc00200s44wkqc",
+              "mzc002009zldgi8"
+            ],
+            "cover_pic_resolution": "1518779",
+            "create_time": "2018-09-27 12:18:23",
+            "defn": "{\"audio\":2074016,\"fhd\":116187572,\"hd\":22423588,\"sd\":6718368,\"shd\":20228949,\"source\":113341795,\"uhd\":95966296}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2020-10-21 12:13:02",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/p0027xzpitn/p0027xzpitn_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/p0027xzpitn/p0027xzpitn_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/p0027xzpitn/p0027xzpitn_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+55776852+4915002+56108082+55831501+449749+55789140",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3146979864",
+            "title": "阳光下的假日",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/p0027xzpitn.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "p0027xzpitn"
+          },
+          "defn_raw": "{\"audio\":2074016,\"fhd\":116187572,\"hd\":22423588,\"sd\":6718368,\"shd\":20228949,\"source\":113341795,\"uhd\":95966296}",
+          "defn_expanded": {
+            "audio": 2074016,
+            "fhd": 116187572,
+            "hd": 22423588,
+            "sd": 6718368,
+            "shd": 20228949,
+            "source": 113341795,
+            "uhd": 95966296
+          }
+        },
+        {
+          "vid": "m0027k62jsq",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc00200yokeal4",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc00200yokeal4"
+            ],
+            "cover_pic_resolution": "1518780",
+            "create_time": "2018-09-27 12:18:57",
+            "defn": "{\"audio\":2086612,\"fhd\":114273920,\"hd\":22264835,\"sd\":6431480,\"shd\":18897287,\"source\":112976947,\"uhd\":72383568}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2021-05-27 16:45:48",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/m0027k62jsq/m0027k62jsq_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/m0027k62jsq/m0027k62jsq_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/m0027k62jsq/m0027k62jsq_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+55776852+4915002+56108082+55831501+55789140+449749+56068492",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3146981571",
+            "title": "最后的假日",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/m0027k62jsq.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "m0027k62jsq"
+          },
+          "defn_raw": "{\"audio\":2086612,\"fhd\":114273920,\"hd\":22264835,\"sd\":6431480,\"shd\":18897287,\"source\":112976947,\"uhd\":72383568}",
+          "defn_expanded": {
+            "audio": 2086612,
+            "fhd": 114273920,
+            "hd": 22264835,
+            "sd": 6431480,
+            "shd": 18897287,
+            "source": 112976947,
+            "uhd": 72383568
+          }
+        },
+        {
+          "vid": "m002919fdt8",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc00200o0m2d4t",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc00200o0m2d4t"
+            ],
+            "cover_pic_resolution": "1518779",
+            "create_time": "2019-01-17 17:14:46",
+            "defn": "{\"audio\":2075332,\"fhd\":77242838,\"hd\":10223393,\"sd\":6311912,\"shd\":13577656,\"source\":181810107,\"uhd\":72264817}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2020-10-21 11:56:36",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/m002919fdt8/m002919fdt8_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/m002919fdt8/m002919fdt8_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/m002919fdt8/m002919fdt8_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55775311+3578887+56116018+55776852+55831501+56108082+449749+55789140",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3661767609",
+            "title": "镜子",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/m002919fdt8.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "m002919fdt8"
+          },
+          "defn_raw": "{\"audio\":2075332,\"fhd\":77242838,\"hd\":10223393,\"sd\":6311912,\"shd\":13577656,\"source\":181810107,\"uhd\":72264817}",
+          "defn_expanded": {
+            "audio": 2075332,
+            "fhd": 77242838,
+            "hd": 10223393,
+            "sd": 6311912,
+            "shd": 13577656,
+            "source": 181810107,
+            "uhd": 72264817
+          }
+        },
+        {
+          "vid": "x002937gvde",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2"
+            ],
+            "cover_pic_resolution": "1518780",
+            "create_time": "2019-01-17 17:15:41",
+            "defn": "{\"audio\":2078340,\"fhd\":49364476,\"hd\":14003800,\"sd\":7409456,\"shd\":23824029,\"source\":279150635,\"uhd\":97141525}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-18 08:14:29",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/x002937gvde/x002937gvde_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/x002937gvde/x002937gvde_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/x002937gvde/x002937gvde_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+55776852+56108082+55831501+449749+55789140+55802463",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3660577954",
+            "title": "佩德罗迟到了",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/x002937gvde.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "x002937gvde"
+          },
+          "defn_raw": "{\"audio\":2078340,\"fhd\":49364476,\"hd\":14003800,\"sd\":7409456,\"shd\":23824029,\"source\":279150635,\"uhd\":97141525}",
+          "defn_expanded": {
+            "audio": 2078340,
+            "fhd": 49364476,
+            "hd": 14003800,
+            "sd": 7409456,
+            "shd": 23824029,
+            "source": 279150635,
+            "uhd": 97141525
+          }
+        },
+        {
+          "vid": "m0029vltmzx",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc00200o0m2d4t+mzc00200x3jbgj8",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc00200o0m2d4t",
+              "mzc00200x3jbgj8"
+            ],
+            "cover_pic_resolution": "1518779",
+            "create_time": "2019-01-17 17:12:57",
+            "defn": "{\"audio\":2073452,\"fhd\":78844907,\"hd\":10245556,\"sd\":6382412,\"shd\":13198554,\"source\":158124010,\"uhd\":65886607}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-18 08:14:29",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/m0029vltmzx/m0029vltmzx_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/m0029vltmzx/m0029vltmzx_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/m0029vltmzx/m0029vltmzx_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+55776852+4915002+56108082+55831501+449749+55789140",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3664340395",
+            "title": "花园游戏",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/m0029vltmzx.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "m0029vltmzx"
+          },
+          "defn_raw": "{\"audio\":2073452,\"fhd\":78844907,\"hd\":10245556,\"sd\":6382412,\"shd\":13198554,\"source\":158124010,\"uhd\":65886607}",
+          "defn_expanded": {
+            "audio": 2073452,
+            "fhd": 78844907,
+            "hd": 10245556,
+            "sd": 6382412,
+            "shd": 13198554,
+            "source": 158124010,
+            "uhd": 65886607
+          }
+        },
+        {
+          "vid": "d0029v92n6w",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc00200yokeal4",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc00200yokeal4"
+            ],
+            "cover_pic_resolution": "1518780",
+            "create_time": "2019-01-17 17:13:57",
+            "defn": "{\"audio\":2078340,\"fhd\":79355295,\"hd\":13826762,\"sd\":7381444,\"shd\":23586584,\"source\":295018915,\"uhd\":105507628}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-18 08:13:55",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/d0029v92n6w/d0029v92n6w_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/d0029v92n6w/d0029v92n6w_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/d0029v92n6w/d0029v92n6w_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+55776852+4915002+56108082+55831501+449749+55789140",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3660570806",
+            "title": "划船",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/d0029v92n6w.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "d0029v92n6w"
+          },
+          "defn_raw": "{\"audio\":2078340,\"fhd\":79355295,\"hd\":13826762,\"sd\":7381444,\"shd\":23586584,\"source\":295018915,\"uhd\":105507628}",
+          "defn_expanded": {
+            "audio": 2078340,
+            "fhd": 79355295,
+            "hd": 13826762,
+            "sd": 7381444,
+            "shd": 23586584,
+            "source": 295018915,
+            "uhd": 105507628
+          }
+        },
+        {
+          "vid": "o0029s9v3v3",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2"
+            ],
+            "cover_pic_resolution": "1518779",
+            "create_time": "2019-01-17 17:10:23",
+            "defn": "{\"audio\":2074392,\"fhd\":78083348,\"hd\":13254494,\"sd\":7185736,\"shd\":22420406,\"source\":309794949,\"uhd\":106280593}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2020-10-21 20:26:06",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/o0029s9v3v3/o0029s9v3v3_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/o0029s9v3v3/o0029s9v3v3_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/o0029s9v3v3/o0029s9v3v3_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55775311+3578887+56116018+55776852+4915002+55831501+56108082+449749+55789140",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3664209449",
+            "title": "公牛先生去瓷器店",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/o0029s9v3v3.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "o0029s9v3v3"
+          },
+          "defn_raw": "{\"audio\":2074392,\"fhd\":78083348,\"hd\":13254494,\"sd\":7185736,\"shd\":22420406,\"source\":309794949,\"uhd\":106280593}",
+          "defn_expanded": {
+            "audio": 2074392,
+            "fhd": 78083348,
+            "hd": 13254494,
+            "sd": 7185736,
+            "shd": 22420406,
+            "source": 309794949,
+            "uhd": 106280593
+          }
+        },
+        {
+          "vid": "z0029t4f5kh",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "bzfkv5se8qaqel2+mzc002007otsm3l+mzc00200o0m2d4t+zkbp0mrqhy0x1hl+mzc00200ajgdb28",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "bzfkv5se8qaqel2",
+              "mzc002007otsm3l",
+              "mzc00200o0m2d4t",
+              "zkbp0mrqhy0x1hl",
+              "mzc00200ajgdb28"
+            ],
+            "cover_pic_resolution": "1518780",
+            "create_time": "2019-01-17 17:18:31",
+            "defn": "{\"audio\":2079844,\"fhd\":49270664,\"hd\":13466440,\"sd\":6076172,\"shd\":22833291,\"source\":343889483,\"uhd\":139029495}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2020-10-21 12:30:05",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/z0029t4f5kh/z0029t4f5kh_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/z0029t4f5kh/z0029t4f5kh_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/z0029t4f5kh/z0029t4f5kh_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "238244",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3660588530",
+            "title": "水果",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/z0029t4f5kh.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "z0029t4f5kh"
+          },
+          "defn_raw": "{\"audio\":2079844,\"fhd\":49270664,\"hd\":13466440,\"sd\":6076172,\"shd\":22833291,\"source\":343889483,\"uhd\":139029495}",
+          "defn_expanded": {
+            "audio": 2079844,
+            "fhd": 49270664,
+            "hd": 13466440,
+            "sd": 6076172,
+            "shd": 22833291,
+            "source": 343889483,
+            "uhd": 139029495
+          }
+        },
+        {
+          "vid": "n0029s0s5ol",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc00200o0m2d4t",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc00200o0m2d4t"
+            ],
+            "cover_pic_resolution": "1518780",
+            "create_time": "2019-01-17 17:17:30",
+            "defn": "{\"audio\":2079844,\"fhd\":78195902,\"hd\":10223496,\"sd\":5748404,\"shd\":15564574,\"source\":184338115,\"uhd\":72083564}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2020-10-21 20:35:53",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/n0029s0s5ol/n0029s0s5ol_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/n0029s0s5ol/n0029s0s5ol_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/n0029s0s5ol/n0029s0s5ol_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+4915002+55776852+56108082+55831501+449749+55789140",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3660584926",
+            "title": "乔治的气球",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/n0029s0s5ol.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "n0029s0s5ol"
+          },
+          "defn_raw": "{\"audio\":2079844,\"fhd\":78195902,\"hd\":10223496,\"sd\":5748404,\"shd\":15564574,\"source\":184338115,\"uhd\":72083564}",
+          "defn_expanded": {
+            "audio": 2079844,
+            "fhd": 78195902,
+            "hd": 10223496,
+            "sd": 5748404,
+            "shd": 15564574,
+            "source": 184338115,
+            "uhd": 72083564
+          }
+        },
+        {
+          "vid": "c0029ea8zf7",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2"
+            ],
+            "cover_pic_resolution": "1518779",
+            "create_time": "2019-01-17 17:12:08",
+            "defn": "{\"audio\":2083604,\"fhd\":49788980,\"hd\":14794417,\"sd\":7831516,\"shd\":25235926,\"source\":288485252,\"uhd\":94579744}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-18 08:14:30",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/c0029ea8zf7/c0029ea8zf7_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/c0029ea8zf7/c0029ea8zf7_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/c0029ea8zf7/c0029ea8zf7_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55775311+3578887+56116018+55776852+4915002+55831501+56108082+449749+55789140",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3660562722",
+            "title": "海盗的宝藏",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/c0029ea8zf7.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "c0029ea8zf7"
+          },
+          "defn_raw": "{\"audio\":2083604,\"fhd\":49788980,\"hd\":14794417,\"sd\":7831516,\"shd\":25235926,\"source\":288485252,\"uhd\":94579744}",
+          "defn_expanded": {
+            "audio": 2083604,
+            "fhd": 49788980,
+            "hd": 14794417,
+            "sd": 7831516,
+            "shd": 25235926,
+            "source": 288485252,
+            "uhd": 94579744
+          }
+        },
+        {
+          "vid": "p00292a2v6s",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2"
+            ],
+            "cover_pic_resolution": "1518780",
+            "create_time": "2019-01-17 17:19:25",
+            "defn": "{\"audio\":2075708,\"fhd\":79127560,\"hd\":10717814,\"sd\":6179748,\"shd\":17943411,\"source\":241116703,\"uhd\":101126634}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2020-10-21 20:32:32",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/p00292a2v6s/p00292a2v6s_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/p00292a2v6s/p00292a2v6s_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/p00292a2v6s/p00292a2v6s_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+55776852+4915002+56108082+55831501+449749",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3666459579",
+            "title": "兔爷爷在太空",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/p00292a2v6s.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "p00292a2v6s"
+          },
+          "defn_raw": "{\"audio\":2075708,\"fhd\":79127560,\"hd\":10717814,\"sd\":6179748,\"shd\":17943411,\"source\":241116703,\"uhd\":101126634}",
+          "defn_expanded": {
+            "audio": 2075708,
+            "fhd": 79127560,
+            "hd": 10717814,
+            "sd": 6179748,
+            "shd": 17943411,
+            "source": 241116703,
+            "uhd": 101126634
+          }
+        },
+        {
+          "vid": "g0029jahlkt",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2"
+            ],
+            "cover_pic_resolution": "1518779",
+            "create_time": "2019-01-17 17:16:37",
+            "defn": "{\"audio\":2085860,\"fhd\":49780708,\"hd\":11287797,\"sd\":6405348,\"shd\":18985591,\"source\":218884540,\"uhd\":89722429}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-18 08:13:56",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/g0029jahlkt/g0029jahlkt_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/g0029jahlkt/g0029jahlkt_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/g0029jahlkt/g0029jahlkt_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+55776852+4915002+56108082+55831501+449749",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3664342646",
+            "title": "佩奇的马戏团",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/g0029jahlkt.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "g0029jahlkt"
+          },
+          "defn_raw": "{\"audio\":2085860,\"fhd\":49780708,\"hd\":11287797,\"sd\":6405348,\"shd\":18985591,\"source\":218884540,\"uhd\":89722429}",
+          "defn_expanded": {
+            "audio": 2085860,
+            "fhd": 49780708,
+            "hd": 11287797,
+            "sd": 6405348,
+            "shd": 18985591,
+            "source": 218884540,
+            "uhd": 89722429
+          }
+        },
+        {
+          "vid": "a0029uod6kv",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc00200o0m2d4t",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc00200o0m2d4t"
+            ],
+            "cover_pic_resolution": "1518779",
+            "create_time": "2019-01-17 17:23:10",
+            "defn": "{\"audio\":2084732,\"fhd\":78410968,\"hd\":14980241,\"sd\":7870056,\"shd\":25534404,\"source\":325957315,\"uhd\":135408387}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-18 08:14:30",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/a0029uod6kv/a0029uod6kv_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/a0029uod6kv/a0029uod6kv_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/a0029uod6kv/a0029uod6kv_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+55776852+55831501+56108082+449749+55789140",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3660605819",
+            "title": "鱼塘",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/a0029uod6kv.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "a0029uod6kv"
+          },
+          "defn_raw": "{\"audio\":2084732,\"fhd\":78410968,\"hd\":14980241,\"sd\":7870056,\"shd\":25534404,\"source\":325957315,\"uhd\":135408387}",
+          "defn_expanded": {
+            "audio": 2084732,
+            "fhd": 78410968,
+            "hd": 14980241,
+            "sd": 7870056,
+            "shd": 25534404,
+            "source": 325957315,
+            "uhd": 135408387
+          }
+        },
+        {
+          "vid": "q0029hvfxwr",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc00200o0m2d4t",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc00200o0m2d4t"
+            ],
+            "cover_pic_resolution": "1518779",
+            "create_time": "2019-01-17 17:11:12",
+            "defn": "{\"audio\":2076836,\"fhd\":49114248,\"hd\":10224824,\"sd\":6247052,\"shd\":13205554,\"source\":167678848,\"uhd\":66410595}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2021-05-27 16:45:49",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/q0029hvfxwr/q0029hvfxwr_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/q0029hvfxwr/q0029hvfxwr_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/q0029hvfxwr/q0029hvfxwr_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+55776852+4915002+56108082+55831501+449749+55789348+55789140",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3664339447",
+            "title": "过去的日子",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/q0029hvfxwr.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "q0029hvfxwr"
+          },
+          "defn_raw": "{\"audio\":2076836,\"fhd\":49114248,\"hd\":10224824,\"sd\":6247052,\"shd\":13205554,\"source\":167678848,\"uhd\":66410595}",
+          "defn_expanded": {
+            "audio": 2076836,
+            "fhd": 49114248,
+            "hd": 10224824,
+            "sd": 6247052,
+            "shd": 13205554,
+            "source": 167678848,
+            "uhd": 66410595
+          }
+        },
+        {
+          "vid": "y0029x6kkin",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "zkbp0mrqhy0x1hl+bzfkv5se8qaqel2+mzc00200yokeal4",
+            "category_map": [
+              "11244",
+              "正片",
+              "1250",
+              "动画",
+              "106",
+              "少儿"
+            ],
+            "cover_list": [
+              "zkbp0mrqhy0x1hl",
+              "bzfkv5se8qaqel2",
+              "mzc00200yokeal4"
+            ],
+            "cover_pic_resolution": "1518779",
+            "create_time": "2019-01-17 17:21:22",
+            "defn": "{\"audio\":2079280,\"fhd\":49270476,\"hd\":14356116,\"sd\":7765904,\"shd\":24452426,\"source\":288365793,\"uhd\":102574470}",
+            "desc": "",
+            "duration": "302",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2020-10-21 11:52:49",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/y0029x6kkin/y0029x6kkin_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/y0029x6kkin/y0029x6kkin_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/y0029x6kkin/y0029x6kkin_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "55809580+3578887+56116018+4915002+55776852+449749+56108082+55831501+55789140",
+            "publish_date": "2010-01-01 00:00:00",
+            "state": "4",
+            "tag": "",
+            "targetid": "3666461265",
+            "title": "雪山",
+            "type": "106",
+            "upload_src": "20",
+            "url": "https://v.qq.com/x/page/y0029x6kkin.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "y0029x6kkin"
+          },
+          "defn_raw": "{\"audio\":2079280,\"fhd\":49270476,\"hd\":14356116,\"sd\":7765904,\"shd\":24452426,\"source\":288365793,\"uhd\":102574470}",
+          "defn_expanded": {
+            "audio": 2079280,
+            "fhd": 49270476,
+            "hd": 14356116,
+            "sd": 7765904,
+            "shd": 24452426,
+            "source": 288365793,
+            "uhd": 102574470
+          }
+        }
+      ],
+      "video_field_names": [
+        "c_covers",
+        "category_map",
+        "cover_list",
+        "cover_pic_resolution",
+        "create_time",
+        "defn",
+        "desc",
+        "duration",
+        "is_normalized",
+        "keyword",
+        "leading_actor",
+        "modify_time",
+        "pic160x90",
+        "pic496x280",
+        "pic_640_360",
+        "pioneer_tag",
+        "pioneer_tag_ids",
+        "publish_date",
+        "state",
+        "tag",
+        "targetid",
+        "title",
+        "type",
+        "upload_src",
+        "url",
+        "vWH",
+        "vid"
+      ],
+      "derived": {
+        "cover": {
+          "video_ids_count": 26,
+          "clips_ids_count": 1,
+          "downright_count": 2,
+          "downright_unique": [
+            "45",
+            "46"
+          ],
+          "nomal_f_counts": {
+            "2": 3,
+            "7": 23
+          },
+          "vip_f_counts": {
+            "2": 3,
+            "7": 23
+          }
+        },
+        "videos": {
+          "video_count": 26,
+          "state_counts": {
+            "4": 26
+          },
+          "upload_src_counts": {
+            "20": 26
+          },
+          "defn_key_counts": {
+            "audio": 26,
+            "fhd": 26,
+            "hd": 26,
+            "sd": 26,
+            "shd": 26,
+            "source": 26,
+            "uhd": 26
+          },
+          "targetid_nonempty_count": 26,
+          "publish_date_nonempty_count": 26,
+          "publish_date_examples": [
+            {
+              "vid": "p0027jbwye1",
+              "title": "女王",
+              "publish_date": "2010-01-01 00:00:00"
+            },
+            {
+              "vid": "z00275gbro8",
+              "title": "荒岛",
+              "publish_date": "2010-01-01 00:00:00"
+            },
+            {
+              "vid": "k0027wwijz7",
+              "title": "香水",
+              "publish_date": "2010-01-01 00:00:00"
+            },
+            {
+              "vid": "d0027ki6iu3",
+              "title": "孩子们的游园会",
+              "publish_date": "2010-01-01 00:00:00"
+            },
+            {
+              "vid": "o0027s6upqj",
+              "title": "海洋馆",
+              "publish_date": "2010-01-01 00:00:00"
+            },
+            {
+              "vid": "t0027buybo3",
+              "title": "乔治的赛车",
+              "publish_date": "2010-01-01 00:00:00"
+            },
+            {
+              "vid": "y0027ixzc8e",
+              "title": "小船",
+              "publish_date": "2010-01-01 00:00:00"
+            },
+            {
+              "vid": "t0027usczw1",
+              "title": "沙坑",
+              "publish_date": "2010-01-01 00:00:00"
+            },
+            {
+              "vid": "z0027aiqysb",
+              "title": "夜行动物",
+              "publish_date": "2010-01-01 00:00:00"
+            },
+            {
+              "vid": "z00270m1wou",
+              "title": "坐飞机去度假",
+              "publish_date": "2010-01-01 00:00:00"
+            },
+            {
+              "vid": "e0027f36hpe",
+              "title": "度假小屋",
+              "publish_date": "2010-01-01 00:00:00"
+            },
+            {
+              "vid": "p0027xzpitn",
+              "title": "阳光下的假日",
+              "publish_date": "2010-01-01 00:00:00"
+            }
+          ],
+          "targetid_examples": [
+            {
+              "vid": "p0027jbwye1",
+              "title": "女王",
+              "targetid": "3146954853"
+            },
+            {
+              "vid": "z00275gbro8",
+              "title": "荒岛",
+              "targetid": "3146957527"
+            },
+            {
+              "vid": "k0027wwijz7",
+              "title": "香水",
+              "targetid": "3146959230"
+            },
+            {
+              "vid": "d0027ki6iu3",
+              "title": "孩子们的游园会",
+              "targetid": "3150269255"
+            },
+            {
+              "vid": "o0027s6upqj",
+              "title": "海洋馆",
+              "targetid": "3146963884"
+            },
+            {
+              "vid": "t0027buybo3",
+              "title": "乔治的赛车",
+              "targetid": "3146966852"
+            },
+            {
+              "vid": "y0027ixzc8e",
+              "title": "小船",
+              "targetid": "3146969079"
+            },
+            {
+              "vid": "t0027usczw1",
+              "title": "沙坑",
+              "targetid": "3146970864"
+            },
+            {
+              "vid": "z0027aiqysb",
+              "title": "夜行动物",
+              "targetid": "3146973369"
+            },
+            {
+              "vid": "z00270m1wou",
+              "title": "坐飞机去度假",
+              "targetid": "3146975119"
+            },
+            {
+              "vid": "e0027f36hpe",
+              "title": "度假小屋",
+              "targetid": "3146977456"
+            },
+            {
+              "vid": "p0027xzpitn",
+              "title": "阳光下的假日",
+              "targetid": "3146979864"
+            }
+          ],
+          "unusual_upload_examples": []
+        }
+      },
+      "status": "ok"
+    }
+  ],
+  "summary": {
+    "sample_count": 1,
+    "successful_sample_count": 1,
+    "failed_sample_count": 0,
+    "video_count": 26,
+    "clip_video_count": 0,
+    "videos_with_defn_count": 26,
+    "cover_field_frequency": {
+      "denominator": "successful_samples",
+      "total": 1,
+      "fields": {
+        "clips_ids": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "column_id": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "copyright_negotiation_id": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "costtime": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "cover_checkup_grade": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "cover_id": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "downright": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "episode_all": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "episode_updated": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "errormsg": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "errorno": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "id": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "imgtag_ver": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "new_pic_hz": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "new_pic_vt": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "nomal_ids": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "pay_status": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "pc_client_imgtag": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "positive_content_id": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "positive_trailer": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "resptime": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "retcode": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "title": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "topic_id_list": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "type": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "type_name": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "video_ids": {
+          "count": 1,
+          "ratio": 1.0
+        },
+        "vip_ids": {
+          "count": 1,
+          "ratio": 1.0
+        }
+      }
+    },
+    "video_field_frequency": {
+      "denominator": "videos",
+      "total": 26,
+      "fields": {
+        "c_covers": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "category_map": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "cover_list": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "cover_pic_resolution": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "create_time": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "defn": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "desc": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "duration": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "is_normalized": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "keyword": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "leading_actor": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "modify_time": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "pic160x90": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "pic496x280": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "pic_640_360": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "pioneer_tag": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "pioneer_tag_ids": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "publish_date": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "state": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "tag": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "targetid": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "title": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "type": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "upload_src": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "url": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "vWH": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "vid": {
+          "count": 26,
+          "ratio": 1.0
+        }
+      }
+    },
+    "clip_video_field_frequency": {
+      "denominator": "clip_videos",
+      "total": 0,
+      "fields": {}
+    },
+    "defn_field_frequency": {
+      "denominator": "videos_with_defn",
+      "total": 26,
+      "fields": {
+        "audio": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "fhd": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "hd": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "sd": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "shd": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "source": {
+          "count": 26,
+          "ratio": 1.0
+        },
+        "uhd": {
+          "count": 26,
+          "ratio": 1.0
+        }
+      }
+    }
+  }
+}

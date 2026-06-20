@@ -1,0 +1,1982 @@
+{
+  "meta": {
+    "tool": "tencent_video_field_survey",
+    "generated_at": "2026-06-19T18:39:57+08:00",
+    "input_count": 2,
+    "timeout_seconds": 10.0,
+    "batch_size": 10,
+    "http_retries": 2,
+    "retry_sleep_seconds": 0.75,
+    "clip_sample_head": 0,
+    "clip_sample_tail": 0
+  },
+  "samples": [
+    {
+      "input_url": "https://v.qq.com/x/cover/mzc00200s6oqemg.html",
+      "cid": "mzc00200s6oqemg",
+      "cover_request": {
+        "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200s6oqemg&appid=10001005&appkey=0d1a9ddd94de871b"
+      },
+      "cover": {
+        "field_names": [
+          "clips_ids",
+          "column_id",
+          "copyright_negotiation_id",
+          "costtime",
+          "cover_checkup_grade",
+          "cover_id",
+          "downright",
+          "episode_all",
+          "episode_updated",
+          "errormsg",
+          "errorno",
+          "id",
+          "imgtag_ver",
+          "new_pic_hz",
+          "new_pic_vt",
+          "nomal_ids",
+          "pay_status",
+          "pc_client_imgtag",
+          "positive_content_id",
+          "positive_trailer",
+          "resptime",
+          "retcode",
+          "title",
+          "topic_id_list",
+          "type",
+          "type_name",
+          "video_ids",
+          "vip_ids"
+        ],
+        "fields": {
+          "costtime": "21",
+          "errormsg": "",
+          "errorno": "0",
+          "resptime": "1781865597",
+          "clips_ids": "",
+          "column_id": "0",
+          "copyright_negotiation_id": "",
+          "cover_checkup_grade": "4",
+          "cover_id": "mzc00200s6oqemg",
+          "downright": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "8",
+            "9",
+            "10",
+            "21",
+            "22",
+            "23",
+            "35",
+            "37",
+            "40",
+            "42",
+            "43",
+            "45",
+            "46",
+            "57",
+            "61"
+          ],
+          "episode_all": "7",
+          "episode_updated": "",
+          "imgtag_ver": "",
+          "new_pic_hz": "http://puui.qpic.cn/vcover_hz_pic/0/5xmvf5om7w21o2c/0",
+          "new_pic_vt": "http://puui.qpic.cn/vcover_vt_pic/0/5xmvf5om7w21o2c/0",
+          "nomal_ids": "[{\"F\":2,\"V\":\"p3232rltzwj\"},{\"F\":7,\"V\":\"n3232223f5l\"},{\"F\":7,\"V\":\"z3232lij4e6\"},{\"F\":7,\"V\":\"x3232vscsyu\"},{\"F\":7,\"V\":\"k32320a00nx\"},{\"F\":7,\"V\":\"a3232iinn5w\"},{\"F\":7,\"V\":\"n323255f70e\"}]",
+          "pay_status": "7",
+          "pc_client_imgtag": "",
+          "positive_content_id": "1543606",
+          "positive_trailer": "0",
+          "title": "����������й���ر��������������Ƚ�ѧ",
+          "topic_id_list": "mzc001000ccyk46",
+          "type": "111",
+          "type_name": "�Ļ���ʷ",
+          "video_ids": [
+            "p3232rltzwj",
+            "n3232223f5l",
+            "z3232lij4e6",
+            "x3232vscsyu",
+            "k32320a00nx",
+            "a3232iinn5w",
+            "n323255f70e"
+          ],
+          "vip_ids": "[{\"F\":2,\"V\":\"p3232rltzwj\"},{\"F\":7,\"V\":\"n3232223f5l\"},{\"F\":7,\"V\":\"z3232lij4e6\"},{\"F\":7,\"V\":\"x3232vscsyu\"},{\"F\":7,\"V\":\"k32320a00nx\"},{\"F\":7,\"V\":\"a3232iinn5w\"},{\"F\":7,\"V\":\"n323255f70e\"}]",
+          "id": "mzc00200s6oqemg",
+          "retcode": "0"
+        }
+      },
+      "video_ids": [
+        "p3232rltzwj",
+        "n3232223f5l",
+        "z3232lij4e6",
+        "x3232vscsyu",
+        "k32320a00nx",
+        "a3232iinn5w",
+        "n323255f70e"
+      ],
+      "video_request_batches": [
+        {
+          "vids": [
+            "p3232rltzwj",
+            "n3232223f5l",
+            "z3232lij4e6",
+            "x3232vscsyu",
+            "k32320a00nx",
+            "a3232iinn5w",
+            "n323255f70e"
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=p3232rltzwj%2Cn3232223f5l%2Cz3232lij4e6%2Cx3232vscsyu%2Ck32320a00nx%2Ca3232iinn5w%2Cn323255f70e"
+        }
+      ],
+      "videos": [
+        {
+          "vid": "p3232rltzwj",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200s6oqemg",
+            "category_map": [
+              "11829",
+              "�赸����",
+              "11824",
+              "����",
+              "111",
+              "�Ļ���ʷ"
+            ],
+            "cover_list": "mzc00200s6oqemg",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2021-03-08 16:50:25",
+            "defn": "{\"audio\":1092468,\"fhd\":7852992,\"hd\":2933443,\"sd\":1478837,\"shd\":4364771,\"source\":212386510}",
+            "desc": "",
+            "duration": "123",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-07 03:55:20",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/p3232rltzwj/p3232rltzwj_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/p3232rltzwj/p3232rltzwj_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/p3232rltzwj/p3232rltzwj_hz.jpg/640",
+            "pioneer_tag": "��ɫ�赸+С���+�й���+how to+�赸��ϰ��+��������ϰ+�������ѧ��",
+            "pioneer_tag_ids": "56031185+55798527+645786+55804072+3327308+3526005+55846212",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "6571739605",
+            "title": "�й���ر��������������Ƚ�ѧ�ȵ�Ƭ",
+            "type": "111",
+            "upload_src": "2048",
+            "url": "https://v.qq.com/x/page/p3232rltzwj.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "p3232rltzwj"
+          },
+          "defn_raw": "{\"audio\":1092468,\"fhd\":7852992,\"hd\":2933443,\"sd\":1478837,\"shd\":4364771,\"source\":212386510}",
+          "defn_expanded": {
+            "audio": 1092468,
+            "fhd": 7852992,
+            "hd": 2933443,
+            "sd": 1478837,
+            "shd": 4364771,
+            "source": 212386510
+          }
+        },
+        {
+          "vid": "n3232223f5l",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200s6oqemg",
+            "category_map": [
+              "11829",
+              "�赸����",
+              "11824",
+              "����",
+              "111",
+              "�Ļ���ʷ"
+            ],
+            "cover_list": "mzc00200s6oqemg",
+            "cover_pic_resolution": "1518779",
+            "create_time": "2021-03-08 17:37:04",
+            "defn": "{\"audio\":1916848,\"fhd\":15161740,\"hd\":5401058,\"sd\":2532598,\"shd\":8616743,\"source\":407215312}",
+            "desc": "",
+            "duration": "216",
+            "is_normalized": "1502409",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-07 03:55:21",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/n3232223f5l/n3232223f5l_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/n3232223f5l/n3232223f5l_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/n3232223f5l/n3232223f5l_hz.jpg/640",
+            "pioneer_tag": "���ڽ���",
+            "pioneer_tag_ids": "409181",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "6571943031",
+            "title": "��һ���������������켡�⡢��ʹ���Ϊ��ϰ��׼��",
+            "type": "111",
+            "upload_src": "2048",
+            "url": "https://v.qq.com/x/page/n3232223f5l.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "n3232223f5l"
+          },
+          "defn_raw": "{\"audio\":1916848,\"fhd\":15161740,\"hd\":5401058,\"sd\":2532598,\"shd\":8616743,\"source\":407215312}",
+          "defn_expanded": {
+            "audio": 1916848,
+            "fhd": 15161740,
+            "hd": 5401058,
+            "sd": 2532598,
+            "shd": 8616743,
+            "source": 407215312
+          }
+        },
+        {
+          "vid": "z3232lij4e6",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200s6oqemg",
+            "category_map": [
+              "11829",
+              "�赸����",
+              "11824",
+              "����",
+              "111",
+              "�Ļ���ʷ"
+            ],
+            "cover_list": "mzc00200s6oqemg",
+            "cover_pic_resolution": "",
+            "create_time": "2021-03-08 16:37:46",
+            "defn": "{\"audio\":4333400,\"fhd\":31692637,\"hd\":10827676,\"sd\":5277489,\"shd\":16664764,\"source\":884533483}",
+            "desc": "",
+            "duration": "489",
+            "is_normalized": "1502409",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-07 03:55:21",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/z3232lij4e6/z3232lij4e6_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/z3232lij4e6/z3232lij4e6_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/z3232lij4e6/z3232lij4e6_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "6571690841",
+            "title": "�ڶ��ڼ粿ѵ������֪�粿���粿�����ȼ����ѵ��",
+            "type": "111",
+            "upload_src": "2048",
+            "url": "https://v.qq.com/x/page/z3232lij4e6.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "z3232lij4e6"
+          },
+          "defn_raw": "{\"audio\":4333400,\"fhd\":31692637,\"hd\":10827676,\"sd\":5277489,\"shd\":16664764,\"source\":884533483}",
+          "defn_expanded": {
+            "audio": 4333400,
+            "fhd": 31692637,
+            "hd": 10827676,
+            "sd": 5277489,
+            "shd": 16664764,
+            "source": 884533483
+          }
+        },
+        {
+          "vid": "x3232vscsyu",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200s6oqemg",
+            "category_map": [
+              "11829",
+              "�赸����",
+              "11824",
+              "����",
+              "111",
+              "�Ļ���ʷ"
+            ],
+            "cover_list": "mzc00200s6oqemg",
+            "cover_pic_resolution": "1518779",
+            "create_time": "2021-03-08 16:43:37",
+            "defn": "{\"audio\":7611744,\"fhd\":64213868,\"hd\":19087338,\"sd\":9340605,\"shd\":30921442,\"source\":1571289773}",
+            "desc": "",
+            "duration": "865",
+            "is_normalized": "1502409",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-07 03:55:23",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/x3232vscsyu/x3232vscsyu_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/x3232vscsyu/x3232vscsyu_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/x3232vscsyu/x3232vscsyu_hz.jpg/640",
+            "pioneer_tag": "how to",
+            "pioneer_tag_ids": "55804072",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "6571713339",
+            "title": "�������Ȳ�ѵ������֪�Ȳ����Ȳ������ȼ����ѵ��",
+            "type": "111",
+            "upload_src": "2048",
+            "url": "https://v.qq.com/x/page/x3232vscsyu.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "x3232vscsyu"
+          },
+          "defn_raw": "{\"audio\":7611744,\"fhd\":64213868,\"hd\":19087338,\"sd\":9340605,\"shd\":30921442,\"source\":1571289773}",
+          "defn_expanded": {
+            "audio": 7611744,
+            "fhd": 64213868,
+            "hd": 19087338,
+            "sd": 9340605,
+            "shd": 30921442,
+            "source": 1571289773
+          }
+        },
+        {
+          "vid": "k32320a00nx",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200s6oqemg",
+            "category_map": [
+              "11829",
+              "�赸����",
+              "11824",
+              "����",
+              "111",
+              "�Ļ���ʷ"
+            ],
+            "cover_list": "mzc00200s6oqemg",
+            "cover_pic_resolution": "1518779",
+            "create_time": "2021-03-08 16:46:04",
+            "defn": "{\"audio\":5051372,\"fhd\":47360943,\"hd\":14785225,\"sd\":6909015,\"shd\":23391392,\"source\":1040100459}",
+            "desc": "",
+            "duration": "574",
+            "is_normalized": "1502409",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-07 03:55:22",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/k32320a00nx/k32320a00nx_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/k32320a00nx/k32320a00nx_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/k32320a00nx/k32320a00nx_hz.jpg/640",
+            "pioneer_tag": "how to",
+            "pioneer_tag_ids": "55804072",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "6571722481",
+            "title": "���Ľڿ貿ѵ������֪�貿���貿�����ȼ����ѵ��",
+            "type": "111",
+            "upload_src": "2048",
+            "url": "https://v.qq.com/x/page/k32320a00nx.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "k32320a00nx"
+          },
+          "defn_raw": "{\"audio\":5051372,\"fhd\":47360943,\"hd\":14785225,\"sd\":6909015,\"shd\":23391392,\"source\":1040100459}",
+          "defn_expanded": {
+            "audio": 5051372,
+            "fhd": 47360943,
+            "hd": 14785225,
+            "sd": 6909015,
+            "shd": 23391392,
+            "source": 1040100459
+          }
+        },
+        {
+          "vid": "a3232iinn5w",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200s6oqemg",
+            "category_map": [
+              "11829",
+              "�赸����",
+              "11824",
+              "����",
+              "111",
+              "�Ļ���ʷ"
+            ],
+            "cover_list": "mzc00200s6oqemg",
+            "cover_pic_resolution": "1518779",
+            "create_time": "2021-03-08 16:55:46",
+            "defn": "{\"audio\":6436556,\"fhd\":42708299,\"hd\":14969193,\"sd\":7356751,\"shd\":22823938,\"source\":1270518190}",
+            "desc": "",
+            "duration": "728",
+            "is_normalized": "1502409",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-07 03:55:23",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/a3232iinn5w/a3232iinn5w_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/a3232iinn5w/a3232iinn5w_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/a3232iinn5w/a3232iinn5w_hz.jpg/640",
+            "pioneer_tag": "����",
+            "pioneer_tag_ids": "9474548",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "6571761978",
+            "title": "���������ѵ������֪���������������ȼ����ѵ��",
+            "type": "111",
+            "upload_src": "2048",
+            "url": "https://v.qq.com/x/page/a3232iinn5w.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "a3232iinn5w"
+          },
+          "defn_raw": "{\"audio\":6436556,\"fhd\":42708299,\"hd\":14969193,\"sd\":7356751,\"shd\":22823938,\"source\":1270518190}",
+          "defn_expanded": {
+            "audio": 6436556,
+            "fhd": 42708299,
+            "hd": 14969193,
+            "sd": 7356751,
+            "shd": 22823938,
+            "source": 1270518190
+          }
+        },
+        {
+          "vid": "n323255f70e",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200s6oqemg",
+            "category_map": [
+              "11829",
+              "�赸����",
+              "11824",
+              "����",
+              "111",
+              "�Ļ���ʷ"
+            ],
+            "cover_list": "mzc00200s6oqemg",
+            "cover_pic_resolution": "1518779",
+            "create_time": "2021-03-08 16:42:39",
+            "defn": "{\"audio\":2515628,\"fhd\":23344108,\"hd\":7685890,\"sd\":3649307,\"shd\":12050714,\"source\":532928958}",
+            "desc": "",
+            "duration": "285",
+            "is_normalized": "1502409",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-01-07 03:55:21",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/n323255f70e/n323255f70e_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/n323255f70e/n323255f70e_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/n323255f70e/n323255f70e_hz.jpg/640",
+            "pioneer_tag": "how to",
+            "pioneer_tag_ids": "55804072",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "6571709353",
+            "title": "�����ڽű�ѵ������֪�ű����ű���������ϼ�ѵ��",
+            "type": "111",
+            "upload_src": "2048",
+            "url": "https://v.qq.com/x/page/n323255f70e.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "n323255f70e"
+          },
+          "defn_raw": "{\"audio\":2515628,\"fhd\":23344108,\"hd\":7685890,\"sd\":3649307,\"shd\":12050714,\"source\":532928958}",
+          "defn_expanded": {
+            "audio": 2515628,
+            "fhd": 23344108,
+            "hd": 7685890,
+            "sd": 3649307,
+            "shd": 12050714,
+            "source": 532928958
+          }
+        }
+      ],
+      "video_field_names": [
+        "c_covers",
+        "category_map",
+        "cover_list",
+        "cover_pic_resolution",
+        "create_time",
+        "defn",
+        "desc",
+        "duration",
+        "is_normalized",
+        "keyword",
+        "leading_actor",
+        "modify_time",
+        "pic160x90",
+        "pic496x280",
+        "pic_640_360",
+        "pioneer_tag",
+        "pioneer_tag_ids",
+        "publish_date",
+        "state",
+        "tag",
+        "targetid",
+        "title",
+        "type",
+        "upload_src",
+        "url",
+        "vWH",
+        "vid"
+      ],
+      "derived": {
+        "cover": {
+          "video_ids_count": 7,
+          "clips_ids_count": 0,
+          "downright_count": 21,
+          "downright_unique": [
+            "1",
+            "10",
+            "2",
+            "21",
+            "22",
+            "23",
+            "3",
+            "35",
+            "37",
+            "4",
+            "40",
+            "42",
+            "43",
+            "45",
+            "46",
+            "5",
+            "57",
+            "6",
+            "61",
+            "8",
+            "9"
+          ],
+          "nomal_f_counts": {
+            "2": 1,
+            "7": 6
+          },
+          "vip_f_counts": {
+            "2": 1,
+            "7": 6
+          }
+        },
+        "videos": {
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "defn_key_counts": {
+            "audio": 7,
+            "fhd": 7,
+            "hd": 7,
+            "sd": 7,
+            "shd": 7,
+            "source": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0,
+          "publish_date_examples": [],
+          "targetid_examples": [
+            {
+              "vid": "p3232rltzwj",
+              "title": "�й���ر��������������Ƚ�ѧ�ȵ�Ƭ",
+              "targetid": "6571739605"
+            },
+            {
+              "vid": "n3232223f5l",
+              "title": "��һ���������������켡�⡢��ʹ���Ϊ��ϰ��׼��",
+              "targetid": "6571943031"
+            },
+            {
+              "vid": "z3232lij4e6",
+              "title": "�ڶ��ڼ粿ѵ������֪�粿���粿�����ȼ����ѵ��",
+              "targetid": "6571690841"
+            },
+            {
+              "vid": "x3232vscsyu",
+              "title": "�������Ȳ�ѵ������֪�Ȳ����Ȳ������ȼ����ѵ��",
+              "targetid": "6571713339"
+            },
+            {
+              "vid": "k32320a00nx",
+              "title": "���Ľڿ貿ѵ������֪�貿���貿�����ȼ����ѵ��",
+              "targetid": "6571722481"
+            },
+            {
+              "vid": "a3232iinn5w",
+              "title": "���������ѵ������֪���������������ȼ����ѵ��",
+              "targetid": "6571761978"
+            },
+            {
+              "vid": "n323255f70e",
+              "title": "�����ڽű�ѵ������֪�ű����ű���������ϼ�ѵ��",
+              "targetid": "6571709353"
+            }
+          ],
+          "unusual_upload_examples": [
+            {
+              "vid": "p3232rltzwj",
+              "title": "�й���ر��������������Ƚ�ѧ�ȵ�Ƭ",
+              "upload_src": "2048"
+            },
+            {
+              "vid": "n3232223f5l",
+              "title": "��һ���������������켡�⡢��ʹ���Ϊ��ϰ��׼��",
+              "upload_src": "2048"
+            },
+            {
+              "vid": "z3232lij4e6",
+              "title": "�ڶ��ڼ粿ѵ������֪�粿���粿�����ȼ����ѵ��",
+              "upload_src": "2048"
+            },
+            {
+              "vid": "x3232vscsyu",
+              "title": "�������Ȳ�ѵ������֪�Ȳ����Ȳ������ȼ����ѵ��",
+              "upload_src": "2048"
+            },
+            {
+              "vid": "k32320a00nx",
+              "title": "���Ľڿ貿ѵ������֪�貿���貿�����ȼ����ѵ��",
+              "upload_src": "2048"
+            },
+            {
+              "vid": "a3232iinn5w",
+              "title": "���������ѵ������֪���������������ȼ����ѵ��",
+              "upload_src": "2048"
+            },
+            {
+              "vid": "n323255f70e",
+              "title": "�����ڽű�ѵ������֪�ű����ű���������ϼ�ѵ��",
+              "upload_src": "2048"
+            }
+          ]
+        }
+      },
+      "status": "ok"
+    },
+    {
+      "input_url": "https://v.qq.com/x/cover/mzc00200ua6uec2.html",
+      "cid": "mzc00200ua6uec2",
+      "cover_request": {
+        "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200ua6uec2&appid=10001005&appkey=0d1a9ddd94de871b"
+      },
+      "cover": {
+        "field_names": [
+          "clips_ids",
+          "column_id",
+          "copyright_negotiation_id",
+          "costtime",
+          "cover_checkup_grade",
+          "cover_id",
+          "downright",
+          "episode_all",
+          "episode_updated",
+          "errormsg",
+          "errorno",
+          "id",
+          "imgtag_ver",
+          "new_pic_hz",
+          "new_pic_vt",
+          "nomal_ids",
+          "pay_status",
+          "pc_client_imgtag",
+          "positive_content_id",
+          "positive_trailer",
+          "resptime",
+          "retcode",
+          "title",
+          "topic_id_list",
+          "type",
+          "type_name",
+          "video_ids",
+          "vip_ids"
+        ],
+        "fields": {
+          "costtime": "20",
+          "errormsg": "",
+          "errorno": "0",
+          "resptime": "1781865597",
+          "clips_ids": "",
+          "column_id": "0",
+          "copyright_negotiation_id": "",
+          "cover_checkup_grade": "4",
+          "cover_id": "mzc00200ua6uec2",
+          "downright": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "8",
+            "9",
+            "10",
+            "21",
+            "22",
+            "23",
+            "35",
+            "37",
+            "40",
+            "42",
+            "43",
+            "45",
+            "46",
+            "57",
+            "61"
+          ],
+          "episode_all": "7",
+          "episode_updated": "ȫ7��",
+          "imgtag_ver": "",
+          "new_pic_hz": "http://puui.qpic.cn/vcover_hz_pic/0/y8jki1gimraczhj/0",
+          "new_pic_vt": "http://puui.qpic.cn/vcover_vt_pic/0/y8jki1gimraczhj/0",
+          "nomal_ids": "[{\"F\":2,\"V\":\"e3333t406o0\"},{\"F\":7,\"V\":\"z3333knm52e\"},{\"F\":7,\"V\":\"f3333itpy6x\"},{\"F\":7,\"V\":\"d3333w3cvix\"},{\"F\":7,\"V\":\"n33338r78uf\"},{\"F\":7,\"V\":\"a33330jm57d\"},{\"F\":7,\"V\":\"n3333uhd0ip\"}]",
+          "pay_status": "7",
+          "pc_client_imgtag": "",
+          "positive_content_id": "1543606",
+          "positive_trailer": "0",
+          "title": "�й������������������-����ϵ�п�",
+          "topic_id_list": "mzc001000ccyk46+mzc00100x6nz55h+mzc001008gaj7xg",
+          "type": "111",
+          "type_name": "�Ļ���ʷ",
+          "video_ids": [
+            "e3333t406o0",
+            "z3333knm52e",
+            "f3333itpy6x",
+            "d3333w3cvix",
+            "n33338r78uf",
+            "a33330jm57d",
+            "n3333uhd0ip"
+          ],
+          "vip_ids": "[{\"F\":2,\"V\":\"e3333t406o0\"},{\"F\":7,\"V\":\"z3333knm52e\"},{\"F\":7,\"V\":\"f3333itpy6x\"},{\"F\":7,\"V\":\"d3333w3cvix\"},{\"F\":7,\"V\":\"n33338r78uf\"},{\"F\":7,\"V\":\"a33330jm57d\"},{\"F\":7,\"V\":\"n3333uhd0ip\"}]",
+          "id": "mzc00200ua6uec2",
+          "retcode": "0"
+        }
+      },
+      "video_ids": [
+        "e3333t406o0",
+        "z3333knm52e",
+        "f3333itpy6x",
+        "d3333w3cvix",
+        "n33338r78uf",
+        "a33330jm57d",
+        "n3333uhd0ip"
+      ],
+      "video_request_batches": [
+        {
+          "vids": [
+            "e3333t406o0",
+            "z3333knm52e",
+            "f3333itpy6x",
+            "d3333w3cvix",
+            "n33338r78uf",
+            "a33330jm57d",
+            "n3333uhd0ip"
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=e3333t406o0%2Cz3333knm52e%2Cf3333itpy6x%2Cd3333w3cvix%2Cn33338r78uf%2Ca33330jm57d%2Cn3333uhd0ip"
+        }
+      ],
+      "videos": [
+        {
+          "vid": "e3333t406o0",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200ua6uec2",
+            "category_map": [
+              "11829",
+              "�赸����",
+              "11824",
+              "����",
+              "111",
+              "�Ļ���ʷ"
+            ],
+            "cover_list": "mzc00200ua6uec2",
+            "cover_pic_resolution": "1518779",
+            "create_time": "2022-04-20 17:39:05",
+            "defn": "{\"audio\":40130503,\"fhd\":105318139,\"hd\":40130503,\"sd\":21985436,\"shd\":61395994,\"source\":2035408093}",
+            "desc": "",
+            "duration": "1962",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-04-20 17:39:06",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/e3333t406o0/e3333t406o0_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/e3333t406o0/e3333t406o0_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/e3333t406o0/e3333t406o0_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "56031185+645786+5307497+56091244+3526005+485023+4152887+56197518+3327308",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "7775116243",
+            "title": "��01�� �������죫������ѵ��",
+            "type": "111",
+            "upload_src": "2048",
+            "url": "https://v.qq.com/x/page/e3333t406o0.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "e3333t406o0"
+          },
+          "defn_raw": "{\"audio\":40130503,\"fhd\":105318139,\"hd\":40130503,\"sd\":21985436,\"shd\":61395994,\"source\":2035408093}",
+          "defn_expanded": {
+            "audio": 40130503,
+            "fhd": 105318139,
+            "hd": 40130503,
+            "sd": 21985436,
+            "shd": 61395994,
+            "source": 2035408093
+          }
+        },
+        {
+          "vid": "z3333knm52e",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200ua6uec2",
+            "category_map": [
+              "11829",
+              "�赸����",
+              "11824",
+              "����",
+              "111",
+              "�Ļ���ʷ"
+            ],
+            "cover_list": "mzc00200ua6uec2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2022-04-20 17:39:06",
+            "defn": "{\"audio\":31868619,\"fhd\":83260228,\"hd\":31868619,\"sd\":18202389,\"shd\":48486340,\"source\":1891414919}",
+            "desc": "",
+            "duration": "1941",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-04-20 17:39:07",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/z3333knm52e/z3333knm52e_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/z3333knm52e/z3333knm52e_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/z3333knm52e/z3333knm52e_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "409181+55804072+55850071",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "7775116276",
+            "title": "��02�� �������죫����֮���ᡢ�����塢����",
+            "type": "111",
+            "upload_src": "2048",
+            "url": "https://v.qq.com/x/page/z3333knm52e.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "z3333knm52e"
+          },
+          "defn_raw": "{\"audio\":31868619,\"fhd\":83260228,\"hd\":31868619,\"sd\":18202389,\"shd\":48486340,\"source\":1891414919}",
+          "defn_expanded": {
+            "audio": 31868619,
+            "fhd": 83260228,
+            "hd": 31868619,
+            "sd": 18202389,
+            "shd": 48486340,
+            "source": 1891414919
+          }
+        },
+        {
+          "vid": "f3333itpy6x",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200ua6uec2",
+            "category_map": [
+              "11829",
+              "�赸����",
+              "11824",
+              "����",
+              "111",
+              "�Ļ���ʷ"
+            ],
+            "cover_list": "mzc00200ua6uec2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2022-04-20 17:39:07",
+            "defn": "{\"audio\":28713682,\"fhd\":80134683,\"hd\":28713682,\"sd\":16065922,\"shd\":46521119,\"source\":2016138670}",
+            "desc": "",
+            "duration": "1728",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-04-20 17:39:08",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/f3333itpy6x/f3333itpy6x_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/f3333itpy6x/f3333itpy6x_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/f3333itpy6x/f3333itpy6x_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "409181+55804072+55850071",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "7790779780",
+            "title": "��03�� �������죫����֮�������󡢺��ơ�",
+            "type": "111",
+            "upload_src": "2048",
+            "url": "https://v.qq.com/x/page/f3333itpy6x.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "f3333itpy6x"
+          },
+          "defn_raw": "{\"audio\":28713682,\"fhd\":80134683,\"hd\":28713682,\"sd\":16065922,\"shd\":46521119,\"source\":2016138670}",
+          "defn_expanded": {
+            "audio": 28713682,
+            "fhd": 80134683,
+            "hd": 28713682,
+            "sd": 16065922,
+            "shd": 46521119,
+            "source": 2016138670
+          }
+        },
+        {
+          "vid": "d3333w3cvix",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200ua6uec2",
+            "category_map": [
+              "11829",
+              "�赸����",
+              "11824",
+              "����",
+              "111",
+              "�Ļ���ʷ"
+            ],
+            "cover_list": "mzc00200ua6uec2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2022-04-20 17:39:09",
+            "defn": "{\"audio\":21036627,\"fhd\":66612334,\"hd\":21036627,\"sd\":11690055,\"shd\":33678044,\"source\":1385362299}",
+            "desc": "",
+            "duration": "1172",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-04-20 17:39:09",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/d3333w3cvix/d3333w3cvix_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/d3333w3cvix/d3333w3cvix_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/d3333w3cvix/d3333w3cvix_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "409181+55804072+55850071+56120292",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "7790779754",
+            "title": "��04�� �������죫����֮�����ᡱ",
+            "type": "111",
+            "upload_src": "2048",
+            "url": "https://v.qq.com/x/page/d3333w3cvix.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "d3333w3cvix"
+          },
+          "defn_raw": "{\"audio\":21036627,\"fhd\":66612334,\"hd\":21036627,\"sd\":11690055,\"shd\":33678044,\"source\":1385362299}",
+          "defn_expanded": {
+            "audio": 21036627,
+            "fhd": 66612334,
+            "hd": 21036627,
+            "sd": 11690055,
+            "shd": 33678044,
+            "source": 1385362299
+          }
+        },
+        {
+          "vid": "n33338r78uf",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200ua6uec2",
+            "category_map": [
+              "11829",
+              "�赸����",
+              "11824",
+              "����",
+              "111",
+              "�Ļ���ʷ"
+            ],
+            "cover_list": "mzc00200ua6uec2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2022-04-20 17:39:10",
+            "defn": "{\"audio\":39150043,\"fhd\":96151319,\"hd\":39150043,\"sd\":21495953,\"shd\":59527295,\"source\":1949020644}",
+            "desc": "",
+            "duration": "2407",
+            "is_normalized": "1607015",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-04-20 17:39:10",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/n33338r78uf/n33338r78uf_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/n33338r78uf/n33338r78uf_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/n33338r78uf/n33338r78uf_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "3327308+485023+55781285+56120292",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "7777285947",
+            "title": "��05�� �������֮��վʽ�������ѹ��",
+            "type": "111",
+            "upload_src": "2048",
+            "url": "https://v.qq.com/x/page/n33338r78uf.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "n33338r78uf"
+          },
+          "defn_raw": "{\"audio\":39150043,\"fhd\":96151319,\"hd\":39150043,\"sd\":21495953,\"shd\":59527295,\"source\":1949020644}",
+          "defn_expanded": {
+            "audio": 39150043,
+            "fhd": 96151319,
+            "hd": 39150043,
+            "sd": 21495953,
+            "shd": 59527295,
+            "source": 1949020644
+          }
+        },
+        {
+          "vid": "a33330jm57d",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200ua6uec2",
+            "category_map": [
+              "11829",
+              "�赸����",
+              "11824",
+              "����",
+              "111",
+              "�Ļ���ʷ"
+            ],
+            "cover_list": "mzc00200ua6uec2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2022-04-20 17:39:11",
+            "defn": "{\"audio\":28288026,\"fhd\":69810318,\"hd\":28288026,\"sd\":15760072,\"shd\":43147287,\"source\":1383203693}",
+            "desc": "",
+            "duration": "1797",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-04-20 17:39:12",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/a33330jm57d/a33330jm57d_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/a33330jm57d/a33330jm57d_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/a33330jm57d/a33330jm57d_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "3327308+55781285+55804072+56120292",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "7777285566",
+            "title": "��06�� �������֮��վʽ����������ڡ�",
+            "type": "111",
+            "upload_src": "2048",
+            "url": "https://v.qq.com/x/page/a33330jm57d.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "a33330jm57d"
+          },
+          "defn_raw": "{\"audio\":28288026,\"fhd\":69810318,\"hd\":28288026,\"sd\":15760072,\"shd\":43147287,\"source\":1383203693}",
+          "defn_expanded": {
+            "audio": 28288026,
+            "fhd": 69810318,
+            "hd": 28288026,
+            "sd": 15760072,
+            "shd": 43147287,
+            "source": 1383203693
+          }
+        },
+        {
+          "vid": "n3333uhd0ip",
+          "field_names": [
+            "c_covers",
+            "category_map",
+            "cover_list",
+            "cover_pic_resolution",
+            "create_time",
+            "defn",
+            "desc",
+            "duration",
+            "is_normalized",
+            "keyword",
+            "leading_actor",
+            "modify_time",
+            "pic160x90",
+            "pic496x280",
+            "pic_640_360",
+            "pioneer_tag",
+            "pioneer_tag_ids",
+            "publish_date",
+            "state",
+            "tag",
+            "targetid",
+            "title",
+            "type",
+            "upload_src",
+            "url",
+            "vWH",
+            "vid"
+          ],
+          "fields": {
+            "c_covers": "mzc00200ua6uec2",
+            "category_map": [
+              "11829",
+              "�赸����",
+              "11824",
+              "����",
+              "111",
+              "�Ļ���ʷ"
+            ],
+            "cover_list": "mzc00200ua6uec2",
+            "cover_pic_resolution": "1518780",
+            "create_time": "2022-04-20 17:39:12",
+            "defn": "{\"audio\":22133282,\"fhd\":58297734,\"hd\":22133282,\"sd\":12577966,\"shd\":33807398,\"source\":1403907975}",
+            "desc": "",
+            "duration": "1450",
+            "is_normalized": "1502410",
+            "keyword": "",
+            "leading_actor": "",
+            "modify_time": "2022-04-20 17:39:13",
+            "pic160x90": "http://puui.qpic.cn/vpic_cover/n3333uhd0ip/n3333uhd0ip_hz.jpg/160",
+            "pic496x280": "http://puui.qpic.cn/vpic_cover/n3333uhd0ip/n3333uhd0ip_hz.jpg/496",
+            "pic_640_360": "http://puui.qpic.cn/vpic_cover/n3333uhd0ip/n3333uhd0ip_hz.jpg/640",
+            "pioneer_tag": "",
+            "pioneer_tag_ids": "3327308+55781285+55804072+56120292",
+            "publish_date": "",
+            "state": "4",
+            "tag": "",
+            "targetid": "7790779952",
+            "title": "��07�� ������վʽ������Ͻ���",
+            "type": "111",
+            "upload_src": "2048",
+            "url": "https://v.qq.com/x/page/n3333uhd0ip.html",
+            "vWH": [
+              "1920",
+              "1080"
+            ],
+            "vid": "n3333uhd0ip"
+          },
+          "defn_raw": "{\"audio\":22133282,\"fhd\":58297734,\"hd\":22133282,\"sd\":12577966,\"shd\":33807398,\"source\":1403907975}",
+          "defn_expanded": {
+            "audio": 22133282,
+            "fhd": 58297734,
+            "hd": 22133282,
+            "sd": 12577966,
+            "shd": 33807398,
+            "source": 1403907975
+          }
+        }
+      ],
+      "video_field_names": [
+        "c_covers",
+        "category_map",
+        "cover_list",
+        "cover_pic_resolution",
+        "create_time",
+        "defn",
+        "desc",
+        "duration",
+        "is_normalized",
+        "keyword",
+        "leading_actor",
+        "modify_time",
+        "pic160x90",
+        "pic496x280",
+        "pic_640_360",
+        "pioneer_tag",
+        "pioneer_tag_ids",
+        "publish_date",
+        "state",
+        "tag",
+        "targetid",
+        "title",
+        "type",
+        "upload_src",
+        "url",
+        "vWH",
+        "vid"
+      ],
+      "derived": {
+        "cover": {
+          "video_ids_count": 7,
+          "clips_ids_count": 0,
+          "downright_count": 21,
+          "downright_unique": [
+            "1",
+            "10",
+            "2",
+            "21",
+            "22",
+            "23",
+            "3",
+            "35",
+            "37",
+            "4",
+            "40",
+            "42",
+            "43",
+            "45",
+            "46",
+            "5",
+            "57",
+            "6",
+            "61",
+            "8",
+            "9"
+          ],
+          "nomal_f_counts": {
+            "2": 1,
+            "7": 6
+          },
+          "vip_f_counts": {
+            "2": 1,
+            "7": 6
+          }
+        },
+        "videos": {
+          "video_count": 7,
+          "state_counts": {
+            "4": 7
+          },
+          "upload_src_counts": {
+            "2048": 7
+          },
+          "defn_key_counts": {
+            "audio": 7,
+            "fhd": 7,
+            "hd": 7,
+            "sd": 7,
+            "shd": 7,
+            "source": 7
+          },
+          "targetid_nonempty_count": 7,
+          "publish_date_nonempty_count": 0,
+          "publish_date_examples": [],
+          "targetid_examples": [
+            {
+              "vid": "e3333t406o0",
+              "title": "��01�� �������죫������ѵ��",
+              "targetid": "7775116243"
+            },
+            {
+              "vid": "z3333knm52e",
+              "title": "��02�� �������죫����֮���ᡢ�����塢����",
+              "targetid": "7775116276"
+            },
+            {
+              "vid": "f3333itpy6x",
+              "title": "��03�� �������죫����֮�������󡢺��ơ�",
+              "targetid": "7790779780"
+            },
+            {
+              "vid": "d3333w3cvix",
+              "title": "��04�� �������죫����֮�����ᡱ",
+              "targetid": "7790779754"
+            },
+            {
+              "vid": "n33338r78uf",
+              "title": "��05�� �������֮��վʽ�������ѹ��",
+              "targetid": "7777285947"
+            },
+            {
+              "vid": "a33330jm57d",
+              "title": "��06�� �������֮��վʽ����������ڡ�",
+              "targetid": "7777285566"
+            },
+            {
+              "vid": "n3333uhd0ip",
+              "title": "��07�� ������վʽ������Ͻ���",
+              "targetid": "7790779952"
+            }
+          ],
+          "unusual_upload_examples": [
+            {
+              "vid": "e3333t406o0",
+              "title": "��01�� �������죫������ѵ��",
+              "upload_src": "2048"
+            },
+            {
+              "vid": "z3333knm52e",
+              "title": "��02�� �������죫����֮���ᡢ�����塢����",
+              "upload_src": "2048"
+            },
+            {
+              "vid": "f3333itpy6x",
+              "title": "��03�� �������죫����֮�������󡢺��ơ�",
+              "upload_src": "2048"
+            },
+            {
+              "vid": "d3333w3cvix",
+              "title": "��04�� �������죫����֮�����ᡱ",
+              "upload_src": "2048"
+            },
+            {
+              "vid": "n33338r78uf",
+              "title": "��05�� �������֮��վʽ�������ѹ��",
+              "upload_src": "2048"
+            },
+            {
+              "vid": "a33330jm57d",
+              "title": "��06�� �������֮��վʽ����������ڡ�",
+              "upload_src": "2048"
+            },
+            {
+              "vid": "n3333uhd0ip",
+              "title": "��07�� ������վʽ������Ͻ���",
+              "upload_src": "2048"
+            }
+          ]
+        }
+      },
+      "status": "ok"
+    }
+  ],
+  "summary": {
+    "sample_count": 2,
+    "successful_sample_count": 2,
+    "failed_sample_count": 0,
+    "video_count": 14,
+    "clip_video_count": 0,
+    "videos_with_defn_count": 14,
+    "cover_field_frequency": {
+      "denominator": "successful_samples",
+      "total": 2,
+      "fields": {
+        "clips_ids": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "column_id": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "copyright_negotiation_id": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "costtime": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "cover_checkup_grade": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "cover_id": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "downright": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "episode_all": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "episode_updated": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "errormsg": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "errorno": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "id": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "imgtag_ver": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "new_pic_hz": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "new_pic_vt": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "nomal_ids": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "pay_status": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "pc_client_imgtag": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "positive_content_id": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "positive_trailer": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "resptime": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "retcode": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "title": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "topic_id_list": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "type": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "type_name": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "video_ids": {
+          "count": 2,
+          "ratio": 1.0
+        },
+        "vip_ids": {
+          "count": 2,
+          "ratio": 1.0
+        }
+      }
+    },
+    "video_field_frequency": {
+      "denominator": "videos",
+      "total": 14,
+      "fields": {
+        "c_covers": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "category_map": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "cover_list": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "cover_pic_resolution": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "create_time": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "defn": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "desc": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "duration": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "is_normalized": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "keyword": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "leading_actor": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "modify_time": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "pic160x90": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "pic496x280": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "pic_640_360": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "pioneer_tag": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "pioneer_tag_ids": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "publish_date": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "state": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "tag": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "targetid": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "title": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "type": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "upload_src": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "url": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "vWH": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "vid": {
+          "count": 14,
+          "ratio": 1.0
+        }
+      }
+    },
+    "clip_video_field_frequency": {
+      "denominator": "clip_videos",
+      "total": 0,
+      "fields": {}
+    },
+    "defn_field_frequency": {
+      "denominator": "videos_with_defn",
+      "total": 14,
+      "fields": {
+        "audio": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "fhd": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "hd": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "sd": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "shd": {
+          "count": 14,
+          "ratio": 1.0
+        },
+        "source": {
+          "count": 14,
+          "ratio": 1.0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,640 @@
+{
+  "generated_at": "2026-06-19T19:51:18.598Z",
+  "scope": "anonymous report-button identity audit against commentInfo targetid/commentid families",
+  "source_tool": "tools/tencent_frontend_targetid_report_identity_audit.js",
+  "commentinfo_source_tool": "tools/tencent_frontend_targetid_commentinfo_scan.js",
+  "method": {
+    "browser": "system Chrome via Playwright",
+    "browser_executable": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "wait_ms_after_domcontentloaded": 9000,
+    "actions": [
+      "scan parse-layer commentInfo targetid/commentid families",
+      "inspect hidden comment report button dt-params",
+      "force-reveal and click the first sampled report button",
+      "compare report-button numeric ids with commentInfo targetid/commentid and dokiid/ftid families"
+    ],
+    "cases": [
+      {
+        "bucket": "kids_dualfull_targetid",
+        "url": "https://v.qq.com/x/cover/jynqzy9n3wfrsfp/l0020z7maus.html"
+      },
+      {
+        "bucket": "tv_season_second",
+        "url": "https://v.qq.com/x/cover/mzc00200dfbfsrw.html"
+      },
+      {
+        "bucket": "sports_collection_shell",
+        "url": "https://v.qq.com/x/cover/mzc002003fh665c.html"
+      },
+      {
+        "bucket": "variety_topic_pay15_targetid_uploadsrc",
+        "url": "https://v.qq.com/x/cover/mzc002001u873es/k004768pj4j.html"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "bucket": "kids_dualfull_targetid",
+      "input_url": "https://v.qq.com/x/cover/jynqzy9n3wfrsfp/l0020z7maus.html",
+      "title": "捉迷藏_少儿_动画片大全_腾讯视频",
+      "classification": "positive",
+      "commentinfo_container_present": true,
+      "nonempty_commentinfo_hits": 10,
+      "targetid_decoded_values": [
+        "7652145698",
+        "7651921070",
+        "7650573812",
+        "1409064448",
+        "1409063613",
+        "7649839234",
+        "7649690961",
+        "7648975508"
+      ],
+      "commentid_decoded_values": [
+        "6770912520198877582",
+        "6859292919723872651",
+        "6896402705382234285"
+      ],
+      "pg_dokiid_values": [
+        "2100140789"
+      ],
+      "relate_doki_decoded_values": [
+        "2100140789",
+        "2100141096"
+      ],
+      "report_button_count": 46,
+      "visible_report_button_count": 0,
+      "report_button_samples": [
+        {
+          "index": 0,
+          "text": "举报",
+          "visibility": "hidden",
+          "display": "flex",
+          "opacity": "1",
+          "width": 50,
+          "height": 24,
+          "dt_params_raw": "mod_id=dissc_area&sub_tab_id=hot&father_id=feed_area&feed_id=148618791781555830&cp_id=38644117&curr_comm_cnt=21&curr_like_cnt=52&pic_num=1&feed_pic_type=in_order&feed_type=image_text&item_idx=0&is_inserted=0",
+          "dt_params": {
+            "mod_id": "dissc_area",
+            "sub_tab_id": "hot",
+            "father_id": "feed_area",
+            "feed_id": "148618791781555830",
+            "cp_id": "38644117",
+            "curr_comm_cnt": "21",
+            "curr_like_cnt": "52",
+            "pic_num": "1",
+            "feed_pic_type": "in_order",
+            "feed_type": "image_text",
+            "item_idx": "0",
+            "is_inserted": "0"
+          },
+          "feed_excerpt": "Am， 2022-07-22·四川 佩奇好烦呀！ 52 21"
+        },
+        {
+          "index": 1,
+          "text": "举报",
+          "visibility": "hidden",
+          "display": "flex",
+          "opacity": "1",
+          "width": 46,
+          "height": 20,
+          "dt_params_raw": "mod_id=dissc_area&sub_tab_id=hot&father_id=comment_area&feed_id=148618791812290313&cp_id=1435239878&curr_comm_cnt=3&curr_like_cnt=10&pic_num=0&feed_pic_type=in_order&feed_type=word&item_idx=0&is_inserted=0&father_feed_id=148618791781555830",
+          "dt_params": {
+            "mod_id": "dissc_area",
+            "sub_tab_id": "hot",
+            "father_id": "comment_area",
+            "feed_id": "148618791812290313",
+            "cp_id": "1435239878",
+            "curr_comm_cnt": "3",
+            "curr_like_cnt": "10",
+            "pic_num": "0",
+            "feed_pic_type": "in_order",
+            "feed_type": "word",
+            "item_idx": "0",
+            "is_inserted": "0",
+            "father_feed_id": "148618791781555830"
+          },
+          "feed_excerpt": "零落我的无奈 2022-08-04·甘肃 6 10 3"
+        },
+        {
+          "index": 2,
+          "text": "举报",
+          "visibility": "hidden",
+          "display": "flex",
+          "opacity": "1",
+          "width": 46,
+          "height": 20,
+          "dt_params_raw": "mod_id=dissc_area&sub_tab_id=hot&father_id=comment_area&feed_id=148618791869913815&cp_id=1268824039&curr_comm_cnt=1&curr_like_cnt=8&pic_num=0&feed_pic_type=in_order&feed_type=word&item_idx=1&is_inserted=0&father_feed_id=148618791781555830",
+          "dt_params": {
+            "mod_id": "dissc_area",
+            "sub_tab_id": "hot",
+            "father_id": "comment_area",
+            "feed_id": "148618791869913815",
+            "cp_id": "1268824039",
+            "curr_comm_cnt": "1",
+            "curr_like_cnt": "8",
+            "pic_num": "0",
+            "feed_pic_type": "in_order",
+            "feed_type": "word",
+            "item_idx": "1",
+            "is_inserted": "0",
+            "father_feed_id": "148618791781555830"
+          },
+          "feed_excerpt": "深情蜜码 2022-08-29·山西 ？？ 8 1"
+        }
+      ],
+      "dt_params_numeric_values": [
+        "148618791781555830",
+        "38644117",
+        "148618791812290313",
+        "1435239878",
+        "148618791869913815",
+        "1268824039",
+        "148618791665454391",
+        "79572147",
+        "148618791667743298",
+        "454994600",
+        "148618791855467605",
+        "406596385"
+      ],
+      "intersections": {
+        "targetid_vs_dt_params": [],
+        "commentid_vs_dt_params": [],
+        "dokiid_ftid_vs_dt_params": [],
+        "targetid_vs_owner_bridge": [],
+        "commentid_vs_owner_bridge": [],
+        "dokiid_ftid_vs_owner_bridge": []
+      },
+      "forced_click": {
+        "before": {
+          "text": "举报",
+          "className": "at-feed__action-item at-feed__action-report",
+          "visibility": "hidden",
+          "display": "flex"
+        },
+        "after": {
+          "visibility": "visible",
+          "display": "flex"
+        }
+      },
+      "final_state": {
+        "open_call_count": 0,
+        "interesting_iframe_count": 0,
+        "post_message_count": 7,
+        "open_calls": [],
+        "interesting_iframes": []
+      },
+      "request_hit_urls": [
+        "https://staticfile.qq.com/datong/universalReportH5/v4.5.10/universal-report.min.js?max_age=7776000",
+        "https://vfiles.gtimg.cn/tvideo2/p/component/feedback/lib/latest/tv-feedback.umd.js",
+        "https://cache.wuji.qq.com/x/api/wuji_cache/object/66a1befbd0194001b7fc575e?appid=vqqcom&schemaid=config_user_feedback&schemakey=e2f159c455cc4a4e92e0a3f0a3d3745a",
+        "https://h.trace.qq.com/kv?attaid=0d600063385&token=4542151218&f_logintype=-&f_taskid=522631d0&f_traceid=d8qpqss2d69f1gh319ig&f_type=4&f_sub_taskid=97ce8e3c&f_ptag=ad.page.detail.vipbtn.pc&f_url=%2Fx%2Fcover%2Fjynqzy9n3wfrsfp%2Fl0020z7maus.html&f_dm=v.qq.com&f_protocol=https%3A&f_pt=1000&hc_pvid=8410808819&f_vip=0&f_level=0&property=%7B%22property_id%22%3A0%2C%22property_num%22%3A1%7D&ext=%7B%22aid%22%3A%22V0%5C%24%5C%2412%3Aad.page.detail.vipbtn.pc%5C%245%3Ajynqzy9n3wfrsfp%5C%2454%3A6%5C%246%3Al0020z7maus%5C%2453%3A6%5C%2444%3A522631d0%22%2C%22cpm_country_code%22%3A%22%22%2C%22cpm_weight%22%3A%220%22%2C%22currentcid%22%3A%22jynqzy9n3wfrsfp%22%2C%22currentvid%22%3A%22l0020z7maus%22%2C%22f_traceid%22%3A%22d8qpqss2d69f1gh319ig%22%2C%22order_id%22%3A%22ORDER_KEY_d8qpqss2d69f1gh319ig%22%2C%22pay_args%22%3A%22%22%2C%22ptag%22%3A%22ad.page.detail.vipbtn.pc%22%2C%22report_ext%22%3A%22business%3Ahollywood%7Cptag%3Aad.page.detail.vipbtn.pc%7Ctask_id%3A522631d0%7Cf_cubeid%3A%7Csub_task_id%3A97ce8e3c%7Cf_traceid%3Ad8qpqss2d69f1gh319ig%22%2C%22sdk_limit_switch%22%3A%221%22%7D&f_event=expose",
+        "https://film.video.qq.com/lib/longcache/@tencent-vft-report/4.0.4/vft-report.min.js"
+      ],
+      "owner_bridge_followup_generated_at": "2026-06-20T08:39:54.164Z",
+      "owner_bridge_numeric_values": [
+        "148618794347661961",
+        "148618791781555830",
+        "148618791812290313",
+        "148618791869913815",
+        "148618791665454391",
+        "148618791667743298",
+        "148618791855467605",
+        "148618791960760766"
+      ],
+      "owner_bridge_followup_judgment": "Owner-bridge scanning still exposed a feed_id-family identity set rather than the positive commentInfo targetid/commentid family."
+    },
+    {
+      "bucket": "tv_season_second",
+      "input_url": "https://v.qq.com/x/cover/mzc00200dfbfsrw.html",
+      "title": "长安诺_01_电视剧_高清完整版视频在线观看_腾讯视频",
+      "classification": "positive",
+      "commentinfo_container_present": true,
+      "nonempty_commentinfo_hits": 24,
+      "targetid_decoded_values": [
+        "5868283771",
+        "5975589641",
+        "6061389597",
+        "5994708987",
+        "5868385930",
+        "5868329230",
+        "2088972224",
+        "5975601944"
+      ],
+      "commentid_decoded_values": [
+        "6709790764822624863",
+        "6709816745823554421",
+        "6709793486222596316",
+        "6746004025419267854",
+        "6830185840526629004",
+        "6709797354913430717",
+        "6709797728257813436",
+        "6709797775413375166"
+      ],
+      "pg_dokiid_values": [
+        "2100084287"
+      ],
+      "relate_doki_decoded_values": [
+        "2100084287"
+      ],
+      "report_button_count": 56,
+      "visible_report_button_count": 0,
+      "report_button_samples": [
+        {
+          "index": 0,
+          "text": "举报",
+          "visibility": "hidden",
+          "display": "flex",
+          "opacity": "1",
+          "width": 50,
+          "height": 24,
+          "dt_params_raw": "mod_id=dissc_area&sub_tab_id=hot&father_id=feed_area&feed_id=100000991482708&cp_id=226785941&curr_comm_cnt=1234&curr_like_cnt=12512&pic_num=0&feed_pic_type=in_order&feed_type=word&item_idx=0&is_inserted=0",
+          "dt_params": {
+            "mod_id": "dissc_area",
+            "sub_tab_id": "hot",
+            "father_id": "feed_area",
+            "feed_id": "100000991482708",
+            "cp_id": "226785941",
+            "curr_comm_cnt": "1234",
+            "curr_like_cnt": "12512",
+            "pic_num": "0",
+            "feed_pic_type": "in_order",
+            "feed_type": "word",
+            "item_idx": "0",
+            "is_inserted": "0"
+          },
+          "feed_excerpt": "我命中缺帅哥ღ 2020-09-10 有多少人是冲着成毅看此剧的举个手🙋🙋让我看看有多少人！ 1.2万 1234"
+        },
+        {
+          "index": 1,
+          "text": "举报",
+          "visibility": "hidden",
+          "display": "flex",
+          "opacity": "1",
+          "width": 46,
+          "height": 20,
+          "dt_params_raw": "mod_id=dissc_area&sub_tab_id=hot&father_id=comment_area&feed_id=100000991591546&cp_id=714844320&curr_comm_cnt=23&curr_like_cnt=259&pic_num=0&feed_pic_type=in_order&feed_type=word&item_idx=0&is_inserted=0&father_feed_id=100000991482708",
+          "dt_params": {
+            "mod_id": "dissc_area",
+            "sub_tab_id": "hot",
+            "father_id": "comment_area",
+            "feed_id": "100000991591546",
+            "cp_id": "714844320",
+            "curr_comm_cnt": "23",
+            "curr_like_cnt": "259",
+            "pic_num": "0",
+            "feed_pic_type": "in_order",
+            "feed_type": "word",
+            "item_idx": "0",
+            "is_inserted": "0",
+            "father_feed_id": "100000991482708"
+          },
+          "feed_excerpt": "过路人 2020-09-10 我能说我为了张睿吗，就一个配角，我为了这个配角来的 259 23"
+        },
+        {
+          "index": 2,
+          "text": "举报",
+          "visibility": "hidden",
+          "display": "flex",
+          "opacity": "1",
+          "width": 46,
+          "height": 20,
+          "dt_params_raw": "mod_id=dissc_area&sub_tab_id=hot&father_id=comment_area&feed_id=100000991492883&cp_id=1780703116&curr_comm_cnt=25&curr_like_cnt=64&pic_num=0&feed_pic_type=in_order&feed_type=word&item_idx=1&is_inserted=0&father_feed_id=100000991482708",
+          "dt_params": {
+            "mod_id": "dissc_area",
+            "sub_tab_id": "hot",
+            "father_id": "comment_area",
+            "feed_id": "100000991492883",
+            "cp_id": "1780703116",
+            "curr_comm_cnt": "25",
+            "curr_like_cnt": "64",
+            "pic_num": "0",
+            "feed_pic_type": "in_order",
+            "feed_type": "word",
+            "item_idx": "1",
+            "is_inserted": "0",
+            "father_feed_id": "100000991482708"
+          },
+          "feed_excerpt": "肖少侠的陈情笛 2020-09-10 +1 刚从《琉璃》过来的 64 25"
+        }
+      ],
+      "dt_params_numeric_values": [
+        "100000991482708",
+        "226785941",
+        "1234",
+        "12512",
+        "100000991591546",
+        "714844320",
+        "100000991492883",
+        "1780703116",
+        "148618791864340055",
+        "879329874",
+        "3266",
+        "148618791878082678"
+      ],
+      "intersections": {
+        "targetid_vs_dt_params": [],
+        "commentid_vs_dt_params": [],
+        "dokiid_ftid_vs_dt_params": [],
+        "targetid_vs_owner_bridge": [],
+        "commentid_vs_owner_bridge": [],
+        "dokiid_ftid_vs_owner_bridge": []
+      },
+      "forced_click": {
+        "before": {
+          "text": "举报",
+          "className": "at-feed__action-item at-feed__action-report",
+          "visibility": "hidden",
+          "display": "flex"
+        },
+        "after": {
+          "visibility": "visible",
+          "display": "flex"
+        }
+      },
+      "final_state": {
+        "open_call_count": 0,
+        "interesting_iframe_count": 0,
+        "post_message_count": 9,
+        "open_calls": [],
+        "interesting_iframes": []
+      },
+      "request_hit_urls": [
+        "https://staticfile.qq.com/datong/universalReportH5/v4.5.10/universal-report.min.js?max_age=7776000",
+        "https://vfiles.gtimg.cn/tvideo2/p/component/feedback/lib/latest/tv-feedback.umd.js",
+        "https://cache.wuji.qq.com/x/api/wuji_cache/object/66a1befbd0194001b7fc575e?appid=vqqcom&schemaid=config_user_feedback&schemakey=e2f159c455cc4a4e92e0a3f0a3d3745a",
+        "https://livep.l.qq.com/livemsg?oadid=23&url=https%3A%2F%2Fv.qq.com%2Fx%2Fcover%2Fmzc00200dfbfsrw%2Fe003452crbe.html&lcount=1&t=0&from=null&pf=in&v=1.68.0&dura=0&coverid=mzc00200dfbfsrw&pf_ex=pc&chid=0&tpid=2&vptag=&appversion=0&oid=106452829054&cid=106452832198&ping_data=EAAoAEAcWhBEM0VFM0FCMUMwNDkxMkVB_viewid_QNG!upn4Hah3nwxnRSiksUcS_rUEs9fgniXkpXzMn3cahcG7vGdlpA6_iXvxX_ZgKGKTLaeARfCeZfxTDvPOhzNzr6OQk7hcE_T9WaqDwJdWD6K6bhddvvuK4b51XyTEYvcRN1w_dNyEY2NWsJ03wEiGu89hvkLKvqmEnHq710fM7hgaP9DGilafz7jHqImBTLS!k7inC1xU6xIsXRie5esTVldWf4q2M5Gl7OxdGJ1NlKQCD0pdCXlnziaLhEk!iItR_y4B2F7XC_VURkGSTg&adtype=LD&contract=1&i=1&os=3&datatype=jsonp&etype=1001&ch=100000024&seq=1&aseq=1&xp=3&reporttime=0&conn_type=__NET_STATUS__&tl=1&uniquetimestamp=1781898623243",
+        "https://h.trace.qq.com/kv?attaid=0d600063385&token=4542151218&f_logintype=-&f_taskid=522631d0&f_traceid=d8qpr02sv2ue42irqfig&f_type=4&f_sub_taskid=97ce8e3c&f_ptag=ad.page.detail.vipbtn.pc&f_url=%2Fx%2Fcover%2Fmzc00200dfbfsrw%2Fe003452crbe.html&f_dm=v.qq.com&f_protocol=https%3A&f_pt=1000&hc_pvid=289101614&f_vip=0&f_level=0&property=%7B%22property_id%22%3A0%2C%22property_num%22%3A1%7D&ext=%7B%22aid%22%3A%22V0%5C%24%5C%2412%3Aad.page.detail.vipbtn.pc%5C%245%3Amzc00200dfbfsrw%5C%2454%3A6%5C%246%3Ae003452crbe%5C%2453%3A8%5C%2444%3A522631d0%22%2C%22cpm_country_code%22%3A%22%22%2C%22cpm_weight%22%3A%220%22%2C%22currentcid%22%3A%22mzc00200dfbfsrw%22%2C%22currentvid%22%3A%22e003452crbe%22%2C%22f_traceid%22%3A%22d8qpr02sv2ue42irqfig%22%2C%22order_id%22%3A%22ORDER_KEY_d8qpr02sv2ue42irqfig%22%2C%22pay_args%22%3A%22%22%2C%22ptag%22%3A%22ad.page.detail.vipbtn.pc%22%2C%22report_ext%22%3A%22business%3Ahollywood%7Cptag%3Aad.page.detail.vipbtn.pc%7Ctask_id%3A522631d0%7Cf_cubeid%3A%7Csub_task_id%3A97ce8e3c%7Cf_traceid%3Ad8qpr02sv2ue42irqfig%22%2C%22sdk_limit_switch%22%3A%221%22%7D&f_event=expose"
+      ],
+      "owner_bridge_followup_generated_at": "2026-06-20T08:39:54.164Z",
+      "owner_bridge_numeric_values": [
+        "100000991482708",
+        "100000991591546",
+        "100000991492883",
+        "148618791864340055",
+        "148618791878082678",
+        "148618793230782410",
+        "100001044128290",
+        "148618792618383475"
+      ],
+      "owner_bridge_followup_judgment": "Even on a non-kids positive page, the owner bridge stayed disjoint from commentInfo targetid/commentid and from the observed dokiid family."
+    },
+    {
+      "bucket": "sports_collection_shell",
+      "input_url": "https://v.qq.com/x/cover/mzc002003fh665c.html",
+      "title": "全景欧冠_22/23赛季欧冠1/8决赛次回合视频集锦_欧冠1/8决赛十佳球：哈兰德五子登科神迹努涅斯天秀开场_高清1080P在线观看平台_腾讯视频",
+      "classification": "positive",
+      "commentinfo_container_present": true,
+      "nonempty_commentinfo_hits": 1,
+      "targetid_decoded_values": [
+        "8149102728"
+      ],
+      "commentid_decoded_values": [],
+      "pg_dokiid_values": [],
+      "relate_doki_decoded_values": [
+        "2101191593"
+      ],
+      "report_button_count": 1,
+      "visible_report_button_count": 0,
+      "report_button_samples": [
+        {
+          "index": 0,
+          "text": "举报",
+          "visibility": "hidden",
+          "display": "flex",
+          "opacity": "1",
+          "width": 50,
+          "height": 24,
+          "dt_params_raw": "mod_id=dissc_area&sub_tab_id=hot&father_id=feed_area&feed_id=148618792253595169&cp_id=465199881&curr_comm_cnt=4&curr_like_cnt=1&pic_num=0&feed_pic_type=in_order&feed_type=word&item_idx=0&is_inserted=0",
+          "dt_params": {
+            "mod_id": "dissc_area",
+            "sub_tab_id": "hot",
+            "father_id": "feed_area",
+            "feed_id": "148618792253595169",
+            "cp_id": "465199881",
+            "curr_comm_cnt": "4",
+            "curr_like_cnt": "1",
+            "pic_num": "0",
+            "feed_pic_type": "in_order",
+            "feed_type": "word",
+            "item_idx": "0",
+            "is_inserted": "0"
+          },
+          "feed_excerpt": "黑夜的眼睛 2023-03-20·江苏 哈兰德的进球咋都在门前呢？一点技术含量都没有 1 4"
+        }
+      ],
+      "dt_params_numeric_values": [
+        "148618792253595169",
+        "465199881"
+      ],
+      "intersections": {
+        "targetid_vs_dt_params": [],
+        "commentid_vs_dt_params": [],
+        "dokiid_ftid_vs_dt_params": [],
+        "targetid_vs_owner_bridge": [],
+        "commentid_vs_owner_bridge": [],
+        "dokiid_ftid_vs_owner_bridge": []
+      },
+      "forced_click": {
+        "before": {
+          "text": "举报",
+          "className": "at-feed__action-item at-feed__action-report",
+          "visibility": "hidden",
+          "display": "flex"
+        },
+        "after": {
+          "visibility": "visible",
+          "display": "flex"
+        }
+      },
+      "final_state": {
+        "open_call_count": 0,
+        "interesting_iframe_count": 0,
+        "post_message_count": 6,
+        "open_calls": [],
+        "interesting_iframes": []
+      },
+      "request_hit_urls": [
+        "https://staticfile.qq.com/datong/universalReportH5/v4.5.10/universal-report.min.js?max_age=7776000",
+        "https://h.trace.qq.com/kv?attaid=0d600063385&token=4542151218&f_logintype=-&f_taskid=16cabe97&f_traceid=d8qpr88tmtpe7ng5osb0&f_type=4&f_sub_taskid=22d365ab&f_ptag=ad.page.detail.vipbtn.pc&f_url=%2Fx%2Fcover%2Fmzc002003fh665c%2Fc0045bl6qpx.html&f_dm=v.qq.com&f_protocol=https%3A&f_pt=1000&hc_pvid=6488644252&f_vip=0&f_level=0&property=%7B%22property_id%22%3A0%2C%22property_num%22%3A1%7D&ext=%7B%22aid%22%3A%22V0%5C%24%5C%2412%3Aad.page.detail.vipbtn.pc%5C%245%3Amzc002003fh665c%5C%2454%3A8%5C%246%3Ac0045bl6qpx%5C%2453%3A0%5C%2444%3A16cabe97%22%2C%22cpm_country_code%22%3A%22%22%2C%22cpm_weight%22%3A%220%22%2C%22currentcid%22%3A%22mzc002003fh665c%22%2C%22currentvid%22%3A%22c0045bl6qpx%22%2C%22f_traceid%22%3A%22d8qpr88tmtpe7ng5osb0%22%2C%22order_id%22%3A%22ORDER_KEY_d8qpr88tmtpe7ng5osb0%22%2C%22pay_args%22%3A%22%22%2C%22ptag%22%3A%22ad.page.detail.vipbtn.pc%22%2C%22report_ext%22%3A%22business%3Ahollywood%7Cptag%3Aad.page.detail.vipbtn.pc%7Ctask_id%3A16cabe97%7Cf_cubeid%3A%7Csub_task_id%3A22d365ab%7Cf_traceid%3Ad8qpr88tmtpe7ng5osb0%22%2C%22sdk_limit_switch%22%3A%221%22%7D&f_event=expose",
+        "https://livep.l.qq.com/livemsg?oadid=23&url=https%3A%2F%2Fv.qq.com%2Fx%2Fcover%2Fmzc002003fh665c%2Fc0045bl6qpx.html&lcount=1&t=0&from=null&pf=in&v=1.68.0&dura=0&coverid=mzc002003fh665c&pf_ex=pc&chid=0&tpid=4&vptag=&appversion=0&oid=106452829054&cid=106452832198&ping_data=EAAoAEAcWhBEM0VFM0FCMUMwNDkxMkVB_viewid_a9kBAIiPM!DZXSeIlXrNVFAWeinQ!cYiniXkpXzMn3cEqe9Lr3NezJUJIdsuRnTVKGKTLaeARfCeZfxTDvPOhzNzr6OQk7hcE_T9WaqDwJdWD6K6bhddvvuK4b51XyTEtKhCID9eEC!EY2NWsJ03wEiGu89hvkLKvqmEnHq710fM7hgaP9DGilafz7jHqImBTLS!k7inC1xU6xIsXRie5esTVldWf4q2M5Gl7OxdGJ1NlKQCD0pdCXlnziaLhEk!iItR_y4B2F7XC_VURkGSTg&adtype=LD&contract=1&i=1&os=3&datatype=jsonp&etype=1001&ch=100000024&seq=1&aseq=1&tailroll=1&xp=3&reporttime=0&conn_type=__NET_STATUS__&tl=1&uniquetimestamp=1781898656299",
+        "https://vfiles.gtimg.cn/tvideo2/p/component/feedback/lib/latest/tv-feedback.umd.js",
+        "https://cache.wuji.qq.com/x/api/wuji_cache/object/66a1befbd0194001b7fc575e?appid=vqqcom&schemaid=config_user_feedback&schemakey=e2f159c455cc4a4e92e0a3f0a3d3745a"
+      ],
+      "owner_bridge_followup_generated_at": "2026-06-20T08:39:54.164Z",
+      "owner_bridge_numeric_values": [
+        "148618792253595169"
+      ],
+      "owner_bridge_followup_judgment": "The sports positive shell reproduced the same split: owner-bridge ids stayed separate from the single positive commentInfo targetid value."
+    },
+    {
+      "bucket": "variety_topic_pay15_targetid_uploadsrc",
+      "input_url": "https://v.qq.com/x/cover/mzc002001u873es/k004768pj4j.html",
+      "title": "EP10战局纯享：WindVSS.Carry决赛第一场_综艺_高清完整版视频在线观看_腾讯视频",
+      "classification": "negative",
+      "commentinfo_container_present": true,
+      "nonempty_commentinfo_hits": 0,
+      "targetid_decoded_values": [],
+      "commentid_decoded_values": [],
+      "pg_dokiid_values": [
+        "2101258574"
+      ],
+      "relate_doki_decoded_values": [
+        "2101258574"
+      ],
+      "report_button_count": 18,
+      "visible_report_button_count": 0,
+      "report_button_samples": [
+        {
+          "index": 0,
+          "text": "举报",
+          "visibility": "hidden",
+          "display": "flex",
+          "opacity": "1",
+          "width": 50,
+          "height": 24,
+          "dt_params_raw": "mod_id=dissc_area&sub_tab_id=hot&father_id=feed_area&feed_id=148618792652885713&cp_id=2010648539&curr_comm_cnt=2&curr_like_cnt=58&pic_num=0&feed_pic_type=in_order&feed_type=word&item_idx=0&is_inserted=0",
+          "dt_params": {
+            "mod_id": "dissc_area",
+            "sub_tab_id": "hot",
+            "father_id": "feed_area",
+            "feed_id": "148618792652885713",
+            "cp_id": "2010648539",
+            "curr_comm_cnt": "2",
+            "curr_like_cnt": "58",
+            "pic_num": "0",
+            "feed_pic_type": "in_order",
+            "feed_type": "word",
+            "item_idx": "0",
+            "is_inserted": "0"
+          },
+          "feed_excerpt": "夺命 2023-07-22·辽宁 瞬间感觉vip冲的毫无价值 58 2"
+        },
+        {
+          "index": 1,
+          "text": "举报",
+          "visibility": "hidden",
+          "display": "flex",
+          "opacity": "1",
+          "width": 50,
+          "height": 24,
+          "dt_params_raw": "mod_id=dissc_area&sub_tab_id=hot&father_id=feed_area&feed_id=148618792580423252&cp_id=361302498&curr_comm_cnt=2&curr_like_cnt=114&pic_num=0&feed_pic_type=in_order&feed_type=grade&item_idx=1&is_inserted=0",
+          "dt_params": {
+            "mod_id": "dissc_area",
+            "sub_tab_id": "hot",
+            "father_id": "feed_area",
+            "feed_id": "148618792580423252",
+            "cp_id": "361302498",
+            "curr_comm_cnt": "2",
+            "curr_like_cnt": "114",
+            "pic_num": "0",
+            "feed_pic_type": "in_order",
+            "feed_type": "grade",
+            "item_idx": "1",
+            "is_inserted": "0"
+          },
+          "feed_excerpt": "姑姑丶我是过儿 2023-07-08·湖北 力荐嘉宾优秀后期疯狂上分创意亮眼 一定要有全局才知道哪些选手是真的菜 114 2"
+        },
+        {
+          "index": 2,
+          "text": "举报",
+          "visibility": "hidden",
+          "display": "flex",
+          "opacity": "1",
+          "width": 46,
+          "height": 20,
+          "dt_params_raw": "mod_id=dissc_area&sub_tab_id=hot&father_id=comment_area&feed_id=148618792788184432&cp_id=30875105&curr_comm_cnt=0&curr_like_cnt=5&pic_num=0&feed_pic_type=in_order&feed_type=word&item_idx=0&is_inserted=0&father_feed_id=148618792580423252",
+          "dt_params": {
+            "mod_id": "dissc_area",
+            "sub_tab_id": "hot",
+            "father_id": "comment_area",
+            "feed_id": "148618792788184432",
+            "cp_id": "30875105",
+            "curr_comm_cnt": "0",
+            "curr_like_cnt": "5",
+            "pic_num": "0",
+            "feed_pic_type": "in_order",
+            "feed_type": "word",
+            "item_idx": "0",
+            "is_inserted": "0",
+            "father_feed_id": "148618792580423252"
+          },
+          "feed_excerpt": "A我不会煽情 2023-08-13·广东 好家伙想钱想疯了，VIP还看不了 5 回复"
+        }
+      ],
+      "dt_params_numeric_values": [
+        "148618792652885713",
+        "2010648539",
+        "148618792580423252",
+        "361302498",
+        "148618792788184432",
+        "30875105",
+        "148618792579526024",
+        "1011704194",
+        "148618792615529869",
+        "2032984393",
+        "148618792834271640",
+        "992998137"
+      ],
+      "intersections": {
+        "targetid_vs_dt_params": [],
+        "commentid_vs_dt_params": [],
+        "dokiid_ftid_vs_dt_params": [],
+        "targetid_vs_owner_bridge": [],
+        "commentid_vs_owner_bridge": [],
+        "dokiid_ftid_vs_owner_bridge": []
+      },
+      "forced_click": {
+        "before": {
+          "text": "举报",
+          "className": "at-feed__action-item at-feed__action-report",
+          "visibility": "hidden",
+          "display": "flex"
+        },
+        "after": {
+          "visibility": "visible",
+          "display": "flex"
+        }
+      },
+      "final_state": {
+        "open_call_count": 0,
+        "interesting_iframe_count": 0,
+        "post_message_count": 7,
+        "open_calls": [],
+        "interesting_iframes": []
+      },
+      "request_hit_urls": [
+        "https://staticfile.qq.com/datong/universalReportH5/v4.5.10/universal-report.min.js?max_age=7776000",
+        "https://vfiles.gtimg.cn/tvideo2/p/component/feedback/lib/latest/tv-feedback.umd.js",
+        "https://cache.wuji.qq.com/x/api/wuji_cache/object/66a1befbd0194001b7fc575e?appid=vqqcom&schemaid=config_user_feedback&schemakey=e2f159c455cc4a4e92e0a3f0a3d3745a",
+        "https://film.video.qq.com/lib/longcache/@tencent-vft-report/4.0.4/vft-report.min.js",
+        "https://film.video.qq.com/lib/midcache/vft-external/vft-external-report.min.js"
+      ],
+      "owner_bridge_followup_generated_at": "2026-06-20T08:39:54.164Z",
+      "owner_bridge_numeric_values": [
+        "148618792652885713",
+        "148618792580423252",
+        "148618792788184432",
+        "148618792579526024",
+        "148618792615529869",
+        "148618792834271640",
+        "148618792616304681",
+        "148618792623202092"
+      ],
+      "owner_bridge_followup_judgment": "The negative variety shell stayed negative after the owner-bridge followup as well; no convergence with commentInfo targetid/commentid emerged."
+    }
+  ],
+  "takeaways": [
+    "On pages where root.base.commentInfo.targetid/commentid is non-empty, the sampled comment report buttons still expose a different identity family (`feed_id` / `cp_id` / counters) rather than the decoded commentInfo targetid/commentid values.",
+    "The anonymous comment-report DOM identity tags also stay disjoint from the currently observed dokiid/ftid discussion chain on the sampled positive pages.",
+    "This narrows the natural-producer gap: in the tested anonymous DOM path, commentInfo targetid/commentid survives as a neighboring payload family, but the sampled report-button producer surface still does not expose or consume those same IDs directly."
+  ],
+  "owner_bridge_followup_generated_at": "2026-06-20T08:39:54.164Z",
+  "owner_bridge_followup_artifact": "analysis/frontend_targetid_report_identity_owner_bridge_20260620.json",
+  "owner_bridge_followup_takeaways": [
+    "Even the added dataset and owner-prop bridge scan around anonymous report/comment nodes still did not surface the same targetid/commentid values from the positive commentInfo family.",
+    "On pages where root.base.commentInfo.targetid/commentid is non-empty, the sampled comment report buttons still expose a different identity family (feed_id / cp_id / counters) rather than the decoded commentInfo targetid/commentid values.",
+    "The anonymous comment-report DOM identity tags also stay disjoint from the currently observed dokiid/ftid discussion chain on the sampled positive pages.",
+    "This narrows the natural-producer gap: in the tested anonymous DOM path, commentInfo targetid/commentid survives as a neighboring payload family, but the sampled report-button producer surface still does not expose or consume those same ids directly."
+  ]
+}

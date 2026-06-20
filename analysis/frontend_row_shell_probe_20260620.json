@@ -1,0 +1,123 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "detail/page row-shell probe for F/upload_src frontend semantics",
+  "method": {
+    "browser": "system Chrome via Playwright",
+    "browser_executable": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "wait_ms_after_domcontentloaded": 12000,
+    "click_wait_ms_after_tab_switch": 1800,
+    "cases": [
+      {
+        "bucket": "tv_season_f_mixed",
+        "url": "https://v.qq.com/x/cover/mzc00200whxf2zp.html"
+      },
+      {
+        "bucket": "variety_topic_uploadsrc_mixed",
+        "url": "https://v.qq.com/x/cover/mzc00200iy331ds.html"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "bucket": "tv_season_f_mixed",
+      "input_url": "https://v.qq.com/x/cover/mzc00200whxf2zp.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200whxf2zp/k41026bh3p0.html",
+      "cid": "mzc00200whxf2zp",
+      "vid": "k41026bh3p0",
+      "title": "问心2_01_电视剧_高清完整版视频在线观看_腾讯视频",
+      "tab_plan": [
+        "精彩片花",
+        "更多短视频"
+      ],
+      "initial_snapshot": {
+        "union_snapshot": {
+          "cid": "mzc00200whxf2zp",
+          "vid": "k41026bh3p0",
+          "cover_type": 2,
+          "cover_type_name": "电视剧",
+          "cover_pay_status": "0",
+          "cover_positive_trailer": 1,
+          "cover_positive_content_id": "1543606",
+          "cover_nomal_ids_count": 0,
+          "cover_vip_ids_count": 0,
+          "video_state": 4
+        },
+        "tab_nodes": [
+          {
+            "text": "精彩片花",
+            "selected": true
+          },
+          {
+            "text": "更多短视频",
+            "selected": false
+          }
+        ],
+        "module_titles": [
+          "问 心 2 简介",
+          "相关短视频",
+          "更多内容打包看",
+          "看《问心2》的也喜欢"
+        ],
+        "card_samples_are_runtime_unmapped": true,
+        "visible_nomal_f_counts": {},
+        "visible_vip_f_counts": {},
+        "frontend_upload_src_counts": {},
+        "frontend_state_counts": {}
+      },
+      "tab_runs": [
+        {
+          "tab_text": "精彩片花",
+          "visible_nomal_f_counts": {},
+          "visible_vip_f_counts": {},
+          "frontend_upload_src_counts": {},
+          "frontend_state_counts": {}
+        },
+        {
+          "tab_text": "更多短视频",
+          "visible_nomal_f_counts": {},
+          "visible_vip_f_counts": {},
+          "frontend_upload_src_counts": {},
+          "frontend_state_counts": {}
+        }
+      ]
+    },
+    {
+      "bucket": "variety_topic_uploadsrc_mixed",
+      "input_url": "https://v.qq.com/x/cover/mzc00200iy331ds.html",
+      "final_url": "https://v.qq.com/x/cover/mzc00200iy331ds/f41023gibme.html",
+      "cid": "mzc00200iy331ds",
+      "vid": "f41023gibme",
+      "title": "邓超说霸总台词一分钟八百个动作_高清1080P在线观看平台_腾讯视频",
+      "tab_plan": [],
+      "initial_snapshot": {
+        "union_snapshot": {
+          "cid": "mzc00200iy331ds",
+          "vid": "f41023gibme",
+          "cover_type": 10,
+          "cover_type_name": "综艺",
+          "cover_pay_status": "0",
+          "cover_positive_trailer": 0,
+          "cover_positive_content_id": "1543607",
+          "cover_nomal_ids_count": 0,
+          "cover_vip_ids_count": 0,
+          "video_state": 4
+        },
+        "tab_nodes": [],
+        "module_titles": [
+          "五哈热点一网打尽"
+        ],
+        "card_samples_are_runtime_unmapped": true,
+        "visible_nomal_f_counts": {},
+        "visible_vip_f_counts": {},
+        "frontend_upload_src_counts": {},
+        "frontend_state_counts": {}
+      },
+      "tab_runs": []
+    }
+  ],
+  "takeaways": [
+    "The sampled detail runtime slice still failed to surface card-to-row mappings carrying F or upload_src on the two representative pages.",
+    "The drama case preserved visible tabs (`精彩片花`, `更多短视频`), but both the initial slice and tab-switch followups kept zero visible F bucket mappings and zero frontend upload_src counts.",
+    "The variety hotspot case exposed card-like surfaces in the DOM, but the sampled runtime roots still did not yield row objects carrying visible upload_src or F on this detail page."
+  ]
+}

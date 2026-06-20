@@ -1,0 +1,193 @@
+{
+  "generated_at": "2026-06-19",
+  "search_backend": {
+    "host": "pbaccess.video.qq.com",
+    "path": "/trpc.videosearch.mobile_search.MultiTerminalSearch/MbSearch?vversion_platform=2",
+    "request_shape": {
+      "method": "POST",
+      "content_type": "application/json",
+      "version": "26022601",
+      "clientType": 1,
+      "frontVersion": "26060108"
+    },
+    "notes": [
+      "搜索后端适合作为新增 seed 的补样本入口，不属于主接口链本身。",
+      "本文件把它当作发现新 type/pay_status 的辅助证据池。"
+    ]
+  },
+  "broad_probe": {
+    "queries": [
+      "足球",
+      "篮球",
+      "奥运",
+      "体育人物",
+      "科学",
+      "自然",
+      "天文"
+    ],
+    "new_seed_cid_count": 160,
+    "type_counts": {
+      "1/电影": 18,
+      "2/电视剧": 2,
+      "3/动漫": 9,
+      "4/体育": 57,
+      "9/纪录片": 52,
+      "10/综艺": 4,
+      "27/教育": 1,
+      "106/少儿": 17
+    },
+    "pay_status_counts": {
+      "": 9,
+      "5": 3,
+      "6": 66,
+      "7": 9,
+      "8": 72,
+      "9": 1
+    },
+    "type_4_pay_status_counts": {
+      "": 5,
+      "6": 8,
+      "8": 44
+    },
+    "did_not_reproduce": [
+      "pay_status=15",
+      "pay_status=16"
+    ],
+    "representative_samples": [
+      {
+        "query": "足球",
+        "cid": "mzc0035nmiy8iru",
+        "title": "2026世界杯",
+        "type": "4/体育",
+        "pay_status": "",
+        "positive_trailer": "0",
+        "positive_content_id": "1543606"
+      },
+      {
+        "query": "足球",
+        "cid": "mzc003jeliygzoc",
+        "title": "2026世界杯球队巡礼",
+        "type": "4/体育",
+        "pay_status": "",
+        "positive_trailer": "0",
+        "positive_content_id": "1543606"
+      },
+      {
+        "query": "足球",
+        "cid": "mzc0020069a6anp",
+        "title": "22/23赛季欧冠1/8决赛次回合：曼城7-0RB莱比锡（总比分8-1）",
+        "type": "4/体育",
+        "pay_status": "8",
+        "positive_trailer": "1",
+        "positive_content_id": "1543606"
+      },
+      {
+        "query": "体育人物",
+        "cid": "mzc00383lw807hq",
+        "title": "体育人物",
+        "type": "4/体育",
+        "pay_status": "6",
+        "positive_trailer": "0",
+        "positive_content_id": "1543606"
+      },
+      {
+        "query": "科学",
+        "cid": "mzc00200bhj36oq",
+        "title": "小学自然科学",
+        "type": "27/教育",
+        "pay_status": "8",
+        "positive_trailer": "0",
+        "positive_content_id": "1543606"
+      }
+    ]
+  },
+  "targeted_followups": {
+    "pay_status_5_family": {
+      "strongest_claim": "目前已复现多个电影单片样本，足以把 pay_status=5 从偶发值提升为可复现非空枚举。",
+      "samples": [
+        {
+          "cid": "mzc00200ls5y7z0",
+          "title": "奔跑的少年",
+          "type": "1/电影",
+          "pay_status": "5",
+          "positive_trailer": "1",
+          "positive_content_id": "1543606"
+        },
+        {
+          "cid": "mzc002006g6kqo4",
+          "title": "黑鹰少年",
+          "type": "1/电影",
+          "pay_status": "5",
+          "positive_trailer": "1",
+          "positive_content_id": "1543606"
+        },
+        {
+          "cid": "mzc002003r5yq45",
+          "title": "好像也没那么热血沸腾",
+          "type": "1/电影",
+          "pay_status": "5",
+          "positive_trailer": "1",
+          "positive_content_id": "1543606"
+        },
+        {
+          "cid": "67t9bxbetsdztpp",
+          "title": "不败雄心",
+          "type": "1/电影",
+          "pay_status": "5",
+          "positive_trailer": "1",
+          "positive_content_id": "1543606"
+        },
+        {
+          "cid": "mzc00200aorvnwf",
+          "title": "屋顶足球",
+          "type": "1/电影",
+          "pay_status": "5",
+          "positive_trailer": "1",
+          "positive_content_id": "1543606"
+        }
+      ]
+    },
+    "pay_status_9_family": {
+      "strongest_claim": "当前已复现至少 2 个动漫页样本，仍建议继续补反例，但它已经不再是单点噪声。",
+      "samples": [
+        {
+          "cid": "mzc003ikavbkqa7",
+          "title": "逐风少年：决胜篮途",
+          "type": "3/动漫",
+          "pay_status": "9",
+          "positive_trailer": "1",
+          "positive_content_id": "1543606"
+        },
+        {
+          "cid": "mzc003nlcrbtvub",
+          "title": "趣界篮球单挑王",
+          "type": "3/动漫",
+          "pay_status": "9",
+          "positive_trailer": "1",
+          "positive_content_id": "1543606"
+        }
+      ]
+    },
+    "pay_status_15_family": {
+      "strongest_claim": "当前至少已复现 2 个综艺衍生壳页样本；它不像 type=4 那样广泛分散，而像一个很窄的综艺专题子家族。",
+      "samples": [
+        {
+          "cid": "mzc002001u873es",
+          "title": "战至巅峰之赛事全局看",
+          "type": "10/综艺",
+          "pay_status": "15",
+          "positive_trailer": "0",
+          "positive_content_id": "1543606"
+        },
+        {
+          "cid": "mzc0020081c19hy",
+          "title": "战至巅峰之第一视角",
+          "type": "10/综艺",
+          "pay_status": "15",
+          "positive_trailer": "0",
+          "positive_content_id": "1543606"
+        }
+      ]
+    }
+  }
+}

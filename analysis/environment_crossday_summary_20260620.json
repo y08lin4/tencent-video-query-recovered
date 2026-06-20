@@ -1,0 +1,137 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "cross-day closure summary for API contract matrix and representative page-shape buckets",
+  "sources": {
+    "api_contract_crossday": "analysis/agent_api_contract_crossday_20260620.json",
+    "field_drift_20260619": "analysis/environment_matrix_browserlike_20260619.json",
+    "field_drift_20260620": "analysis/environment_matrix_20260620.json",
+    "main_page_shape_20260619": "analysis/environment_page_shape_extension_20260619.json",
+    "main_page_shape_20260620": "analysis/environment_page_shape_crossday_20260620.json",
+    "sports_kids_crossday": "analysis/agent_sports_kids_crossday_summary_20260620.json"
+  },
+  "contract_layer": {
+    "environment_scope": [
+      "pc_web_ua",
+      "mobile_h5_ua",
+      "minimal_headers",
+      "referer_origin",
+      "pc_web_browser_like",
+      "pc_web_browser_like_cookie",
+      "mobile_h5_browser_like",
+      "mobile_h5_browser_like_cookie"
+    ],
+    "api1": {
+      "exact_case_matches": 10,
+      "drifted_cases": 0,
+      "env_signature_stable_count": 80,
+      "env_signature_drift_count": 0
+    },
+    "api2": {
+      "exact_case_matches": 18,
+      "drifted_cases": 0,
+      "env_signature_stable_count": 144,
+      "env_signature_drift_count": 0
+    },
+    "verdict": "cross-day stable on the tested 8-environment contract matrix"
+  },
+  "representative_field_drift_layer": {
+    "environment_scope": [
+      "pc_web_ua",
+      "mobile_h5_ua",
+      "minimal_headers",
+      "referer_origin",
+      "pc_web_browser_like",
+      "pc_web_browser_like_cookie",
+      "mobile_h5_browser_like",
+      "mobile_h5_browser_like_cookie"
+    ],
+    "buckets": {
+      "film_single": true,
+      "anime_season": true,
+      "variety_topic": true,
+      "sports_replay": true,
+      "kids_free_pack": true
+    },
+    "representative_counts": {
+      "film_single": {
+        "selected_row_vid": "z4102qfi0x4",
+        "cover_video_ids_count": 1,
+        "cover_downright_count": 26,
+        "publish_date_nonempty_count": 0,
+        "targetid_nonempty_count": 0
+      },
+      "anime_season": {
+        "selected_row_vid": "j4101ouc4ve",
+        "cover_video_ids_count": 31,
+        "cover_downright_count": 29,
+        "publish_date_nonempty_count": 0,
+        "targetid_nonempty_count": 0
+      },
+      "variety_topic": {
+        "selected_row_vid": "k004768pj4j",
+        "cover_video_ids_count": 29,
+        "cover_downright_count": 20,
+        "publish_date_nonempty_count": 0,
+        "targetid_nonempty_count": 29
+      },
+      "sports_replay": {
+        "selected_row_vid": "j4102xwdyib",
+        "cover_video_ids_count": 31,
+        "cover_downright_count": 2,
+        "publish_date_nonempty_count": 31,
+        "targetid_nonempty_count": 0
+      },
+      "kids_free_pack": {
+        "selected_row_vid": "k002652nnbl",
+        "cover_video_ids_count": 137,
+        "cover_downright_count": 26,
+        "publish_date_nonempty_count": 100,
+        "targetid_nonempty_count": 128
+      }
+    },
+    "verdict": "all five representative field-drift pages stayed cross-day stable on the tested 8-environment matrix"
+  },
+  "representative_page_shape_layer": {
+    "environment_scope": [
+      "pc_web_ua",
+      "mobile_h5_ua",
+      "minimal_headers",
+      "referer_origin"
+    ],
+    "main_second_representatives": {
+      "film_single_second": true,
+      "anime_season_second": true,
+      "tv_season_second": true,
+      "variety_season_second": true,
+      "kids_regular_season": true,
+      "kids_free_pack_second": true,
+      "topic_page_second": true
+    },
+    "sports_kids_followup": {
+      "sports_provisional_followup": true,
+      "kids_hybrid_seed": true,
+      "kids_hybrid_pack": true,
+      "kids_hybrid_trip": true
+    }
+  },
+  "safe_crossday_upgrades": [
+    "API1/API2 contract matrix: 8 environments cross-day stable for the tested case matrix.",
+    "film_single / anime_season / variety_topic / sports_replay / kids_free_pack representative field-drift pages: 8 environments cross-day stable.",
+    "film_single_second: base-4 cross-day stable.",
+    "anime_season_second: base-4 cross-day stable.",
+    "tv_season_second: base-4 cross-day stable.",
+    "variety_season_second: base-4 cross-day stable.",
+    "kids_regular_season (double-zero representative): base-4 cross-day stable.",
+    "kids_free_pack_second: base-4 cross-day stable.",
+    "topic_page_second: base-4 cross-day stable.",
+    "sports_provisional_followup mzc002003fh665c: base-4 cross-day stable.",
+    "kids_hybrid_seed jynqzy9n3wfrsfp: base-4 cross-day stable.",
+    "kids_hybrid_pack bzfkv5se8qaqel2: base-4 cross-day stable.",
+    "kids_hybrid_trip mzc00200yokeal4: base-4 cross-day stable."
+  ],
+  "remaining_cautions": [
+    "Representative page-shape cross-day closure currently covers base-4 environments, not the full browser-like 8-environment page layer.",
+    "The 8-environment cross-day rerun currently covers the five canonical representative field-drift pages, not every page-shape bucket or every second representative.",
+    "Synthetic cookie/browser-like evidence is still not the same as real login-state or aged-cookie evidence."
+  ]
+}

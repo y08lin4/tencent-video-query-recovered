@@ -1,0 +1,305 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "focused runtime probe on commentInfo targetid/commentid context, plus dokiid/ftid request-chain comparison",
+  "cases": [
+    {
+      "bucket": "kids_dualfull_targetid",
+      "final_url": "https://v.qq.com/x/cover/jynqzy9n3wfrsfp/l0020z7maus.html",
+      "title": "捉迷藏_少儿_动画片大全_腾讯视频",
+      "cid": "jynqzy9n3wfrsfp",
+      "vid": "l0020z7maus",
+      "commentinfo_container_present": true,
+      "nonempty_commentinfo_hits": 10,
+      "commentinfo_owner_shape": [
+        [
+          "id",
+          "time",
+          "seq",
+          "scene",
+          "platfrom",
+          "commentInfo",
+          "relation",
+          "shareInfo",
+          "msgId"
+        ]
+      ],
+      "commentinfo_variant_samples": [
+        {
+          "commentInfo_keys_head": [
+            "targetid"
+          ],
+          "targetid_raw": "NzY1MjE0NTY5OA==",
+          "targetid_decoded": "7652145698",
+          "commentid_raw": null,
+          "commentid_decoded": null
+        },
+        {
+          "commentInfo_keys_head": [
+            "targetid"
+          ],
+          "targetid_raw": "NzY1MTkyMTA3MA==",
+          "targetid_decoded": "7651921070",
+          "commentid_raw": null,
+          "commentid_decoded": null
+        },
+        {
+          "commentInfo_keys_head": [
+            "targetid"
+          ],
+          "targetid_raw": "NzY1MDU3MzgxMg==",
+          "targetid_decoded": "7650573812",
+          "commentid_raw": null,
+          "commentid_decoded": null
+        },
+        {
+          "commentInfo_keys_head": [
+            "targetid",
+            "commentid"
+          ],
+          "targetid_raw": "MTQwOTA2NDQ0OA==",
+          "targetid_decoded": "1409064448",
+          "commentid_raw": "Njc3MDkxMjUyMDE5ODg3NzU4Mg==",
+          "commentid_decoded": "6770912520198877582"
+        },
+        {
+          "commentInfo_keys_head": [
+            "targetid",
+            "commentid"
+          ],
+          "targetid_raw": "MTQwOTA2MzYxMw==",
+          "targetid_decoded": "1409063613",
+          "commentid_raw": "Njg1OTI5MjkxOTcyMzg3MjY1MQ==",
+          "commentid_decoded": "6859292919723872651"
+        },
+        {
+          "commentInfo_keys_head": [
+            "targetid",
+            "commentid"
+          ],
+          "targetid_raw": "MTQwOTA2MzYxMw==",
+          "targetid_decoded": "1409063613",
+          "commentid_raw": "Njg5NjQwMjcwNTM4MjIzNDI4NQ==",
+          "commentid_decoded": "6896402705382234285"
+        }
+      ],
+      "targetid_decoded_values": [
+        "7652145698",
+        "7651921070",
+        "7650573812",
+        "1409064448",
+        "1409063613",
+        "7649839234",
+        "7649690961",
+        "7648975508"
+      ],
+      "commentid_decoded_values": [
+        "6770912520198877582",
+        "6859292919723872651",
+        "6896402705382234285"
+      ],
+      "pg_dokiid_values": [
+        "2100140789"
+      ],
+      "relate_doki_decoded_values": [
+        "2100140789",
+        "2100141096",
+        "2100140526",
+        "2100131217",
+        "2100141613"
+      ],
+      "request_dokiid_values": [
+        "2100140789"
+      ],
+      "response_ftid_values": [
+        "2100140789"
+      ],
+      "targetid_request_intersection": [],
+      "commentid_request_intersection": [],
+      "event_hit_count": 0,
+      "postmessage_hit_count": 0,
+      "key_node_samples": [
+        {
+          "path": "root.vl.vi.0",
+          "keys": [
+            "targetid"
+          ],
+          "summary": {
+            "targetid": "0"
+          }
+        },
+        {
+          "path": "root.data.CardList.1.params",
+          "keys": [
+            "pg_dokiid"
+          ],
+          "summary": {
+            "pg_dokiid": "2100140789"
+          }
+        },
+        {
+          "path": "root.base.commentInfo",
+          "keys": [
+            "targetid"
+          ],
+          "summary": {
+            "targetid": "NzY1MjE0NTY5OA=="
+          }
+        },
+        {
+          "path": "root.relate.relateDoki.0",
+          "keys": [
+            "dokiId"
+          ],
+          "summary": {
+            "dokiId": "MjEwMDE0MDc4OQ=="
+          }
+        }
+      ],
+      "request_samples": [
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.message.danmu_richdata.Richdata/GetRichData",
+          "postData": "{\"danmu_key\":\"type=2&bubble_flag=1&cid=jynqzy9n3wfrsfp&vid=l0020z7maus&lid=&dokiid=2100140789\",\"vip_degree\":0}"
+        },
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.barrage.custom_barrage.CustomBarrage/GetDMEffectConfig",
+          "postData": "{\"danmu_key\":\"type=2&bubble_flag=1&cid=jynqzy9n3wfrsfp&vid=l0020z7maus&lid=&dokiid=2100140789\",\"engine_version\":\"2.1.10\"}"
+        },
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.video_app_doki.extra_info.ExtraInfo/GetExtraInfo",
+          "postData": "{\"params\":{\"data_key\":\"cid=jynqzy9n3wfrsfp&vid=l0020z7maus\"},\"scene\":1}"
+        }
+      ],
+      "response_samples": [
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.video_app_doki.extra_info.ExtraInfo/GetExtraInfo",
+          "excerpt": "{\"data\":{\"comment_info\":{\"comment_count\":\"30519\",\"mark_id\":\"\",\"comment_mark\":\"\"},\"publish_info\":{\"data_key\":\"vid=l0020z7maus&cid=jynqzy9n3wfrsfp&ftid=2100140789\"}},\"ret\":0,\"msg\":\"\"}"
+        },
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.danmu.danmu_switch_comm.DanmuSwitch/getVideoDanmuSwitch",
+          "excerpt": "{\"data\":{\"registResultInfo\":{\"dataKey\":\"type=2&bubble_flag=1&cid=jynqzy9n3wfrsfp&vid=l0020z7maus&lid=&dokiid=2100140789\"}},\"ret\":0,\"msg\":\"\"}"
+        }
+      ]
+    },
+    {
+      "bucket": "variety_topic_pay15_targetid",
+      "final_url": "https://v.qq.com/x/cover/mzc002001u873es/k004768pj4j.html",
+      "title": "EP10战局纯享：WindVSS.Carry决赛第一场_综艺_高清完整版视频在线观看_腾讯视频",
+      "cid": "mzc002001u873es",
+      "vid": "k004768pj4j",
+      "commentinfo_container_present": true,
+      "nonempty_commentinfo_hits": 0,
+      "commentinfo_owner_shape": [
+        [
+          "id",
+          "time",
+          "seq",
+          "scene",
+          "platfrom",
+          "commentInfo",
+          "relation",
+          "shareInfo",
+          "msgId"
+        ]
+      ],
+      "commentinfo_variant_samples": [
+        {
+          "commentInfo_keys_head": [],
+          "targetid_raw": null,
+          "targetid_decoded": null,
+          "commentid_raw": null,
+          "commentid_decoded": null
+        }
+      ],
+      "targetid_decoded_values": [],
+      "commentid_decoded_values": [],
+      "pg_dokiid_values": [
+        "2101258574"
+      ],
+      "relate_doki_decoded_values": [
+        "2101258574"
+      ],
+      "request_dokiid_values": [
+        "2101258574"
+      ],
+      "response_ftid_values": [
+        "2101258574"
+      ],
+      "targetid_request_intersection": [],
+      "commentid_request_intersection": [],
+      "event_hit_count": 0,
+      "postmessage_hit_count": 0,
+      "key_node_samples": [
+        {
+          "path": "root.vl.vi.0",
+          "keys": [
+            "targetid"
+          ],
+          "summary": {
+            "targetid": "0"
+          }
+        },
+        {
+          "path": "root.data.CardList.1.params",
+          "keys": [
+            "pg_dokiid"
+          ],
+          "summary": {
+            "pg_dokiid": "2101258574"
+          }
+        },
+        {
+          "path": "root.base",
+          "keys": [
+            "commentInfo"
+          ],
+          "summary": {
+            "commentInfo": {
+              "type": "object",
+              "keys": []
+            }
+          }
+        },
+        {
+          "path": "root.relate.relateDoki.0",
+          "keys": [
+            "dokiId"
+          ],
+          "summary": {
+            "dokiId": "MjEwMTI1ODU3NA=="
+          }
+        }
+      ],
+      "request_samples": [
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.message.danmu_richdata.Richdata/GetRichData",
+          "postData": "{\"danmu_key\":\"type=2&bubble_flag=1&cid=mzc002001u873es&vid=k004768pj4j&lid=&dokiid=2101258574\",\"vip_degree\":0}"
+        },
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.barrage.custom_barrage.CustomBarrage/GetDMEffectConfig",
+          "postData": "{\"danmu_key\":\"type=2&bubble_flag=1&cid=mzc002001u873es&vid=k004768pj4j&lid=&dokiid=2101258574\",\"engine_version\":\"2.1.10\"}"
+        },
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.video_app_doki.extra_info.ExtraInfo/GetExtraInfo",
+          "postData": "{\"params\":{\"data_key\":\"cid=mzc002001u873es&vid=k004768pj4j\"},\"scene\":1}"
+        }
+      ],
+      "response_samples": [
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.video_app_doki.extra_info.ExtraInfo/GetExtraInfo",
+          "excerpt": "{\"data\":{\"comment_info\":{\"comment_count\":\"347\",\"mark_id\":\"\",\"comment_mark\":\"\"},\"publish_info\":{\"data_key\":\"cid=mzc002001u873es&ftid=2101258574&vid=k004768pj4j\"}},\"ret\":0,\"msg\":\"\"}"
+        },
+        {
+          "url": "https://pbaccess.video.qq.com/trpc.danmu.danmu_switch_comm.DanmuSwitch/getVideoDanmuSwitch",
+          "excerpt": "{\"data\":{\"registResultInfo\":{\"dataKey\":\"type=2&bubble_flag=1&cid=mzc002001u873es&vid=k004768pj4j&lid=&dokiid=2101258574\"}},\"ret\":0,\"msg\":\"\"}"
+        }
+      ]
+    }
+  ],
+  "takeaways": [
+    "Both tested pages expose a runtime root.base.commentInfo container, but the kids page produces repeated non-empty targetid/commentid variants while the variety page stays empty in this probe.",
+    "On the kids page, non-empty commentInfo rows share the same owner shell keys: id/time/seq/scene/platfrom/commentInfo/relation/shareInfo/msgId.",
+    "Kids-page commentInfo targetid/commentid decoded numeric values still do not intersect with observed dokiid/ftid/request numeric IDs in the tested anonymous PC-Web chain.",
+    "Both pages expose pg_dokiid and relateDoki.dokiId neighbors, and the request/response chain continues to use dokiid/ftid rather than decoded commentInfo targetid/commentid.",
+    "No custom event or postMessage payload carrying targetid/commentid was captured in this focused click-and-overlay-removal round."
+  ]
+}

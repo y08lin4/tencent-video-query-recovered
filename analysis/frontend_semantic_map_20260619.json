@@ -1,0 +1,99 @@
+{
+  "generated_at": "2026-06-19",
+  "scope": "same-day frontend semantic layer extracted from representative Tencent Video pages, inline startup scripts, and the rotating `video-detail-vue` detail bundle",
+  "frontend_runtime": {
+    "ssr_root": "window.__vikor__context__.ssrPayloads",
+    "main_bundle": "https://vfiles.gtimg.cn/tvideo2/video-detail-vue/assets/index-*.js"
+  },
+  "representative_pages": [
+    {
+      "bucket": "电影单片",
+      "url": "https://v.qq.com/x/cover/mzc00200idzf2m8/z4102qfi0x4.html",
+      "ssr_observations": [
+        "SSR payload includes `coverInfoMap.mzc00200idzf2m8` and `videoInfoMap.z4102qfi0x4`.",
+        "Cover-level SSR contains `positive_trailer`, `publish_date`, `type`, `type_name`, `category_map`, `downright`, `video_ids`.",
+        "Video-level SSR contains `cover_list`, `c_covers`, `state`, `F`, `playright`, `duration`, `type`, `type_name`."
+      ],
+      "not_seen_in_initial_ssr": [
+        "upload_src",
+        "targetid"
+      ]
+    },
+    {
+      "bucket": "动漫分集页",
+      "url": "https://v.qq.com/x/cover/mzc00200xxpsogl/j4101ouc4ve.html",
+      "ssr_observations": [
+        "Episode-page SSR also contains `videoInfoMap.<vid>.state`, `F`, and `cover_list`.",
+        "Cover-level SSR keeps `positive_trailer=1`, `publish_date=2025-12-25`, `type=3`, `type_name=动漫`."
+      ],
+      "not_seen_in_initial_ssr": [
+        "upload_src",
+        "targetid"
+      ]
+    },
+    {
+      "bucket": "教育 cover-only 页",
+      "url": "https://v.qq.com/x/cover/mzc00200bhj36oq.html",
+      "ssr_observations": [
+        "Cover-only page SSR exposes `coverInfoMap.mzc00200bhj36oq` but not a populated `videoInfoMap` row for a concrete vid.",
+        "This page still carries `positive_trailer=0`, `F`, empty `publish_date`, `type=27`, `type_name=教育` in SSR."
+      ],
+      "not_seen_in_initial_ssr": [
+        "state",
+        "upload_src",
+        "targetid"
+      ]
+    }
+  ],
+  "bundle_level_findings": [
+    {
+      "field": "positive_trailer",
+      "evidence": "Bundle function `Zie(e,t)` normalizes `positive_trailer` with `ko(...)`, so the frontend converts the raw API text value into a numeric-like internal value."
+    },
+    {
+      "field": "pay_status",
+      "evidence": "VIP button logic reads raw-side `pay_status` for `report_cover_pay_status` and `report_vid_pay_status`; adjacent `pay_status_exchange -> showGive` gating also survives nearby. The 2026-06-19 dynamic hook probe still sees raw-like `pay_status` at `JSON.parse` layer while the first exposed `union.coverInfoMap` slot has already collapsed to `pay_status=0`, so that slot is not preserving the raw API code verbatim and raw `pay_status` is not the sole frontend branch switch."
+    },
+    {
+      "field": "state",
+      "evidence": "Bundle normalizer `$ie(e,t)` writes `state:ko(t.state)` into the `union` store, and later validation branches use that state to emit `LINK_REPLACED / OFFLINE / DELETED / VIDEO_CAN_NOT_PLAY_IN_COVER` style frontend errors."
+    },
+    {
+      "field": "pay_status_exchange",
+      "evidence": "SSR-derived `pay_status_exchange` is read by `showGive`, so the frontend carries an additional boolean-like gate that is adjacent to, but not equal to, raw `pay_status`."
+    },
+    {
+      "field": "downright",
+      "evidence": "Toolbar download logic reads `downright` directly; when the required code is absent it falls back to `前往客户端下载`, and the positive path then uses permission-style `includes(...)` checks. This is a direct UI gate rather than a pure display field."
+    },
+    {
+      "field": "F",
+      "evidence": "Representative movie / anime / cover-only pages already carry raw `F` inside inline startup / SSR payloads, but the tested detail bundle, sampled `FillUnionInfo` path, sampled runtime `union` store rows, and the 2026-06-19 dynamic hook probe still do not expose a clean named business-field read or runtime getter access on the tested detail slice."
+    },
+    {
+      "field": "cover_list / c_covers / topic_id_list",
+      "evidence": "Bundle helper `Une(e)` merges and deduplicates `c_covers`, `topic_id_list`, and `cover_list`, and points that CID set toward a candidate `getCoverInfoBatch` follow-up path; however, even after the 2026-06-20 request-level capture with tab-priority and lazy scroll, the tested redirected-detail runtime still only observed `PageService/getPage + FillUnionInfo`, not a real `getCoverInfoBatch` request/response."
+    },
+    {
+      "field": "publish_date",
+      "evidence": "Frontend maps raw `publish_date` into `publishDate` via a formatter and separately gates display via `usePublishDate`."
+    },
+    {
+      "field": "targetid",
+      "evidence": "A downstream player/danmaku flow passes `targetId` into `attachIframe(...)`, which gives a static sink after a snake_case -> camelCase rename. On the tested runtime slice, visible-row / exposed-union layers can stay at shell-level `targetid=0` or omit the field, while the stronger non-zero evidence now sits in `root.base.commentInfo.targetid`; synthetic runtime probing has also closed the downstream `targetId -> popup query targetid` consumer mapping, and the new owner-bridge followup still kept anonymous report/comment DOM identities disjoint from that positive commentInfo family."
+    },
+    {
+      "field": "category_map",
+      "evidence": "Bundle function `HL(e)` combines `category_map` with `navigator.userAgent` to emit a client-environment warning, so `category_map` participates in environment-specific UI branching."
+    }
+  ],
+  "current_blackbox_takeaways": [
+    "Some API fields are clearly consumed by frontend logic (`pay_status`, `state`, `downright`, `publish_date`), while `cover_list` is currently best described as a confirmed merge path toward a candidate follow-up request, and `targetid` has now upgraded from `static sink + partial trace` to `commentInfo-layer + synthetic consumer closure` with the remaining gap still bounded to natural live producer paths.",
+    "On the tested 2026-06-19 PC Web detail pages, sampled runtime `union.coverInfoMap` slots do not preserve raw pay_status codes; the first exposed slot was `pay_status=0` while `JSON.parse` still saw `0/6/8/15` and adjacent `pay_status_exchange` still varied by page, so raw `pay_status` is not the sole frontend branch switch there.",
+    "`state` is no longer just an SSR residue: it enters the detail-page validation and unavailable/offline error branches.",
+    "The `Une(e)` merge path for `cover_list / c_covers / topic_id_list` is confirmed in bundle/runtime-adjacent evidence, but the tested redirected-detail slice still has not produced a real `getCoverInfoBatch` request/response.",
+    "The new `frontend_startup_vs_runtime_diff_20260620.json` cross-artifact diff now separates this slice more cleanly: on the tested redirected-detail candidates, `positive_trailer` survives into sampled getPage, `state` can re-enter at FillUnionInfo, `F` stays startup/SSR-visible only, and `upload_src` stays absent across startup/SSR, sampled getPage, sampled FillUnionInfo, and tested detail-bundle named string hits.",
+    "`F` is present in tested inline startup / SSR payloads, but current evidence still does not tie it to a named detail-page logic branch or the exposed runtime union store.",
+    "`upload_src` is still absent from the tested redirected-detail startup/SSR, sampled `getPage / FillUnionInfo`, detail-bundle named-string audit, dynamic hook hits, and sampled runtime union-store rows, so it currently looks omitted from that main detail slice or only consumed in an earlier shaping layer, a later lazy path, or another runtime family."
+  ]
+}

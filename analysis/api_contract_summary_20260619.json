@@ -1,0 +1,75 @@
+{
+  "generated_at": "2026-06-19",
+  "api1": {
+    "required_parameters": {
+      "tid": {
+        "bad_examples": ["missing", "0", "abc"],
+        "errorno": "-111003",
+        "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+      },
+      "idlist": {
+        "bad_examples": ["missing", "", "  "],
+        "errorno": "-111004",
+        "errormsg": "错误的idlist"
+      },
+      "idlist_keys_empty": {
+        "bad_examples": [",", ",,"],
+        "errorno": "10010039",
+        "errormsg": "keys empty"
+      }
+    },
+    "appid_appkey_behavior": {
+      "appid_1": "success",
+      "missing_appid_and_appkey": "success",
+      "appid_10001005_without_appkey": "10010110 / appkey error",
+      "appid_99999": "10010108 / appid no find",
+      "appid_notanumber": "success"
+    },
+    "empty_shape_cid_behavior": {
+      "top_level_errorno": "0",
+      "per_result_retcode": "0",
+      "cover_fields_empty": true
+    },
+    "batch_behavior": {
+      "multi_cid_supported": true,
+      "duplicate_cid_deduped": false,
+      "must_check_per_result_retcode": true,
+      "top_level_summary_fields_can_be_polluted_by_empty_shell_first_result": true
+    }
+  },
+  "api2": {
+    "transport_rule": "HTTP 200 does not imply success; inspect errorno/errormsg in body",
+    "tid": {
+      "bad_examples": ["missing", "0", "abc", "-1"],
+      "errorno": "-111003",
+      "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+    },
+    "tid_536": {
+      "errorno": "-111005",
+      "errormsg": "获取配置错误"
+    },
+    "tid_431": {
+      "errorno": "10010048",
+      "errormsg": "key all illegal"
+    },
+    "otype": {
+      "missing_or_weird": "xml success body",
+      "json": "QZOutputJson=...; JSONP success and failure bodies"
+    },
+    "union_platform": {
+      "observed_behavior": "ignored",
+      "accepted_examples": ["missing", "", "0", "2", "abc", "999", "-1"]
+    },
+    "appid_appkey_behavior": {
+      "appid_missing_or_abc_or_1": "success",
+      "numeric_unknown_appid": "10010108 / appid no find",
+      "appid_20001238_without_valid_appkey": "10010110 / appkey error"
+    },
+    "idlist_limit": {
+      "max_nonempty_items": 32,
+      "duplicates_count": true,
+      "invalid_items_count": true,
+      "empty_slots_ignored": true
+    }
+  }
+}

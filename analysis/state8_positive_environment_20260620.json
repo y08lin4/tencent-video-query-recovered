@@ -1,0 +1,1190 @@
+{
+  "generated_at": "2026-06-19T22:23:24.935Z",
+  "scope": "positive state=8 environment matrix for selected covers",
+  "environments_tested": [
+    "pc_web_ua",
+    "mobile_h5_ua",
+    "minimal_headers",
+    "referer_origin",
+    "pc_web_browser_like",
+    "pc_web_browser_like_cookie",
+    "mobile_h5_browser_like",
+    "mobile_h5_browser_like_cookie"
+  ],
+  "covers": {
+    "482396nuyaelv0e": {
+      "expected_baseline_20260619": {
+        "expected_type": "106/少儿",
+        "expected_pay_status": "8",
+        "expected_positive_trailer": "1",
+        "expected_state_counts": {
+          "4": 8,
+          "8": 73
+        },
+        "expected_upload_src_counts": {
+          "20": 3,
+          "108": 78
+        },
+        "pinned_positive_vid": ""
+      },
+      "unique_signature_count": 1,
+      "cross_day_match_20260619": true,
+      "environments": {
+        "pc_web_ua": {
+          "status": "ok",
+          "api1_http_status": 200,
+          "api1_content_type": "application/xml;charset=utf-8",
+          "title": "苏菲娅玩具",
+          "type": "106",
+          "type_name": "少儿",
+          "pay_status": "8",
+          "positive_trailer": "1",
+          "video_ids_count": 81,
+          "batch_count": 3,
+          "batch_summaries": [
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 17,
+              "results_count": 17,
+              "errorno": "0",
+              "errormsg": ""
+            }
+          ],
+          "video_count": 81,
+          "state_counts": {
+            "4": 8,
+            "8": 73
+          },
+          "upload_src_counts": {
+            "20": 3,
+            "108": 78
+          },
+          "targetid_nonempty_count": 81,
+          "publish_date_nonempty_count": 16,
+          "first_state8_row": {
+            "vid": "e3333kt9s9r",
+            "title": "影子猜猜看游戏，苏菲娅和艾米儿有没有猜对睡美人呢",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "7809914704",
+            "publish_date": ""
+          },
+          "pinned_positive_row": null
+        },
+        "mobile_h5_ua": {
+          "status": "ok",
+          "api1_http_status": 200,
+          "api1_content_type": "application/xml;charset=utf-8",
+          "title": "苏菲娅玩具",
+          "type": "106",
+          "type_name": "少儿",
+          "pay_status": "8",
+          "positive_trailer": "1",
+          "video_ids_count": 81,
+          "batch_count": 3,
+          "batch_summaries": [
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 17,
+              "results_count": 17,
+              "errorno": "0",
+              "errormsg": ""
+            }
+          ],
+          "video_count": 81,
+          "state_counts": {
+            "4": 8,
+            "8": 73
+          },
+          "upload_src_counts": {
+            "20": 3,
+            "108": 78
+          },
+          "targetid_nonempty_count": 81,
+          "publish_date_nonempty_count": 16,
+          "first_state8_row": {
+            "vid": "e3333kt9s9r",
+            "title": "影子猜猜看游戏，苏菲娅和艾米儿有没有猜对睡美人呢",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "7809914704",
+            "publish_date": ""
+          },
+          "pinned_positive_row": null
+        },
+        "minimal_headers": {
+          "status": "ok",
+          "api1_http_status": 200,
+          "api1_content_type": "application/xml;charset=utf-8",
+          "title": "苏菲娅玩具",
+          "type": "106",
+          "type_name": "少儿",
+          "pay_status": "8",
+          "positive_trailer": "1",
+          "video_ids_count": 81,
+          "batch_count": 3,
+          "batch_summaries": [
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 17,
+              "results_count": 17,
+              "errorno": "0",
+              "errormsg": ""
+            }
+          ],
+          "video_count": 81,
+          "state_counts": {
+            "4": 8,
+            "8": 73
+          },
+          "upload_src_counts": {
+            "20": 3,
+            "108": 78
+          },
+          "targetid_nonempty_count": 81,
+          "publish_date_nonempty_count": 16,
+          "first_state8_row": {
+            "vid": "e3333kt9s9r",
+            "title": "影子猜猜看游戏，苏菲娅和艾米儿有没有猜对睡美人呢",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "7809914704",
+            "publish_date": ""
+          },
+          "pinned_positive_row": null
+        },
+        "referer_origin": {
+          "status": "ok",
+          "api1_http_status": 200,
+          "api1_content_type": "application/xml;charset=utf-8",
+          "title": "苏菲娅玩具",
+          "type": "106",
+          "type_name": "少儿",
+          "pay_status": "8",
+          "positive_trailer": "1",
+          "video_ids_count": 81,
+          "batch_count": 3,
+          "batch_summaries": [
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 17,
+              "results_count": 17,
+              "errorno": "0",
+              "errormsg": ""
+            }
+          ],
+          "video_count": 81,
+          "state_counts": {
+            "4": 8,
+            "8": 73
+          },
+          "upload_src_counts": {
+            "20": 3,
+            "108": 78
+          },
+          "targetid_nonempty_count": 81,
+          "publish_date_nonempty_count": 16,
+          "first_state8_row": {
+            "vid": "e3333kt9s9r",
+            "title": "影子猜猜看游戏，苏菲娅和艾米儿有没有猜对睡美人呢",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "7809914704",
+            "publish_date": ""
+          },
+          "pinned_positive_row": null
+        },
+        "pc_web_browser_like": {
+          "status": "ok",
+          "api1_http_status": 200,
+          "api1_content_type": "application/xml;charset=utf-8",
+          "title": "苏菲娅玩具",
+          "type": "106",
+          "type_name": "少儿",
+          "pay_status": "8",
+          "positive_trailer": "1",
+          "video_ids_count": 81,
+          "batch_count": 3,
+          "batch_summaries": [
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 17,
+              "results_count": 17,
+              "errorno": "0",
+              "errormsg": ""
+            }
+          ],
+          "video_count": 81,
+          "state_counts": {
+            "4": 8,
+            "8": 73
+          },
+          "upload_src_counts": {
+            "20": 3,
+            "108": 78
+          },
+          "targetid_nonempty_count": 81,
+          "publish_date_nonempty_count": 16,
+          "first_state8_row": {
+            "vid": "e3333kt9s9r",
+            "title": "影子猜猜看游戏，苏菲娅和艾米儿有没有猜对睡美人呢",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "7809914704",
+            "publish_date": ""
+          },
+          "pinned_positive_row": null
+        },
+        "pc_web_browser_like_cookie": {
+          "status": "ok",
+          "api1_http_status": 200,
+          "api1_content_type": "application/xml;charset=utf-8",
+          "title": "苏菲娅玩具",
+          "type": "106",
+          "type_name": "少儿",
+          "pay_status": "8",
+          "positive_trailer": "1",
+          "video_ids_count": 81,
+          "batch_count": 3,
+          "batch_summaries": [
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 17,
+              "results_count": 17,
+              "errorno": "0",
+              "errormsg": ""
+            }
+          ],
+          "video_count": 81,
+          "state_counts": {
+            "4": 8,
+            "8": 73
+          },
+          "upload_src_counts": {
+            "20": 3,
+            "108": 78
+          },
+          "targetid_nonempty_count": 81,
+          "publish_date_nonempty_count": 16,
+          "first_state8_row": {
+            "vid": "e3333kt9s9r",
+            "title": "影子猜猜看游戏，苏菲娅和艾米儿有没有猜对睡美人呢",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "7809914704",
+            "publish_date": ""
+          },
+          "pinned_positive_row": null
+        },
+        "mobile_h5_browser_like": {
+          "status": "ok",
+          "api1_http_status": 200,
+          "api1_content_type": "application/xml;charset=utf-8",
+          "title": "苏菲娅玩具",
+          "type": "106",
+          "type_name": "少儿",
+          "pay_status": "8",
+          "positive_trailer": "1",
+          "video_ids_count": 81,
+          "batch_count": 3,
+          "batch_summaries": [
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 17,
+              "results_count": 17,
+              "errorno": "0",
+              "errormsg": ""
+            }
+          ],
+          "video_count": 81,
+          "state_counts": {
+            "4": 8,
+            "8": 73
+          },
+          "upload_src_counts": {
+            "20": 3,
+            "108": 78
+          },
+          "targetid_nonempty_count": 81,
+          "publish_date_nonempty_count": 16,
+          "first_state8_row": {
+            "vid": "e3333kt9s9r",
+            "title": "影子猜猜看游戏，苏菲娅和艾米儿有没有猜对睡美人呢",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "7809914704",
+            "publish_date": ""
+          },
+          "pinned_positive_row": null
+        },
+        "mobile_h5_browser_like_cookie": {
+          "status": "ok",
+          "api1_http_status": 200,
+          "api1_content_type": "application/xml;charset=utf-8",
+          "title": "苏菲娅玩具",
+          "type": "106",
+          "type_name": "少儿",
+          "pay_status": "8",
+          "positive_trailer": "1",
+          "video_ids_count": 81,
+          "batch_count": 3,
+          "batch_summaries": [
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 17,
+              "results_count": 17,
+              "errorno": "0",
+              "errormsg": ""
+            }
+          ],
+          "video_count": 81,
+          "state_counts": {
+            "4": 8,
+            "8": 73
+          },
+          "upload_src_counts": {
+            "20": 3,
+            "108": 78
+          },
+          "targetid_nonempty_count": 81,
+          "publish_date_nonempty_count": 16,
+          "first_state8_row": {
+            "vid": "e3333kt9s9r",
+            "title": "影子猜猜看游戏，苏菲娅和艾米儿有没有猜对睡美人呢",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "7809914704",
+            "publish_date": ""
+          },
+          "pinned_positive_row": null
+        }
+      }
+    },
+    "mzc002006tgfqvp": {
+      "expected_baseline_20260619": {
+        "expected_type": "106/少儿",
+        "expected_pay_status": "8",
+        "expected_positive_trailer": "0",
+        "expected_state_counts": {
+          "4": 238,
+          "8": 3
+        },
+        "expected_upload_src_counts": {
+          "108": 240,
+          "141": 1
+        },
+        "pinned_positive_vid": "n3122jif99n"
+      },
+      "unique_signature_count": 1,
+      "cross_day_match_20260619": true,
+      "environments": {
+        "pc_web_ua": {
+          "status": "ok",
+          "api1_http_status": 200,
+          "api1_content_type": "application/xml;charset=utf-8",
+          "title": "舒克贝塔玩具故事",
+          "type": "106",
+          "type_name": "少儿",
+          "pay_status": "8",
+          "positive_trailer": "0",
+          "video_ids_count": 241,
+          "batch_count": 8,
+          "batch_summaries": [
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 17,
+              "results_count": 17,
+              "errorno": "0",
+              "errormsg": ""
+            }
+          ],
+          "video_count": 241,
+          "state_counts": {
+            "4": 238,
+            "8": 3
+          },
+          "upload_src_counts": {
+            "108": 240,
+            "141": 1
+          },
+          "targetid_nonempty_count": 241,
+          "publish_date_nonempty_count": 0,
+          "first_state8_row": {
+            "vid": "n3122jif99n",
+            "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "5616370372",
+            "publish_date": ""
+          },
+          "pinned_positive_row": {
+            "vid": "n3122jif99n",
+            "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "5616370372",
+            "publish_date": ""
+          }
+        },
+        "mobile_h5_ua": {
+          "status": "ok",
+          "api1_http_status": 200,
+          "api1_content_type": "application/xml;charset=utf-8",
+          "title": "舒克贝塔玩具故事",
+          "type": "106",
+          "type_name": "少儿",
+          "pay_status": "8",
+          "positive_trailer": "0",
+          "video_ids_count": 241,
+          "batch_count": 8,
+          "batch_summaries": [
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 17,
+              "results_count": 17,
+              "errorno": "0",
+              "errormsg": ""
+            }
+          ],
+          "video_count": 241,
+          "state_counts": {
+            "4": 238,
+            "8": 3
+          },
+          "upload_src_counts": {
+            "108": 240,
+            "141": 1
+          },
+          "targetid_nonempty_count": 241,
+          "publish_date_nonempty_count": 0,
+          "first_state8_row": {
+            "vid": "n3122jif99n",
+            "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "5616370372",
+            "publish_date": ""
+          },
+          "pinned_positive_row": {
+            "vid": "n3122jif99n",
+            "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "5616370372",
+            "publish_date": ""
+          }
+        },
+        "minimal_headers": {
+          "status": "ok",
+          "api1_http_status": 200,
+          "api1_content_type": "application/xml;charset=utf-8",
+          "title": "舒克贝塔玩具故事",
+          "type": "106",
+          "type_name": "少儿",
+          "pay_status": "8",
+          "positive_trailer": "0",
+          "video_ids_count": 241,
+          "batch_count": 8,
+          "batch_summaries": [
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 17,
+              "results_count": 17,
+              "errorno": "0",
+              "errormsg": ""
+            }
+          ],
+          "video_count": 241,
+          "state_counts": {
+            "4": 238,
+            "8": 3
+          },
+          "upload_src_counts": {
+            "108": 240,
+            "141": 1
+          },
+          "targetid_nonempty_count": 241,
+          "publish_date_nonempty_count": 0,
+          "first_state8_row": {
+            "vid": "n3122jif99n",
+            "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "5616370372",
+            "publish_date": ""
+          },
+          "pinned_positive_row": {
+            "vid": "n3122jif99n",
+            "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "5616370372",
+            "publish_date": ""
+          }
+        },
+        "referer_origin": {
+          "status": "ok",
+          "api1_http_status": 200,
+          "api1_content_type": "application/xml;charset=utf-8",
+          "title": "舒克贝塔玩具故事",
+          "type": "106",
+          "type_name": "少儿",
+          "pay_status": "8",
+          "positive_trailer": "0",
+          "video_ids_count": 241,
+          "batch_count": 8,
+          "batch_summaries": [
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 17,
+              "results_count": 17,
+              "errorno": "0",
+              "errormsg": ""
+            }
+          ],
+          "video_count": 241,
+          "state_counts": {
+            "4": 238,
+            "8": 3
+          },
+          "upload_src_counts": {
+            "108": 240,
+            "141": 1
+          },
+          "targetid_nonempty_count": 241,
+          "publish_date_nonempty_count": 0,
+          "first_state8_row": {
+            "vid": "n3122jif99n",
+            "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "5616370372",
+            "publish_date": ""
+          },
+          "pinned_positive_row": {
+            "vid": "n3122jif99n",
+            "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "5616370372",
+            "publish_date": ""
+          }
+        },
+        "pc_web_browser_like": {
+          "status": "ok",
+          "api1_http_status": 200,
+          "api1_content_type": "application/xml;charset=utf-8",
+          "title": "舒克贝塔玩具故事",
+          "type": "106",
+          "type_name": "少儿",
+          "pay_status": "8",
+          "positive_trailer": "0",
+          "video_ids_count": 241,
+          "batch_count": 8,
+          "batch_summaries": [
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 17,
+              "results_count": 17,
+              "errorno": "0",
+              "errormsg": ""
+            }
+          ],
+          "video_count": 241,
+          "state_counts": {
+            "4": 238,
+            "8": 3
+          },
+          "upload_src_counts": {
+            "108": 240,
+            "141": 1
+          },
+          "targetid_nonempty_count": 241,
+          "publish_date_nonempty_count": 0,
+          "first_state8_row": {
+            "vid": "n3122jif99n",
+            "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "5616370372",
+            "publish_date": ""
+          },
+          "pinned_positive_row": {
+            "vid": "n3122jif99n",
+            "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "5616370372",
+            "publish_date": ""
+          }
+        },
+        "pc_web_browser_like_cookie": {
+          "status": "ok",
+          "api1_http_status": 200,
+          "api1_content_type": "application/xml;charset=utf-8",
+          "title": "舒克贝塔玩具故事",
+          "type": "106",
+          "type_name": "少儿",
+          "pay_status": "8",
+          "positive_trailer": "0",
+          "video_ids_count": 241,
+          "batch_count": 8,
+          "batch_summaries": [
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 17,
+              "results_count": 17,
+              "errorno": "0",
+              "errormsg": ""
+            }
+          ],
+          "video_count": 241,
+          "state_counts": {
+            "4": 238,
+            "8": 3
+          },
+          "upload_src_counts": {
+            "108": 240,
+            "141": 1
+          },
+          "targetid_nonempty_count": 241,
+          "publish_date_nonempty_count": 0,
+          "first_state8_row": {
+            "vid": "n3122jif99n",
+            "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "5616370372",
+            "publish_date": ""
+          },
+          "pinned_positive_row": {
+            "vid": "n3122jif99n",
+            "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "5616370372",
+            "publish_date": ""
+          }
+        },
+        "mobile_h5_browser_like": {
+          "status": "ok",
+          "api1_http_status": 200,
+          "api1_content_type": "application/xml;charset=utf-8",
+          "title": "舒克贝塔玩具故事",
+          "type": "106",
+          "type_name": "少儿",
+          "pay_status": "8",
+          "positive_trailer": "0",
+          "video_ids_count": 241,
+          "batch_count": 8,
+          "batch_summaries": [
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 17,
+              "results_count": 17,
+              "errorno": "0",
+              "errormsg": ""
+            }
+          ],
+          "video_count": 241,
+          "state_counts": {
+            "4": 238,
+            "8": 3
+          },
+          "upload_src_counts": {
+            "108": 240,
+            "141": 1
+          },
+          "targetid_nonempty_count": 241,
+          "publish_date_nonempty_count": 0,
+          "first_state8_row": {
+            "vid": "n3122jif99n",
+            "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "5616370372",
+            "publish_date": ""
+          },
+          "pinned_positive_row": {
+            "vid": "n3122jif99n",
+            "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "5616370372",
+            "publish_date": ""
+          }
+        },
+        "mobile_h5_browser_like_cookie": {
+          "status": "ok",
+          "api1_http_status": 200,
+          "api1_content_type": "application/xml;charset=utf-8",
+          "title": "舒克贝塔玩具故事",
+          "type": "106",
+          "type_name": "少儿",
+          "pay_status": "8",
+          "positive_trailer": "0",
+          "video_ids_count": 241,
+          "batch_count": 8,
+          "batch_summaries": [
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 32,
+              "results_count": 32,
+              "errorno": "0",
+              "errormsg": ""
+            },
+            {
+              "request_vid_count": 17,
+              "results_count": 17,
+              "errorno": "0",
+              "errormsg": ""
+            }
+          ],
+          "video_count": 241,
+          "state_counts": {
+            "4": 238,
+            "8": 3
+          },
+          "upload_src_counts": {
+            "108": 240,
+            "141": 1
+          },
+          "targetid_nonempty_count": 241,
+          "publish_date_nonempty_count": 0,
+          "first_state8_row": {
+            "vid": "n3122jif99n",
+            "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "5616370372",
+            "publish_date": ""
+          },
+          "pinned_positive_row": {
+            "vid": "n3122jif99n",
+            "title": "玩具开箱：艾米儿带来了舒克贝塔的玩具飞机和玩具坦克",
+            "state": "8",
+            "upload_src": "108",
+            "targetid": "5616370372",
+            "publish_date": ""
+          }
+        }
+      }
+    }
+  },
+  "current_takeaways": [
+    "482396nuyaelv0e stayed environment-stable across 8 tested environments for state/upload counts.",
+    "482396nuyaelv0e also matches the 2026-06-19 baseline state/upload distribution, so this probe adds a cross-day consistency check.",
+    "mzc002006tgfqvp stayed environment-stable across 8 tested environments for state/upload counts.",
+    "mzc002006tgfqvp also matches the 2026-06-19 baseline state/upload distribution, so this probe adds a cross-day consistency check."
+  ]
+}

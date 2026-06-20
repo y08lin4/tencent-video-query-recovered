@@ -1,0 +1,482 @@
+{
+  "meta": {
+    "tool": "tencent_search_seed_probe",
+    "generated_at": "2026-06-19T21:28:44+08:00",
+    "query_count": 5,
+    "pagesize": 40,
+    "max_resolve": 120,
+    "timeout_seconds": 20.0,
+    "http_retries": 2,
+    "retry_sleep_seconds": 0.75,
+    "version": "26022601",
+    "client_type": 1,
+    "front_version": "26060108"
+  },
+  "queries": [
+    {
+      "query": "体育 回放",
+      "cid_count": 0,
+      "sample_cids": [],
+      "sample_urls": []
+    },
+    {
+      "query": "全场回放",
+      "cid_count": 12,
+      "sample_cids": [
+        "mzc00200ciwe2wk",
+        "mzc00200hgxi9bu",
+        "mzc00200r95pzkj",
+        "mzc002009rn7h21",
+        "mzc00200p85ez38",
+        "mzc00200wbork2n",
+        "ajqxc9kdttzfj39",
+        "mzc002008ng7x9o",
+        "mzc00200f5nvuw2",
+        "99ymd05u4q7nwj8",
+        "mzc002004ewew0e",
+        "mzc002009mtc7tq"
+      ],
+      "sample_urls": [
+        "https://v.qq.com/x/cover/mzc00200ciwe2wk.html",
+        "https://v.qq.com/x/cover/mzc00200hgxi9bu.html",
+        "https://v.qq.com/x/cover/mzc00200r95pzkj.html",
+        "https://v.qq.com/x/cover/mzc002009rn7h21.html",
+        "https://v.qq.com/x/cover/mzc00200p85ez38.html",
+        "https://v.qq.com/x/cover/mzc00200wbork2n.html",
+        "https://v.qq.com/x/cover/ajqxc9kdttzfj39.html",
+        "https://v.qq.com/x/cover/mzc002008ng7x9o.html"
+      ]
+    },
+    {
+      "query": "欧冠 回放",
+      "cid_count": 0,
+      "sample_cids": [],
+      "sample_urls": []
+    },
+    {
+      "query": "NBA 回放",
+      "cid_count": 30,
+      "sample_cids": [
+        "mzc00200n9l2kha",
+        "mzc00200eq66thy",
+        "mzc00200x490pgm",
+        "mzc0037nwfnmifv",
+        "mzc0020086fhhzs",
+        "mzc00200r95pzkj",
+        "mzc00200988b51n",
+        "mzc003fda7zq8d3",
+        "mzc00200stm42r3",
+        "mzc002008isep8l",
+        "mzc00200idx9msm",
+        "mzc002008oamt65"
+      ],
+      "sample_urls": [
+        "https://v.qq.com/x/cover/mzc00200n9l2kha.html",
+        "https://v.qq.com/x/cover/mzc00200eq66thy.html",
+        "https://v.qq.com/x/cover/mzc00200x490pgm.html",
+        "https://v.qq.com/x/cover/mzc0037nwfnmifv.html",
+        "https://v.qq.com/x/cover/mzc0020086fhhzs.html",
+        "https://v.qq.com/x/cover/mzc00200r95pzkj.html",
+        "https://v.qq.com/x/cover/mzc00200988b51n.html",
+        "https://v.qq.com/x/cover/mzc003fda7zq8d3.html"
+      ]
+    },
+    {
+      "query": "足球 回放",
+      "cid_count": 0,
+      "sample_cids": [],
+      "sample_urls": []
+    }
+  ],
+  "unique_cid_count": 41,
+  "resolved": [
+    {
+      "cid": "mzc00200ciwe2wk",
+      "title": "总决赛G6湖人vs热火全场回放",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "0",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200hgxi9bu",
+      "title": "NBA季前赛：奇才vs篮网 全场回放",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "8",
+      "positive_trailer": "0",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200r95pzkj",
+      "title": "NBA季前赛：快船vs湖人 全场回放",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "8",
+      "positive_trailer": "0",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc002009rn7h21",
+      "title": "NBA季前赛：独行侠vs雄鹿全场回放",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "8",
+      "positive_trailer": "0",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200p85ez38",
+      "title": "英雄联盟S9全球总决赛全场回放-入围赛",
+      "type": "6",
+      "type_name": "游戏",
+      "pay_status": "8",
+      "positive_trailer": "0",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200wbork2n",
+      "title": "英雄联盟S9全球总决赛全场回放--八强赛",
+      "type": "6",
+      "type_name": "游戏",
+      "pay_status": "8",
+      "positive_trailer": "0",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "ajqxc9kdttzfj39",
+      "title": "2019绝地求生PAI亚洲邀请赛全场回放",
+      "type": "6",
+      "type_name": "游戏",
+      "pay_status": "8",
+      "positive_trailer": "0",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc002008ng7x9o",
+      "title": "2020LPL春季赛季后赛-全场回放",
+      "type": "6",
+      "type_name": "游戏",
+      "pay_status": "8",
+      "positive_trailer": "0",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200f5nvuw2",
+      "title": "2019 PEC和平精英国际冠军杯-全场回放",
+      "type": "6",
+      "type_name": "游戏",
+      "pay_status": "8",
+      "positive_trailer": "0",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "99ymd05u4q7nwj8",
+      "title": "MSI2019季中赛-全场回放",
+      "type": "6",
+      "type_name": "游戏",
+      "pay_status": "8",
+      "positive_trailer": "0",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc002004ewew0e",
+      "title": "英雄联盟S9全球总决赛全场回放-小组赛",
+      "type": "6",
+      "type_name": "游戏",
+      "pay_status": "8",
+      "positive_trailer": "0",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc002009mtc7tq",
+      "title": "英雄联盟S9全球总决赛全场回放—半决赛",
+      "type": "6",
+      "type_name": "游戏",
+      "pay_status": "8",
+      "positive_trailer": "0",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200n9l2kha",
+      "title": "NBA总决赛G4：马刺106-107尼克斯",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200eq66thy",
+      "title": "完整回放重温：NBA总决赛经典战",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "8",
+      "positive_trailer": "0",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200x490pgm",
+      "title": "NBA总决赛G3：马刺115-111尼克斯",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc0037nwfnmifv",
+      "title": "NBA经典比赛",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "0",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc0020086fhhzs",
+      "title": "NBA全明星正赛",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "8",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200988b51n",
+      "title": "NBA常规赛：勇士120-114骑士",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc003fda7zq8d3",
+      "title": "NBA经典赛事回顾",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "0",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200stm42r3",
+      "title": "NBA常规赛：活塞99-112快船",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc002008isep8l",
+      "title": "NBA季后赛G1：火箭98-107湖人",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200idx9msm",
+      "title": "NBA总决赛G2：尼克斯105-104马刺",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc002008oamt65",
+      "title": "NBA常规赛：火箭119-96湖人",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200jtdmk9u",
+      "title": "NBA常规赛：雄鹿113-120勇士",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200rm78umv",
+      "title": "NBA常规赛：森林狼138-142掘金",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200t5vmcd8",
+      "title": "NBA常规赛：湖人143-135爵士",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc002006v3r4gs",
+      "title": "NBA总决赛G1：尼克斯105-95马刺",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc002002uuet87",
+      "title": "NBA季后赛G3：湖人112-108火箭",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc002006yw05mh",
+      "title": "NBA西决G7：马刺111-103雷霆",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200ya33h50",
+      "title": "NBA常规赛：湖人105-104魔术",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200aj6u8z3",
+      "title": "NBA常规赛：骑士113-127湖人",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200rwirx0i",
+      "title": "NBA常规赛：湖人145-144勇士",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200t02h9hb",
+      "title": "NBA常规赛：快船122-125湖人",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200soawrgv",
+      "title": "NBA附加赛：勇士126-121快船",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc002005kps94q",
+      "title": "NBA常规赛：奇才129-150热火",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200tfbnivu",
+      "title": "NBA2020-2021赛季高光复盘",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "8",
+      "positive_trailer": "0",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc0020069znmu4",
+      "title": "NBA季后赛G2：火箭94-101湖人",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200rmbozmw",
+      "title": "NBA常规赛：森林狼123-126马刺",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200gptf6em",
+      "title": "NBA常规赛：湖人116-110独行侠",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200pn7yqro",
+      "title": "NBA季后赛G6：湖人98-78火箭",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    },
+    {
+      "cid": "mzc00200qbhxozt",
+      "title": "NBA总决赛G6：雷霆91-108步行者",
+      "type": "4",
+      "type_name": "体育",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606"
+    }
+  ],
+  "summary": {
+    "resolved_count": 41,
+    "type_counts": {
+      "4/体育": 33,
+      "6/游戏": 8
+    },
+    "pay_status_counts": {
+      "6": 27,
+      "8": 14
+    },
+    "positive_trailer_counts": {
+      "0": 16,
+      "1": 25
+    },
+    "positive_content_id_counts": {
+      "1543606": 41
+    }
+  },
+  "errors": []
+}

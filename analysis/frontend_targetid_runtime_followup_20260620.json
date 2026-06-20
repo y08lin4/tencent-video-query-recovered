@@ -1,0 +1,153 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "browser-level dynamic hook on JSON.parse, exposed union store field access, and targetId handoff into attachIframe-like / iframe sinks",
+  "cases": [
+    {
+      "bucket": "variety_topic_pay15_targetid_uploadsrc",
+      "url": "https://v.qq.com/x/cover/mzc002001u873es.html",
+      "title": "EP10战局纯享：WindVSS.Carry决赛第一场_综艺_高清完整版视频在线观看_腾讯视频",
+      "parsed_targetid_values": [
+        "0"
+      ],
+      "decoded_targetid_values": [],
+      "targetid_hit_samples": [
+        {
+          "path": "root.vl.vi.0",
+          "raw_value": "0",
+          "decoded_numeric_value": null
+        }
+      ],
+      "runtime_get_counts": {
+        "targetid": 4,
+        "pay_status": 18,
+        "pay_status_exchange": 18,
+        "downright": 4
+      },
+      "first_union_snapshot": {
+        "cover_pay_status": "0",
+        "video_has_targetid": false,
+        "video_has_upload_src": false
+      },
+      "last_union_snapshot": {
+        "cover_pay_status": "0",
+        "video_state": 4,
+        "video_has_targetid": false,
+        "video_has_upload_src": false
+      },
+      "attach_iframe_targetid_call_count": 0,
+      "iframe_targetid_event_count": 0,
+      "function_call_count": 0
+    },
+    {
+      "bucket": "education_coveronly_pay8_targetid_uploadsrc",
+      "url": "https://v.qq.com/x/cover/mzc00200bhj36oq.html",
+      "title": "01小学英语科学：我们的知觉_高清1080P在线观看平台_腾讯视频",
+      "parsed_targetid_values": [
+        "0"
+      ],
+      "decoded_targetid_values": [],
+      "targetid_hit_samples": [
+        {
+          "path": "root.vl.vi.0",
+          "raw_value": "0",
+          "decoded_numeric_value": null
+        }
+      ],
+      "runtime_get_counts": {
+        "targetid": 4,
+        "pay_status": 24,
+        "pay_status_exchange": 24,
+        "downright": 3
+      },
+      "first_union_snapshot": {
+        "cover_pay_status": "0",
+        "video_has_targetid": false,
+        "video_has_upload_src": false
+      },
+      "last_union_snapshot": {
+        "cover_pay_status": "0",
+        "video_state": 4,
+        "video_has_targetid": false,
+        "video_has_upload_src": false
+      },
+      "attach_iframe_targetid_call_count": 0,
+      "iframe_targetid_event_count": 0,
+      "function_call_count": 0
+    },
+    {
+      "bucket": "kids_dualfull_targetid",
+      "url": "https://v.qq.com/x/cover/jynqzy9n3wfrsfp.html",
+      "title": "捉迷藏_少儿_动画片大全_腾讯视频",
+      "parsed_targetid_values": [
+        "0",
+        "NzY1MjE0NTY5OA==",
+        "NzY1MTkyMTA3MA==",
+        "NzY1MDU3MzgxMg==",
+        "MTQwOTA2NDQ0OA==",
+        "MTQwOTA2MzYxMw==",
+        "NzY0OTgzOTIzNA==",
+        "NzY0OTY5MDk2MQ==",
+        "NzY0ODk3NTUwOA=="
+      ],
+      "decoded_targetid_values": [
+        "7652145698",
+        "7651921070",
+        "7650573812",
+        "1409064448",
+        "1409063613",
+        "7649839234",
+        "7649690961",
+        "7648975508"
+      ],
+      "targetid_hit_samples": [
+        {
+          "path": "root.vl.vi.0",
+          "raw_value": "0",
+          "decoded_numeric_value": null
+        },
+        {
+          "path": "root.base.commentInfo",
+          "raw_value": "NzY1MjE0NTY5OA==",
+          "decoded_numeric_value": "7652145698"
+        },
+        {
+          "path": "root.base.commentInfo",
+          "raw_value": "NzY1MTkyMTA3MA==",
+          "decoded_numeric_value": "7651921070"
+        },
+        {
+          "path": "root.base.commentInfo",
+          "raw_value": "NzY1MDU3MzgxMg==",
+          "decoded_numeric_value": "7650573812"
+        }
+      ],
+      "runtime_get_counts": {
+        "targetid": 4,
+        "pay_status": 19,
+        "pay_status_exchange": 19,
+        "downright": 4
+      },
+      "first_union_snapshot": {
+        "cover_pay_status": "0",
+        "video_has_targetid": false,
+        "video_has_upload_src": false
+      },
+      "last_union_snapshot": {
+        "cover_pay_status": "0",
+        "video_state": 4,
+        "video_has_targetid": false,
+        "video_has_upload_src": false
+      },
+      "attach_iframe_targetid_call_count": 0,
+      "iframe_targetid_event_count": 0,
+      "function_call_count": 0
+    }
+  ],
+  "cross_page_takeaways": [
+    "Runtime getter access on targetId/targetid was captured on all 3 tested targetid-heavy pages.",
+    "No attachIframe-like callsite carrying targetId/targetid hints was captured in this round.",
+    "No iframe src handoff carrying literal targetId/targetid hints was captured in this round.",
+    "The tested exposed union store snapshots still did not surface targetid or upload_src directly.",
+    "On the kids dual-full representative, non-zero targetid samples came from root.base.commentInfo and decoded from base64-like strings into numeric-looking identifiers."
+  ]
+}

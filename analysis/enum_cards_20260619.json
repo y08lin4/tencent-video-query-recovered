@@ -1,0 +1,3139 @@
+{
+  "generated_at": "2026-06-19",
+  "status_scale": [
+    "stable_value",
+    "small_family",
+    "anomaly_value",
+    "shape_confirmed_semantics_unknown"
+  ],
+  "field_aliases": {
+    "type_name": "paired_1_to_1_with_type_in_current_samples"
+  },
+  "cards": {
+    "pay_status": {
+      "5": {
+        "status": "stable_value",
+        "sample_count": 6,
+        "representative_samples": [
+          "mzc00200ls5y7z0",
+          "mzc002006g6kqo4",
+          "mzc002003r5yq45",
+          "67t9bxbetsdztpp",
+          "mzc00200aorvnwf",
+          "mzc00200sq680j2"
+        ],
+        "types": [
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current pay_status probes",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "6": {
+        "status": "stable_value",
+        "sample_count": 66,
+        "representative_samples": [
+          "mzc00383lw807hq",
+          "mzc002000xmvpgy",
+          "mzc00200nlxxm5m",
+          "mzc00200axsj6bx",
+          "mzc00200qrzj493",
+          "zkbp0mrqhy0x1hl",
+          "mzc002006huuuiu",
+          "mzc00200br3t1zr",
+          "mzc00200uiuyxf1",
+          "mzc00200sqw6k6u",
+          "uqt7am9f9dmvoss",
+          "mzc002008cpzvbi",
+          "bzfkv5se8qaqel2",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc002009zwrmx4"
+        ],
+        "types": [
+          "4/体育",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "9/纪录片"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [
+          "在当前 `type=106 + positive_trailer=1 + positive_content_id=1543606` 少儿样本里，至少已拆出 `double-zero` 与 `dual-full` 两支。",
+          "kids 分支已跨 `小猪佩奇 / 汪汪队立大功 / 超级飞侠` 复现，不再是单一 IP 内部规律。",
+          "`jynqzy9n3wfrsfp` 这类主题/旅行味道更强的少儿页，最新 field retest 仍是 strict `publish_date=20/20 + targetid=20/20`，说明它更靠近 clean dual-full，不应被标题风格直接推成 hybrid。"
+        ],
+        "counterexamples": [
+          "`type=106 + pay_status=6` 不只对应单一少儿常规季页；`mzc00200qrzj493` 是 `publish_date=0/26 + targetid=0/26`，`zkbp0mrqhy0x1hl` 是 `publish_date=26/26 + targetid=26/26`。",
+          "`double-zero` 也不推出 `upload_src=129`；`mzc00200qrzj493` 证明同样形态也可以是 `upload_src=20`。",
+          "`第N季` 标题也不自动推出 `dual-full`；`mzc002006huuuiu / 小猪佩奇第10季[普通话版]` 与 `mzc00200syo2994 / 汪汪队大救援第五季` 都是 `double-zero`。",
+          "前端当前也不直接按 raw `pay_status=6` 分支；focused runtime probe 里 `movie_single_pay6_exchange_true` 与 `tv_season_pay6_exchange_false` 都先暴露 `cover_pay_status=0`，但 `pay_status_exchange` 一真一假。",
+          "`主题/旅行` 味道也不自动推出 hybrid/aggregation；`jynqzy9n3wfrsfp` 最新补测仍是 clean dual-full，而 `bzfkv5se8qaqel2 / mzc00200yokeal4` 才更像邻近 hybrid。"
+        ],
+        "current_blackbox_explanation": "当前已是跨体育/电视剧/动漫/纪录片等多桶稳定值；但在 `type=106` 少儿 + `positive_trailer=1` 家族里，至少已分成 double-zero、clean season-style dual-full，以及更窄的 hybrid/aggregation 邻近分支。`jynqzy9n3wfrsfp` 现在更像 clean dual-full，而不是 hybrid。",
+        "unconfirmed_items": [
+          "kids aggregation/hybrid branch 是否应单列、以及它和 clean dual-full 的边界",
+          "官方后台命名"
+        ]
+      },
+      "7": {
+        "status": "stable_value",
+        "sample_count": 9,
+        "representative_samples": [
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "111/文化历史",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [
+          "当前已跨 `22/音乐`、`31/生活`、`111/文化历史` 复现，不再是单点异常"
+        ],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前已不再是单页单类目异常值；至少已跨音乐、生活、文化历史三支复现，但官方后台命名仍未确认。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "8": {
+        "status": "stable_value",
+        "sample_count": 72,
+        "representative_samples": [
+          "mzc0020069a6anp",
+          "mzc00200bhj36oq",
+          "mzc00200q00mv2h",
+          "mzc002006tgfqvp",
+          "482396nuyaelv0e",
+          "mzc002007tdpv87",
+          "mzc00200dd7dwn2",
+          "mzc00200seycm50",
+          "mzc00200tuupfc2",
+          "1ftxhqhqz7choul"
+        ],
+        "types": [
+          "4/体育",
+          "27/教育",
+          "113/表演演出",
+          "106/少儿"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [
+          "focused runtime probe 已在 `kids_free_pack_pay8` 抓到 parse-layer raw `8`，但 exposed `union.coverInfoMap.pay_status` 仍是 `0`。"
+        ],
+        "counterexamples": [
+          "raw `8` 的前端可见性是页依赖的；同轮 focused runtime probe 里 `sports_replay_pay8` 与 `education_coveronly_pay8` 只看到 parse-layer `0`。"
+        ],
+        "current_blackbox_explanation": "derived from current pay_status probes",
+        "unconfirmed_items": [
+          "official backend naming",
+          "前端为何只在部分 pay8 页面保留 raw 8"
+        ]
+      },
+      "9": {
+        "status": "small_family",
+        "sample_count": 3,
+        "representative_samples": [
+          "mzc003ikavbkqa7",
+          "mzc003nlcrbtvub",
+          "mzc00200yilptw9"
+        ],
+        "types": [
+          "3/动漫",
+          "10/综艺"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current pay_status probes",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "15": {
+        "status": "small_family",
+        "sample_count": 4,
+        "representative_samples": [
+          "mzc002001u873es",
+          "mzc0020081c19hy",
+          "mzc00200k1tze71",
+          "mzc00200sd1b239"
+        ],
+        "types": [
+          "10/综艺"
+        ],
+        "page_shapes": [
+          "综艺专题/赛事专题-like 壳",
+          "综艺第一视角-like 壳",
+          "综艺专场/活动运营-like 壳"
+        ],
+        "strong_correlations": [
+          "focused runtime probe 已在 `variety_topic_pay15` 抓到 parse-layer raw `15`，但 exposed `union.coverInfoMap.pay_status` 仍是 `0`，`pay_status_exchange=false`。",
+          "当前 4 个已知 cover 仍全是 `10/综艺`，并且外形上已经覆盖 battle-topic、first-view-angle 与专场/运营-like 壳。"
+        ],
+        "counterexamples": [
+          "它不是 `type=10 + positive_trailer=0 + positive_content_id=1543606` 自动推出来的；同链里也有 `pay_status=6` 的战至巅峰陪看/Reaction 反例。",
+          "它已经不能再收缩成“只在《战至巅峰》体系内”，`mzc00200k1tze71` 和 `mzc00200sd1b239` 都给出综艺专场/运营支正例。"
+        ],
+        "current_blackbox_explanation": "当前更像 `type=10/综艺` 内窄运营 small_family；已覆盖专题/视角-like 壳与专场/运营-like 壳，但这些页型名仍是黑盒近似，不是官方命名。",
+        "unconfirmed_items": [
+          "official backend naming",
+          "raw 15 是否会在别的综艺页型上稳定保留到 parse layer",
+          "是否会跨出综艺"
+        ]
+      },
+      "16": {
+        "status": "small_family",
+        "sample_count": 9,
+        "representative_samples": [
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200h90vcfw",
+          "mzc002003dx2kq5",
+          "mzc002005od4txd",
+          "mzc00200x172sej",
+          "mzc00200urn78dn",
+          "mzc00200lwn6df7"
+        ],
+        "types": [
+          "10/综艺"
+        ],
+        "page_shapes": [
+          "综艺主季页-like 壳",
+          "综艺衍生页-like 壳",
+          "综艺活动页-like 壳"
+        ],
+        "strong_correlations": [
+          "当前 9 个代表性 cover 仍全是 `10/综艺`。",
+          "相比更靠近专题/视角/运营支的 `15`，`16` 当前更靠近综艺主季页周边，但还只是分布偏好，不是硬分桶。"
+        ],
+        "counterexamples": [
+          "它不能被命名成固定“常规综艺季页码”；当前已同时覆盖综艺季页、衍生页和活动页。",
+          "指定归档里还没有和 `15` 同等级的 frontend parse-layer raw `16` 证据，所以不要把前端语义差异写死。"
+        ],
+        "current_blackbox_explanation": "当前更像 `type=10/综艺` bounded small_family，比分布在专题/视角/运营-like 壳附近的 `15` 更靠近综艺主季页周边，但还不到可命名成固定业务码的程度。",
+        "unconfirmed_items": [
+          "official backend naming",
+          "是否会跨出综艺",
+          "和 `15` 的分界是否只是分布偏好"
+        ]
+      }
+    },
+    "type": {
+      "1/电影": {
+        "status": "stable_value",
+        "sample_count": 18,
+        "representative_samples": [
+          "mzc00200ls5y7z0",
+          "mzc002006g6kqo4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45"
+        ],
+        "types": [
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前可稳定当作 `1/电影` 对应的黑盒类目桶使用。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "2/电视剧": {
+        "status": "stable_value",
+        "sample_count": 3,
+        "representative_samples": [
+          "mzc00200whxf2zp",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw"
+        ],
+        "types": [
+          "2/电视剧"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前可稳定当作 `2/电视剧` 对应的黑盒类目桶使用。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "3/动漫": {
+        "status": "stable_value",
+        "sample_count": 9,
+        "representative_samples": [
+          "mzc003ikavbkqa7",
+          "mzc003nlcrbtvub",
+          "mzc00200fobieel"
+        ],
+        "types": [
+          "3/动漫"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前可稳定当作 `3/动漫` 对应的黑盒类目桶使用。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "4/体育": {
+        "status": "stable_value",
+        "sample_count": 57,
+        "representative_samples": [
+          "mzc00383lw807hq",
+          "mzc003t8r55x4z7",
+          "mzc00200ti1wj2i",
+          "mzc002003u0t3rl"
+        ],
+        "types": [
+          "4/体育"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前可稳定当作 `4/体育` 对应的黑盒类目桶使用。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "6/游戏": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 2,
+        "representative_samples": [
+          "mzc002005shizp0",
+          "mzc00200tp4rwup"
+        ],
+        "types": [
+          "6/游戏"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前只确认 `6/游戏` 这支类目形态存在，语义仍待命名。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "9/纪录片": {
+        "status": "stable_value",
+        "sample_count": 52,
+        "representative_samples": [
+          "mzc002009zwrmx4"
+        ],
+        "types": [
+          "9/纪录片"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前可稳定当作 `9/纪录片` 对应的黑盒类目桶使用。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "10/综艺": {
+        "status": "stable_value",
+        "sample_count": 5,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5"
+        ],
+        "types": [
+          "10/综艺"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前可稳定当作 `10/综艺` 对应的黑盒类目桶使用。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "22/音乐": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 2,
+        "representative_samples": [
+          "mzc00200vzc9y78",
+          "j5wzdu7t6vu3ute"
+        ],
+        "types": [
+          "22/音乐"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前只确认 `22/音乐` 这支类目形态存在，语义仍待命名。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "27/教育": {
+        "status": "small_family",
+        "sample_count": 1,
+        "representative_samples": [
+          "mzc00200bhj36oq"
+        ],
+        "types": [
+          "27/教育"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前已观测到 `27/教育` 这支类目，但仍属于 small_family 占位，暂不升级成广义稳定类目桶。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "28/科技": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 0,
+        "representative_samples": [],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前只确认 `28/科技` 这支类目形态存在，语义仍待命名。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "29/汽车": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 0,
+        "representative_samples": [],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前只确认 `29/汽车` 这支类目形态存在，语义仍待命名。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "31/生活": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 1,
+        "representative_samples": [
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前只确认 `31/生活` 这支类目形态存在，语义仍待命名。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "106/少儿": {
+        "status": "stable_value",
+        "sample_count": 17,
+        "representative_samples": [
+          "mzc00200qrzj493",
+          "zkbp0mrqhy0x1hl",
+          "mzc002006huuuiu",
+          "mzc00200br3t1zr",
+          "mzc00200uiuyxf1",
+          "mzc00200sqw6k6u",
+          "uqt7am9f9dmvoss",
+          "mzc002008cpzvbi",
+          "bzfkv5se8qaqel2",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "jynqzy9n3wfrsfp",
+          "mzc00200yokeal4"
+        ],
+        "types": [
+          "106/少儿"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [
+          "当前 kids 样本里同时包含 pay_status=6 的 double-zero / clean season-style dual-full 两支，以及 pay_status=8 的免费/精华聚合支。",
+          "double-zero 与 clean season-style dual-full 已跨 `小猪佩奇 / 汪汪队立大功 / 超级飞侠` 复现。",
+          "latest same-day base-4 followup 里，`bzfkv5se8qaqel2` / `mzc00200yokeal4` 继续保持 hybrid/aggregation-like 轮廓，而 `jynqzy9n3wfrsfp` 仍是 clean dual-full。"
+        ],
+        "counterexamples": [
+          "`type=106` 不能只绑定到单一少儿常规季页；同一 type 下至少已有 double-zero、clean dual-full、free/aggregation-like 多种形态。",
+          "`第N季` 标题不推出统一页型；`ca1k6ja4k81h8ov` 与 `ob6ak6eq2wp5qui` 是 dual-full，但 `mzc002006huuuiu` 与 `mzc00200syo2994` 仍是 double-zero。",
+          "`主题/旅行` 标题也不自动推出 hybrid；`jynqzy9n3wfrsfp` 的最新补测仍是 `publish_date=20/20 + targetid=20/20`。"
+        ],
+        "current_blackbox_explanation": "当前可稳定当作 `106/少儿` 对应的黑盒类目桶使用。",
+        "unconfirmed_items": [
+          "kids aggregation/hybrid branch 的稳定边界",
+          "官方后台命名"
+        ]
+      },
+      "111/文化历史": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 2,
+        "representative_samples": [
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2"
+        ],
+        "types": [
+          "111/文化历史"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前只确认 `111/文化历史` 这支类目形态存在，语义仍待命名。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "113/表演演出": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 1,
+        "representative_samples": [
+          "mzc00200q00mv2h"
+        ],
+        "types": [
+          "113/表演演出"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前只确认 `113/表演演出` 这支类目形态存在，语义仍待命名。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      }
+    },
+    "type_name": {
+      "体育": {
+        "status": "stable_value",
+        "sample_count": 57,
+        "representative_samples": [
+          "mzc00383lw807hq",
+          "mzc003t8r55x4z7",
+          "mzc00200ti1wj2i",
+          "mzc002003u0t3rl"
+        ],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前样本里 `type_name` 与 `type` 保持 1:1 配对，可暂作展示名层稳定映射。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "动漫": {
+        "status": "stable_value",
+        "sample_count": 9,
+        "representative_samples": [
+          "mzc003ikavbkqa7",
+          "mzc003nlcrbtvub",
+          "mzc00200fobieel"
+        ],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前样本里 `type_name` 与 `type` 保持 1:1 配对，可暂作展示名层稳定映射。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "少儿": {
+        "status": "stable_value",
+        "sample_count": 17,
+        "representative_samples": [
+          "mzc00200qrzj493",
+          "zkbp0mrqhy0x1hl",
+          "mzc002006huuuiu",
+          "mzc00200br3t1zr",
+          "mzc00200uiuyxf1",
+          "mzc00200sqw6k6u",
+          "uqt7am9f9dmvoss",
+          "mzc002008cpzvbi",
+          "bzfkv5se8qaqel2",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul"
+        ],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前样本里 `type_name` 与 `type` 保持 1:1 配对，可暂作展示名层稳定映射。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "教育": {
+        "status": "small_family",
+        "sample_count": 1,
+        "representative_samples": [
+          "mzc00200bhj36oq"
+        ],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前样本里 `type_name` 与 `type` 仍保持 1:1 配对，但当前只够 small_family 占位，暂不升级成展示名层稳定值。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "文化历史": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 2,
+        "representative_samples": [
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2"
+        ],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前仅沿用 type 层镜像占位，尚无独立 type_name 样本，不写成展示名层稳定值。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "汽车": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 0,
+        "representative_samples": [],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前仅沿用 type 层镜像占位，尚无独立 type_name 样本，不写成展示名层稳定值。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "游戏": {
+        "status": "small_family",
+        "sample_count": 2,
+        "representative_samples": [
+          "mzc002005shizp0",
+          "mzc00200tp4rwup"
+        ],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前样本里 `type_name` 与 `type` 仍保持 1:1 配对，但当前只够 small_family 占位，暂不升级成展示名层稳定值。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "生活": {
+        "status": "small_family",
+        "sample_count": 1,
+        "representative_samples": [
+          "mzc00200hrq1mru"
+        ],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前样本里 `type_name` 与 `type` 仍保持 1:1 配对，但当前只够 small_family 占位，暂不升级成展示名层稳定值。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "电影": {
+        "status": "stable_value",
+        "sample_count": 18,
+        "representative_samples": [
+          "mzc00200ls5y7z0",
+          "mzc002006g6kqo4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45"
+        ],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前样本里 `type_name` 与 `type` 保持 1:1 配对，可暂作展示名层稳定映射。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "电视剧": {
+        "status": "stable_value",
+        "sample_count": 3,
+        "representative_samples": [
+          "mzc00200whxf2zp",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw"
+        ],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前样本里 `type_name` 与 `type` 保持 1:1 配对，可暂作展示名层稳定映射。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "科技": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 0,
+        "representative_samples": [],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前仅沿用 type 层镜像占位，尚无独立 type_name 样本，不写成展示名层稳定值。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "纪录片": {
+        "status": "stable_value",
+        "sample_count": 52,
+        "representative_samples": [
+          "mzc002009zwrmx4"
+        ],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前样本里 `type_name` 与 `type` 保持 1:1 配对，可暂作展示名层稳定映射。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "综艺": {
+        "status": "stable_value",
+        "sample_count": 5,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5"
+        ],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前样本里 `type_name` 与 `type` 保持 1:1 配对，可暂作展示名层稳定映射。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "表演演出": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 0,
+        "representative_samples": [],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前仅沿用 type 层镜像占位，尚无独立 type_name 样本，不写成展示名层稳定值。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "音乐": {
+        "status": "small_family",
+        "sample_count": 2,
+        "representative_samples": [
+          "mzc00200vzc9y78",
+          "j5wzdu7t6vu3ute"
+        ],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前样本里 `type_name` 与 `type` 仍保持 1:1 配对，但当前只够 small_family 占位，暂不升级成展示名层稳定值。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      }
+    },
+    "positive_trailer": {
+      "0": {
+        "status": "stable_value",
+        "sample_count": 13,
+        "representative_samples": [
+          "mzc0035nmiy8iru",
+          "mzc003jeliygzoc",
+          "mzc00383lw807hq",
+          "mzc00200bhj36oq",
+          "mzc002001u873es",
+          "mzc0020081c19hy",
+          "mzc00200q00mv2h",
+          "mzc002006tgfqvp",
+          "mzc002007tdpv87",
+          "mzc00200yilptw9",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "4/体育",
+          "27/教育",
+          "10/综艺",
+          "113/表演演出",
+          "106/少儿",
+          "111/文化历史",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [
+          "2026-06-20 same-type control groups显示：`type=10` 的 `pt=0` 当前更常落在 `选集 / SVIP / 纯享`-like 首屏 surface，而不是 preview-badge 壳。",
+          "当前 `type=106` 对照里，`pt=0` 代表页更远离 `精彩片花` tab，相比 `pt=1` 更像 collection-like surface。"
+        ],
+        "counterexamples": [
+          "`positive_trailer=0` 不是固定专题码；体育、教育、综艺、少儿、文化历史、生活、表演演出都已出现。"
+        ],
+        "current_blackbox_explanation": "当前是跨 7 个 type 的稳定值；前端会归一化后保留进状态层，现有可见层证据更像 non-preview / collection-like surface 倾向，但外显仍受 type / page shell 共同影响。",
+        "unconfirmed_items": [
+          "official backend naming",
+          "这些 non-preview / collection-like surface 倾向在更多 type 上是否继续稳定"
+        ]
+      },
+      "1": {
+        "status": "stable_value",
+        "sample_count": 37,
+        "representative_samples": [
+          "mzc0020069a6anp",
+          "mzc00200ls5y7z0",
+          "mzc002006g6kqo4",
+          "mzc002003r5yq45",
+          "67t9bxbetsdztpp",
+          "mzc00200aorvnwf",
+          "mzc003ikavbkqa7",
+          "mzc003nlcrbtvub",
+          "482396nuyaelv0e",
+          "mzc00200dd7dwn2",
+          "mzc00200seycm50",
+          "mzc002000xmvpgy",
+          "mzc00200nlxxm5m",
+          "mzc00200axsj6bx",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200qrzj493",
+          "zkbp0mrqhy0x1hl",
+          "mzc002006huuuiu",
+          "mzc00200br3t1zr",
+          "mzc00200uiuyxf1",
+          "mzc00200sqw6k6u",
+          "uqt7am9f9dmvoss",
+          "mzc002008cpzvbi",
+          "bzfkv5se8qaqel2",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "j5wzdu7t6vu3ute"
+        ],
+        "types": [
+          "4/体育",
+          "1/电影",
+          "3/动漫",
+          "106/少儿",
+          "10/综艺",
+          "2/电视剧",
+          "9/纪录片",
+          "22/音乐"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [
+          "2026-06-20 same-type control groups显示：`type=106` 的 `pt=1` 当前更容易落到 `精彩片花` tab，`type=10` 的 `pt=1` 当前更常靠近 `看点&花絮 / 直播回顾 / 打包看`-like surface。",
+          "它已经跨到体育 / 电影 / 动漫 / 少儿 / 综艺 / 电视剧 / 纪录片 / 音乐多个 type，因此不再像单类目特例。"
+        ],
+        "counterexamples": [
+          "`positive_trailer=1` 不是固定某一个首屏模块开关；它的外显仍会被 type / page shell 一起塑形。"
+        ],
+        "current_blackbox_explanation": "当前是跨多 type 的稳定值；前端会归一化后保留进状态层，现有可见层证据更像 highlight / clip-like surface 倾向，但外显仍受 type / page shell 共同影响。",
+        "unconfirmed_items": [
+          "official backend naming",
+          "这些 highlight / clip-like surface 倾向在更多同类对照组里是否继续稳定"
+        ]
+      },
+      "2": {
+        "status": "small_family",
+        "sample_count": 3,
+        "representative_samples": [
+          "mzc00200tzs7ig5",
+          "mzc00200nkzol5n",
+          "mzc002001w361jz"
+        ],
+        "types": [
+          "10/综艺",
+          "2/电视剧"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [
+          "focused branch runtime followup 已直接覆盖 `mzc00200nkzol5n / mzc002001w361jz`，exposed `union.coverInfoMap.positive_trailer` 仍保持 `2`，且 getter 会重复命中。",
+          "2026-06-20 同类 control-group followup 里，`type=10 / 综艺` 的 `mzc00200tzs7ig5` 也命中 `positive_trailer=2`，而且是该组里唯一稳定打出 `preview_badge / 预告` 卡面的分支。"
+        ],
+        "counterexamples": [
+          "`positive_trailer=2` 不推出 pay_status=8；`mzc002001w361jz` 仍是 pay_status=6。",
+          "`positive_trailer=2` 还不能直接推出独立 `trailer_module` / try-watch / gift 分支；它已经能在部分 page shell 上推出 `preview_badge / 预告` 卡面，但外显仍受 type / page shell 共同影响。"
+        ],
+        "current_blackbox_explanation": "当前它更像一个至少跨 `电视剧 + 综艺` 复现的 preview-like signal 候选；前端会把它归一化后保留进状态层，但外显仍受 type / page shell 共同影响，还不能把它直接命名成某个官方 UI 开关。",
+        "unconfirmed_items": [
+          "official backend naming",
+          "它是否会在更多非电视剧 type 上稳定打出 preview-like 外显",
+          "它是否会触发当前 probe 尚未命中的次级模块 / 请求链"
+        ]
+      }
+    },
+    "positive_content_id": {
+      "1543606": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 42,
+        "representative_samples": [
+          "mzc0035nmiy8iru",
+          "mzc003jeliygzoc",
+          "mzc0020069a6anp",
+          "mzc00383lw807hq",
+          "mzc00200bhj36oq",
+          "mzc00200ls5y7z0",
+          "mzc002006g6kqo4",
+          "mzc002003r5yq45",
+          "67t9bxbetsdztpp",
+          "mzc00200aorvnwf",
+          "mzc003ikavbkqa7",
+          "mzc003nlcrbtvub",
+          "mzc002001u873es",
+          "mzc0020081c19hy",
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "zkbp0mrqhy0x1hl",
+          "mzc002006huuuiu",
+          "mzc00200br3t1zr",
+          "mzc00200uiuyxf1",
+          "mzc00200sqw6k6u",
+          "uqt7am9f9dmvoss",
+          "mzc002008cpzvbi",
+          "bzfkv5se8qaqel2",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "4/体育",
+          "27/教育",
+          "1/电影",
+          "3/动漫",
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "9/纪录片",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current cover-family evidence",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "1543607": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 0,
+        "representative_samples": [],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current cover-family evidence",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      }
+    },
+    "state": {
+      "4": {
+        "status": "stable_value",
+        "sample_count": 356,
+        "representative_samples": [
+          "mzc00200q00mv2h",
+          "mzc00200iy331ds",
+          "mzc00200j7l2u0p",
+          "mzc00200pfna6wj",
+          "mzc002005shizp0",
+          "mzc00200tp4rwup",
+          "mzc00200vzc9y78",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru",
+          "mzc00200bhj36oq",
+          "mzc00200ls5y7z0",
+          "mzc002006g6kqo4",
+          "mzc003ikavbkqa7",
+          "mzc003nlcrbtvub",
+          "mzc00383lw807hq",
+          "mzc003t8r55x4z7",
+          "mzc00200ti1wj2i",
+          "mzc002003u0t3rl",
+          "mzc002006tgfqvp",
+          "482396nuyaelv0e",
+          "mzc002007tdpv87",
+          "mzc00200seycm50",
+          "mzc002000xmvpgy",
+          "mzc00200nlxxm5m",
+          "mzc00200axsj6bx",
+          "mzc00200tuupfc2",
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "zkbp0mrqhy0x1hl",
+          "mzc002006huuuiu",
+          "mzc00200br3t1zr",
+          "mzc00200uiuyxf1",
+          "mzc00200sqw6k6u",
+          "uqt7am9f9dmvoss",
+          "mzc002008cpzvbi",
+          "bzfkv5se8qaqel2",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45"
+        ],
+        "types": [
+          "6/游戏",
+          "22/音乐",
+          "31/生活",
+          "27/教育",
+          "1/电影",
+          "3/动漫",
+          "4/体育",
+          "113/表演演出",
+          "106/少儿",
+          "10/综艺",
+          "111/文化历史",
+          "2/电视剧",
+          "9/纪录片"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current state field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "8": {
+        "status": "small_family",
+        "sample_count": 6,
+        "representative_samples": [
+          "mzc00200q00mv2h",
+          "mzc002006tgfqvp",
+          "482396nuyaelv0e",
+          "mzc002007tdpv87",
+          "mzc00200dd7dwn2",
+          "mzc00200seycm50"
+        ],
+        "types": [
+          "113/表演演出",
+          "106/少儿"
+        ],
+        "page_shapes": [
+          "少儿聚合页",
+          "表演演出聚合页"
+        ],
+        "strong_correlations": [
+          "当前常和 pay_status=8 共现，但不是充要条件",
+          "当前已覆盖 positive_trailer=0/1",
+          "2026-06-20 已把 `482396nuyaelv0e` 与 `mzc002006tgfqvp` 两个正 family 补到 8 环境 same-day 稳定，且 state/upload 分布与 2026-06-19 一致"
+        ],
+        "counterexamples": [
+          "state=8 不是空字段代理；在表演演出大聚合页里 targetid 仍是全满",
+          "pay_status=8 不推出 state=8；mzc002000xmvpgy / mzc00200nlxxm5m 仍是纯 state=4",
+          "state=8 也不推出 pay_status=8；mzc00200axsj6bx / pay_status=6 仍能打出少量 state=8 行"
+        ],
+        "current_blackbox_explanation": "当前更像行级 small-family signal；已跨多个 cover，至少覆盖 type=106/113，不是单一 cover 级壳标签。",
+        "unconfirmed_items": [
+          "为什么有些 sibling cover 只有稀疏 state=8 行，而有些 cover 会变成 state=8-heavy family",
+          "是否还会稳定扩到更多独立 type/page-shape family",
+          "官方后台命名"
+        ]
+      }
+    },
+    "upload_src": {
+      "0": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 1,
+        "representative_samples": [
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current upload_src field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "6": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 0,
+        "representative_samples": [],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current upload_src field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "7": {
+        "status": "small_family",
+        "sample_count": 21,
+        "representative_samples": [
+          "mzc00200j7l2u0p"
+        ],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current upload_src field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "20": {
+        "status": "small_family",
+        "sample_count": 341,
+        "representative_samples": [
+          "mzc00200q00mv2h",
+          "mzc00200iy331ds",
+          "mzc00200j7l2u0p",
+          "mzc00200pfna6wj",
+          "mzc00200tp4rwup",
+          "mzc00200vzc9y78",
+          "j5wzdu7t6vu3ute",
+          "mzc00200ls5y7z0",
+          "mzc002006g6kqo4",
+          "mzc00200ti1wj2i",
+          "482396nuyaelv0e",
+          "mzc002007tdpv87",
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200qrzj493",
+          "zkbp0mrqhy0x1hl",
+          "mzc002006huuuiu",
+          "mzc00200br3t1zr",
+          "mzc00200uiuyxf1",
+          "mzc00200sqw6k6u",
+          "uqt7am9f9dmvoss",
+          "mzc002008cpzvbi",
+          "bzfkv5se8qaqel2",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45"
+        ],
+        "types": [
+          "6/游戏",
+          "22/音乐",
+          "1/电影",
+          "4/体育",
+          "106/少儿",
+          "113/表演演出",
+          "10/综艺",
+          "2/电视剧",
+          "3/动漫",
+          "9/纪录片"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current upload_src field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "31": {
+        "status": "small_family",
+        "sample_count": 31,
+        "representative_samples": [
+          "mzc002005shizp0",
+          "j5wzdu7t6vu3ute",
+          "mzc002003u0t3rl",
+          "mzc00200c24ypkp"
+        ],
+        "types": [
+          "6/游戏",
+          "22/音乐",
+          "4/体育",
+          "10/综艺"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current upload_src field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "105": {
+        "status": "small_family",
+        "sample_count": 2,
+        "representative_samples": [
+          "mzc00200q00mv2h"
+        ],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current upload_src field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "107": {
+        "status": "small_family",
+        "sample_count": 104,
+        "representative_samples": [
+          "mzc00200iy331ds",
+          "mzc00200j7l2u0p",
+          "mzc00200k1tze71",
+          "1ftxhqhqz7choul"
+        ],
+        "types": [
+          "10/综艺",
+          "106/少儿"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current upload_src field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "108": {
+        "status": "small_family",
+        "sample_count": 316,
+        "representative_samples": [
+          "mzc00200q00mv2h",
+          "mzc00200iy331ds",
+          "mzc002005shizp0",
+          "mzc00200bhj36oq",
+          "mzc002006tgfqvp",
+          "482396nuyaelv0e",
+          "mzc002007tdpv87",
+          "mzc00200u2ay1kj",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel"
+        ],
+        "types": [
+          "6/游戏",
+          "27/教育",
+          "106/少儿",
+          "113/表演演出",
+          "10/综艺",
+          "2/电视剧",
+          "3/动漫"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current upload_src field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "116": {
+        "status": "small_family",
+        "sample_count": 5,
+        "representative_samples": [
+          "mzc00200j7l2u0p"
+        ],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current upload_src field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "117": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 0,
+        "representative_samples": [],
+        "types": [],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current upload_src field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "129": {
+        "status": "small_family",
+        "sample_count": 13,
+        "representative_samples": [
+          "mzc00200j7l2u0p",
+          "mzc00200br3t1zr",
+          "bzfkv5se8qaqel2",
+          "mzc00200whxf2zp"
+        ],
+        "types": [
+          "106/少儿",
+          "2/电视剧"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current upload_src field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "138": {
+        "status": "small_family",
+        "sample_count": 106,
+        "representative_samples": [
+          "mzc00200iy331ds",
+          "mzc00383lw807hq",
+          "mzc003t8r55x4z7"
+        ],
+        "types": [
+          "4/体育"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current upload_src field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "141": {
+        "status": "small_family",
+        "sample_count": 32,
+        "representative_samples": [
+          "mzc00200q00mv2h",
+          "mzc002006tgfqvp",
+          "mzc002007tdpv87"
+        ],
+        "types": [
+          "106/少儿",
+          "113/表演演出"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current upload_src field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "146": {
+        "status": "small_family",
+        "sample_count": 17,
+        "representative_samples": [
+          "mzc00383lw807hq"
+        ],
+        "types": [
+          "4/体育"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current upload_src field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "149": {
+        "status": "small_family",
+        "sample_count": 61,
+        "representative_samples": [
+          "mzc003ikavbkqa7",
+          "mzc003nlcrbtvub"
+        ],
+        "types": [
+          "3/动漫"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current upload_src field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "2048": {
+        "status": "small_family",
+        "sample_count": 35,
+        "representative_samples": [
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200fq96jcg",
+          "mzc00200jehmwr1",
+          "mzc00200q2oseni",
+          "mzc002005kpqrxs",
+          "mzc00200qh0bh8s",
+          "mzc00200tjnrzs3",
+          "mzc002008tghx9y",
+          "mzc00200fi5unqc",
+          "ckpb8828p5r8i2u"
+        ],
+        "types": [
+          "111/文化历史"
+        ],
+        "page_shapes": [
+          "文化历史/舞蹈教学类 cover",
+          "文化历史/课程讲解类 cover",
+          "文化历史/国画课程类 cover",
+          "文化历史/书法课程类 cover"
+        ],
+        "strong_correlations": [
+          "当前仍未见跨出 `111/文化历史` 的正例。",
+          "新的 `upload_src_2048_type111_search_expansion_20260620.json` 已把 sampled type=111 slice 扩到舞蹈 / 国画 / 书法教学三支，说明 `2048` 不再只是早先几个舞蹈样本的局部现象。",
+          "新的 `upload_src_2048_environment_20260620.json` 已把 `mzc00200s6oqemg / mzc00200ua6uec2 / mzc002008tghx9y / mzc00200rcuv1sy` 这 4-cover core set 补到 8 环境无漂移，说明当前观察到的 pure-positive / mixed / same-type negative 边界不是请求环境偶然现象。",
+          "当前 observed-cover 口径已明确是 `35 = 20 complete pure-2048 + 3 partial-only-2048 + 12 mixed`。"
+        ],
+        "counterexamples": [
+          "`type=111` 不是充分条件；同一 sampled slice 里已经有纯 `0`、纯 `108`、`2048/108`、`2048/0` 多支同类反例。",
+          "`2048` 不是 cover 级统一值；`mzc002008tghx9y` 同一 cover 内就混有 `2048` 和 `108`，`mzc00200fi5unqc` / `mzc00200prld57x` 还混有 `2048` 和 `0`。",
+          "`targetid` 也不是 `2048` 的稳定伴随条件；`mzc00200tjnrzs3` 是 complete pure-2048 cover，但 sampled rows 的 `targetid` 仍全空。"
+        ],
+        "current_blackbox_explanation": "当前仍像 `type=111/文化历史` 内的 teaching-family cluster，但已经不能写成整个 `type=111` 的统一值；同一 sampled slice 里已同时见到 complete pure-2048、partial 2048-only、mixed 2048/108、mixed 2048/0、pure 108、pure 0 这些分支。",
+        "unconfirmed_items": [
+          "official backend naming",
+          "是否会跨出 `type=111`",
+          "当前 dance / painting / calligraphy teaching 分支是否还需要进一步拆更细的子家族"
+        ]
+      }
+    },
+    "F": {
+      "0": {
+        "status": "small_family",
+        "sample_count": 6,
+        "representative_samples": [
+          "mzc00200nkzol5n",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel"
+        ],
+        "types": [
+          "10/综艺",
+          "2/电视剧",
+          "3/动漫"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [
+          "当前强相关于预告 / 抢先看类条目"
+        ],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前更像预告 / 抢先看桶；已跨综艺、电视剧、动漫样本复现，但还不能直接命名成后台正式状态。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "2": {
+        "status": "stable_value",
+        "sample_count": 355,
+        "representative_samples": [
+          "mzc00200lyd87zd",
+          "mzc00200tuupfc2",
+          "mzc002002cxp3uh",
+          "mzc00200nkzol5n",
+          "mzc00200apbfiqs",
+          "mzc00200j7l2u0p",
+          "mzc002005shizp0",
+          "mzc00200tp4rwup",
+          "mzc00200vzc9y78",
+          "mzc00200q00mv2h",
+          "mzc003ikavbkqa7",
+          "mzc003nlcrbtvub",
+          "mzc00200bhj36oq",
+          "mzc00383lw807hq",
+          "mzc003t8r55x4z7",
+          "mzc002003u0t3rl",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "zkbp0mrqhy0x1hl",
+          "mzc002006huuuiu",
+          "mzc00200br3t1zr",
+          "mzc00200uiuyxf1",
+          "mzc00200sqw6k6u",
+          "uqt7am9f9dmvoss",
+          "mzc002008cpzvbi",
+          "bzfkv5se8qaqel2",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw"
+        ],
+        "types": [
+          "6/游戏",
+          "22/音乐",
+          "113/表演演出",
+          "3/动漫",
+          "27/教育",
+          "4/体育",
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current F field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "4": {
+        "status": "small_family",
+        "sample_count": 2,
+        "representative_samples": [
+          "mzc00200whxf2zp"
+        ],
+        "types": [
+          "2/电视剧"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [
+          "当前 live followup 里仍只落在预告类条目"
+        ],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前仍像更窄的预告类桶；这轮 live followup 已在《问心2》预告片样本上直接复现。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "7": {
+        "status": "stable_value",
+        "sample_count": 316,
+        "representative_samples": [
+          "mzc00200lyd87zd",
+          "mzc00200apbfiqs",
+          "mzc00200j7l2u0p",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru",
+          "mzc00200q00mv2h",
+          "mzc00200ls5y7z0",
+          "mzc002006g6kqo4",
+          "mzc003ikavbkqa7",
+          "mzc003nlcrbtvub",
+          "mzc00200ti1wj2i",
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "zkbp0mrqhy0x1hl",
+          "mzc002006huuuiu",
+          "mzc00200br3t1zr",
+          "mzc00200uiuyxf1",
+          "mzc00200sqw6k6u",
+          "uqt7am9f9dmvoss",
+          "mzc002008cpzvbi",
+          "bzfkv5se8qaqel2",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45"
+        ],
+        "types": [
+          "22/音乐",
+          "31/生活",
+          "113/表演演出",
+          "1/电影",
+          "3/动漫",
+          "4/体育",
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "9/纪录片"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current F field matrix",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      }
+    },
+    "downright": {
+      "1": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 22,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc00383lw807hq",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "4/体育",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "2": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 22,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc00383lw807hq",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "4/体育",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "3": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 22,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc00383lw807hq",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "4/体育",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "4": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 22,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc00383lw807hq",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "4/体育",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "5": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 22,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc00383lw807hq",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "4/体育",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "6": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 22,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc00383lw807hq",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "4/体育",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "8": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 22,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc00383lw807hq",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "4/体育",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "9": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 20,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "10": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 22,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc00383lw807hq",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "4/体育",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "18": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 17,
+        "representative_samples": [
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute"
+        ],
+        "types": [
+          "10/综艺",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "20": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 17,
+        "representative_samples": [
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute"
+        ],
+        "types": [
+          "10/综艺",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "21": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 20,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "9/纪录片",
+          "1/电影",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "22": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 20,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "23": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 22,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc00383lw807hq",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "4/体育",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "24": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 17,
+        "representative_samples": [
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45"
+        ],
+        "types": [
+          "10/综艺",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "9/纪录片",
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "25": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 1,
+        "representative_samples": [
+          "mzc00200sq680j2"
+        ],
+        "types": [
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "26": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 17,
+        "representative_samples": [
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45"
+        ],
+        "types": [
+          "10/综艺",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "9/纪录片",
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "27": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 1,
+        "representative_samples": [
+          "mzc00200sq680j2"
+        ],
+        "types": [
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "28": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 1,
+        "representative_samples": [
+          "mzc00200sq680j2"
+        ],
+        "types": [
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "30": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 17,
+        "representative_samples": [
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45"
+        ],
+        "types": [
+          "10/综艺",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "9/纪录片",
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "31": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 2,
+        "representative_samples": [
+          "mzc00200fobieel",
+          "mzc00200sq680j2"
+        ],
+        "types": [
+          "3/动漫",
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [
+          "`31` 已不是《一人之下 第6季》专属；电影单片 `mzc00200sq680j2` 也命中该码"
+        ],
+        "current_blackbox_explanation": "当前已确认跨动漫季页与电影单片复现，但边界仍偏高熵，暂不升级成稳定语义码。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "32": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 1,
+        "representative_samples": [
+          "mzc00200sq680j2"
+        ],
+        "types": [
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "33": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 1,
+        "representative_samples": [
+          "mzc00200sq680j2"
+        ],
+        "types": [
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "34": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 18,
+        "representative_samples": [
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200uiuyxf1",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45"
+        ],
+        "types": [
+          "10/综艺",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "9/纪录片",
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "35": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 22,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200uiuyxf1",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "36": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 1,
+        "representative_samples": [
+          "mzc00200sq680j2"
+        ],
+        "types": [
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "37": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 20,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "38": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 1,
+        "representative_samples": [
+          "mzc00200sq680j2"
+        ],
+        "types": [
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "39": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 12,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45"
+        ],
+        "types": [
+          "10/综艺",
+          "2/电视剧",
+          "3/动漫",
+          "9/纪录片",
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "40": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 20,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "41": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 8,
+        "representative_samples": [
+          "mzc002006huuuiu",
+          "mzc00200br3t1zr",
+          "mzc00200uiuyxf1",
+          "mzc00200sqw6k6u",
+          "bzfkv5se8qaqel2",
+          "ca1k6ja4k81h8ov",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw"
+        ],
+        "types": [
+          "106/少儿",
+          "2/电视剧"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [
+          "当前 live followup 里集中出现在 `庆余年第二季 / 长安诺` 这对电视剧季页样本"
+        ],
+        "counterexamples": [],
+        "current_blackbox_explanation": "当前是相对干净的电视剧季页差异码簇之一，但具体业务码义仍待命名。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "42": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 13,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc002006huuuiu",
+          "mzc00200uiuyxf1",
+          "mzc00200sqw6k6u",
+          "mzc00200syo2994",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "3/动漫",
+          "2/电视剧",
+          "9/纪录片",
+          "1/电影",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "43": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 14,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "3/动漫",
+          "2/电视剧",
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "44": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 2,
+        "representative_samples": [
+          "mzc00200dfbfsrw",
+          "mzc002003r5yq45"
+        ],
+        "types": [
+          "2/电视剧",
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [
+          "`44` 不只落在单一电视剧季页；电影单片 `mzc002003r5yq45` 也直接命中"
+        ],
+        "current_blackbox_explanation": "当前已确认跨电视剧季页与电影单片复现，不能再写成单样本差异码。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "45": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 28,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "zkbp0mrqhy0x1hl",
+          "mzc002006huuuiu",
+          "mzc00200br3t1zr",
+          "mzc00200uiuyxf1",
+          "mzc00200sqw6k6u",
+          "uqt7am9f9dmvoss",
+          "bzfkv5se8qaqel2",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc00383lw807hq",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "4/体育",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "46": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 28,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "zkbp0mrqhy0x1hl",
+          "mzc002006huuuiu",
+          "mzc00200br3t1zr",
+          "mzc00200uiuyxf1",
+          "mzc00200sqw6k6u",
+          "uqt7am9f9dmvoss",
+          "bzfkv5se8qaqel2",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc00383lw807hq",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "4/体育",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "48": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 11,
+        "representative_samples": [
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc00200dfbfsrw",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45"
+        ],
+        "types": [
+          "10/综艺",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "57": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 20,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "61": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 20,
+        "representative_samples": [
+          "mzc00200yilptw9",
+          "mzc00200k1tze71",
+          "mzc00200u2ay1kj",
+          "mzc00200c24ypkp",
+          "mzc00200tzs7ig5",
+          "mzc00200s6oqemg",
+          "mzc00200ua6uec2",
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc00200whxf2zp",
+          "mzc00200fobieel",
+          "mzc002002kqssyu",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2",
+          "mzc002003r5yq45",
+          "j5wzdu7t6vu3ute",
+          "mzc00200hrq1mru"
+        ],
+        "types": [
+          "10/综艺",
+          "111/文化历史",
+          "106/少儿",
+          "2/电视剧",
+          "3/动漫",
+          "9/纪录片",
+          "1/电影",
+          "22/音乐",
+          "31/生活"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [],
+        "current_blackbox_explanation": "derived from current downright code index",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "62": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 2,
+        "representative_samples": [
+          "mzc00383lw807hq",
+          "mzc00200sq680j2"
+        ],
+        "types": [
+          "4/体育",
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [
+          "`62` 不是单类目专属；体育人物 `mzc00383lw807hq` 与电影单片 `mzc00200sq680j2` 都命中"
+        ],
+        "current_blackbox_explanation": "当前已确认跨体育与电影流动，不能写成窄专题专属码。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      },
+      "184": {
+        "status": "shape_confirmed_semantics_unknown",
+        "sample_count": 8,
+        "representative_samples": [
+          "mzc00200qrzj493",
+          "mzc002006huuuiu",
+          "ca1k6ja4k81h8ov",
+          "mzc00200syo2994",
+          "ob6ak6eq2wp5qui",
+          "1ftxhqhqz7choul",
+          "mzc002009zwrmx4",
+          "mzc00200sq680j2"
+        ],
+        "types": [
+          "106/少儿",
+          "9/纪录片",
+          "1/电影"
+        ],
+        "page_shapes": [],
+        "strong_correlations": [],
+        "counterexamples": [
+          "`184` 不只落在少儿 / 纪录片；电影单片 `mzc00200sq680j2` 也是正例"
+        ],
+        "current_blackbox_explanation": "当前最强样本仍在纪录片 / 少儿邻域，但电影反例已经说明它不是窄类目专属码。",
+        "unconfirmed_items": [
+          "official backend naming"
+        ]
+      }
+    }
+  },
+  "open_items": [
+    "downright 目前仍只覆盖高信号差异码，完整 code universe 需要继续抽取",
+    "type_name 当前按 1:1 展示名层复用，若后续出现同 type 不同展示名再拆卡",
+    "部分 upload_src / downright 代表样本仍有标题已知但 CID 待回填的情况"
+  ]
+}

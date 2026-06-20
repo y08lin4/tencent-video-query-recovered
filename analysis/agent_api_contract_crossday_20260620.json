@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "date_local": "2026-06-20",
+    "role_id": "api-contract-engineer",
+    "task": "cross-day API1/API2 environment matrix retest",
+    "baseline_artifact": "analysis/environment_matrix_browserlike_20260619.json",
+    "execution_mode": "node_repl fallback",
+    "execution_note": "Intended shell run of tools/tencent_environment_matrix_probe.py was blocked by shell runner CreateProcessAsUserW failed: 1312, so the same case matrix and environment headers were replayed from node_repl with retry + parser parity."
+  },
+  "simulated_command": "python tools/tencent_environment_matrix_probe.py --include-browser-like --output analysis/agent_api_contract_crossday_20260620.json",
+  "environments": [
+    "pc_web_ua",
+    "mobile_h5_ua",
+    "minimal_headers",
+    "referer_origin",
+    "pc_web_browser_like",
+    "pc_web_browser_like_cookie",
+    "mobile_h5_browser_like",
+    "mobile_h5_browser_like_cookie"
+  ],
+  "verdict": {
+    "api1_crossday_stable": true,
+    "api2_crossday_stable": true,
+    "overall_crossday_stable": true
+  },
+  "case_match_summary": {
+    "api1": {
+      "exact_case_matches": 10,
+      "drifted_cases": 0,
+      "env_signature_stable_count": 80,
+      "env_signature_drift_count": 0
+    },
+    "api2": {
+      "exact_case_matches": 18,
+      "drifted_cases": 0,
+      "env_signature_stable_count": 144,
+      "env_signature_drift_count": 0
+    }
+  },
+  "representative_evidence": {
+    "api1_baseline_single_valid_pc_web_ua": {
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "summary": {
+        "errorno": "0",
+        "retcode": "0",
+        "cover_id": "mzc00200idzf2m8",
+        "title": "飞驰人生3",
+        "pay_status": "6",
+        "type": "1",
+        "type_name": "电影"
+      }
+    },
+    "api1_missing_tid_pc_web_ua": {
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "summary": {
+        "errorno": "-111003",
+        "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+      }
+    },
+    "api1_dup33_pc_web_ua": {
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "summary": {
+        "errorno": "-111001",
+        "errormsg": "idlist个数错误, 为0或超过限制"
+      }
+    },
+    "api2_otype_json_single_pc_web_ua": {
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "0",
+        "results_count": 1,
+        "sample_result": {
+          "id": "z4102qfi0x4",
+          "vid": "z4102qfi0x4",
+          "title": "飞驰人生3",
+          "state": "4",
+          "upload_src": "20"
+        }
+      }
+    },
+    "api2_all_invalid_jsonp_batch_pc_web_ua": {
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "0",
+        "results_count": 2,
+        "sample_results": [
+          {
+            "id": "zzzzzzzzzzz",
+            "vid": "None",
+            "title": "None",
+            "state": "None",
+            "upload_src": "None"
+          },
+          {
+            "id": "yyyyyyyyyyy",
+            "vid": "None",
+            "title": "None",
+            "state": "None",
+            "upload_src": "None"
+          }
+        ]
+      }
+    },
+    "api2_dup33_pc_web_ua": {
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "summary": {
+        "errorno": "-111001",
+        "errormsg": "idlist个数错误, 为0或超过限制"
+      }
+    }
+  },
+  "stable_conclusions_reconfirmed": [
+    "API1 baseline, missing_tid, missing_appid, appid_99999, canonical_appid_missing_appkey, mixed valid/invalid CID, duplicate-and-empty slots, dup32, dup33 all exactly matched the 2026-06-19 browser-like baseline across all 8 environments.",
+    "API2 xml, json/json upper, missing otype, wrong otype text, missing_tid, tid_536, tid_431, missing_appid, appid_99999, missing_appkey, missing/999 union_platform, mixed valid+invalid vid, all-invalid jsonp batch, duplicate-and-empty slots, dup32, dup33 all exactly matched the 2026-06-19 browser-like baseline across all 8 environments.",
+    "No cross-day drift was observed in HTTP status, top-level response wrapper, error code shape, or per-environment signature counts for the tested contract cases."
+  ],
+  "remaining_gaps": [
+    "This microtask only revalidated the API contract matrix. It did not rerun representative_field_diff or same-page field drift buckets for 2026-06-20.",
+    "The execution used node_repl fallback rather than the Python entrypoint because the shell runner was unavailable in this environment."
+  ]
+}

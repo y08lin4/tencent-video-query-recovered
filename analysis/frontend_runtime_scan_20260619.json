@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-06-19",
+  "scope": "detail-page runtime static scan for frontend field consumption beyond the main bundle",
+  "representative_page": "https://v.qq.com/x/cover/mzc00200idzf2m8/z4102qfi0x4.html",
+  "coverage": {
+    "detail_html": 1,
+    "first_screen_external_scripts": 12,
+    "main_bundles": [
+      "index-KKOIl-Tg.js",
+      "index-legacy-S1TLxxmt.js"
+    ],
+    "lazy_chunks_scanned": 20,
+    "runtime_scripts": [
+      "txv.core.js",
+      "superplayer-txv.js",
+      "superplayer.js"
+    ]
+  },
+  "positive_controls_found": [
+    "`FillUnionInfo` request chain",
+    "`state` normalization and validation branch",
+    "`downright` toolbar gating",
+    "`publish_date` formatting/display gate",
+    "`targetid` comment/danmaku iframe path"
+  ],
+  "negative_findings": [
+    {
+      "field": "upload_src",
+      "status": "no_named_consumption_observed",
+      "note": "Not observed in SSR payloads, main/legacy bundles, lazy chunks, or scanned player/runtime scripts."
+    },
+    {
+      "field": "F",
+      "status": "no_business_field_consumption_observed",
+      "note": "Observed hits were only polyfill/alphabet noise, not detail business-field reads."
+    }
+  ],
+  "current_judgment": "Current evidence says the detail-page main chain and its known secondary runtime do not directly consume `upload_src` or `F` as named business fields.",
+  "remaining_gap": "A browser-level dynamic property-read hook would still be the strongest final negative check."
+}

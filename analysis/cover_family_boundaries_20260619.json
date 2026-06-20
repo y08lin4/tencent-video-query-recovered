@@ -1,0 +1,152 @@
+{
+  "generated_at": "2026-06-19",
+  "positive_content_id_1543607_family": {
+    "round_1": {
+      "seed_count": 5,
+      "cover_count": 67,
+      "pay_status_counts": {"6": 46, "8": 21},
+      "positive_content_id_counts": {"1543606": 54, "1543607": 13},
+      "type_counts": {"1/电影": 38, "10/综艺": 4, "106/少儿": 24, "113/表演演出": 1}
+    },
+    "round_2": {
+      "seed_count": 13,
+      "cover_count": 82,
+      "pay_status_counts": {"6": 61, "8": 21},
+      "positive_content_id_counts": {"1543606": 61, "1543607": 21},
+      "type_counts": {"1/电影": 38, "10/综艺": 4, "106/少儿": 39, "113/表演演出": 1}
+    },
+    "strongest_negative_claim": "1543607 家族两轮 depth=1 扩圈后仍未出现第 3 个 positive_content_id，也未出现 pay_status 新非空值；这一支当前只稳定落在 pay_status=6/8。"
+  },
+  "pay_status_16_chain": {
+    "main_cover": {
+      "cid": "mzc00200u2ay1kj",
+      "title": "开始推理吧 第4季",
+      "pay_status": "16",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606",
+      "downright_count": 28
+    },
+    "one_hop_summary": {
+      "pay_status_counts": {"6": 1, "8": 1, "16": 1},
+      "neighbor_examples": [
+        "mzc00200pp7ushw / pay_status=6 / positive_trailer=1 / positive_content_id=1543606 / downright_count=26",
+        "mzc00200mhiy6l7 / pay_status=8 / positive_trailer=0 / positive_content_id=1543606 / downright_count=26"
+      ]
+    },
+    "same_ip_neighbor": {
+      "cid": "mzc002008rxvoxh",
+      "title": "开始推理吧 第3季",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606",
+      "downright_count": 28
+    },
+    "same_category_variety_season": {
+      "cid": "mzc00200c2gydkd",
+      "title": "哈哈哈哈哈 第6季",
+      "pay_status": "6",
+      "positive_trailer": "1",
+      "positive_content_id": "1543606",
+      "downright_count": 28
+    },
+    "strongest_claim": "pay_status=16 当前像一个很窄的常规综艺季页主壳状态；围绕《开始推理吧》第4季及相邻常规综艺季页的 live 扫样里，尚未复现 7，也未发现新的非空值。"
+  },
+  "type_exploration": {
+    "activity_release_show_graph": {
+      "seed_count": 8,
+      "cover_count": 38,
+      "type_counts": {
+        "106/少儿": 28,
+        "10/综艺": 4,
+        "113/表演演出": 1,
+        "22/音乐": 2,
+        "31/生活": 1,
+        "6/游戏": 2
+      }
+    },
+    "focused_activity_graph": {
+      "seed_count": 6,
+      "cover_count": 28,
+      "type_counts": {
+        "106/少儿": 22,
+        "113/表演演出": 1,
+        "22/音乐": 2,
+        "31/生活": 1,
+        "6/游戏": 2
+      }
+    },
+    "strongest_negative_claim": "在活动/发布会/演出/知识邻接/聚合壳页这条高价值链上，一跳扩圈暂未打出第 11 个 type；related cover 大多回流到既有的 106/少儿、10/综艺 等类型。"
+  },
+  "type_4_sports_self_loop_family": {
+    "seeds": [
+      "mzc00383lw807hq",
+      "mzc003t8r55x4z7",
+      "mzc00200ti1wj2i",
+      "mzc002003u0t3rl"
+    ],
+    "probe_runs": [
+      {"depth": 1, "related_video_sample": 3, "cover_count": 4, "errors": 0},
+      {"depth": 1, "related_video_sample": 12, "cover_count": 4, "errors": 0}
+    ],
+    "total_video_ids_scanned": 228,
+    "pay_status_counts": {"": 1, "6": 2, "8": 1},
+    "positive_content_id_counts": {"1543606": 4},
+    "positive_trailer_counts": {"0": 3, "1": 1},
+    "type_counts": {"4/体育": 4},
+    "self_loop_probe": [
+      {"cid": "mzc00383lw807hq", "video_ids_count": 41, "related_cids": ["mzc00383lw807hq"]},
+      {"cid": "mzc003t8r55x4z7", "video_ids_count": 106, "related_cids": ["mzc003t8r55x4z7"]},
+      {"cid": "mzc00200ti1wj2i", "video_ids_count": 50, "related_cids": ["mzc00200ti1wj2i"]},
+      {"cid": "mzc002003u0t3rl", "video_ids_count": 31, "related_cids": ["mzc002003u0t3rl"]}
+    ],
+    "strongest_claim": "这 4 个体育壳页在 related-cover 图上表现为稳定自环；当前更值得继续从搜索后端补新种子，而不是继续深挖 BFS。"
+  },
+  "pay_status_15_family": {
+    "samples": [
+      {
+        "cid": "mzc002001u873es",
+        "title": "战至巅峰之赛事全局看",
+        "type": "10/综艺",
+        "pay_status": "15",
+        "positive_trailer": "0",
+        "positive_content_id": "1543606",
+        "targetid_nonempty_count": 29,
+        "upload_src_counts": {"20": 26, "31": 3}
+      },
+      {
+        "cid": "mzc0020081c19hy",
+        "title": "战至巅峰之第一视角",
+        "type": "10/综艺",
+        "pay_status": "15",
+        "positive_trailer": "0",
+        "positive_content_id": "1543606",
+        "targetid_nonempty_count": 27,
+        "upload_src_counts": {"20": 27}
+      }
+    ],
+    "same_ip_neighbor_summary": {
+      "pay_status_counts": {"6": 6, "15": 2, "16": 1}
+    },
+    "counterexamples_inside_same_shell": [
+      "mzc002000ol7v41 / 战至巅峰主播陪看 / pay_status=6 / positive_trailer=0 / positive_content_id=1543606",
+      "mzc00200on2xcb7 / 《战至巅峰》陪看Reaction / pay_status=6 / positive_trailer=0 / positive_content_id=1543606"
+    ],
+    "strongest_claim": "pay_status=15 不是单点异常，也不是 type=10 + positive_trailer=0 + positive_content_id=1543606 的自动结果；它当前更像《战至巅峰》体系内专题/视角类综艺壳页的窄分支。"
+  },
+  "pay_status_5_family": {
+    "sample_count": 5,
+    "type_counts": {"1/电影": 5},
+    "pay_status_counts": {"5": 5},
+    "positive_trailer_counts": {"1": 5},
+    "positive_content_id_counts": {"1543606": 5},
+    "strongest_claim": "pay_status=5 当前已经能稳定落到多个电影单片页，不再是偶发值。"
+  },
+  "pay_status_9_family": {
+    "sample_count": 2,
+    "type_counts": {"3/动漫": 2},
+    "pay_status_counts": {"9": 2},
+    "positive_trailer_counts": {"1": 2},
+    "positive_content_id_counts": {"1543606": 2},
+    "strongest_claim": "pay_status=9 已有两个动漫页样本，可先当作可复现非空值，但仍建议继续补反例。"
+  }
+}

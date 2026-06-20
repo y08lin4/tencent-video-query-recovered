@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-06-20T07:58:55Z",
+  "source": "focused live node fetch across 8 request environments",
+  "api": "api2_jsonp_batch_focus",
+  "environments": [
+    "pc_web_ua",
+    "mobile_h5_ua",
+    "minimal_headers",
+    "referer_origin",
+    "pc_web_browser_like",
+    "pc_web_browser_like_cookie",
+    "mobile_h5_browser_like",
+    "mobile_h5_browser_like_cookie"
+  ],
+  "closure_judgment": [
+    "API2 的 4 条 `otype=json` 镜像批量 case 已在当前 8 环境 same-day focused probe 下全部收口。",
+    "在当前已测范围里，JSONP 只改变外壳与 `Content-Type`，不改变 mixed valid+invalid / duplicate / empty-slot / 32/33 边界语义。",
+    "和 XML 相比，JSONP 非法项的字段层更适合按 empty-shell / null-like 理解，而不是当成额外 contract 分叉。"
+  ],
+  "cases": {
+    "mixed_valid_invalid_vid_json": {
+      "expected_xml_mirror_case": "mixed_valid_invalid_vid",
+      "unique_signature_count": 1,
+      "stable_across_8_env": true,
+      "summary_signature": {
+        "http_status": 200,
+        "content_type": "application/x-javascript; charset=utf-8",
+        "summary": {
+          "root": "QZOutputJson",
+          "errorno": "0",
+          "errormsg": "",
+          "results_count": 3,
+          "sample_results": [
+            {
+              "id": "z4102qfi0x4",
+              "retcode": "0",
+              "vid": "z4102qfi0x4",
+              "title": "飞驰人生3",
+              "state": "4",
+              "upload_src": "20"
+            },
+            {
+              "id": "zzzzzzzzzzz",
+              "retcode": "0",
+              "vid": "",
+              "title": "",
+              "state": "",
+              "upload_src": ""
+            },
+            {
+              "id": "j4101ouc4ve",
+              "retcode": "0",
+              "vid": "j4101ouc4ve",
+              "title": "剑来2_01",
+              "state": "4",
+              "upload_src": "129"
+            }
+          ]
+        }
+      },
+      "takeaway": "顺序保持为合法 / 非法 / 合法；非法项不会把整批打成顶层错误，而是落成 empty-shell 行。"
+    },
+    "duplicate_and_empty_slots_json": {
+      "expected_xml_mirror_case": "duplicate_and_empty_slots",
+      "unique_signature_count": 1,
+      "stable_across_8_env": true,
+      "summary_signature": {
+        "http_status": 200,
+        "content_type": "application/x-javascript; charset=utf-8",
+        "summary": {
+          "root": "QZOutputJson",
+          "errorno": "0",
+          "errormsg": "",
+          "results_count": 3,
+          "sample_results": [
+            {
+              "id": "z4102qfi0x4",
+              "retcode": "0",
+              "vid": "z4102qfi0x4",
+              "title": "飞驰人生3",
+              "state": "4",
+              "upload_src": "20"
+            },
+            {
+              "id": "z4102qfi0x4",
+              "retcode": "0",
+              "vid": "z4102qfi0x4",
+              "title": "飞驰人生3",
+              "state": "4",
+              "upload_src": "20"
+            },
+            {
+              "id": "j4101ouc4ve",
+              "retcode": "0",
+              "vid": "j4101ouc4ve",
+              "title": "剑来2_01",
+              "state": "4",
+              "upload_src": "129"
+            }
+          ]
+        }
+      },
+      "takeaway": "空槽位被忽略，重复值不去重，JSONP 侧行为和 XML 镜像 case 一致。"
+    },
+    "dup32_json": {
+      "expected_xml_mirror_case": "dup32",
+      "unique_signature_count": 1,
+      "stable_across_8_env": true,
+      "summary_signature": {
+        "http_status": 200,
+        "content_type": "application/x-javascript; charset=utf-8",
+        "summary": {
+          "root": "QZOutputJson",
+          "errorno": "0",
+          "errormsg": "",
+          "results_count": 32,
+          "sample_results": [
+            {
+              "id": "z4102qfi0x4",
+              "retcode": "0",
+              "vid": "z4102qfi0x4",
+              "title": "飞驰人生3",
+              "state": "4",
+              "upload_src": "20"
+            }
+          ]
+        }
+      },
+      "takeaway": "32 个非空重复 item 在 JSONP 侧也稳定成功，重复项照样占名额。"
+    },
+    "dup33_json": {
+      "expected_xml_mirror_case": "dup33",
+      "unique_signature_count": 1,
+      "stable_across_8_env": true,
+      "summary_signature": {
+        "http_status": 200,
+        "content_type": "application/x-javascript; charset=utf-8",
+        "summary": {
+          "root": "QZOutputJson",
+          "errorno": "-111001",
+          "errormsg": "idlist个数错误, 为0或超过限制",
+          "results_count": 0,
+          "sample_results": []
+        }
+      },
+      "takeaway": "33 个非空 item 在 JSONP 侧也稳定触发 `-111001`，说明上限边界并不依赖 XML 壳。"
+    }
+  }
+}

@@ -6,6 +6,7 @@
     "It is not proof that aged-cookie or login-state environments behave the same.",
     "These recipes prioritize the shortest stable path in the currently tested anonymous direct-call scope; they are not automatically the globally safest path across all cookie ages, login states, or wider sample space.",
     "When a recipe is marked branch_partially_closed or environment_open, keep the canonical branch unless you are deliberately probing that branch family.",
+    "For API2 caller recipes, `union_platform=3` should currently be read as the default tested recipe value, not as a proven capability unlocker; current evidence is still scoped-negative across anonymous direct-call runs plus real anonymous visitor-cookie replay, and remains open for aged-cookie/login-state.",
     "For both API1 and API2, appid/appkey is no longer a simple canonical-vs-other split in the tested anonymous numeric slice: `appid=1` currently behaves like a success bypass, far noncanonical numerics fall into `appid no find`, and the searched near-canonical numeric region falls into `appkey error`; keep the canonical pair unless you are deliberately probing that branch family.",
     "The searched numeric cutovers are now frozen by regression anchors on both lower and upper edges: API1 `10001000 -> 10001001` plus `10001186 -> 10001187`, and API2 `20001000 -> 20001001` plus `20002581 -> 20002582`."
   ],
@@ -247,7 +248,7 @@
         "non-empty title and duration",
         "defn/state/upload_src available on canonical samples"
       ],
-      "current_best_reading": "The best default recipe when callers expect the richest currently confirmed detail row.",
+      "current_best_reading": "The best default recipe when callers expect the richest currently confirmed detail row. Here `union_platform=3` should still be read as the current canonical tested recipe value, not as a separately proven capability unlocker.",
       "environment_scope": "same-day anonymous canonical branch",
       "status": "stable",
       "evidence": [
@@ -406,7 +407,7 @@
         "positive row may be thinner than tid=535",
         "do not assume canonical defn/state/upload_src richness"
       ],
-      "current_best_reading": "Same family as 535/540, but still an alternate positive shell rather than a canonical replacement for 535. Current Python/Go parity evidence only strengthens that shell-level reading; it does not upgrade 541 into a canonical-detail substitute.",
+      "current_best_reading": "Same family as 535/540, but still an alternate positive shell rather than a canonical replacement for 535. Current Python/Go parity evidence only strengthens that shell-level reading; it does not upgrade 541 into a canonical-detail substitute, and the `union_platform=0003` spot-check should not be promoted into platform-code semantics.",
       "environment_scope": "same-day anonymous canonical branch",
       "status": "branch_partially_closed",
       "evidence": [

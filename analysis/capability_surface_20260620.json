@@ -3,6 +3,7 @@
   "scope": "Current directly callable capability surface for Tencent Video API1/API2 under the tested anonymous same-day environments, plus anonymous real-cookie replay where explicitly noted.",
   "global_parameter_cautions": [
     "The capability rows below still use the canonical appid/appkey pair as the caller default because that is the most stable branch in the tested anonymous direct-call scope.",
+    "For API2 capability rows, `union_platform=3` is currently the canonical tested recipe default, not a proven capability unlocker; the strongest reading remains scoped-negative across anonymous direct-call plus real anonymous visitor-cookie replay, with aged-cookie/login-state still open.",
     "Do not collapse alternate numeric appid into one flat failure family: in the tested anonymous numeric slice, `appid=1` currently behaves like a success bypass, far noncanonical numerics fall into `appid no find`, and the searched near-canonical numeric region falls into `appkey error`.",
     "Current searched cutovers are API1 `10001000 -> appid no find`, `10001001-10001186 -> appkey error`, `10001187 -> appid no find`, and API2 `20001000 -> appid no find`, `20001001-20002581 -> appkey error`, `20002582 -> appid no find`."
   ],
@@ -118,7 +119,7 @@
         "otype": "omit or set xml for XML wrapper",
         "appid": "20001238 is the canonical numeric appid when you want the stable documented branch; in the current anonymous numeric slice, `appid=1` is a success-bypass family, far noncanonical numerics such as `99999` fall into `appid no find`, and the searched near-canonical region `20001001-20002581` falls into `appkey error`",
         "appkey": "part of the stable documented branch when the canonical numeric appid is used; the current canonical appkey does not unlock the searched near-canonical numeric region, which still falls into `appkey error`",
-        "union_platform": "present in canonical requests but currently shows no observable behavioral split on the tested anonymous canonical branch"
+        "union_platform": "present in canonical requests; current strongest reading is scoped-negative across tested anonymous canonical runs plus real anonymous visitor-cookie replay, not a global no-op proof"
       },
       "current_status": "stable",
       "environment_scope": "same-day anonymous environments; tested on 8 request shapes",
@@ -140,7 +141,7 @@
       "conditional_parameters": {
         "appid": "20001238 canonical numeric branch; in the current anonymous numeric slice, `appid=1` is a success-bypass family, far noncanonical numerics fall into `appid no find`, and the searched near-canonical region `20001001-20002581` falls into `appkey error`",
         "appkey": "required when canonical numeric appid branch is active; the current canonical appkey does not unlock the searched near-canonical numeric region",
-        "union_platform": "currently shows no observable behavioral split on the tested anonymous canonical branch"
+        "union_platform": "currently shows no observable behavioral split in the tested anonymous canonical runs plus real anonymous visitor-cookie replay"
       },
       "behavior_notes": [
         "Wrapper is `QZOutputJson=...;`.",
@@ -167,7 +168,7 @@
         "otype": "xml or exact lowercase json",
         "appid": "20001238 canonical numeric branch; in the current anonymous numeric slice, `appid=1` is a success-bypass family, far noncanonical numerics fall into `appid no find`, and the searched near-canonical region `20001001-20002581` falls into `appkey error`",
         "appkey": "required when canonical numeric appid branch is active; the current canonical appkey does not unlock the searched near-canonical numeric region",
-        "union_platform": "currently observed as ignored"
+        "union_platform": "currently no observable behavioral split in the tested anonymous canonical runs plus real anonymous visitor-cookie replay; still weaker than a global ignore rule"
       },
       "behavior_notes": [
         "Supports mixed valid + invalid batches.",
@@ -304,7 +305,7 @@
       "Reserved-looking extra keys `format/output/version/v/platform/source` showed no observed change on API1 XML, API2 XML, or API2 JSONP in the tested anonymous canonical branches.",
       "Auth-ish extra keys `token/sign/sig/appver/access_token/authkey/openid` also showed no observed change on API1 XML, API2 XML, or API2 JSONP in the tested anonymous canonical branches.",
       "API2 repeated `idlist`, `tid`, `otype`, `appid`, and `appkey` behaved as first-value-wins on the tested canonical branches.",
-      "API2 repeated `union_platform` showed no observed change on the tested anonymous canonical branch, but that is weaker than a confirmed ignore rule."
+      "API2 repeated `union_platform` showed no observed change on the tested anonymous canonical branch and its real anonymous visitor-cookie replay counterpart, but that is still weaker than a confirmed ignore rule."
     ],
     "not_yet_closed": [
       "API2 JSONP callback behavior for even more aggressive unmatched-delimiter or pathological parser-breaking families beyond the tested empty/numeric/identifier/dotted/dash/bracket/dollar/space/comma/Unicode/quote/semicolon/slash/backslash/close-paren/comment-like set.",
@@ -330,7 +331,7 @@
     },
     {
       "gap": "union_platform_real_session_replay",
-      "why_it_matters": "Same-day anonymous evidence still leaves open whether `union_platform` matters under real browser cookie jars or logged-in state."
+      "why_it_matters": "Anonymous direct-call plus real anonymous visitor-cookie replay now both stay scoped-negative, but aged-cookie and logged-in state can still flip the current union_platform reading."
     }
   ],
   "evidence_index": [

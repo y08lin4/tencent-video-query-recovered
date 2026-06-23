@@ -6,6 +6,7 @@
     "This table is caller-oriented and joins the current recipe, demo-validation, regression-anchor, and environment-scope evidence into one row per capability.",
     "Rows marked stable or validated are still scoped to the currently tested anonymous direct-call surface unless an environment row explicitly says otherwise.",
     "Do not upgrade anonymous or anonymous-real-cookie evidence into aged-cookie or login-state closure.",
+    "For API2 caller rows, `union_platform=3` is currently the canonical tested recipe default, not a proven branch unlocker; its current evidence is still scoped-negative across anonymous direct-call plus real anonymous visitor-cookie replay.",
     "For the first aged-cookie/login-state replay round, a PC Web cookie header is the true minimum input; mobile H5 cookie input is optional at the current builder-contract level.",
     "For both API1 and API2, appid/appkey is no longer a simple canonical-vs-other split in the tested anonymous numeric slice: `appid=1` currently behaves like a success bypass, far noncanonical numerics fall into `appid no find`, and the searched near-canonical numeric region falls into `appkey error`; keep the canonical pair unless you are deliberately probing that branch family."
   ],
@@ -67,7 +68,8 @@
           "API2 canonical 535 path returns retcode=0 with non-empty title"
         ],
         "caller_should_check": [
-          "Do not assume URL extraction alone guarantees the downstream API2 row is canonical-full unless tid=535 is still used"
+          "Do not assume URL extraction alone guarantees the downstream API2 row is canonical-full unless tid=535 is still used",
+          "Within this default chain, `api2_union_platform=3` is only the current canonical tested recipe value; it is not a separately proven branch unlocker."
         ]
       },
       "failure_or_misuse_rule": [
@@ -1037,16 +1039,18 @@
           "defn/state/upload_src/category_map/cover_list/vwh currently absent on the confirmed 3-public-sample matrix"
         ],
         "caller_should_check": [
-          "Treat success as shell-level success, not as canonical full-detail success."
+          "Treat success as shell-level success, not as canonical full-detail success.",
+          "Treat `union_platform=0003` only as a tested spot-check override on one sample, not as proof that platform-code changes unlock a richer branch."
         ]
       },
       "failure_or_misuse_rule": [
         "Do not judge this branch by canonical 535 richness expectations.",
-        "The current union_platform=0003 spot-check only proves Python/Go parity on one tested sample; it is not a global no-effect proof."
+        "The current union_platform=0003 spot-check only proves Python/Go parity on one tested sample; it is not a global no-effect proof or a proven platform-code capability split."
       ],
       "must_not_assume": [
         "tid=541 is not a field-equivalent replacement for tid=535.",
-        "Current Python/Go parity only strengthens the shell-level reading."
+        "Current Python/Go parity only strengthens the shell-level reading.",
+        "The optional override `union_platform=0003` does not currently prove a new semantic bucket for union_platform."
       ],
       "regression_anchor_samples": [
         {

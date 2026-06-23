@@ -8,6 +8,7 @@
     "When a recipe is marked branch_partially_closed or environment_open, keep the canonical branch unless you are deliberately probing that branch family.",
     "For API2 caller recipes, `union_platform=3` should currently be read as the default tested recipe value, not as a proven capability unlocker; current evidence is still scoped-negative across anonymous direct-call runs plus real anonymous visitor-cookie replay, and remains open for aged-cookie/login-state.",
     "For both API1 and API2, appid/appkey is no longer a simple canonical-vs-other split in the tested anonymous numeric slice: `appid=1` currently behaves like a success bypass, far noncanonical numerics fall into `appid no find`, and the searched near-canonical numeric region falls into `appkey error`; keep the canonical pair unless you are deliberately probing that branch family.",
+    "For API2 specifically, read `20001238 + 6c03bbe9658448a4` as one canonical branch-gating pair rather than two independent tuning knobs.",
     "The searched numeric cutovers are now frozen by regression anchors on both lower and upper edges: API1 `10001000 -> 10001001` plus `10001186 -> 10001187`, and API2 `20001000 -> 20001001` plus `20002581 -> 20002582`."
   ],
   "recipes": [
@@ -248,7 +249,7 @@
         "non-empty title and duration",
         "defn/state/upload_src available on canonical samples"
       ],
-      "current_best_reading": "The best default recipe when callers expect the richest currently confirmed detail row. Here `union_platform=3` should still be read as the current canonical tested recipe value, not as a separately proven capability unlocker.",
+      "current_best_reading": "The best default recipe when callers expect the richest currently confirmed detail row. Keep `appid=20001238` plus `appkey=6c03bbe9658448a4` together as one canonical branch-gating pair. Here `union_platform=3` should still be read as the current canonical tested recipe value, not as a separately proven capability unlocker.",
       "environment_scope": "same-day anonymous canonical branch",
       "status": "stable",
       "evidence": [
@@ -438,7 +439,7 @@
         "wrapper defaults to QZOutputJson=...;",
         "detail semantics follow the same branch family as XML"
       ],
-      "current_best_reading": "Use only exact lowercase json. Callback override is supported, empty callback falls back to QZOutputJson, `[` / `[[` still raw-passthrough, and the current parse-breaking representative family includes `a(` / `((` / `})();` plus the widened unmatched-delimiter additions `[(` / `{(` / `/*(` / `a[(` / `)(` / `](` / `}(`.",
+      "current_best_reading": "Use only exact lowercase json, and keep `appid=20001238` plus `appkey=6c03bbe9658448a4` together as one canonical branch-gating pair. Callback override is supported, empty callback falls back to QZOutputJson, `[` / `[[` still raw-passthrough, and the current parse-breaking representative family includes `a(` / `((` / `})();` plus the widened unmatched-delimiter additions `[(` / `{(` / `/*(` / `a[(` / `)(` / `](` / `}(`.",
       "environment_scope": "same-day anonymous canonical branch",
       "status": "stable_with_callback_caveat",
       "evidence": [
@@ -470,7 +471,7 @@
         "duplicates are preserved",
         "33 non-empty items hit the over-limit error"
       ],
-      "current_best_reading": "The clean positive upper bound is 32 non-empty items per request. Use caller-side batch diagnostics instead of trusting top-level success alone.",
+      "current_best_reading": "The clean positive upper bound is 32 non-empty items per request. Keep `appid=20001238` plus `appkey=6c03bbe9658448a4` together as one canonical branch-gating pair, and use caller-side batch diagnostics instead of trusting top-level success alone.",
       "environment_scope": "same-day anonymous canonical branch; JSONP mirror semantics also replay-stable in the tested anonymous real-cookie environment",
       "status": "stable",
       "evidence": [

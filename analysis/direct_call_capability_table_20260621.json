@@ -8,7 +8,8 @@
     "Do not upgrade anonymous or anonymous-real-cookie evidence into aged-cookie or login-state closure.",
     "For API2 caller rows, `union_platform=3` is currently the canonical tested recipe default, not a proven branch unlocker; its current evidence is still scoped-negative across anonymous direct-call plus real anonymous visitor-cookie replay.",
     "For the first aged-cookie/login-state replay round, a PC Web cookie header is the true minimum input; mobile H5 cookie input is optional at the current builder-contract level.",
-    "For both API1 and API2, appid/appkey is no longer a simple canonical-vs-other split in the tested anonymous numeric slice: `appid=1` currently behaves like a success bypass, far noncanonical numerics fall into `appid no find`, and the searched near-canonical numeric region falls into `appkey error`; keep the canonical pair unless you are deliberately probing that branch family."
+    "For both API1 and API2, appid/appkey is no longer a simple canonical-vs-other split in the tested anonymous numeric slice: `appid=1` currently behaves like a success bypass, far noncanonical numerics fall into `appid no find`, and the searched near-canonical numeric region falls into `appkey error`; keep the canonical pair unless you are deliberately probing that branch family.",
+    "For API2 specifically, read `20001238 + 6c03bbe9658448a4` as one canonical branch-gating pair rather than two independent tuning knobs."
   ],
   "rows": [
     {
@@ -69,6 +70,7 @@
         ],
         "caller_should_check": [
           "Do not assume URL extraction alone guarantees the downstream API2 row is canonical-full unless tid=535 is still used",
+          "Keep downstream `api2_appid=20001238` plus `api2_appkey=6c03bbe9658448a4` together as one canonical branch-gating pair inside this chain.",
           "Within this default chain, `api2_union_platform=3` is only the current canonical tested recipe value; it is not a separately proven branch unlocker."
         ]
       },
@@ -641,6 +643,7 @@
         ],
         "caller_should_check": [
           "Canonical samples can expose defn/state/upload_src, but row-level checks still matter.",
+          "Keep `appid=20001238` plus `appkey=6c03bbe9658448a4` together as one canonical branch-gating pair.",
           "If you deliberately probe tids 488/502/540/541, expect alternate positive shells with less field fullness than canonical 535.",
           "If you deliberately probe tid=506, top-level success can still collapse into a near-empty shell."
         ]
@@ -1131,6 +1134,10 @@
         ],
         "row_level": [
           "payload still needs row-level validity checks"
+        ],
+        "caller_should_check": [
+          "Keep `appid=20001238` plus `appkey=6c03bbe9658448a4` together as one canonical branch-gating pair.",
+          "Callback wrapper experiments do not change the need to keep the canonical API2 pair together unless you are deliberately probing numeric appid families."
         ]
       },
       "failure_or_misuse_rule": [
@@ -1210,6 +1217,10 @@
         ],
         "row_level": [
           "inspect each row instead of trusting top-level success"
+        ],
+        "caller_should_check": [
+          "Keep `appid=20001238` plus `appkey=6c03bbe9658448a4` together as one canonical branch-gating pair.",
+          "Batch semantics do not make appid and appkey independent tuning knobs; probe numeric appid families only on purpose."
         ],
         "counting_rule": [
           "32 non-empty items succeed",

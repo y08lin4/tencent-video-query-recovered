@@ -1,6 +1,6 @@
 # 腾讯视频两个接口说明
 
-这份文档只写截至 2026-06-21 的真实接口回包与配套 replay 实测能坐实的东西。
+这份文档只写截至 2026-06-23 的真实接口回包与配套 replay 实测能坐实的东西。
 
 不再用“低 / 中 / 高置信度”这类模糊说法，而是分成三层：
 
@@ -137,6 +137,21 @@ https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=<CID>&appid=10001005&appk
     - `errorno=10010108`
     - `errormsg=appid no find`
   - `appid=notanumber` 时，即使缺 `appkey` 或 `appkey` 乱填，也会成功，当前黑盒表现更像“旁路到忽略分支”
+  - 新补的 focused numeric `appid` slice 把这条逻辑进一步收紧成了至少 3 类：
+    - `appid=1` 仍走 success bypass
+    - 远离 canonical 的 tested numerics，如 `2 / 3 / 10 / 100 / 1000 / 99999 / 10001000`，当前都回 `10010108 / appid no find`
+    - canonical 邻近带里的 tested numerics，如 `10001001-10001004` 与 `10001006-10001010`，在当前 canonical `appkey` 下都会回 `10010110 / appkey error`
+  - 后续 contiguous band sweep 又把这条边界继续压实到当前已测范围：
+    - `10000990-10001000` 当前都回 `10010108 / appid no find`
+    - `10001001-10001004` 当前都回 `10010110 / appkey error`
+    - `10001005` 当前是孤立 success 点
+    - `10001006-10001020` 当前都回 `10010110 / appkey error`
+  - 新补的 boundary search 又把当前已测 cutover 明确到了：
+    - `10001000 -> 10010108 / appid no find`
+    - `10001001 -> 10010110 / appkey error`
+    - `10001186 -> 10010110 / appkey error`
+    - `10001187 -> 10010108 / appid no find`
+  - 代表性复核：`appid=10001004` 在 `appkey=good`、缺 `appkey`、`appkey=deadbeef` 这 3 种写法下，当前都还是 `10010110 / appkey error`
   - 新补的 repeated 对撞 case 已说明：在当前 API1 tested branches 下，repeated `appid` 与 repeated `appkey` 都表现为首值生效
     - `appid=10001005&appid=notanumber&appkey=deadbeef` 返回 `10010110 / appkey error`
     - `appid=notanumber&appid=10001005&appkey=deadbeef` 仍成功
@@ -773,6 +788,19 @@ API2 这一轮补得最值钱的一块，就是参数契约终于不只剩一个
   - 当 `appid=20001238` 且 `appkey` 缺失 / 空 / 错时
     - 返回 `10010110 / appkey error`
   - 但当 `appid` 缺失 / `abc` / `1` 时，`appkey` 乱填也能成功
+  - 新补的 focused numeric `appid` slice 把这条逻辑进一步收紧成了至少 3 类：
+    - `appid=1` 仍走 success bypass
+    - 远离 canonical 的 tested numerics，如 `2 / 3 / 10 / 100 / 1000 / 99999`，当前都回 `10010108 / appid no find`
+    - canonical 邻近带里的 tested numerics，如 `20001233-20001237` 与 `20001239-20001243`，在当前 canonical `appkey` 下都会回 `10010110 / appkey error`
+  - 后续 contiguous band sweep 又把这条边界继续压实到当前已测范围：
+    - 在 `20001220-20001250` 这条连续带里，`20001238` 当前是孤立 success 点
+    - 同一带里的其余 tested numerics，当前全部回 `10010110 / appkey error`
+  - 新补的 boundary search 又把当前已测 cutover 明确到了：
+    - `20001000 -> 10010108 / appid no find`
+    - `20001001 -> 10010110 / appkey error`
+    - `20002581 -> 10010110 / appkey error`
+    - `20002582 -> 10010108 / appid no find`
+  - 代表性复核：`appid=20001237` 在 `appkey=good`、缺 `appkey`、`appkey=deadbeef` 这 3 种写法下，当前都还是 `10010110 / appkey error`
   - 新补的 repeated 对撞 case 已说明：在当前 API2 XML tested branches 下，repeated `appid` 与 repeated `appkey` 都表现为首值生效
     - `appid=20001238&appid=notanumber&appkey=deadbeef` 返回 `10010110 / appkey error`
     - `appid=notanumber&appid=20001238&appkey=deadbeef` 仍成功

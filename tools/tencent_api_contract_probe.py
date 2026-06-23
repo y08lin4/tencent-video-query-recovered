@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 from collections import OrderedDict
 import json
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -43,6 +44,24 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("api", choices=("api1", "api2"), help="Which API to probe")
     parser.add_argument(
+        "--case-profile",
+        choices=("baseline", "appid_numeric_focus", "appid_numeric_band"),
+        default="baseline",
+        help="Which case set to run. `baseline` keeps the original contract matrix; `appid_numeric_focus` zooms in on representative numeric appid branches; `appid_numeric_band` sweeps a contiguous numeric appid band.",
+    )
+    parser.add_argument(
+        "--appid-start",
+        type=int,
+        default=None,
+        help="Start of the numeric appid band when --case-profile=appid_numeric_band.",
+    )
+    parser.add_argument(
+        "--appid-end",
+        type=int,
+        default=None,
+        help="End of the numeric appid band when --case-profile=appid_numeric_band.",
+    )
+    parser.add_argument(
         "--sample-id",
         default="",
         help="CID for api1 or VID/idlist for api2. Defaults to a known working sample.",
@@ -54,6 +73,12 @@ def parse_args() -> argparse.Namespace:
         help="HTTP timeout in seconds.",
     )
     parser.add_argument(
+        "--retries",
+        type=int,
+        default=0,
+        help="Retry count for transient transport failures.",
+    )
+    parser.add_argument(
         "--indent",
         type=int,
         default=2,
@@ -62,6 +87,8 @@ def parse_args() -> argparse.Namespace:
     args = parser.parse_args()
     if args.timeout <= 0:
         parser.error("--timeout must be greater than 0")
+    if args.retries < 0:
+        parser.error("--retries must be >= 0")
     return args
 
 
@@ -74,18 +101,24 @@ def build_url(base: str, params: OrderedDict[str, str | None]) -> str:
     return f"{base}?{urllib.parse.urlencode(pairs)}"
 
 
-def http_fetch(url: str, timeout: float) -> tuple[int | None, str, str]:
+def http_fetch(url: str, timeout: float, retries: int) -> tuple[int | None, str, str]:
     request = urllib.request.Request(url, headers=REQUEST_HEADERS)
-    try:
-        with urllib.request.urlopen(request, timeout=timeout) as response:
-            charset = response.headers.get_content_charset() or "utf-8"
-            return response.status, response.read().decode(charset, "replace"), ""
-    except urllib.error.HTTPError as exc:
-        charset = exc.headers.get_content_charset() or "utf-8"
-        body = exc.read().decode(charset, "replace")
-        return exc.code, body, ""
-    except Exception as exc:  # pragma: no cover - runtime reporting path
-        return None, "", str(exc)
+    last_error = ""
+    for attempt in range(retries + 1):
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                charset = response.headers.get_content_charset() or "utf-8"
+                return response.status, response.read().decode(charset, "replace"), ""
+        except urllib.error.HTTPError as exc:
+            charset = exc.headers.get_content_charset() or "utf-8"
+            body = exc.read().decode(charset, "replace")
+            return exc.code, body, ""
+        except Exception as exc:  # pragma: no cover - runtime reporting path
+            last_error = str(exc)
+            if attempt < retries:
+                time.sleep(1)
+                continue
+    return None, "", last_error
 
 
 def parse_xml_summary(xml_text: str, api: str) -> OrderedDict[str, object]:
@@ -138,7 +171,9 @@ def parse_xml_summary(xml_text: str, api: str) -> OrderedDict[str, object]:
     return summary
 
 
-def make_cases(api: str, sample_id: str) -> list[tuple[str, OrderedDict[str, str | None]]]:
+def make_baseline_cases(
+    api: str, sample_id: str
+) -> list[tuple[str, OrderedDict[str, str | None]]]:
     if api == "api1":
         params = API_1_DEFAULTS.copy()
         if sample_id:
@@ -201,6 +236,109 @@ def make_cases(api: str, sample_id: str) -> list[tuple[str, OrderedDict[str, str
     return cases
 
 
+def make_appid_numeric_focus_cases(
+    api: str, sample_id: str
+) -> list[tuple[str, OrderedDict[str, str | None]]]:
+    if api == "api1":
+        params = API_1_DEFAULTS.copy()
+        if sample_id:
+            params["idlist"] = sample_id
+        cases: list[tuple[str, OrderedDict[str, str | None]]] = [
+            ("baseline", params.copy()),
+            ("appid_1", override(params, appid="1")),
+            ("appid_2", override(params, appid="2")),
+            ("appid_3", override(params, appid="3")),
+            ("appid_10", override(params, appid="10")),
+            ("appid_100", override(params, appid="100")),
+            ("appid_1000", override(params, appid="1000")),
+            ("appid_99999", override(params, appid="99999")),
+        ]
+        for value in range(10001000, 10001011):
+            cases.append((f"appid_{value}", override(params, appid=str(value))))
+        cases.extend(
+            [
+                (
+                    "appid_10001004_missing_appkey",
+                    override(params, appid="10001004", appkey=None),
+                ),
+                (
+                    "appid_10001004_wrong_appkey",
+                    override(params, appid="10001004", appkey="deadbeef"),
+                ),
+            ]
+        )
+        return cases
+
+    params = API_2_DEFAULTS.copy()
+    if sample_id:
+        params["idlist"] = sample_id
+    cases = [
+        ("baseline", params.copy()),
+        ("appid_1", override(params, appid="1")),
+        ("appid_2", override(params, appid="2")),
+        ("appid_3", override(params, appid="3")),
+        ("appid_10", override(params, appid="10")),
+        ("appid_100", override(params, appid="100")),
+        ("appid_1000", override(params, appid="1000")),
+        ("appid_99999", override(params, appid="99999")),
+    ]
+    for value in range(20001233, 20001244):
+        cases.append((f"appid_{value}", override(params, appid=str(value))))
+    cases.extend(
+        [
+            (
+                "appid_20001237_missing_appkey",
+                override(params, appid="20001237", appkey=None),
+            ),
+            (
+                "appid_20001237_wrong_appkey",
+                override(params, appid="20001237", appkey="deadbeef"),
+            ),
+        ]
+    )
+    return cases
+
+
+def make_appid_numeric_band_cases(
+    api: str, sample_id: str, appid_start: int | None, appid_end: int | None
+) -> list[tuple[str, OrderedDict[str, str | None]]]:
+    if api == "api1":
+        params = API_1_DEFAULTS.copy()
+        if sample_id:
+            params["idlist"] = sample_id
+        start = 10000995 if appid_start is None else appid_start
+        end = 10001015 if appid_end is None else appid_end
+    else:
+        params = API_2_DEFAULTS.copy()
+        if sample_id:
+            params["idlist"] = sample_id
+        start = 20001228 if appid_start is None else appid_start
+        end = 20001248 if appid_end is None else appid_end
+    if start > end:
+        raise ValueError("appid_start must be <= appid_end")
+    cases: list[tuple[str, OrderedDict[str, str | None]]] = [
+        ("baseline", params.copy()),
+        ("appid_1", override(params, appid="1")),
+    ]
+    for value in range(start, end + 1):
+        cases.append((f"appid_{value}", override(params, appid=str(value))))
+    return cases
+
+
+def make_cases(
+    api: str,
+    sample_id: str,
+    case_profile: str,
+    appid_start: int | None,
+    appid_end: int | None,
+) -> list[tuple[str, OrderedDict[str, str | None]]]:
+    if case_profile == "appid_numeric_focus":
+        return make_appid_numeric_focus_cases(api, sample_id)
+    if case_profile == "appid_numeric_band":
+        return make_appid_numeric_band_cases(api, sample_id, appid_start, appid_end)
+    return make_baseline_cases(api, sample_id)
+
+
 def override(
     params: OrderedDict[str, str | None], **updates: str | None
 ) -> OrderedDict[str, str | None]:
@@ -213,12 +351,20 @@ def override(
 def main() -> int:
     args = parse_args()
     base_url = API_1_URL if args.api == "api1" else API_2_URL
-    cases = make_cases(args.api, args.sample_id.strip())
+    cases = make_cases(
+        args.api,
+        args.sample_id.strip(),
+        args.case_profile,
+        args.appid_start,
+        args.appid_end,
+    )
 
     results: list[OrderedDict[str, object]] = []
     for name, params in cases:
         url = build_url(base_url, params)
-        status, body, transport_error = http_fetch(url, timeout=args.timeout)
+        status, body, transport_error = http_fetch(
+            url, timeout=args.timeout, retries=args.retries
+        )
         row: OrderedDict[str, object] = OrderedDict()
         row["case"] = name
         row["url"] = url
@@ -231,7 +377,19 @@ def main() -> int:
 
     report = OrderedDict(
         (
-            ("meta", OrderedDict((("api", args.api), ("timeout_seconds", args.timeout)))),
+            (
+                "meta",
+                OrderedDict(
+                    (
+                        ("api", args.api),
+                        ("case_profile", args.case_profile),
+                        ("appid_start", args.appid_start),
+                        ("appid_end", args.appid_end),
+                        ("timeout_seconds", args.timeout),
+                        ("retries", args.retries),
+                    )
+                ),
+            ),
             ("results", results),
         )
     )

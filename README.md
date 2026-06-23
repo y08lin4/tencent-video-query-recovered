@@ -12,11 +12,12 @@
 - 获取视频时长、清晰度体积、封面和基础元数据
 - 封装成命令行工具、接口服务、桌面工具或移动端查询工具
 
-到 2026-06-20 为止，这个仓库已经不只是“能调通接口”的状态；在当前匿名直连范围内，主调用路径已经压得比较实，但整体参数闭环与环境闭环仍未完成：
+到 2026-06-23 为止，这个仓库已经不只是“能调通接口”的状态；在当前匿名直连范围内，主调用路径已经压得比较实，但整体参数闭环与环境闭环仍未完成：
 
 - 接口 1：`CID -> cover 元信息 + VID 集合 + cover 级枚举`
 - 接口 2：canonical 路径下通常是 `VID -> 较完整的单视频详情 + defn + 分类链 + 批量返回`；但在已知 alternate positive tid 下，`488` 当前更像 `title + url` 的更薄正壳，`502` 当前更像 `title + url + vid + duration + cover_list + create_time` 的较厚 alternate shell，`540` 当前更像 `title + duration + url` 的较薄正壳，`541` 当前更像仅 `title + url` 的更薄正壳；它们都不保证 `defn / category_map / state / upload_src` 等字段齐全
 - 当前已补出主要契约与高信号规律：`type`、`pay_status`、`positive_trailer`、`state`、API1/API2 参数契约；`F` 的 black-box family 在当前已测样本内更稳，但前端命名读取仍偏负；`upload_src` 当前不只停在形态确认，在 tested redirected-detail frontend slice 里也补出了更强的 scoped-negative 证据；`positive_content_id` 仍以形态确认为主，而 `downright` 的单码语义仍待命名，但字段级前端用途已经坐实为下载工具栏 gating
+- 新增参数闭环进展：`appid/appkey` 这条线已经不再只是“canonical vs 其他”这种粗口径；当前匿名直连范围内，API1/API2 都至少补到了 3 类 tested family：`appid=1` 的 success bypass、远离 canonical numeric 的 `appid no find`、以及 canonical 邻近连续带上的 `appkey error` family。边界在当前已测范围内也压到了显式 cutover：API1 `10001000 -> 10001001`、`10001186 -> 10001187`，API2 `20001000 -> 20001001`、`20002581 -> 20002582`
 - 新增增强层：前端语义层、环境维度矩阵、枚举值卡片化
 - 新增确认：前端已坐实 `state` 会进入“未上架 / 下架 / 删除 / 不可播”校验分支；sampled runtime `union.coverInfoMap` 的 `pay_status` 已确认不是 raw API 直通；`upload_src=2048` 已不止 2 个正例 cover，且已经补出 same-type 纯 `0` 反例和 `2048/108` 混合 cover；2026-06-20 的 row-shell / network followup 里 `state/positive_trailer` 继续可见，但 `F/upload_src` 仍未补出正例
 - 同日继续补强：已测 visible-card `getPage` row schema 也继续不带 `F/upload_src`；更稳的说法是，这个结论当前不只覆盖两条代表性 redirected detail 路径，还覆盖 3 个 stronger non-detail 候选在重定向进 detail 之后的 request/response slice；下一跳更该追 `getPage` tagged shaping、真实 `getCoverInfoBatch` 请求，或 SSR / vector-layout 提前整形
@@ -269,7 +270,7 @@ go.exe -cid mzc00200idzf2m8 -api2-otype json -api2-callback cb1 -json
 | `VID[] -> 批量详情` | 文档、Python demo、Go demo | Python 与 Go 现在都支持按批分发 API2，并暴露了 `--api2-batch-size` / `-api2-batch-size`（当前 guard 为 `1..32`） |
 | `otype=json` JSONP 外壳 | 文档、Python demo、Go demo | 当且仅当单个 `otype` key 为精确小写 `json` 时切到 JSONP；Python/Go demo 现在都支持 `api2-callback` 覆盖 wrapper，空 `callback=` 回落默认壳，repeated `callback` 在当前匿名 collision cases 下表现为首值生效，而当前已知会打坏摘要解析的代表 case 包括 `callback=a(`、`callback=((`、`callback=})();`，以及后续补到的 `callback=[(` / `callback={(` / `callback=/*(` / `callback=a[(` / `callback=)(` / `callback=](` / `callback=}(`；相对地，`callback=[` / `callback=[[` 仍是 raw passthrough |
 | `all-invalid JSONP` 调用方识别 | 文档、Python demo、Go demo、analysis | 当前统一规则：`top-level success + 全部 empty_shell=true` 视为整批无效 |
-| 参数契约 / 错误壳探测 | `tools/tencent_api_contract_probe.py` | 适合复现单键 `tid / idlist / appid / appkey / otype / union_platform` 分支 |
+| 参数契约 / 错误壳探测 | `tools/tencent_api_contract_probe.py` | 适合复现单键 `tid / idlist / appid / appkey / otype / union_platform` 分支；现在也支持 `--case-profile appid_numeric_focus` 与 `--case-profile appid_numeric_band --appid-start/--appid-end`，可把 `appid=1` 的 success bypass、far numeric `appid no find`、以及 canonical 邻近乃至连续带宽上的 `appkey error` family 分开压实 |
 | extra/repeated key 语义 | `tools/tencent_param_semantics_probe.py` | 专门复现 `foo/callback/_`、API2 JSONP `callback` wrapper 变化、以及 repeated `tid / idlist / otype / appid / appkey / union_platform` 的 parser 行为；现在也支持 `--api2-tid / --api2-idlist / --case-profile authish|callback_contract`，以及 `--extra-callback-value / --extra-callback-file` 这种窄范围 callback 尾项扩测 |
 | replay 环境矩阵 | `tools/tencent_environment_matrix_probe.py` + [examples/environment/real_cookie_env.template.json](C:/Users/lin/Documents/YM查询工具还原/examples/environment/real_cookie_env.template.json) | 真实匿名 visitor cookie replay 已有正式产物；`aged-cookie / login-state` 也已有 header-to-env 构造入口，但仍待补实测。推荐先用 `tools/tencent_cookie_env_from_headers.py` 从原始 `Cookie:` 头生成 `--extra-env-json` |
 | replay bundle 串联 | `tools/tencent_replay_bundle_runner.py` | 现在除了 `authish` 轻量语义回放，也支持 `--semantics-profile full` 以及 `--probe-extra-callback-value / --probe-extra-callback-file`，可以把 callback pathological-tail case 一起带进后续 aged/login replay；同时新增 `--artifact-output-dir / --subprocess-output-dir`，在本地受限环境里也能先把整包结果完整落到可写目录。相关自测见 `replay_bundle_semantics_callback_support_20260621.json` 与 `replay_bundle_artifact_dir_selfcheck_20260621.json` |

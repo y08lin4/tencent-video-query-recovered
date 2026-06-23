@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22",
+  "generated_at": "2026-06-23",
   "scope": "Parameter closure matrix for the two Tencent Video main interfaces, normalized from current canonical inventory and gap-priority artifacts.",
   "status_legend": {
     "closed": "作用/取值/依赖/错误形态/环境范围/能力面都已被当前证据充分覆盖",
@@ -104,7 +104,7 @@
       "parameter": "appid",
       "interface": "api1",
       "requiredness": "conditional_branch_parameter",
-      "role": "numeric canonical appid enables the stable documented appkey-validation branch; missing / text / `1` currently land on a looser anonymous-compatibility branch in the tested cases",
+      "role": "numeric canonical appid enables the stable documented appkey-validation branch; missing / text / `1` currently land on a looser anonymous-compatibility branch in the tested cases, and the new numeric-focus, contiguous-band, and boundary-search probes show a third tested family near the canonical value that falls into appkey-gated rejection rather than appid-no-find",
       "working_examples": [
         "missing",
         "1",
@@ -119,7 +119,10 @@
         }
       ],
       "dependency_or_branching": [
-        "switches between canonical numeric-appid branch and looser tested bypass branch"
+        "switches between canonical numeric-appid branch and looser tested bypass branch",
+        "the focused numeric slice now shows a three-family split: `1` still succeeds, far noncanonical numerics like `2/3/10/100/1000/99999/10001000` return `10010108 / appid no find`, while tested near-canonical numerics `10001001-10001004` and `10001006-10001010` return `10010110 / appkey error` with the current canonical appkey",
+        "the later contiguous band scan sharpens that into explicit tested ranges: `10000990-10001000 -> appid no find`, `10001001-10001004 -> appkey error`, `10001005 -> success`, `10001006-10001020 -> appkey error`",
+        "the boundary search then tightens the currently searched cutovers to `10001000 -> 10001001` on the lower side and `10001186 -> 10001187` on the upper side"
       ],
       "environment_scope": "current same-day anonymous matrix unless otherwise stated",
       "unlocked_capabilities": [
@@ -127,7 +130,7 @@
       ],
       "current_status": "partially_closed",
       "remaining_gaps": [
-        "Positive behavior for non-canonical but valid numeric appid values is not yet mapped."
+        "Full numeric appid space is still not closed; the new evidence now narrows it to a tested three-family split with explicit cutovers `10001000 -> 10001001` and `10001186 -> 10001187`, but not to a global numeric-space proof outside the searched regions."
       ]
     },
     {
@@ -153,7 +156,10 @@
         }
       ],
       "dependency_or_branching": [
-        "validated only when canonical numeric appid branch is active"
+        "validated only when canonical numeric appid branch is active",
+        "the focused numeric slice also shows that tested neighboring numeric appids such as `10001004` stay on `10010110 / appkey error` whether appkey is canonical, missing, or explicitly wrong",
+        "the later contiguous band scan extends that tested near-canonical rejection family to `10001001-10001004` and `10001006-10001020` under the current canonical appkey",
+        "the boundary search currently carries that tested rejection family through `10001186`, before `10001187` flips back to `10010108 / appid no find`"
       ],
       "environment_scope": "current same-day anonymous matrix unless otherwise stated",
       "unlocked_capabilities": [
@@ -161,7 +167,7 @@
       ],
       "current_status": "partially_closed",
       "remaining_gaps": [
-        "No evidence yet that appkey alone unlocks additional API1 capability beyond satisfying the canonical numeric-appid branch."
+        "No evidence yet that appkey alone unlocks additional API1 capability beyond satisfying the exact canonical numeric-appid branch; the tested near-canonical numeric family still rejects the current canonical appkey across the searched `10001001-10001186` region."
       ]
     }
   ],
@@ -249,7 +255,7 @@
       "parameter": "appid",
       "interface": "api2",
       "requiredness": "conditional_branch_parameter",
-      "role": "numeric canonical appid enables stricter appkey validation; missing / text / `1` currently bypass that stricter branch",
+      "role": "numeric canonical appid enables stricter appkey validation; missing / text / `1` currently bypass that stricter branch, and the new numeric-focus, contiguous-band, and boundary-search probes show a third tested family near the canonical value that falls into appkey-gated rejection rather than appid-no-find",
       "working_examples": [
         "missing",
         "1",
@@ -263,7 +269,10 @@
         }
       ],
       "dependency_or_branching": [
-        "switches between canonical numeric-appid branch and looser tested bypass branch"
+        "switches between canonical numeric-appid branch and looser tested bypass branch",
+        "the focused numeric slice now shows a three-family split: `1` still succeeds, far noncanonical numerics like `2/3/10/100/1000/99999` return `10010108 / appid no find`, while tested near-canonical numerics `20001233-20001237` and `20001239-20001243` return `10010110 / appkey error` with the current canonical appkey",
+        "the later contiguous band scan sharpens that further: within `20001220-20001250`, `20001238` is the isolated success point and every other tested value in that band returns `10010110 / appkey error`",
+        "the boundary search then tightens the currently searched cutovers to `20001000 -> 20001001` on the lower side and `20002581 -> 20002582` on the upper side"
       ],
       "environment_scope": "current same-day anonymous matrix unless otherwise stated",
       "unlocked_capabilities": [
@@ -271,7 +280,7 @@
       ],
       "current_status": "partially_closed",
       "remaining_gaps": [
-        "Positive behavior for other numeric appid values is not yet mapped."
+        "Full numeric appid space is still not closed; the new evidence now narrows it to a tested three-family split with explicit cutovers `20001000 -> 20001001` and `20002581 -> 20002582`, but not to a global numeric-space proof outside the searched regions."
       ]
     },
     {
@@ -296,7 +305,10 @@
         }
       ],
       "dependency_or_branching": [
-        "validated only when canonical numeric appid branch is active"
+        "validated only when canonical numeric appid branch is active",
+        "the focused numeric slice also shows that tested neighboring numeric appids such as `20001237` stay on `10010110 / appkey error` whether appkey is canonical, missing, or explicitly wrong",
+        "the later contiguous band scan extends that tested near-canonical rejection family to `20001220-20001237` and `20001239-20001250` under the current canonical appkey",
+        "the boundary search currently carries that tested rejection family across the wider searched `20001001-20002581` region, before `20002582` flips back to `10010108 / appid no find`"
       ],
       "environment_scope": "current same-day anonymous matrix unless otherwise stated",
       "unlocked_capabilities": [
@@ -304,7 +316,7 @@
       ],
       "current_status": "partially_closed",
       "remaining_gaps": [
-        "No evidence yet that appkey unlocks any API2 capability beyond satisfying the canonical numeric-appid branch."
+        "No evidence yet that appkey unlocks any API2 capability beyond satisfying the exact canonical numeric-appid branch; the tested near-canonical numeric family still rejects the current canonical appkey across the searched `20001001-20002581` region."
       ]
     },
     {

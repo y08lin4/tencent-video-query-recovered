@@ -1,0 +1,364 @@
+{
+  "meta": {
+    "api": "api2",
+    "case_profile": "appid_numeric_focus",
+    "timeout_seconds": 30.0,
+    "retries": 2
+  },
+  "results": [
+    {
+      "case": "baseline",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>4</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1782203846</resptime><results><fields><c_covers>mzc00200idzf2m8+mzc00200g9sqip1+mzc002007u6z7dn</c_covers><category_map>1",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "0",
+        "errormsg": "",
+        "retcode": "0",
+        "sample_results": [
+          {
+            "id": "z4102qfi0x4",
+            "retcode": "0",
+            "vid": "z4102qfi0x4",
+            "cover_id": "",
+            "title": "飞驰人生3"
+          }
+        ],
+        "results_count": 1,
+        "sample_vids": [
+          "z4102qfi0x4"
+        ],
+        "sample_titles": [
+          "飞驰人生3"
+        ]
+      }
+    },
+    {
+      "case": "appid_1",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=1&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>8</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1782203846</resptime><results><fields><c_covers>mzc00200idzf2m8+mzc00200g9sqip1+mzc002007u6z7dn</c_covers><category_map>1",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "0",
+        "errormsg": "",
+        "retcode": "0",
+        "sample_results": [
+          {
+            "id": "z4102qfi0x4",
+            "retcode": "0",
+            "vid": "z4102qfi0x4",
+            "cover_id": "",
+            "title": "飞驰人生3"
+          }
+        ],
+        "results_count": 1,
+        "sample_vids": [
+          "z4102qfi0x4"
+        ],
+        "sample_titles": [
+          "飞驰人生3"
+        ]
+      }
+    },
+    {
+      "case": "appid_2",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=2&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>4</costtime><errormsg>appid no find</errormsg><errorno>10010108</errorno><resptime>1782203847</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010108",
+        "errormsg": "appid no find",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_3",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=3&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>6</costtime><errormsg>appid no find</errormsg><errorno>10010108</errorno><resptime>1782203847</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010108",
+        "errormsg": "appid no find",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_10",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=10&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>6</costtime><errormsg>appid no find</errormsg><errorno>10010108</errorno><resptime>1782203847</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010108",
+        "errormsg": "appid no find",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_100",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=100&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>3</costtime><errormsg>appid no find</errormsg><errorno>10010108</errorno><resptime>1782203847</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010108",
+        "errormsg": "appid no find",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_1000",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=1000&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>3</costtime><errormsg>appid no find</errormsg><errorno>10010108</errorno><resptime>1782203847</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010108",
+        "errormsg": "appid no find",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_99999",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=99999&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>2</costtime><errormsg>appid no find</errormsg><errorno>10010108</errorno><resptime>1782203847</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010108",
+        "errormsg": "appid no find",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_20001233",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001233&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>4</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1782203847</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_20001234",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001234&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>6</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1782203847</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_20001235",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001235&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>5</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1782203847</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_20001236",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001236&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>5</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1782203847</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_20001237",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001237&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>4</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1782203848</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_20001238",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>5</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1782203848</resptime><results><fields><c_covers>mzc00200idzf2m8+mzc00200g9sqip1+mzc002007u6z7dn</c_covers><category_map>1",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "0",
+        "errormsg": "",
+        "retcode": "0",
+        "sample_results": [
+          {
+            "id": "z4102qfi0x4",
+            "retcode": "0",
+            "vid": "z4102qfi0x4",
+            "cover_id": "",
+            "title": "飞驰人生3"
+          }
+        ],
+        "results_count": 1,
+        "sample_vids": [
+          "z4102qfi0x4"
+        ],
+        "sample_titles": [
+          "飞驰人生3"
+        ]
+      }
+    },
+    {
+      "case": "appid_20001239",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001239&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>4</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1782203848</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_20001240",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001240&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>5</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1782203848</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_20001241",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001241&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>3</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1782203848</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_20001242",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001242&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>4</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1782203848</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_20001243",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001243&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>3</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1782203848</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_20001237_missing_appkey",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001237&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>4</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1782203848</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    },
+    {
+      "case": "appid_20001237_wrong_appkey",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001237&appkey=deadbeef&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "body_prefix": "<root><costtime>3</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1782203848</resptime></root>",
+      "xml_summary": {
+        "root_tag": "root",
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": "",
+        "results_count": 0,
+        "sample_vids": [],
+        "sample_titles": []
+      }
+    }
+  ]
+}

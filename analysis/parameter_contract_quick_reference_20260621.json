@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22",
+  "generated_at": "2026-06-23",
   "scope": "Direct-call quick reference for the two Tencent Video main interfaces, optimized for callers who need the current best-known parameter contract rather than the full closure ledger.",
   "caution": [
     "This file summarizes the current best direct-call contract in the tested anonymous direct-call scope plus the later real anonymous visitor-cookie replay where noted.",
@@ -101,19 +101,24 @@
           "1",
           "notanumber"
         ],
-        "shape_or_notes": "canonical numeric appid activates the stricter documented appkey branch; missing/text-like values currently land on a looser tested anonymous branch",
+        "shape_or_notes": "canonical numeric appid activates the stricter documented appkey branch; missing/text-like values currently land on a looser tested anonymous branch; the new numeric-focus probe shows a three-family split rather than a simple canonical-vs-other dichotomy",
         "failure_signals": [
           {
             "when": "99999",
             "errorno": "10010108",
             "errormsg": "appid no find"
+          },
+          {
+            "when": "tested near-canonical neighbors such as 10001001-10001004 and 10001006-10001010 with the current canonical appkey",
+            "errorno": "10010110",
+            "errormsg": "appkey error"
           }
         ],
-        "current_best_reading": "For stable direct calls, keep the canonical numeric appid. Alternate numeric space is not closed.",
+        "current_best_reading": "For stable direct calls, keep the canonical numeric appid. In the tested anonymous numeric slice, appid behavior is now at least three-way: `1` still rides the loose success-bypass branch, a wider tested lower band `10000990-10001000` returns `appid no find`, and the tested near-canonical ranges `10001001-10001004` plus `10001006-10001186` fall into a stricter `appkey error` family instead of `appid no find`, with `10001005` currently acting as the isolated success point inside that scanned region. The current upper boundary search then flips back at `10001187 -> 10010108 / appid no find`.",
         "environment_scope": "same-day anonymous matrix",
         "status": "partially_closed",
         "still_open": [
-          "Positive behavior for other numeric appid values is not yet mapped."
+          "Full numeric appid space is still not closed; the new evidence now tightens it to explicit tested cutovers `10001000 -> 10001001` and `10001186 -> 10001187`, but not to a global numeric-space proof outside those scanned regions."
         ]
       },
       {
@@ -137,11 +142,11 @@
             "errormsg": "appkey error"
           }
         ],
-        "current_best_reading": "Treat this as part of the canonical documented pair with appid=10001005.",
+        "current_best_reading": "Treat this as part of the canonical documented pair with appid=10001005. The new numeric-focus, contiguous-band, and boundary-search probes also show that nearby tested numeric appids such as `10001004`, and more broadly the scanned noncanonical ranges `10001001-10001004` plus `10001006-10001186`, stay on the same `10010110 / appkey error` branch whether appkey is canonical, missing, or explicitly wrong, so the current canonical appkey does not satisfy that tested near-canonical family.",
         "environment_scope": "same-day anonymous matrix",
         "status": "partially_closed",
         "still_open": [
-          "No evidence yet that appkey unlocks more than satisfying the canonical numeric-appid branch."
+          "No evidence yet that appkey unlocks more than satisfying the exact canonical numeric-appid branch; the tested near-canonical numeric family still rejects the current canonical appkey up to the searched upper edge `10001186`."
         ]
       }
     ]
@@ -222,19 +227,24 @@
           "1",
           "notanumber"
         ],
-        "shape_or_notes": "canonical numeric appid activates the stricter documented appkey branch; missing/text-like values currently land on a looser tested anonymous branch",
+        "shape_or_notes": "canonical numeric appid activates the stricter documented appkey branch; missing/text-like values currently land on a looser tested anonymous branch; the new numeric-focus probe shows a three-family split rather than a simple canonical-vs-other dichotomy",
         "failure_signals": [
           {
             "when": "99999",
             "errorno": "10010108",
             "errormsg": "appid no find"
+          },
+          {
+            "when": "tested near-canonical neighbors such as 20001233-20001237 and 20001239-20001243 with the current canonical appkey",
+            "errorno": "10010110",
+            "errormsg": "appkey error"
           }
         ],
-        "current_best_reading": "For stable direct calls, keep the canonical numeric appid. Alternate numeric space is not closed.",
+        "current_best_reading": "For stable direct calls, keep the canonical numeric appid. In the tested anonymous numeric slice, appid behavior is now at least three-way: `1` still rides the loose success-bypass branch, the lower boundary search finds `20001000 -> appid no find` and `20001001 -> appkey error`, and the upper boundary search finds `20002581 -> appkey error` before flipping back at `20002582 -> appid no find`, with `20001238` currently acting as the isolated success point inside that searched region.",
         "environment_scope": "same-day anonymous matrix",
         "status": "partially_closed",
         "still_open": [
-          "Positive behavior for other numeric appid values is not yet mapped."
+          "Full numeric appid space is still not closed; the new evidence now tightens it to explicit tested cutovers `20001000 -> 20001001` and `20002581 -> 20002582`, but not to a global numeric-space proof outside those searched regions."
         ]
       },
       {
@@ -258,11 +268,11 @@
             "errormsg": "appkey error"
           }
         ],
-        "current_best_reading": "Treat this as part of the canonical documented pair with appid=20001238.",
+        "current_best_reading": "Treat this as part of the canonical documented pair with appid=20001238. The new numeric-focus, contiguous-band, and boundary-search probes also show that nearby tested numeric appids such as `20001237`, and more broadly the searched noncanonical ranges `20001001-20001237` plus `20001239-20002581`, stay on the same `10010110 / appkey error` branch whether appkey is canonical, missing, or explicitly wrong, so the current canonical appkey does not satisfy that tested near-canonical family.",
         "environment_scope": "same-day anonymous matrix",
         "status": "partially_closed",
         "still_open": [
-          "No evidence yet that appkey unlocks more than satisfying the canonical numeric-appid branch."
+          "No evidence yet that appkey unlocks more than satisfying the exact canonical numeric-appid branch; the tested near-canonical numeric family still rejects the current canonical appkey across the searched ranges `20001001-20001237` and `20001239-20002581`."
         ]
       },
       {
@@ -390,6 +400,13 @@
     "analysis/parameter_closure_matrix_20260621.json",
     "analysis/parameter_capability_index_20260621.json",
     "analysis/param_query_semantics_20260620.json",
-    "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json"
+    "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json",
+    "analysis/api1_appid_numeric_focus_20260623.json",
+    "analysis/api2_appid_numeric_focus_20260623.json",
+    "analysis/appid_numeric_branch_summary_20260623.json",
+    "analysis/api1_appid_numeric_band_10000990_10001020_20260623.json",
+    "analysis/api2_appid_numeric_band_20001220_20001250_20260623.json",
+    "analysis/appid_numeric_band_summary_20260623.json",
+    "analysis/appid_numeric_boundary_search_20260623.json"
   ]
 }

@@ -1,0 +1,126 @@
+{
+  "generated_at": "2026-06-23",
+  "scope": "Focused numeric appid branch summary for the two Tencent Video main interfaces in the anonymous direct-call scope.",
+  "caution": [
+    "This is a tested numeric slice, not a proof of the full appid space.",
+    "The new result narrows appid behavior from a two-way guess into a tested three-family black-box split."
+  ],
+  "api1": {
+    "canonical_appid": "10001005",
+    "canonical_success": {
+      "errorno": "0",
+      "errormsg": "",
+      "retcode": "0"
+    },
+    "special_bypass_success_values": [
+      "1"
+    ],
+    "tested_appid_no_find_values": [
+      "2",
+      "3",
+      "10",
+      "100",
+      "1000",
+      "99999",
+      "10001000"
+    ],
+    "tested_near_canonical_strict_appkey_band_values": [
+      "10001001",
+      "10001002",
+      "10001003",
+      "10001004",
+      "10001006",
+      "10001007",
+      "10001008",
+      "10001009",
+      "10001010"
+    ],
+    "tested_near_canonical_strict_appkey_band_behavior": {
+      "errorno": "10010110",
+      "errormsg": "appkey error",
+      "notes": [
+        "Using the current canonical appkey still stays on appkey error for the tested neighboring values.",
+        "Representative checks on appid=10001004 show the same branch when appkey is missing or explicitly wrong."
+      ]
+    },
+    "representative_neighbor_validation": {
+      "appid_10001004_with_canonical_appkey": {
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": ""
+      },
+      "appid_10001004_missing_appkey": {
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": ""
+      },
+      "appid_10001004_wrong_appkey": {
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": ""
+      }
+    },
+    "current_best_reading": "In the tested anonymous slice, API1 numeric appid behavior is at least three-way: appid=1 still rides the loose success bypass branch, far noncanonical numerics like 2/3/10/100/1000/99999/10001000 return appid no find, and a tested near-canonical band around 10001005 falls into a stricter appkey-gated family instead of appid no find."
+  },
+  "api2": {
+    "canonical_appid": "20001238",
+    "canonical_success": {
+      "errorno": "0",
+      "errormsg": "",
+      "retcode": "0"
+    },
+    "special_bypass_success_values": [
+      "1"
+    ],
+    "tested_appid_no_find_values": [
+      "2",
+      "3",
+      "10",
+      "100",
+      "1000",
+      "99999"
+    ],
+    "tested_near_canonical_strict_appkey_band_values": [
+      "20001233",
+      "20001234",
+      "20001235",
+      "20001236",
+      "20001237",
+      "20001239",
+      "20001240",
+      "20001241",
+      "20001242",
+      "20001243"
+    ],
+    "tested_near_canonical_strict_appkey_band_behavior": {
+      "errorno": "10010110",
+      "errormsg": "appkey error",
+      "notes": [
+        "Using the current canonical appkey still stays on appkey error for the tested neighboring values.",
+        "Representative checks on appid=20001237 show the same branch when appkey is missing or explicitly wrong."
+      ]
+    },
+    "representative_neighbor_validation": {
+      "appid_20001237_with_canonical_appkey": {
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": ""
+      },
+      "appid_20001237_missing_appkey": {
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": ""
+      },
+      "appid_20001237_wrong_appkey": {
+        "errorno": "10010110",
+        "errormsg": "appkey error",
+        "retcode": ""
+      }
+    },
+    "current_best_reading": "In the tested anonymous slice, API2 numeric appid behavior is also at least three-way: appid=1 still rides the loose success bypass branch, far noncanonical numerics like 2/3/10/100/1000/99999 return appid no find, and the tested near-canonical band around 20001238 falls into a stricter appkey-gated family instead of appid no find."
+  },
+  "primary_evidence": [
+    "analysis/api1_appid_numeric_focus_20260623.json",
+    "analysis/api2_appid_numeric_focus_20260623.json"
+  ]
+}

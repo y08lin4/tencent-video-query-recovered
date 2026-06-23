@@ -149,6 +149,24 @@
   ],
   "parameter_probes": [
     {
+      "name": "api_contract_probe",
+      "path": "tools/tencent_api_contract_probe.py",
+      "intent": "Probe core parameter validation and response-shell behavior for `tid / idlist / appid / appkey / otype / union_platform` on the two main interfaces",
+      "core_flags": [
+        "api1|api2",
+        "--case-profile",
+        "--sample-id",
+        "--timeout",
+        "--retries",
+        "--indent"
+      ],
+      "notes": [
+        "Default `--case-profile baseline` keeps the original contract matrix.",
+        "Use `--case-profile appid_numeric_focus` to reproduce the newly confirmed three-family numeric-appid split: `appid=1` success bypass, far noncanonical numeric `appid no find`, and the tested near-canonical `appkey error` band.",
+        "Use `--case-profile appid_numeric_band --appid-start <N> --appid-end <M>` when you want a contiguous appid sweep around a suspected boundary instead of a few representative points."
+      ]
+    },
+    {
       "name": "param_semantics_probe",
       "path": "tools/tencent_param_semantics_probe.py",
       "intent": "Probe auth-ish keys, reserved keys, callback families, repeated-key order, and wrong-appkey branches",
@@ -197,6 +215,7 @@
     "If you need to revalidate the public Python/Go demo surfaces end to end, run the demo validation runner next.",
     "If you need direct caller-facing proof at the raw HTTP layer, run the raw HTTP validation runner after the demo rerun.",
     "Anonymous or replay contract comparisons: use the environment matrix probe.",
+    "If you need the core branch/validation behavior of explicit parameters such as appid/appkey rather than callback or repeated-key semantics, run the API contract probe before the semantics probe.",
     "Parameter behavior and callback-tail work: use the semantics probe directly or through the replay bundle runner; `callback_contract` is now the smallest dedicated wrapper-contract profile.",
     "Positive tid band discovery: use the positive tid probe for narrow bands first; the current 524-529 anonymous lower-edge probe found no new positive tid and downgraded wider blind tid scanning priority."
   ],

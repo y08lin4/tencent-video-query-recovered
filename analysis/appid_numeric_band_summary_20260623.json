@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-06-23",
+  "scope": "Contiguous numeric appid band boundary summary for the two Tencent Video main interfaces in the anonymous direct-call scope.",
+  "api1": {
+    "canonical_appid": "10001005",
+    "band_start": 10000990,
+    "band_end": 10001020,
+    "success_values": [
+      10001005
+    ],
+    "appid_no_find_ranges": [
+      [
+        10000990,
+        10001000
+      ]
+    ],
+    "appkey_error_ranges": [
+      [
+        10001001,
+        10001004
+      ],
+      [
+        10001006,
+        10001020
+      ]
+    ],
+    "other_rows": [],
+    "current_best_reading": "Within this tested contiguous band, the canonical appid is an isolated success point; one side or both sides around it collapse into a contiguous appkey-error family, while the farther-out tested values sit on appid-no-find."
+  },
+  "api2": {
+    "canonical_appid": "20001238",
+    "band_start": 20001220,
+    "band_end": 20001250,
+    "success_values": [
+      20001238
+    ],
+    "appid_no_find_ranges": [],
+    "appkey_error_ranges": [
+      [
+        20001220,
+        20001237
+      ],
+      [
+        20001239,
+        20001250
+      ]
+    ],
+    "other_rows": [],
+    "current_best_reading": "Within this tested contiguous band, the canonical appid is an isolated success point; one side or both sides around it collapse into a contiguous appkey-error family, while the farther-out tested values sit on appid-no-find."
+  }
+}

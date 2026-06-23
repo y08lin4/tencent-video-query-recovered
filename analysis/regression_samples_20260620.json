@@ -1,0 +1,863 @@
+{
+  "generated_at": "2026-06-22",
+  "scope": "Canonical regression sample set for Tencent Video API parameter and capability closure, refreshed through the 2026-06-21 positive-tid and anonymous real-cookie replay evidence.",
+  "api1": [
+    {
+      "case": "baseline_single_valid",
+      "intent": "Single valid CID success path",
+      "params": {
+        "tid": "431",
+        "idlist": "mzc00200idzf2m8",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "expected_highlights": [
+        "top-level errorno=0",
+        "non-empty cover title",
+        "non-empty video_ids family"
+      ],
+      "evidence": [
+        "analysis/environment_matrix_20260620.json"
+      ]
+    },
+    {
+      "case": "baseline_single_valid_tid537_probe_shell",
+      "intent": "Explicit API1 tid=537 shell probe on a known public CID",
+      "params": {
+        "tid": "537",
+        "idlist": "mzc00200idzf2m8",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "expected_highlights": [
+        "top-level errorno=0",
+        "cover_infos_count can remain non-zero",
+        "video_ids_count stays 0",
+        "caller should treat this as success-shell-without-sample rather than canonical positive cover success"
+      ],
+      "evidence": [
+        "analysis/tid_richness_matrix_20260622.json",
+        "analysis/demo_validation_incremental_tid537_20260622.json",
+        "analysis/direct_call_raw_http_validation_tid537_20260622.json"
+      ]
+    },
+    {
+      "case": "baseline_single_valid_tid453_cover_shell_only",
+      "intent": "Explicit API1 tid=453 positive cover-shell-only probe on a known public CID",
+      "params": {
+        "tid": "453",
+        "idlist": "mzc00200idzf2m8",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "expected_highlights": [
+        "top-level errorno=0",
+        "non-empty cover title",
+        "cover_infos_count can remain non-zero",
+        "video_ids_count stays 0",
+        "caller should treat this as a positive cover-shell-only branch rather than canonical positive cover success"
+      ],
+      "evidence": [
+        "analysis/positive_tid_probe_446_455_summary_20260623.json",
+        "analysis/demo_validation_incremental_tid453_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid453_20260623.json"
+      ]
+    },
+    {
+      "case": "missing_tid",
+      "intent": "Hard-required tid failure branch",
+      "params": {
+        "idlist": "mzc00200idzf2m8",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "expected_highlights": [
+        "errorno=-111003",
+        "errormsg=错误的tid, 如果新申请的接口,请等待10分钟"
+      ],
+      "evidence": [
+        "analysis/api_contract_summary_20260619.json",
+        "analysis/environment_matrix_20260620.json"
+      ]
+    },
+    {
+      "case": "canonical_appid_missing_appkey",
+      "intent": "Conditional appkey enforcement branch",
+      "params": {
+        "tid": "431",
+        "idlist": "mzc00200idzf2m8",
+        "appid": "10001005"
+      },
+      "expected_highlights": [
+        "errorno=10010110",
+        "errormsg=appkey error"
+      ],
+      "evidence": [
+        "analysis/api_contract_summary_20260619.json",
+        "analysis/environment_matrix_20260620.json"
+      ]
+    },
+    {
+      "case": "mixed_valid_illegal_cid",
+      "intent": "Top-level success with per-result mixed validity",
+      "params": {
+        "tid": "431",
+        "idlist": "invalidcid123,mzc00200idzf2m8",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "expected_highlights": [
+        "top-level errorno can remain 0",
+        "caller must inspect per-result retcode"
+      ],
+      "evidence": [
+        "analysis/api_contract_summary_20260619.json",
+        "analysis/environment_matrix_20260620.json"
+      ]
+    },
+    {
+      "case": "duplicate_and_empty_slots",
+      "intent": "Duplicate CID counting with ignored empty slots",
+      "params": {
+        "tid": "431",
+        "idlist": ",mzc00200idzf2m8,,mzc00200idzf2m8,mzc00200xxpsogl,",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "expected_highlights": [
+        "empty slots ignored",
+        "duplicate CID preserved"
+      ],
+      "evidence": [
+        "analysis/environment_matrix_20260620.json",
+        "analysis/environment_matrix_20260621.json"
+      ]
+    },
+    {
+      "case": "dup32",
+      "intent": "Upper success boundary for non-empty API1 items",
+      "params": {
+        "tid": "431",
+        "idlist": "<32 non-empty duplicate CID items>",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "expected_highlights": [
+        "success with 32 non-empty items"
+      ],
+      "evidence": [
+        "analysis/environment_matrix_20260620.json",
+        "analysis/agent_api_contract_crossday_20260620.json"
+      ]
+    },
+    {
+      "case": "dup33",
+      "intent": "API1 over-limit failure branch",
+      "params": {
+        "tid": "431",
+        "idlist": "<33 non-empty duplicate CID items>",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "expected_highlights": [
+        "errorno=-111001",
+        "errormsg=idlist个数错误, 为0或超过限制"
+      ],
+      "evidence": [
+        "analysis/environment_matrix_20260620.json",
+        "analysis/agent_api_contract_crossday_20260620.json"
+      ]
+    }
+  ],
+  "api2": [
+    {
+      "case": "baseline_xml_single",
+      "intent": "Single valid VID success path in XML",
+      "params": {
+        "otype": "xml",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4"
+      },
+      "expected_highlights": [
+        "top-level errorno=0",
+        "non-empty detail row"
+      ],
+      "evidence": [
+        "analysis/environment_matrix_20260620.json"
+      ]
+    },
+    {
+      "case": "baseline_xml_single_tid540",
+      "intent": "Confirmed alternate positive API2 tid success path in XML with the thinner 540 shell shape.",
+      "params": {
+        "otype": "xml",
+        "tid": "540",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4"
+      },
+      "expected_highlights": [
+        "top-level errorno=0",
+        "thin positive shell with duration present",
+        "caller should not assume canonical tid=535 field completeness"
+      ],
+      "evidence": [
+        "analysis/api2_alt_tid_capability_delta_20260621.json",
+        "analysis/demo_parity_alt_tid_matrix_20260621.json"
+      ]
+    },
+    {
+      "case": "baseline_xml_single_tid541",
+      "intent": "Second confirmed positive API2 tid success path in XML",
+      "params": {
+        "otype": "xml",
+        "tid": "541",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "j4101ouc4ve"
+      },
+      "expected_highlights": [
+        "top-level errorno=0",
+        "same tested positive family as tid=535 and tid=540",
+        "second-sample confirmation already landed in the current summary artifact",
+        "caller should not assume the row is as field-complete as canonical tid=535 on every sample"
+      ],
+      "evidence": [
+        "analysis/positive_tid_summary_20260621.json",
+        "analysis/positive_tid_probe_20260621_alt_sample.json",
+        "analysis/demo_validation_20260621.json",
+        "analysis/demo_parity_alt_tid_matrix_20260621.json"
+      ]
+    },
+    {
+      "case": "otype_json_single",
+      "intent": "Single valid VID success path in JSONP",
+      "params": {
+        "otype": "json",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4"
+      },
+      "expected_highlights": [
+        "body starts with QZOutputJson=",
+        "content-type application/x-javascript",
+        "payload still reports errorno=0"
+      ],
+      "evidence": [
+        "analysis/environment_matrix_20260620.json"
+      ]
+    },
+    {
+      "case": "missing_tid",
+      "intent": "Hard-required tid failure branch",
+      "params": {
+        "otype": "xml",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4"
+      },
+      "expected_highlights": [
+        "errorno=-111003",
+        "errormsg=错误的tid, 如果新申请的接口,请等待10分钟"
+      ],
+      "evidence": [
+        "analysis/api_contract_summary_20260619.json",
+        "analysis/environment_matrix_20260620.json"
+      ]
+    },
+    {
+      "case": "canonical_appid_missing_appkey",
+      "intent": "Conditional appkey enforcement branch",
+      "params": {
+        "otype": "xml",
+        "tid": "535",
+        "appid": "20001238",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4"
+      },
+      "expected_highlights": [
+        "errorno=10010110",
+        "errormsg=appkey error"
+      ],
+      "evidence": [
+        "analysis/api_contract_summary_20260619.json",
+        "analysis/environment_matrix_20260620.json"
+      ]
+    },
+    {
+      "case": "union_platform_999",
+      "intent": "Current ignored-union_platform branch",
+      "params": {
+        "otype": "xml",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "999",
+        "idlist": "z4102qfi0x4"
+      },
+      "expected_highlights": [
+        "matches current baseline semantics in the tested matrix"
+      ],
+      "evidence": [
+        "analysis/environment_matrix_20260620.json"
+      ]
+    },
+    {
+      "case": "mixed_valid_invalid_vid_json",
+      "intent": "Mixed valid + invalid tolerant batch in JSONP",
+      "params": {
+        "otype": "json",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4,zzzzzzzzzzz,j4101ouc4ve"
+      },
+      "expected_highlights": [
+        "top-level errorno=0",
+        "order preserved as valid / invalid / valid",
+        "invalid row degrades into empty-shell fields"
+      ],
+      "evidence": [
+        "analysis/environment_matrix_20260620.json",
+        "analysis/api2_jsonp_batch_matrix_20260620.json"
+      ]
+    },
+    {
+      "case": "all_invalid_jsonp_batch",
+      "intent": "All-invalid JSONP batch parser edge case",
+      "params": {
+        "otype": "json",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "zzzzzzzzzzz,yyyyyyyyyyy"
+      },
+      "expected_highlights": [
+        "JSONP wrapper retained",
+        "consumer should not assume top-level HTTP success means valid rows",
+        "treat top-level success plus all empty_shell rows as an all-invalid batch"
+      ],
+      "evidence": [
+        "analysis/environment_matrix_20260620.json",
+        "analysis/environment_matrix_20260621.json",
+        "analysis/agent_api_contract_crossday_20260620.json",
+        "analysis/api2_all_invalid_jsonp_consumer_rule_20260620.json"
+      ]
+    },
+    {
+      "case": "duplicate_and_empty_slots_json",
+      "intent": "Duplicate VID counting with ignored empty slots in JSONP",
+      "params": {
+        "otype": "json",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": ",z4102qfi0x4,,z4102qfi0x4,j4101ouc4ve,"
+      },
+      "expected_highlights": [
+        "empty slots ignored",
+        "duplicate VID preserved",
+        "same tested semantics as XML mirror"
+      ],
+      "evidence": [
+        "analysis/environment_matrix_20260620.json",
+        "analysis/api2_jsonp_batch_matrix_20260620.json"
+      ]
+    },
+    {
+      "case": "dup32_json",
+      "intent": "Upper success boundary for JSONP non-empty API2 items",
+      "params": {
+        "otype": "json",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "<32 non-empty duplicate VID items>"
+      },
+      "expected_highlights": [
+        "success with 32 non-empty items"
+      ],
+      "evidence": [
+        "analysis/environment_matrix_20260620.json",
+        "analysis/api2_jsonp_batch_matrix_20260620.json"
+      ]
+    },
+    {
+      "case": "dup33_json",
+      "intent": "JSONP over-limit failure branch",
+      "params": {
+        "otype": "json",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "<33 non-empty duplicate VID items>"
+      },
+      "expected_highlights": [
+        "errorno=-111001",
+        "errormsg=idlist个数错误, 为0或超过限制",
+        "JSONP wrapper retained"
+      ],
+      "evidence": [
+        "analysis/environment_matrix_20260620.json",
+        "analysis/api2_jsonp_batch_matrix_20260620.json"
+      ]
+    },
+    {
+      "case": "api2_jsonp_repeated_callback_first_value_wins",
+      "intent": "Freeze the current repeated-callback precedence rule on API2 JSONP.",
+      "params": {
+        "otype": "json",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4",
+        "callback": [
+          "cb1",
+          ""
+        ]
+      },
+      "expected_highlights": [
+        "callback=cb1&callback= keeps the cb1 wrapper",
+        "the reverse order callback=&callback=cb1 falls back to the default QZOutputJson shell",
+        "current evidence covers same-day anonymous plus real anonymous visitor-cookie replay on PC Web and Mobile H5"
+      ],
+      "evidence": [
+        "analysis/api2_jsonp_callback_contract_20260621.json",
+        "analysis/api2_jsonp_callback_contract_real_cookie_summary_20260621.json"
+      ]
+    },
+    {
+      "case": "api2_jsonp_wrong_appkey_callback_wrapper_control",
+      "intent": "Freeze that wrong-appkey JSONP error shells still honor callback wrapper changes.",
+      "params": {
+        "otype": "json",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "deadbeef",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4",
+        "callback": "cb1"
+      },
+      "expected_highlights": [
+        "errorno=10010110 / errormsg=appkey error",
+        "wrapper changes from default QZOutputJson to cb1(...)",
+        "current evidence covers same-day anonymous plus real anonymous visitor-cookie replay on PC Web and Mobile H5"
+      ],
+      "evidence": [
+        "analysis/api2_jsonp_callback_contract_20260621.json",
+        "analysis/api2_jsonp_callback_contract_real_cookie_summary_20260621.json"
+      ]
+    },
+    {
+      "case": "api2_tid525_local_error_island",
+      "intent": "Freeze the current lower-edge API2 tid boundary where 525 behaves as a stable local -111013 island instead of a new positive branch.",
+      "params": {
+        "otype": "xml_or_json",
+        "tid": "525",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4 / j4101ouc4ve / m4102tgsa8d"
+      },
+      "expected_highlights": [
+        "errorno=-111013 / errormsg=禁止外部访问接口",
+        "same result repeats across XML and JSONP",
+        "second and third public samples keep the same local error-family island"
+      ],
+      "evidence": [
+        "analysis/positive_tid_probe_524_529_summary_20260621.json"
+      ]
+    }
+  ],
+  "query_parser_semantics": [
+    {
+      "case": "api1_repeated_appid_bad_appkey_collision",
+      "intent": "Prove that repeated `appid` is first-value-wins on API1 by forcing the canonical branch and the text-bypass branch to diverge under a wrong appkey.",
+      "params": {
+        "tid": "431",
+        "idlist": "mzc00200idzf2m8",
+        "appid": [
+          "10001005",
+          "notanumber"
+        ],
+        "appkey": "deadbeef"
+      },
+      "expected_highlights": [
+        "first appid canonical -> appkey error branch",
+        "reverse order -> success text-bypass branch"
+      ],
+      "evidence": [
+        "analysis/param_query_semantics_20260620.json"
+      ]
+    },
+    {
+      "case": "api1_repeated_appkey_collision",
+      "intent": "Prove that repeated `appkey` is first-value-wins on API1 when canonical `appid` is active.",
+      "params": {
+        "tid": "431",
+        "idlist": "mzc00200idzf2m8",
+        "appid": "10001005",
+        "appkey": [
+          "0d1a9ddd94de871b",
+          "deadbeef"
+        ]
+      },
+      "expected_highlights": [
+        "first appkey good -> success",
+        "reverse order -> appkey error"
+      ],
+      "evidence": [
+        "analysis/param_query_semantics_20260620.json"
+      ]
+    },
+    {
+      "case": "api2_repeated_appid_bad_appkey_collision",
+      "intent": "Prove that repeated `appid` is first-value-wins on API2 XML by forcing the canonical branch and the text-bypass branch to diverge under a wrong appkey.",
+      "params": {
+        "otype": "xml",
+        "tid": "535",
+        "appid": [
+          "20001238",
+          "notanumber"
+        ],
+        "appkey": "deadbeef",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4"
+      },
+      "expected_highlights": [
+        "first appid canonical -> appkey error branch",
+        "reverse order -> success text-bypass branch"
+      ],
+      "evidence": [
+        "analysis/param_query_semantics_20260620.json"
+      ]
+    },
+    {
+      "case": "api2_repeated_appkey_collision",
+      "intent": "Prove that repeated `appkey` is first-value-wins on API2 XML when canonical `appid` is active.",
+      "params": {
+        "otype": "xml",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": [
+          "6c03bbe9658448a4",
+          "deadbeef"
+        ],
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4"
+      },
+      "expected_highlights": [
+        "first appkey good -> success",
+        "reverse order -> appkey error"
+      ],
+      "evidence": [
+        "analysis/param_query_semantics_20260620.json"
+      ]
+    },
+    {
+      "case": "api2_jsonp_callback_wrapper_override",
+      "intent": "Show that API2 JSONP `callback=1` rewrites the default wrapper instead of being ignored.",
+      "params": {
+        "otype": "json",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4",
+        "callback": "1"
+      },
+      "expected_highlights": [
+        "content-type remains application/x-javascript",
+        "body prefix changes from QZOutputJson= to 1(",
+        "payload still reports errorno=0"
+      ],
+      "evidence": [
+        "analysis/param_query_semantics_20260620.json"
+      ]
+    },
+    {
+      "case": "api2_repeated_otype_first_value_wins",
+      "intent": "Freeze the current tested repeated-`otype` parser rule on API2.",
+      "params": {
+        "otype": [
+          "xml",
+          "json"
+        ],
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4"
+      },
+      "expected_highlights": [
+        "`otype=xml&otype=json` stays on XML",
+        "the reverse order `otype=json&otype=xml` stays on JSONP",
+        "current evidence is only for the tested anonymous branch"
+      ],
+      "evidence": [
+        "analysis/param_query_semantics_20260620.json"
+      ]
+    },
+    {
+      "case": "api2_jsonp_callback_empty_falls_back_to_default_wrapper",
+      "intent": "Freeze the empty-callback exception branch on API2 JSONP.",
+      "params": {
+        "otype": "json",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4",
+        "callback": ""
+      },
+      "expected_highlights": [
+        "wrapper falls back to the default `QZOutputJson=` assignment shell",
+        "payload still reports `errorno=0` on the canonical valid sample"
+      ],
+      "evidence": [
+        "analysis/param_query_semantics_20260620.json"
+      ]
+    },
+    {
+      "case": "api2_jsonp_callback_parse_breaking_unmatched_paren",
+      "intent": "Freeze one representative parse-breaking callback shell on API2 JSONP.",
+      "params": {
+        "otype": "json",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4",
+        "callback": "a("
+      },
+      "expected_highlights": [
+        "wrapper becomes callback-style but the current summary parser cannot recover the JSON payload",
+        "the sibling `callback=((` case shows the same early parse-breaking family"
+      ],
+      "evidence": [
+        "analysis/param_query_semantics_20260620.json",
+        "analysis/api2_jsonp_callback_unmatched_delimiter_summary_20260622.json"
+      ]
+    },
+    {
+      "case": "api2_jsonp_callback_raw_passthrough_bracket",
+      "intent": "Freeze the positive boundary that punctuation-heavy callback values can still stay raw-passthrough on API2 JSONP.",
+      "params": {
+        "otype": "json",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4",
+        "callback": "["
+      },
+      "expected_highlights": [
+        "wrapper prefix changes to a raw-passthrough bracket-led shell",
+        "payload still reports errorno=0 on the canonical valid sample",
+        "`callback=[[` remains on the same raw-passthrough side of the new split"
+      ],
+      "evidence": [
+        "analysis/api2_jsonp_callback_unmatched_delimiter_summary_20260622.json"
+      ]
+    },
+    {
+      "case": "api2_jsonp_callback_parse_breaking_bracket_open_paren",
+      "intent": "Freeze the negative boundary where adding `(` after `[` flips API2 JSONP into the widened parse-breaking family.",
+      "params": {
+        "otype": "json",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4",
+        "callback": "[("
+      },
+      "expected_highlights": [
+        "wrapper becomes callback-style but the current summary parser cannot recover the JSON payload",
+        "the same widened parse-breaking side now also includes `{(`, `/*(`, `a[(`, `)(`, `](`, and `}(` in the tested branch",
+        "this is still a representative family boundary, not full callback grammar closure"
+      ],
+      "evidence": [
+        "analysis/api2_jsonp_callback_unmatched_delimiter_summary_20260622.json"
+      ]
+    },
+    {
+      "case": "api2_repeated_union_platform_order_no_observed_effect",
+      "intent": "Freeze the current no-observed-change repeated-`union_platform` branch without overclaiming a parser rule.",
+      "params": {
+        "otype": "xml",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": [
+          "3",
+          "999"
+        ],
+        "idlist": "z4102qfi0x4"
+      },
+      "expected_highlights": [
+        "`union_platform=3&999` and `union_platform=999&3` show no observed behavioral change in the tested anonymous XML branch",
+        "current evidence does not prove first-value-wins for `union_platform`"
+      ],
+      "evidence": [
+        "analysis/param_query_semantics_20260620.json"
+      ]
+    }
+  ],
+  "environment_replay": [
+    {
+      "case": "anonymous_real_cookie_environment_matrix_anchor",
+      "intent": "Replay the canonical contract matrix under a real anonymous visitor-cookie environment.",
+      "env_name": "pc_web_real_cookie_replay + mobile_h5_real_cookie_replay",
+      "expected_highlights": [
+        "no new parameter-closure split relative to the anonymous baseline in the current tested matrix",
+        "aged-cookie and login-state remain the next environment-priority gaps"
+      ],
+      "evidence": [
+        "analysis/anonymous_real_cookie_env_20260621.json",
+        "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json"
+      ]
+    },
+    {
+      "case": "anonymous_real_cookie_authish_anchor",
+      "intent": "Replay representative auth-ish and parser-sensitive semantics under the real anonymous visitor-cookie environment.",
+      "env_name": "pc_web_real_cookie_replay",
+      "expected_highlights": [
+        "tested auth-ish extra keys stay on the same observed branch on API1 and on API2 tid 535/540/541",
+        "repeated union_platform, repeated otype, empty callback fallback, and one parse-breaking callback shell stay unchanged in the current replay"
+      ],
+      "evidence": [
+        "analysis/authish_extra_key_replay_anonymous_real_cookie_summary_20260621.json",
+        "analysis/param_query_semantics_anonymous_real_cookie_20260621.json"
+      ]
+    },
+    {
+      "case": "anonymous_real_cookie_full_semantics_callback_tail_anchor",
+      "intent": "Replay the broader full semantics profile plus callback-tail probes under the real anonymous visitor-cookie environment.",
+      "env_name": "pc_web_real_cookie_replay + mobile_h5_real_cookie_replay",
+      "expected_highlights": [
+        "full semantics replay still produces no new parameter-effect branch beyond the current anonymous baseline",
+        "auth-ish extra keys remain ignored and the callback parse-breaking family stays aligned with the current anonymous baseline"
+      ],
+      "evidence": [
+        "analysis/replay_bundle_real_full_semantics_summary_20260621.json"
+      ]
+    },
+    {
+      "case": "anonymous_union_platform_positive_tid_matrix_anchor",
+      "intent": "Keep a dedicated regression anchor for the anonymous `union_platform × 535/540/541` capability matrix.",
+      "env_name": "anonymous direct-access public samples",
+      "expected_highlights": [
+        "The richer `tid=535` row and the thinner `tid=540/541` rows stay structurally stable across the tested union_platform values",
+        "No tested union_platform value promotes `540/541` toward the canonical `535` field shape on the current public anchor vids"
+      ],
+      "evidence": [
+        "analysis/api2_union_platform_positive_tid_matrix_20260621.json"
+      ]
+    },
+    {
+      "case": "anonymous_real_cookie_callback_contract_anchor",
+      "intent": "Replay callback precedence and wrong-appkey error-shell contract cases under the real anonymous visitor-cookie environments.",
+      "env_name": "pc_web_real_cookie_replay + mobile_h5_real_cookie_replay",
+      "expected_highlights": [
+        "repeated callback keeps first-value-wins across the tested PC Web and Mobile H5 real anonymous replay environments",
+        "wrong-appkey JSONP error shells still honor callback wrapper control across the same tested environments"
+      ],
+      "evidence": [
+        "analysis/api2_jsonp_callback_contract_real_cookie_summary_20260621.json"
+      ]
+    }
+  ],
+  "demo_entrypoint_anchors": [
+    {
+      "case": "url_entrypoint_canonical_chain",
+      "intent": "Pin the public URL -> CID -> canonical API1/API2 chain as a demo entrypoint regression anchor rather than only an interface-level capability sample.",
+      "command_shapes": {
+        "python": "python examples/python/tencent_video_api_demo.py --url \"https://v.qq.com/x/cover/mzc00200idzf2m8/z4102qfi0x4.html\" --json",
+        "go": "go.exe -url \"https://v.qq.com/x/cover/mzc00200idzf2m8/z4102qfi0x4.html\" -json"
+      },
+      "expected_highlights": [
+        "The demo extracts CID=mzc00200idzf2m8 from the URL",
+        "The canonical API1 -> API2 chain returns a non-empty detail row for z4102qfi0x4"
+      ],
+      "evidence": [
+        "analysis/demo_validation_incremental_20260621d.json"
+      ]
+    },
+    {
+      "case": "api2_batch_size_override",
+      "intent": "Keep a dedicated anchor for the demo-level API2 batch-size override path without conflating it with the deeper API2 contract matrix.",
+      "command_shapes": {
+        "python": "python examples/python/tencent_video_api_demo.py --vid z4102qfi0x4 --vid j4101ouc4ve --api2-batch-size 1 --json",
+        "go": "go.exe -cid mzc00200idzf2m8,mzc00200xxpsogl -api2-batch-size 1 -json"
+      },
+      "expected_highlights": [
+        "The demo accepts batch-size=1 and still returns non-empty rows",
+        "Caller-side batch diagnostics remain normal under the explicit override"
+      ],
+      "evidence": [
+        "analysis/demo_validation_incremental_20260621d.json"
+      ]
+    },
+    {
+      "case": "api2_union_platform_explicit_override",
+      "intent": "Preserve a demo-entrypoint anchor for explicit union_platform override without overclaiming that union_platform is globally inert.",
+      "command_shapes": {
+        "python": "python examples/python/tencent_video_api_demo.py --vid z4102qfi0x4 --api2-union-platform 999 --json",
+        "go": "go.exe -vids z4102qfi0x4 -api2-union-platform 999 -json"
+      },
+      "expected_highlights": [
+        "The demo accepts an explicit union_platform override",
+        "In the current anonymous direct-call scope the override does not break the canonical non-empty detail path"
+      ],
+      "evidence": [
+        "analysis/demo_validation_incremental_20260621d.json"
+      ]
+    },
+    {
+      "case": "api2_alt_positive_tid_demo_parity_matrix",
+      "intent": "Preserve a demo-entrypoint regression anchor for the API2 alternate positive tid family, with explicit Python/Go parity on the tested 540/541 public samples and the current 541 + union_platform=0003 spot-check.",
+      "command_shapes": {
+        "python": [
+          "python examples/python/tencent_video_api_demo.py --vid z4102qfi0x4 --api2-tid 540 --json",
+          "python examples/python/tencent_video_api_demo.py --vid j4101ouc4ve --api2-tid 541 --json",
+          "python examples/python/tencent_video_api_demo.py --vid z4102qfi0x4 --api2-tid 541 --api2-union-platform 0003 --json"
+        ],
+        "go": [
+          "go.exe -vids z4102qfi0x4 -api2-tid 540 -json",
+          "go.exe -vids j4101ouc4ve -api2-tid 541 -json",
+          "go.exe -vids z4102qfi0x4 -api2-tid 541 -api2-union-platform 0003 -json"
+        ]
+      },
+      "expected_highlights": [
+        "Both demos preserve the current thin-shell split: tid=540 retains duration while tid=541 drops duration on the tested public samples",
+        "The tested 541 + union_platform=0003 demo path stays aligned between Python and Go and does not enrich the thin shell"
+      ],
+      "evidence": [
+        "analysis/demo_parity_alt_tid_matrix_20260621.json",
+        "analysis/api2_alt_tid_capability_delta_20260621.json",
+        "analysis/api2_union_platform_positive_tid_matrix_20260621.json"
+      ]
+    }
+  ],
+  "next_priority_samples": [
+    "Aged-cookie and login-state variants of the canonical contract cases using `tools/tencent_cookie_env_from_headers.py` plus `tools/tencent_environment_matrix_probe.py`",
+    "Auth-ish and union_platform replay under aged-cookie or login-state once raw Cookie headers are available",
+    "API2 sparse-cluster discovery beyond the current `535/540/541` family, but only when a better hypothesis appears than the already-negative anonymous `641-647` jump-scan",
+    "Broader public-vid confirmation of the anonymous `union_platform × 535/540/541` matrix if another high-signal sample appears"
+  ]
+}

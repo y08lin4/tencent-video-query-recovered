@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "Reserved-looking extra query-key sanity sweep on the current anonymous canonical tested branches",
+  "tested_keys": [
+    "format",
+    "output",
+    "version",
+    "v",
+    "platform",
+    "source"
+  ],
+  "verdict": [
+    "Across the tested anonymous canonical branches, adding `format/output/version/v/platform/source` produced no observed change on API1 XML, API2 XML, or API2 JSONP.",
+    "For API2 JSONP specifically, none of those keys changed the wrapper root or content type away from the baseline `QZOutputJson=...;` family.",
+    "This closes a first reserved-looking extra-key sweep beyond `foo/callback/_` for format-like, version-like, and platform/source-like keys.",
+    "The remaining hidden-parameter gap is now narrower: auth-leaning or session-coupled keys such as `token/sign/appver` still remain untested, especially outside the anonymous environment."
+  ],
+  "cases": {
+    "api1": {
+      "extra_format": "extra_key_ignored_in_tested_branch",
+      "extra_output": "extra_key_ignored_in_tested_branch",
+      "extra_version": "extra_key_ignored_in_tested_branch",
+      "extra_v": "extra_key_ignored_in_tested_branch",
+      "extra_platform": "extra_key_ignored_in_tested_branch",
+      "extra_source": "extra_key_ignored_in_tested_branch"
+    },
+    "api2_xml": {
+      "extra_format_xml": "extra_key_ignored_in_tested_branch",
+      "extra_output_xml": "extra_key_ignored_in_tested_branch",
+      "extra_version_xml": "extra_key_ignored_in_tested_branch",
+      "extra_v_xml": "extra_key_ignored_in_tested_branch",
+      "extra_platform_xml": "extra_key_ignored_in_tested_branch",
+      "extra_source_xml": "extra_key_ignored_in_tested_branch"
+    },
+    "api2_jsonp": {
+      "extra_format_json": "extra_key_ignored_in_tested_branch",
+      "extra_output_json": "extra_key_ignored_in_tested_branch",
+      "extra_version_json": "extra_key_ignored_in_tested_branch",
+      "extra_v_json": "extra_key_ignored_in_tested_branch",
+      "extra_platform_json": "extra_key_ignored_in_tested_branch",
+      "extra_source_json": "extra_key_ignored_in_tested_branch"
+    }
+  },
+  "raw_artifact": "analysis/param_query_semantics_20260620.json"
+}

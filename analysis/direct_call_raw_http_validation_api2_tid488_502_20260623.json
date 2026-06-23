@@ -1,0 +1,122 @@
+{
+  "generated_at": "2026-06-23",
+  "scope": "Live raw HTTP validation summary for the highest-value Tencent Video direct-call rows in the current anonymous scope.",
+  "runner_inputs": {
+    "selected_surfaces": [
+      "api2_single_detail_xml_tid488_alt_positive_shell",
+      "api2_single_detail_xml_tid502_alt_positive_shell"
+    ],
+    "timeout_seconds": 30,
+    "retries": 2
+  },
+  "results": [
+    {
+      "surface": "api2_single_detail_xml_tid488_alt_positive_shell",
+      "intent": "Alternate positive API2 tid=488 thin shell.",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=488&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "result": "http_success",
+          "body_prefix": "<root><costtime>5</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1782176672</resptime><results><fields><de"
+        }
+      ],
+      "summary": {
+        "errorno": "0",
+        "rows": [
+          {
+            "result_id": "z4102qfi0x4",
+            "retcode": "0",
+            "vid": "",
+            "title": "飞驰人生3",
+            "duration_seconds": "",
+            "url": "https://v.qq.com/x/page/z4102qfi0x4.html",
+            "cover_list": [],
+            "category_map": [],
+            "state": "",
+            "upload_src": "",
+            "create_time": "",
+            "modify_time": "",
+            "vwh": [],
+            "defn": {},
+            "empty_shell": false
+          }
+        ],
+        "results_count": 1,
+        "empty_shell_count": 0,
+        "all_results_empty_shell": false
+      },
+      "result": "success_with_thin_positive_shell",
+      "ok": true,
+      "highlights": [
+        "retcode=0",
+        "title=飞驰人生3",
+        "has_url=True",
+        "has_vid=False",
+        "has_duration=False",
+        "cover_list_count=0",
+        "has_create_time=False"
+      ]
+    },
+    {
+      "surface": "api2_single_detail_xml_tid502_alt_positive_shell",
+      "intent": "Alternate positive API2 tid=502 richer shell.",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=502&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=j4101ouc4ve",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "result": "http_success",
+          "body_prefix": "<root><costtime>6</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1782176672</resptime><results><fields><at"
+        }
+      ],
+      "summary": {
+        "errorno": "0",
+        "rows": [
+          {
+            "result_id": "j4101ouc4ve",
+            "retcode": "0",
+            "vid": "j4101ouc4ve",
+            "title": "剑来2_01",
+            "duration_seconds": "2116",
+            "url": "https://v.qq.com/x/page/j4101ouc4ve.html",
+            "cover_list": [
+              "mzc00200xxpsogl"
+            ],
+            "category_map": [],
+            "state": "",
+            "upload_src": "",
+            "create_time": "2025-12-24 22:50:16",
+            "modify_time": "",
+            "vwh": [],
+            "defn": {},
+            "empty_shell": false
+          }
+        ],
+        "results_count": 1,
+        "empty_shell_count": 0,
+        "all_results_empty_shell": false
+      },
+      "result": "success_with_richer_alt_positive_shell",
+      "ok": true,
+      "highlights": [
+        "retcode=0",
+        "title=剑来2_01",
+        "has_url=True",
+        "has_vid=True",
+        "has_duration=True",
+        "cover_list_count=1",
+        "has_create_time=True"
+      ]
+    }
+  ],
+  "failed_surfaces": [],
+  "current_reading": [
+    "This runner validates raw HTTP behavior only in the current anonymous direct-call scope.",
+    "Alternate tid 488/502/540/541 rows are expected to succeed as positive shells rather than canonical-full detail rows.",
+    "Within that alternate family, tid=502 currently sits on a richer shell than tid=488/540/541, but still below canonical 535 detail fullness.",
+    "The all-invalid JSONP row is a consumer-rule validation, not a content-extraction success row.",
+    "The current batch row is a canonical multi-VID spot-check on the known batch-capable branch, not a fresh 32-slot saturation replay."
+  ]
+}

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+from pathlib import Path
 import re
 import urllib.parse
 import urllib.request
@@ -10,6 +11,43 @@ import xml.etree.ElementTree as ET
 
 API_1_URL = "https://data.video.qq.com/fcgi-bin/data"
 API_2_URL = "https://union.video.qq.com/fcgi-bin/data"
+
+API_1_DEFAULT_PARAMS = {
+    "tid": "431",
+    "appid": "10001005",
+    "appkey": "0d1a9ddd94de871b",
+}
+
+API_2_DEFAULT_PARAMS = {
+    "otype": "xml",
+    "tid": "535",
+    "appid": "20001238",
+    "appkey": "6c03bbe9658448a4",
+    "union_platform": "3",
+}
+
+DEFAULT_REQUEST_HEADERS = {
+    "User-Agent": "Mozilla/5.0",
+    "Accept": "*/*",
+}
+
+
+def has_meaningful_value(value: object) -> bool:
+    if isinstance(value, dict):
+        return bool(value)
+    if isinstance(value, list):
+        return bool(value)
+    return str(value or "").strip() != ""
+
+
+def split_csv_values(values: list[str] | tuple[str, ...] | None) -> list[str]:
+    output: list[str] = []
+    for value in values or []:
+        for part in str(value or "").split(","):
+            part = part.strip()
+            if part:
+                output.append(part)
+    return output
 
 
 def extract_cid_from_url(url: str) -> str | None:
@@ -47,66 +85,144 @@ def format_size(value: int | float | str | None) -> str:
     return "-"
 
 
-def http_get(url: str, timeout: int = 10) -> str:
+def load_request_headers(
+    env_json_path: str | None,
+    env_name: str | None,
+) -> tuple[dict[str, str], str | None]:
+    if not env_json_path:
+        return {}, None
+
+    payload = json.loads(Path(env_json_path).read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise RuntimeError("env json root must be an object")
+
+    resolved_env_name = env_name
+    selected: object
+    if env_name:
+        if env_name not in payload:
+            available = ", ".join(sorted(str(key) for key in payload))
+            raise RuntimeError(f"env name {env_name!r} not found in env json; available: {available}")
+        selected = payload[env_name]
+    elif all(isinstance(value, str) for value in payload.values()):
+        selected = payload
+    elif len(payload) == 1:
+        resolved_env_name, selected = next(iter(payload.items()))
+    else:
+        available = ", ".join(sorted(str(key) for key in payload))
+        raise RuntimeError(
+            "env json contains multiple named environments; pass --env-name from: "
+            f"{available}"
+        )
+
+    if not isinstance(selected, dict):
+        raise RuntimeError("selected env payload must be an object of request headers")
+
+    headers = {}
+    for key, value in selected.items():
+        header_name = str(key).strip()
+        header_value = str(value or "").strip()
+        if header_name and header_value:
+            headers[header_name] = header_value
+    return headers, str(resolved_env_name) if resolved_env_name else None
+
+
+def http_get(url: str, timeout: int = 10, extra_headers: dict[str, str] | None = None) -> str:
+    headers = dict(DEFAULT_REQUEST_HEADERS)
+    headers.update(extra_headers or {})
     req = urllib.request.Request(
         url,
-        headers={
-            "User-Agent": "Mozilla/5.0",
-            "Accept": "*/*",
-        },
+        headers=headers,
     )
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         return resp.read().decode("utf-8", "replace")
 
 
-def build_api_1_url(cid: str) -> str:
-    params = {
-        "tid": "431",
-        "idlist": cid,
-        "appid": "10001005",
-        "appkey": "0d1a9ddd94de871b",
-    }
+def apply_overrides(base: dict[str, str], overrides: dict[str, str] | None = None) -> dict[str, str]:
+    merged = dict(base)
+    for key, value in (overrides or {}).items():
+        if value is None:
+            merged.pop(key, None)
+        else:
+            merged[key] = value
+    return merged
+
+
+def build_api_1_url(cid: str, overrides: dict[str, str] | None = None) -> str:
+    params = apply_overrides(API_1_DEFAULT_PARAMS, overrides)
+    params["idlist"] = cid
     return f"{API_1_URL}?{urllib.parse.urlencode(params)}"
 
 
-def build_api_2_url(vids: list[str]) -> str:
-    params = {
-        "otype": "xml",
-        "tid": "535",
-        "appid": "20001238",
-        "appkey": "6c03bbe9658448a4",
-        "union_platform": "3",
-        "idlist": ",".join(vids),
-    }
+def build_api_2_url(vids: list[str], overrides: dict[str, str] | None = None) -> str:
+    params = apply_overrides(API_2_DEFAULT_PARAMS, overrides)
+    params["idlist"] = ",".join(vids)
     return f"{API_2_URL}?{urllib.parse.urlencode(params)}"
 
 
-def fetch_cover_info(cid: str) -> dict:
-    root = ET.fromstring(http_get(build_api_1_url(cid)))
+def parse_api1_cover_result(result_node: ET.Element) -> dict:
+    field = result_node.find("./fields")
+    if field is None:
+        return {}
+
+    video_ids = [
+        part.strip()
+        for node in field.findall("./video_ids")
+        for part in (node.text or "").split(",")
+        if part.strip()
+    ]
+    cid = (field.findtext("./cover_id") or result_node.findtext("./id") or "").strip()
+    return {
+        "cid": cid,
+        "title": (field.findtext("./title") or "").strip(),
+        "type": (field.findtext("./type") or "").strip(),
+        "type_name": (field.findtext("./type_name") or "").strip(),
+        "video_ids": video_ids,
+        "pay_status": (field.findtext("./pay_status") or "").strip(),
+        "cover_pic_hz": (field.findtext("./new_pic_hz") or "").strip(),
+        "cover_pic_vt": (field.findtext("./new_pic_vt") or "").strip(),
+    }
+
+
+def summarize_api1_batch(requested_cids: list[str], cover_infos: list[dict]) -> dict:
+    aggregated_video_ids = [
+        vid
+        for cover in cover_infos
+        for vid in (cover.get("video_ids") or [])
+        if str(vid or "").strip()
+    ]
+    return {
+        "requested_cids": requested_cids,
+        "requested_cid_count": len(requested_cids),
+        "returned_cover_count": len(cover_infos),
+        "returned_cids": [str(cover.get("cid") or "").strip() for cover in cover_infos if str(cover.get("cid") or "").strip()],
+        "aggregated_video_ids_count": len(aggregated_video_ids),
+        "aggregated_video_ids_head": aggregated_video_ids[:10],
+    }
+
+
+def fetch_cover_infos(
+    cids: list[str],
+    api1_params: dict[str, str] | None = None,
+    request_headers: dict[str, str] | None = None,
+    timeout: int = 10,
+) -> list[dict]:
+    root = ET.fromstring(
+        http_get(
+            build_api_1_url(",".join(cids), overrides=api1_params),
+            timeout=timeout,
+            extra_headers=request_headers,
+        )
+    )
     error_text = (root.findtext(".//errormsg") or root.findtext(".//error") or "").strip()
     error_no = (root.findtext(".//errorno") or "").strip()
     if error_text or (error_no and error_no != "0"):
         raise RuntimeError(error_text or f"API1 errorno={error_no}")
-
-    video_ids: list[str] = []
-    for node in root.findall(".//video_ids"):
-        text = (node.text or "").strip()
-        if text:
-            video_ids.extend([part.strip() for part in text.split(",") if part.strip()])
-
-    return {
-        "cid": cid,
-        "title": (root.findtext(".//title") or "").strip(),
-        "type": (root.findtext(".//type") or "").strip(),
-        "type_name": (root.findtext(".//type_name") or "").strip(),
-        "video_ids": video_ids,
-        "pay_status": (root.findtext(".//pay_status") or "").strip(),
-        "cover_pic_hz": (root.findtext(".//new_pic_hz") or "").strip(),
-        "cover_pic_vt": (root.findtext(".//new_pic_vt") or "").strip(),
-    }
+    return [cover for node in root.findall("./results") if (cover := parse_api1_cover_result(node))]
 
 
 def parse_defn(defn_raw: str) -> dict:
+    if isinstance(defn_raw, dict):
+        return defn_raw
     if not defn_raw:
         return {}
     try:
@@ -115,11 +231,127 @@ def parse_defn(defn_raw: str) -> dict:
         return {}
 
 
-def fetch_video_details(vids: list[str], batch_size: int = 10) -> list[dict]:
+def parse_jsonp_payload(body: str) -> dict:
+    prefix = "QZOutputJson="
+    stripped = body.strip()
+    if stripped.startswith(prefix):
+        payload = stripped[len(prefix) :].strip()
+    else:
+        open_paren = stripped.find("(")
+        close_paren = stripped.rfind(")")
+        if open_paren < 0 or close_paren <= open_paren:
+            raise RuntimeError("API2 JSONP wrapper missing or unparseable")
+        payload = stripped[open_paren + 1 : close_paren].strip()
+    if payload.endswith(";"):
+        payload = payload[:-1]
+    data = json.loads(payload)
+    if not isinstance(data, dict):
+        raise RuntimeError("API2 JSONP payload is not an object")
+    return data
+
+
+def is_api2_empty_shell_row(row: dict) -> bool:
+    meaningful_fields = [
+        row.get("vid"),
+        row.get("title"),
+        row.get("duration_seconds"),
+        row.get("state"),
+        row.get("upload_src"),
+        row.get("create_time"),
+        row.get("modify_time"),
+        row.get("cover_list"),
+        row.get("category_map"),
+        row.get("vwh"),
+        row.get("defn"),
+    ]
+    return not any(has_meaningful_value(value) for value in meaningful_fields)
+
+
+def summarize_api2_batch(rows: list[dict]) -> dict:
+    empty_shell_count = sum(1 for row in rows if row.get("empty_shell"))
+    return {
+        "results_count": len(rows),
+        "empty_shell_count": empty_shell_count,
+        "nonempty_result_count": len(rows) - empty_shell_count,
+        "all_results_empty_shell": bool(rows) and empty_shell_count == len(rows),
+        "caller_rule": (
+            "Treat top-level API2 success plus all results empty_shell=true as an all-invalid/empty-shell batch; "
+            "do not rely on top-level errorno or per-result retcode alone."
+        ),
+    }
+
+
+def normalize_multi_value(value: object) -> list[str]:
+    if isinstance(value, list):
+        return [str(item).strip() for item in value if str(item).strip()]
+    if value in (None, ""):
+        return []
+    text = str(value).strip()
+    return [text] if text else []
+
+
+def fetch_video_details(
+    vids: list[str],
+    batch_size: int = 10,
+    api2_params: dict[str, str] | None = None,
+    request_headers: dict[str, str] | None = None,
+    timeout: int = 10,
+) -> list[dict]:
     results: list[dict] = []
+    merged_api2_params = apply_overrides(API_2_DEFAULT_PARAMS, api2_params)
+    otype = merged_api2_params.get("otype", "xml")
     for start in range(0, len(vids), batch_size):
         batch = vids[start : start + batch_size]
-        root = ET.fromstring(http_get(build_api_2_url(batch)))
+        body = http_get(
+            build_api_2_url(batch, overrides=merged_api2_params),
+            timeout=timeout,
+            extra_headers=request_headers,
+        )
+
+        if otype == "json":
+            data = parse_jsonp_payload(body)
+            error_text = str(data.get("errormsg", "")).strip()
+            error_no = str(data.get("errorno", "")).strip()
+            if error_text or (error_no and error_no != "0"):
+                raise RuntimeError(error_text or f"API2 errorno={error_no}")
+
+            for result_node in data.get("results", []):
+                if not isinstance(result_node, dict):
+                    continue
+                field = result_node.get("fields") or {}
+                if not isinstance(field, dict):
+                    continue
+
+                defn = parse_defn(field.get("defn", {}))
+                row = {
+                    "result_id": str(result_node.get("id") or "").strip(),
+                    "retcode": str(result_node.get("retcode") or "").strip(),
+                    "vid": str(field.get("vid") or "").strip(),
+                    "title": str(field.get("title") or "").strip(),
+                    "duration_seconds": str(field.get("duration") or "").strip(),
+                    "duration": format_duration(field.get("duration")),
+                    "url": str(field.get("url") or "").strip(),
+                    "cover_list": normalize_multi_value(field.get("cover_list")),
+                    "category_map": normalize_multi_value(field.get("category_map")),
+                    "vwh": normalize_multi_value(field.get("vWH")),
+                    "defn": defn,
+                    "state": str(field.get("state") or "").strip(),
+                    "upload_src": str(field.get("upload_src") or "").strip(),
+                    "create_time": str(field.get("create_time") or "").strip(),
+                    "modify_time": str(field.get("modify_time") or "").strip(),
+                    "audio": format_size(defn.get("audio")),
+                    "sd": format_size(defn.get("sd")),
+                    "hd": format_size(defn.get("hd")),
+                    "shd": format_size(defn.get("shd")),
+                    "fhd": format_size(defn.get("fhd")),
+                    "uhd": format_size(defn.get("uhd")),
+                    "source": format_size(defn.get("source")),
+                }
+                row["empty_shell"] = is_api2_empty_shell_row(row)
+                results.append(row)
+            continue
+
+        root = ET.fromstring(body)
         error_text = (root.findtext(".//errormsg") or root.findtext(".//error") or "").strip()
         error_no = (root.findtext(".//errorno") or "").strip()
         if error_text or (error_no and error_no != "0"):
@@ -136,30 +368,32 @@ def fetch_video_details(vids: list[str], batch_size: int = 10) -> list[dict]:
             category_map = [(node.text or "").strip() for node in field.findall("./category_map") if (node.text or "").strip()]
             vwh = [(node.text or "").strip() for node in field.findall("./vWH") if (node.text or "").strip()]
 
-            results.append(
-                {
-                    "vid": (field.findtext("./vid") or result_node.findtext("./id") or "").strip(),
-                    "title": (field.findtext("./title") or "").strip(),
-                    "duration_seconds": (field.findtext("./duration") or "").strip(),
-                    "duration": format_duration(field.findtext("./duration")),
-                    "url": (field.findtext("./url") or "").strip(),
-                    "cover_list": cover_list,
-                    "category_map": category_map,
-                    "vwh": vwh,
-                    "defn": defn,
-                    "state": (field.findtext("./state") or "").strip(),
-                    "upload_src": (field.findtext("./upload_src") or "").strip(),
-                    "create_time": (field.findtext("./create_time") or "").strip(),
-                    "modify_time": (field.findtext("./modify_time") or "").strip(),
-                    "audio": format_size(defn.get("audio")),
-                    "sd": format_size(defn.get("sd")),
-                    "hd": format_size(defn.get("hd")),
-                    "shd": format_size(defn.get("shd")),
-                    "fhd": format_size(defn.get("fhd")),
-                    "uhd": format_size(defn.get("uhd")),
-                    "source": format_size(defn.get("source")),
-                }
-            )
+            row = {
+                "result_id": (result_node.findtext("./id") or "").strip(),
+                "retcode": (result_node.findtext("./retcode") or "").strip(),
+                "vid": (field.findtext("./vid") or "").strip(),
+                "title": (field.findtext("./title") or "").strip(),
+                "duration_seconds": (field.findtext("./duration") or "").strip(),
+                "duration": format_duration(field.findtext("./duration")),
+                "url": (field.findtext("./url") or "").strip(),
+                "cover_list": cover_list,
+                "category_map": category_map,
+                "vwh": vwh,
+                "defn": defn,
+                "state": (field.findtext("./state") or "").strip(),
+                "upload_src": (field.findtext("./upload_src") or "").strip(),
+                "create_time": (field.findtext("./create_time") or "").strip(),
+                "modify_time": (field.findtext("./modify_time") or "").strip(),
+                "audio": format_size(defn.get("audio")),
+                "sd": format_size(defn.get("sd")),
+                "hd": format_size(defn.get("hd")),
+                "shd": format_size(defn.get("shd")),
+                "fhd": format_size(defn.get("fhd")),
+                "uhd": format_size(defn.get("uhd")),
+                "source": format_size(defn.get("source")),
+            }
+            row["empty_shell"] = is_api2_empty_shell_row(row)
+            results.append(row)
     return results
 
 
@@ -181,28 +415,98 @@ def print_text_table(items: list[dict]) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Tencent video dual-API demo")
     parser.add_argument("--url", help="Tencent video page URL")
-    parser.add_argument("--cid", help="Cover ID")
+    parser.add_argument("--cid", action="append", dest="cids", help="Cover ID, repeatable or comma-separated")
     parser.add_argument("--vid", action="append", dest="vids", help="Video ID, repeatable")
+    parser.add_argument("--api1-tid", default=API_1_DEFAULT_PARAMS["tid"], help="API1 tid")
+    parser.add_argument("--api1-appid", default=API_1_DEFAULT_PARAMS["appid"], help="API1 appid")
+    parser.add_argument("--api1-appkey", default=API_1_DEFAULT_PARAMS["appkey"], help="API1 appkey")
+    parser.add_argument("--api2-otype", choices=("xml", "json"), default=API_2_DEFAULT_PARAMS["otype"], help="API2 wrapper mode")
+    parser.add_argument("--api2-tid", default=API_2_DEFAULT_PARAMS["tid"], help="API2 tid")
+    parser.add_argument("--api2-appid", default=API_2_DEFAULT_PARAMS["appid"], help="API2 appid")
+    parser.add_argument("--api2-appkey", default=API_2_DEFAULT_PARAMS["appkey"], help="API2 appkey")
+    parser.add_argument("--api2-union-platform", default=API_2_DEFAULT_PARAMS["union_platform"], help="API2 union_platform")
+    parser.add_argument("--api2-callback", default=None, help="API2 JSONP callback override; only applies when --api2-otype json")
+    parser.add_argument("--api2-batch-size", type=int, default=10, help="API2 batch size for demo requests")
+    parser.add_argument("--env-json", help="Path to a replay environment JSON file")
+    parser.add_argument("--env-name", help="Environment name inside --env-json, such as pc_web_real_cookie_replay")
+    parser.add_argument("--timeout", type=int, default=10, help="HTTP timeout in seconds")
     parser.add_argument("--json", action="store_true", help="Print JSON output")
     args = parser.parse_args()
 
-    cid = args.cid
-    if not cid and args.url:
-        cid = extract_cid_from_url(args.url)
-    if not cid and not args.vids:
+    cids = split_csv_values(args.cids)
+    if not cids and args.url:
+        cid_from_url = extract_cid_from_url(args.url)
+        if cid_from_url:
+            cids = [cid_from_url]
+    if not cids and not args.vids:
         raise SystemExit("Provide --url, --cid, or at least one --vid")
 
-    cover_info = None
-    vids = list(args.vids or [])
-    if cid:
-        cover_info = fetch_cover_info(cid)
-        if not vids:
-            vids = cover_info["video_ids"]
+    if args.api2_batch_size <= 0 or args.api2_batch_size > 32:
+        raise SystemExit("--api2-batch-size must be between 1 and 32")
+    if args.timeout <= 0:
+        raise SystemExit("--timeout must be > 0")
 
-    details = fetch_video_details(vids) if vids else []
+    api1_params = {
+        "tid": args.api1_tid,
+        "appid": args.api1_appid,
+        "appkey": args.api1_appkey,
+    }
+    api2_params = {
+        "otype": args.api2_otype,
+        "tid": args.api2_tid,
+        "appid": args.api2_appid,
+        "appkey": args.api2_appkey,
+        "union_platform": args.api2_union_platform,
+    }
+    if args.api2_callback is not None:
+        api2_params["callback"] = args.api2_callback
+    request_headers, resolved_env_name = load_request_headers(args.env_json, args.env_name)
+
+    cover_info = None
+    cover_infos: list[dict] = []
+    vids = list(args.vids or [])
+    if cids:
+        cover_infos = fetch_cover_infos(
+            cids,
+            api1_params=api1_params,
+            request_headers=request_headers,
+            timeout=args.timeout,
+        )
+        cover_info = cover_infos[0] if cover_infos else None
+        if not vids:
+            vids = [
+                vid
+                for cover in cover_infos
+                for vid in (cover.get("video_ids") or [])
+                if str(vid or "").strip()
+            ]
+
+    details = (
+        fetch_video_details(
+            vids,
+            batch_size=args.api2_batch_size,
+            api2_params=api2_params,
+            request_headers=request_headers,
+            timeout=args.timeout,
+        )
+        if vids
+        else []
+    )
     payload = {
-        "cid": cid,
+        "cid": ",".join(cids) if cids else None,
+        "cids": cids,
+        "api1_params": api1_params,
+        "api2_params": api2_params,
+        "request_environment": {
+            "env_json": args.env_json,
+            "env_name": resolved_env_name,
+            "timeout_seconds": args.timeout,
+            "header_keys": sorted(request_headers),
+        },
         "cover_info": cover_info,
+        "cover_infos": cover_infos,
+        "api1_batch_diagnostics": summarize_api1_batch(cids, cover_infos) if cids else None,
+        "api2_batch_diagnostics": summarize_api2_batch(details) if vids else None,
         "video_details": details,
     }
 
@@ -210,14 +514,30 @@ def main() -> None:
         print(json.dumps(payload, ensure_ascii=False, indent=2))
         return
 
-    if cover_info:
-        print(f"CID: {cover_info['cid']}")
-        print(f"标题: {cover_info['title']}")
-        print(f"类型: {cover_info['type_name']} ({cover_info['type']})")
-        print(f"VIDs: {', '.join(cover_info['video_ids']) or '-'}")
+    if cover_infos:
+        if len(cover_infos) == 1:
+            print(f"CID: {cover_info['cid']}")
+            print(f"标题: {cover_info['title']}")
+            print(f"类型: {cover_info['type_name']} ({cover_info['type']})")
+            print(f"VIDs: {', '.join(cover_info['video_ids']) or '-'}")
+        else:
+            diagnostics = summarize_api1_batch(cids, cover_infos)
+            print(f"CIDs: {', '.join(cids)}")
+            print(f"返回 cover 数: {diagnostics['returned_cover_count']}")
+            print(f"聚合 VIDs: {diagnostics['aggregated_video_ids_count']}")
+            print()
+            for index, cover in enumerate(cover_infos, start=1):
+                print(f"[{index}] CID: {cover['cid']}")
+                print(f"    标题: {cover['title']}")
+                print(f"    类型: {cover['type_name']} ({cover['type']})")
+                print(f"    VIDs: {', '.join(cover['video_ids']) or '-'}")
         print()
 
     if details:
+        diagnostics = summarize_api2_batch(details)
+        if diagnostics["all_results_empty_shell"]:
+            print("注意: 当前 API2 批量结果为 top-level success + 全部 empty-shell，调用方应按全坏/全空批量处理。")
+            print()
         print_text_table(details)
 
 

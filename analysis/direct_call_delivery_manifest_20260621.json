@@ -1,0 +1,163 @@
+{
+  "generated_at": "2026-06-21",
+  "objective": "完成腾讯视频两个主接口的参数闭环与能力闭环研究，并沉淀成可直接调用的参数总表、能力配方表、Python/Go 示例与回归样本。",
+  "scope": "Single-entry delivery manifest for the repository's current direct-call artifacts, organized for callers, SDK authors, and follow-up closure work.",
+  "entrypoints_by_persona": [
+    {
+      "persona": "caller_who_wants_the_shortest_stable_path",
+      "start_with": [
+        "analysis/direct_call_parameter_total_table_20260621.json",
+        "analysis/direct_call_raw_http_matrix_20260621.json",
+        "analysis/direct_call_capability_table_20260621.json",
+        "docs/direct_call_playbook.md"
+      ],
+      "why": "These artifacts answer what to fill, how to hit the raw HTTP endpoints directly, when to use each path, how to judge success, and what not to assume. If the caller needs JSONP wrapper-control semantics rather than just a demo override example, also read the dedicated callback-contract artifacts plus the unmatched-delimiter boundary summary."
+    },
+    {
+      "persona": "sdk_or_script_author",
+      "start_with": [
+        "analysis/direct_call_parameter_total_table_20260621.json",
+        "analysis/parameter_capability_index_20260621.json",
+        "analysis/regression_samples_20260620.json",
+        "analysis/tooling_entrypoint_quick_reference_20260621.json",
+        "analysis/api2_jsonp_callback_contract_20260621.json",
+        "analysis/api2_jsonp_callback_unmatched_delimiter_summary_20260622.json"
+      ],
+      "why": "These artifacts concentrate parameter rules, capability joins, replay-ready regression anchors, runnable validation/probe entrypoints, the dedicated callback-contract evidence for wrapper-control semantics, and the newer widened unmatched-delimiter boundary summary."
+    },
+    {
+      "persona": "researcher_or_closure_auditor",
+      "start_with": [
+        "analysis/parameter_closure_matrix_20260621.json",
+        "analysis/objective_coverage_audit_20260621.json",
+        "docs/tencent_video_apis.md"
+      ],
+      "why": "These artifacts preserve the strongest boundary wording and the remaining closure gaps."
+    },
+    {
+      "persona": "operator_who_is_about_to_supply_aged_or_login_cookie_inputs",
+      "start_with": [
+        "docs/environment_replay_runbook.md",
+        "analysis/direct_call_delivery_manifest_20260621.json",
+        "analysis/tooling_entrypoint_quick_reference_20260621.json"
+      ],
+      "why": "These artifacts show exactly what input is still missing, which command to run first, and which outputs matter after replay."
+    }
+  ],
+  "deliverable_families": [
+    {
+      "name": "parameter_tables",
+      "status": "partially_covered",
+      "primary_files": [
+        "analysis/api_param_inventory_20260620.json",
+        "analysis/parameter_closure_matrix_20260621.json",
+        "analysis/parameter_contract_quick_reference_20260621.json",
+        "analysis/direct_call_parameter_total_table_20260621.json",
+        "analysis/parameter_capability_index_20260621.json"
+      ],
+      "best_use": "Understand what each parameter does, what to fill by default, how to recognize success, and which environments are still open.",
+      "still_open": [
+        "aged-cookie replay",
+        "login-state replay",
+        "API1 positive or success-shell tid space beyond the current 431/453/476/483/506/537 family map",
+        "API2 positive or success-shell tid space beyond the current 488/502/506/535/540/541 family map"
+      ]
+    },
+    {
+      "name": "capability_tables_and_recipes",
+      "status": "covered_in_anonymous_direct_call_scope",
+      "primary_files": [
+        "analysis/direct_call_raw_http_matrix_20260621.json",
+        "analysis/capability_surface_20260620.json",
+        "analysis/capability_recipes_20260620.json",
+        "analysis/capability_quick_reference_20260621.json",
+        "analysis/direct_call_capability_table_20260621.json",
+        "docs/direct_call_playbook.md",
+        "analysis/demo_validation_incremental_api2_tid488_502_20260623.json",
+        "analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json",
+        "analysis/api2_extended_tid_capability_delta_20260623.json",
+        "analysis/api1_tid_shell_family_delta_20260623.json"
+      ],
+      "best_use": "Choose the shortest stable path for URL/CID/VID/JSONP/batch/replay use cases, jump straight to the raw HTTP row for a known capability, and keep newer alternate-shell evidence such as API2 488/502 and API1 453/476/483/506/537 visible at the recipe layer instead of only in probe summaries.",
+      "still_open": [
+        "Do not upgrade anonymous direct-call recipes into aged-cookie or login-state closure."
+      ]
+    },
+    {
+      "name": "examples_and_live_validation",
+      "status": "covered_in_anonymous_direct_call_scope",
+      "primary_files": [
+        "examples/python/tencent_video_api_demo.py",
+        "examples/go/main.go",
+        "tools/tencent_demo_validation_runner.py",
+        "tools/tencent_raw_http_validation_runner.py",
+        "analysis/demo_capability_coverage_20260621.json",
+        "analysis/demo_validation_20260621.json",
+        "analysis/demo_validation_entrypoint_override_rerun_20260621.json",
+        "analysis/direct_call_raw_http_validation_20260621.json",
+        "analysis/direct_call_raw_http_validation_tid453_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid537_20260622.json",
+        "analysis/demo_parity_alt_tid_matrix_20260621.json",
+        "analysis/demo_validation_incremental_tid453_20260623.json",
+        "analysis/demo_validation_incremental_tid537_20260622.json",
+        "analysis/tooling_entrypoint_quick_reference_20260621.json",
+        "analysis/demo_validation_incremental_api2_tid488_502_20260623.json",
+        "analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json",
+        "analysis/api2_extended_tid_capability_delta_20260623.json",
+        "analysis/tid_richness_matrix_extended_20260623.json"
+      ],
+      "best_use": "Run Python/Go examples, rerun the current anonymous demo surface set in one shot, rerun the raw HTTP caller-facing surface set, and check which entrypoints are merely supported versus live-validated. This now includes the explicit API1 tid=453 cover-shell-only branch, tid=537 shell-probe branch, and the newly caller-facing API2 tid=488/502 alternate shells in both the demo validation runner and the dedicated raw HTTP validation layer.",
+      "still_open": [
+        "No dedicated aged-cookie/login-state example replay validation yet."
+      ]
+    },
+    {
+      "name": "regression_samples",
+      "status": "covered",
+      "primary_files": [
+        "analysis/regression_samples_20260620.json"
+      ],
+      "best_use": "Replay canonical baselines, mixed batches, duplicate-slot cases, JSONP mirror cases, and environment anchors.",
+      "still_open": []
+    },
+    {
+      "name": "environment_replay_tooling",
+      "status": "operational_but_waiting_for_external_inputs",
+      "primary_files": [
+        "tools/tencent_cookie_env_from_headers.py",
+        "tools/tencent_environment_matrix_probe.py",
+        "tools/tencent_param_semantics_probe.py",
+        "tools/tencent_replay_bundle_runner.py",
+        "docs/environment_replay_runbook.md",
+        "analysis/environment_replay_closure_checklist_20260621.json",
+        "analysis/tooling_entrypoint_quick_reference_20260621.json",
+        "analysis/replay_bundle_real_full_semantics_summary_20260621.json",
+        "analysis/environment_replay_runner_contract_20260622.json",
+        "analysis/environment_replay_input_boundary_20260622.json",
+        "analysis/environment_replay_hard_block_table_20260622.json",
+        "analysis/parameter_closure_shortlist_20260622.json",
+        "analysis/parameter_closure_execution_pack_20260622.json"
+      ],
+      "best_use": "Convert raw cookie headers into env JSON and replay the contract matrix plus semantics probes under real, aged, or login-state environments. The tooling quick reference contains ready-to-run aged/login command templates, the closure checklist defines what outputs and review points are required, the 20260622 contract artifacts freeze the runner schema, env-builder minimum input model, and scoped-negative hard-block boundary, the 20260622 shortlist collapses the remaining parameter-closure work into one short execution list, and the 20260622 execution pack turns the top remaining gaps into copyable command groups plus expected outputs.",
+      "still_open": [
+        "Need real aged-cookie headers",
+        "Need real login-state headers",
+        "Do not upgrade union_platform or auth-ish extra keys beyond scoped-negative wording before aged/login replay outputs exist",
+        "Do not upgrade 540/541 into environment-invariant equivalents of 535 before aged/login replay outputs exist"
+      ]
+    }
+  ],
+  "current_highest_value_remaining_gaps": [
+    "obtain aged-cookie headers and run the replay matrix",
+    "obtain login-state headers and run the replay matrix",
+    "replay union_platform and auth-ish extra keys under those environments",
+    "only after that, reassess whether any major closure gap remains beyond sparse positive-tid discovery"
+  ],
+  "companion_artifacts": [
+    "analysis/objective_coverage_audit_20260621.json",
+    "analysis/param_gap_priority_20260620.json",
+    "analysis/parameter_closure_shortlist_20260622.json",
+    "docs/tencent_video_apis.md",
+    "README.md"
+  ]
+}

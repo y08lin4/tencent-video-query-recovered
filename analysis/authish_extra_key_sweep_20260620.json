@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "Auth-ish and session-coupled extra query-key sanity sweep on the current anonymous canonical tested branches",
+  "tested_keys": [
+    "token",
+    "sign",
+    "sig",
+    "appver",
+    "access_token",
+    "authkey",
+    "openid"
+  ],
+  "verdict": [
+    "Across the tested anonymous canonical branches, adding `token/sign/sig/appver/access_token/authkey/openid` produced no observed change on API1 XML, API2 XML, or API2 JSONP.",
+    "For API2 JSONP specifically, none of those keys changed the wrapper root, content type, or top-level `errorno` away from the baseline `QZOutputJson=...;` family.",
+    "This closes a first anonymous-branch auth-ish sweep and narrows the remaining question to real-session or login-coupled environments rather than the current anonymous query parser.",
+    "The remaining gap is not whether these keys obviously branch under the anonymous baseline, but whether any of them become meaningful only when replayed with real cookie jars or logged-in state."
+  ],
+  "cases": {
+    "api1": {
+      "extra_token": "extra_key_ignored_in_tested_branch",
+      "extra_sign": "extra_key_ignored_in_tested_branch",
+      "extra_sig": "extra_key_ignored_in_tested_branch",
+      "extra_appver": "extra_key_ignored_in_tested_branch",
+      "extra_access_token": "extra_key_ignored_in_tested_branch",
+      "extra_authkey": "extra_key_ignored_in_tested_branch",
+      "extra_openid": "extra_key_ignored_in_tested_branch"
+    },
+    "api2_xml": {
+      "extra_token_xml": "extra_key_ignored_in_tested_branch",
+      "extra_sign_xml": "extra_key_ignored_in_tested_branch",
+      "extra_sig_xml": "extra_key_ignored_in_tested_branch",
+      "extra_appver_xml": "extra_key_ignored_in_tested_branch",
+      "extra_access_token_xml": "extra_key_ignored_in_tested_branch",
+      "extra_authkey_xml": "extra_key_ignored_in_tested_branch",
+      "extra_openid_xml": "extra_key_ignored_in_tested_branch"
+    },
+    "api2_jsonp": {
+      "extra_token_json": "extra_key_ignored_in_tested_branch",
+      "extra_sign_json": "extra_key_ignored_in_tested_branch",
+      "extra_sig_json": "extra_key_ignored_in_tested_branch",
+      "extra_appver_json": "extra_key_ignored_in_tested_branch",
+      "extra_access_token_json": "extra_key_ignored_in_tested_branch",
+      "extra_authkey_json": "extra_key_ignored_in_tested_branch",
+      "extra_openid_json": "extra_key_ignored_in_tested_branch"
+    }
+  },
+  "raw_artifact": "analysis/param_query_semantics_20260620.json"
+}

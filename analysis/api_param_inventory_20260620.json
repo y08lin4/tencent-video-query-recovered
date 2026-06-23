@@ -1,0 +1,452 @@
+{
+  "generated_at": "2026-06-21",
+  "scope": "Tencent Video main-interface parameter closure canonical inventory refreshed through 2026-06-21 evidence, including the broader positive-tid sweep and anonymous real-cookie replay.",
+  "method": [
+    "Use repository evidence only: docs, examples, contract probes, environment matrix, and focused JSONP closure artifacts.",
+    "Do not upgrade guesses about official backend naming into conclusions.",
+    "Mark unresolved items as open questions rather than filling them with inference."
+  ],
+  "interfaces": {
+    "api1": {
+      "endpoint": "https://data.video.qq.com/fcgi-bin/data",
+      "canonical_defaults": {
+        "tid": "431",
+        "idlist": "<CID or comma-separated CID list>",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "confirmed_parameters": {
+        "tid": {
+          "requiredness": "hard_required",
+          "observed_role": "request routing / config selector; `431` is the current canonical working example, not a proof that no other positive tid exists",
+          "working_examples": [
+            "431"
+          ],
+          "failing_examples": [
+            {
+              "value": "missing",
+              "errorno": "-111003",
+              "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+            },
+            {
+              "value": "0",
+              "errorno": "-111003",
+              "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+            },
+            {
+              "value": "abc",
+              "errorno": "-111003",
+              "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+            }
+          ],
+          "environment_status": "same-day stable on the current anonymous matrix; the added 418-421 and 526-536 probes only tightened local error boundaries, not positive hits.",
+          "notes": [
+            "Repeated `tid` currently behaves as first-value-wins in the tested canonical anonymous branch.",
+            "Broader API1 slices around 418-421 and 526-536 only tightened error-family boundaries; they did not add another positive tid beyond `431` or another success-shell branch beyond `537`.",
+            "The later anonymous 641-647 jump-scan also found no new API1 positive branch; the strongest new detail there is a local `tid=642 -> -111013` wrinkle on the second sample, not a new positive family."
+          ],
+          "open_questions": [
+            "Whether API1 has other positive tid values besides `431` is still not closed."
+          ]
+        },
+        "idlist": {
+          "requiredness": "hard_required",
+          "shape": "comma-separated CID list",
+          "working_examples": [
+            "single valid CID",
+            "multi-CID batch",
+            "mixed valid + invalid CID batch"
+          ],
+          "failing_examples": [
+            {
+              "value": "missing",
+              "errorno": "-111004",
+              "errormsg": "错误的idlist"
+            },
+            {
+              "value": "",
+              "errorno": "-111004",
+              "errormsg": "错误的idlist"
+            },
+            {
+              "value": "  ",
+              "errorno": "-111004",
+              "errormsg": "错误的idlist"
+            },
+            {
+              "value": ",",
+              "errorno": "10010039",
+              "errormsg": "keys empty"
+            },
+            {
+              "value": ",,",
+              "errorno": "10010039",
+              "errormsg": "keys empty"
+            }
+          ],
+          "batch_semantics": [
+            "Supports multiple CIDs in one request.",
+            "Duplicate CIDs are not deduped.",
+            "Duplicate CIDs count toward the tested non-empty item limit.",
+            "Empty comma slots are ignored and do not count toward the tested non-empty item limit.",
+            "32 non-empty items succeed in the current matrix; 33 non-empty items trigger `-111001 / idlist个数错误, 为0或超过限制`.",
+            "Mixed valid + illegal CID can still return top-level success; callers must inspect per-result retcode.",
+            "Shape-valid but empty-shell CID can pollute naive top-level field reads when it appears first.",
+            "Repeated query-key form such as `idlist=a&idlist=b` currently behaves as first-value-wins in the tested canonical anonymous branch."
+          ],
+          "open_questions": [
+            "No evidence yet that API1 merges repeated `idlist` keys across query-string positions."
+          ]
+        },
+        "appid": {
+          "requiredness": "conditional_branch_parameter",
+          "observed_role": "numeric canonical appid enables the stable documented appkey-validation branch; missing / text / `1` currently land on a looser anonymous-compatibility branch in the tested cases",
+          "working_examples": [
+            "missing",
+            "1",
+            "notanumber",
+            "missing together with appkey"
+          ],
+          "failing_examples": [
+            {
+              "value": "99999",
+              "errorno": "10010108",
+              "errormsg": "appid no find"
+            }
+          ],
+          "notes": [
+            "`appid=10001005` is the current canonical numeric appid in repo examples and probes.",
+            "Current evidence says API1 appid is not a simple always-required auth parameter.",
+            "Repeated `appid` currently behaves as first-value-wins in the tested bad-appkey collision controls between the canonical numeric branch and the text-bypass branch."
+          ],
+          "open_questions": [
+            "Positive behavior for non-canonical but valid numeric appid values is not yet mapped."
+          ]
+        },
+        "appkey": {
+          "requiredness": "conditional_with_canonical_numeric_appid",
+          "observed_role": "part of the stable documented branch when the canonical numeric appid is used",
+          "working_examples": [
+            "paired with `appid=10001005` and the canonical appkey",
+            "omitted when appid is missing in the tested anonymous branch",
+            "omitted when appid is text in the tested anonymous branch"
+          ],
+          "failing_examples": [
+            {
+              "value": "missing while `appid=10001005`",
+              "errorno": "10010110",
+              "errormsg": "appkey error"
+            },
+            {
+              "value": "wrong value while `appid=10001005`",
+              "errorno": "10010110",
+              "errormsg": "appkey error"
+            }
+          ],
+          "notes": [
+            "Repeated `appkey` currently behaves as first-value-wins in the tested canonical-appid branch when good and wrong appkey values collide."
+          ],
+          "open_questions": [
+            "No evidence yet that appkey alone unlocks additional API1 capability beyond satisfying the canonical numeric-appid branch."
+          ]
+        }
+      },
+      "candidate_hidden_parameters": [],
+      "current_non_goals": [
+        "Current canonical anonymous-branch evidence says API1 ignores the tested extra keys `foo`, `callback`, and `_`, and still shows no wrapper-style behavior from them."
+      ],
+      "priority_gaps": [
+        "Positive alternative tid mapping",
+        "Whether broader reserved-looking extra keys besides the tested set change behavior"
+      ]
+    },
+    "api2": {
+      "endpoint": "https://union.video.qq.com/fcgi-bin/data",
+      "canonical_defaults": {
+        "otype": "xml",
+        "tid": "535",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "<VID or comma-separated VID list>"
+      },
+      "confirmed_parameters": {
+        "otype": {
+          "requiredness": "optional_wrapper_switch",
+          "observed_role": "controls response wrapper; only exact lowercase `json` switches to JSONP",
+          "working_examples": [
+            "missing -> XML success body",
+            "xml -> XML body",
+            "json -> `QZOutputJson=...;` JSONP body"
+          ],
+          "branch_examples": [
+            {
+              "value": "JSON",
+              "result": "falls back to XML rather than JSONP"
+            },
+            {
+              "value": "text",
+              "result": "falls back to XML rather than JSONP"
+            }
+          ],
+          "notes": [
+            "When a single `otype` key is exact lowercase `json`, both success and failure stay inside the JSONP wrapper.",
+            "Current same-day evidence says JSONP changes wrapper/content-type, not the tested batch semantics.",
+            "Repeated `otype` currently behaves as first-value-wins in the tested canonical anonymous branch.",
+            "In the tested JSONP branch, adding `callback=1` replaces the default `QZOutputJson=` assignment wrapper with a raw callback-style `1({...})` wrapper while preserving the JSON payload semantics."
+          ],
+          "open_questions": [
+            "No evidence yet for any positive wrapper value besides XML default and lowercase JSONP."
+          ]
+        },
+        "tid": {
+          "requiredness": "hard_required",
+          "observed_role": "request routing / config selector; `535` is the current canonical good example value, while `535`, `540`, and `541` are the currently confirmed positive API2 tids",
+          "working_examples": [
+            "535",
+            "540",
+            "541"
+          ],
+          "failing_examples": [
+            {
+              "value": "missing",
+              "errorno": "-111003",
+              "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+            },
+            {
+              "value": "0",
+              "errorno": "-111003",
+              "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+            },
+            {
+              "value": "abc",
+              "errorno": "-111003",
+              "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+            },
+            {
+              "value": "536",
+              "errorno": "-111005",
+              "errormsg": "获取配置错误"
+            },
+            {
+              "value": "431",
+              "errorno": "10010048",
+              "errormsg": "key all illegal"
+            }
+          ],
+          "notes": [
+            "Repeated `tid` currently behaves as first-value-wins in the tested canonical anonymous branch.",
+            "Under anonymous real-cookie replay, the tested auth-ish extra-key semantics stayed unchanged across the currently confirmed positive API2 tid cluster `535/540/541`.",
+            "The later anonymous 641-647 jump-scan did not reveal a new positive API2 cluster; the only new wrinkle was a local `tid=642 -> -111013` error-family branch on the second sample."
+          ],
+          "open_questions": [
+            "Whether API2 has any other positive tid values besides the currently confirmed `535/540/541` family is still open."
+          ]
+        },
+        "appid": {
+          "requiredness": "conditional_branch_parameter",
+          "observed_role": "numeric canonical appid enables stricter appkey validation; missing / text / `1` currently bypass that stricter branch",
+          "working_examples": [
+            "missing",
+            "1",
+            "notanumber"
+          ],
+          "failing_examples": [
+            {
+              "value": "99999",
+              "errorno": "10010108",
+              "errormsg": "appid no find"
+            }
+          ],
+          "notes": [
+            "`appid=20001238` is the current canonical numeric appid in repo examples and probes.",
+            "Repeated `appid` currently behaves as first-value-wins in the tested bad-appkey collision controls between the canonical numeric branch and the text-bypass branch."
+          ],
+          "open_questions": [
+            "Positive behavior for other numeric appid values is not yet mapped."
+          ]
+        },
+        "appkey": {
+          "requiredness": "conditional_with_canonical_numeric_appid",
+          "observed_role": "validated when the canonical numeric appid branch is active",
+          "working_examples": [
+            "paired with `appid=20001238` and the canonical appkey",
+            "omitted when appid is missing or text"
+          ],
+          "failing_examples": [
+            {
+              "value": "missing while `appid=20001238`",
+              "errorno": "10010110",
+              "errormsg": "appkey error"
+            },
+            {
+              "value": "wrong value while `appid=20001238`",
+              "errorno": "10010110",
+              "errormsg": "appkey error"
+            }
+          ],
+          "notes": [
+            "Repeated `appkey` currently behaves as first-value-wins in the tested canonical-appid branch when good and wrong appkey values collide."
+          ],
+          "open_questions": [
+            "No evidence yet that appkey unlocks any API2 capability beyond satisfying the canonical numeric-appid branch."
+          ]
+        },
+        "union_platform": {
+          "requiredness": "no_observed_effect_in_current_anonymous_canonical_branch",
+          "observed_role": "present in canonical examples but not validated by the current tested branch set",
+          "accepted_examples": [
+            "missing",
+            "",
+            "0",
+            "2",
+            "3",
+            "abc",
+            "999",
+            "-1"
+          ],
+          "notes": [
+            "Current evidence says the anonymous canonical branch and the later real anonymous visitor-cookie replay both did not show a visible behavioral split on union_platform.",
+            "This is still a black-box conclusion limited to same-day anonymous environments plus the real anonymous visitor-cookie replay.",
+            "Repeated `union_platform=3&999` versus `999&3` showed no observed change in the tested XML canonical branch, but that does not prove first-value-wins."
+          ],
+          "open_questions": [
+            "Whether union_platform matters under aged-cookie or real login-state replay remains open."
+          ]
+        },
+        "idlist": {
+          "requiredness": "hard_required",
+          "shape": "comma-separated VID list",
+          "working_examples": [
+            "single valid VID",
+            "mixed valid + invalid VID batch",
+            "duplicate + empty-slot batch",
+            "32 non-empty items"
+          ],
+          "failing_examples": [
+            {
+              "value": "missing",
+              "errorno": "-111004",
+              "errormsg": "错误的idlist"
+            },
+            {
+              "value": "",
+              "errorno": "-111004",
+              "errormsg": "错误的idlist"
+            },
+            {
+              "value": "  ",
+              "errorno": "-111004",
+              "errormsg": "错误的idlist"
+            },
+            {
+              "value": ",",
+              "errorno": "10010039",
+              "errormsg": "keys empty"
+            },
+            {
+              "value": ",,",
+              "errorno": "10010039",
+              "errormsg": "keys empty"
+            },
+            {
+              "value": "33 non-empty items",
+              "errorno": "-111001",
+              "errormsg": "idlist个数错误, 为0或超过限制"
+            }
+          ],
+          "batch_semantics": [
+            "Maximum tested batch size is 32 non-empty items.",
+            "Duplicate items count toward the 32-item limit.",
+            "Invalid items count toward the 32-item limit.",
+            "Empty slots are ignored.",
+            "Mixed valid + invalid batches keep order and degrade bad items into empty-shell rows instead of top-level failure.",
+            "Repeated query-key form such as `idlist=a&idlist=b` currently behaves as first-value-wins in the tested canonical anonymous branch."
+          ],
+          "open_questions": [
+            "No evidence yet that API2 merges repeated `idlist` keys across query-string positions."
+          ]
+        }
+      },
+      "candidate_hidden_parameters": [
+        {
+          "name": "callback",
+          "scope": "API2 JSONP wrapper branch only",
+          "observed_role": "replaces the default `QZOutputJson=` assignment wrapper with a callback-style wrapper for a wide tested callback family, while the empty callback value falls back to the default assignment shell and some unmatched-delimiter values produce parse-breaking wrappers",
+          "status": "confirmed_auxiliary_wrapper_parameter_in_tested_jsonp_branch"
+        }
+      ],
+      "current_non_goals": [
+        "No strong repository evidence yet for versioned or auth-token query parameters on the two main API2 wrappers; beyond the confirmed API2 JSONP `callback` wrapper surface, the tested reserved-looking keys `format/output/version/v/platform/source` and the tested auth-ish keys `token/sign/sig/appver/access_token/authkey/openid` all stayed on the canonical anonymous branch behavior, and the auth-ish keys also stayed unchanged under the later real anonymous visitor-cookie replay."
+      ],
+      "priority_gaps": [
+        "Positive alternative tid mapping",
+        "Login-state or aged-cookie effect on union_platform, now that live anonymous visitor-cookie replay is closed",
+        "API2 JSONP callback behavior for parser-breaking punctuation beyond the tested empty/numeric/identifier/dotted/dash/bracket/dollar/space/comma/Unicode/close-paren/comment-like set",
+        "Whether auth-leaning or session-coupled extra keys change behavior outside the now-closed anonymous plus real-anonymous replay branches, especially under login-state or aged-cookie replay"
+      ],
+      "unknown_or_remaining_parameter_questions": []
+    }
+  },
+  "overall_hidden_parameter_judgment": {
+    "status": "no_strong_hidden_main_query_key_from_current_repo_evidence",
+    "notes": [
+      "Current repo evidence for the two main endpoints only consistently exposes API1: `tid,idlist,appid,appkey` and API2: `otype,tid,appid,appkey,union_platform,idlist`.",
+      "Current evidence also directly confirms one auxiliary wrapper surface outside that main key set: API2 JSONP `callback`, which changes the wrapper prefix across a wide tested value family while preserving the payload family, except that the empty callback value falls back to the default shell.",
+      "The next highest-value closure work is not broad hidden-parameter hunting but login-state/aged-cookie replay, broader positive tid discovery beyond the now-confirmed `535/540/541` API2 family, callback slash/backslash-like punctuation probing, and replaying the tested auth-ish keys outside the now-closed anonymous plus real-anonymous visitor-cookie branches."
+    ]
+  },
+  "replay_closure_tooling": {
+    "status": "operational_but_still_waiting_for_aged_login_inputs",
+    "components": [
+      {
+        "name": "tencent_cookie_env_from_headers.py",
+        "role": "convert raw desktop/mobile Cookie headers into replay env JSON for real / aged / login-state runs"
+      },
+      {
+        "name": "tencent_environment_matrix_probe.py",
+        "role": "run the canonical contract matrix across replay header environments"
+      },
+      {
+        "name": "tencent_param_semantics_probe.py",
+        "role": "replay auth-ish and callback/repeated-key semantics under a chosen env; now also supports dynamic callback-tail values via `--extra-callback-value / --extra-callback-file`"
+      },
+      {
+        "name": "tencent_replay_bundle_runner.py",
+        "role": "one-command orchestration for env-json build + matrix + semantics, now supporting `--semantics-profile full`, callback-tail forwarding via `--probe-extra-callback-value / --probe-extra-callback-file`, plus writable final/staging directories via `--artifact-output-dir / --subprocess-output-dir`"
+      }
+    ],
+    "current_proven_scope": [
+      "anonymous real-cookie replay path is already closed",
+      "replay bundle callback-support and artifact-output-dir staging are self-validated",
+      "aged-cookie and login-state still need real external Cookie input before the parameter conclusions themselves can be upgraded"
+    ],
+    "evidence": [
+      "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json",
+      "analysis/replay_bundle_real_summary_20260621_realcheck.json",
+      "analysis/replay_bundle_semantics_callback_support_20260621.json",
+      "analysis/replay_bundle_artifact_dir_selfcheck_20260621.json"
+    ]
+  },
+  "evidence_index": [
+    "docs/tencent_video_apis.md",
+    "README.md",
+    "tools/tencent_api_contract_probe.py",
+    "tools/tencent_param_semantics_probe.py",
+    "tools/tencent_environment_matrix_probe.py",
+    "analysis/api_contract_summary_20260619.json",
+    "analysis/environment_matrix_20260620.json",
+    "analysis/agent_api_contract_crossday_20260620.json",
+    "analysis/api2_jsonp_batch_matrix_20260620.json",
+    "analysis/param_query_semantics_20260620.json",
+    "analysis/api2_jsonp_callback_value_space_20260620.json",
+    "analysis/authish_extra_key_sweep_20260620.json",
+    "analysis/reserved_extra_key_sweep_20260620.json",
+    "analysis/positive_tid_summary_20260620.json",
+    "analysis/positive_tid_summary_20260621.json",
+    "analysis/positive_tid_api1_boundary_summary_20260621.json",
+    "analysis/positive_tid_probe_641_647_summary_20260621.json",
+    "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json",
+    "analysis/authish_extra_key_replay_anonymous_real_cookie_summary_20260621.json"
+  ]
+}

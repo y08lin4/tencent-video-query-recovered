@@ -193,6 +193,13 @@ def parse_args() -> argparse.Namespace:
         help="Include sec-ch-ua / sec-fetch-* / synthetic-cookie browser-like environments",
     )
     parser.add_argument(
+        "--extra-env-json",
+        help=(
+            "Optional JSON file containing additional replay environments. "
+            "Format: {\"env_name\": {\"Header-Name\": \"value\", ...}, ...}"
+        ),
+    )
+    parser.add_argument(
         "--output",
         help="Optional output file path; when omitted, write JSON to stdout",
     )
@@ -208,10 +215,36 @@ def parse_args() -> argparse.Namespace:
     return args
 
 
-def build_environments(include_browser_like: bool) -> OrderedDict[str, dict[str, str]]:
+def load_extra_environments(path: str | None) -> OrderedDict[str, dict[str, str]]:
+    extra: OrderedDict[str, dict[str, str]] = OrderedDict()
+    if not path:
+        return extra
+    raw = json.loads(Path(path).read_text(encoding="utf-8"))
+    if not isinstance(raw, dict):
+        raise ValueError("--extra-env-json must be a JSON object mapping env names to header objects")
+    for env_name, headers in raw.items():
+        if not isinstance(env_name, str) or not env_name.strip():
+            raise ValueError("extra environment names must be non-empty strings")
+        if not isinstance(headers, dict):
+            raise ValueError(f"extra environment '{env_name}' must map to a JSON object of headers")
+        normalized_headers: dict[str, str] = {}
+        for key, value in headers.items():
+            if not isinstance(key, str) or not key.strip():
+                raise ValueError(f"extra environment '{env_name}' contains an invalid header name")
+            normalized_headers[key] = str(value)
+        extra[env_name] = normalized_headers
+    return extra
+
+
+def build_environments(
+    include_browser_like: bool,
+    extra_env_json: str | None = None,
+    extra_environments: OrderedDict[str, dict[str, str]] | None = None,
+) -> OrderedDict[str, dict[str, str]]:
     environments = OrderedDict(BASE_ENVIRONMENTS)
     if include_browser_like:
         environments.update(BROWSER_LIKE_ENVIRONMENTS)
+    environments.update(extra_environments if extra_environments is not None else load_extra_environments(extra_env_json))
     return environments
 
 
@@ -491,7 +524,12 @@ def run_representative_field_diff(args: argparse.Namespace) -> OrderedDict[str, 
         )
     )
 
-    environments = build_environments(args.include_browser_like)
+    extra_environments = load_extra_environments(args.extra_env_json)
+    environments = build_environments(
+        args.include_browser_like,
+        args.extra_env_json,
+        extra_environments=extra_environments,
+    )
     original_headers = survey.REQUEST_HEADERS.copy()
     try:
         report: OrderedDict[str, Any] = OrderedDict()
@@ -532,7 +570,12 @@ def main() -> int:
     except AttributeError:  # pragma: no cover - older Python compatibility
         pass
     args = parse_args()
-    environments = build_environments(args.include_browser_like)
+    extra_environments = load_extra_environments(args.extra_env_json)
+    environments = build_environments(
+        args.include_browser_like,
+        args.extra_env_json,
+        extra_environments=extra_environments,
+    )
     api1_cases, api2_cases = build_case_sets()
     report = OrderedDict(
         (
@@ -546,6 +589,8 @@ def main() -> int:
                         ("retry_sleep_seconds", args.retry_sleep),
                         ("environments", list(environments.keys())),
                         ("include_browser_like", args.include_browser_like),
+                        ("extra_env_json", args.extra_env_json or ""),
+                        ("extra_environment_names", list(extra_environments.keys())),
                     )
                 ),
             ),

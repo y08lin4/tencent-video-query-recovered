@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "Canonical caller-side recognition rule for API2 all-invalid JSONP batches",
+  "rule_id": "api2_jsonp_all_invalid_empty_shell_rule",
+  "verdict": {
+    "status": "consumer_rule_confirmed_for_current_tested_branches",
+    "summary": "On the current tested API2 JSONP branches, an all-invalid batch can still return top-level success and per-result retcode=0; callers must detect failure from empty-shell rows rather than from top-level errorno or retcode alone."
+  },
+  "canonical_rule": {
+    "if": [
+      "top-level response wrapper is JSONP (`QZOutputJson=...;` or a tested callback-style wrapper)",
+      "top-level `errorno` is `0`",
+      "each result row has an `id` but the content fields stay empty",
+      "the row-level fields `vid/title/duration/url/state/upload_src/create_time/modify_time` are all empty",
+      "`cover_list/category_map/vWH` are empty and `defn` is empty"
+    ],
+    "then": [
+      "treat that row as `empty_shell=true`",
+      "if every row in the batch is `empty_shell=true`, treat the batch as `all-invalid/empty-shell`",
+      "do not rely on per-result `retcode` for this branch"
+    ]
+  },
+  "evidence": [
+    {
+      "artifact": "analysis/environment_matrix_20260620.json",
+      "case": "api2_contract_matrix.all_invalid_jsonp_batch",
+      "observation": "Top-level `errorno=0`; both requested IDs remain present, but the returned content fields are empty-shell."
+    },
+    {
+      "artifact": "analysis/agent_api_contract_crossday_20260620.json",
+      "case": "api2_all_invalid_jsonp_batch_pc_web_ua",
+      "observation": "Cross-day replay still shows `errorno=0`, `results_count=2`, and both rows carry `id` plus null-like/empty content fields."
+    },
+    {
+      "artifact": "analysis/api2_jsonp_batch_matrix_20260620.json",
+      "case": "mixed_valid_invalid_vid_json",
+      "observation": "The invalid row sits beside valid rows as an empty-shell result, confirming that JSONP invalid handling is row-shaped rather than top-level failure-shaped."
+    }
+  ],
+  "implementation_targets": [
+    "examples/python/tencent_video_api_demo.py",
+    "examples/go/main.go"
+  ],
+  "remaining_gap": "This closes the caller-side normalization rule for the current tested JSONP branch, but not the wider callback value-space mapping or real-session/login environments."
+}

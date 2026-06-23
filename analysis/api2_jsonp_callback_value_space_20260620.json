@@ -1,0 +1,199 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "API2 JSONP callback value-space mapping on the current anonymous canonical tested branch",
+  "verdict": [
+    "Tested callback values `1`, `cb1`, `QZOutputJson`, `foo.bar`, `a-b`, `a[b]`, `$cb`, `foo bar`, `foo,bar`, `[0]`, `中文`, `a)`, `)`, `a;b`, `a'b`, `a\"b`, `a/`, `a\\`, `//a`, and `/*a` all preserve payload semantics while rewriting the JSONP wrapper prefix.",
+    "An empty callback value does not produce an empty callback-style shell; it falls back to the default `QZOutputJson=...;` assignment wrapper.",
+    "Unmatched-open callback values such as `a(` and `((` break parseability for the current JSONP summary path and produce callback-style shells rather than the default assignment wrapper.",
+    "The `_` parameter remains inert on the tested JSONP branch.",
+    "This closes a stronger callback layer: numeric, identifier, dotted, dash, bracket, dollar, whitespace, comma, bracket-leading, Unicode, close-paren, quote, semicolon, slash, backslash, comment-like prefix, and unmatched-open-paren families are now directly evidenced. The remaining gap is now mainly about other parser-breaking delimiter combinations beyond the currently confirmed bad-shell cases."
+  ],
+  "cases": {
+    "extra_callback_json": {
+      "callback_value": "1",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "1({\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781958923,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc002",
+      "root": "1",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_cb1_json": {
+      "callback_value": "cb1",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "cb1({\"costtime\":6,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781958923,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+      "root": "cb1",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_qzoutputjson_json": {
+      "callback_value": "QZOutputJson",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "QZOutputJson({\"costtime\":7,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781958923,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+      "root": "QZOutputJson",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_foo_dot_bar_json": {
+      "callback_value": "foo.bar",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "foo.bar({\"costtime\":9,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781958923,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+",
+      "root": "foo.bar",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_empty_json": {
+      "callback_value": "",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "fallback_default",
+      "body_prefix": "QZOutputJson={\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781958923,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+      "root": "QZOutputJson",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_a_dash_b_json": {
+      "callback_value": "a-b",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "a-b({\"costtime\":8,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781958923,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+      "root": "a-b",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_a_bracket_b_json": {
+      "callback_value": "a[b]",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "a[b]({\"costtime\":7,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781958923,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc",
+      "root": "a[b]",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_dollar_cb_json": {
+      "callback_value": "$cb",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "$cb({\"costtime\":7,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781958923,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+      "root": "$cb",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_foo_space_bar_json": {
+      "callback_value": "foo bar",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "foo bar({\"costtime\":7,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781958923,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+",
+      "root": "foo bar",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_foo_comma_bar_json": {
+      "callback_value": "foo,bar",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "foo,bar({\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781958923,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+",
+      "root": "foo,bar",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_bracket_zero_json": {
+      "callback_value": "[0]",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "[0]({\"costtime\":8,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781958923,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+      "root": "[0]",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_chinese_json": {
+      "callback_value": "中文",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "中文({\"costtime\":7,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781958923,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc00",
+      "root": "中文",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_a_open_paren_json": {
+      "callback_value": "a(",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "unparseable_or_error",
+      "body_prefix": "a(({\"costtime\":6,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781959766,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc00",
+      "parse_error": "Expecting value at position 0"
+    },
+    "extra_callback_a_close_paren_json": {
+      "callback_value": "a)",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "a)({\"costtime\":4,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781959766,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc00",
+      "root": "a)",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_a_semicolon_b_json": {
+      "callback_value": "a;b",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "a;b({\"costtime\":7,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781959767,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+      "root": "a;b",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_a_single_quote_b_json": {
+      "callback_value": "a'b",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "a'b({\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781959767,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+      "root": "a'b",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_a_double_quote_b_json": {
+      "callback_value": "a\"b",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "a\"b({\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781959767,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+      "root": "a\"b",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_a_slash_json": {
+      "callback_value": "a/",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "a/({\"costtime\":4,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781960557,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc00",
+      "root": "a/",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_a_backslash_json": {
+      "callback_value": "a\\",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "a\\({\"costtime\":7,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781960557,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc00",
+      "root": "a\\",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_callback_double_slash_a_json": {
+      "callback_value": "//a",
+      "judgment": "jsonp_callback_value_changes_wrapper_branch",
+      "wrapper_family": "raw_passthrough",
+      "body_prefix": "//a({\"costtime\":6,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781960557,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+      "root": "//a",
+      "errorno": "0",
+      "errormsg": ""
+    },
+    "extra_underscore_json": {
+      "judgment": "extra_key_ignored_in_tested_branch",
+      "body_prefix": "QZOutputJson={\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781958923,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+      "root": "QZOutputJson",
+      "errorno": "0",
+      "errormsg": ""
+    }
+  },
+  "raw_artifact": "analysis/param_query_semantics_20260620.json"
+}

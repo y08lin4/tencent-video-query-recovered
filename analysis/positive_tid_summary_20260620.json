@@ -1,0 +1,88 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "Focused positive tid sweep summary across the 428-434 and 533-540 high-signal bands",
+  "verdict": [
+    "Within the focused high-signal bands, API1 still has only one true positive content branch on `tid=431`, but `tid=537` now stands out as a separate `success_shell_without_sample` branch rather than an ordinary failure.",
+    "Within the same focused bands, API2 has confirmed positive branches on both `tid=535` and `tid=540` in XML and JSONP wrappers.",
+    "The 53x region is now clearly heterogeneous rather than a uniform error desert: `534` is a forbidden-external branch, `535/540` are real positives on API2 but `key all illegal` on API1, and `537` splits into `key all illegal` on API2 versus `success shell without sample` on API1."
+  ],
+  "tested_band": {
+    "api1": [
+      "428",
+      "429",
+      "430",
+      "431",
+      "432",
+      "433",
+      "434",
+      "533",
+      "534",
+      "535",
+      "536",
+      "537",
+      "538",
+      "539",
+      "540"
+    ],
+    "api2": [
+      "428",
+      "429",
+      "430",
+      "431",
+      "432",
+      "433",
+      "434",
+      "533",
+      "534",
+      "535",
+      "536",
+      "537",
+      "538",
+      "539",
+      "540"
+    ]
+  },
+  "positive_hits": {
+    "api1": [
+      "431"
+    ],
+    "api1_success_shell_without_sample": [
+      "537"
+    ],
+    "api2_xml": [
+      "535",
+      "540"
+    ],
+    "api2_jsonp": [
+      "535",
+      "540"
+    ]
+  },
+  "notable_errors": {
+    "api1_534": {
+      "errorno": "-111013",
+      "errormsg": "禁止外部访问接口"
+    },
+    "api1_535": {
+      "errorno": "10010048",
+      "errormsg": "key all illegal"
+    },
+    "api1_540": {
+      "errorno": "10010048",
+      "errormsg": "key all illegal"
+    },
+    "api2_431_xml": {
+      "errorno": "10010048",
+      "errormsg": "key all illegal"
+    },
+    "api2_534_xml": {
+      "errorno": "-111013",
+      "errormsg": "禁止外部访问接口"
+    },
+    "api2_537_xml": {
+      "errorno": "10010048",
+      "errormsg": "key all illegal"
+    }
+  },
+  "raw_artifact": "analysis/positive_tid_probe_20260620.json"
+}

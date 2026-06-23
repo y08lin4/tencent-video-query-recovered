@@ -1,6 +1,6 @@
 # 腾讯视频两个接口说明
 
-这份文档只写 2026-06-19 的真实接口回包能坐实的东西。
+这份文档只写截至 2026-06-21 的真实接口回包与配套 replay 实测能坐实的东西。
 
 不再用“低 / 中 / 高置信度”这类模糊说法，而是分成三层：
 
@@ -115,6 +115,7 @@ https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=<CID>&appid=10001005&appk
 
 最稳的结论：
 
+- 在单个 `tid / idlist` key 的 query 形态下，`tid` 和 `idlist` 是硬参数
 - `tid` 是硬参数
   - 缺失 / `0` / `abc` 都返回：
     - `errorno=-111003`
@@ -136,9 +137,26 @@ https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=<CID>&appid=10001005&appk
     - `errorno=10010108`
     - `errormsg=appid no find`
   - `appid=notanumber` 时，即使缺 `appkey` 或 `appkey` 乱填，也会成功，当前黑盒表现更像“旁路到忽略分支”
+  - 新补的 repeated 对撞 case 已说明：在当前 API1 tested branches 下，repeated `appid` 与 repeated `appkey` 都表现为首值生效
+    - `appid=10001005&appid=notanumber&appkey=deadbeef` 返回 `10010110 / appkey error`
+    - `appid=notanumber&appid=10001005&appkey=deadbeef` 仍成功
+    - `appid=10001005&appkey=good&appkey=deadbeef` 仍成功
+    - `appid=10001005&appkey=deadbeef&appkey=good` 返回 `10010110 / appkey error`
 - API1 的错误同样主要靠 body 里的 `errorno / errormsg` 表达，不能只看 HTTP 状态码
+- 当前已确认 API1 正向 `tid` 至少分成 3 支：
+  - `431` = canonical positive
+    - 当前稳定返回 non-empty cover row + non-empty `video_ids` 家族
+  - `453` = positive cover-shell-only
+    - 当前可返回 non-empty `cover_id / title / type / type_name`
+    - 但在 3 个 public CID 上 `video_ids` 都仍为空
+  - `537` = success-shell-without-sample
+    - 当前为更薄的 success shell
+    - 在 3 个 public CID 上都没有补出 non-empty cover row 或 `video_ids`
+- 新补的 [analysis/param_query_semantics_20260620.json](C:/Users/lin/Documents/YM查询工具还原/analysis/param_query_semantics_20260620.json) 还说明：
+  - 当前 canonical tested branch 下，额外 `foo / callback / _` 都未改变 API1 的 XML 外壳和成功结果
+  - repeated `tid` 与 repeated `idlist` 当前都表现为首值生效，而不是把多个同名 key merge 成更大的批量
 
-多 `CID` 批量行为也已经补清：
+多 `CID` 批量行为也已经补清，但下面这些结论都针对单个 `idlist=cid1,cid2,...` 的 CSV 形态成立：
 
 - `idlist=cid1,cid2,...` 支持多 `CID`
 - 重复 `CID` 不去重
@@ -169,10 +187,14 @@ https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=<CID>&appid=10001005&appk
 
 ### 4.2 当前已确认的返回形态
 
-接口 1 返回 XML。
+接口 1 返回 XML，但“成功返回”并不只存在一种壳形。
 
 这一轮最重要的结构结论：
 
+- 下面这些较丰满的结构结论，当前主要对应 canonical `tid=431`
+- `tid=453/537` 也可能返回 `errorno=0`
+  - 但字段丰满度更薄
+  - 不应默认等同于 `431`
 - `video_ids` 是重复 XML 标签
 - `clips_ids` 是重复 XML 标签
 - `downright` 也是重复 XML 标签
@@ -642,6 +664,11 @@ https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=<CID>&appid=10001005&appk
 4. `pay_status` 当前稳定非空值已实测到 `5`、`6`、`7`、`8`、`9`、`15`、`16`
 5. `downright` 是 cover 级代码集合，不是条目级逐项权限
 6. `positive_trailer` 不是“是否预告片”布尔值，当前至少已见 `0`、`1`、`2`
+7. API1 当前至少已确认 3 类正向 `tid` 壳：
+   - `431` = canonical positive
+   - `453` = cover-only positive shell
+   - `537` = sample-less success shell
+   它们都属于成功分支，但 caller-facing 能力不同
 
 ## 5. 接口 2：VID -> 单视频详细信息
 
@@ -666,7 +693,7 @@ API2 这一轮补得最值钱的一块，就是参数契约终于不只剩一个
 - **错误默认也是 HTTP 200**
   - 不能靠 HTTP 状态码判断成功失败
   - 要看 body 内的 `errorno / errormsg`
-- `tid` 是最硬的路由参数
+- `tid` 是单 key query 下最硬的路由参数
   - 缺失 / 空 / `abc` / `0` / `-1`
     - `errorno=-111003`
     - `errormsg=错误的tid, 如果新申请的接口,请等待10分钟`
@@ -679,12 +706,62 @@ API2 这一轮补得最值钱的一块，就是参数契约终于不只剩一个
 - `otype` 不是 XML 路径上的硬必填参数
   - 缺失 / 空 / `foo` / `JSON`
     - 当前仍返回正常 XML 成功体
-  - **只有精确小写 `otype=json` 会切到 JSONP**
+  - **单个 `otype` key 时，只有精确小写 `otype=json` 会切到 JSONP**
     - `Content-Type: application/x-javascript`
-    - body 形如 `QZOutputJson=...;`
+    - 默认 body 形如 `QZOutputJson=...;`
   - 这一点在成功和失败两种分支上都成立
-    - `otype=json` + `tid/appid/appkey/idlist` 出错时，也不会退回 XML，仍然是 `QZOutputJson=...;`
-- `union_platform` 当前黑盒下看起来被忽略
+    - `otype=json` + `tid/appid/appkey/idlist` 出错时，也不会退回 XML，默认仍然是 `QZOutputJson=...;`
+- 额外 query key 这轮也补了一层
+  - API2 XML canonical branch 下，额外 `foo / callback / _` 当前都未观察到变化
+  - API2 JSONP canonical branch 下，额外 `foo` 与 `_` 当前都未观察到变化
+  - 但 `callback` 在 JSONP 路径上现在已经补到第二层 practical value-space：
+    - `callback=1` -> `1({...})`
+    - `callback=cb1` -> `cb1({...})`
+    - `callback=QZOutputJson` -> `QZOutputJson({...})`
+    - `callback=foo.bar` -> `foo.bar({...})`
+    - `callback=a-b / a[b] / $cb / foo bar / foo,bar / [0] / 中文 / a) / ) / a;b / a'b / a"b / a/ / a\ / //a / /*a / [ / [[` 也都会 raw passthrough 到 wrapper 前缀
+    - `callback=` 空值不会生成空 callback-style 包裹，而是回落默认 `QZOutputJson=...;`
+    - repeated `callback` 当前 same-day anonymous collision cases 也已经补到首值生效：
+      - `callback=cb1&callback=` -> `cb1(...)`
+      - `callback=&callback=cb1` -> 默认 `QZOutputJson=...;`
+      - `callback=cb1&callback=a(` -> `cb1(...)`
+      - `callback=a(&callback=cb1` -> 仍是 parse-breaking 坏壳
+    - wrong-appkey JSONP 错误壳也仍然吃 `callback`：
+      - `callback=cb1` -> `cb1({...error...})`
+      - `callback=a(` -> 仍是 parse-breaking 坏壳
+    - 这组 callback precedence / wrong-appkey error-shell 结论，已经在真实匿名 visitor-cookie replay 的 `PC Web` 与 `Mobile H5` 上各复打一遍，当前未观察到分叉
+    - `callback=a(` 与 `callback=((` 会形成 `a(({...})` / `((({...})` 这类当前摘要路径不可解析的坏壳
+    - 后续 pathological-tail probe 又补出一个更稳的 parse-breaking 代表：`callback=})();`
+    - 2026-06-22 的 unmatched-delimiter follow-up 继续把 parse-breaking 代表族向外推宽：`callback=[(`、`callback={(`、`callback=/*(`、`callback=a[(`、`callback=)(`、`callback=](`、`callback=}(` 当前都会落到摘要路径不可解析的坏壳
+    - 相对地，`callback=[` 与 `callback=[[` 当前仍是 raw passthrough；也就是说“带特殊字符”不等于一定坏壳
+    - 当前最稳说法是：这些当前已测 callback 值族会保留 payload 家族，但会改写 JSONP wrapper 前缀；空 callback 走 fallback default；至少已确认存在一组 widened unmatched-delimiter / malformed-prefix parse-breaking 壳
+    - 但这仍是 practical value-space 结论，不外推成“callback 任意取值都安全可解析”，也不外推成“凡是包含 `(` 都一定坏壳”
+    - 这些结论也只覆盖已测 key，不外推成“所有未知 key 都会被忽略”
+
+### 5.1.2 Demo 入口级已验证路径
+
+下面这几条不是“所有页型/所有环境都闭环”的意思，而是说在**当前匿名 direct-call scope** 下，公开 Python/Go demo 的几个高频入口已经各自有 dedicated live validation：
+
+- URL canonical chain
+  - Python：`python examples/python/tencent_video_api_demo.py --url "https://v.qq.com/x/cover/mzc00200idzf2m8/z4102qfi0x4.html" --json`
+- Go：`go.exe -url "https://v.qq.com/x/cover/mzc00200idzf2m8/z4102qfi0x4.html" -json`
+  - 当前已确认：demo 会先从 URL 提取 CID，再走 canonical API1 -> API2 链路拿到非空详情行
+
+- API2 batch-size override
+  - Python：`python examples/python/tencent_video_api_demo.py --vid z4102qfi0x4 --vid j4101ouc4ve --api2-batch-size 1 --json`
+- Go：`go.exe -cid mzc00200idzf2m8,mzc00200xxpsogl -api2-batch-size 1 -json`
+  - 当前已确认：demo 显式分批入口可运行，guard 仍是 `1..32`；这不替代更底层的 API2 批量契约矩阵
+
+- API2 union_platform explicit override
+  - Python：`python examples/python/tencent_video_api_demo.py --vid z4102qfi0x4 --api2-union-platform 999 --json`
+- Go：`go.exe -vids z4102qfi0x4 -api2-union-platform 999 -json`
+  - 当前已确认：override 入口可运行，且在当前匿名样本上未观察到破坏性分叉；这不覆盖 `aged-cookie / login-state`，也不证明 `union_platform` 在所有环境全局无作用
+
+统一证据见 [analysis/demo_validation_incremental_20260621d.json](C:/Users/lin/Documents/YM查询工具还原/analysis/demo_validation_incremental_20260621d.json)。
+- repeated `otype` 当前 tested branch 由首值决定 XML / JSONP 外壳
+  - `otype=xml&otype=json` 仍返回 XML
+  - `otype=json&otype=xml` 仍返回 JSONP
+- `union_platform` 当前在匿名 canonical tested branches 与真实匿名 visitor cookie replay 下都未观察到可见行为差异
   - 缺失 / 空 / `0` / `2` / `abc` / `999` / `-1`
   - 当前都能成功
 - `appid / appkey` 不是简单“必填且强校验”逻辑
@@ -696,6 +773,11 @@ API2 这一轮补得最值钱的一块，就是参数契约终于不只剩一个
   - 当 `appid=20001238` 且 `appkey` 缺失 / 空 / 错时
     - 返回 `10010110 / appkey error`
   - 但当 `appid` 缺失 / `abc` / `1` 时，`appkey` 乱填也能成功
+  - 新补的 repeated 对撞 case 已说明：在当前 API2 XML tested branches 下，repeated `appid` 与 repeated `appkey` 都表现为首值生效
+    - `appid=20001238&appid=notanumber&appkey=deadbeef` 返回 `10010110 / appkey error`
+    - `appid=notanumber&appid=20001238&appkey=deadbeef` 仍成功
+    - `appid=20001238&appkey=good&appkey=deadbeef` 仍成功
+    - `appid=20001238&appkey=deadbeef&appkey=good` 返回 `10010110 / appkey error`
 
 这一轮还顺手把 API2 的一个实用边界钉出来了：
 
@@ -706,7 +788,7 @@ API2 这一轮补得最值钱的一块，就是参数契约终于不只剩一个
 idlist个数错误, 为0或超过限制
 ```
 
-但这一轮把边界条件也补清楚了，当前最稳的说法要更细一点：
+但这一轮把边界条件也补清楚了，当前最稳的说法要更细一点；以下结论都针对单个 `idlist` key 的 CSV 语义成立：
 
 - **单次最多 `32` 个非空 `idlist item`**
 - 这里看的是清洗后的“非空 item 数量”，不是逗号分隔出来的原始槽位数
@@ -721,6 +803,7 @@ idlist个数错误, 为0或超过限制
   - mixed valid+invalid 仍保序返回，非法项仍是 empty-shell 行
   - duplicate 仍占名额，empty slot 仍会被忽略
   - `dup32` 仍成功，`dup33` 仍返回 `-111001`
+  - 但 repeated `idlist=a&idlist=b` 当前不会 merge 成第二种批量入口；tested branch 只消费首个 `idlist` 值
 
 ### 5.2 当前已确认的返回形态
 
@@ -728,11 +811,13 @@ idlist个数错误, 为0或超过限制
 
 但这轮已经确认还有一个稳定分支：
 
-- `otype=json`
+- 单个 `otype` key 为 `json`
   - 返回 JSONP
-  - 外壳固定是 `QZOutputJson=...;`
+  - 默认外壳是 `QZOutputJson=...;`
   - 成功和失败都走这一层包裹，不会因为错误退回 XML
+  - 但当前 direct query evidence 也说明：宽 callback 字符族都会把默认外壳改写成 callback-style 包裹，而空 `callback=` 会回落默认 `QZOutputJson=...;`；当前已确认的 parse-breaking 代表值至少包括未配对开括号 `callback=a(` / `callback=((`、pathological-tail 的 `callback=})();`，以及后续 unmatched-delimiter follow-up 补到的 `callback=[(` / `callback={(` / `callback=/*(` / `callback=a[(` / `callback=)(` / `callback=](` / `callback=}(`；相对地，`callback=[` 与 `callback=[[` 当前仍是 raw passthrough，所以不能把“带特殊字符”直接等同于坏壳
   - 当前 focused batch followup 还确认：`mixed valid+invalid / duplicate+empty / dup32 / dup33` 这些批量语义在 JSONP 侧和 XML 镜像 case 一致；变化只在外壳与 `Content-Type`
+  - 如果 `otype` 重复，当前 tested branch 由首值决定 XML / JSONP 外壳
 
 真实结构是：
 
@@ -1146,11 +1231,11 @@ idlist个数错误, 为0或超过限制
 
 8. API2 的参数契约在当前 8 环境 focused matrix + 代表页 field-drift retest 下已继续补强：
    - 错误默认仍是 `HTTP 200`
-   - `tid` 是硬路由参数
-   - `otype=json` 成功和失败都会返回 `QZOutputJson=...;`
-   - 新补的 JSONP mirror batch 说明：`otype=json` 也保持 `mixed valid+invalid / duplicate+empty / 32/33` 这 4 条批量边界语义，不会因为换壳而改行为
-   - `union_platform` 当前看起来被忽略
-   - `appid / appkey` 仍是分支式校验
+   - 单 key query 下，`tid` 是硬路由参数；如果 `tid` 重复，当前 tested branch 由首值决定路由/错误分支
+   - 当且仅当单个 `otype=json` key 生效时，成功和失败默认都会返回 `QZOutputJson=...;`
+   - 新补的 JSONP mirror batch 说明：单个 `otype=json` + 单个 `idlist` key 时，也保持 `mixed valid+invalid / duplicate+empty / 32/33` 这 4 条批量边界语义，不会因为换壳而改行为
+   - `union_platform` 当前在匿名 canonical tested branches 与真实匿名 visitor cookie replay 下都未观察到可见行为差异
+   - `appid / appkey` 仍是分支式校验；新补的 XML repeated 对撞 case 又说明：当前 tested branches 下，repeated `appid / appkey` 也都是首值生效
 
 9. API2 的 `state` 已不止 `4`，还直接打出了 `8`；当前更稳的说法是：`8` 已明确是一个跨 `type=106/113` 的小家族 / 行级 signal，但离全局页型标签还差反证
 
@@ -1173,13 +1258,14 @@ idlist个数错误, 为0或超过限制
     - 当前已补到 base-4 cross-day stable 的 second representative / followup，包括：`电影单片 / 动漫季页 / 常规电视剧季页 / 综艺季页 / generic 专题页 / 少儿免费合集 / 少儿 double-zero 分支 / sports collection shell clean representative / kids clean dual-full / kids hybrid 邻近两条 followup`
     - [analysis/environment_page_shape_kids_retest_20260619.json](C:/Users/lin/Documents/YM查询工具还原/analysis/environment_page_shape_kids_retest_20260619.json) 进一步说明：`mzc00200qrzj493` 之前那次 `referer_origin -> no_video_rows` 更像瞬时 probe failure，而不是稳定环境分支
     - 当前环境层的主要缺口已经从“契约或 canonical field-drift 是否受请求头环境影响”转成两类尾项：一类是真实登录态 / 老化 Cookie，另一类是还没补 cross-day 的页型桶
-    - browser-like `sec-ch-ua / sec-fetch-* / synthetic-cookie` 已补测，但真实登录态 / 老化 Cookie 会话环境仍未闭合
+    - browser-like `sec-ch-ua / sec-fetch-* / synthetic-cookie` 已补测，真实匿名 visitor cookie replay 也已补到；真实登录态 / 老化 Cookie 会话环境仍未闭合
+    - 这条线的匿名 replay 输入面已经补好：可先用 [tools/tencent_anonymous_cookie_replay_env_capture.js](C:/Users/lin/Documents/YM查询工具还原/tools/tencent_anonymous_cookie_replay_env_capture.js) 导出真实匿名 replay JSON，再通过 [tools/tencent_environment_matrix_probe.py](C:/Users/lin/Documents/YM查询工具还原/tools/tencent_environment_matrix_probe.py) 的 `--extra-env-json` 注入；`aged-cookie / login-state` 也已有 [tools/tencent_cookie_env_from_headers.py](C:/Users/lin/Documents/YM查询工具还原/tools/tencent_cookie_env_from_headers.py) 这种 header-to-env 构造入口，但尚无正式实测产物。手工模板仍见 [examples/environment/real_cookie_env.template.json](C:/Users/lin/Documents/YM查询工具还原/examples/environment/real_cookie_env.template.json)
 
 ## 7. 这一轮之后，还剩什么没完全命名
 
 如果只谈“接口怎么解析、字段长什么样、哪些旧理解是错的”，这一轮已经基本摸清了。
 
-剩下没有完全闭合的，不只剩后端枚举名，还包括少量 family boundary、前端次级链路消费，以及环境跨日 / 真实浏览器会话矩阵。后台正式命名仍然是最大块未解项：
+剩下没有完全闭合的，不只剩后端枚举名，还包括少量 family boundary、前端次级链路消费，以及环境跨日 / `aged-cookie` / `login-state` 矩阵。后台正式命名仍然是最大块未解项：
 
 - `pay_status=5` / `6` / `7` / `8` / `9` / `15` / `16` 的官方后台命名
 - `downright` 每个数字代码的精确业务含义
@@ -1206,13 +1292,70 @@ curl "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&
 curl "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4"
 ```
 
+真实匿名 visitor cookie replay 环境矩阵：
+
+```bash
+"C:\Users\lin\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe" tools/tencent_anonymous_cookie_replay_env_capture.js --output analysis/anonymous_real_cookie_env_20260621.json
+python tools/tencent_environment_matrix_probe.py --include-browser-like --extra-env-json analysis/anonymous_real_cookie_env_20260621.json --output analysis/environment_matrix_anonymous_real_cookie_20260621.json
+```
+
+`aged-cookie / login-state` replay 输入构造：
+
+```bash
+python tools/tencent_cookie_env_from_headers.py --mode aged --desktop-cookie-file examples/environment/pc_aged_cookie_header.template.txt --output analysis/aged_cookie_env_20260621.json
+python tools/tencent_cookie_env_from_headers.py --mode login --desktop-cookie-file examples/environment/pc_login_cookie_header.template.txt --output analysis/login_state_env_20260621.json
+```
+
+`--mobile-cookie-file` 可以按需补；按当前 env-builder 契约，第一轮 `aged/login` replay 的最小输入就是一份 `PC Web Cookie`，`mobile H5 Cookie` 仍然只是可选增强。其余 `User-Agent / Accept / Referer / Origin` 由脚本自动填充。这里的 `analysis/aged_cookie_env_20260621.json` 与 `analysis/login_state_env_20260621.json` 是首次执行时生成的输出路径示例，不是仓库预置输入文件。
+
+如果要把 `aged-cookie / login-state` 的最后闭环路径收成单命令，而不是手工串多条 probe，可直接用：
+
+```bash
+python tools/tencent_replay_bundle_runner.py --mode aged --desktop-cookie-file examples/environment/pc_aged_cookie_header.template.txt
+python tools/tencent_replay_bundle_runner.py --mode login --desktop-cookie-file examples/environment/pc_login_cookie_header.template.txt
+```
+
+它会自动生成 env JSON、环境矩阵输出、`authish` 语义复测输出，并再写一份 top-level summary。
+
+如果要把 `callback` pathological-tail 和 full semantics 一起带进 replay，当前推荐显式写：
+
+```bash
+python tools/tencent_replay_bundle_runner.py --mode aged --desktop-cookie-file examples/environment/pc_aged_cookie_header.template.txt --semantics-profile full --probe-extra-callback-value "})();"
+python tools/tencent_replay_bundle_runner.py --mode login --desktop-cookie-file examples/environment/pc_login_cookie_header.template.txt --semantics-profile full --probe-extra-callback-file analysis/callback_tail_values.txt
+```
+
+如果要先看“这条 replay 总入口到底承诺了什么、哪些输入是真硬要求、哪些结论现在还不能升级”，现在有 3 份专门的契约层归档：
+
+- [analysis/environment_replay_runner_contract_20260622.json](C:/Users/lin/Documents/YM查询工具还原/analysis/environment_replay_runner_contract_20260622.json)
+- [analysis/environment_replay_input_boundary_20260622.json](C:/Users/lin/Documents/YM查询工具还原/analysis/environment_replay_input_boundary_20260622.json)
+- [analysis/environment_replay_hard_block_table_20260622.json](C:/Users/lin/Documents/YM查询工具还原/analysis/environment_replay_hard_block_table_20260622.json)
+
+在本地受限环境里，如果子进程往仓库 `analysis/` 直接落盘会碰路径策略，可再加：
+
+```bash
+python tools/tencent_replay_bundle_runner.py --mode aged --desktop-cookie-file examples/environment/pc_aged_cookie_header.template.txt --semantics-profile full --artifact-output-dir C:/Users/lin/AppData/Local/Temp/replay_bundle_artifacts --subprocess-output-dir C:/Users/lin/AppData/Local/Temp/replay_bundle_stage
+```
+
+这两个输出目录参数的职责是分开的：
+
+- `--subprocess-output-dir`
+  - 子进程 JSON 先写到 staging 目录
+- `--artifact-output-dir`
+  - 父进程再把最终 env / matrix / semantics / summary 产物落到指定目录
+
+这条链路已经有正式自测证据，不再只是脚本里“理论支持”。
+
 Python 示例：
 
 - [examples/python/tencent_video_api_demo.py](C:/Users/lin/Documents/YM查询工具还原/examples/python/tencent_video_api_demo.py)
+  - 已内置 `api2_batch_diagnostics`
+  - API2 JSONP 全坏批量时，会把逐项结果标成 `empty_shell=true`
+  - 当整批都是 `empty_shell=true` 时，调用方应按 `all-invalid/empty-shell batch` 处理，而不是只看顶层 `errorno` / 逐项 `retcode`
 
 Go 示例：
 
 - [examples/go/main.go](C:/Users/lin/Documents/YM查询工具还原/examples/go/main.go)
+  - 已同步补齐 `api2_batch_diagnostics` 与 `empty_shell` 识别
 
 字段巡检脚本：
 
@@ -1231,11 +1374,13 @@ Go 示例：
 - [tools/tencent_frontend_dynamic_hook_probe.js](C:/Users/lin/Documents/YM查询工具还原/tools/tencent_frontend_dynamic_hook_probe.js)
 - [tools/tencent_frontend_runtime_store_probe.js](C:/Users/lin/Documents/YM查询工具还原/tools/tencent_frontend_runtime_store_probe.js)
 - [tools/tencent_environment_matrix_probe.py](C:/Users/lin/Documents/YM查询工具还原/tools/tencent_environment_matrix_probe.py)
+- [tools/tencent_anonymous_cookie_replay_env_capture.js](C:/Users/lin/Documents/YM查询工具还原/tools/tencent_anonymous_cookie_replay_env_capture.js)
+- [tools/tencent_replay_bundle_runner.py](C:/Users/lin/Documents/YM查询工具还原/tools/tencent_replay_bundle_runner.py)
 - [tools/tencent_enum_cards.py](C:/Users/lin/Documents/YM查询工具还原/tools/tencent_enum_cards.py)
 
-## 9. 已明确 / 未明确
+## 9. 已明确 / 部分明确 / 未明确
 
-### 已明确
+### 已明确（当前匿名直连与已测样本范围内）
 
 - API1 / API2 的基础契约、错误码外壳、批量行为、`32/33` 非空 item 边界
 - `pay_status=5/6/7/8/9/15/16` 都已不是“想当然的单点猜测”
@@ -1250,7 +1395,7 @@ Go 示例：
   - `publish_date` 会先被格式化，再受 `usePublishDate` 之类的前端开关控制
   - `targetid` 已能定位到静态 player/danmaku sink，并补到 `root.base.commentInfo.targetid` 这条评论/社区侧次级容器；当前 `REQUEST_REPORT -> DANMAKU_REPORT -> attachIframe(...)` 的 consumer 映射已被 synthetic runtime probe 闭合，但自然 producer 仍未拿到
 
-### 形态已确认，语义待命名
+### 部分明确（形态已确认，语义待命名）
 
 - `positive_content_id=1543606 / 1543607`
 - `positive_trailer=0/1/2` 的后台枚举名
@@ -1260,7 +1405,7 @@ Go 示例：
 - `downright` 的具体数字码业务名
 - `targetid` 精确对应的实体类型
 
-### 仍待补反例
+### 未明确（仍待补反例）
 
 - `pay_status=15` 是否还能继续长到综艺之外，或者仍只稳定落在综艺窄运营链
 - `pay_status=16` 是否会跨出综艺体系
@@ -1503,10 +1648,11 @@ Go 示例：
 3. 当前没打出环境分叉的结论：
    - 在 `2026-06-19` same-day 与 `2026-06-20` cross-day retest 里，API1 / API2 的已测契约 case 都没有稳定分叉；contract 层当前已经补到 8 环境跨日稳定
    - API1 / API2 的 `tid`、`appid`、`appkey` 契约
-   - API2 只有精确小写 `otype=json` 会切 JSONP；`otype=JSON` 会回落到 XML
-   - API2 `union_platform` 当前被忽略
-   - API1 / API2 的 `32/33` 非空 item 边界
-   - mixed valid+invalid / duplicate / empty-slot / 32/33 的批量行为（包括新补的 JSONP mirror cases）
+   - 单个 `otype` key 时，API2 只有精确小写 `otype=json` 会切 JSONP；`otype=JSON` 会回落到 XML；若 `otype` 重复，当前 tested branch 由首值决定外壳
+   - API2 JSONP canonical branch 下，`callback=1 / cb1 / QZOutputJson / foo.bar / a-b / a[b] / $cb / foo bar / foo,bar / [0] / 中文 / a) / ) / a;b / a'b / a"b / a/ / a\ / //a / /*a / [ / [[` 都会把默认 `QZOutputJson=...;` 外壳改写成 callback-style 包裹；空 `callback=` 会回落默认壳；`callback=a(` / `callback=((` / `callback=})();` 以及后续补到的 `callback=[(` / `callback={(` / `callback=/*(` / `callback=a[(` / `callback=)(` / `callback=](` / `callback=}(` 当前都会打成摘要路径不可解析的坏壳；`_` 当前未观察到变化；这仍只是 practical value-space 结论，不外推成完整 callback 语法闭环
+   - API2 `union_platform` 当前在匿名 canonical tested branches 与真实匿名 visitor cookie replay 下都未观察到可见行为差异
+   - API1 / API2 的 `32/33` 非空 item 边界，当前都按单个 `idlist` key 内的非空 CSV item 计数
+   - mixed valid+invalid / duplicate / empty-slot / 32/33 的批量行为（包括新补的 JSONP mirror cases），当前都建立在单个 `idlist` key 的 CSV 语义上
    - API2 全坏 VID 的 JSONP 批量，当前仍可能是顶层 `errorno=0` + 逐项 `retcode=0`，只能靠空壳字段识别
    - `film_single / anime_season / variety_topic / sports_replay / kids_free_pack` 这 5 个 canonical representative field-drift 页面，在 8 种已测环境里先完成 same-day 稳定，随后又在 [analysis/environment_field_drift_crossday_20260620.json](C:/Users/lin/Documents/YM查询工具还原/analysis/environment_field_drift_crossday_20260620.json) 里补到 8 环境 cross-day 稳定
    - `film_single_second / anime_season_second / tv_season_second / variety_season_second / kids_regular_season / kids_free_pack_second / topic_page_second` 当前都已经补到基础 4 环境跨日稳定
@@ -1519,7 +1665,156 @@ Go 示例：
    - 其中 `sports_replay_second` 的形态与首代表同向：`publish_date=22/22`、`targetid=0/22`、`upload_src` 以 `31` 为主
 
 4. 当前还不能写成“全局稳定”的部分：
-   - 尚未覆盖所有 page-shape bucket / second representative / real-session 环境的跨日复测
-   - 真实浏览器会话 Cookie / 登录态 / 老化 Cookie 环境
+   - 尚未覆盖所有 page-shape bucket / second representative / `aged-cookie` / `login-state` 环境的跨日复测
+   - `aged-cookie` / 登录态环境
    - `type=4 / 体育` 又新增了一条 provisional `体育比赛集锦 / 合集壳页` 分支，说明体育页型拆桶还没彻底收口
    - `type=4 / 体育` 的 `人物 / 资讯壳 / 赛事纪录片 / 比赛集锦壳` 这些子支虽然都已有样本，但边界命名还没完全定死
+
+## 13. 参数闭环交付物
+
+如果当前关注点是“把接口能力直接用起来”，而不是继续扩字段语义，这几份调用者主工件最值得先看：
+
+这里也先把口径说清楚：这些 canonical 总表的文件名多数仍停在 `20260620`，但参数总表、能力面、配方表、回归样本，以及新增的两张调用者 join 总表，已经刷新到 `2026-06-21` 的证据口径；同一节下面再挂增量摘要，主要是为了把边界与环境尾项单独说清楚。
+
+- [analysis/api_param_inventory_20260620.json](C:/Users/lin/Documents/YM查询工具还原/analysis/api_param_inventory_20260620.json)
+  - API1 / API2 参数总表：已知参数全集、硬约束、条件分支、边界和未闭合项
+- [analysis/direct_call_parameter_total_table_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_parameter_total_table_20260621.json)
+  - 调用者参数总表增强版：把“推荐填法 / 成功判据 / 重复 key 语义 / 32/33 计数规则 / 已证实环境 / 未证实环境”压成一张更适合 SDK 和脚本作者直接照着用的总表
+- [analysis/parameter_capability_index_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/parameter_capability_index_20260621.json)
+  - 统一参数索引：把显式参数、候选参数、replay/tooling 参数，与能力配方、回归样本、关键证据串成一张机器可读入口
+- [analysis/capability_surface_20260620.json](C:/Users/lin/Documents/YM查询工具还原/analysis/capability_surface_20260620.json)
+  - 当前可直接调用的能力面：单条/批量、XML/JSONP、32/33 边界、环境适用范围
+- [analysis/capability_recipes_20260620.json](C:/Users/lin/Documents/YM查询工具还原/analysis/capability_recipes_20260620.json)
+  - 能力配方表：按“能力 -> 参数 -> curl / Python / Go 入口 -> 预期返回亮点”组织
+- [analysis/direct_call_capability_table_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_capability_table_20260621.json)
+  - 调用者能力总表增强版：按“一行一个可调用能力面”串起 `use_when / 参数层级 / 成功规则 / 风险边界 / live 验证状态 / 回归样本`
+- [analysis/direct_call_delivery_manifest_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_delivery_manifest_20260621.json)
+  - 交付总入口：按调用者 / SDK 作者 / 研究者三类入口，把参数总表、能力配方、示例、回归样本和剩余闭环缺口串成一张清单
+- [analysis/regression_samples_20260620.json](C:/Users/lin/Documents/YM查询工具还原/analysis/regression_samples_20260620.json)
+  - 参数闭环回归样本：baseline、mixed、duplicate、`dup32`、`dup33`、JSONP 镜像
+- [analysis/param_gap_priority_20260620.json](C:/Users/lin/Documents/YM查询工具还原/analysis/param_gap_priority_20260620.json)
+  - 当前只按“参数闭环”排序的 gap 台账，已经把 `pay_status / upload_src / F / targetid` 这类旁线问题降级出主链
+- [analysis/callback_tail_values.txt](C:/Users/lin/Documents/YM查询工具还原/analysis/callback_tail_values.txt)
+  - replay bundle 的 callback pathological-tail 输入样例文件：一行一个已实测值，可直接配合 `--probe-extra-callback-file` 使用
+- [examples/environment/pc_aged_cookie_header.template.txt](C:/Users/lin/Documents/YM查询工具还原/examples/environment/pc_aged_cookie_header.template.txt)
+  - aged-cookie replay 的最小输入模板：给 `tencent_cookie_env_from_headers.py` 或 `tencent_replay_bundle_runner.py` 的 `--desktop-cookie-file` 使用
+- [examples/environment/pc_login_cookie_header.template.txt](C:/Users/lin/Documents/YM查询工具还原/examples/environment/pc_login_cookie_header.template.txt)
+  - login-state replay 的最小输入模板：给 `tencent_cookie_env_from_headers.py` 或 `tencent_replay_bundle_runner.py` 的 `--desktop-cookie-file` 使用
+- [analysis/param_query_semantics_20260620.json](C:/Users/lin/Documents/YM查询工具还原/analysis/param_query_semantics_20260620.json)
+  - extra key / repeated key 语义归档：当前 canonical tested branches 下，API1 `tid/idlist` 与 API2 `tid/idlist/otype` 的 repeated key 已补到首值生效，`union_platform` 仍只到“当前未观察到变化”
+- [analysis/api2_all_invalid_jsonp_consumer_rule_20260620.json](C:/Users/lin/Documents/YM查询工具还原/analysis/api2_all_invalid_jsonp_consumer_rule_20260620.json)
+  - API2 全坏 JSONP 批量的统一调用方识别规则：`top-level success + 全部 empty_shell=true` 应视为整批无效
+- [analysis/api2_jsonp_callback_value_space_20260620.json](C:/Users/lin/Documents/YM查询工具还原/analysis/api2_jsonp_callback_value_space_20260620.json)
+  - API2 JSONP callback 第二层 practical value-space：宽字符族 raw passthrough + 空 callback fallback
+- [analysis/api2_jsonp_callback_contract_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/api2_jsonp_callback_contract_20260621.json)
+  - API2 JSONP callback precedence / error-shell 最小契约组：repeated `callback` 在当前匿名 collision cases 下表现为首值生效，wrong-appkey JSONP 错误壳也仍然吃 `callback` wrapper 改写
+- [analysis/api2_jsonp_callback_contract_real_cookie_summary_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/api2_jsonp_callback_contract_real_cookie_summary_20260621.json)
+  - 同一组 callback precedence / wrong-appkey error-shell case 在真实匿名 visitor-cookie replay 的 PC Web / Mobile H5 上都未观察到分叉
+- [analysis/reserved_extra_key_sweep_20260620.json](C:/Users/lin/Documents/YM查询工具还原/analysis/reserved_extra_key_sweep_20260620.json)
+  - 第一轮 reserved-looking extra key sweep：`format / output / version / v / platform / source` 在当前匿名 canonical branches 下都未见作用
+- [analysis/authish_extra_key_sweep_20260620.json](C:/Users/lin/Documents/YM查询工具还原/analysis/authish_extra_key_sweep_20260620.json)
+  - 第一轮 auth-ish extra key sweep：`token / sign / sig / appver / access_token / authkey / openid` 在当前匿名 canonical branches 下都未见作用
+- [analysis/authish_extra_key_replay_anonymous_real_cookie_summary_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/authish_extra_key_replay_anonymous_real_cookie_summary_20260621.json)
+  - 真实匿名 visitor cookie replay 对比摘要：已测 auth-ish extra keys、repeated `union_platform`、repeated `otype`、空 callback fallback、以及一个已知 parse-breaking callback 壳都未相对匿名 baseline 出现新分叉
+- [analysis/positive_tid_summary_20260620.json](C:/Users/lin/Documents/YM查询工具还原/analysis/positive_tid_summary_20260620.json)
+  - focused 高信号带宽摘要：先确认 API1 `431`、API2 `535 / 540`，并把 API1 `537` 单独落成 success-shell-without-sample
+- [analysis/positive_tid_summary_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/positive_tid_summary_20260621.json)
+  - 更宽扩圈摘要：API2 `541` 已补成新正向分支，并用第二个样本复核通过；`542-550` 当前回落为标准错误带
+- [analysis/positive_tid_probe_446_455_summary_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/positive_tid_probe_446_455_summary_20260623.json)
+  - 新增 `446-455` follow-up 摘要：API1 `453` 已补成 3-CID confirmed 的 positive cover-shell-only 分支，而 API2 `453` 仍稳定在 `key all illegal`
+- [analysis/positive_tid_probe_456_521_summary_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/positive_tid_probe_456_521_summary_20260623.json)
+  - 新增 `456-521` 中间主走廊摘要：API1 `476/506` 已补成更薄的 success-shell family，`483` 已补成 video_ids-only shell，API2 `488/502` 已补成新的稳定正分支，`506` 当前更像 success shell
+- [analysis/api1_tid_shell_family_delta_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/api1_tid_shell_family_delta_20260623.json)
+  - API1 壳层差异摘要：把 `431/453/476/483/506/537` 统一压回“caller-facing 能力厚度”视角，避免把新的 success-shell family 误写成 recipe
+- [analysis/api2_extended_tid_capability_delta_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/api2_extended_tid_capability_delta_20260623.json)
+  - API2 扩展壳层差异摘要：`488/502` 已纳入 alternate-positive family，`502` 当前明显比 `488/540/541` 更厚，但仍不等同 canonical `535`；`506` 继续保守读成 near-empty success shell
+- [analysis/demo_validation_incremental_api2_tid488_502_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/demo_validation_incremental_api2_tid488_502_20260623.json)
+  - API2 `488/502` 的 Python / Go 增量 live validation：`488` 当前稳定是 title+url 的更薄正壳，`502` 当前稳定是带 `vid + duration + cover_list + create_time` 的较厚 alternate shell
+- [analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json)
+  - API2 `488/502` 的 caller-facing raw HTTP 增量 validation：把这两条 alternate shell 直接按原生 HTTP 坐实到可回归层
+- [analysis/positive_tid_probe_524_529_summary_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/positive_tid_probe_524_529_summary_20260621.json)
+  - `524-529` 窄带补测摘要：没有新增正分支；`525` 在第二、第三样本里都稳定落到 `-111013`，其余点仍是标准 `-111005`
+- [analysis/positive_tid_api1_boundary_summary_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/positive_tid_api1_boundary_summary_20260621.json)
+  - API1 新补 `418-421` 与 `526-536` 两段后，边界解释更清楚：`419->420`、`529->530->531`、`534->535->536` 都是错误族切换，不构成新的正分支；其中 `535` 已在第二个 CID 上复现为稳定局部边界
+- [analysis/positive_tid_probe_641_647_summary_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/positive_tid_probe_641_647_summary_20260621.json)
+  - 匿名 `641-647` jump-scan 已补完：没有扫出新正簇；第二、第三个 sample 里 `642` 都额外落到 `-111013`，所以当前不支持早先那条 `+106` 偏移正簇猜想，但这段在错误侧存在稳定局部异质性
+- [analysis/positive_tid_probe_636_640_648_652_20260622.json](C:/Users/lin/Documents/YM查询工具还原/analysis/positive_tid_probe_636_640_648_652_20260622.json)
+  - 围绕 `642` 两侧补了 `636-640` 和 `648-652`：API1、API2 XML、API2 JSONP 全部回到标准 `-111005`；这进一步支持 `642` 当前更像局部异常岛，而不是更大正簇或更宽 `-111013` 家族的边缘
+- [analysis/positive_tid_probe_522_525_summary_20260622.json](C:/Users/lin/Documents/YM查询工具还原/analysis/positive_tid_probe_522_525_summary_20260622.json)
+  - 新补的 cross-interface lower-edge follow-up 说明：`522-524` 在 API1、API2 XML、API2 JSONP 上都稳定是标准 `-111005`，而 `525` 在两组 public sample 里同步是 `-111013`；这把 `525` 从 API2-only anomaly 升级成了跨接口局部错误岛，而不是新正簇前兆
+- [analysis/demo_validation_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/demo_validation_20260621.json)
+  - Python / Go live demo 验证摘要：canonical `535` 默认链路与 JSONP callback override 都已跑通；`tid=541` 在 live demo 上也能回正壳，但字段不一定和 `535` 一样丰满
+- [analysis/direct_call_raw_http_validation_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_20260621.json)
+  - caller-facing raw HTTP live validation 摘要：canonical XML / JSONP、alternate positive tid、`541 + union_platform=0003`、API1 direct batch、以及 all-invalid JSONP consumer rule 都已经按原生 HTTP 直调重跑；这仍只覆盖匿名 direct-call scope，batch 行当前读作 canonical multi-VID spot-check，不外推成新的 `32/33` 饱和边界实验
+- [analysis/direct_call_raw_http_validation_tid453_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_tid453_20260623.json)
+  - API1 `tid=453` 独立 raw validation：当前 3-CID confirmed 的 positive cover-shell-only 分支已经补到 caller-facing 直调证据层，结果仍是 non-empty cover shell + empty `video_ids`
+- [analysis/api2_alt_tid_capability_delta_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/api2_alt_tid_capability_delta_20260621.json)
+  - `535/540/541` 能力差异摘要：当前更稳的说法是它们属于同一正分支 family，但 `540/541` 都只坐实为 alternate positive shell，不应默认等同于 canonical `535` 的字段丰满度
+- [analysis/tid_richness_matrix_20260622.json](C:/Users/lin/Documents/YM查询工具还原/analysis/tid_richness_matrix_20260622.json)
+  - `431/453/537` 与 `535/540/541` 的多样本字段丰度矩阵：`453` 在 3 个 public CID 上稳定是 non-empty cover shell + empty `video_ids` 的 positive cover-shell-only 分支；`537` 在 3 个 public CID 上都还是 sample-less success shell；`540` 在 3 个 public VID 上稳定是 score-3 薄正壳；`541` 在 3 个 public VID 上稳定是 score-2 更薄正壳
+- [analysis/tid_richness_matrix_extended_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/tid_richness_matrix_extended_20260623.json)
+  - 扩展多样本字段丰度矩阵：把 API1 `431/453/476/483/506/537` 与 API2 `488/502/506/535/540/541` 都放进统一 demo 视角，便于直接对比壳层厚度
+- [analysis/parameter_closure_matrix_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/parameter_closure_matrix_20260621.json)
+  - 参数闭环矩阵：把 API1/API2 每个已暴露参数以及 `callback / auth-ish extra keys / reserved extra keys` 这些候选参数家族收成统一台账，明确 `requiredness / role / 失败形态 / 依赖分支 / 环境范围 / 已解锁能力 / 剩余缺口`
+- [analysis/parameter_contract_quick_reference_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/parameter_contract_quick_reference_20260621.json)
+  - 调用者视角参数总表：把 API1/API2 已坐实参数压成“推荐怎么填 / 乱填会报什么 / 哪些结论只在匿名直连范围内成立”的 quick reference
+- [analysis/direct_call_parameter_total_table_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_parameter_total_table_20260621.json)
+  - 调用者参数总表增强版：把“推荐填法 / 成功判据 / 重复 key 语义 / 32/33 计数规则 / 已证实环境 / 未证实环境”压成一张更适合 SDK 和脚本作者直接照着用的总表
+- [analysis/capability_quick_reference_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/capability_quick_reference_20260621.json)
+  - 调用者视角能力配方总表：把“什么时候该用哪条 recipe、默认怎么调、会踩什么坑”压成 quick reference
+- [analysis/direct_call_capability_table_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_capability_table_20260621.json)
+  - 调用者能力总表增强版：按“一行一个可调用能力面”串起 `use_when / 参数层级 / 成功规则 / 风险边界 / live 验证状态 / 回归样本`
+- [analysis/direct_call_delivery_manifest_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_delivery_manifest_20260621.json)
+  - 交付总入口：按调用者 / SDK 作者 / 研究者三类入口，把参数总表、能力配方、示例、回归样本和剩余闭环缺口串成一张清单
+- [docs/direct_call_playbook.md](C:/Users/lin/Documents/YM查询工具还原/docs/direct_call_playbook.md)
+  - 直接调用手册：按 `URL / CID / VID / JSONP / 批量 / replay` 分流，给出最短可执行路径
+- [analysis/tooling_entrypoint_quick_reference_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/tooling_entrypoint_quick_reference_20260621.json)
+  - tooling 入口总表：把 Python/Go demo、replay tooling、参数探针的核心 CLI 入口和常用 flag 收成一张快速索引
+- [analysis/replay_bundle_real_full_semantics_summary_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/replay_bundle_real_full_semantics_summary_20260621.json)
+  - anonymous real-cookie full semantics 摘要：记录 `full + callback tail` 回放在 PC Web / Mobile H5 真实匿名 Cookie 环境下没有新增参数分支
+- [analysis/demo_capability_coverage_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/demo_capability_coverage_20260621.json)
+  - 示例覆盖矩阵：区分 Python/Go 示例“已支持的能力面”和“已经 live 验证过的能力面”，避免把仅有 CLI 支持误写成已实测闭环
+- [analysis/demo_validation_incremental_20260621b.json](C:/Users/lin/Documents/YM查询工具还原/analysis/demo_validation_incremental_20260621b.json)
+  - 新增 live 验证补丁：把 `go + tid=540` 与 Python/Go 的 all-invalid JSONP consumer-rule 路径补成正式证据
+- [analysis/demo_validation_incremental_20260621c.json](C:/Users/lin/Documents/YM查询工具还原/analysis/demo_validation_incremental_20260621c.json)
+  - 新增 live 验证补丁：把 Python/Go 的 API1 batch 示例路径也补成正式证据；当前匿名直连范围内，示例覆盖矩阵已无高价值未实测路径
+- [analysis/demo_validation_incremental_20260621d.json](C:/Users/lin/Documents/YM查询工具还原/analysis/demo_validation_incremental_20260621d.json)
+  - 新增 live 验证补丁：把 Python/Go 的 URL 入口、`api2-batch-size`、以及 `api2-union-platform` 显式 override 路径补成正式证据；这仍只覆盖匿名 direct-call scope，不外推到 `aged-cookie / login-state`
+- [analysis/objective_coverage_audit_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/objective_coverage_audit_20260621.json)
+  - 目标覆盖审计：把最终目标拆成参数总表 / 能力配方 / Python/Go 示例 / 回归样本 / 候选参数 / 环境闭环等交付项，明确哪些已覆盖，哪些仍只部分覆盖
+- [analysis/anonymous_real_cookie_env_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/anonymous_real_cookie_env_20260621.json)
+  - 真实匿名 visitor cookie replay 输入：由真实页面浏览态导出的 `--extra-env-json`
+- [analysis/environment_matrix_anonymous_real_cookie_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/environment_matrix_anonymous_real_cookie_20260621.json)
+  - 真实匿名 visitor cookie replay 矩阵：在原 8 环境基础上新增 `pc_web_real_cookie_replay / mobile_h5_real_cookie_replay`
+- [analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json)
+  - 结论摘要：当前 API1/API2 契约层未因真实匿名 cookie 产生新的参数分叉，剩余高价值 gap 转向 aged-cookie / login-state
+- [analysis/replay_bundle_real_summary_20260621_realcheck.json](C:/Users/lin/Documents/YM查询工具还原/analysis/replay_bundle_real_summary_20260621_realcheck.json)
+  - replay bundle 总入口自测：已用现成真实匿名 replay 环境端到端跑通 `env_json -> environment_matrix -> authish semantics`，说明最后一公里工具链本身已通
+- [analysis/replay_bundle_semantics_callback_support_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/replay_bundle_semantics_callback_support_20260621.json)
+  - replay bundle 参数扩展自测：`--semantics-profile full`、`--probe-extra-callback-value`、`--probe-extra-callback-file` 已接进总入口，后续 aged/login replay 可以直接把 callback pathological-tail 一起带进去
+- [analysis/replay_bundle_artifact_dir_selfcheck_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/replay_bundle_artifact_dir_selfcheck_20260621.json)
+  - replay bundle 输出路径自测：`--artifact-output-dir / --subprocess-output-dir` 已证明可在受限本地环境下完整跑通，`status=ok`，两份 semantics 子步骤都已 `returncode=0`
+- [analysis/environment_replay_runner_contract_20260622.json](C:/Users/lin/Documents/YM查询工具还原/analysis/environment_replay_runner_contract_20260622.json)
+  - replay bundle 契约表：把 `tencent_replay_bundle_runner.py` 的 CLI、phase sequence、status 枚举、summary schema、skip 语义压成机器可读 contract
+- [analysis/environment_replay_input_boundary_20260622.json](C:/Users/lin/Documents/YM查询工具还原/analysis/environment_replay_input_boundary_20260622.json)
+  - replay 输入边界：明确 `desktop cookie required, mobile optional`，并把 env-builder 的 mode/key 映射和最小输入模型压成机器表
+- [analysis/environment_replay_hard_block_table_20260622.json](C:/Users/lin/Documents/YM查询工具还原/analysis/environment_replay_hard_block_table_20260622.json)
+  - replay hard-block 边界：把 `union_platform / auth-ish extra keys / 540/541 shell thickness` 这些当前只能保留在 scoped-negative 范围的项单独列出来
+
+当前最稳的交付视角总结：
+
+1. API1 当前已知 query key 只有 `tid / idlist / appid / appkey`
+2. API2 当前主 fetch key 集是 `otype / tid / appid / appkey / union_platform / idlist`；另有 JSONP-only auxiliary key `callback`
+3. API1 / API2 的 `32/33` 非空 item 边界都已有仓库证据，但当前证据口径是单个 `idlist` key 内的非空 CSV item
+4. API2 单个 `otype` key 为精确小写 `json` 时会切 JSONP；如果 `otype` 重复，当前 tested branch 由首值决定外壳
+5. 当前 canonical tested branches 下，API1 `tid/idlist` 与 API2 `tid/idlist/otype` 的 repeated key 已补到首值生效；API1 / API2 的 repeated `appid/appkey` 目前则只在已测 collision branches 下补到首值生效。已测 extra key 里，API1 `foo/callback/_`、API2 XML `foo/callback/_`、API2 JSONP `foo/_`、以及 `format / output / version / v / platform / source` 当前都未见作用；而 API2 JSONP 的 `callback` 第二层 practical value-space 也已经补到：当前已测宽字符族会改写 wrapper 前缀但不改 payload 家族，空 `callback=` 会回落默认壳。`union_platform` 当前最稳的说法只到：在匿名 canonical branches 与真实匿名 visitor cookie replay 下未观察到可见差异；这还没有覆盖 `aged-cookie / login-state`，也不证明它对所有 tid/sample 全局无作用。
+6. 当前 API1 已确认 3 条不同厚度的 `tid` 分支：`431` 仍是 canonical positive branch；`453` 到 `2026-06-23` 为止已在 3 个 public CID 上稳定复现成 non-empty cover shell + empty `video_ids` 的 positive cover-shell-only 分支；`537` 则已在 3 个 public CID 上重复成 success-shell-without-sample 分支。后两者都不默认等同 canonical `431` 的字段丰满度。
+7. 当前真实匿名 visitor cookie replay 与同日匿名扩圈合并后，API2 已确认的 positive tid family 已不止 `535 / 540 / 541`，还包括中间主走廊里新补出的 `488 / 502`，以及当前更适合保守读取为 success shell 的 `506`。但“family 确认”只指正向返回族，不等于字段丰满度已经等价：到 `2026-06-23` 为止，`488` 在 3 个 public VID 上更稳地表现为 `title + url + pic` 薄正壳，`502` 在 3 个 public VID 上更稳地表现为 `title + url + duration + type + vid + cover_list` 的更厚 alternate positive shell，`540` 在 3 个 public VID 上更稳地表现为 `title + duration + url` 的 score-3 薄正壳，`541` 在 3 个 public VID 上更稳地表现为 `title + url` 的 score-2 更薄正壳；它们都不默认等同 canonical `535` 的字段丰满度。对已测 auth-ish extra key（`token / sign / sig / appver / access_token / authkey / openid`）也只是在已测 tid anchor 与已测样本上，未观察到相对匿名 baseline 的可见分叉，这条负结论不能外推成“所有 auth-ish key / 所有会话态都无作用”。
+   到 `2026-06-22` 为止，这 3 类边界（`union_platform`、`auth-ish extra keys`、`540/541 environment shell thickness`）都已经被单独列进 hard-block 表，统一按 `scoped-negative` 管理。
+8. 当前最高 ROI 的剩余参数 gap，不是继续追字段语义，而是：
+   - `login-state / aged-cookie` 环境
+   - API1 其他 positive `tid`，以及 API2 是否还存在当前已确认 `488 / 502 / 535 / 540 / 541` family 之外的稀疏新簇
+   - API2 JSONP `callback` 的更激进 unmatched-delimiter / pathological parse-breaking 探针
+   - auth-leaning extra key 在 `aged-cookie / login-state` replay 下的分支差异
+   - 到 `2026-06-22` 为止，caller-selected `636-640 / 648-652` 补测也仍全部回到 `-111005`，所以当前更稳的口径仍是“已确认正向小簇 = `535 / 540 / 541`；其外侧若干邻近 tid 继续是错误带”，而不是“535 之外已经没有新正支”
+   - 也就是说，下一跳仍是 `aged-cookie / login-state` replay，而不是继续在真实匿名 visitor cookie 上重复扫同一组 auth-ish key

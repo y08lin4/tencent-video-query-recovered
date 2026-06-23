@@ -1,0 +1,350 @@
+{
+  "generated_at": "2026-06-21",
+  "scope": "Current directly callable capability surface for Tencent Video API1/API2 under the tested anonymous same-day environments, plus anonymous real-cookie replay where explicitly noted.",
+  "capabilities": [
+    {
+      "name": "api1_single_cid_cover_lookup",
+      "description": "Use API1 to resolve one CID into cover-level metadata plus its video-id family.",
+      "interface": "api1",
+      "required_parameters": {
+        "tid": "431",
+        "idlist": "<single CID>"
+      },
+      "conditional_parameters": {
+        "appid": "10001005 is the canonical numeric appid when you want the stable documented branch",
+        "appkey": "part of the stable documented branch when the canonical numeric appid is used; looser anonymous fallback branches should not be treated as the recommended contract"
+      },
+      "current_status": "stable",
+      "environment_scope": "same-day anonymous environments; current repo evidence is stable here",
+      "evidence": [
+        "docs/tencent_video_apis.md",
+        "analysis/api_contract_summary_20260619.json",
+        "analysis/environment_matrix_20260620.json"
+      ]
+    },
+    {
+      "name": "api1_multi_cid_batch_lookup",
+      "description": "Use API1 with a comma-separated CID list to fetch multiple cover shells in one request.",
+      "interface": "api1",
+      "required_parameters": {
+        "tid": "431",
+        "idlist": "<cid1,cid2,...>"
+      },
+      "behavior_notes": [
+        "Duplicate CIDs are not deduped.",
+        "Mixed valid + illegal CID can still return top-level success.",
+        "Callers must inspect per-result retcode and not trust top-level title/cover_id only."
+      ],
+      "current_status": "stable",
+      "environment_scope": "same-day anonymous environments",
+      "evidence": [
+        "docs/tencent_video_apis.md",
+        "analysis/api_contract_summary_20260619.json",
+        "analysis/environment_matrix_20260620.json",
+        "analysis/agent_api_contract_crossday_20260620.json"
+      ]
+    },
+    {
+      "name": "api1_mixed_valid_invalid_cid_tolerant_batch",
+      "description": "Use API1 batch mode even when some items are illegal or empty-shell CIDs.",
+      "interface": "api1",
+      "required_parameters": {
+        "tid": "431",
+        "idlist": "<mixed valid and invalid CIDs>"
+      },
+      "behavior_notes": [
+        "Illegal CID can degrade into per-result error instead of top-level failure.",
+        "Shape-valid but content-empty CID can present as top-level success with empty cover fields."
+      ],
+      "current_status": "stable",
+      "environment_scope": "same-day anonymous environments",
+      "evidence": [
+        "analysis/api_contract_summary_20260619.json",
+        "analysis/environment_matrix_20260620.json"
+      ]
+    },
+    {
+      "name": "api1_batch_limit_32_nonempty_items",
+      "description": "Use API1 up to 32 non-empty CID items in one request.",
+      "interface": "api1",
+      "required_parameters": {
+        "tid": "431",
+        "idlist": "<up to 32 non-empty items>"
+      },
+      "behavior_notes": [
+        "Duplicate CIDs count toward the non-empty item limit.",
+        "Empty slots do not count."
+      ],
+      "current_status": "stable",
+      "environment_scope": "same-day anonymous environments",
+      "evidence": [
+        "analysis/environment_matrix_20260620.json",
+        "analysis/agent_api_contract_crossday_20260620.json"
+      ]
+    },
+    {
+      "name": "api1_over_limit_33_nonempty_items_error",
+      "description": "Trigger the current tested API1 over-limit error by sending 33 non-empty CID items.",
+      "interface": "api1",
+      "required_parameters": {
+        "tid": "431",
+        "idlist": "<33 non-empty items>"
+      },
+      "expected_result": {
+        "errorno": "-111001",
+        "errormsg": "idlist个数错误, 为0或超过限制"
+      },
+      "current_status": "stable",
+      "environment_scope": "same-day anonymous environments",
+      "evidence": [
+        "analysis/environment_matrix_20260620.json",
+        "analysis/agent_api_contract_crossday_20260620.json"
+      ]
+    },
+    {
+      "name": "api2_single_vid_xml_detail_lookup",
+      "description": "Use API2 XML mode to fetch one video's detail record.",
+      "interface": "api2",
+      "required_parameters": {
+        "tid": "535",
+        "idlist": "<single VID>"
+      },
+      "conditional_parameters": {
+        "otype": "omit or set xml for XML wrapper",
+        "appid": "20001238 is the canonical numeric appid when you want the stable documented branch",
+        "appkey": "part of the stable documented branch when the canonical numeric appid is used; looser anonymous fallback branches should not be treated as the recommended contract",
+        "union_platform": "present in canonical requests but currently shows no observable behavioral split on the tested anonymous canonical branch"
+      },
+      "current_status": "stable",
+      "environment_scope": "same-day anonymous environments; tested on 8 request shapes",
+      "evidence": [
+        "docs/tencent_video_apis.md",
+        "analysis/api_contract_summary_20260619.json",
+        "analysis/environment_matrix_20260620.json"
+      ]
+    },
+    {
+      "name": "api2_single_vid_jsonp_detail_lookup",
+      "description": "Use API2 JSONP mode by setting exact lowercase `otype=json`.",
+      "interface": "api2",
+      "required_parameters": {
+        "otype": "json",
+        "tid": "535",
+        "idlist": "<single VID>"
+      },
+      "conditional_parameters": {
+        "appid": "20001238 canonical numeric branch",
+        "appkey": "required when canonical numeric appid branch is active",
+        "union_platform": "currently shows no observable behavioral split on the tested anonymous canonical branch"
+      },
+      "behavior_notes": [
+        "Wrapper is `QZOutputJson=...;`.",
+        "Content-Type is `application/x-javascript`.",
+        "Failure responses stay inside JSONP rather than falling back to XML."
+      ],
+      "current_status": "stable",
+      "environment_scope": "same-day anonymous environments; tested on 8 request shapes",
+      "evidence": [
+        "docs/tencent_video_apis.md",
+        "analysis/environment_matrix_20260620.json",
+        "analysis/api2_jsonp_batch_matrix_20260620.json"
+      ]
+    },
+    {
+      "name": "api2_multi_vid_batch_lookup",
+      "description": "Use API2 with a comma-separated VID list to fetch multiple video detail rows in one request.",
+      "interface": "api2",
+      "required_parameters": {
+        "tid": "535",
+        "idlist": "<vid1,vid2,...>"
+      },
+      "conditional_parameters": {
+        "otype": "xml or exact lowercase json",
+        "appid": "20001238 canonical numeric branch",
+        "appkey": "required when canonical numeric appid branch is active",
+        "union_platform": "currently observed as ignored"
+      },
+      "behavior_notes": [
+        "Supports mixed valid + invalid batches.",
+        "Supports duplicate values; duplicates are not deduped.",
+        "Empty slots are ignored."
+      ],
+      "current_status": "stable",
+      "environment_scope": "same-day anonymous environments",
+      "evidence": [
+        "analysis/environment_matrix_20260620.json",
+        "analysis/api2_jsonp_batch_matrix_20260620.json"
+      ]
+    },
+    {
+      "name": "api2_mixed_valid_invalid_vid_tolerant_batch",
+      "description": "Use API2 batch mode even when some VID items are invalid.",
+      "interface": "api2",
+      "required_parameters": {
+        "tid": "535",
+        "idlist": "<mixed valid and invalid VIDs>"
+      },
+      "behavior_notes": [
+        "Top-level success can coexist with empty-shell invalid rows.",
+        "Current tested order is preserved across XML and JSONP wrappers."
+      ],
+      "current_status": "stable",
+      "environment_scope": "same-day anonymous environments; XML and JSONP mirror both closed",
+      "evidence": [
+        "analysis/environment_matrix_20260620.json",
+        "analysis/api2_jsonp_batch_matrix_20260620.json"
+      ]
+    },
+    {
+      "name": "api2_batch_limit_32_nonempty_items",
+      "description": "Use API2 up to 32 non-empty batch items in one request.",
+      "interface": "api2",
+      "required_parameters": {
+        "tid": "535",
+        "idlist": "<up to 32 non-empty items>"
+      },
+      "behavior_notes": [
+        "Duplicates count toward the limit.",
+        "Invalid items count toward the limit.",
+        "Empty slots do not count."
+      ],
+      "current_status": "stable",
+      "environment_scope": "same-day anonymous environments; XML and JSONP mirror both closed",
+      "evidence": [
+        "docs/tencent_video_apis.md",
+        "analysis/environment_matrix_20260620.json",
+        "analysis/api2_jsonp_batch_matrix_20260620.json"
+      ]
+    },
+    {
+      "name": "api2_over_limit_33_nonempty_items_error",
+      "description": "Trigger the documented over-limit error by sending 33 non-empty items to API2.",
+      "interface": "api2",
+      "required_parameters": {
+        "tid": "535",
+        "idlist": "<33 non-empty items>"
+      },
+      "expected_result": {
+        "errorno": "-111001",
+        "errormsg": "idlist个数错误, 为0或超过限制"
+      },
+      "current_status": "stable",
+      "environment_scope": "same-day anonymous environments; XML and JSONP mirror both closed",
+      "evidence": [
+        "analysis/environment_matrix_20260620.json",
+        "analysis/api2_jsonp_batch_matrix_20260620.json"
+      ]
+    },
+    {
+      "name": "cross_environment_contract_replay",
+      "description": "Replay the canonical contract cases across the tested anonymous request environments, including the already-landed anonymous real-cookie replay.",
+      "interface": "api1_api2",
+      "required_parameters": {
+        "environment_set": "pc_web_ua, mobile_h5_ua, minimal_headers, referer_origin, browser-like variants, plus anonymous real-cookie replay envs when available"
+      },
+      "behavior_notes": [
+        "The current matrix closes the tested anonymous same-day request-shape drift for the canonical contract cases.",
+        "The anonymous real-cookie replay summary did not introduce a new parameter split relative to the anonymous baseline.",
+        "This is still not proof for logged-in or aged-cookie environments."
+      ],
+      "current_status": "stable_for_current_matrix_plus_anonymous_real_cookie_replay",
+      "environment_scope": "same-day anonymous/browsing-like matrix plus anonymous real-cookie replay",
+      "evidence": [
+        "analysis/environment_matrix_20260620.json",
+        "analysis/agent_api_contract_crossday_20260620.json",
+        "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json",
+        "analysis/authish_extra_key_replay_anonymous_real_cookie_summary_20260621.json"
+      ],
+      "remaining_gap": "Logged-in state, aged-cookie replay, and replay-aware wide tid discovery remain open."
+    },
+    {
+      "name": "replay_bundle_full_semantics_with_callback_tail",
+      "description": "Use the replay bundle runner to carry full semantics plus selected callback pathological-tail probes through a replay environment in one reproducible command.",
+      "interface": "api1_api2",
+      "required_parameters": {
+        "mode": "real | aged | login",
+        "env_json_or_cookie_input": "provide --env-json or raw desktop/mobile Cookie headers/files",
+        "semantics_profile": "full"
+      },
+      "conditional_parameters": {
+        "probe_extra_callback_value": "maps to `--probe-extra-callback-value`; repeatable callback edge-case values such as `})();` or `a}})`",
+        "probe_extra_callback_file": "maps to `--probe-extra-callback-file`; file containing one callback edge-case value per line for larger pathological-tail batches",
+        "artifact_output_dir": "maps to `--artifact-output-dir`; recommended in constrained local environments so the final bundle artifacts land in a writable directory",
+        "subprocess_output_dir": "maps to `--subprocess-output-dir`; optional explicit staging directory for child-process JSON outputs"
+      },
+      "behavior_notes": [
+        "The runner already proved it can record and forward callback-tail probes into downstream semantics steps.",
+        "A later self-check also proved the full replay bundle can complete with status=ok when artifact-output-dir points to a writable final directory.",
+        "This closes tooling readiness for replay-aware callback probing, not the aged/login parameter conclusions themselves."
+      ],
+      "current_status": "tooling_ready",
+      "environment_scope": "self-validated on the anonymous real-cookie replay env; intended next for aged/login once real Cookie inputs exist",
+      "evidence": [
+        "analysis/replay_bundle_semantics_callback_support_20260621.json",
+        "analysis/replay_bundle_artifact_dir_selfcheck_20260621.json",
+        "tools/tencent_replay_bundle_runner.py"
+      ],
+      "remaining_gap": "Needs real aged-cookie/login-state inputs before the resulting parameter-behavior conclusions can be promoted into closure."
+    }
+  ],
+  "query_parser_semantics": {
+    "environment_scope": "tested canonical anonymous branches on 2026-06-20",
+    "confirmed": [
+      "API1 tested extra keys `foo`, `callback`, and `_` were ignored on the canonical XML success branch.",
+      "API1 repeated `tid` and repeated `idlist` behaved as first-value-wins on the tested canonical branch.",
+      "API1 repeated `appid` and repeated `appkey` behaved as first-value-wins in the tested bad-appkey collision controls.",
+      "API2 XML tested extra keys `foo`, `callback`, and `_` were ignored on the canonical branch.",
+      "API2 JSONP tested extra keys `foo` and `_` were ignored on the canonical branch.",
+      "API2 JSONP callback values across numeric, identifier, dotted, bracket, whitespace, Unicode, quote, semicolon, slash, backslash, close-paren, and comment-like tested forms all preserved payload semantics while rewriting the wrapper prefix, while an empty callback value fell back to the default `QZOutputJson=...;` assignment shell and `callback=a(` / `callback=((` produced parse-breaking shells for the current summary path.",
+      "Reserved-looking extra keys `format/output/version/v/platform/source` showed no observed change on API1 XML, API2 XML, or API2 JSONP in the tested anonymous canonical branches.",
+      "Auth-ish extra keys `token/sign/sig/appver/access_token/authkey/openid` also showed no observed change on API1 XML, API2 XML, or API2 JSONP in the tested anonymous canonical branches.",
+      "API2 repeated `idlist`, `tid`, `otype`, `appid`, and `appkey` behaved as first-value-wins on the tested canonical branches.",
+      "API2 repeated `union_platform` showed no observed change on the tested anonymous canonical branch, but that is weaker than a confirmed ignore rule."
+    ],
+    "not_yet_closed": [
+      "API2 JSONP callback behavior for even more aggressive unmatched-delimiter or pathological parser-breaking families beyond the tested empty/numeric/identifier/dotted/dash/bracket/dollar/space/comma/Unicode/quote/semicolon/slash/backslash/close-paren/comment-like set.",
+      "Whether the already-tested auth-ish keys stay inert under real-session or logged-in cookie jars."
+    ],
+    "evidence": [
+      "analysis/param_query_semantics_20260620.json",
+      "tools/tencent_param_semantics_probe.py"
+    ]
+  },
+  "delivery_gaps": [
+    {
+      "gap": "real_session_contract_matrix",
+      "why_it_matters": "This is the highest-ROI remaining variable that could still change the current parameter conclusions."
+    },
+    {
+      "gap": "api2_jsonp_callback_charset_sanitization_probe",
+      "why_it_matters": "The practical callback value-space now covers empty fallback, many raw-passthrough forms including slash/backslash/comment-like roots, and one confirmed parse-breaking open-paren case; what remains is even narrower unmatched-delimiter or pathological punctuation behavior."
+    },
+    {
+      "gap": "authish_or_session_coupled_extra_keys",
+      "why_it_matters": "A first anonymous-branch auth-ish sweep is now closed for `token/sign/sig/appver/access_token/authkey/openid`, but real-session-only branching still remains open."
+    },
+    {
+      "gap": "union_platform_real_session_replay",
+      "why_it_matters": "Same-day anonymous evidence still leaves open whether `union_platform` matters under real browser cookie jars or logged-in state."
+    }
+  ],
+  "evidence_index": [
+    "analysis/api_contract_summary_20260619.json",
+    "analysis/environment_matrix_20260620.json",
+    "analysis/api2_jsonp_batch_matrix_20260620.json",
+    "analysis/param_query_semantics_20260620.json",
+    "analysis/api2_jsonp_callback_value_space_20260620.json",
+    "analysis/authish_extra_key_sweep_20260620.json",
+    "analysis/reserved_extra_key_sweep_20260620.json",
+    "analysis/positive_tid_summary_20260621.json",
+    "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json",
+    "analysis/authish_extra_key_replay_anonymous_real_cookie_summary_20260621.json",
+    "docs/tencent_video_apis.md"
+  ],
+  "remaining_notes": [
+    "Anonymous real-cookie replay is now closed for the current contract matrix and the tested auth-ish/repeated-key anchor cases.",
+    "The highest-value environment gap has narrowed to aged-cookie and login-state replay.",
+    "The currently confirmed positive API2 tid family is 535/540/541; broader sparse-cluster discovery is still open, but the anonymous 641-647 jump-scan did not produce a new positive lead.",
+    "Current capability evidence also says `541` is a valid alternate positive shell, but should not yet be treated as field-equivalent to canonical `535`."
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "generated_at": "2026-06-22",
+  "scope": "Parameter-closure-only gap ranking for Tencent Video API1/API2",
+  "goal_alignment": "Keep the main line on parameter closure and capability closure, not enum-family or frontend-semantic expansion.",
+  "closed_or_downgraded_items": [
+    {
+      "item": "api2_jsonp_mirror_cases_missing_from_main_environment_matrix",
+      "status": "closed",
+      "reason": "The current main environment matrix already contains `mixed_valid_invalid_vid_json`, `duplicate_and_empty_slots_json`, `dup32_json`, and `dup33_json`."
+    },
+    {
+      "item": "api1_batch_limit_unknown",
+      "status": "closed",
+      "reason": "Current repo evidence already closes `dup32` success and `dup33` -> `-111001`."
+    },
+    {
+      "item": "unknown_extra_query_key_injection",
+      "status": "downgraded",
+      "reason": "The semantics probe now machine-verifies that API1 `foo/callback/_`, API2 XML `foo/callback/_`, and API2 JSONP `foo/_` stay on the canonical anonymous branch behavior; API2 JSONP callback values across numeric, identifier, dotted, bracket, whitespace, Unicode, quote, semicolon, slash, backslash, and comment-like tested forms rewrite the wrapper prefix, an empty callback value falls back to the default shell, and the later unmatched-delimiter follow-up widens the parse-breaking representative family from earlier `a(` / `((` / `})();` cases to `[(` / `{(` / `/*(` / `a[(` / `)(` / `](` / `}(` while `[` / `[[` remain raw passthrough. Remaining work is now callback grammar closure plus aged-cookie/login-state replay of auth-ish keys."
+    },
+    {
+      "item": "repeated_query_key_semantics",
+      "status": "downgraded",
+      "reason": "The new semantics probe now machine-verifies first-value-wins for API1 `tid/idlist/appid/appkey` and API2 `tid/idlist/otype/appid/appkey` on the tested collision branches. Remaining work is mostly the weaker repeated-`union_platform` nuance plus aged-cookie/login-state replay."
+    },
+    {
+      "item": "union_platform_wide_value_probe_in_one_artifact",
+      "status": "closed",
+      "reason": "The current parameter inventory already consolidates `union_platform` accepted examples (`missing`, empty, `0`, `2`, `3`, `abc`, `999`, `-1`) and the repeated-key no-change observation into one artifact."
+    },
+    {
+      "item": "appid_appkey_compact_value_matrix",
+      "status": "downgraded",
+      "reason": "The single-key branch behavior and the tested repeated `appid/appkey` collision semantics are now both strong enough for the current mainline. The remaining value is in callback value-space and environment replay, not another compact matrix pass."
+    },
+    {
+      "item": "conditional_auth_branch_collision_semantics",
+      "status": "closed",
+      "reason": "The semantics probe now closes repeated `appid/appkey` on the tested bad-appkey collision controls for both API1 and API2: the first value selects the effective validation branch."
+    },
+    {
+      "item": "api2_jsonp_extra_key_completion",
+      "status": "closed",
+      "reason": "The semantics probe now directly covers API2 JSONP `foo`, `_`, and a much wider callback family: `foo/_` stay on the canonical behavior, many callback forms rewrite the wrapper prefix including slash/backslash/comment-like roots, the empty callback value falls back to the default shell, and the current parse-breaking representative family now includes earlier `a(` / `((` / `})();` cases plus the 2026-06-22 unmatched-delimiter additions `[(` / `{(` / `/*(` / `a[(` / `)(` / `](` / `}(`, while `[` / `[[` remain raw passthrough."
+    },
+    {
+      "item": "api2_all_invalid_jsonp_consumer_rule",
+      "status": "closed",
+      "reason": "The repo now contains a canonical caller-side normalization rule and public demo implementations: top-level API2 JSONP success plus all rows empty_shell=true should be treated as an all-invalid/empty-shell batch."
+    },
+    {
+      "item": "api2_jsonp_callback_value_space_first_layer",
+      "status": "closed",
+      "reason": "The semantics probe now directly covers callback values `1`, `cb1`, `QZOutputJson`, `foo.bar`, `a-b`, `a[b]`, `$cb`, `foo bar`, `foo,bar`, `[0]`, `中文`, `a)`, `a;b`, `a'b`, `a\\\"b`, `a/`, `a\\\\`, and `//a`: all preserve payload semantics while rewriting the JSONP wrapper prefix, while the empty callback value falls back to the default shell. The currently confirmed parse-breaking representative family now extends beyond `a(` to earlier `((` / `})();` and the later unmatched-delimiter additions `[(` / `{(` / `/*(` / `a[(` / `)(` / `](` / `}(`, while `[` / `[[` still land on raw passthrough."
+    }
+  ],
+  "top_parameter_gaps": [
+    {
+      "rank": 1,
+      "gap": "aged_cookie_and_login_matrix",
+      "why_it_matters": "Live anonymous visitor-cookie replay is now closed, so the highest-ROI remaining variable is whether older cookies or true login-state can still change the current parameter conclusions.",
+      "suggested_cases": [
+        "api1 baseline_single_valid",
+        "api1 missing_tid",
+        "api1 canonical_appid_missing_appkey",
+        "api2 baseline_xml_single",
+        "api2 otype_json_single",
+        "api2 all_invalid_jsonp_batch",
+        "api2 duplicate_and_empty_slots_json",
+        "api2 dup33_json"
+      ]
+    },
+    {
+      "rank": 2,
+      "gap": "api2_sparse_cluster_discovery_outside_current_known_family",
+      "why_it_matters": "The broader anonymous map now confirms API2 positive or success-shell families on `488`, `502`, `506`, `535`, `540`, and `541` in XML/JSONP. The later 641-647 jump-scan still does not reveal a new positive cluster, the second plus third samples both show `642 -> -111013` as a local error-family island, the 636-640 plus 648-652 flanking follow-up goes back to ordinary `-111005` throughout XML/JSONP, and the newer 522-525 cross-interface follow-up now confirms `525 -> -111013` as another stable forbidden-external island on API1 and API2. Sparse-cluster discovery therefore remains open as a hypothesis-quality question rather than a positive lead.",
+      "suggested_cases": [
+        "522-525 cross-interface follow-up already completed: 522-524 ordinary `-111005`, 525 stable `-111013` on API1/API2",
+        "641-647 anonymous jump-scan already completed with no positive hits",
+        "636-640 and 648-652 flanking follow-up already completed with no positive or `-111013` expansion",
+        "if future scans revisit this band, treat `642` as a local error-family follow-up rather than a positive-cluster lead",
+        "the 456-521 mid-corridor is now partially closed by the new 488/502/506 findings",
+        "next only expand when a new sparse-cluster hypothesis appears outside the tested 420-445 / 456-521 / 530-550 / 641-647 / 636-640,648-652 bands"
+      ]
+    },
+    {
+      "rank": 3,
+      "gap": "api1_positive_tid_broader_search",
+      "why_it_matters": "API1 no longer looks like only one true positive (`431`) plus one separate success-shell-without-sample branch (`537`). The current anonymous map now also includes `453` as a cover-only positive shell, `483` as a video_ids-led thin success shell, and `476/506` as thinner success-shell families. The newly added 418-421 and 526-536 probes tightened local error-family boundaries, the anonymous 641-647 jump-scan came back fully negative, the 636-640 plus 648-652 flanking follow-up also returned ordinary `-111005` throughout, and the newer 522-525 follow-up now shows API1 `525 -> -111013` with 522-524 staying ordinary `-111005`. That strengthens the local-negative boundary map without mathematically closing wider discovery outside the tested bands.",
+      "suggested_cases": [
+        "focused 428-434 and 533-540 sweep already completed",
+        "522-525 follow-up already completed: API1 525 is a stable local `-111013` boundary artifact, not a positive lead",
+        "anonymous 641-647 jump-scan already completed with no new branch",
+        "636-640 and 648-652 flanking follow-up already completed with no new branch",
+        "the 456-521 mid-corridor is now partially closed by the new 476/483/506 findings",
+        "only expand further if another branch family appears outside the current high-signal bands"
+      ]
+    },
+    {
+      "rank": 4,
+      "gap": "api1_534_535_536_second_cid_confirmation",
+      "why_it_matters": "The new API1 boundary slice shows `534 -> 535 -> 536` as `-111013 -> 10010048 -> -111005`, and that same pattern now repeats on the second canonical CID. The follow-up value is no longer re-confirmation, but deciding whether this local island changes how we prioritize future API1 discovery.",
+      "suggested_cases": [
+        "second-CID retest already completed with the same 534 -> 535 -> 536 pattern",
+        "treat API1 tid=535 as a stable local error-family boundary artifact, not a positive branch"
+      ]
+    },
+    {
+      "rank": 5,
+      "gap": "authish_extra_keys_under_aged_cookie_or_login_state",
+      "why_it_matters": "The anonymous canonical branch, the later real anonymous visitor-cookie replay, and the later anonymous real-cookie full-semantics replay with callback tails all stay unchanged for `token/sign/sig/appver/access_token/authkey/openid`, so the remaining value is specifically whether those keys only matter under aged-cookie or real login-state replay.",
+      "suggested_cases": [
+        "api2 XML + token=1 under aged-cookie jar",
+        "api2 XML + sign=1 under aged-cookie jar",
+        "api2 XML + appver=1.0.0 under login-state jar",
+        "api2 XML + openid=1 under login-state jar"
+      ]
+    },
+    {
+      "rank": 6,
+      "gap": "union_platform_under_aged_cookie_or_login_state",
+      "why_it_matters": "Current anonymous canonical evidence plus real anonymous visitor-cookie replay say `union_platform` shows no visible split, but aged-cookie or login-gated branches could still consume it differently.",
+      "suggested_cases": [
+        "api2 baseline XML with aged-cookie jar",
+        "api2 JSONP baseline with login-state jar",
+        "api2 repeated union_platform under the same aged-cookie or login-state jar"
+      ]
+    },
+    {
+      "rank": 7,
+      "gap": "api2_jsonp_callback_charset_sanitization_probe",
+      "why_it_matters": "The practical callback value-space now covers empty fallback, many raw-passthrough forms including slash/backslash/comment-like roots, a 2026-06-21 pathological-tail follow-up where closer-heavy punctuation remained raw-passthrough while `})();` joined the parse-breaking family, a 2026-06-22 unmatched-delimiter follow-up where `[` / `[[` still stayed raw-passthrough while `[(` / `{(` / `/*(` / `a[(` / `)(` / `](` / `}(` joined the parse-breaking representative family, and a later anonymous real-cookie full-semantics replay that reproduced the same callback family. The remaining uncertainty is now narrow and no longer blocks the main capability closure path.",
+      "suggested_cases": [
+        "analysis/api2_jsonp_callback_pathological_tail_20260621.json already covers `]/{/}/a]/a}/a))/a}})/a&b/a#b/a%20b/a>/a=` and `})();`",
+        "analysis/api2_jsonp_callback_unmatched_delimiter_summary_20260622.json now records the added `[` / `[[` raw-passthrough and `[(` / `{(` / `/*(` / `a[(` / `)(` / `](` / `}(` parse-breaking split",
+        "analysis/replay_bundle_real_full_semantics_summary_20260621.json now confirms the same callback family behavior under both anonymous real-cookie replay envs",
+        "if callback probing continues, prioritize genuinely new unmatched-delimiter families rather than more closer-heavy raw-passthrough variants",
+        "keep callback below aged-cookie/login-state replay in priority"
+      ]
+    }
+  ],
+  "deprioritized_non_parameter_tracks": [
+    "pay_status family escape hunting",
+    "upload_src family escape hunting",
+    "frontend F trace",
+    "frontend upload_src trace",
+    "frontend targetid runtime callsite",
+    "state=8 family expansion",
+    "downright full code universe"
+  ],
+  "source_evidence": [
+    "analysis/gap_ledger_20260620.json",
+    "analysis/agent_round_summary_20260620.json",
+    "analysis/environment_matrix_20260620.json",
+    "analysis/api2_jsonp_batch_matrix_20260620.json",
+    "analysis/param_query_semantics_20260620.json",
+    "analysis/api2_jsonp_callback_value_space_20260620.json",
+    "analysis/authish_extra_key_sweep_20260620.json",
+    "analysis/reserved_extra_key_sweep_20260620.json",
+    "analysis/positive_tid_summary_20260620.json",
+    "analysis/positive_tid_summary_20260621.json",
+    "analysis/positive_tid_api1_boundary_summary_20260621.json",
+    "analysis/positive_tid_probe_641_647_20260621.json",
+    "analysis/positive_tid_probe_641_647_summary_20260621.json",
+    "analysis/positive_tid_probe_641_647_alt_sample_20260621.json",
+    "analysis/positive_tid_probe_641_647_third_sample_20260621.json",
+    "analysis/positive_tid_probe_522_525_summary_20260622.json",
+    "analysis/positive_tid_probe_636_640_648_652_20260622.json",
+    "analysis/positive_tid_probe_api1_534_536_alt_sample_20260621.json",
+    "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json",
+    "analysis/authish_extra_key_replay_anonymous_real_cookie_summary_20260621.json",
+    "analysis/replay_bundle_real_full_semantics_summary_20260621.json",
+    "analysis/api_param_inventory_20260620.json",
+    "analysis/capability_surface_20260620.json",
+    "analysis/regression_samples_20260620.json",
+    "analysis/capability_recipes_20260620.json",
+    "docs/tencent_video_apis.md"
+  ]
+}

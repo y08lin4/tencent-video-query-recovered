@@ -1,0 +1,544 @@
+{
+  "generated_at": "2026-06-22",
+  "scope": "Unified parameter-to-capability index across explicit API parameters, auxiliary or candidate parameters, and replay-closure tooling surfaces.",
+  "purpose": [
+    "Give one machine-readable entrypoint from parameter to capability to recipe to regression sample to evidence.",
+    "Reduce the need to jump manually between the parameter inventory, closure matrix, capability recipes, and replay-tooling notes."
+  ],
+  "interpretation_notes": [
+    "Empty related_regression_samples is expected for tooling-only entries and for candidate-parameter families that currently have no dedicated regression-case row in regression_samples_20260620.json.",
+    "Empty related_recipes does not automatically mean the parameter is undocumented; some candidate-parameter families currently only map to evidence artifacts and remaining-gap tracking, not to a dedicated invocation recipe.",
+    "This index is curated for navigation and traceability. It is not the authoritative source for branch semantics; when the index and a deeper artifact disagree, prefer the deeper source artifact."
+  ],
+  "entries": [
+    {
+      "parameter": "tid",
+      "interface": "api1",
+      "category": "explicit_parameter",
+      "requiredness": "hard_required",
+      "current_status": "branch_partially_closed",
+      "role": "request routing or config selector; 431 is the current canonical positive example, not proof that no other positive tid exists",
+      "unlocked_capabilities": [
+        "api1_single_cover_lookup",
+        "api1_batch_cover_lookup",
+        "api1_success_shell_without_sample_tid_537"
+      ],
+      "related_recipes": [
+        "api1_single_cover_lookup",
+        "api1_batch_cover_lookup"
+      ],
+      "related_regression_samples": [
+        "baseline_single_valid",
+        "missing_tid",
+        "mixed_valid_illegal_cid",
+        "dup32",
+        "dup33"
+      ],
+      "key_evidence": [
+        "analysis/api_param_inventory_20260620.json",
+        "analysis/parameter_closure_matrix_20260621.json",
+        "analysis/positive_tid_summary_20260620.json",
+        "analysis/positive_tid_api1_boundary_summary_20260621.json",
+        "analysis/positive_tid_probe_641_647_summary_20260621.json"
+      ],
+      "remaining_gaps": [
+        "Whether API1 has any positive tid beyond 431 is still open."
+      ]
+    },
+    {
+      "parameter": "idlist",
+      "interface": "api1",
+      "category": "explicit_parameter",
+      "requiredness": "hard_required",
+      "current_status": "mostly_closed",
+      "role": "comma-separated CID list with tested 32 non-empty item success boundary and 33 item failure boundary",
+      "unlocked_capabilities": [
+        "api1_single_cover_lookup",
+        "api1_batch_cover_lookup",
+        "api1_mixed_valid_invalid_batch_diagnostics"
+      ],
+      "related_recipes": [
+        "api1_single_cover_lookup",
+        "api1_batch_cover_lookup"
+      ],
+      "related_regression_samples": [
+        "baseline_single_valid",
+        "mixed_valid_illegal_cid",
+        "duplicate_and_empty_slots",
+        "dup32",
+        "dup33"
+      ],
+      "key_evidence": [
+        "analysis/api_param_inventory_20260620.json",
+        "analysis/parameter_closure_matrix_20260621.json",
+        "analysis/regression_samples_20260620.json",
+        "analysis/param_query_semantics_20260620.json",
+        "analysis/param_query_semantics_anonymous_real_cookie_20260621.json"
+      ],
+      "remaining_gaps": [
+        "Aged-cookie/login-state replay is still open for this row, but repeated same-name idlist keys already behave as first-value-wins and do not merge across query positions in the tested same-day anonymous plus real anonymous visitor-cookie replay collision cases."
+      ]
+    },
+    {
+      "parameter": "appid",
+      "interface": "api1",
+      "category": "explicit_parameter",
+      "requiredness": "conditional_branch_parameter",
+      "current_status": "partially_closed",
+      "role": "numeric canonical appid enables the stricter documented branch; missing or text-like values currently hit a looser anonymous-compatible branch in tested cases",
+      "unlocked_capabilities": [
+        "canonical_documented_api1_branch_when_paired_with_canonical_appkey"
+      ],
+      "related_recipes": [
+        "api1_single_cover_lookup",
+        "api1_batch_cover_lookup"
+      ],
+      "related_regression_samples": [
+        "canonical_appid_missing_appkey"
+      ],
+      "key_evidence": [
+        "analysis/api_param_inventory_20260620.json",
+        "analysis/parameter_closure_matrix_20260621.json"
+      ],
+      "remaining_gaps": [
+        "Positive behavior for other numeric appid values is not yet mapped."
+      ]
+    },
+    {
+      "parameter": "appkey",
+      "interface": "api1",
+      "category": "explicit_parameter",
+      "requiredness": "conditional_with_canonical_numeric_appid",
+      "current_status": "partially_closed",
+      "role": "validated when the canonical numeric appid branch is active",
+      "unlocked_capabilities": [
+        "canonical_documented_api1_branch_when_paired_with_canonical_appid"
+      ],
+      "related_recipes": [
+        "api1_single_cover_lookup",
+        "api1_batch_cover_lookup"
+      ],
+      "related_regression_samples": [
+        "canonical_appid_missing_appkey"
+      ],
+      "key_evidence": [
+        "analysis/api_param_inventory_20260620.json",
+        "analysis/parameter_closure_matrix_20260621.json"
+      ],
+      "remaining_gaps": [
+        "No evidence yet that appkey unlocks additional API1 capability beyond satisfying the canonical numeric-appid branch."
+      ]
+    },
+    {
+      "parameter": "otype",
+      "interface": "api2",
+      "category": "explicit_parameter",
+      "requiredness": "optional_wrapper_switch",
+      "current_status": "mostly_closed",
+      "role": "response wrapper selector; only exact lowercase json switches the tested branch into JSONP",
+      "unlocked_capabilities": [
+        "api2_single_detail_xml_canonical",
+        "api2_single_detail_jsonp",
+        "api2_batch_lookup"
+      ],
+      "related_recipes": [
+        "api2_single_detail_xml_canonical",
+        "api2_single_detail_xml_alt_positive_tid",
+        "api2_single_detail_xml_second_alt_positive_tid",
+        "api2_single_detail_jsonp",
+        "api2_batch_lookup",
+        "api2_all_invalid_jsonp_batch_consumer_rule"
+      ],
+      "related_regression_samples": [
+        "baseline_xml_single",
+        "otype_json_single",
+        "mixed_valid_invalid_vid_json",
+        "all_invalid_jsonp_batch",
+        "dup32_json",
+        "dup33_json"
+      ],
+      "key_evidence": [
+        "analysis/api_param_inventory_20260620.json",
+        "analysis/parameter_closure_matrix_20260621.json",
+        "analysis/api2_all_invalid_jsonp_consumer_rule_20260620.json"
+      ],
+      "remaining_gaps": [
+        "No positive wrapper value has been confirmed beyond XML default and lowercase JSONP."
+      ]
+    },
+    {
+      "parameter": "tid",
+      "interface": "api2",
+      "category": "explicit_parameter",
+      "requiredness": "hard_required",
+      "current_status": "branch_partially_closed",
+      "role": "request routing or config selector; 535 is the canonical full-detail branch, 488/540/541 are thinner alternate positive shells, 502 is the richer alternate positive shell, and 506 is currently a success-shell family rather than a detail recipe",
+      "unlocked_capabilities": [
+        "api2_single_detail_xml_canonical",
+        "api2_single_detail_xml_tid488_alt_positive_shell",
+        "api2_single_detail_xml_tid502_alt_positive_shell",
+        "api2_single_detail_xml_alt_positive_tid",
+        "api2_single_detail_xml_second_alt_positive_tid",
+        "api2_single_detail_jsonp",
+        "api2_batch_lookup"
+      ],
+      "related_recipes": [
+        "api2_single_detail_xml_canonical",
+        "api2_single_detail_xml_tid488_alt_positive_shell",
+        "api2_single_detail_xml_tid502_alt_positive_shell",
+        "api2_single_detail_xml_alt_positive_tid",
+        "api2_single_detail_xml_second_alt_positive_tid",
+        "api2_single_detail_jsonp",
+        "api2_batch_lookup",
+        "api2_all_invalid_jsonp_batch_consumer_rule"
+      ],
+      "related_regression_samples": [
+        "baseline_xml_single",
+        "baseline_xml_single_tid540",
+        "baseline_xml_single_tid541",
+        "otype_json_single",
+        "mixed_valid_invalid_vid_json",
+        "all_invalid_jsonp_batch",
+        "api2_tid525_local_error_island",
+        "baseline_xml_single_tid488",
+        "baseline_xml_single_tid502"
+      ],
+      "key_evidence": [
+        "analysis/api_param_inventory_20260620.json",
+        "analysis/parameter_closure_matrix_20260621.json",
+        "analysis/positive_tid_summary_20260620.json",
+        "analysis/positive_tid_summary_20260621.json",
+        "analysis/api2_alt_tid_capability_delta_20260621.json",
+        "analysis/demo_parity_alt_tid_matrix_20260621.json",
+        "analysis/demo_validation_20260621.json",
+        "analysis/positive_tid_probe_524_529_summary_20260621.json",
+        "analysis/positive_tid_probe_456_521_summary_20260623.json",
+        "analysis/api2_extended_tid_capability_delta_20260623.json",
+        "analysis/demo_validation_incremental_api2_tid488_502_20260623.json",
+        "analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json"
+      ],
+      "remaining_gaps": [
+        "Whether API2 has any positive or success-shell tid outside the current 488/502/506/535/540/541 family map is still open, but the lower-edge 522-529 band and the mid-corridor 456-521 follow-up are now materially tighter than the older 535/540/541-only reading."
+      ]
+    },
+    {
+      "parameter": "appid",
+      "interface": "api2",
+      "category": "explicit_parameter",
+      "requiredness": "conditional_branch_parameter",
+      "current_status": "partially_closed",
+      "role": "canonical numeric appid enables the stricter documented branch; missing or text-like values currently bypass that stricter branch in tested cases",
+      "unlocked_capabilities": [
+        "canonical_documented_api2_branch_when_paired_with_canonical_appkey"
+      ],
+      "related_recipes": [
+        "api2_single_detail_xml_canonical",
+        "api2_single_detail_jsonp",
+        "api2_batch_lookup"
+      ],
+      "related_regression_samples": [
+        "canonical_appid_missing_appkey"
+      ],
+      "key_evidence": [
+        "analysis/api_param_inventory_20260620.json",
+        "analysis/parameter_closure_matrix_20260621.json"
+      ],
+      "remaining_gaps": [
+        "Positive behavior for other numeric appid values is not yet mapped."
+      ]
+    },
+    {
+      "parameter": "appkey",
+      "interface": "api2",
+      "category": "explicit_parameter",
+      "requiredness": "conditional_with_canonical_numeric_appid",
+      "current_status": "partially_closed",
+      "role": "validated when the canonical numeric appid branch is active",
+      "unlocked_capabilities": [
+        "canonical_documented_api2_branch_when_paired_with_canonical_appid"
+      ],
+      "related_recipes": [
+        "api2_single_detail_xml_canonical",
+        "api2_single_detail_jsonp",
+        "api2_batch_lookup"
+      ],
+      "related_regression_samples": [
+        "canonical_appid_missing_appkey"
+      ],
+      "key_evidence": [
+        "analysis/api_param_inventory_20260620.json",
+        "analysis/parameter_closure_matrix_20260621.json"
+      ],
+      "remaining_gaps": [
+        "No evidence yet that appkey unlocks additional API2 capability beyond satisfying the canonical numeric-appid branch."
+      ]
+    },
+    {
+      "parameter": "union_platform",
+      "interface": "api2",
+      "category": "explicit_parameter",
+      "requiredness": "no_observed_effect_in_current_anonymous_scope",
+      "current_status": "environment_open",
+      "role": "present in canonical examples but currently no visible branch effect has been proven in anonymous canonical or anonymous real-cookie replay",
+      "unlocked_capabilities": [
+        "no distinct capability unlocked in current tested environments"
+      ],
+      "related_recipes": [
+        "api2_single_detail_xml_canonical",
+        "api2_single_detail_jsonp",
+        "api2_batch_lookup",
+        "real_session_replay_template",
+        "replay_bundle_full_semantics_with_callback_tail"
+      ],
+      "related_regression_samples": [
+        "union_platform_999"
+      ],
+      "key_evidence": [
+        "analysis/api_param_inventory_20260620.json",
+        "analysis/parameter_closure_matrix_20260621.json",
+        "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json"
+      ],
+      "remaining_gaps": [
+        "Whether union_platform matters under aged-cookie or login-state replay remains open."
+      ]
+    },
+    {
+      "parameter": "idlist",
+      "interface": "api2",
+      "category": "explicit_parameter",
+      "requiredness": "hard_required",
+      "current_status": "mostly_closed",
+      "role": "comma-separated VID list with tested 32 non-empty item success boundary and 33 item failure boundary",
+      "unlocked_capabilities": [
+        "api2_single_detail_xml_canonical",
+        "api2_single_detail_jsonp",
+        "api2_batch_lookup",
+        "api2_all_invalid_jsonp_batch_consumer_rule"
+      ],
+      "related_recipes": [
+        "api2_single_detail_xml_canonical",
+        "api2_single_detail_xml_alt_positive_tid",
+        "api2_single_detail_xml_second_alt_positive_tid",
+        "api2_single_detail_jsonp",
+        "api2_batch_lookup",
+        "api2_all_invalid_jsonp_batch_consumer_rule"
+      ],
+      "related_regression_samples": [
+        "baseline_xml_single",
+        "mixed_valid_invalid_vid_json",
+        "all_invalid_jsonp_batch",
+        "duplicate_and_empty_slots_json",
+        "dup32_json",
+        "dup33_json"
+      ],
+      "key_evidence": [
+        "analysis/api_param_inventory_20260620.json",
+        "analysis/parameter_closure_matrix_20260621.json",
+        "analysis/regression_samples_20260620.json",
+        "analysis/api2_all_invalid_jsonp_consumer_rule_20260620.json",
+        "analysis/param_query_semantics_20260620.json",
+        "analysis/param_query_semantics_anonymous_real_cookie_20260621.json"
+      ],
+      "remaining_gaps": [
+        "Aged-cookie/login-state replay is still open for this row, but repeated same-name idlist keys already behave as first-value-wins and do not merge across query positions in the tested same-day anonymous plus real anonymous visitor-cookie replay collision cases."
+      ]
+    },
+    {
+      "parameter": "callback",
+      "interface": "api2_jsonp_only",
+      "category": "auxiliary_or_candidate_parameter",
+      "requiredness": "optional_wrapper_parameter",
+      "current_status": "mostly_closed",
+      "role": "rewrites JSONP wrapper prefix in the tested JSONP branch; current practical value-space includes both raw-passthrough and parse-breaking families, with `[` / `[[` still on the raw-passthrough side while `a(` / `((` / `})();` plus `[(` / `{(` / `/*(` / `a[(` / `)(` / `](` / `}(` sit in the current parse-breaking representative family. Repeated callback now behaves as first-value-wins in the tested same-day anonymous and real anonymous visitor-cookie replay collision cases, and tested wrong-appkey JSONP error shells still honor callback wrapper control.",
+      "unlocked_capabilities": [
+        "custom_jsonp_callback_wrapper",
+        "replay_bundle_full_semantics_with_callback_tail"
+      ],
+      "related_recipes": [
+        "api2_single_detail_jsonp",
+        "replay_bundle_full_semantics_with_callback_tail"
+      ],
+      "related_regression_samples": [
+        "otype_json_single",
+        "api2_jsonp_callback_wrapper_override",
+        "api2_jsonp_callback_empty_falls_back_to_default_wrapper",
+        "api2_jsonp_callback_parse_breaking_unmatched_paren",
+        "api2_jsonp_callback_raw_passthrough_bracket",
+        "api2_jsonp_callback_parse_breaking_bracket_open_paren",
+        "api2_jsonp_repeated_callback_first_value_wins",
+        "api2_jsonp_wrong_appkey_callback_wrapper_control",
+        "anonymous_real_cookie_callback_contract_anchor"
+      ],
+      "key_evidence": [
+        "analysis/api2_jsonp_callback_value_space_20260620.json",
+        "analysis/api2_jsonp_callback_pathological_tail_20260621.json",
+        "analysis/api2_jsonp_callback_unmatched_delimiter_summary_20260622.json",
+        "analysis/replay_bundle_semantics_callback_support_20260621.json",
+        "analysis/replay_bundle_artifact_dir_selfcheck_20260621.json",
+        "analysis/api2_jsonp_callback_contract_20260621.json",
+        "analysis/api2_jsonp_callback_contract_real_cookie_summary_20260621.json"
+      ],
+      "remaining_gaps": [
+        "Broader parser-breaking families remain open beyond the newly widened unmatched-delimiter / odd-prefix representatives.",
+        "Aged-cookie and login-state replay are still needed before callback closure can be promoted beyond anonymous real-cookie scope."
+      ]
+    },
+    {
+      "parameter": "authish_extra_keys_family",
+      "interface": "api1_and_api2_candidate_parameters",
+      "category": "auxiliary_or_candidate_parameter",
+      "requiredness": "not_required_in_current_anonymous_scope",
+      "current_status": "environment_open",
+      "role": "candidate auth or session-coupled query-key family including token, sign, sig, appver, access_token, authkey, and openid",
+      "unlocked_capabilities": [
+        "none_observed_yet"
+      ],
+      "related_recipes": [
+        "real_session_replay_template",
+        "replay_bundle_full_semantics_with_callback_tail"
+      ],
+      "related_regression_samples": [],
+      "key_evidence": [
+        "analysis/authish_extra_key_sweep_20260620.json",
+        "analysis/authish_extra_key_replay_anonymous_real_cookie_summary_20260621.json",
+        "analysis/parameter_closure_matrix_20260621.json"
+      ],
+      "remaining_gaps": [
+        "Aged-cookie replay under the same visitor flow.",
+        "Real login-state replay.",
+        "Whether any auth-leaning key becomes meaningful only under aged-cookie or login-state environments."
+      ]
+    },
+    {
+      "parameter": "reserved_extra_keys_family",
+      "interface": "api1_and_api2_candidate_parameters",
+      "category": "auxiliary_or_candidate_parameter",
+      "requiredness": "not_required_in_current_anonymous_scope",
+      "current_status": "mostly_closed",
+      "role": "candidate format or version or platform or source-like query-key family including format, output, version, v, platform, and source",
+      "unlocked_capabilities": [
+        "none_observed_yet"
+      ],
+      "related_recipes": [],
+      "related_regression_samples": [],
+      "key_evidence": [
+        "analysis/reserved_extra_key_sweep_20260620.json",
+        "analysis/parameter_closure_matrix_20260621.json"
+      ],
+      "remaining_gaps": [
+        "Whether a narrower reserved-looking key family exists outside the currently tested set.",
+        "Whether any reserved-looking key changes behavior only under aged-cookie or login-state environments."
+      ]
+    },
+    {
+      "parameter": "tencent_cookie_env_from_headers.py",
+      "interface": "replay_tooling",
+      "category": "tooling_parameter_surface",
+      "requiredness": "required_for_raw_cookie_to_env_json_conversion",
+      "current_status": "operational_but_still_waiting_for_aged_login_inputs",
+      "role": "convert raw desktop or mobile Cookie headers into replay env JSON for real, aged, or login-state runs",
+      "unlocked_capabilities": [
+        "real_session_replay_template",
+        "replay_bundle_full_semantics_with_callback_tail"
+      ],
+      "related_recipes": [
+        "real_session_replay_template",
+        "replay_bundle_full_semantics_with_callback_tail"
+      ],
+      "related_regression_samples": [],
+      "key_evidence": [
+        "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json",
+        "analysis/replay_bundle_real_summary_20260621_realcheck.json"
+      ],
+      "remaining_gaps": [
+        "Still needs real aged-cookie and login-state inputs before the resulting parameter conclusions can be upgraded."
+      ]
+    },
+    {
+      "parameter": "tencent_environment_matrix_probe.py",
+      "interface": "replay_tooling",
+      "category": "tooling_parameter_surface",
+      "requiredness": "required_for_environment_contract_replay",
+      "current_status": "operational_but_still_waiting_for_aged_login_inputs",
+      "role": "run the canonical contract matrix across replay header environments",
+      "unlocked_capabilities": [
+        "cross_environment_contract_replay",
+        "real_session_replay_template",
+        "replay_bundle_full_semantics_with_callback_tail"
+      ],
+      "related_recipes": [
+        "real_session_replay_template",
+        "replay_bundle_full_semantics_with_callback_tail"
+      ],
+      "related_regression_samples": [],
+      "key_evidence": [
+        "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json",
+        "analysis/replay_bundle_real_summary_20260621_realcheck.json"
+      ],
+      "remaining_gaps": [
+        "Still needs real aged-cookie and login-state inputs before the resulting parameter conclusions can be upgraded."
+      ]
+    },
+    {
+      "parameter": "tencent_param_semantics_probe.py",
+      "interface": "replay_tooling",
+      "category": "tooling_parameter_surface",
+      "requiredness": "required_for_authish_and_callback_semantics_replay",
+      "current_status": "operational_but_still_waiting_for_aged_login_inputs",
+      "role": "replay auth-ish and callback or repeated-key semantics under a chosen env; currently also supports dynamic callback-tail values via extra-callback forwarding",
+      "unlocked_capabilities": [
+        "callback_pathological_tail_replay",
+        "authish_semantics_replay"
+      ],
+      "related_recipes": [
+        "real_session_replay_template",
+        "replay_bundle_full_semantics_with_callback_tail"
+      ],
+      "related_regression_samples": [],
+      "key_evidence": [
+        "analysis/authish_extra_key_replay_anonymous_real_cookie_summary_20260621.json",
+        "analysis/replay_bundle_semantics_callback_support_20260621.json"
+      ],
+      "remaining_gaps": [
+        "Still needs real aged-cookie and login-state inputs before the resulting parameter conclusions can be upgraded."
+      ]
+    },
+    {
+      "parameter": "tencent_replay_bundle_runner.py",
+      "interface": "replay_tooling",
+      "category": "tooling_parameter_surface",
+      "requiredness": "optional_but_high_value_orchestration_entrypoint",
+      "current_status": "operational_but_still_waiting_for_aged_login_inputs",
+      "role": "one-command orchestration for env-json build, matrix replay, and semantics replay; currently supports full semantics, callback-tail forwarding, and writable artifact or staging directories",
+      "unlocked_capabilities": [
+        "replay_bundle_full_semantics_with_callback_tail"
+      ],
+      "related_recipes": [
+        "real_session_replay_template",
+        "replay_bundle_full_semantics_with_callback_tail"
+      ],
+      "related_regression_samples": [],
+      "key_evidence": [
+        "analysis/replay_bundle_real_summary_20260621_realcheck.json",
+        "analysis/replay_bundle_semantics_callback_support_20260621.json",
+        "analysis/replay_bundle_artifact_dir_selfcheck_20260621.json"
+      ],
+      "remaining_gaps": [
+        "Still needs real aged-cookie and login-state inputs before the resulting parameter conclusions can be upgraded."
+      ]
+    }
+  ],
+  "source_artifacts": [
+    "analysis/api_param_inventory_20260620.json",
+    "analysis/parameter_closure_matrix_20260621.json",
+    "analysis/capability_recipes_20260620.json",
+    "analysis/capability_surface_20260620.json",
+    "analysis/regression_samples_20260620.json",
+    "analysis/replay_bundle_semantics_callback_support_20260621.json",
+    "analysis/replay_bundle_artifact_dir_selfcheck_20260621.json"
+  ],
+  "current_limitations": [
+    "This index does not prove aged-cookie or login-state closure by itself; it only links the current evidence graph.",
+    "Replay tooling entries describe how to run the closure workflow, not that the aged-cookie or login-state conclusions are already achieved."
+  ]
+}

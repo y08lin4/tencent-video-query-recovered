@@ -1,0 +1,420 @@
+{
+  "generated_at": "2026-06-22",
+  "scope": "Directly usable Tencent Video API capability recipes refreshed through the 2026-06-21 positive-tid and anonymous real-cookie replay evidence.",
+  "recipes": [
+    {
+      "name": "api1_single_cover_lookup",
+      "purpose": "Use API1 to resolve one CID into cover-level metadata and its video-id family.",
+      "interface": "api1",
+      "environment_scope": "same-day anonymous canonical branch",
+      "canonical_parameters": {
+        "tid": "431",
+        "idlist": "<single CID>",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "curl": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b",
+      "python_demo": "python examples/python/tencent_video_api_demo.py --cid <CID> --json",
+      "go_demo": "go.exe -cid <CID> -json",
+      "expected_highlights": [
+        "top-level errorno=0",
+        "non-empty cover title",
+        "non-empty video_ids family"
+      ],
+      "evidence": [
+        "analysis/capability_surface_20260620.json",
+        "analysis/regression_samples_20260620.json"
+      ]
+    },
+    {
+      "name": "api1_single_cover_lookup_tid537_probe_shell",
+      "purpose": "Use API1 tid=537 to probe the separate success shell when you deliberately want that branch rather than canonical tid=431.",
+      "interface": "api1",
+      "environment_scope": "same-day anonymous tested branch",
+      "canonical_parameters": {
+        "tid": "537",
+        "idlist": "<single CID>",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "curl": "https://data.video.qq.com/fcgi-bin/data?tid=537&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b",
+      "python_demo": "python examples/python/tencent_video_api_demo.py --cid <CID> --api1-tid 537 --json",
+      "go_demo": "go.exe -cid <CID> -api1-tid 537 -json",
+      "expected_highlights": [
+        "top-level errorno=0",
+        "cover_infos_count can remain non-zero",
+        "video_ids_count stays 0 on the current 3-CID public matrix"
+      ],
+      "notes": [
+        "`537` is currently a success-shell-without-sample branch, not a field-equivalent replacement for canonical tid=431.",
+        "On the current caller-facing richness matrix it repeated the same sample-less shell shape across `mzc00200idzf2m8`, `mzc00200xxpsogl`, and `mzc002009qyd7nv`."
+      ],
+      "evidence": [
+        "analysis/positive_tid_summary_20260621.json",
+        "analysis/parameter_contract_quick_reference_20260621.json",
+        "analysis/tid_richness_matrix_20260622.json",
+        "analysis/demo_validation_incremental_tid537_20260622.json",
+        "analysis/direct_call_raw_http_validation_tid537_20260622.json"
+      ]
+    },
+    {
+      "name": "api1_single_cover_lookup_tid453_cover_shell_only",
+      "purpose": "Use API1 tid=453 to probe the newly confirmed positive cover-shell-only branch when you deliberately want that branch rather than canonical tid=431.",
+      "interface": "api1",
+      "environment_scope": "same-day anonymous tested branch",
+      "canonical_parameters": {
+        "tid": "453",
+        "idlist": "<single CID>",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "curl": "https://data.video.qq.com/fcgi-bin/data?tid=453&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b",
+      "python_demo": "python examples/python/tencent_video_api_demo.py --cid <CID> --api1-tid 453 --json",
+      "go_demo": "go.exe -cid <CID> -api1-tid 453 -json",
+      "expected_highlights": [
+        "top-level errorno=0",
+        "cover_infos_count can remain non-zero",
+        "cover title stays non-empty while video_ids_count stays 0 on the current 3-CID public matrix"
+      ],
+      "notes": [
+        "`453` is currently a positive cover-shell-only branch, not a field-equivalent replacement for canonical tid=431.",
+        "On the current caller-facing confirmation set it repeated the same non-empty cover shell plus empty video_ids shape across `mzc00200idzf2m8`, `mzc00200xxpsogl`, and `mzc002009qyd7nv`."
+      ],
+      "evidence": [
+        "analysis/positive_tid_probe_446_455_summary_20260623.json",
+        "analysis/parameter_contract_quick_reference_20260621.json",
+        "analysis/demo_validation_incremental_tid453_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid453_20260623.json"
+      ]
+    },
+    {
+      "name": "api1_batch_cover_lookup",
+      "purpose": "Use API1 to fetch multiple CID cover shells in one request.",
+      "interface": "api1",
+      "environment_scope": "same-day anonymous canonical branch",
+      "canonical_parameters": {
+        "tid": "431",
+        "idlist": "<cid1,cid2,...>",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "curl": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=<CID1>,<CID2>&appid=10001005&appkey=0d1a9ddd94de871b",
+      "python_demo": "Exposed indirectly when the current Python demo receives a comma-separated `--cid` list, but that path is only a side path: cover-level metadata comes from the first matched CID while downstream API2 requests aggregate every returned `video_id`. Use the direct API1 URL in this recipe or the contract probe when you need a clean multi-cover contract sample.",
+      "go_demo": "Exposed indirectly when the current Go demo receives a comma-separated `-cid` list, but that path is only a side path: cover-level metadata comes from the first matched CID while downstream API2 requests aggregate every returned `video_id`. Use the direct API1 URL in this recipe or the contract probe when you need a clean multi-cover contract sample.",
+      "expected_highlights": [
+        "duplicates are preserved",
+        "illegal CID can coexist with top-level success",
+        "empty slots are ignored"
+      ],
+      "evidence": [
+        "analysis/capability_surface_20260620.json",
+        "analysis/regression_samples_20260620.json"
+      ]
+    },
+    {
+      "name": "api2_single_detail_xml_canonical",
+      "purpose": "Use API2 XML to fetch one video detail row on the canonical positive tid.",
+      "interface": "api2",
+      "environment_scope": "same-day anonymous canonical branch",
+      "canonical_parameters": {
+        "otype": "xml",
+        "tid": "535",
+        "idlist": "<single VID>",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3"
+      },
+      "curl": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID>",
+      "python_demo": "python examples/python/tencent_video_api_demo.py --vid <VID> --json",
+      "go_demo": "go.exe -vids <VID> -json",
+      "expected_highlights": [
+        "top-level errorno=0",
+        "non-empty title and duration"
+      ],
+      "notes": [
+        "`535` is the current canonical example tid for repo docs and demos.",
+        "`488`, `502`, `540`, and `541` are also confirmed positive API2 tids, but are kept as alternate recipes instead of changing the default demo inputs."
+      ],
+      "evidence": [
+        "analysis/capability_surface_20260620.json",
+        "analysis/positive_tid_summary_20260621.json"
+      ]
+    },
+    {
+      "name": "api2_single_detail_xml_tid488_alt_positive_shell",
+      "purpose": "Use API2 XML on the thinner confirmed alternate positive tid 488.",
+      "interface": "api2",
+      "environment_scope": "same-day anonymous tested branch",
+      "canonical_parameters": {
+        "otype": "xml",
+        "tid": "488",
+        "idlist": "<single VID>",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3"
+      },
+      "curl": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=488&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID>",
+      "python_demo": "python examples/python/tencent_video_api_demo.py --vid <VID> --api2-tid 488 --json",
+      "go_demo": "go.exe -vids <VID> -api2-tid 488 -json",
+      "expected_highlights": [
+        "top-level errorno=0",
+        "retcode=0 with title + url present",
+        "vid / duration / cover_list / create_time currently absent on the validated public sample"
+      ],
+      "notes": [
+        "`488` is now caller-facing enough to keep as a dedicated alternate-positive recipe, but it is still a thin shell rather than a canonical-detail replacement.",
+        "Current live demo and raw HTTP evidence on `z4102qfi0x4` keeps the shape at title + url with empty vid/duration/cover_list/create_time."
+      ],
+      "evidence": [
+        "analysis/demo_validation_incremental_api2_tid488_502_20260623.json",
+        "analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json",
+        "analysis/api2_extended_tid_capability_delta_20260623.json",
+        "analysis/tid_richness_matrix_extended_20260623.json"
+      ]
+    },
+    {
+      "name": "api2_single_detail_xml_tid502_alt_positive_shell",
+      "purpose": "Use API2 XML on the richer confirmed alternate positive tid 502.",
+      "interface": "api2",
+      "environment_scope": "same-day anonymous tested branch",
+      "canonical_parameters": {
+        "otype": "xml",
+        "tid": "502",
+        "idlist": "<single VID>",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3"
+      },
+      "curl": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=502&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID>",
+      "python_demo": "python examples/python/tencent_video_api_demo.py --vid <VID> --api2-tid 502 --json",
+      "go_demo": "go.exe -vids <VID> -api2-tid 502 -json",
+      "expected_highlights": [
+        "top-level errorno=0",
+        "retcode=0 with title + url + vid + duration present",
+        "cover_list and create_time currently present on the validated public sample"
+      ],
+      "notes": [
+        "`502` is currently the richest validated alternate positive shell, but it still does not reach canonical `535` richness because state/upload_src/defn/category_map stay empty.",
+        "Current live demo and raw HTTP evidence on `j4101ouc4ve` keeps the shape at title + url + vid + duration + cover_list + create_time."
+      ],
+      "evidence": [
+        "analysis/demo_validation_incremental_api2_tid488_502_20260623.json",
+        "analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json",
+        "analysis/api2_extended_tid_capability_delta_20260623.json",
+        "analysis/tid_richness_matrix_extended_20260623.json"
+      ]
+    },
+    {
+      "name": "api2_single_detail_xml_tid540_alt_positive_shell",
+      "purpose": "Use API2 XML on one alternate confirmed positive tid.",
+      "interface": "api2",
+      "environment_scope": "same-day anonymous tested branch",
+      "canonical_parameters": {
+        "otype": "xml",
+        "tid": "540",
+        "idlist": "<single VID>",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3"
+      },
+      "curl": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=540&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID>",
+      "expected_highlights": [
+        "top-level errorno=0",
+        "same tested success family as tid=535"
+      ],
+      "notes": [
+        "`540` and `541` are both confirmed positive API2 tids; this recipe pins `540` as the first alternate anchor.",
+        "Current live demo evidence on `z4102qfi0x4`, `j4101ouc4ve`, and `m4102tgsa8d` shows `540` returning a positive but structurally thin row: title/duration/url present, while state/upload_src/cover_list/category_map/defn stayed empty."
+      ],
+      "evidence": [
+        "analysis/positive_tid_summary_20260621.json",
+        "analysis/positive_tid_probe_20260621_alt_sample.json",
+        "analysis/api2_tid540_demo_validation_20260621.json",
+        "analysis/api2_alt_tid_capability_delta_20260621.json"
+      ]
+    },
+    {
+      "name": "api2_single_detail_xml_tid541_alt_positive_shell",
+      "purpose": "Use API2 XML on the second confirmed alternate positive tid.",
+      "interface": "api2",
+      "environment_scope": "same-day anonymous tested branch",
+      "canonical_parameters": {
+        "otype": "xml",
+        "tid": "541",
+        "idlist": "<single VID>",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3"
+      },
+      "curl": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=541&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID>",
+      "expected_highlights": [
+        "top-level errorno=0",
+        "same tested success family as tid=535 and tid=540"
+      ],
+      "notes": [
+        "`541` is a separately confirmed positive API2 tid and already has second-sample confirmation in the current summary artifact.",
+        "At least one live demo validation run on `j4101ouc4ve` returned a positive but sparse row, so `541` should be read as a valid alternate positive shell rather than a guarantee of the same field fullness as canonical `535`."
+      ],
+      "evidence": [
+        "analysis/positive_tid_summary_20260621.json",
+        "analysis/positive_tid_probe_20260621_alt_sample.json",
+        "analysis/demo_validation_20260621.json",
+        "analysis/api2_alt_tid_capability_delta_20260621.json"
+      ]
+    },
+    {
+      "name": "api2_single_detail_jsonp",
+      "purpose": "Use API2 JSONP mode by setting exact lowercase `otype=json`.",
+      "interface": "api2",
+      "environment_scope": "same-day anonymous canonical branch",
+      "canonical_parameters": {
+        "otype": "json",
+        "tid": "535",
+        "idlist": "<single VID>",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3"
+      },
+      "curl": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID>",
+      "python_demo": "python examples/python/tencent_video_api_demo.py --vid <VID> --api2-otype json --json",
+      "go_demo": "go.exe -vids <VID> -api2-otype json -json",
+      "expected_highlights": [
+        "body starts with QZOutputJson=",
+        "content-type application/x-javascript",
+        "payload still reports errorno=0"
+      ],
+      "notes": [
+        "Wide callback families can rewrite the wrapper prefix.",
+        "The demos now expose JSONP callback override via `--api2-callback` / `-api2-callback`.",
+        "The empty callback value falls back to the default `QZOutputJson=...;` shell.",
+        "Repeated callback now behaves as first-value-wins in the tested same-day anonymous and real anonymous visitor-cookie replay collision cases.",
+        "Wrong-appkey JSONP error shells still honor callback wrapper control, and the same callback-contract conclusion was replay-stable in the tested real anonymous PC Web and Mobile H5 environments.",
+        "The currently confirmed parse-breaking representative family is wider than the original `a(` / `((` / `})();` set: `[(` / `{(` / `/*(` / `a[(` / `)(` / `](` / `}(` now also break the current summary parser, while `[` and `[[` still remain raw passthrough.",
+        "Do not generalize that into a full callback grammar rule or into `any callback containing (` is unsafe.",
+        "Do not treat nearby lower-edge tids as equivalent to canonical 535 JSONP: the anonymous 524-529 probe found 524 and 526-529 on ordinary -111005 while 525 stayed on a stable local -111013 error-family island."
+      ],
+      "evidence": [
+        "analysis/capability_surface_20260620.json",
+        "analysis/api2_jsonp_callback_value_space_20260620.json",
+        "analysis/api2_jsonp_callback_unmatched_delimiter_summary_20260622.json",
+        "analysis/api2_jsonp_callback_contract_20260621.json",
+        "analysis/api2_jsonp_callback_contract_real_cookie_summary_20260621.json",
+        "analysis/positive_tid_probe_524_529_summary_20260621.json"
+      ]
+    },
+    {
+      "name": "api2_batch_lookup",
+      "purpose": "Use API2 to fetch multiple detail rows in one request.",
+      "interface": "api2",
+      "environment_scope": "same-day anonymous canonical branch",
+      "canonical_parameters": {
+        "otype": "xml or json",
+        "tid": "535",
+        "idlist": "<vid1,vid2,...>",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3"
+      },
+      "curl": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID1>,<VID2>",
+      "python_demo": "python examples/python/tencent_video_api_demo.py --vid <VID1> --vid <VID2> --api2-otype json --json",
+      "go_demo": "go.exe -vids <VID1>,<VID2> -api2-otype json -json",
+      "expected_highlights": [
+        "mixed valid and invalid items can coexist",
+        "duplicates are preserved",
+        "empty slots are ignored"
+      ],
+      "notes": [
+        "The current Python and Go demos expose API2 dispatch chunking via `--api2-batch-size` / `-api2-batch-size`.",
+        "The demo-side batch-size guard is currently `1..32`."
+      ],
+      "evidence": [
+        "analysis/capability_surface_20260620.json",
+        "analysis/regression_samples_20260620.json"
+      ]
+    },
+    {
+      "name": "api2_all_invalid_jsonp_batch_consumer_rule",
+      "purpose": "Normalize the all-invalid JSONP batch edge case on the caller side.",
+      "interface": "api2",
+      "environment_scope": "same-day anonymous canonical branch",
+      "canonical_parameters": {
+        "otype": "json",
+        "tid": "535",
+        "idlist": "<all invalid VIDs>",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3"
+      },
+      "python_demo": "python examples/python/tencent_video_api_demo.py --vid zzzzzzzzzzz --vid yyyyyyyyyyy --api2-otype json --json",
+      "go_demo": "go.exe -vids zzzzzzzzzzz,yyyyyyyyyyy -api2-otype json -json",
+      "expected_highlights": [
+        "top-level success can still mean every row is empty-shell",
+        "if all rows are empty_shell=true, treat the batch as all-invalid"
+      ],
+      "evidence": [
+        "analysis/api2_all_invalid_jsonp_consumer_rule_20260620.json",
+        "analysis/regression_samples_20260620.json"
+      ]
+    },
+    {
+      "name": "real_session_replay_template",
+      "purpose": "Replay the canonical contract matrix under real, aged, or login-state cookie headers once raw Cookie material is available.",
+      "interface": "api1_api2",
+      "environment_scope": "requires explicit real-session input",
+      "template_file": "examples/environment/real_cookie_env.template.json",
+      "runner": "python tools/tencent_environment_matrix_probe.py --include-browser-like --extra-env-json examples/environment/real_cookie_env.template.json --output analysis/environment_matrix_real_cookie_replay.json",
+      "bundle_runner": "python tools/tencent_replay_bundle_runner.py --mode aged --desktop-cookie-file examples/environment/pc_aged_cookie_header.template.txt",
+      "builder_examples": [
+        "python tools/tencent_cookie_env_from_headers.py --mode aged --desktop-cookie-file examples/environment/pc_aged_cookie_header.template.txt --output analysis/aged_cookie_env_20260621.json",
+        "python tools/tencent_cookie_env_from_headers.py --mode login --desktop-cookie-file examples/environment/pc_login_cookie_header.template.txt --output analysis/login_state_env_20260621.json"
+      ],
+      "expected_highlights": [
+        "compare real-cookie replay against the anonymous matrix",
+        "look for drift in union_platform, auth-ish keys, and current canonical contract cases"
+      ],
+      "notes": [
+        "The anonymous visitor-cookie capture path already has a dedicated capture script; aged/login currently rely on raw Cookie header input.",
+        "The helper tool auto-fills User-Agent / Accept / Referer / Origin, so callers only need the Cookie header text.",
+        "The replay bundle runner is the higher-level one-command entry once Cookie headers are available.",
+        "The runner now also supports `--semantics-profile full` plus `--probe-extra-callback-value / --probe-extra-callback-file` when callback pathological-tail probes should ride along with the environment replay.",
+        "In constrained local environments, `--artifact-output-dir` and `--subprocess-output-dir` let the full replay bundle land in a writable location before any manual copy-back into the repository."
+      ],
+      "evidence": [
+        "tools/tencent_environment_matrix_probe.py",
+        "tools/tencent_cookie_env_from_headers.py",
+        "examples/environment/real_cookie_env.template.json",
+        "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json",
+        "analysis/replay_bundle_semantics_callback_support_20260621.json",
+        "analysis/replay_bundle_artifact_dir_selfcheck_20260621.json"
+      ]
+    },
+    {
+      "name": "replay_bundle_full_semantics_with_callback_tail",
+      "purpose": "Run the replay bundle with full semantics plus selected callback pathological-tail probes in one pass.",
+      "interface": "api1_api2",
+      "environment_scope": "requires explicit real/aged/login replay input; currently self-validated on the anonymous real-cookie env",
+      "canonical_parameters": {
+        "mode": "real | aged | login",
+        "env_json_or_cookie_input": "provide --env-json or raw desktop/mobile Cookie headers/files",
+        "semantics_profile": "full",
+        "probe_extra_callback_value": "<repeatable callback edge-case values>",
+        "artifact_output_dir": "<writable final artifact directory when needed>"
+      },
+      "runner": "python tools/tencent_replay_bundle_runner.py --mode real --env-json analysis/anonymous_real_cookie_env_20260621.json --skip-matrix --semantics-profile full --probe-extra-callback-value '})();' --probe-extra-callback-value 'a}})' --artifact-output-dir <writable_dir>",
+      "expected_highlights": [
+        "summary records semantics_profile and forwarded callback values",
+        "per-environment semantics artifacts are emitted in one bundle run",
+        "writable artifact-output-dir avoids local workspace write-path quirks"
+      ],
+      "notes": [
+        "This recipe is about replay-tooling closure rather than a newly proven environment conclusion.",
+        "The current repository proof is a self-check under the anonymous real-cookie env, not aged/login semantic closure itself."
+      ],
+      "evidence": [
+        "analysis/replay_bundle_semantics_callback_support_20260621.json",
+        "analysis/replay_bundle_artifact_dir_selfcheck_20260621.json",
+        "tools/tencent_replay_bundle_runner.py"
+      ]
+    }
+  ]
+}

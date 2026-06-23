@@ -1,0 +1,731 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "Focused positive tid probe across the high-signal 428-434 and 533-540 bands",
+  "tested_bands": {
+    "api1": [
+      "428-434",
+      "533-540"
+    ],
+    "api2": [
+      "428-434",
+      "533-540"
+    ]
+  },
+  "api1": {
+    "428": {
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=428&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958920</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "429": {
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=429&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958920</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "430": {
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=430&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958920</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "431": {
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781958920</resptime><results><fields><clips_ids>j3194zlpuho</clips_ids><clips_id",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "0",
+        "errormsg": "",
+        "retcode": "0",
+        "sample_id": "mzc00200idzf2m8",
+        "sample_vid": "",
+        "sample_title": "飞驰人生3"
+      },
+      "classification": "positive_tid_branch"
+    },
+    "432": {
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=432&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958921</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "433": {
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=433&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958921</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "434": {
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=434&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958921</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "533": {
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=533&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958921</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "534": {
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=534&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>禁止外部访问接口</errormsg><errorno>-111013</errorno><resptime>1781958921</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111013",
+        "errormsg": "禁止外部访问接口",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "535": {
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=535&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><costtime>6</costtime><errormsg>key all illegal</errormsg><errorno>10010048</errorno><resptime>1781958921</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "10010048",
+        "errormsg": "key all illegal",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "536": {
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=536&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958921</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "537": {
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=537&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><costtime>8</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781958921</resptime><results><fields><c_column_id>0</c_column_id><c_column_name>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "0",
+        "errormsg": "",
+        "retcode": "0",
+        "sample_id": "mzc00200idzf2m8",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "success_shell_without_sample"
+    },
+    "538": {
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=538&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958921</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "539": {
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=539&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958921</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "540": {
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=540&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><costtime>3</costtime><errormsg>key all illegal</errormsg><errorno>10010048</errorno><resptime>1781958922</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "10010048",
+        "errormsg": "key all illegal",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    }
+  },
+  "api2_xml": {
+    "428": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=428&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958922</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "429": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=429&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958922</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "430": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=430&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958922</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "431": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=431&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><costtime>6</costtime><errormsg>key all illegal</errormsg><errorno>10010048</errorno><resptime>1781958922</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "10010048",
+        "errormsg": "key all illegal",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "432": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=432&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958922</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "433": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=433&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958923</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "434": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=434&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958923</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "533": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=533&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958923</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "534": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=534&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>禁止外部访问接口</errormsg><errorno>-111013</errorno><resptime>1781958923</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111013",
+        "errormsg": "禁止外部访问接口",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "535": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781958923</resptime><results><fields><c_covers>mzc00200idzf2m8+mzc00200g9sqip1+m",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "0",
+        "errormsg": "",
+        "retcode": "0",
+        "sample_id": "z4102qfi0x4",
+        "sample_vid": "z4102qfi0x4",
+        "sample_title": "飞驰人生3"
+      },
+      "classification": "positive_tid_branch"
+    },
+    "536": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=536&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958924</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "537": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=537&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><costtime>4</costtime><errormsg>key all illegal</errormsg><errorno>10010048</errorno><resptime>1781958924</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "10010048",
+        "errormsg": "key all illegal",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "538": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=538&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958924</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "539": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=539&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781958924</resptime></root>",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误",
+        "retcode": "",
+        "sample_id": "",
+        "sample_vid": "",
+        "sample_title": ""
+      },
+      "classification": "error_branch"
+    },
+    "540": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=540&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/xml;charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "<root><costtime>6</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781958924</resptime><results><fields><column_id>0</column_id><duration>7550</dur",
+      "summary": {
+        "root_tag": "root",
+        "errorno": "0",
+        "errormsg": "",
+        "retcode": "0",
+        "sample_id": "z4102qfi0x4",
+        "sample_vid": "z4102qfi0x4",
+        "sample_title": "飞驰人生3"
+      },
+      "classification": "positive_tid_branch"
+    }
+  },
+  "api2_jsonp": {
+    "428": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=428&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "QZOutputJson={\"errormsg\":\"\\u83b7\\u53d6\\u914d\\u7f6e\\u9519\\u8bef\",\"errorno\":-111005,\"resptime\":1781958922};",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误"
+      },
+      "classification": "error_branch"
+    },
+    "429": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=429&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "QZOutputJson={\"errormsg\":\"\\u83b7\\u53d6\\u914d\\u7f6e\\u9519\\u8bef\",\"errorno\":-111005,\"resptime\":1781958922};",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误"
+      },
+      "classification": "error_branch"
+    },
+    "430": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=430&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "QZOutputJson={\"errormsg\":\"\\u83b7\\u53d6\\u914d\\u7f6e\\u9519\\u8bef\",\"errorno\":-111005,\"resptime\":1781958922};",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误"
+      },
+      "classification": "error_branch"
+    },
+    "431": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=431&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "QZOutputJson={\"costtime\":5,\"errormsg\":\"key all illegal\",\"errorno\":10010048,\"resptime\":1781958922};",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "10010048",
+        "errormsg": "key all illegal"
+      },
+      "classification": "error_branch"
+    },
+    "432": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=432&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "QZOutputJson={\"errormsg\":\"\\u83b7\\u53d6\\u914d\\u7f6e\\u9519\\u8bef\",\"errorno\":-111005,\"resptime\":1781958922};",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误"
+      },
+      "classification": "error_branch"
+    },
+    "433": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=433&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "QZOutputJson={\"errormsg\":\"\\u83b7\\u53d6\\u914d\\u7f6e\\u9519\\u8bef\",\"errorno\":-111005,\"resptime\":1781958923};",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误"
+      },
+      "classification": "error_branch"
+    },
+    "434": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=434&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "QZOutputJson={\"errormsg\":\"\\u83b7\\u53d6\\u914d\\u7f6e\\u9519\\u8bef\",\"errorno\":-111005,\"resptime\":1781958923};",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误"
+      },
+      "classification": "error_branch"
+    },
+    "533": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=533&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "QZOutputJson={\"errormsg\":\"\\u83b7\\u53d6\\u914d\\u7f6e\\u9519\\u8bef\",\"errorno\":-111005,\"resptime\":1781958923};",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误"
+      },
+      "classification": "error_branch"
+    },
+    "534": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=534&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "QZOutputJson={\"errormsg\":\"\\u7981\\u6b62\\u5916\\u90e8\\u8bbf\\u95ee\\u63a5\\u53e3\",\"errorno\":-111013,\"resptime\":1781958923};",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "-111013",
+        "errormsg": "禁止外部访问接口"
+      },
+      "classification": "error_branch"
+    },
+    "535": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "QZOutputJson={\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781958924,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc00200g9sqip1+mzc002007u6z7dn\",\"c",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "0",
+        "errormsg": "",
+        "sample_id": "z4102qfi0x4",
+        "sample_vid": "z4102qfi0x4",
+        "sample_title": "飞驰人生3"
+      },
+      "classification": "positive_tid_branch"
+    },
+    "536": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=536&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "QZOutputJson={\"errormsg\":\"\\u83b7\\u53d6\\u914d\\u7f6e\\u9519\\u8bef\",\"errorno\":-111005,\"resptime\":1781958924};",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误"
+      },
+      "classification": "error_branch"
+    },
+    "537": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=537&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "QZOutputJson={\"costtime\":5,\"errormsg\":\"key all illegal\",\"errorno\":10010048,\"resptime\":1781958924};",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "10010048",
+        "errormsg": "key all illegal"
+      },
+      "classification": "error_branch"
+    },
+    "538": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=538&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "QZOutputJson={\"errormsg\":\"\\u83b7\\u53d6\\u914d\\u7f6e\\u9519\\u8bef\",\"errorno\":-111005,\"resptime\":1781958924};",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误"
+      },
+      "classification": "error_branch"
+    },
+    "539": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=539&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "QZOutputJson={\"errormsg\":\"\\u83b7\\u53d6\\u914d\\u7f6e\\u9519\\u8bef\",\"errorno\":-111005,\"resptime\":1781958924};",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "-111005",
+        "errormsg": "获取配置错误"
+      },
+      "classification": "error_branch"
+    },
+    "540": {
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=540&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "http_status": 200,
+      "content_type": "application/x-javascript; charset=utf-8",
+      "transport_error": "",
+      "body_prefix": "QZOutputJson={\"costtime\":8,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781958925,\"results\":[{\"fields\":{\"column_id\":\"0\",\"duration\":\"7550\",\"pic_228_128\":\"http://puui.qp",
+      "summary": {
+        "root": "QZOutputJson",
+        "errorno": "0",
+        "errormsg": "",
+        "sample_id": "z4102qfi0x4",
+        "sample_vid": "z4102qfi0x4",
+        "sample_title": "飞驰人生3"
+      },
+      "classification": "positive_tid_branch"
+    }
+  }
+}

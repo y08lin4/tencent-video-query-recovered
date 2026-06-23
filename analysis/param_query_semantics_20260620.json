@@ -1,0 +1,5146 @@
+{
+  "generated_at": "2026-06-20",
+  "scope": "Tencent Video main-interface query-key semantics: extra keys and repeated keys",
+  "cases": {
+    "api1": {
+      "endpoint": "https://data.video.qq.com/fcgi-bin/data",
+      "results": {
+        "baseline": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>5</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962870</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "baseline"
+        },
+        "extra_foo": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "foo",
+              "1"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&foo=1",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>5</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962870</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_callback": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "callback",
+              "1"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&callback=1",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>6</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962870</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_underscore": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "_",
+              "1782000000"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&_=1782000000",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962870</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_format": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "format",
+              "json"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&format=json",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>5</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962871</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_output": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "output",
+              "json"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&output=json",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>9</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962871</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_version": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "version",
+              "1"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&version=1",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>8</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962871</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_v": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "v",
+              "1"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&v=1",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962871</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_platform": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "platform",
+              "3"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&platform=3",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>8</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962871</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_source": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "source",
+              "1"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&source=1",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962871</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_token": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "token",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&token=deadbeef",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>8</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962871</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_sign": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "sign",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&sign=deadbeef",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962871</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_sig": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "sig",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&sig=deadbeef",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>5</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962871</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_appver": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "appver",
+              "1.0.0"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&appver=1.0.0",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962871</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_access_token": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "access_token",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&access_token=deadbeef",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962872</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_authkey": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "authkey",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&authkey=deadbeef",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>6</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962872</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_openid": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "openid",
+              "1"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&openid=1",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>9</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962872</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "branch_text_appid_wrong_appkey": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "notanumber"
+            ],
+            [
+              "appkey",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=notanumber&appkey=deadbeef",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>5</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962872</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "control_case"
+        },
+        "branch_canonical_wrong_appkey": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=deadbeef",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>5</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1781962872</resptime><",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "10010110",
+            "errormsg": "appkey error",
+            "retcode": ""
+          },
+          "judgment": "control_case"
+        },
+        "repeat_idlist_valid_then_valid": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "idlist",
+              "mzc00200xxpsogl"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&idlist=mzc00200xxpsogl&appid=10001005&appkey=0d1a9ddd94de871b",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>4</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962872</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "repeated_key_first_value_wins_in_tested_branch"
+        },
+        "repeat_idlist_invalid_then_valid": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "invalidcid123"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=invalidcid123&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>3</costtime><errormsg>key all illegal</errormsg><errorno>10010048</errorno><resptime>1781962872</resptim",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "10010048",
+            "errormsg": "key all illegal",
+            "retcode": ""
+          },
+          "judgment": "repeated_idlist_first_value_wins_in_tested_branch"
+        },
+        "repeat_idlist_valid_then_invalid": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "idlist",
+              "invalidcid123"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&idlist=invalidcid123&appid=10001005&appkey=0d1a9ddd94de871b",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>8</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962872</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "repeated_key_first_value_wins_in_tested_branch"
+        },
+        "repeat_tid_good_then_bad": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "tid",
+              "0"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&tid=0&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>8</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962872</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "repeated_key_first_value_wins_in_tested_branch"
+        },
+        "repeat_tid_bad_then_good": {
+          "pairs": [
+            [
+              "tid",
+              "0"
+            ],
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=0&tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><errormsg>错误的tid, 如果新申请的接口,请等待10分钟</errormsg><errorno>-111003</errorno><resptime>1781962873</resptime></root>",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "-111003",
+            "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟",
+            "retcode": ""
+          },
+          "judgment": "repeated_tid_first_value_wins_in_tested_branch"
+        },
+        "repeat_appid_good_then_text": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appid",
+              "notanumber"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appid=notanumber&appkey=0d1a9ddd94de871b",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962873</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "repeated_appid_first_value_wins_in_tested_branch"
+        },
+        "repeat_appid_text_then_good": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "notanumber"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=notanumber&appid=10001005&appkey=0d1a9ddd94de871b",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>6</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962873</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "repeated_appid_first_value_wins_in_tested_branch"
+        },
+        "repeat_appid_canonical_then_text_wrong_appkey": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appid",
+              "notanumber"
+            ],
+            [
+              "appkey",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appid=notanumber&appkey=deadbeef",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>5</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1781962873</resptime><",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "10010110",
+            "errormsg": "appkey error",
+            "retcode": ""
+          },
+          "judgment": "repeated_appid_first_value_wins_in_tested_branch"
+        },
+        "repeat_appid_text_then_canonical_wrong_appkey": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "notanumber"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=notanumber&appid=10001005&appkey=deadbeef",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>5</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962873</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "repeated_appid_first_value_wins_in_tested_branch"
+        },
+        "repeat_appkey_good_then_wrong": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ],
+            [
+              "appkey",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b&appkey=deadbeef",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962873</resptime><results><fields><cl",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "mzc00200idzf2m8",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "mzc00200idzf2m8",
+                "title": "飞驰人生3",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "repeated_appkey_first_value_wins_in_tested_branch"
+        },
+        "repeat_appkey_wrong_then_good": {
+          "pairs": [
+            [
+              "tid",
+              "431"
+            ],
+            [
+              "idlist",
+              "mzc00200idzf2m8"
+            ],
+            [
+              "appid",
+              "10001005"
+            ],
+            [
+              "appkey",
+              "deadbeef"
+            ],
+            [
+              "appkey",
+              "0d1a9ddd94de871b"
+            ]
+          ],
+          "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=deadbeef&appkey=0d1a9ddd94de871b",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>3</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1781962873</resptime><",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "10010110",
+            "errormsg": "appkey error",
+            "retcode": ""
+          },
+          "judgment": "repeated_appkey_first_value_wins_in_tested_branch"
+        }
+      }
+    },
+    "api2": {
+      "endpoint": "https://union.video.qq.com/fcgi-bin/data",
+      "results": {
+        "baseline_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>8</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962884</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "baseline"
+        },
+        "baseline_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962884,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "baseline"
+        },
+        "extra_foo_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "foo",
+              "1"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&foo=1",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>8</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962884</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_callback_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "1"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=1",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>5</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962884</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_underscore_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "_",
+              "1782000000"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&_=1782000000",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962884</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_foo_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "foo",
+              "1"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&foo=1",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":8,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962884,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_callback_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "1"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=1",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "1({\"costtime\":9,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962884,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc002",
+          "summary": {
+            "root": "1",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "1",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_cb1_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "cb1"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=cb1",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "cb1({\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962884,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+          "summary": {
+            "root": "cb1",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "cb1",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_qzoutputjson_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "QZOutputJson"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=QZOutputJson",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson({\"costtime\":4,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962884,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "QZOutputJson",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_foo_dot_bar_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "foo.bar"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=foo.bar",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "foo.bar({\"costtime\":4,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962885,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+",
+          "summary": {
+            "root": "foo.bar",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "foo.bar",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_empty_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              ""
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":4,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962885,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "",
+          "wrapper_family": "fallback_default",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_a_dash_b_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "a-b"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=a-b",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "a-b({\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962885,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+          "summary": {
+            "root": "a-b",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "a-b",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_a_bracket_b_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "a[b]"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=a%5Bb%5D",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "a[b]({\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962885,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc",
+          "summary": {
+            "root": "a[b]",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "a[b]",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_dollar_cb_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "$cb"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=%24cb",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "$cb({\"costtime\":6,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962885,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+          "summary": {
+            "root": "$cb",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "$cb",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_foo_space_bar_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "foo bar"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=foo+bar",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "foo bar({\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962885,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+",
+          "summary": {
+            "root": "foo bar",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "foo bar",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_foo_comma_bar_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "foo,bar"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=foo%2Cbar",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "foo,bar({\"costtime\":7,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962885,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+",
+          "summary": {
+            "root": "foo,bar",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "foo,bar",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_bracket_zero_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "[0]"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=%5B0%5D",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "[0]({\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962896,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+          "summary": {
+            "root": "[0]",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "[0]",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_chinese_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "中文"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=%E4%B8%AD%E6%96%87",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "中文({\"costtime\":8,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962896,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc00",
+          "summary": {
+            "root": "中文",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "中文",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_a_open_paren_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "a("
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=a%28",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "a(({\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962896,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc00",
+          "summary": {
+            "parse_error": "Expecting value at position 0"
+          },
+          "callback_value": "a(",
+          "wrapper_family": "unparseable_or_error",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_double_open_paren_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "(("
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=%28%28",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "((({\"costtime\":4,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962896,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc00",
+          "summary": {
+            "parse_error": "Expecting value at position 0"
+          },
+          "callback_value": "((",
+          "wrapper_family": "unparseable_or_error",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_close_paren_only_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              ")"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=%29",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": ")({\"costtime\":7,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962896,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc002",
+          "summary": {
+            "root": ")",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": ")",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_a_close_paren_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "a)"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=a%29",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "a)({\"costtime\":8,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962896,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc00",
+          "summary": {
+            "root": "a)",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "a)",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_comment_prefix_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "/*a"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=%2F%2Aa",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "/*a({\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962896,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+          "summary": {
+            "root": "/*a",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "/*a",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_a_semicolon_b_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "a;b"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=a%3Bb",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "a;b({\"costtime\":7,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962896,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+          "summary": {
+            "root": "a;b",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "a;b",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_a_single_quote_b_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "a'b"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=a%27b",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "a'b({\"costtime\":4,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962897,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+          "summary": {
+            "root": "a'b",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "a'b",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_a_double_quote_b_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "a\"b"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=a%22b",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "a\"b({\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962897,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+          "summary": {
+            "root": "a\"b",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "a\"b",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_a_slash_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "a/"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=a%2F",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "a/({\"costtime\":7,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962897,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc00",
+          "summary": {
+            "root": "a/",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "a/",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_a_backslash_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "a\\"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=a%5C",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "a\\({\"costtime\":8,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962897,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc00",
+          "summary": {
+            "root": "a\\",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "a\\",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_callback_double_slash_a_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "callback",
+              "//a"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=%2F%2Fa",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "//a({\"costtime\":7,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962897,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0",
+          "summary": {
+            "root": "//a",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "callback_value": "//a",
+          "wrapper_family": "raw_passthrough",
+          "judgment": "jsonp_callback_value_changes_wrapper_branch"
+        },
+        "extra_underscore_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "_",
+              "1782000000"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&_=1782000000",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":6,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962897,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_format_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "format",
+              "json"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&format=json",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962897</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_output_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "output",
+              "json"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&output=json",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962897</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_version_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "version",
+              "1"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&version=1",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>10</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962897</resptime><results><fields><c",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_v_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "v",
+              "1"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&v=1",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962898</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_platform_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "platform",
+              "3"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&platform=3",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>4</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962898</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_source_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "source",
+              "1"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&source=1",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>4</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962898</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_format_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "format",
+              "json"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&format=json",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":6,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962898,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_output_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "output",
+              "json"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&output=json",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":8,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962898,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_version_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "version",
+              "1"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&version=1",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":7,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962898,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_v_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "v",
+              "1"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&v=1",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":7,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962909,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_platform_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "platform",
+              "3"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&platform=3",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":6,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962909,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_source_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "source",
+              "1"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&source=1",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962909,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_token_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "token",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&token=deadbeef",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>4</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962909</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_sign_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "sign",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&sign=deadbeef",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962909</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_sig_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "sig",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&sig=deadbeef",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>8</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962909</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_appver_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "appver",
+              "1.0.0"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&appver=1.0.0",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962909</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_access_token_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "access_token",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&access_token=deadbeef",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>6</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962909</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_authkey_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "authkey",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&authkey=deadbeef",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>6</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962910</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_openid_xml": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "openid",
+              "1"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&openid=1",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962910</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_token_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "token",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&token=deadbeef",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":7,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962910,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_sign_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "sign",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&sign=deadbeef",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":6,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962910,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_sig_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "sig",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&sig=deadbeef",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962910,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_appver_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "appver",
+              "1.0.0"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&appver=1.0.0",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":6,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962910,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_access_token_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "access_token",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&access_token=deadbeef",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":6,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962910,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_authkey_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "authkey",
+              "deadbeef"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&authkey=deadbeef",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":4,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962910,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "extra_openid_json": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "openid",
+              "1"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&openid=1",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":8,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962910,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "extra_key_ignored_in_tested_branch"
+        },
+        "branch_text_appid_wrong_appkey": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "notanumber"
+            ],
+            [
+              "appkey",
+              "deadbeef"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=notanumber&appkey=deadbeef&union_platform=3&idlist=z4102qfi0x4",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>6</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962911</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "control_case"
+        },
+        "branch_canonical_wrong_appkey": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "deadbeef"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=deadbeef&union_platform=3&idlist=z4102qfi0x4",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>3</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1781962911</resptime><",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "10010110",
+            "errormsg": "appkey error",
+            "retcode": ""
+          },
+          "judgment": "control_case"
+        },
+        "repeat_idlist_valid_then_valid": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "idlist",
+              "j4101ouc4ve"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&idlist=j4101ouc4ve",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>6</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962911</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "repeated_key_first_value_wins_in_tested_branch"
+        },
+        "repeat_idlist_invalid_then_valid": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "zzzzzzzzzzz"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=zzzzzzzzzzz&idlist=z4102qfi0x4",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>13</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962912</resptime><results><fields><c",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "zzzzzzzzzzz",
+                "retcode": "0",
+                "vid": "",
+                "cover_id": "",
+                "title": "",
+                "state": "",
+                "upload_src": ""
+              }
+            ]
+          },
+          "judgment": "repeated_idlist_first_value_wins_in_tested_branch"
+        },
+        "repeat_idlist_valid_then_invalid": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ],
+            [
+              "idlist",
+              "zzzzzzzzzzz"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&idlist=zzzzzzzzzzz",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962912</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "repeated_key_first_value_wins_in_tested_branch"
+        },
+        "repeat_otype_xml_then_json": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>5</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962912</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "repeated_key_first_value_wins_in_tested_branch"
+        },
+        "repeat_otype_json_then_xml": {
+          "pairs": [
+            [
+              "otype",
+              "json"
+            ],
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+          "http_status": 200,
+          "content_type": "application/x-javascript; charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "QZOutputJson={\"costtime\":8,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1781962912,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idz",
+          "summary": {
+            "root": "QZOutputJson",
+            "errorno": "0",
+            "errormsg": "",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "repeated_key_first_value_wins_in_tested_branch"
+        },
+        "repeat_tid_good_then_536": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "tid",
+              "536"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&tid=536&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962912</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "repeated_key_first_value_wins_in_tested_branch"
+        },
+        "repeat_tid_536_then_good": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "536"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=536&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><errormsg>获取配置错误</errormsg><errorno>-111005</errorno><resptime>1781962912</resptime></root>",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "-111005",
+            "errormsg": "获取配置错误",
+            "retcode": ""
+          },
+          "judgment": "repeated_tid_changes_routing_branch"
+        },
+        "repeat_union_platform_good_then_999": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "union_platform",
+              "999"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&union_platform=999&idlist=z4102qfi0x4",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962912</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "union_platform_ignored_or_repeated_key_no_observed_change"
+        },
+        "repeat_union_platform_999_then_good": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "999"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=999&union_platform=3&idlist=z4102qfi0x4",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>5</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962912</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "union_platform_ignored_or_repeated_key_no_observed_change"
+        },
+        "repeat_appid_canonical_then_text_wrong_appkey": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appid",
+              "notanumber"
+            ],
+            [
+              "appkey",
+              "deadbeef"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appid=notanumber&appkey=deadbeef&union_platform=3&idlist=z4102qfi0x4",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>3</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1781962913</resptime><",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "10010110",
+            "errormsg": "appkey error",
+            "retcode": ""
+          },
+          "judgment": "repeated_appid_first_value_wins_in_tested_branch"
+        },
+        "repeat_appid_text_then_canonical_wrong_appkey": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "notanumber"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "deadbeef"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=notanumber&appid=20001238&appkey=deadbeef&union_platform=3&idlist=z4102qfi0x4",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962913</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "repeated_appid_first_value_wins_in_tested_branch"
+        },
+        "repeat_appkey_good_then_wrong": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "appkey",
+              "deadbeef"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&appkey=deadbeef&union_platform=3&idlist=z4102qfi0x4",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>6</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1781962913</resptime><results><fields><c_",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "0",
+            "errormsg": "",
+            "retcode": "0",
+            "sample_results": [
+              {
+                "id": "z4102qfi0x4",
+                "retcode": "0",
+                "vid": "z4102qfi0x4",
+                "cover_id": "",
+                "title": "飞驰人生3",
+                "state": "4",
+                "upload_src": "20"
+              }
+            ]
+          },
+          "judgment": "repeated_appkey_first_value_wins_in_tested_branch"
+        },
+        "repeat_appkey_wrong_then_good": {
+          "pairs": [
+            [
+              "otype",
+              "xml"
+            ],
+            [
+              "tid",
+              "535"
+            ],
+            [
+              "appid",
+              "20001238"
+            ],
+            [
+              "appkey",
+              "deadbeef"
+            ],
+            [
+              "appkey",
+              "6c03bbe9658448a4"
+            ],
+            [
+              "union_platform",
+              "3"
+            ],
+            [
+              "idlist",
+              "z4102qfi0x4"
+            ]
+          ],
+          "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=deadbeef&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+          "http_status": 200,
+          "content_type": "application/xml;charset=utf-8",
+          "transport_error": "",
+          "body_prefix": "<root><costtime>4</costtime><errormsg>appkey error</errormsg><errorno>10010110</errorno><resptime>1781962913</resptime><",
+          "summary": {
+            "root_tag": "root",
+            "errorno": "10010110",
+            "errormsg": "appkey error",
+            "retcode": ""
+          },
+          "judgment": "repeated_appkey_first_value_wins_in_tested_branch"
+        }
+      }
+    }
+  }
+}

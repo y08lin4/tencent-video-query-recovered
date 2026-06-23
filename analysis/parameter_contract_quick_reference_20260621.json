@@ -386,9 +386,9 @@
         "platform",
         "source"
       ],
-      "current_best_reading": "No observed effect in the tested anonymous canonical branches.",
+      "current_best_reading": "No observed effect in the tested anonymous canonical branches or the later real anonymous visitor-cookie replay.",
       "status": "mostly_closed",
-      "environment_scope": "same-day anonymous matrix",
+      "environment_scope": "same-day anonymous matrix plus real anonymous visitor-cookie replay",
       "still_open": [
         "Whether a narrower reserved-looking key family exists outside the current tested set.",
         "Whether any reserved-looking key changes behavior only under aged-cookie or login-state environments."

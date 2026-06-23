@@ -397,7 +397,7 @@
         }
       ],
       "current_non_goals": [
-        "No strong repository evidence yet for versioned or auth-token query parameters on the two main API2 wrappers; beyond the confirmed API2 JSONP `callback` wrapper surface, the tested reserved-looking keys `format/output/version/v/platform/source` and the tested auth-ish keys `token/sign/sig/appver/access_token/authkey/openid` all stayed on the canonical anonymous branch behavior, and the auth-ish keys also stayed unchanged under the later real anonymous visitor-cookie replay."
+        "No strong repository evidence yet for versioned or auth-token query parameters on the two main API2 wrappers; beyond the confirmed API2 JSONP `callback` wrapper surface, the tested reserved-looking keys `format/output/version/v/platform/source` stayed unchanged on the anonymous canonical branches and the later real anonymous visitor-cookie replay, while the tested auth-ish keys `token/sign/sig/appver/access_token/authkey/openid` also stayed unchanged under the later real anonymous visitor-cookie replay."
       ],
       "priority_gaps": [
         "Positive/success-shell tid space beyond the current `488/502/506/535/540/541` family map",

@@ -344,7 +344,7 @@
       "category": "explicit_parameter",
       "requiredness": "no_observed_effect_in_current_anonymous_scope",
       "current_status": "environment_open",
-      "role": "present in canonical examples but currently no visible branch effect has been proven in anonymous canonical or anonymous real-cookie replay",
+      "role": "present in canonical examples but currently no visible branch effect has been proven in anonymous canonical runs, real anonymous visitor-cookie replay, or the focused 535/540/541 x union_platform capability sweep",
       "unlocked_capabilities": [
         "no distinct capability unlocked in current tested environments"
       ],
@@ -360,11 +360,12 @@
       ],
       "key_evidence": [
         "analysis/api_param_inventory_20260620.json",
-        "analysis/parameter_closure_matrix_20260621.json",
-        "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json"
+        "analysis/union_platform_replay_anonymous_real_cookie_summary_20260623.json",
+        "analysis/environment_replay_hard_block_table_20260622.json"
       ],
       "remaining_gaps": [
-        "Whether union_platform matters under aged-cookie or login-state replay remains open."
+        "Whether union_platform matters under aged-cookie or login-state replay remains open.",
+        "Whether union_platform matters on broader public vids outside the current 535/540/541 anchor sweep remains open."
       ]
     },
     {

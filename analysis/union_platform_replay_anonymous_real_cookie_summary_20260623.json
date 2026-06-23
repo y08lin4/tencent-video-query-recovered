@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-06-23",
+  "artifact_kind": "union_platform_replay_summary",
+  "question": "What is the strongest caller-facing reading of API2 union_platform after combining anonymous same-day semantics, real anonymous visitor-cookie replay, and the focused 535/540/541 capability sweep?",
+  "scope": "Compact union_platform summary for API2 direct-call parameter closure",
+  "source_artifacts": [
+    "analysis/param_query_semantics_20260620.json",
+    "analysis/param_query_semantics_anonymous_real_cookie_20260621.json",
+    "analysis/api2_union_platform_positive_tid_matrix_20260621.json",
+    "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json",
+    "analysis/environment_replay_hard_block_table_20260622.json"
+  ],
+  "environments_covered": [
+    "same_day_anonymous",
+    "pc_web_real_cookie_replay",
+    "mobile_h5_real_cookie_replay"
+  ],
+  "canonical_default": {
+    "parameter": "union_platform",
+    "recommended_value": "3",
+    "current_reason": "Canonical examples keep 3, and no tested override has unlocked a richer branch or a new capability family."
+  },
+  "focused_value_matrix": {
+    "tested_tids": [
+      "535",
+      "540",
+      "541"
+    ],
+    "tested_anchor_vids": [
+      "z4102qfi0x4",
+      "j4101ouc4ve"
+    ],
+    "tested_values": [
+      "missing",
+      "",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "8",
+      "9",
+      "-1",
+      "999",
+      "0003"
+    ],
+    "matrix_reading": [
+      "tid=535 stayed on the same richer detail shape across the tested union_platform values.",
+      "tid=540 stayed on the same thin positive shell with duration across the tested union_platform values.",
+      "tid=541 stayed on the same thinner positive shell without duration across the tested union_platform values.",
+      "No tested union_platform value promoted tid=540 or tid=541 toward the richer tid=535 field shape."
+    ]
+  },
+  "representative_repeated_key_cases": {
+    "repeat_union_platform_good_then_999": {
+      "baseline_judgment": "union_platform_ignored_or_repeated_key_no_observed_change",
+      "replay_judgment": "union_platform_ignored_or_repeated_key_no_observed_change"
+    },
+    "repeat_union_platform_999_then_good": {
+      "baseline_judgment": "union_platform_ignored_or_repeated_key_no_observed_change",
+      "replay_judgment": "union_platform_ignored_or_repeated_key_no_observed_change"
+    }
+  },
+  "environment_replay_reading": [
+    "Adding real anonymous visitor-cookie replay did not introduce a new signature split in the API2 contract matrix.",
+    "This includes the currently watched union_platform branch family plus XML/JSONP switching, callback-bearing JSONP, mixed valid+invalid batches, all-invalid JSONP batches, and 32/33 boundaries."
+  ],
+  "verdict": [
+    "Current evidence keeps union_platform in the scoped-negative bucket: changing or omitting it has not produced a visible branch split in the tested anonymous direct-call environments.",
+    "The strongest focused evidence is now three-layered: same-day anonymous repeated-key semantics, real anonymous visitor-cookie replay, and the 535/540/541 x union_platform capability sweep on two public anchor vids.",
+    "This is still not a global no-op proof and should not be promoted into one before aged-cookie or login-state replay exists."
+  ],
+  "formal_verdict": [
+    "Keep union_platform=3 for canonical caller-facing recipes.",
+    "Do not claim that union_platform is globally irrelevant; the current best reading only says no visible split has been observed in the tested anonymous and real-anonymous replay scope.",
+    "The next valuable closure step is cross-environment replay, not another generic anonymous rerun."
+  ],
+  "remaining_gaps_refined": [
+    "Aged-cookie replay under the same visitor flow",
+    "Real login-state replay",
+    "Broader public VID coverage outside the current two anchor vids and the tested 535/540/541 family",
+    "Whether any environment-specific gate makes union_platform matter only after session-state changes"
+  ]
+}

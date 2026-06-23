@@ -38,7 +38,7 @@
           {
             "when": "missing / 0 / abc",
             "errorno": "-111003",
-            "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+            "errormsg": "閿欒鐨則id, 濡傛灉鏂扮敵璇风殑鎺ュ彛,璇风瓑寰?0鍒嗛挓"
           }
         ],
       "current_best_reading": "Primary routing selector. 431 is the stable canonical positive branch. 453 is a separate positive cover-shell-only branch: it returns a non-empty cover shell across 3 public CIDs but still no video_ids, so it is not a field-equivalent replacement for 431. 483 is a thinner success shell that currently materializes video_ids while cover title/type stay empty. 476, 506, and 537 currently stay in the success-shell-without-sample family on the 3-CID matrix.",
@@ -71,7 +71,7 @@
           {
             "when": "missing / empty / spaces",
             "errorno": "-111004",
-            "errormsg": "错误的idlist"
+            "errormsg": "閿欒鐨刬dlist"
           },
           {
             "when": "\",\" or \",,\"",
@@ -197,12 +197,12 @@
           {
             "when": "missing / 0 / abc / -1",
             "errorno": "-111003",
-            "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+            "errormsg": "閿欒鐨則id, 濡傛灉鏂扮敵璇风殑鎺ュ彛,璇风瓑寰?0鍒嗛挓"
           },
           {
             "when": "536",
             "errorno": "-111005",
-            "errormsg": "获取配置错误"
+            "errormsg": "鑾峰彇閰嶇疆閿欒"
           },
           {
             "when": "431",
@@ -294,10 +294,10 @@
           "-1",
           "0003"
         ],
-        "shape_or_notes": "present in canonical examples; repeated union_platform showed no observed order effect in the tested XML anonymous branch, and a later anonymous `535/540/541 × union_platform` sweep did not change the richer-vs-thinner field shape on the tested public vids",
+        "shape_or_notes": "present in canonical examples; repeated union_platform showed no observed order effect in the tested XML canonical branch under same-day anonymous and real anonymous visitor-cookie replay, and a later anonymous `535/540/541 x union_platform` sweep did not change the richer-vs-thinner field shape on the tested public vids",
         "failure_signals": [],
-        "current_best_reading": "Keep 3 for canonical calls. Current evidence says changing or omitting union_platform shows no visible split in anonymous same-day runs, in the later real anonymous visitor-cookie replay, and in the tested `535/540/541 × union_platform` sweep on `z4102qfi0x4` and `j4101ouc4ve`. That is still scoped-negative evidence, not a global no-op proof.",
-        "environment_scope": "same-day anonymous matrix plus real anonymous visitor-cookie replay plus the tested anonymous `535/540/541 × union_platform` capability matrix",
+        "current_best_reading": "Keep 3 for canonical calls. Current evidence says changing or omitting union_platform shows no visible split in anonymous same-day runs, in the later real anonymous visitor-cookie replay, and in the tested `535/540/541 x union_platform` sweep on `z4102qfi0x4` and `j4101ouc4ve`. That is still scoped-negative evidence, not a global no-op proof.",
+        "environment_scope": "same-day anonymous matrix plus real anonymous visitor-cookie replay plus the tested anonymous `535/540/541 x union_platform` capability matrix",
         "status": "environment_open",
         "still_open": [
           "Whether union_platform matters under aged-cookie or real login-state replay remains open.",
@@ -319,7 +319,7 @@
           {
             "when": "missing / empty / spaces",
             "errorno": "-111004",
-            "errormsg": "错误的idlist"
+            "errormsg": "閿欒鐨刬dlist"
           },
           {
             "when": "\",\" or \",,\"",

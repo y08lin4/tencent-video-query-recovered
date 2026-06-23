@@ -379,7 +379,7 @@
       "recommended_fill_strategy": "Keep 3 for canonical calls. Do not hard-code this parameter as globally irrelevant; current evidence is only scoped-negative.",
       "accepted_shape": "string-like query value; many tested values still stayed on the same visible branch in anonymous scope",
       "success_discriminator": "Changing union_platform has not changed visible row shape in current anonymous same-day runs, real anonymous visitor-cookie replay, or the tested 535/540/541 anonymous sweep. That is not a global no-op proof.",
-      "duplicate_key_semantics": "repeated union_platform currently shows no observed order effect in the tested anonymous XML branch, but that does not prove a general parser rule",
+      "duplicate_key_semantics": "repeated union_platform currently shows no observed order effect in the tested same-day anonymous and real anonymous visitor-cookie replay XML canonical branch, but that does not prove a general parser rule",
       "unlocked_capabilities": [
         "no distinct capability unlocked in current tested environments"
       ],
@@ -400,8 +400,7 @@
       ],
       "evidence": [
         "analysis/parameter_contract_quick_reference_20260621.json",
-        "analysis/api2_union_platform_positive_tid_matrix_20260621.json",
-        "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json",
+        "analysis/union_platform_replay_anonymous_real_cookie_summary_20260623.json",
         "analysis/environment_replay_hard_block_table_20260622.json"
       ]
     },

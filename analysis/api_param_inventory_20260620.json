@@ -314,24 +314,30 @@
         },
         "union_platform": {
           "requiredness": "no_observed_effect_in_current_anonymous_canonical_branch",
-          "observed_role": "present in canonical examples but not validated by the current tested branch set",
+          "observed_role": "present in canonical examples; current tested anonymous and real-anonymous replay evidence still has not shown a visible branch split",
           "accepted_examples": [
             "missing",
             "",
             "0",
+            "1",
             "2",
             "3",
+            "4",
+            "8",
+            "9",
             "abc",
             "999",
-            "-1"
+            "-1",
+            "0003"
           ],
           "notes": [
-            "Current evidence says the anonymous canonical branch and the later real anonymous visitor-cookie replay both did not show a visible behavioral split on union_platform.",
+            "Current evidence says the anonymous canonical branch, the later real anonymous visitor-cookie replay, and the focused `535/540/541 x union_platform` sweep on two public anchor vids all failed to show a visible behavioral split on union_platform.",
             "This is still a black-box conclusion limited to same-day anonymous environments plus the real anonymous visitor-cookie replay.",
-            "Repeated `union_platform=3&999` versus `999&3` showed no observed change in the tested XML canonical branch, but that does not prove first-value-wins."
+            "Repeated `union_platform=3&999` versus `999&3` showed no observed change in the tested XML canonical branch and in the real-cookie replay counterpart, but that still does not prove a global first-value-wins parser rule."
           ],
           "open_questions": [
-            "Whether union_platform matters under aged-cookie or real login-state replay remains open."
+            "Whether union_platform matters under aged-cookie or real login-state replay remains open.",
+            "Whether union_platform matters on broader public vids outside the current `535/540/541` anchor sweep remains open."
           ]
         },
         "idlist": {

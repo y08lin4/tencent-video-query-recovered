@@ -471,13 +471,7 @@
         "Current callback precedence and error-shell wording is still scoped to anonymous plus real-anonymous replay evidence."
       ],
       "evidence": [
-        "analysis/api2_jsonp_callback_value_space_20260620.json",
-        "analysis/api2_jsonp_callback_unmatched_delimiter_summary_20260622.json",
-        "analysis/replay_bundle_real_full_semantics_summary_20260621.json",
-        "analysis/api2_jsonp_callback_contract_20260621.json",
-        "analysis/api2_jsonp_callback_contract_real_cookie_pc_20260621.json",
-        "analysis/api2_jsonp_callback_contract_real_cookie_mobile_20260621.json",
-        "analysis/api2_jsonp_callback_contract_real_cookie_summary_20260621.json",
+        "analysis/callback_replay_anonymous_real_cookie_summary_20260623.json",
         "analysis/environment_replay_hard_block_table_20260622.json"
       ]
     },

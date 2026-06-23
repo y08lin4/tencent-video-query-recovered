@@ -436,13 +436,8 @@
         "anonymous_real_cookie_callback_contract_anchor"
       ],
       "key_evidence": [
-        "analysis/api2_jsonp_callback_value_space_20260620.json",
-        "analysis/api2_jsonp_callback_pathological_tail_20260621.json",
-        "analysis/api2_jsonp_callback_unmatched_delimiter_summary_20260622.json",
-        "analysis/replay_bundle_semantics_callback_support_20260621.json",
-        "analysis/replay_bundle_artifact_dir_selfcheck_20260621.json",
-        "analysis/api2_jsonp_callback_contract_20260621.json",
-        "analysis/api2_jsonp_callback_contract_real_cookie_summary_20260621.json"
+        "analysis/callback_replay_anonymous_real_cookie_summary_20260623.json",
+        "analysis/replay_bundle_semantics_callback_support_20260621.json"
       ],
       "remaining_gaps": [
         "Broader parser-breaking families remain open beyond the newly widened unmatched-delimiter / odd-prefix representatives.",

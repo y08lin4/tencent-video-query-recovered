@@ -1,0 +1,95 @@
+{
+  "generated_at": "2026-06-23",
+  "artifact_kind": "callback_replay_summary",
+  "question": "What is the strongest caller-facing reading of API2 JSONP callback after combining same-day anonymous value-space probes, callback contract probes, and real anonymous visitor-cookie replay?",
+  "scope": "Compact callback summary for API2 JSONP auxiliary-parameter closure",
+  "source_artifacts": [
+    "analysis/api2_jsonp_callback_value_space_20260620.json",
+    "analysis/api2_jsonp_callback_pathological_tail_20260621.json",
+    "analysis/api2_jsonp_callback_unmatched_delimiter_summary_20260622.json",
+    "analysis/api2_jsonp_callback_contract_20260621.json",
+    "analysis/api2_jsonp_callback_contract_real_cookie_summary_20260621.json",
+    "analysis/replay_bundle_real_full_semantics_summary_20260621.json"
+  ],
+  "environments_covered": [
+    "same_day_anonymous",
+    "pc_web_real_cookie_replay",
+    "mobile_h5_real_cookie_replay"
+  ],
+  "stable_wrapper_families": {
+    "raw_passthrough_examples": [
+      "1",
+      "cb1",
+      "QZOutputJson",
+      "foo.bar",
+      "a-b",
+      "a[b]",
+      "$cb",
+      "foo bar",
+      "foo,bar",
+      "[0]",
+      "中文",
+      "a)",
+      "a;b",
+      "a'b",
+      "a\"b",
+      "a/",
+      "a\\",
+      "//a",
+      "/*a",
+      "[",
+      "[[",
+      "]",
+      "{",
+      "}",
+      "a]",
+      "a}",
+      "a))",
+      "a&b",
+      "a#b",
+      "a%20b",
+      "a=",
+      "a>"
+    ],
+    "fallback_default_examples": [
+      "callback="
+    ],
+    "parse_breaking_representatives": [
+      "a(",
+      "((",
+      "})();",
+      "[(",
+      "{(",
+      "/*(",
+      "a[(",
+      ")(",
+      "](",
+      "}("
+    ]
+  },
+  "contract_reading": [
+    "Repeated callback behaves as first-value-wins in the tested same-day anonymous JSONP collision cases.",
+    "The same repeated-callback precedence stays stable in the tested PC Web and Mobile H5 real anonymous visitor-cookie replay environments.",
+    "Wrong-appkey JSONP error shells still honor callback wrapper changes in the same tested environment set."
+  ],
+  "replay_reading": [
+    "A full-semantics anonymous real-cookie replay with callback-tail forwarding did not reveal a new callback-dependent parameter branch beyond the existing anonymous baseline.",
+    "In that replay scope, empty callback still falls back to `QZOutputJson`, while `a(`, `((`, and `})();` stay in the parse-breaking family."
+  ],
+  "verdict": [
+    "The current best reading is wrapper-level, not payload-level: callback can change wrapper prefix and parseability without proving a different backend payload branch.",
+    "The strongest caller-facing callback closure now combines value-space coverage, precedence/error-shell behavior, and anonymous real-cookie replay stability in one evidence line.",
+    "This is still not callback grammar closure and still not cross-session closure."
+  ],
+  "formal_verdict": [
+    "Use callback only with `otype=json` and only when you intentionally need custom JSONP wrapper control.",
+    "Do not infer that a custom callback unlocks a richer payload branch; current evidence only supports wrapper control plus a mixed raw-passthrough / parse-breaking value-space.",
+    "The next high-value callback closure step is aged-cookie or login-state replay, not another generic anonymous rerun."
+  ],
+  "remaining_gaps_refined": [
+    "Aged-cookie replay for callback precedence and wrong-appkey error-shell behavior",
+    "Real login-state replay for callback precedence and wrong-appkey error-shell behavior",
+    "Broader parser-breaking families beyond the current representative set",
+    "Any session-coupled callback behavior outside the current anonymous and anonymous-real-cookie replay scope"
+  ]
+}

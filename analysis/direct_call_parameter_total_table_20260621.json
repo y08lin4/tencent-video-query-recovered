@@ -69,6 +69,8 @@
         "analysis/api1_tid_shell_family_delta_20260623.json",
         "analysis/demo_validation_incremental_tid476_20260623.json",
         "analysis/direct_call_raw_http_validation_tid476_20260623.json",
+        "analysis/demo_validation_incremental_tid483_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid483_20260623.json",
         "analysis/demo_validation_incremental_tid506_api1_20260623.json",
         "analysis/direct_call_raw_http_validation_tid506_api1_20260623.json"
       ]
@@ -302,6 +304,7 @@
         "analysis/positive_tid_probe_456_521_summary_20260623.json",
         "analysis/tid_richness_matrix_extended_20260623.json",
         "analysis/api2_extended_tid_capability_delta_20260623.json",
+        "analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json",
         "analysis/demo_validation_incremental_api2_tid506_20260623.json",
         "analysis/direct_call_raw_http_validation_api2_tid506_20260623.json"
       ]
@@ -504,6 +507,32 @@
         "analysis/authish_extra_key_replay_anonymous_real_cookie_summary_20260621.json",
         "analysis/environment_replay_hard_block_table_20260622.json"
       ]
+    },
+    {
+      "parameter_family": "reserved_extra_keys_family",
+      "interface": "api1_and_api2_candidate_parameters",
+      "recommended_fill_strategy": "Do not depend on reserved-looking format/version/platform/source-like keys to unlock capability in direct calls. Keep them out unless you are deliberately extending the reserved-key hunt beyond the current tested anonymous set.",
+      "current_effect": "No observed visible split across the tested anonymous canonical branches on API1 XML, API2 XML, or API2 JSONP. On the tested API2 JSONP branch, these keys also did not change the wrapper root away from the baseline QZOutputJson assignment shell.",
+      "success_discriminator": "Current evidence supports a stronger mostly-closed negative reading than the auth-ish family: the tested keys behaved as ignored extras in the current anonymous scope, but this is still not a proof that every reserved-looking key is globally inert.",
+      "proven_environments": [
+        "same_day_anonymous"
+      ],
+      "not_tested_environments": [
+        "real_anonymous_visitor_cookie_replay",
+        "aged_cookie",
+        "login_state",
+        "broader_reserved_key_space"
+      ],
+      "environment_open_reason": "The first reserved-looking sweep is closed for the tested anonymous key set, but cross-environment replay and broader reserved-key discovery are still open.",
+      "still_open": [
+        "Whether a narrower reserved-looking key family exists outside the currently tested set `format/output/version/v/platform/source`.",
+        "Whether any reserved-looking key changes behavior only under real anonymous visitor-cookie replay, aged-cookie, or login-state environments."
+      ],
+      "evidence": [
+        "analysis/reserved_extra_key_sweep_20260620.json",
+        "analysis/parameter_closure_matrix_20260621.json",
+        "analysis/param_query_semantics_20260620.json"
+      ]
     }
   ],
   "source_artifacts": [
@@ -511,8 +540,14 @@
     "analysis/capability_quick_reference_20260621.json",
     "analysis/parameter_capability_index_20260621.json",
     "analysis/regression_samples_20260620.json",
+    "analysis/reserved_extra_key_sweep_20260620.json",
     "analysis/environment_replay_input_boundary_20260622.json",
     "analysis/environment_replay_hard_block_table_20260622.json",
-    "analysis/tid_richness_matrix_20260622.json"
+    "analysis/tid_richness_matrix_20260622.json",
+    "analysis/tid_richness_matrix_extended_20260623.json",
+    "analysis/appid_numeric_boundary_search_20260623.json",
+    "analysis/api1_tid_shell_family_delta_20260623.json",
+    "analysis/api2_extended_tid_capability_delta_20260623.json",
+    "analysis/tooling_entrypoint_quick_reference_20260621.json"
   ]
 }

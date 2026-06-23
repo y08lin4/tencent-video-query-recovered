@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-21",
-  "scope": "Tencent Video main-interface parameter closure canonical inventory refreshed through 2026-06-21 evidence, including the broader positive-tid sweep and anonymous real-cookie replay.",
+  "generated_at": "2026-06-23",
+  "scope": "Tencent Video main-interface parameter closure canonical inventory refreshed through 2026-06-23 evidence, including the later caller-facing shell validations, appid upper-edge cutovers, and anonymous real-cookie replay.",
   "method": [
     "Use repository evidence only: docs, examples, contract probes, environment matrix, and focused JSONP closure artifacts.",
     "Do not upgrade guesses about official backend naming into conclusions.",
@@ -18,9 +18,14 @@
       "confirmed_parameters": {
         "tid": {
           "requiredness": "hard_required",
-          "observed_role": "request routing / config selector; `431` is the current canonical working example, not a proof that no other positive tid exists",
+          "observed_role": "request routing / config selector; `431` is the current canonical caller-default, while later anonymous direct-call evidence now separates API1 into a canonical branch plus several thinner shell families rather than one flat positive class",
           "working_examples": [
-            "431"
+            "431",
+            "453",
+            "483",
+            "476",
+            "506",
+            "537"
           ],
           "failing_examples": [
             {
@@ -39,14 +44,15 @@
               "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
             }
           ],
-          "environment_status": "same-day stable on the current anonymous matrix; the added 418-421 and 526-536 probes only tightened local error boundaries, not positive hits.",
+          "environment_status": "same-day stable on the current anonymous matrix; later direct-call validation tightened the caller-facing family map to `431/453/476/483/506/537`, but aged-cookie/login-state replay is still open for these shells.",
           "notes": [
             "Repeated `tid` currently behaves as first-value-wins in the tested canonical anonymous branch.",
-            "Broader API1 slices around 418-421 and 526-536 only tightened error-family boundaries; they did not add another positive tid beyond `431` or another success-shell branch beyond `537`.",
+            "Later caller-facing validation now distinguishes `453` as a positive cover-shell-only branch, `483` as a video_ids-led thin success shell, `476` as an imgtag-family ultra-thin shell, `506` as an empty-valued field shell, and `537` as another thinner success-shell family for branch probing.",
+            "Broader API1 slices around 418-421, 446-455, 456-521, and 526-536 only tightened local boundaries around the currently known family map; they did not reveal another positive-detail branch outside `431` or another confirmed positive cover-shell family outside `453`.",
             "The later anonymous 641-647 jump-scan also found no new API1 positive branch; the strongest new detail there is a local `tid=642 -> -111013` wrinkle on the second sample, not a new positive family."
           ],
           "open_questions": [
-            "Whether API1 has other positive tid values besides `431` is still not closed."
+            "Whether API1 has another positive or success-shell tid beyond the current `431/453/476/483/506/537` family map is still not closed."
           ]
         },
         "idlist": {
@@ -100,7 +106,7 @@
         },
         "appid": {
           "requiredness": "conditional_branch_parameter",
-          "observed_role": "numeric canonical appid enables the stable documented appkey-validation branch; missing / text / `1` currently land on a looser anonymous-compatibility branch in the tested cases",
+          "observed_role": "numeric canonical appid enables the stable documented appkey-validation branch; current anonymous numeric evidence is at least three-way rather than simple canonical-vs-other: `1` still rides a looser success-bypass branch, far noncanonical numerics land on `appid no find`, and the searched near-canonical band lands on `appkey error`.",
           "working_examples": [
             "missing",
             "1",
@@ -112,15 +118,21 @@
               "value": "99999",
               "errorno": "10010108",
               "errormsg": "appid no find"
+            },
+            {
+              "value": "10001001-10001186",
+              "errorno": "10010110",
+              "errormsg": "appkey error"
             }
           ],
           "notes": [
             "`appid=10001005` is the current canonical numeric appid in repo examples and probes.",
             "Current evidence says API1 appid is not a simple always-required auth parameter.",
-            "Repeated `appid` currently behaves as first-value-wins in the tested bad-appkey collision controls between the canonical numeric branch and the text-bypass branch."
+            "Repeated `appid` currently behaves as first-value-wins in the tested bad-appkey collision controls between the canonical numeric branch and the text-bypass branch.",
+            "The searched anonymous cutovers are now tightened to `10001000 -> appid no find`, `10001001 -> appkey error`, `10001186 -> appkey error`, and `10001187 -> appid no find`."
           ],
           "open_questions": [
-            "Positive behavior for non-canonical but valid numeric appid values is not yet mapped."
+            "The tested anonymous numeric slice is now partially mapped, but the full numeric appid space is still not closed outside the searched cutovers and bands."
           ]
         },
         "appkey": {
@@ -144,10 +156,11 @@
             }
           ],
           "notes": [
-            "Repeated `appkey` currently behaves as first-value-wins in the tested canonical-appid branch when good and wrong appkey values collide."
+            "Repeated `appkey` currently behaves as first-value-wins in the tested canonical-appid branch when good and wrong appkey values collide.",
+            "Current anonymous numeric evidence still does not show that the canonical appkey satisfies the searched near-canonical appid family `10001001-10001186`; those values remain on `appkey error`."
           ],
           "open_questions": [
-            "No evidence yet that appkey alone unlocks additional API1 capability beyond satisfying the canonical numeric-appid branch."
+            "No evidence yet that appkey alone unlocks additional API1 capability beyond satisfying the exact canonical numeric-appid branch."
           ]
         }
       },
@@ -156,8 +169,9 @@
         "Current canonical anonymous-branch evidence says API1 ignores the tested extra keys `foo`, `callback`, and `_`, and still shows no wrapper-style behavior from them."
       ],
       "priority_gaps": [
-        "Positive alternative tid mapping",
-        "Whether broader reserved-looking extra keys besides the tested set change behavior"
+        "Positive/success-shell tid space beyond the current `431/453/476/483/506/537` family map",
+        "Whether broader reserved-looking extra keys besides the tested set change behavior",
+        "Whether the current API1 shell families drift under aged-cookie or login-state replay"
       ]
     },
     "api2": {
@@ -201,9 +215,12 @@
         },
         "tid": {
           "requiredness": "hard_required",
-          "observed_role": "request routing / config selector; `535` is the current canonical good example value, while `535`, `540`, and `541` are the currently confirmed positive API2 tids",
+          "observed_role": "request routing / config selector; `535` is the current canonical rich-detail branch, while later anonymous evidence now separates API2 into richer and thinner positive shells plus a near-empty success shell rather than one flat positive class",
           "working_examples": [
+            "488",
+            "502",
             "535",
+            "506",
             "540",
             "541"
           ],
@@ -236,11 +253,12 @@
           ],
           "notes": [
             "Repeated `tid` currently behaves as first-value-wins in the tested canonical anonymous branch.",
+            "Later caller-facing validation now distinguishes `488` as a thinner alternate positive shell, `502` as a richer alternate positive shell, `506` as a near-empty success shell, `540` as another thinner positive shell, and `541` as an even thinner positive shell relative to canonical `535`.",
             "Under anonymous real-cookie replay, the tested auth-ish extra-key semantics stayed unchanged across the currently confirmed positive API2 tid cluster `535/540/541`.",
             "The later anonymous 641-647 jump-scan did not reveal a new positive API2 cluster; the only new wrinkle was a local `tid=642 -> -111013` error-family branch on the second sample."
           ],
           "open_questions": [
-            "Whether API2 has any other positive tid values besides the currently confirmed `535/540/541` family is still open."
+            "Whether API2 has another positive or success-shell tid beyond the current `488/502/506/535/540/541` family map is still open."
           ]
         },
         "appid": {
@@ -260,10 +278,11 @@
           ],
           "notes": [
             "`appid=20001238` is the current canonical numeric appid in repo examples and probes.",
-            "Repeated `appid` currently behaves as first-value-wins in the tested bad-appkey collision controls between the canonical numeric branch and the text-bypass branch."
+            "Repeated `appid` currently behaves as first-value-wins in the tested bad-appkey collision controls between the canonical numeric branch and the text-bypass branch.",
+            "The searched anonymous cutovers are now tightened to `20001000 -> appid no find`, `20001001 -> appkey error`, `20002581 -> appkey error`, and `20002582 -> appid no find`."
           ],
           "open_questions": [
-            "Positive behavior for other numeric appid values is not yet mapped."
+            "The tested anonymous numeric slice is now partially mapped, but the full numeric appid space is still not closed outside the searched cutovers and bands."
           ]
         },
         "appkey": {
@@ -286,10 +305,11 @@
             }
           ],
           "notes": [
-            "Repeated `appkey` currently behaves as first-value-wins in the tested canonical-appid branch when good and wrong appkey values collide."
+            "Repeated `appkey` currently behaves as first-value-wins in the tested canonical-appid branch when good and wrong appkey values collide.",
+            "Current anonymous numeric evidence still does not show that the canonical appkey satisfies the searched near-canonical appid family `20001001-20002581`; those values remain on `appkey error`."
           ],
           "open_questions": [
-            "No evidence yet that appkey unlocks any API2 capability beyond satisfying the canonical numeric-appid branch."
+            "No evidence yet that appkey unlocks any API2 capability beyond satisfying the exact canonical numeric-appid branch."
           ]
         },
         "union_platform": {
@@ -373,14 +393,14 @@
           "name": "callback",
           "scope": "API2 JSONP wrapper branch only",
           "observed_role": "replaces the default `QZOutputJson=` assignment wrapper with a callback-style wrapper for a wide tested callback family, while the empty callback value falls back to the default assignment shell and some unmatched-delimiter values produce parse-breaking wrappers",
-          "status": "confirmed_auxiliary_wrapper_parameter_in_tested_jsonp_branch"
+          "status": "confirmed_auxiliary_wrapper_parameter_in_tested_jsonp_branch_and_real_anonymous_replay"
         }
       ],
       "current_non_goals": [
         "No strong repository evidence yet for versioned or auth-token query parameters on the two main API2 wrappers; beyond the confirmed API2 JSONP `callback` wrapper surface, the tested reserved-looking keys `format/output/version/v/platform/source` and the tested auth-ish keys `token/sign/sig/appver/access_token/authkey/openid` all stayed on the canonical anonymous branch behavior, and the auth-ish keys also stayed unchanged under the later real anonymous visitor-cookie replay."
       ],
       "priority_gaps": [
-        "Positive alternative tid mapping",
+        "Positive/success-shell tid space beyond the current `488/502/506/535/540/541` family map",
         "Login-state or aged-cookie effect on union_platform, now that live anonymous visitor-cookie replay is closed",
         "API2 JSONP callback behavior for parser-breaking punctuation beyond the tested empty/numeric/identifier/dotted/dash/bracket/dollar/space/comma/Unicode/close-paren/comment-like set",
         "Whether auth-leaning or session-coupled extra keys change behavior outside the now-closed anonymous plus real-anonymous replay branches, especially under login-state or aged-cookie replay"
@@ -393,7 +413,7 @@
     "notes": [
       "Current repo evidence for the two main endpoints only consistently exposes API1: `tid,idlist,appid,appkey` and API2: `otype,tid,appid,appkey,union_platform,idlist`.",
       "Current evidence also directly confirms one auxiliary wrapper surface outside that main key set: API2 JSONP `callback`, which changes the wrapper prefix across a wide tested value family while preserving the payload family, except that the empty callback value falls back to the default shell.",
-      "The next highest-value closure work is not broad hidden-parameter hunting but login-state/aged-cookie replay, broader positive tid discovery beyond the now-confirmed `535/540/541` API2 family, callback slash/backslash-like punctuation probing, and replaying the tested auth-ish keys outside the now-closed anonymous plus real-anonymous visitor-cookie branches."
+      "The next highest-value closure work is not broad hidden-parameter hunting but login-state/aged-cookie replay, broader positive tid discovery beyond the now-confirmed API1 `431/453/476/483/506/537` and API2 `488/502/506/535/540/541` family maps, callback punctuation probing, and replaying the tested auth-ish keys outside the now-closed anonymous plus real-anonymous visitor-cookie branches."
     ]
   },
   "replay_closure_tooling": {
@@ -446,7 +466,18 @@
     "analysis/positive_tid_summary_20260621.json",
     "analysis/positive_tid_api1_boundary_summary_20260621.json",
     "analysis/positive_tid_probe_641_647_summary_20260621.json",
+    "analysis/positive_tid_probe_446_455_summary_20260623.json",
+    "analysis/positive_tid_probe_456_521_summary_20260623.json",
+    "analysis/tid_richness_matrix_extended_20260623.json",
+    "analysis/api1_tid_shell_family_delta_20260623.json",
+    "analysis/api2_extended_tid_capability_delta_20260623.json",
+    "analysis/appid_numeric_boundary_search_20260623.json",
     "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json",
-    "analysis/authish_extra_key_replay_anonymous_real_cookie_summary_20260621.json"
+    "analysis/authish_extra_key_replay_anonymous_real_cookie_summary_20260621.json",
+    "analysis/demo_validation_incremental_tid483_20260623.json",
+    "analysis/direct_call_raw_http_validation_tid483_20260623.json",
+    "analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json",
+    "analysis/demo_validation_incremental_api2_tid506_20260623.json",
+    "analysis/direct_call_raw_http_validation_api2_tid506_20260623.json"
   ]
 }

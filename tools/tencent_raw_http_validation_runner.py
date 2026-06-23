@@ -312,6 +312,15 @@ def build_surface_specs() -> OrderedDict[str, dict[str, Any]]:
                 },
             ),
             (
+                "api1_tid483_video_ids_led_thin_shell",
+                {
+                    "url": f"{API1}?tid=483&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+                    "parser": parse_api1_summary,
+                    "validator": validate_api1_tid483_video_ids_led_thin_shell,
+                    "intent": "Direct API1 tid=483 video_ids-led thin success shell on a public CID.",
+                },
+            ),
+            (
                 "api2_single_detail_xml_canonical",
                 {
                     "url": f"{API2}?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
@@ -336,6 +345,15 @@ def build_surface_specs() -> OrderedDict[str, dict[str, Any]]:
                     "parser": parse_api2_xml_summary,
                     "validator": validate_api2_tid502_alt_positive_shell,
                     "intent": "Alternate positive API2 tid=502 richer shell.",
+                },
+            ),
+            (
+                "api2_single_detail_xml_tid506_near_empty_success_shell",
+                {
+                    "url": f"{API2}?otype=xml&tid=506&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+                    "parser": parse_api2_xml_summary,
+                    "validator": validate_api2_tid506_near_empty_success_shell,
+                    "intent": "API2 tid=506 near-empty success shell.",
                 },
             ),
             (
@@ -456,6 +474,25 @@ def validate_api1_tid453_cover_shell_only(summary: dict[str, Any]) -> tuple[bool
     return ok, "success_with_cover_shell_only_branch" if ok else "failure", highlights
 
 
+def validate_api1_tid483_video_ids_led_thin_shell(summary: dict[str, Any]) -> tuple[bool, str, list[str]]:
+    video_ids_count = int(summary.get("video_ids_count") or 0)
+    ok = (
+        normalize_str(summary.get("errorno")) == "0"
+        and not has_value(summary.get("cover_title"))
+        and not has_value(summary.get("cover_type"))
+        and not has_value(summary.get("pay_status"))
+        and video_ids_count >= 1
+    )
+    highlights = [
+        f"errorno={normalize_str(summary.get('errorno')) or '-'}",
+        f"cover_title={normalize_str(summary.get('cover_title')) or '-'}",
+        f"cover_type={normalize_str(summary.get('cover_type')) or '-'}",
+        f"pay_status={normalize_str(summary.get('pay_status')) or '-'}",
+        f"video_ids_count={video_ids_count}",
+    ]
+    return ok, "success_with_video_ids_led_shell" if ok else "failure", highlights
+
+
 def validate_api2_single_detail_xml_canonical(summary: dict[str, Any]) -> tuple[bool, str, list[str]]:
     row = first_row(summary)
     ok = (
@@ -550,6 +587,36 @@ def validate_api2_tid502_alt_positive_shell(summary: dict[str, Any]) -> tuple[bo
         f"has_create_time={has_value(row.get('create_time'))}",
     ]
     return ok, "success_with_richer_alt_positive_shell" if ok else "failure", highlights
+
+
+def validate_api2_tid506_near_empty_success_shell(summary: dict[str, Any]) -> tuple[bool, str, list[str]]:
+    row = first_row(summary)
+    ok = (
+        normalize_str(summary.get("errorno")) == "0"
+        and normalize_str(row.get("retcode")) == "0"
+        and bool(row.get("empty_shell"))
+        and not has_value(row.get("title"))
+        and not has_value(row.get("url"))
+        and not has_value(row.get("vid"))
+        and not has_value(row.get("duration_seconds"))
+        and row_cover_list_count(row) == 0
+        and not has_value(row.get("create_time"))
+        and not has_value(row.get("state"))
+        and not has_value(row.get("upload_src"))
+        and not has_value(row.get("defn"))
+        and bool(summary.get("all_results_empty_shell"))
+    )
+    highlights = [
+        f"retcode={normalize_str(row.get('retcode')) or '-'}",
+        f"empty_shell={bool(row.get('empty_shell'))}",
+        f"has_title={has_value(row.get('title'))}",
+        f"has_url={has_value(row.get('url'))}",
+        f"has_vid={has_value(row.get('vid'))}",
+        f"has_duration={has_value(row.get('duration_seconds'))}",
+        f"cover_list_count={row_cover_list_count(row)}",
+        f"all_results_empty_shell={bool(summary.get('all_results_empty_shell'))}",
+    ]
+    return ok, "success_with_near_empty_shell" if ok else "failure", highlights
 
 
 def validate_api2_tid541_alt_positive_shell(summary: dict[str, Any]) -> tuple[bool, str, list[str]]:
@@ -762,6 +829,8 @@ def build_report(args: argparse.Namespace, specs: OrderedDict[str, dict[str, Any
                 "current_reading",
                 [
                     "This runner validates raw HTTP behavior only in the current anonymous direct-call scope.",
+                    "API1 tid=483 should still be read as a video_ids-led thin shell: errorno=0 plus non-empty video_ids_count does not mean canonical 431 cover richness.",
+                    "API2 tid=506 should still be read as a near-empty success shell: top-level success plus retcode=0 does not currently rise into caller-facing detail fields on the dedicated raw XML validation sample.",
                     "Alternate tid 488/502/540/541 rows are expected to succeed as positive shells rather than canonical-full detail rows.",
                     "Within that alternate family, tid=502 currently sits on a richer shell than tid=488/540/541, but still below canonical 535 detail fullness.",
                     "The all-invalid JSONP row is a consumer-rule validation, not a content-extraction success row.",

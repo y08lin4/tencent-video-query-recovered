@@ -328,6 +328,49 @@ def validate_api1_tid453_cover_shell(
     return all(checks), "success_with_cover_shell_only_branch" if all(checks) else "failure", highlights
 
 
+def validate_api1_tid483_video_ids_shell(
+    payload: dict[str, Any], expected_cid: str
+) -> tuple[bool, str, list[str]]:
+    cover = payload_cover_info(payload)
+    covers = payload_cover_infos(payload)
+    api1_params = payload_api1_params(payload)
+    api1_diagnostics = payload_api1_batch_diagnostics(payload)
+    rows = payload_video_details(payload)
+    row = first_row(payload)
+    actual_cid = normalize_str(dict_get(payload, "cid"))
+    actual_tid = normalize_str(dict_get(api1_params, "tid"))
+    cover_title = normalize_str(dict_get(cover, "title"))
+    cover_type = normalize_str(dict_get(cover, "type"))
+    pay_status = normalize_str(dict_get(cover, "pay_status"))
+    video_ids_count = len(dict_get(cover, "video_ids") or [])
+    aggregated_video_ids_count = int(dict_get(api1_diagnostics, "aggregated_video_ids_count") or 0)
+    checks = [
+        actual_cid == expected_cid,
+        actual_tid == "483",
+        len(covers) > 0,
+        not has_value(cover_title),
+        not has_value(cover_type),
+        not has_value(pay_status),
+        video_ids_count >= 1,
+        aggregated_video_ids_count >= 1,
+        len(rows) >= 1,
+        normalize_str(dict_get(row, "retcode")) == "0",
+        not bool(dict_get(row, "empty_shell")),
+    ]
+    highlights = [
+        f"cid={actual_cid or '-'}",
+        f"api1 tid={actual_tid or '-'}",
+        f"cover_title={cover_title or '-'}",
+        f"cover_type={cover_type or '-'}",
+        f"pay_status={pay_status or '-'}",
+        f"cover_video_ids_count={video_ids_count}",
+        f"aggregated_video_ids_count={aggregated_video_ids_count}",
+        f"video_details_count={len(rows)}",
+        f"first_result_retcode={normalize_str(dict_get(row, 'retcode')) or '-'}",
+    ]
+    return all(checks), "success_with_video_ids_led_shell" if all(checks) else "failure", highlights
+
+
 def validate_jsonp_callback(payload: dict[str, Any], callback: str) -> tuple[bool, str, list[str]]:
     row = first_row(payload)
     api2_params = payload_api2_params(payload)
@@ -438,6 +481,42 @@ def validate_api2_tid502_richer_positive_shell(payload: dict[str, Any]) -> tuple
         f"has_create_time={has_value(dict_get(row, 'create_time'))}",
     ]
     return all(checks), "success_with_richer_alt_positive_shell" if all(checks) else "failure", highlights
+
+
+def validate_api2_tid506_near_empty_success_shell(
+    payload: dict[str, Any]
+) -> tuple[bool, str, list[str]]:
+    row = first_row(payload)
+    api2_params = payload_api2_params(payload)
+    diagnostics = payload_batch_diagnostics(payload)
+    actual_tid = normalize_str(dict_get(api2_params, "tid"))
+    checks = [
+        actual_tid == "506",
+        normalize_str(dict_get(row, "retcode")) == "0",
+        bool(dict_get(row, "empty_shell")),
+        not has_value(dict_get(row, "title")),
+        not has_value(dict_get(row, "url")),
+        not has_value(dict_get(row, "vid")),
+        not has_value(dict_get(row, "duration_seconds")),
+        row_cover_list_count(row) == 0,
+        not has_value(dict_get(row, "create_time")),
+        not has_value(dict_get(row, "state")),
+        not has_value(dict_get(row, "upload_src")),
+        not has_value(dict_get(row, "defn")),
+        bool(dict_get(diagnostics, "all_results_empty_shell")),
+    ]
+    highlights = [
+        f"api2 tid={actual_tid or '-'}",
+        f"first retcode={normalize_str(dict_get(row, 'retcode')) or '-'}",
+        f"first_result_empty_shell={bool(dict_get(row, 'empty_shell'))}",
+        f"has_title={has_value(dict_get(row, 'title'))}",
+        f"has_url={has_value(dict_get(row, 'url'))}",
+        f"has_vid={has_value(dict_get(row, 'vid'))}",
+        f"has_duration={has_value(dict_get(row, 'duration_seconds'))}",
+        f"cover_list_count={row_cover_list_count(row)}",
+        f"batch_all_results_empty_shell={bool(dict_get(diagnostics, 'all_results_empty_shell'))}",
+    ]
+    return all(checks), "success_with_near_empty_shell" if all(checks) else "failure", highlights
 
 
 def validate_alt_positive_tid_union_platform(
@@ -707,6 +786,22 @@ def build_surface_specs(args: argparse.Namespace) -> OrderedDict[str, dict[str, 
                 },
             ),
             (
+                "python_api1_tid483_video_ids_led_thin_shell",
+                {
+                    "demo": "python",
+                    "command": python_command(
+                        "--cid",
+                        "mzc00200idzf2m8",
+                        "--api1-tid",
+                        "483",
+                        "--json",
+                        python_bin=args.python_bin,
+                    ),
+                    "validator": lambda payload: validate_api1_tid483_video_ids_shell(payload, "mzc00200idzf2m8"),
+                    "intent": "API1 tid=483 video_ids-led thin success shell on a public CID.",
+                },
+            ),
+            (
                 "go_api1_tid537_probe_shell",
                 {
                     "demo": "go",
@@ -736,6 +831,22 @@ def build_surface_specs(args: argparse.Namespace) -> OrderedDict[str, dict[str, 
                     ),
                     "validator": lambda payload: validate_api1_tid453_cover_shell(payload, "mzc00200idzf2m8"),
                     "intent": "API1 tid=453 positive cover-shell-only branch on a public CID.",
+                },
+            ),
+            (
+                "go_api1_tid483_video_ids_led_thin_shell",
+                {
+                    "demo": "go",
+                    "command": go_command(
+                        "-cid",
+                        "mzc00200idzf2m8",
+                        "-api1-tid",
+                        "483",
+                        "-json",
+                        go_bin=args.go_bin,
+                    ),
+                    "validator": lambda payload: validate_api1_tid483_video_ids_shell(payload, "mzc00200idzf2m8"),
+                    "intent": "API1 tid=483 video_ids-led thin success shell on a public CID.",
                 },
             ),
             (
@@ -836,6 +947,38 @@ def build_surface_specs(args: argparse.Namespace) -> OrderedDict[str, dict[str, 
                     ),
                     "validator": validate_api2_tid502_richer_positive_shell,
                     "intent": "Alternate positive tid 502 richer shell on a public sample.",
+                },
+            ),
+            (
+                "python_api2_tid506_near_empty_success_shell",
+                {
+                    "demo": "python",
+                    "command": python_command(
+                        "--vid",
+                        "z4102qfi0x4",
+                        "--api2-tid",
+                        "506",
+                        "--json",
+                        python_bin=args.python_bin,
+                    ),
+                    "validator": validate_api2_tid506_near_empty_success_shell,
+                    "intent": "API2 tid 506 near-empty success shell on a public sample.",
+                },
+            ),
+            (
+                "go_api2_tid506_near_empty_success_shell",
+                {
+                    "demo": "go",
+                    "command": go_command(
+                        "-vids",
+                        "z4102qfi0x4",
+                        "-api2-tid",
+                        "506",
+                        "-json",
+                        go_bin=args.go_bin,
+                    ),
+                    "validator": validate_api2_tid506_near_empty_success_shell,
+                    "intent": "API2 tid 506 near-empty success shell on a public sample.",
                 },
             ),
             (
@@ -1260,6 +1403,8 @@ def build_report(
                 [
                     "This runner is scoped to anonymous direct-call demo surfaces that already have documented evidence in the repository.",
                     "A passing rerun strengthens example replayability, but it does not close aged-cookie or login-state gaps by itself.",
+                    "API1 tid=483 should still be read as a video_ids-led thin shell: the cover shell stays empty even though downstream canonical API2 detail materialization can succeed through the exposed video_ids family.",
+                    "API2 tid=506 should still be read as a near-empty success shell: top-level success plus retcode=0 does not currently rise into caller-facing title/url/duration/state/upload_src fields on the dedicated demo validation sample.",
                     "Alternate positive tid 488/502/540/541 should still be read as positive shells, not as field-equivalent replacements for canonical tid=535.",
                     "Within that alternate family, tid=502 currently sits on a richer shell than tid=488/540/541, but still below canonical 535 detail fullness.",
                 ],

@@ -118,6 +118,10 @@
   - Python / Go 对 `API2 tid=488/502` 的增量 live validation：`488` 当前稳定是 title+url 的更薄正壳，`502` 当前稳定是带 `vid + duration + cover_list + create_time` 的较厚 alternate shell
 - [analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json)
   - `API2 tid=488/502` 的 caller-facing raw HTTP live validation：把这两条 alternate shell 直接按原生 HTTP 坐实到可回归层
+- [analysis/demo_validation_incremental_api2_tid506_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/demo_validation_incremental_api2_tid506_20260623.json)
+  - Python / Go demo 对 `API2 tid=506` 的 live validation：当前 caller-facing 输出稳定是 near-empty success shell，`retcode=0` 但 row 仍然 `empty_shell=true`
+- [analysis/direct_call_raw_http_validation_api2_tid506_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_api2_tid506_20260623.json)
+  - `API2 tid=506` 的 caller-facing raw HTTP live validation：原生 XML 直调也稳定落在 near-empty success shell，而不是更厚的 positive-detail branch
 - [analysis/tid_richness_matrix_20260622.json](C:/Users/lin/Documents/YM查询工具还原/analysis/tid_richness_matrix_20260622.json)
   - `431/537` 与 `535/540/541` 的多样本字段丰度矩阵：`537` 在 3 个 public CID 上都还是 sample-less success shell；`540` 在 3 个 public VID 上稳定是 score-3 薄正壳；`541` 在 3 个 public VID 上稳定是 score-2 更薄正壳
 - [analysis/tid_richness_matrix_extended_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/tid_richness_matrix_extended_20260623.json)
@@ -126,6 +130,10 @@
   - Python / Go demo 对 `API1 tid=453` 的 live validation：当前 caller-facing 输出稳定是 cover-only positive shell，不会继续产出 API2 详情
 - [analysis/direct_call_raw_http_validation_tid453_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_tid453_20260623.json)
   - `API1 tid=453` 的 caller-facing raw HTTP live validation：`errorno=0`、非空 `cover_title`、`video_ids_count=0`
+- [analysis/demo_validation_incremental_tid483_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/demo_validation_incremental_tid483_20260623.json)
+  - Python / Go demo 对 `API1 tid=483` 的 live validation：当前 caller-facing 输出稳定是 video_ids-led thin shell，API1 cover 壳仍然为空，但 downstream canonical API2 详情链仍可继续 materialize
+- [analysis/direct_call_raw_http_validation_tid483_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_tid483_20260623.json)
+  - `API1 tid=483` 的 caller-facing raw HTTP live validation：`errorno=0`、`cover_title/type/pay_status` 为空、`video_ids_count>=1`
 - [analysis/parameter_closure_matrix_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/parameter_closure_matrix_20260621.json)
   - 参数闭环矩阵：把 API1/API2 每个已暴露参数以及 `callback / auth-ish extra keys / reserved extra keys` 这些候选参数家族收成统一台账，明确 `requiredness / role / 失败形态 / 依赖分支 / 环境范围 / 已解锁能力 / 剩余缺口`
 - [analysis/parameter_contract_quick_reference_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/parameter_contract_quick_reference_20260621.json)
@@ -352,7 +360,7 @@ URL -> CID -> 接口1 -> VID -> 接口2 -> 结果
 ## 当前内容重点
 
 - URL 可先提取 `CID`
-- 接口 1 返回 XML；canonical `tid=431` 下最核心的可消费字段家族是 `video_ids`，但 API1 还存在 `453/537` 这类更薄的 success shell，不应把“成功”默认等同于“必有 video_ids”
+- 接口 1 返回 XML；canonical `tid=431` 下最核心的可消费字段家族是 `video_ids`，但 API1 还存在 `453/483/537` 这类不同厚度的非 canonical success shell，不应把“成功”默认等同于“必有完整 cover 壳”或“必有 canonical 丰度”
 - 接口 2 默认返回 XML；当且仅当单个 `otype` key 为精确小写 `json` 时返回 JSONP，`defn` 字段本身仍是 JSON 字符串
 - 接口 2 的批量返回是重复 `<results>` 块，不是旧假设里的 `<field>` 列表
 - `defn` 里的关键键包括：

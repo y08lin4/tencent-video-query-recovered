@@ -9,7 +9,7 @@
 - 哪些默认值最稳
 - 哪些结论只在当前匿名 direct-call scope 下成立
 
-## 0. 先看这 9 份
+## 0. 先看这些
 
 - 参数 quick reference：
   [analysis/parameter_contract_quick_reference_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/parameter_contract_quick_reference_20260621.json)
@@ -23,6 +23,10 @@
   [analysis/direct_call_raw_http_validation_tid537_20260622.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_tid537_20260622.json)
 - API1 `tid=453` 独立 raw validation：
   [analysis/direct_call_raw_http_validation_tid453_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_tid453_20260623.json)
+- API1 `tid=483` 独立 raw validation：
+  [analysis/direct_call_raw_http_validation_tid483_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_tid483_20260623.json)
+- API2 `tid=506` 独立 raw validation：
+  [analysis/direct_call_raw_http_validation_api2_tid506_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_api2_tid506_20260623.json)
 - 能力 quick reference：
   [analysis/capability_quick_reference_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/capability_quick_reference_20260621.json)
 - 能力总表增强版：
@@ -41,8 +45,10 @@ python tools/tencent_demo_validation_runner.py --output analysis/demo_validation
 它当前覆盖的是：
 
 - canonical `CID -> API1 -> API2 XML`
+- API1 `tid=453/483/537` 非 canonical caller-facing shells
 - API2 JSONP callback override
 - API2 alternate positive tid `488/502/540/541`
+- API2 `tid=506` near-empty success shell
 - canonical XML 双 `VID` batch
 - all-invalid JSONP batch 的 caller-side consumer rule
 
@@ -57,9 +63,11 @@ python tools/tencent_raw_http_validation_runner.py --timeout 60 --retries 3 --st
 - API1 canonical single-CID
 - API1 direct multi-CID
 - API1 `tid=453` cover-only positive shell
+- API1 `tid=483` video_ids-led thin shell
 - API1 `tid=537` sample-less shell probe
 - API2 canonical XML / JSONP
 - API2 alternate positive tid `488/502/540/541`
+- API2 `tid=506` near-empty success shell
 - `tid=541 + union_platform=0003` thin-shell spot-check
 - API2 canonical multi-VID batch spot-check
 - all-invalid JSONP batch 的 caller-side success rule
@@ -76,16 +84,29 @@ python tools/tencent_raw_http_validation_runner.py --surface api1_tid537_probe_s
 python tools/tencent_raw_http_validation_runner.py --surface api1_tid453_cover_shell_only --strict --output analysis/direct_call_raw_http_validation_tid453_20260623.json
 ```
 
+如果你只想补跑 `API1 tid=483` 的 caller-facing raw 证据，不想重跑整套 raw matrix，直接用：
+
+```bash
+python tools/tencent_raw_http_validation_runner.py --surface api1_tid483_video_ids_led_thin_shell --strict --output analysis/direct_call_raw_http_validation_tid483_20260623.json
+```
+
 如果你只想补跑 `API2 tid=488/502` 的 caller-facing raw 证据，不想重跑整套 raw matrix，直接用：
 
 ```bash
 python tools/tencent_raw_http_validation_runner.py --surface api2_single_detail_xml_tid488_alt_positive_shell --surface api2_single_detail_xml_tid502_alt_positive_shell --strict --output analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json
 ```
 
+如果你只想补跑 `API2 tid=506` 的 caller-facing raw 证据，不想重跑整套 raw matrix，直接用：
+
+```bash
+python tools/tencent_raw_http_validation_runner.py --surface api2_single_detail_xml_tid506_near_empty_success_shell --strict --output analysis/direct_call_raw_http_validation_api2_tid506_20260623.json
+```
+
 当前口径要收紧地读：
 
 - 这份 raw validation 只覆盖匿名 direct-call scope
 - `488/540/541` 与 `541 + union_platform=0003` 仍然只应读成 thin positive shell，`502` 则应读成 richer alternate shell
+- `506` 当前已经补到 dedicated demo/raw validation，但验证结果是稳定 near-empty success shell，不是更厚的 positive-detail branch
 - batch 行当前是 canonical multi-VID branch spot-check，不是重新做了一次 `32/33` 饱和边界实验
 
 工具入口总表：
@@ -173,6 +194,33 @@ go.exe -cid <CID> -api1-tid 453 -json
 - 这不是 `431` 的等价替代
 - 到 `2026-06-23` 为止，它在 3 个 public CID 上都重复成了 non-empty cover shell + empty `video_ids` 的正向分支
 - 也就是说，`errorno=0` 和非空标题不代表你会拿到 `video_ids` 家族或继续走 canonical API2 详情链路
+
+如果你想显式探 API1 的独立 `tid=483` video_ids-led thin shell，而不是走 canonical `431`：
+
+raw API：
+
+```text
+https://data.video.qq.com/fcgi-bin/data?tid=483&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b
+```
+
+Python：
+
+```bash
+python examples/python/tencent_video_api_demo.py --cid <CID> --api1-tid 483 --json
+```
+
+Go：
+
+```bash
+go.exe -cid <CID> -api1-tid 483 -json
+```
+
+当前最稳读法：
+
+- 这不是 `431` 的等价替代
+- 到 `2026-06-23` 为止，它在 3 个 public CID 上都重复成了 `cover_title/type/pay_status` 为空、但 `video_ids` 非空的 thin shell
+- 对 raw API1 来说，这意味着它更像“只把节目链路往下游推给 `video_ids`”的成功壳
+- 对 Python/Go demo 来说，这条壳仍然能继续驱动 downstream canonical API2 详情查询，但这不等于 API1 自己已经恢复出 canonical `431` 的 cover 丰度
 
 如果你想显式探 API1 的独立 `tid=537` success shell，而不是走 canonical `431`：
 
@@ -301,13 +349,14 @@ go.exe -vids <VID> -api2-otype json -json
 - 只有**精确小写** `otype=json` 会切到 JSONP
 - 其他值当前不要当成稳定 JSONP 入口
 
-## 6. 你想探 alternate positive tid
+## 6. 你想探 alternate / success-shell tid
 
-当前已确认 API2 正 family：
+当前已确认 API2 正/成功壳 family：
 
 - `535`
 - `488`
 - `502`
+- `506`
 - `540`
 - `541`
 
@@ -316,15 +365,17 @@ go.exe -vids <VID> -api2-otype json -json
 - `535` 是 canonical full-detail branch
 - `488` 当前更像 `title + url` 的更薄 **alternate positive shell**
 - `502` 当前更像 `title + url + vid + duration + cover_list + create_time` 的较厚 **alternate positive shell**
+- `506` 当前更像 `retcode=0` 但 caller-facing row 仍然 `empty_shell=true` 的 **near-empty success shell**
 - `540` 当前更像 `title + duration + url` 的 score-3 **alternate positive shell**
 - `541` 当前更像 `title + url` 的 score-2 **alternate positive shell**
-- 不要默认它们字段丰满度等同于 `535`，也不要把 `488` 和 `502` 混成同一厚度
+- 不要默认它们字段丰满度等同于 `535`，也不要把 `488` 和 `502` 混成同一厚度；`506` 更不能被当成“更薄一点的 535”
 
 Python 例子：
 
 ```bash
 python examples/python/tencent_video_api_demo.py --vid <VID> --api2-tid 488 --json
 python examples/python/tencent_video_api_demo.py --vid <VID> --api2-tid 502 --json
+python examples/python/tencent_video_api_demo.py --vid <VID> --api2-tid 506 --json
 python examples/python/tencent_video_api_demo.py --vid <VID> --api2-tid 540 --json
 python examples/python/tencent_video_api_demo.py --vid <VID> --api2-tid 541 --json
 ```
@@ -334,6 +385,7 @@ Go 例子：
 ```bash
 go.exe -vids <VID> -api2-tid 488 -json
 go.exe -vids <VID> -api2-tid 502 -json
+go.exe -vids <VID> -api2-tid 506 -json
 go.exe -vids <VID> -api2-tid 540 -json
 go.exe -vids <VID> -api2-tid 541 -json
 ```

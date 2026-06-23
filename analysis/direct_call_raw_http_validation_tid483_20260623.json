@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-06-23",
+  "scope": "Live raw HTTP validation summary for the highest-value Tencent Video direct-call rows in the current anonymous scope.",
+  "runner_inputs": {
+    "selected_surfaces": [
+      "api1_tid483_video_ids_led_thin_shell"
+    ],
+    "timeout_seconds": 30,
+    "retries": 2
+  },
+  "results": [
+    {
+      "surface": "api1_tid483_video_ids_led_thin_shell",
+      "intent": "Direct API1 tid=483 video_ids-led thin success shell on a public CID.",
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=483&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "result": "http_success",
+          "body_prefix": "<root><costtime>4</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1782188343</resptime><results><fields><vi"
+        }
+      ],
+      "summary": {
+        "errorno": "0",
+        "errormsg": "",
+        "cover_title": "",
+        "cover_type": "",
+        "pay_status": "",
+        "video_ids_count": 1,
+        "video_ids_head": [
+          "z4102qfi0x4"
+        ]
+      },
+      "result": "success_with_video_ids_led_shell",
+      "ok": true,
+      "highlights": [
+        "errorno=0",
+        "cover_title=-",
+        "cover_type=-",
+        "pay_status=-",
+        "video_ids_count=1"
+      ]
+    }
+  ],
+  "failed_surfaces": [],
+  "current_reading": [
+    "This runner validates raw HTTP behavior only in the current anonymous direct-call scope.",
+    "API1 tid=483 should still be read as a video_ids-led thin shell: errorno=0 plus non-empty video_ids_count does not mean canonical 431 cover richness.",
+    "Alternate tid 488/502/540/541 rows are expected to succeed as positive shells rather than canonical-full detail rows.",
+    "Within that alternate family, tid=502 currently sits on a richer shell than tid=488/540/541, but still below canonical 535 detail fullness.",
+    "The all-invalid JSONP row is a consumer-rule validation, not a content-extraction success row.",
+    "The current batch row is a canonical multi-VID spot-check on the known batch-capable branch, not a fresh 32-slot saturation replay."
+  ]
+}

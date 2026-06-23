@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-06-23",
+  "scope": "Live raw HTTP validation summary for the highest-value Tencent Video direct-call rows in the current anonymous scope.",
+  "runner_inputs": {
+    "selected_surfaces": [
+      "api2_single_detail_xml_tid506_near_empty_success_shell"
+    ],
+    "timeout_seconds": 30,
+    "retries": 2
+  },
+  "results": [
+    {
+      "surface": "api2_single_detail_xml_tid506_near_empty_success_shell",
+      "intent": "API2 tid=506 near-empty success shell.",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=506&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "result": "http_success",
+          "body_prefix": "<root><costtime>6</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1782188690</resptime><results><fields><de"
+        }
+      ],
+      "summary": {
+        "errorno": "0",
+        "rows": [
+          {
+            "result_id": "z4102qfi0x4",
+            "retcode": "0",
+            "vid": "",
+            "title": "",
+            "duration_seconds": "",
+            "url": "",
+            "cover_list": [],
+            "category_map": [],
+            "state": "",
+            "upload_src": "",
+            "create_time": "",
+            "modify_time": "",
+            "vwh": [],
+            "defn": {},
+            "empty_shell": true
+          }
+        ],
+        "results_count": 1,
+        "empty_shell_count": 1,
+        "all_results_empty_shell": true
+      },
+      "result": "success_with_near_empty_shell",
+      "ok": true,
+      "highlights": [
+        "retcode=0",
+        "empty_shell=True",
+        "has_title=False",
+        "has_url=False",
+        "has_vid=False",
+        "has_duration=False",
+        "cover_list_count=0",
+        "all_results_empty_shell=True"
+      ]
+    }
+  ],
+  "failed_surfaces": [],
+  "current_reading": [
+    "This runner validates raw HTTP behavior only in the current anonymous direct-call scope.",
+    "API1 tid=483 should still be read as a video_ids-led thin shell: errorno=0 plus non-empty video_ids_count does not mean canonical 431 cover richness.",
+    "API2 tid=506 should still be read as a near-empty success shell: top-level success plus retcode=0 does not currently rise into caller-facing detail fields on the dedicated raw XML validation sample.",
+    "Alternate tid 488/502/540/541 rows are expected to succeed as positive shells rather than canonical-full detail rows.",
+    "Within that alternate family, tid=502 currently sits on a richer shell than tid=488/540/541, but still below canonical 535 detail fullness.",
+    "The all-invalid JSONP row is a consumer-rule validation, not a content-extraction success row.",
+    "The current batch row is a canonical multi-VID spot-check on the known batch-capable branch, not a fresh 32-slot saturation replay."
+  ]
+}

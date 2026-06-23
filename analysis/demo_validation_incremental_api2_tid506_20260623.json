@@ -1,0 +1,157 @@
+{
+  "generated_at": "2026-06-23T12:24:49",
+  "runner_script": "C:\\Users\\lin\\Documents\\YM查询工具还原\\tools\\tencent_demo_validation_runner.py",
+  "runner_go_execution_mode": "powershell_wrapped_toolchain_go_run_when_go_bin_is_go",
+  "scope": "Rerunnable validation summary for the repository's Python and Go direct-call demo surfaces.",
+  "runner_inputs": {
+    "selected_surfaces": [
+      "python_api2_tid506_near_empty_success_shell",
+      "go_api2_tid506_near_empty_success_shell"
+    ],
+    "demo_filter": "both",
+    "python_bin": "C:\\Users\\lin\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "go_bin": "go",
+    "timeout_seconds": 60,
+    "retries": 2
+  },
+  "results": [
+    {
+      "surface": "python_api2_tid506_near_empty_success_shell",
+      "demo": "python",
+      "intent": "API2 tid 506 near-empty success shell on a public sample.",
+      "command": [
+        "C:\\Users\\lin\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "C:\\Users\\lin\\Documents\\YM查询工具还原\\examples\\python\\tencent_video_api_demo.py",
+        "--vid",
+        "z4102qfi0x4",
+        "--api2-tid",
+        "506",
+        "--json"
+      ],
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "stderr_excerpt": "",
+          "attempt": 1
+        }
+      ],
+      "exit_code": 0,
+      "stderr_excerpt": "",
+      "payload_summary": {
+        "cid": "",
+        "cover_title": "",
+        "cover_video_ids_count": 0,
+        "cover_infos_count": 0,
+        "api1_requested_cid_count": 0,
+        "api1_returned_cover_count": 0,
+        "api1_returned_cids": [],
+        "api1_aggregated_video_ids_count": 0,
+        "api1_tid": "431",
+        "api2_tid": "506",
+        "api2_otype": "xml",
+        "api2_union_platform": "3",
+        "api2_callback": "",
+        "results_count": 1,
+        "first_result_vid": "",
+        "first_result_retcode": "0",
+        "first_result_title": "",
+        "first_result_empty_shell": true,
+        "first_result_has_url": false,
+        "first_result_has_vid": false,
+        "first_result_has_duration": false,
+        "first_result_has_state": false,
+        "first_result_has_upload_src": false,
+        "first_result_has_create_time": false,
+        "first_result_cover_list_count": 0,
+        "first_result_has_defn": false,
+        "batch_all_results_empty_shell": true
+      },
+      "result": "success_with_near_empty_shell",
+      "ok": true,
+      "highlights": [
+        "api2 tid=506",
+        "first retcode=0",
+        "first_result_empty_shell=True",
+        "has_title=False",
+        "has_url=False",
+        "has_vid=False",
+        "has_duration=False",
+        "cover_list_count=0",
+        "batch_all_results_empty_shell=True"
+      ]
+    },
+    {
+      "surface": "go_api2_tid506_near_empty_success_shell",
+      "demo": "go",
+      "intent": "API2 tid 506 near-empty success shell on a public sample.",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-Command",
+        "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; go run .\\examples\\go\\main.go '-vids' 'z4102qfi0x4' '-api2-tid' '506' '-json'"
+      ],
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "stderr_excerpt": "",
+          "attempt": 1
+        }
+      ],
+      "exit_code": 0,
+      "stderr_excerpt": "",
+      "payload_summary": {
+        "cid": "",
+        "cover_title": "",
+        "cover_video_ids_count": 0,
+        "cover_infos_count": 0,
+        "api1_requested_cid_count": 0,
+        "api1_returned_cover_count": 0,
+        "api1_returned_cids": [],
+        "api1_aggregated_video_ids_count": 0,
+        "api1_tid": "431",
+        "api2_tid": "506",
+        "api2_otype": "xml",
+        "api2_union_platform": "3",
+        "api2_callback": "",
+        "results_count": 1,
+        "first_result_vid": "",
+        "first_result_retcode": "0",
+        "first_result_title": "",
+        "first_result_empty_shell": true,
+        "first_result_has_url": false,
+        "first_result_has_vid": false,
+        "first_result_has_duration": false,
+        "first_result_has_state": false,
+        "first_result_has_upload_src": false,
+        "first_result_has_create_time": false,
+        "first_result_cover_list_count": 0,
+        "first_result_has_defn": false,
+        "batch_all_results_empty_shell": true
+      },
+      "result": "success_with_near_empty_shell",
+      "ok": true,
+      "highlights": [
+        "api2 tid=506",
+        "first retcode=0",
+        "first_result_empty_shell=True",
+        "has_title=False",
+        "has_url=False",
+        "has_vid=False",
+        "has_duration=False",
+        "cover_list_count=0",
+        "batch_all_results_empty_shell=True"
+      ]
+    }
+  ],
+  "failed_surfaces": [],
+  "current_reading": [
+    "This runner is scoped to anonymous direct-call demo surfaces that already have documented evidence in the repository.",
+    "A passing rerun strengthens example replayability, but it does not close aged-cookie or login-state gaps by itself.",
+    "API1 tid=483 should still be read as a video_ids-led thin shell: the cover shell stays empty even though downstream canonical API2 detail materialization can succeed through the exposed video_ids family.",
+    "API2 tid=506 should still be read as a near-empty success shell: top-level success plus retcode=0 does not currently rise into caller-facing title/url/duration/state/upload_src fields on the dedicated demo validation sample.",
+    "Alternate positive tid 488/502/540/541 should still be read as positive shells, not as field-equivalent replacements for canonical tid=535.",
+    "Within that alternate family, tid=502 currently sits on a richer shell than tid=488/540/541, but still below canonical 535 detail fullness."
+  ]
+}

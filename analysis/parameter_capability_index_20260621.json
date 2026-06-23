@@ -17,15 +17,19 @@
       "category": "explicit_parameter",
       "requiredness": "hard_required",
       "current_status": "branch_partially_closed",
-      "role": "request routing or config selector; 431 is the current canonical positive example, not proof that no other positive tid exists",
+      "role": "request routing or config selector; 431 is the canonical positive cover branch, 453 is a noncanonical cover-only positive shell, 483 is a video_ids-led thin shell, and 476/506/537 currently remain thinner success-shell families rather than caller-default replacements",
       "unlocked_capabilities": [
         "api1_single_cover_lookup",
         "api1_batch_cover_lookup",
-        "api1_success_shell_without_sample_tid_537"
+        "api1_success_shell_without_sample_tid_537",
+        "api1_single_cover_lookup_tid453_cover_shell_only",
+        "api1_single_cover_lookup_tid483_video_ids_led_thin_shell"
       ],
       "related_recipes": [
         "api1_single_cover_lookup",
-        "api1_batch_cover_lookup"
+        "api1_batch_cover_lookup",
+        "api1_single_cover_lookup_tid453_cover_shell_only",
+        "api1_single_cover_lookup_tid483_video_ids_led_thin_shell"
       ],
       "related_regression_samples": [
         "baseline_single_valid",
@@ -39,10 +43,18 @@
         "analysis/parameter_closure_matrix_20260621.json",
         "analysis/positive_tid_summary_20260620.json",
         "analysis/positive_tid_api1_boundary_summary_20260621.json",
-        "analysis/positive_tid_probe_641_647_summary_20260621.json"
+        "analysis/positive_tid_probe_641_647_summary_20260621.json",
+        "analysis/positive_tid_probe_446_455_summary_20260623.json",
+        "analysis/positive_tid_probe_456_521_summary_20260623.json",
+        "analysis/api1_tid_shell_family_delta_20260623.json",
+        "analysis/demo_validation_incremental_tid453_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid453_20260623.json",
+        "analysis/demo_validation_incremental_tid483_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid483_20260623.json"
       ],
       "remaining_gaps": [
-        "Whether API1 has any positive tid beyond 431 is still open."
+        "Whether API1 has any positive or success-shell tid beyond the current 431/453/476/483/506/537 family map is still open.",
+        "Whether the mapped noncanonical API1 shell families change thickness under aged-cookie or login-state replay remains open."
       ]
     },
     {
@@ -180,7 +192,8 @@
         "api2_single_detail_xml_alt_positive_tid",
         "api2_single_detail_xml_second_alt_positive_tid",
         "api2_single_detail_jsonp",
-        "api2_batch_lookup"
+        "api2_batch_lookup",
+        "api2_single_detail_xml_tid506_near_empty_success_shell"
       ],
       "related_recipes": [
         "api2_single_detail_xml_canonical",
@@ -190,7 +203,8 @@
         "api2_single_detail_xml_second_alt_positive_tid",
         "api2_single_detail_jsonp",
         "api2_batch_lookup",
-        "api2_all_invalid_jsonp_batch_consumer_rule"
+        "api2_all_invalid_jsonp_batch_consumer_rule",
+        "api2_single_detail_xml_tid506_near_empty_success_shell"
       ],
       "related_regression_samples": [
         "baseline_xml_single",
@@ -215,10 +229,13 @@
         "analysis/positive_tid_probe_456_521_summary_20260623.json",
         "analysis/api2_extended_tid_capability_delta_20260623.json",
         "analysis/demo_validation_incremental_api2_tid488_502_20260623.json",
-        "analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json"
+        "analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json",
+        "analysis/demo_validation_incremental_api2_tid506_20260623.json",
+        "analysis/direct_call_raw_http_validation_api2_tid506_20260623.json"
       ],
       "remaining_gaps": [
-        "Whether API2 has any positive or success-shell tid outside the current 488/502/506/535/540/541 family map is still open, but the lower-edge 522-529 band and the mid-corridor 456-521 follow-up are now materially tighter than the older 535/540/541-only reading."
+        "Whether API2 has any positive or success-shell tid outside the current 488/502/506/535/540/541 family map is still open, but the lower-edge 522-529 band and the mid-corridor 456-521 follow-up are now materially tighter than the older 535/540/541-only reading.",
+        "Dedicated caller-facing validation now confirms tid=506 as a near-empty success shell in the anonymous direct-call scope; broader samples and aged-cookie/login-state replay remain open."
       ]
     },
     {

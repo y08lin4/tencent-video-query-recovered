@@ -1748,6 +1748,14 @@ Go 示例：
   - caller-facing raw HTTP live validation 摘要：canonical XML / JSONP、alternate positive tid、`541 + union_platform=0003`、API1 direct batch、以及 all-invalid JSONP consumer rule 都已经按原生 HTTP 直调重跑；这仍只覆盖匿名 direct-call scope，batch 行当前读作 canonical multi-VID spot-check，不外推成新的 `32/33` 饱和边界实验
 - [analysis/direct_call_raw_http_validation_tid453_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_tid453_20260623.json)
   - API1 `tid=453` 独立 raw validation：当前 3-CID confirmed 的 positive cover-shell-only 分支已经补到 caller-facing 直调证据层，结果仍是 non-empty cover shell + empty `video_ids`
+- [analysis/demo_validation_incremental_tid483_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/demo_validation_incremental_tid483_20260623.json)
+  - API1 `tid=483` 独立 demo validation：当前 caller-facing 输出稳定是 video_ids-led thin shell，API1 cover 壳仍然为空，但 downstream canonical API2 详情链仍可继续 materialize
+- [analysis/direct_call_raw_http_validation_tid483_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_tid483_20260623.json)
+  - API1 `tid=483` 独立 raw validation：当前 caller-facing 直调证据层已经补到 `errorno=0`、空 `cover_title/type/pay_status`、但 `video_ids_count>=1`
+- [analysis/demo_validation_incremental_api2_tid506_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/demo_validation_incremental_api2_tid506_20260623.json)
+  - API2 `tid=506` 独立 demo validation：当前 caller-facing 输出稳定是 near-empty success shell，`retcode=0` 但 row 仍然 `empty_shell=true`
+- [analysis/direct_call_raw_http_validation_api2_tid506_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_api2_tid506_20260623.json)
+  - API2 `tid=506` 独立 raw validation：dedicated raw XML 直调也稳定落在 near-empty success shell，而不是更厚的 positive-detail branch
 - [analysis/api2_alt_tid_capability_delta_20260621.json](C:/Users/lin/Documents/YM查询工具还原/analysis/api2_alt_tid_capability_delta_20260621.json)
   - `535/540/541` 能力差异摘要：当前更稳的说法是它们属于同一正分支 family，但 `540/541` 都只坐实为 alternate positive shell，不应默认等同于 canonical `535` 的字段丰满度
 - [analysis/tid_richness_matrix_20260622.json](C:/Users/lin/Documents/YM查询工具还原/analysis/tid_richness_matrix_20260622.json)
@@ -1808,7 +1816,7 @@ Go 示例：
 3. API1 / API2 的 `32/33` 非空 item 边界都已有仓库证据，但当前证据口径是单个 `idlist` key 内的非空 CSV item
 4. API2 单个 `otype` key 为精确小写 `json` 时会切 JSONP；如果 `otype` 重复，当前 tested branch 由首值决定外壳
 5. 当前 canonical tested branches 下，API1 `tid/idlist` 与 API2 `tid/idlist/otype` 的 repeated key 已补到首值生效；API1 / API2 的 repeated `appid/appkey` 目前则只在已测 collision branches 下补到首值生效。已测 extra key 里，API1 `foo/callback/_`、API2 XML `foo/callback/_`、API2 JSONP `foo/_`、以及 `format / output / version / v / platform / source` 当前都未见作用；而 API2 JSONP 的 `callback` 第二层 practical value-space 也已经补到：当前已测宽字符族会改写 wrapper 前缀但不改 payload 家族，空 `callback=` 会回落默认壳。`union_platform` 当前最稳的说法只到：在匿名 canonical branches 与真实匿名 visitor cookie replay 下未观察到可见差异；这还没有覆盖 `aged-cookie / login-state`，也不证明它对所有 tid/sample 全局无作用。
-6. 当前 API1 已确认 3 条不同厚度的 `tid` 分支：`431` 仍是 canonical positive branch；`453` 到 `2026-06-23` 为止已在 3 个 public CID 上稳定复现成 non-empty cover shell + empty `video_ids` 的 positive cover-shell-only 分支；`537` 则已在 3 个 public CID 上重复成 success-shell-without-sample 分支。后两者都不默认等同 canonical `431` 的字段丰满度。
+6. 当前 API1 已确认至少 4 条不同厚度的 `tid` 分支：`431` 仍是 canonical positive branch；`453` 到 `2026-06-23` 为止已在 3 个 public CID 上稳定复现成 non-empty cover shell + empty `video_ids` 的 positive cover-shell-only 分支；`483` 已在 3 个 public CID 上稳定复现成 `cover_title/type/pay_status` 为空、但 `video_ids` 可 materialize 的 video_ids-led thin shell；`537` 则已在 3 个 public CID 上重复成 success-shell-without-sample 分支。后三者都不默认等同 canonical `431` 的字段丰满度，其中 `483` 虽然仍能把 downstream canonical API2 详情链往下游推通，但这不等于 API1 自己已经恢复出 canonical `431` 的 cover 丰度。
 7. 当前真实匿名 visitor cookie replay 与同日匿名扩圈合并后，API2 已确认的 positive tid family 已不止 `535 / 540 / 541`，还包括中间主走廊里新补出的 `488 / 502`，以及当前更适合保守读取为 success shell 的 `506`。但“family 确认”只指正向返回族，不等于字段丰满度已经等价：到 `2026-06-23` 为止，`488` 在 3 个 public VID 上更稳地表现为 `title + url + pic` 薄正壳，`502` 在 3 个 public VID 上更稳地表现为 `title + url + duration + type + vid + cover_list` 的更厚 alternate positive shell，`540` 在 3 个 public VID 上更稳地表现为 `title + duration + url` 的 score-3 薄正壳，`541` 在 3 个 public VID 上更稳地表现为 `title + url` 的 score-2 更薄正壳；它们都不默认等同 canonical `535` 的字段丰满度。对已测 auth-ish extra key（`token / sign / sig / appver / access_token / authkey / openid`）也只是在已测 tid anchor 与已测样本上，未观察到相对匿名 baseline 的可见分叉，这条负结论不能外推成“所有 auth-ish key / 所有会话态都无作用”。
    到 `2026-06-22` 为止，这 3 类边界（`union_platform`、`auth-ish extra keys`、`540/541 environment shell thickness`）都已经被单独列进 hard-block 表，统一按 `scoped-negative` 管理。
 8. 当前最高 ROI 的剩余参数 gap，不是继续追字段语义，而是：

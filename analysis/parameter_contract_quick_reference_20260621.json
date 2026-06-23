@@ -5,6 +5,7 @@
     "This file summarizes the current best direct-call contract in the tested anonymous direct-call scope plus the later real anonymous visitor-cookie replay where noted.",
     "It is not proof that aged-cookie or login-state environments behave the same.",
     "When a field is marked partially_closed or environment_open, keep the canonical values unless you are deliberately probing that branch.",
+    "For API1, treat `appid=10001005` plus `appkey=0d1a9ddd94de871b` as one canonical branch-gating pair, not as two independently tunable knobs.",
     "For API2, treat `appid=20001238` plus `appkey=6c03bbe9658448a4` as one canonical branch-gating pair, not as two independently tunable knobs."
   ],
   "api1": {
@@ -115,7 +116,7 @@
             "errormsg": "appkey error"
           }
         ],
-        "current_best_reading": "For stable direct calls, keep the canonical numeric appid. In the tested anonymous numeric slice, appid behavior is now at least three-way: `1` still rides the loose success-bypass branch, a wider tested lower band `10000990-10001000` returns `appid no find`, and the tested near-canonical ranges `10001001-10001004` plus `10001006-10001186` fall into a stricter `appkey error` family instead of `appid no find`, with `10001005` currently acting as the isolated success point inside that scanned region. The current upper boundary search then flips back at `10001187 -> 10010108 / appid no find`.",
+        "current_best_reading": "For stable direct calls, keep the canonical API1 pair together: `appid=10001005` plus `appkey=0d1a9ddd94de871b`. In the tested anonymous numeric slice, appid behavior is now at least three-way: `1` still rides the loose success-bypass branch, a wider tested lower band `10000990-10001000` returns `appid no find`, and the tested near-canonical ranges `10001001-10001004` plus `10001006-10001186` fall into a stricter `appkey error` family instead of `appid no find`, with `10001005` currently acting as the isolated success point inside that scanned region. The current upper boundary search then flips back at `10001187 -> 10010108 / appid no find`.",
         "environment_scope": "same-day anonymous matrix",
         "status": "partially_closed",
         "still_open": [
@@ -143,7 +144,7 @@
             "errormsg": "appkey error"
           }
         ],
-        "current_best_reading": "Treat this as part of the canonical documented pair with appid=10001005. The new numeric-focus, contiguous-band, and boundary-search probes also show that nearby tested numeric appids such as `10001004`, and more broadly the scanned noncanonical ranges `10001001-10001004` plus `10001006-10001186`, stay on the same `10010110 / appkey error` branch whether appkey is canonical, missing, or explicitly wrong, so the current canonical appkey does not satisfy that tested near-canonical family.",
+        "current_best_reading": "Treat this as part of one branch-gating pair with `appid=10001005`, not as an independent tuning knob. The new numeric-focus, contiguous-band, and boundary-search probes also show that nearby tested numeric appids such as `10001004`, the contiguous bands `10001001-10001004` plus `10001006-10001020`, and more broadly the scanned noncanonical ranges `10001001-10001186`, stay on the same `10010110 / appkey error` branch whether appkey is canonical, missing, or explicitly wrong, so the current canonical appkey does not satisfy that tested near-canonical family.",
         "environment_scope": "same-day anonymous matrix",
         "status": "partially_closed",
         "still_open": [
@@ -405,6 +406,7 @@
     "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json",
     "analysis/reserved_extra_key_replay_anonymous_real_cookie_summary_20260623.json",
     "analysis/api1_appid_numeric_focus_20260623.json",
+    "analysis/api1_appid_appkey_pair_summary_20260623.json",
     "analysis/api2_appid_numeric_focus_20260623.json",
     "analysis/api2_appid_appkey_pair_summary_20260623.json",
     "analysis/appid_numeric_branch_summary_20260623.json",

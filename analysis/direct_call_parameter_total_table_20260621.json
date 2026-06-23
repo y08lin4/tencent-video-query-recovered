@@ -6,6 +6,7 @@
     "It is not proof that aged-cookie or login-state environments behave the same.",
     "When a row says environment_open or branch_partially_closed, keep the canonical documented branch unless you are deliberately probing that branch family.",
     "For the first aged-cookie/login-state replay round, a PC Web cookie header is the true minimum input; mobile H5 cookie input is optional at the current builder-contract level.",
+    "For API1, treat `appid=10001005` plus `appkey=0d1a9ddd94de871b` as one canonical branch-gating pair, not as two independently tunable knobs.",
     "For API2, treat `appid=20001238` plus `appkey=6c03bbe9658448a4` as one canonical branch-gating pair, not as two independently tunable knobs."
   ],
   "api1": [
@@ -140,9 +141,9 @@
         "appid": "10001005",
         "appkey": "0d1a9ddd94de871b"
       },
-      "recommended_fill_strategy": "For stable direct calls, keep the canonical API2 pair `20001238 + 6c03bbe9658448a4` together. In the currently tested anonymous numeric slice, do not treat alternate numeric appid as one flat family: `appid=1` currently rides a success-bypass branch, far noncanonical numerics currently fall into `appid no find`, and the searched near-canonical band currently falls into an appkey-gated rejection family. Only use missing/text-like appid or alternate numerics when you intentionally want to probe those branch families.",
+  "recommended_fill_strategy": "For stable direct calls, keep the canonical API1 pair `10001005 + 0d1a9ddd94de871b` together. In the currently tested anonymous numeric slice, do not treat alternate numeric appid as one flat family: `appid=1` currently rides a success-bypass branch, far noncanonical numerics currently fall into `appid no find`, and the searched near-canonical band currently falls into an appkey-gated rejection family. Only use missing/text-like appid or alternate numerics when you intentionally want to probe those branch families.",
       "accepted_shape": "canonical numeric appid activates stricter validation; missing/text-like appid currently lands on a looser tested anonymous branch; the tested numeric space is now at least three-way rather than a simple canonical-vs-other split",
-      "success_discriminator": "Canonical documented branch: appid=10001005 with matching appkey. In the current anonymous numeric slice, `appid=1` still succeeds on the looser bypass branch, far noncanonical numerics such as `2/3/10/100/1000/99999/10001000` currently return `10010108 / appid no find`, and the searched near-canonical numeric family `10001001-10001186` currently lands on `10010110 / appkey error`, with `10001005` acting as the isolated success point inside that searched region.",
+  "success_discriminator": "Canonical documented branch: keep the pair `appid=10001005` plus `appkey=0d1a9ddd94de871b` together. In the current anonymous numeric slice, `appid=1` still succeeds on the looser bypass branch, far noncanonical numerics such as `2/3/10/100/1000/99999/10001000` currently return `10010108 / appid no find`, and the searched near-canonical numeric family `10001001-10001186` currently lands on `10010110 / appkey error`, with `10001005` acting as the isolated success point inside that searched region.",
       "duplicate_key_semantics": "repeated appid/appkey collision cases currently behave as first-value-wins in the tested anonymous branch",
       "key_failure_cases": [
         {
@@ -532,6 +533,7 @@
     }
   ],
   "source_artifacts": [
+    "analysis/api1_appid_appkey_pair_summary_20260623.json",
     "analysis/parameter_contract_quick_reference_20260621.json",
     "analysis/capability_quick_reference_20260621.json",
     "analysis/parameter_capability_index_20260621.json",

@@ -105,7 +105,7 @@
       "category": "explicit_parameter",
       "requiredness": "conditional_branch_parameter",
       "current_status": "partially_closed",
-      "role": "numeric canonical appid enables the stricter documented branch; missing or text-like values currently hit a looser anonymous-compatible branch in tested cases, and the new numeric-focus, contiguous-band, plus boundary-search slices show a third tested family near the canonical value that falls into appkey-gated rejection rather than appid-no-find",
+      "role": "the `10001005 + 0d1a9ddd94de871b` pair is the current canonical API1 branch gate; missing or text-like values currently hit a looser anonymous-compatible branch in tested cases, and the new numeric-focus, contiguous-band, plus boundary-search slices show a third tested family near the canonical value that falls into appkey-gated rejection rather than appid-no-find",
       "unlocked_capabilities": [
         "canonical_documented_api1_branch_when_paired_with_canonical_appkey"
       ],
@@ -124,6 +124,7 @@
       "key_evidence": [
         "analysis/api_param_inventory_20260620.json",
         "analysis/parameter_closure_matrix_20260621.json",
+        "analysis/api1_appid_appkey_pair_summary_20260623.json",
         "analysis/api1_appid_numeric_focus_20260623.json",
         "analysis/appid_numeric_branch_summary_20260623.json",
         "analysis/api1_appid_numeric_band_10000990_10001020_20260623.json",
@@ -140,7 +141,7 @@
       "category": "explicit_parameter",
       "requiredness": "conditional_with_canonical_numeric_appid",
       "current_status": "partially_closed",
-      "role": "validated when the canonical numeric appid branch is active; the new numeric-focus slice shows that tested neighboring numeric appids such as `10001004` stay on `10010110 / appkey error` whether appkey is canonical, missing, or explicitly wrong, the contiguous-band scan extends that tested rejection family across `10001001-10001004` and `10001006-10001020`, and the boundary search currently carries it up to `10001186` before flipping back",
+      "role": "the appkey side of the canonical `10001005 + 0d1a9ddd94de871b` pair is only validated when that exact numeric-appid branch is active; the new numeric-focus slice shows that tested neighboring numeric appids such as `10001004` stay on `10010110 / appkey error` whether appkey is canonical, missing, or explicitly wrong, the contiguous-band scan extends that tested rejection family across `10001001-10001004` and `10001006-10001020`, and the boundary search currently carries it up to `10001186` before flipping back",
       "unlocked_capabilities": [
         "canonical_documented_api1_branch_when_paired_with_canonical_appid"
       ],
@@ -159,6 +160,7 @@
       "key_evidence": [
         "analysis/api_param_inventory_20260620.json",
         "analysis/parameter_closure_matrix_20260621.json",
+        "analysis/api1_appid_appkey_pair_summary_20260623.json",
         "analysis/api1_appid_numeric_focus_20260623.json",
         "analysis/appid_numeric_branch_summary_20260623.json",
         "analysis/api1_appid_numeric_band_10000990_10001020_20260623.json",

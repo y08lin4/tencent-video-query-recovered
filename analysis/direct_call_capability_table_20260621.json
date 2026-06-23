@@ -9,6 +9,7 @@
     "For API2 caller rows, `union_platform=3` is currently the canonical tested recipe default, not a proven branch unlocker; its current evidence is still scoped-negative across anonymous direct-call plus real anonymous visitor-cookie replay.",
     "For the first aged-cookie/login-state replay round, a PC Web cookie header is the true minimum input; mobile H5 cookie input is optional at the current builder-contract level.",
     "For both API1 and API2, appid/appkey is no longer a simple canonical-vs-other split in the tested anonymous numeric slice: `appid=1` currently behaves like a success bypass, far noncanonical numerics fall into `appid no find`, and the searched near-canonical numeric region falls into `appkey error`; keep the canonical pair unless you are deliberately probing that branch family.",
+    "For API1 specifically, read `10001005 + 0d1a9ddd94de871b` as one canonical branch-gating pair rather than two independent tuning knobs.",
     "For API2 specifically, read `20001238 + 6c03bbe9658448a4` as one canonical branch-gating pair rather than two independent tuning knobs."
   ],
   "rows": [
@@ -70,6 +71,7 @@
         ],
         "caller_should_check": [
           "Do not assume URL extraction alone guarantees the downstream API2 row is canonical-full unless tid=535 is still used",
+          "Keep upstream `api1_appid=10001005` plus `api1_appkey=0d1a9ddd94de871b` together as one canonical branch-gating pair inside this chain.",
           "Keep downstream `api2_appid=20001238` plus `api2_appkey=6c03bbe9658448a4` together as one canonical branch-gating pair inside this chain.",
           "Within this default chain, `api2_union_platform=3` is only the current canonical tested recipe value; it is not a separately proven branch unlocker."
         ]
@@ -153,6 +155,7 @@
           "non-empty video_ids family"
         ],
         "caller_should_check": [
+          "Keep `appid=10001005` plus `appkey=0d1a9ddd94de871b` together as one canonical branch-gating pair.",
           "If you probe tid=453, treat errorno=0 plus a non-empty cover shell with video_ids_count=0 as a cover-only positive shell; do not auto-promote it into canonical 431 behavior.",
           "If you probe tid=476, treat errorno=0 plus a 25-key imgtag-family extra-field shell with qbox_imgtag={} as an ultra-thin success shell rather than canonical 431 behavior.",
           "If you probe tid=483, treat top-level success plus non-empty video_ids with empty cover title/type as a thinner video_ids-led success shell rather than canonical 431 behavior.",
@@ -555,6 +558,10 @@
         ],
         "row_level": [
           "inspect each returned row, not only the top-level shell"
+        ],
+        "caller_should_check": [
+          "Keep `appid=10001005` plus `appkey=0d1a9ddd94de871b` together as one canonical branch-gating pair.",
+          "Batch semantics do not make appid and appkey independent tuning knobs; probe numeric appid families only on purpose."
         ],
         "counting_rule": [
           "32 non-empty CSV items succeed",

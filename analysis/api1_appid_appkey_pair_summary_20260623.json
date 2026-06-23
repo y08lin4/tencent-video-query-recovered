@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-06-23",
+  "scope": "Compact pair-first summary for the API1 canonical appid/appkey branch in the tested anonymous direct-call scope.",
+  "api": "api1",
+  "canonical_pair": {
+    "appid": "10001005",
+    "appkey": "0d1a9ddd94de871b"
+  },
+  "caller_guidance": [
+    "Treat API1 appid/appkey as one branch-gating pair, not as two independently tunable knobs.",
+    "For stable direct calls, keep the canonical pair together unless you are deliberately probing numeric appid families.",
+    "Do not infer that the current canonical appkey satisfies nearby numeric appids inside the searched near-canonical region."
+  ],
+  "tested_family_split": {
+    "success_bypass_family": {
+      "representative_appid": 1,
+      "current_behavior": "success with the current canonical appkey on the tested anonymous branch"
+    },
+    "far_noncanonical_family": {
+      "representative_values": [
+        2,
+        3,
+        10,
+        100,
+        1000,
+        99999,
+        10001000
+      ],
+      "current_behavior": "10010108 / appid no find"
+    },
+    "near_canonical_rejection_family": {
+      "current_behavior": "10010110 / appkey error",
+      "contiguous_band_confirmed": [
+        "10001001-10001004",
+        "10001006-10001020"
+      ],
+      "wider_boundary_confirmed": [
+        "10001001-10001186"
+      ]
+    }
+  },
+  "explicit_cutovers": {
+    "lower": {
+      "highest_appid_no_find": 10001000,
+      "lowest_appkey_error": 10001001
+    },
+    "upper": {
+      "last_appkey_error": 10001186,
+      "first_appid_no_find_after_upper_family": 10001187
+    }
+  },
+  "current_strongest_black_box_reading": [
+    "The canonical pair `10001005 + 0d1a9ddd94de871b` is currently the isolated stable success point inside the searched numeric region.",
+    "The current canonical appkey does not rescue the searched near-canonical numeric appid family.",
+    "Within the tested anonymous slice, the pair behaves more like a branch gate than a generic required-auth parameter set."
+  ],
+  "still_open": [
+    "Broader numeric appid space outside the searched regions remains unclosed.",
+    "Aged-cookie replay remains open.",
+    "Login-state replay remains open."
+  ],
+  "primary_evidence": [
+    "analysis/api1_appid_numeric_focus_20260623.json",
+    "analysis/api1_appid_numeric_band_10000990_10001020_20260623.json",
+    "analysis/appid_numeric_boundary_search_20260623.json",
+    "analysis/appid_numeric_branch_summary_20260623.json",
+    "analysis/appid_numeric_band_summary_20260623.json"
+  ]
+}

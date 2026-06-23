@@ -41,6 +41,15 @@ type requestOptions struct {
 	Timeout time.Duration
 }
 
+type pairGuidance struct {
+	API                string            `json:"api"`
+	CanonicalPair      map[string]string `json:"canonical_pair"`
+	CurrentPair        map[string]string `json:"current_pair"`
+	UsingCanonicalPair bool              `json:"using_canonical_pair"`
+	OverrideShape      string            `json:"override_shape"`
+	Advisories         []string          `json:"advisories"`
+}
+
 type coverInfo struct {
 	CID                 string            `json:"cid"`
 	Title               string            `json:"title"`
@@ -197,6 +206,10 @@ func main() {
 		"cids":        requestedCIDs,
 		"api1_params": api1Opts,
 		"api2_params": api2Opts,
+		"pair_guidance": []pairGuidance{
+			buildPairGuidanceForAPI("api1", api1Opts.AppID, api1Opts.AppKey, "10001005", "0d1a9ddd94de871b"),
+			buildPairGuidanceForAPI("api2", api2Opts.AppID, api2Opts.AppKey, "20001238", "6c03bbe9658448a4"),
+		},
 		"request_environment": map[string]any{
 			"env_json":        strings.TrimSpace(*envJSON),
 			"env_name":        resolvedEnvName,
@@ -216,6 +229,19 @@ func main() {
 		enc.SetIndent("", "  ")
 		_ = enc.Encode(payload)
 		return
+	}
+
+	pairGuidanceItems := payload["pair_guidance"].([]pairGuidance)
+	pairAdvisories := []string{}
+	for _, item := range pairGuidanceItems {
+		pairAdvisories = append(pairAdvisories, item.Advisories...)
+	}
+	if len(pairAdvisories) > 0 {
+		fmt.Println("参数提示:")
+		for _, advisory := range pairAdvisories {
+			fmt.Printf("- %s\n", advisory)
+		}
+		fmt.Println()
 	}
 
 	if len(covers) == 1 && cover != nil {
@@ -264,6 +290,49 @@ func main() {
 	diagnostics := summarizeAPI2Batch(details)
 	if diagnostics.AllResultsEmptyShell {
 		fmt.Printf("\n注意: 当前 API2 批量结果为 top-level success + 全部 empty-shell，调用方应按全坏/全空批量处理。\n")
+	}
+}
+
+func buildPairGuidanceForAPI(apiLabel, currentAppID, currentAppKey, canonicalAppID, canonicalAppKey string) pairGuidance {
+	appidMatches := strings.TrimSpace(currentAppID) == strings.TrimSpace(canonicalAppID)
+	appkeyMatches := strings.TrimSpace(currentAppKey) == strings.TrimSpace(canonicalAppKey)
+	usingCanonicalPair := appidMatches && appkeyMatches
+
+	overrideShape := "canonical_pair"
+	advisories := []string{}
+	if !usingCanonicalPair {
+		if appidMatches != appkeyMatches {
+			overrideShape = "partial_override"
+			advisories = append(advisories,
+				fmt.Sprintf(
+					"%s: current appid/appkey is a partial override relative to the canonical pair %s+%s; treat them as one branch-gating pair unless you are deliberately probing.",
+					apiLabel, canonicalAppID, canonicalAppKey,
+				),
+			)
+		} else {
+			overrideShape = "noncanonical_pair"
+			advisories = append(advisories,
+				fmt.Sprintf(
+					"%s: current appid/appkey is off the canonical pair %s+%s; in the current tested anonymous scope, keep the pair together unless you are deliberately probing numeric appid families.",
+					apiLabel, canonicalAppID, canonicalAppKey,
+				),
+			)
+		}
+	}
+
+	return pairGuidance{
+		API: apiLabel,
+		CanonicalPair: map[string]string{
+			"appid":  canonicalAppID,
+			"appkey": canonicalAppKey,
+		},
+		CurrentPair: map[string]string{
+			"appid":  strings.TrimSpace(currentAppID),
+			"appkey": strings.TrimSpace(currentAppKey),
+		},
+		UsingCanonicalPair: usingCanonicalPair,
+		OverrideShape:      overrideShape,
+		Advisories:         advisories,
 	}
 }
 

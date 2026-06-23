@@ -32,6 +32,65 @@ DEFAULT_REQUEST_HEADERS = {
 }
 
 
+def build_pair_guidance_for_api(
+    api_label: str,
+    params: dict[str, str],
+    canonical_params: dict[str, str],
+) -> dict[str, object]:
+    appid = str(params.get("appid") or "").strip()
+    appkey = str(params.get("appkey") or "").strip()
+    canonical_appid = str(canonical_params.get("appid") or "").strip()
+    canonical_appkey = str(canonical_params.get("appkey") or "").strip()
+
+    appid_matches = appid == canonical_appid
+    appkey_matches = appkey == canonical_appkey
+    using_canonical_pair = appid_matches and appkey_matches
+    if using_canonical_pair:
+        override_shape = "canonical_pair"
+        advisories: list[str] = []
+    elif appid_matches != appkey_matches:
+        override_shape = "partial_override"
+        advisories = [
+            (
+                f"{api_label}: current appid/appkey is a partial override relative to the canonical pair "
+                f"{canonical_appid}+{canonical_appkey}; treat them as one branch-gating pair unless you are deliberately probing."
+            )
+        ]
+    else:
+        override_shape = "noncanonical_pair"
+        advisories = [
+            (
+                f"{api_label}: current appid/appkey is off the canonical pair "
+                f"{canonical_appid}+{canonical_appkey}; in the current tested anonymous scope, keep the pair together unless you are deliberately probing numeric appid families."
+            )
+        ]
+
+    return {
+        "api": api_label,
+        "canonical_pair": {
+            "appid": canonical_appid,
+            "appkey": canonical_appkey,
+        },
+        "current_pair": {
+            "appid": appid,
+            "appkey": appkey,
+        },
+        "using_canonical_pair": using_canonical_pair,
+        "override_shape": override_shape,
+        "advisories": advisories,
+    }
+
+
+def build_pair_guidance(
+    api1_params: dict[str, str],
+    api2_params: dict[str, str],
+) -> list[dict[str, object]]:
+    return [
+        build_pair_guidance_for_api("api1", api1_params, API_1_DEFAULT_PARAMS),
+        build_pair_guidance_for_api("api2", api2_params, API_2_DEFAULT_PARAMS),
+    ]
+
+
 def has_meaningful_value(value: object) -> bool:
     if isinstance(value, dict):
         return bool(value)
@@ -519,6 +578,7 @@ def main() -> None:
         "cids": cids,
         "api1_params": api1_params,
         "api2_params": api2_params,
+        "pair_guidance": build_pair_guidance(api1_params, api2_params),
         "request_environment": {
             "env_json": args.env_json,
             "env_name": resolved_env_name,
@@ -535,6 +595,18 @@ def main() -> None:
     if args.json:
         print(json.dumps(payload, ensure_ascii=False, indent=2))
         return
+
+    pair_guidance = payload["pair_guidance"]
+    pair_advisories = [
+        advisory
+        for item in pair_guidance
+        for advisory in (item.get("advisories") or [])
+    ]
+    if pair_advisories:
+        print("参数提示:")
+        for advisory in pair_advisories:
+            print(f"- {advisory}")
+        print()
 
     if cover_infos:
         if len(cover_infos) == 1:

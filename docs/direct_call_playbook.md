@@ -9,6 +9,13 @@
 - 哪些默认值最稳
 - 哪些结论只在当前匿名 direct-call scope 下成立
 
+当前仓库里的 Python / Go demo 还有一层额外保护：
+
+- 如果你把 API1 `appid/appkey` 从 canonical `10001005 + 0d1a9ddd94de871b` 拆着改
+- 或者把 API2 `appid/appkey` 从 canonical `20001238 + 6c03bbe9658448a4` 拆着改
+
+demo 现在会直接给出 pair 级提示，提醒你把它们当成一个 branch-gating pair 来读，而不是两个独立调参旋钮。
+
 ## 0. 先看这些
 
 - 参数 quick reference：

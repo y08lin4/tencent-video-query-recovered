@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22",
+  "generated_at": "2026-06-23",
   "scope": "Caller-oriented parameter total table for the two Tencent Video main interfaces, focused on what to fill, what capability it unlocks, how to tell success from a thin shell, and which environment claims are still open.",
   "caution": [
     "This table is optimized for direct callers in the currently tested anonymous direct-call scope plus the later real anonymous visitor-cookie replay where explicitly noted.",
@@ -137,9 +137,9 @@
         "appid": "10001005",
         "appkey": "0d1a9ddd94de871b"
       },
-      "recommended_fill_strategy": "For stable direct calls, keep the canonical numeric appid and its canonical appkey together. Only use missing/text-like appid when you intentionally want to reproduce the looser anonymous-compatible branch.",
-      "accepted_shape": "canonical numeric appid activates stricter validation; missing/text-like appid currently lands on a looser tested anonymous branch",
-      "success_discriminator": "Canonical documented branch: appid=10001005 with matching appkey. Missing/wrong appkey while canonical appid is active yields appkey error.",
+      "recommended_fill_strategy": "For stable direct calls, keep the canonical numeric appid and its canonical appkey together. In the currently tested anonymous numeric slice, do not treat alternate numeric appid as one flat family: `appid=1` currently rides a success-bypass branch, far noncanonical numerics currently fall into `appid no find`, and the searched near-canonical band currently falls into an appkey-gated rejection family. Only use missing/text-like appid or alternate numerics when you intentionally want to probe those branch families.",
+      "accepted_shape": "canonical numeric appid activates stricter validation; missing/text-like appid currently lands on a looser tested anonymous branch; the tested numeric space is now at least three-way rather than a simple canonical-vs-other split",
+      "success_discriminator": "Canonical documented branch: appid=10001005 with matching appkey. In the current anonymous numeric slice, `appid=1` still succeeds on the looser bypass branch, far noncanonical numerics such as `2/3/10/100/1000/99999/10001000` currently return `10010108 / appid no find`, and the searched near-canonical numeric family `10001001-10001186` currently lands on `10010110 / appkey error`, with `10001005` acting as the isolated success point inside that searched region.",
       "duplicate_key_semantics": "repeated appid/appkey collision cases currently behave as first-value-wins in the tested anonymous branch",
       "key_failure_cases": [
         {
@@ -156,6 +156,11 @@
           "when": "appid=99999",
           "errorno": "10010108",
           "errormsg": "appid no find"
+        },
+        {
+          "when": "appid=10001001-10001186 with the current canonical appkey",
+          "errorno": "10010110",
+          "errormsg": "appkey error"
         }
       ],
       "unlocked_capabilities": [
@@ -172,12 +177,17 @@
       ],
       "environment_open_reason": "The canonical pair is stable, but broader numeric appid space and cross-environment behavior are not closed.",
       "still_open": [
-        "Positive behavior for other numeric appid values is not yet mapped.",
-        "No evidence yet that appkey unlocks more than satisfying the canonical numeric-appid branch."
+        "Full numeric appid space is still not closed; the current evidence only narrows it to a tested three-family split plus explicit cutovers `10001000 -> 10001001` and `10001186 -> 10001187` in the searched anonymous region.",
+        "No evidence yet that appkey unlocks more than satisfying the exact canonical numeric-appid branch; the searched near-canonical numeric family still rejects the current canonical appkey across `10001001-10001186`."
       ],
       "evidence": [
         "analysis/parameter_contract_quick_reference_20260621.json",
-        "analysis/param_query_semantics_20260620.json"
+        "analysis/param_query_semantics_20260620.json",
+        "analysis/api1_appid_numeric_focus_20260623.json",
+        "analysis/api1_appid_numeric_band_10000990_10001020_20260623.json",
+        "analysis/appid_numeric_branch_summary_20260623.json",
+        "analysis/appid_numeric_band_summary_20260623.json",
+        "analysis/appid_numeric_boundary_search_20260623.json"
       ]
     }
   ],
@@ -304,9 +314,9 @@
         "appid": "20001238",
         "appkey": "6c03bbe9658448a4"
       },
-      "recommended_fill_strategy": "For stable direct calls, keep the canonical numeric appid and its canonical appkey together. Only use missing/text-like appid when you intentionally want to reproduce the looser anonymous-compatible branch.",
-      "accepted_shape": "canonical numeric appid activates stricter validation; missing/text-like appid currently lands on a looser tested anonymous branch",
-      "success_discriminator": "Canonical documented branch: appid=20001238 with matching appkey. Missing/wrong appkey while canonical appid is active yields appkey error.",
+      "recommended_fill_strategy": "For stable direct calls, keep the canonical numeric appid and its canonical appkey together. In the currently tested anonymous numeric slice, do not treat alternate numeric appid as one flat family: `appid=1` currently rides a success-bypass branch, far noncanonical numerics currently fall into `appid no find`, and the searched near-canonical band currently falls into an appkey-gated rejection family. Only use missing/text-like appid or alternate numerics when you intentionally want to probe those branch families.",
+      "accepted_shape": "canonical numeric appid activates stricter validation; missing/text-like appid currently lands on a looser tested anonymous branch; the tested numeric space is now at least three-way rather than a simple canonical-vs-other split",
+      "success_discriminator": "Canonical documented branch: appid=20001238 with matching appkey. In the current anonymous numeric slice, `appid=1` still succeeds on the looser bypass branch, far noncanonical numerics such as `2/3/10/100/1000/99999` currently return `10010108 / appid no find`, and the searched near-canonical numeric family `20001001-20002581` currently lands on `10010110 / appkey error`, with `20001238` acting as the isolated success point inside that searched region.",
       "duplicate_key_semantics": "repeated appid/appkey collision cases currently behave as first-value-wins in the tested anonymous branch",
       "key_failure_cases": [
         {
@@ -323,6 +333,11 @@
           "when": "appid=99999",
           "errorno": "10010108",
           "errormsg": "appid no find"
+        },
+        {
+          "when": "appid=20001001-20002581 with the current canonical appkey",
+          "errorno": "10010110",
+          "errormsg": "appkey error"
         }
       ],
       "unlocked_capabilities": [
@@ -340,12 +355,17 @@
       ],
       "environment_open_reason": "The canonical pair is stable, but broader numeric appid space and cross-environment behavior are not closed.",
       "still_open": [
-        "Positive behavior for other numeric appid values is not yet mapped.",
-        "No evidence yet that appkey unlocks more than satisfying the canonical numeric-appid branch."
+        "Full numeric appid space is still not closed; the current evidence only narrows it to a tested three-family split plus explicit cutovers `20001000 -> 20001001` and `20002581 -> 20002582` in the searched anonymous region.",
+        "No evidence yet that appkey unlocks more than satisfying the exact canonical numeric-appid branch; the searched near-canonical numeric family still rejects the current canonical appkey across `20001001-20002581`."
       ],
       "evidence": [
         "analysis/parameter_contract_quick_reference_20260621.json",
-        "analysis/param_query_semantics_20260620.json"
+        "analysis/param_query_semantics_20260620.json",
+        "analysis/api2_appid_numeric_focus_20260623.json",
+        "analysis/api2_appid_numeric_band_20001220_20001250_20260623.json",
+        "analysis/appid_numeric_branch_summary_20260623.json",
+        "analysis/appid_numeric_band_summary_20260623.json",
+        "analysis/appid_numeric_boundary_search_20260623.json"
       ]
     },
     {

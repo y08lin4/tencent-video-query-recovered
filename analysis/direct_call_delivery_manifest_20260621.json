@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-21",
+  "generated_at": "2026-06-23",
   "objective": "完成腾讯视频两个主接口的参数闭环与能力闭环研究，并沉淀成可直接调用的参数总表、能力配方表、Python/Go 示例与回归样本。",
   "scope": "Single-entry delivery manifest for the repository's current direct-call artifacts, organized for callers, SDK authors, and follow-up closure work.",
   "entrypoints_by_persona": [
@@ -11,7 +11,7 @@
         "analysis/direct_call_capability_table_20260621.json",
         "docs/direct_call_playbook.md"
       ],
-      "why": "These artifacts answer what to fill, how to hit the raw HTTP endpoints directly, when to use each path, how to judge success, and what not to assume. If the caller needs JSONP wrapper-control semantics rather than just a demo override example, also read the dedicated callback-contract artifacts plus the unmatched-delimiter boundary summary."
+      "why": "These artifacts answer what to fill, how to hit the raw HTTP endpoints directly, when to use each path, how to judge success, and what not to assume. They now also carry the newer appid/appkey numeric-family caution, so callers do not collapse alternate numeric appid into one flat failure family. If the caller needs JSONP wrapper-control semantics rather than just a demo override example, also read the dedicated callback-contract artifacts plus the unmatched-delimiter boundary summary."
     },
     {
       "persona": "sdk_or_script_author",
@@ -23,7 +23,7 @@
         "analysis/api2_jsonp_callback_contract_20260621.json",
         "analysis/api2_jsonp_callback_unmatched_delimiter_summary_20260622.json"
       ],
-      "why": "These artifacts concentrate parameter rules, capability joins, replay-ready regression anchors, runnable validation/probe entrypoints, the dedicated callback-contract evidence for wrapper-control semantics, and the newer widened unmatched-delimiter boundary summary."
+      "why": "These artifacts concentrate parameter rules, capability joins, replay-ready regression anchors, runnable validation/probe entrypoints, the dedicated callback-contract evidence for wrapper-control semantics, the newer widened unmatched-delimiter boundary summary, and the newer appid/appkey numeric-family evidence that now separates success-bypass / appid-no-find / appkey-error regions."
     },
     {
       "persona": "researcher_or_closure_auditor",
@@ -53,7 +53,9 @@
         "analysis/parameter_closure_matrix_20260621.json",
         "analysis/parameter_contract_quick_reference_20260621.json",
         "analysis/direct_call_parameter_total_table_20260621.json",
-        "analysis/parameter_capability_index_20260621.json"
+        "analysis/parameter_capability_index_20260621.json",
+        "analysis/appid_numeric_branch_summary_20260623.json",
+        "analysis/appid_numeric_boundary_search_20260623.json"
       ],
       "best_use": "Understand what each parameter does, what to fill by default, how to recognize success, and which environments are still open.",
       "still_open": [

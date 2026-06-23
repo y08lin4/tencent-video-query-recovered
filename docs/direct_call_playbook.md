@@ -188,6 +188,20 @@ go.exe -cid <CID> -json
 
 如果你只是想稳定拿 cover 壳，不要先改这些 canonical 值。
 
+这里再收一条对调用者最实用的口径：
+
+- 当前匿名直连里，`appid/appkey` 已经不是“canonical 成功，其他全失败”这么简单
+- API1 现阶段至少有 3 类 tested family：
+  - `appid=1` 仍可走 success bypass
+  - 远离 canonical 的 tested numerics（如 `2 / 3 / 10 / 100 / 1000 / 99999 / 10001000`）当前回 `appid no find`
+  - searched near-canonical numerics `10001001-10001186` 当前回 `appkey error`
+- 当前 searched cutover 已经压到：
+  - `10001000 -> appid no find`
+  - `10001001 -> appkey error`
+  - `10001186 -> appkey error`
+  - `10001187 -> appid no find`
+- 所以如果你的目的不是专门探分支，最稳策略仍然是保留 canonical `appid=10001005 + appkey=0d1a9ddd94de871b`
+
 如果你想显式探 API1 的独立 `tid=453` positive cover shell，而不是走 canonical `431`：
 
 raw API：
@@ -393,6 +407,16 @@ go.exe -vids <VID> -json
 
 - `tid=535` 仍是 canonical full-detail branch
 - 这是默认最推荐的 detail recipe
+- 同样地，API2 的 `appid/appkey` 也已经不是“canonical 成功，其他全失败”这么简单
+  - `appid=1` 当前仍可走 success bypass
+  - 远离 canonical 的 tested numerics（如 `2 / 3 / 10 / 100 / 1000 / 99999`）当前回 `appid no find`
+  - searched near-canonical numerics `20001001-20002581` 当前回 `appkey error`
+  - 当前 searched cutover 已经压到：
+    - `20001000 -> appid no find`
+    - `20001001 -> appkey error`
+    - `20002581 -> appkey error`
+    - `20002582 -> appid no find`
+- 所以如果你的目的不是专门探分支，最稳策略仍然是保留 canonical `appid=20001238 + appkey=6c03bbe9658448a4`
 
 ## 5. 你手里是单个 VID，但需要 JSONP
 

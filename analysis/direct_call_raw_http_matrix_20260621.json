@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-06-22",
+  "generated_at": "2026-06-23",
   "scope": "Caller-facing raw HTTP matrix for the two Tencent Video main interfaces in the current anonymous direct-call scope.",
   "purpose": [
     "Give one raw direct-call row per already-demonstrated capability surface.",
     "Keep example URL, success discriminator, failure discriminator, and branch caveat together so the caller does not have to join multiple artifacts by hand.",
     "Do not upgrade anonymous direct-call evidence into aged-cookie or login-state closure."
+  ],
+  "global_parameter_cautions": [
+    "The raw URL templates below keep the canonical appid/appkey pair because that is still the most stable caller default.",
+    "Do not collapse alternate numeric appid into one flat failure family: in the tested anonymous numeric slice, `appid=1` currently behaves like a success bypass, far noncanonical numerics fall into `appid no find`, and the searched near-canonical numeric region falls into `appkey error`.",
+    "Current searched cutovers are API1 `10001000 -> appid no find`, `10001001-10001186 -> appkey error`, `10001187 -> appid no find`, and API2 `20001000 -> appid no find`, `20001001-20002581 -> appkey error`, `20002582 -> appid no find`."
   ],
   "rows": [
     {
@@ -34,7 +39,8 @@
       ],
       "known_caveats": [
         "API1 other positive tid values beyond the confirmed 431/453 branches are not fully closed.",
-        "This row is scoped to the current anonymous direct-call branch."
+        "This row is scoped to the current anonymous direct-call branch.",
+        "The canonical appid/appkey pair remains the caller default here; alternate numeric appid now splits into success-bypass / appid-no-find / appkey-error families rather than one flat noncanonical failure family."
       ],
       "evidence": [
         "analysis/direct_call_parameter_total_table_20260621.json",
@@ -178,7 +184,8 @@
       ],
       "known_caveats": [
         "This is still the best caller default when you expect fuller detail.",
-        "union_platform currently shows scoped-negative behavior only in tested anonymous environments."
+        "union_platform currently shows scoped-negative behavior only in tested anonymous environments.",
+        "The canonical appid/appkey pair remains the caller default here; alternate numeric appid now splits into success-bypass / appid-no-find / appkey-error families rather than one flat noncanonical failure family."
       ],
       "evidence": [
         "analysis/direct_call_capability_table_20260621.json",
@@ -481,6 +488,7 @@
   "still_open": [
     "aged-cookie/login-state replay is still required before any environment-sensitive row can be upgraded into a global calling rule.",
     "API1 positive tid space beyond the confirmed 431/453 branches remains open.",
-    "API2 positive or success-shell tid space beyond the current 488/502/506/535/540/541 family map remains open."
+    "API2 positive or success-shell tid space beyond the current 488/502/506/535/540/541 family map remains open.",
+    "Broader numeric appid space outside the currently searched anonymous regions remains open even after the new cutovers were found."
   ]
 }

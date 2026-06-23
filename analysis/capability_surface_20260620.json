@@ -1,6 +1,11 @@
 {
-  "generated_at": "2026-06-21",
+  "generated_at": "2026-06-23",
   "scope": "Current directly callable capability surface for Tencent Video API1/API2 under the tested anonymous same-day environments, plus anonymous real-cookie replay where explicitly noted.",
+  "global_parameter_cautions": [
+    "The capability rows below still use the canonical appid/appkey pair as the caller default because that is the most stable branch in the tested anonymous direct-call scope.",
+    "Do not collapse alternate numeric appid into one flat failure family: in the tested anonymous numeric slice, `appid=1` currently behaves like a success bypass, far noncanonical numerics fall into `appid no find`, and the searched near-canonical numeric region falls into `appkey error`.",
+    "Current searched cutovers are API1 `10001000 -> appid no find`, `10001001-10001186 -> appkey error`, `10001187 -> appid no find`, and API2 `20001000 -> appid no find`, `20001001-20002581 -> appkey error`, `20002582 -> appid no find`."
+  ],
   "capabilities": [
     {
       "name": "api1_single_cid_cover_lookup",
@@ -11,8 +16,8 @@
         "idlist": "<single CID>"
       },
       "conditional_parameters": {
-        "appid": "10001005 is the canonical numeric appid when you want the stable documented branch",
-        "appkey": "part of the stable documented branch when the canonical numeric appid is used; looser anonymous fallback branches should not be treated as the recommended contract"
+        "appid": "10001005 is the canonical numeric appid when you want the stable documented branch; in the current anonymous numeric slice, `appid=1` is a success-bypass family, far noncanonical numerics such as `99999` fall into `appid no find`, and the searched near-canonical region `10001001-10001186` falls into `appkey error`",
+        "appkey": "part of the stable documented branch when the canonical numeric appid is used; the current canonical appkey does not unlock the searched near-canonical numeric region, which still falls into `appkey error`"
       },
       "current_status": "stable",
       "environment_scope": "same-day anonymous environments; current repo evidence is stable here",
@@ -111,8 +116,8 @@
       },
       "conditional_parameters": {
         "otype": "omit or set xml for XML wrapper",
-        "appid": "20001238 is the canonical numeric appid when you want the stable documented branch",
-        "appkey": "part of the stable documented branch when the canonical numeric appid is used; looser anonymous fallback branches should not be treated as the recommended contract",
+        "appid": "20001238 is the canonical numeric appid when you want the stable documented branch; in the current anonymous numeric slice, `appid=1` is a success-bypass family, far noncanonical numerics such as `99999` fall into `appid no find`, and the searched near-canonical region `20001001-20002581` falls into `appkey error`",
+        "appkey": "part of the stable documented branch when the canonical numeric appid is used; the current canonical appkey does not unlock the searched near-canonical numeric region, which still falls into `appkey error`",
         "union_platform": "present in canonical requests but currently shows no observable behavioral split on the tested anonymous canonical branch"
       },
       "current_status": "stable",
@@ -133,8 +138,8 @@
         "idlist": "<single VID>"
       },
       "conditional_parameters": {
-        "appid": "20001238 canonical numeric branch",
-        "appkey": "required when canonical numeric appid branch is active",
+        "appid": "20001238 canonical numeric branch; in the current anonymous numeric slice, `appid=1` is a success-bypass family, far noncanonical numerics fall into `appid no find`, and the searched near-canonical region `20001001-20002581` falls into `appkey error`",
+        "appkey": "required when canonical numeric appid branch is active; the current canonical appkey does not unlock the searched near-canonical numeric region",
         "union_platform": "currently shows no observable behavioral split on the tested anonymous canonical branch"
       },
       "behavior_notes": [
@@ -160,8 +165,8 @@
       },
       "conditional_parameters": {
         "otype": "xml or exact lowercase json",
-        "appid": "20001238 canonical numeric branch",
-        "appkey": "required when canonical numeric appid branch is active",
+        "appid": "20001238 canonical numeric branch; in the current anonymous numeric slice, `appid=1` is a success-bypass family, far noncanonical numerics fall into `appid no find`, and the searched near-canonical region `20001001-20002581` falls into `appkey error`",
+        "appkey": "required when canonical numeric appid branch is active; the current canonical appkey does not unlock the searched near-canonical numeric region",
         "union_platform": "currently observed as ignored"
       },
       "behavior_notes": [
@@ -339,6 +344,8 @@
     "analysis/positive_tid_summary_20260621.json",
     "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json",
     "analysis/authish_extra_key_replay_anonymous_real_cookie_summary_20260621.json",
+    "analysis/appid_numeric_branch_summary_20260623.json",
+    "analysis/appid_numeric_boundary_search_20260623.json",
     "docs/tencent_video_apis.md"
   ],
   "remaining_notes": [

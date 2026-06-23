@@ -6,7 +6,8 @@
     "It is not proof that aged-cookie or login-state environments behave the same.",
     "These recipes prioritize the shortest stable path in the currently tested anonymous direct-call scope; they are not automatically the globally safest path across all cookie ages, login states, or wider sample space.",
     "When a recipe is marked branch_partially_closed or environment_open, keep the canonical branch unless you are deliberately probing that branch family.",
-    "For both API1 and API2, appid/appkey is no longer a simple canonical-vs-other split in the tested anonymous numeric slice: `appid=1` currently behaves like a success bypass, far noncanonical numerics fall into `appid no find`, and the searched near-canonical numeric region falls into `appkey error`; keep the canonical pair unless you are deliberately probing that branch family."
+    "For both API1 and API2, appid/appkey is no longer a simple canonical-vs-other split in the tested anonymous numeric slice: `appid=1` currently behaves like a success bypass, far noncanonical numerics fall into `appid no find`, and the searched near-canonical numeric region falls into `appkey error`; keep the canonical pair unless you are deliberately probing that branch family.",
+    "The searched numeric cutovers are now frozen by regression anchors on both lower and upper edges: API1 `10001000 -> 10001001` plus `10001186 -> 10001187`, and API2 `20001000 -> 20001001` plus `20002581 -> 20002582`."
   ],
   "recipes": [
     {

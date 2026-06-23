@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-22",
-  "scope": "Canonical regression sample set for Tencent Video API parameter and capability closure, refreshed through the 2026-06-21 positive-tid and anonymous real-cookie replay evidence.",
+  "generated_at": "2026-06-23",
+  "scope": "Canonical regression sample set for Tencent Video API parameter and capability closure, refreshed through the 2026-06-23 appid numeric-family closure and caller-facing alternate-shell alignment evidence.",
   "api1": [
     {
       "case": "baseline_single_valid",
@@ -95,6 +95,102 @@
       "evidence": [
         "analysis/api_contract_summary_20260619.json",
         "analysis/environment_matrix_20260620.json"
+      ]
+    },
+    {
+      "case": "appid_1_success_bypass",
+      "intent": "Anchor the current API1 numeric appid success-bypass family under canonical other parameters.",
+      "params": {
+        "tid": "431",
+        "idlist": "mzc00200idzf2m8",
+        "appid": "1",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "expected_highlights": [
+        "top-level errorno=0",
+        "non-empty cover title",
+        "non-empty video_ids family",
+        "caller should treat this as a numeric success-bypass family rather than as proof that all noncanonical appid succeed"
+      ],
+      "evidence": [
+        "analysis/api1_appid_numeric_focus_20260623.json",
+        "analysis/appid_numeric_branch_summary_20260623.json"
+      ]
+    },
+    {
+      "case": "appid_10001000_appid_no_find",
+      "intent": "Anchor the current API1 far-numeric appid-no-find family at the searched lower cutover edge.",
+      "params": {
+        "tid": "431",
+        "idlist": "mzc00200idzf2m8",
+        "appid": "10001000",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "expected_highlights": [
+        "errorno=10010108",
+        "errormsg=appid no find",
+        "caller should treat this as the appid-no-find side of the current searched cutover"
+      ],
+      "evidence": [
+        "analysis/api1_appid_numeric_focus_20260623.json",
+        "analysis/appid_numeric_boundary_search_20260623.json"
+      ]
+    },
+    {
+      "case": "appid_10001001_appkey_error",
+      "intent": "Anchor the current API1 near-canonical numeric appkey-error family at the searched lower cutover edge.",
+      "params": {
+        "tid": "431",
+        "idlist": "mzc00200idzf2m8",
+        "appid": "10001001",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "expected_highlights": [
+        "errorno=10010110",
+        "errormsg=appkey error",
+        "caller should treat this as the near-canonical appkey-error side of the current searched cutover"
+      ],
+      "evidence": [
+        "analysis/api1_appid_numeric_focus_20260623.json",
+        "analysis/appid_numeric_boundary_search_20260623.json"
+      ]
+    },
+    {
+      "case": "appid_10001186_appkey_error",
+      "intent": "Anchor the current API1 near-canonical numeric appkey-error family at the searched upper cutover edge.",
+      "params": {
+        "tid": "431",
+        "idlist": "mzc00200idzf2m8",
+        "appid": "10001186",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "expected_highlights": [
+        "errorno=10010110",
+        "errormsg=appkey error",
+        "caller should treat this as the last appkey-error point before the current searched upper cutover flips back"
+      ],
+      "evidence": [
+        "analysis/api1_appid_numeric_focus_20260623.json",
+        "analysis/appid_numeric_boundary_search_20260623.json"
+      ]
+    },
+    {
+      "case": "appid_10001187_appid_no_find",
+      "intent": "Anchor the current API1 far-numeric appid-no-find family at the searched upper cutover edge.",
+      "params": {
+        "tid": "431",
+        "idlist": "mzc00200idzf2m8",
+        "appid": "10001187",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "expected_highlights": [
+        "errorno=10010108",
+        "errormsg=appid no find",
+        "caller should treat this as the first appid-no-find point after the current searched upper cutover"
+      ],
+      "evidence": [
+        "analysis/api1_appid_numeric_focus_20260623.json",
+        "analysis/appid_numeric_boundary_search_20260623.json"
       ]
     },
     {
@@ -290,6 +386,111 @@
       "evidence": [
         "analysis/api_contract_summary_20260619.json",
         "analysis/environment_matrix_20260620.json"
+      ]
+    },
+    {
+      "case": "appid_1_success_bypass",
+      "intent": "Anchor the current API2 numeric appid success-bypass family under canonical other parameters.",
+      "params": {
+        "otype": "xml",
+        "tid": "535",
+        "appid": "1",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4"
+      },
+      "expected_highlights": [
+        "top-level errorno=0",
+        "non-empty detail row",
+        "caller should treat this as a numeric success-bypass family rather than as proof that all noncanonical appid succeed"
+      ],
+      "evidence": [
+        "analysis/api2_appid_numeric_focus_20260623.json",
+        "analysis/appid_numeric_branch_summary_20260623.json"
+      ]
+    },
+    {
+      "case": "appid_20001000_appid_no_find",
+      "intent": "Anchor the current API2 far-numeric appid-no-find family at the searched lower cutover edge.",
+      "params": {
+        "otype": "xml",
+        "tid": "535",
+        "appid": "20001000",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4"
+      },
+      "expected_highlights": [
+        "errorno=10010108",
+        "errormsg=appid no find",
+        "caller should treat this as the appid-no-find side of the current searched cutover"
+      ],
+      "evidence": [
+        "analysis/api2_appid_numeric_focus_20260623.json",
+        "analysis/appid_numeric_boundary_search_20260623.json"
+      ]
+    },
+    {
+      "case": "appid_20001001_appkey_error",
+      "intent": "Anchor the current API2 near-canonical numeric appkey-error family at the searched lower cutover edge.",
+      "params": {
+        "otype": "xml",
+        "tid": "535",
+        "appid": "20001001",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4"
+      },
+      "expected_highlights": [
+        "errorno=10010110",
+        "errormsg=appkey error",
+        "caller should treat this as the near-canonical appkey-error side of the current searched cutover"
+      ],
+      "evidence": [
+        "analysis/api2_appid_numeric_focus_20260623.json",
+        "analysis/appid_numeric_boundary_search_20260623.json"
+      ]
+    },
+    {
+      "case": "appid_20002581_appkey_error",
+      "intent": "Anchor the current API2 near-canonical numeric appkey-error family at the searched upper cutover edge.",
+      "params": {
+        "otype": "xml",
+        "tid": "535",
+        "appid": "20002581",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4"
+      },
+      "expected_highlights": [
+        "errorno=10010110",
+        "errormsg=appkey error",
+        "caller should treat this as the last appkey-error point before the current searched upper cutover flips back"
+      ],
+      "evidence": [
+        "analysis/api2_appid_numeric_focus_20260623.json",
+        "analysis/appid_numeric_boundary_search_20260623.json"
+      ]
+    },
+    {
+      "case": "appid_20002582_appid_no_find",
+      "intent": "Anchor the current API2 far-numeric appid-no-find family at the searched upper cutover edge.",
+      "params": {
+        "otype": "xml",
+        "tid": "535",
+        "appid": "20002582",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3",
+        "idlist": "z4102qfi0x4"
+      },
+      "expected_highlights": [
+        "errorno=10010108",
+        "errormsg=appid no find",
+        "caller should treat this as the first appid-no-find point after the current searched upper cutover"
+      ],
+      "evidence": [
+        "analysis/api2_appid_numeric_focus_20260623.json",
+        "analysis/appid_numeric_boundary_search_20260623.json"
       ]
     },
     {

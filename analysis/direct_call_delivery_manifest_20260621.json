@@ -75,6 +75,8 @@
         "analysis/capability_quick_reference_20260621.json",
         "analysis/direct_call_capability_table_20260621.json",
         "docs/direct_call_playbook.md",
+        "analysis/demo_validation_incremental_tid453_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid453_20260623.json",
         "analysis/demo_validation_incremental_api2_tid488_502_20260623.json",
         "analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json",
         "analysis/direct_call_raw_http_validation_api2_tid506_20260623.json",
@@ -83,6 +85,8 @@
         "analysis/api1_tid_shell_family_delta_20260623.json",
         "analysis/demo_validation_incremental_tid476_20260623.json",
         "analysis/direct_call_raw_http_validation_tid476_20260623.json",
+        "analysis/demo_validation_incremental_tid483_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid483_20260623.json",
         "analysis/demo_validation_incremental_tid506_api1_20260623.json",
         "analysis/direct_call_raw_http_validation_tid506_api1_20260623.json"
       ],

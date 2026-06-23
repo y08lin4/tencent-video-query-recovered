@@ -38,7 +38,7 @@
         "missing/empty idlist -> errorno=-111004"
       ],
       "known_caveats": [
-        "API1 other positive tid values beyond the confirmed 431/453 branches are not fully closed.",
+        "API1 positive/success-shell tid space is only partially closed; the current caller-facing confirmed family is 431/453/476/483/506/537 rather than only 431/453.",
         "This row is scoped to the current anonymous direct-call branch.",
         "The canonical appid/appkey pair remains the caller default here; alternate numeric appid now splits into success-bypass / appid-no-find / appkey-error families rather than one flat noncanonical failure family."
       ],
@@ -156,6 +156,114 @@
       ]
     },
     {
+      "capability_id": "api1_tid476_imgtag_ultra_thin_shell",
+      "interface": "api1",
+      "method": "GET",
+      "raw_url_template": "https://data.video.qq.com/fcgi-bin/data?tid=476&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b",
+      "example": {
+        "sample_kind": "api1_tid476_imgtag_ultra_thin_shell",
+        "cid": "mzc00200idzf2m8",
+        "url": "https://data.video.qq.com/fcgi-bin/data?tid=476&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b"
+      },
+      "required_parameters": [
+        "tid",
+        "idlist",
+        "appid",
+        "appkey"
+      ],
+      "success_discriminator": [
+        "top-level errorno=0",
+        "cover_title stays empty while cover_infos_count remains non-zero",
+        "extra_field_keys expose the stable 25-key imgtag family with qbox_imgtag={}"
+      ],
+      "failure_discriminator": [
+        "do not require canonical tid=431 video_ids success on this branch",
+        "do not treat the imgtag-family shell as parser failure just because caller-facing cover fields stay empty"
+      ],
+      "known_caveats": [
+        "Current best reading is an imgtag-family ultra-thin success shell, not a canonical replacement for tid=431.",
+        "The current 3-public-sample check still leaves aged-cookie/login-state parity open for this branch."
+      ],
+      "evidence": [
+        "analysis/positive_tid_probe_456_521_summary_20260623.json",
+        "analysis/demo_validation_incremental_tid476_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid476_20260623.json",
+        "analysis/direct_call_capability_table_20260621.json"
+      ]
+    },
+    {
+      "capability_id": "api1_tid483_video_ids_led_thin_shell",
+      "interface": "api1",
+      "method": "GET",
+      "raw_url_template": "https://data.video.qq.com/fcgi-bin/data?tid=483&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b",
+      "example": {
+        "sample_kind": "api1_tid483_video_ids_led_thin_shell",
+        "cid": "mzc00200idzf2m8",
+        "url": "https://data.video.qq.com/fcgi-bin/data?tid=483&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b"
+      },
+      "required_parameters": [
+        "tid",
+        "idlist",
+        "appid",
+        "appkey"
+      ],
+      "success_discriminator": [
+        "top-level errorno=0",
+        "video_ids_count stays non-zero",
+        "cover title/type/pay_status stay empty on the current public probe samples"
+      ],
+      "failure_discriminator": [
+        "do not require canonical tid=431 cover richness on this branch",
+        "do not treat a thin cover shell with non-empty video_ids as canonical 431 parity"
+      ],
+      "known_caveats": [
+        "Current best reading is a video_ids-led thin success shell, not a canonical replacement for tid=431.",
+        "This branch can still feed downstream canonical API2 detail chaining in the repository demos even though the cover shell stays thin."
+      ],
+      "evidence": [
+        "analysis/positive_tid_probe_456_521_summary_20260623.json",
+        "analysis/demo_validation_incremental_tid483_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid483_20260623.json",
+        "analysis/direct_call_capability_table_20260621.json"
+      ]
+    },
+    {
+      "capability_id": "api1_tid506_empty_valued_field_shell",
+      "interface": "api1",
+      "method": "GET",
+      "raw_url_template": "https://data.video.qq.com/fcgi-bin/data?tid=506&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b",
+      "example": {
+        "sample_kind": "api1_tid506_empty_valued_field_shell",
+        "cid": "mzc00200idzf2m8",
+        "url": "https://data.video.qq.com/fcgi-bin/data?tid=506&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b"
+      },
+      "required_parameters": [
+        "tid",
+        "idlist",
+        "appid",
+        "appkey"
+      ],
+      "success_discriminator": [
+        "top-level errorno=0",
+        "cover_title stays empty while cover_infos_count remains non-zero",
+        "the current validated shell contains a 9-key empty-valued extra-field family with no non-empty extras"
+      ],
+      "failure_discriminator": [
+        "do not require canonical tid=431 video_ids success on this branch",
+        "do not treat the empty-valued field shell as parser failure just because caller-facing cover fields stay empty"
+      ],
+      "known_caveats": [
+        "Current best reading is an empty-valued field success shell, not a canonical replacement for tid=431.",
+        "The current 3-public-sample check still leaves aged-cookie/login-state parity open for this branch."
+      ],
+      "evidence": [
+        "analysis/positive_tid_probe_456_521_summary_20260623.json",
+        "analysis/demo_validation_incremental_tid506_api1_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid506_api1_20260623.json",
+        "analysis/direct_call_capability_table_20260621.json"
+      ]
+    },
+    {
       "capability_id": "api2_single_detail_xml_canonical",
       "interface": "api2",
       "method": "GET",
@@ -261,6 +369,42 @@
       ],
       "evidence": [
         "analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json",
+        "analysis/api2_extended_tid_capability_delta_20260623.json",
+        "analysis/direct_call_capability_table_20260621.json"
+      ]
+    },
+    {
+      "capability_id": "api2_single_detail_xml_tid506_near_empty_success_shell",
+      "interface": "api2",
+      "method": "GET",
+      "raw_url_template": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=506&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID>",
+      "example": {
+        "sample_kind": "near_empty_success_shell",
+        "vid": "u41010ju5vc",
+        "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=506&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=u41010ju5vc"
+      },
+      "required_parameters": [
+        "otype",
+        "tid",
+        "appid",
+        "appkey",
+        "union_platform",
+        "idlist"
+      ],
+      "success_discriminator": [
+        "top-level errorno=0",
+        "row-level retcode=0",
+        "caller-facing row stays effectively empty_shell=true on the dedicated validated sample"
+      ],
+      "failure_discriminator": [
+        "do not treat top-level success as a usable positive-detail row on this branch",
+        "do not require title/url/duration/cover_list on tid=506 success rows"
+      ],
+      "known_caveats": [
+        "Current best reading is a stable near-empty success shell, not a canonical replacement for tid=535 and not a caller-facing positive-detail recipe."
+      ],
+      "evidence": [
+        "analysis/direct_call_raw_http_validation_api2_tid506_20260623.json",
         "analysis/api2_extended_tid_capability_delta_20260623.json",
         "analysis/direct_call_capability_table_20260621.json"
       ]

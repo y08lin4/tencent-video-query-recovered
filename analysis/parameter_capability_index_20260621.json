@@ -114,7 +114,12 @@
         "api1_batch_cover_lookup"
       ],
       "related_regression_samples": [
-        "canonical_appid_missing_appkey"
+        "canonical_appid_missing_appkey",
+        "appid_1_success_bypass",
+        "appid_10001000_appid_no_find",
+        "appid_10001001_appkey_error",
+        "appid_10001186_appkey_error",
+        "appid_10001187_appid_no_find"
       ],
       "key_evidence": [
         "analysis/api_param_inventory_20260620.json",
@@ -144,7 +149,12 @@
         "api1_batch_cover_lookup"
       ],
       "related_regression_samples": [
-        "canonical_appid_missing_appkey"
+        "canonical_appid_missing_appkey",
+        "appid_1_success_bypass",
+        "appid_10001000_appid_no_find",
+        "appid_10001001_appkey_error",
+        "appid_10001186_appkey_error",
+        "appid_10001187_appid_no_find"
       ],
       "key_evidence": [
         "analysis/api_param_inventory_20260620.json",
@@ -272,7 +282,12 @@
         "api2_batch_lookup"
       ],
       "related_regression_samples": [
-        "canonical_appid_missing_appkey"
+        "canonical_appid_missing_appkey",
+        "appid_1_success_bypass",
+        "appid_20001000_appid_no_find",
+        "appid_20001001_appkey_error",
+        "appid_20002581_appkey_error",
+        "appid_20002582_appid_no_find"
       ],
       "key_evidence": [
         "analysis/api_param_inventory_20260620.json",
@@ -303,7 +318,12 @@
         "api2_batch_lookup"
       ],
       "related_regression_samples": [
-        "canonical_appid_missing_appkey"
+        "canonical_appid_missing_appkey",
+        "appid_1_success_bypass",
+        "appid_20001000_appid_no_find",
+        "appid_20001001_appkey_error",
+        "appid_20002581_appkey_error",
+        "appid_20002582_appid_no_find"
       ],
       "key_evidence": [
         "analysis/api_param_inventory_20260620.json",

@@ -261,6 +261,86 @@
       ]
     },
     {
+      "capability_id": "api1_single_cover_lookup_tid483_video_ids_led_thin_shell",
+      "use_when": "你手里是单个 CID，明确想验证 API1 `tid=483` 这条 video_ids-led thin success shell，而不是 canonical `431`。",
+      "input_seed_kind": [
+        "cid"
+      ],
+      "interface": "api1",
+      "output_grade": "video_ids_led_thin_success_shell_with_downstream_api2_chainability_on_current_samples",
+      "status": "branch_partially_closed",
+      "environment_scope": {
+        "confirmed_in": [
+          "anonymous_direct_call"
+        ],
+        "open_in": [
+          "aged_cookie",
+          "login_state",
+          "broader_positive_tid_space"
+        ]
+      },
+      "parameter_tiers": {
+        "hard_required": {
+          "tid": "483",
+          "idlist": "<single CID>"
+        },
+        "recommended_defaults": {
+          "appid": "10001005",
+          "appkey": "0d1a9ddd94de871b"
+        },
+        "optional_overrides": {},
+        "probe_only_overrides": {}
+      },
+      "preferred_entrypoints": {
+        "curl": "https://data.video.qq.com/fcgi-bin/data?tid=483&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b",
+        "python_demo": "python examples/python/tencent_video_api_demo.py --cid <CID> --api1-tid 483 --json",
+        "go_demo": "go.exe -cid <CID> -api1-tid 483 -json"
+      },
+      "live_validation_by_entrypoint": {
+        "curl": "live_validated_dedicated_raw_surface",
+        "python_demo": "live_validated_dedicated_surface",
+        "go_demo": "live_validated_dedicated_surface"
+      },
+      "success_rule": {
+        "top_level": [
+          "errorno=0"
+        ],
+        "row_level": [
+          "video_ids_count stays non-zero",
+          "cover title/type/pay_status stay empty on the confirmed public matrix",
+          "the current validated demo path can still generate downstream canonical API2 detail rows because aggregated_video_ids_count stays non-zero"
+        ],
+        "caller_should_check": [
+          "Treat success as a video_ids-led thin shell rather than a canonical 431-equivalent cover row."
+        ]
+      },
+      "failure_or_misuse_rule": [
+        "Do not judge this branch by canonical 431 cover richness expectations.",
+        "Do not treat downstream API2 chainability as proof that the upstream API1 cover shell matches tid=431 richness."
+      ],
+      "must_not_assume": [
+        "tid=483 is not a field-equivalent replacement for tid=431.",
+        "The current 3-CID evidence does not prove aged-cookie or login-state parity for this branch."
+      ],
+      "regression_anchor_samples": [
+        {
+          "cid": "mzc00200idzf2m8"
+        },
+        {
+          "cid": "mzc00200xxpsogl"
+        },
+        {
+          "cid": "mzc00200fobieel"
+        }
+      ],
+      "evidence": [
+        "analysis/positive_tid_probe_456_521_summary_20260623.json",
+        "analysis/api1_tid_shell_family_delta_20260623.json",
+        "analysis/demo_validation_incremental_tid483_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid483_20260623.json"
+      ]
+    },
+    {
       "capability_id": "api1_single_cover_lookup_tid476_imgtag_ultra_thin_shell",
       "use_when": "你手里是单个 CID，明确想验证 API1 `tid=476` 这条 imgtag-family ultra-thin success shell，而不是 canonical `431`。",
       "input_seed_kind": [
@@ -738,6 +818,81 @@
         "analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json",
         "analysis/api2_extended_tid_capability_delta_20260623.json",
         "analysis/tid_richness_matrix_extended_20260623.json"
+      ]
+    },
+    {
+      "capability_id": "api2_single_detail_xml_tid506_near_empty_success_shell",
+      "use_when": "你手里是单个 VID，明确想验证 API2 `tid=506` 这条 near-empty success shell，而不是 canonical `535` 或其他 caller-facing alternate positive shell。",
+      "input_seed_kind": [
+        "vid"
+      ],
+      "interface": "api2",
+      "output_grade": "near_empty_success_shell_without_caller_facing_detail_materialization",
+      "status": "branch_partially_closed",
+      "environment_scope": {
+        "confirmed_in": [
+          "anonymous_direct_call"
+        ],
+        "open_in": [
+          "aged_cookie",
+          "login_state",
+          "broader_positive_tid_space"
+        ]
+      },
+      "parameter_tiers": {
+        "hard_required": {
+          "tid": "506",
+          "idlist": "<single VID>"
+        },
+        "recommended_defaults": {
+          "otype": "xml",
+          "appid": "20001238",
+          "appkey": "6c03bbe9658448a4",
+          "union_platform": "3"
+        },
+        "optional_overrides": {},
+        "probe_only_overrides": {}
+      },
+      "preferred_entrypoints": {
+        "curl": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=506&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID>",
+        "python_demo": "python examples/python/tencent_video_api_demo.py --vid <VID> --api2-tid 506 --json",
+        "go_demo": "go.exe -vids <VID> -api2-tid 506 -json"
+      },
+      "live_validation_by_entrypoint": {
+        "curl": "live_validated_dedicated_raw_surface",
+        "python_demo": "live_validated_dedicated_surface",
+        "go_demo": "live_validated_dedicated_surface"
+      },
+      "success_rule": {
+        "top_level": [
+          "errorno=0"
+        ],
+        "row_level": [
+          "retcode=0",
+          "the caller-facing row stays effectively empty_shell=true on the dedicated validated sample",
+          "title/url/duration/cover_list/create_time/state/upload_src remain absent on the dedicated validated sample"
+        ],
+        "caller_should_check": [
+          "Treat success as a near-empty success shell rather than as a positive-detail row."
+        ]
+      },
+      "failure_or_misuse_rule": [
+        "Do not judge this branch by canonical 535 richness expectations.",
+        "Do not treat top-level success plus retcode=0 as proof that caller-facing detail materialized on tid=506."
+      ],
+      "must_not_assume": [
+        "tid=506 is not a field-equivalent replacement for tid=535.",
+        "Current Python/Go plus raw parity only strengthens the shell-level reading in the tested anonymous branch."
+      ],
+      "regression_anchor_samples": [
+        {
+          "vid": "u41010ju5vc"
+        }
+      ],
+      "evidence": [
+        "analysis/api2_extended_tid_capability_delta_20260623.json",
+        "analysis/demo_validation_incremental_api2_tid506_20260623.json",
+        "analysis/direct_call_raw_http_validation_api2_tid506_20260623.json"
       ]
     },
     {

@@ -98,6 +98,37 @@
       ]
     },
     {
+      "name": "api1_single_cover_lookup_tid483_video_ids_led_thin_shell",
+      "purpose": "Use API1 tid=483 to probe the dedicated video_ids-led thin success shell when you deliberately want that branch rather than canonical tid=431.",
+      "interface": "api1",
+      "environment_scope": "same-day anonymous tested branch",
+      "canonical_parameters": {
+        "tid": "483",
+        "idlist": "<single CID>",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "curl": "https://data.video.qq.com/fcgi-bin/data?tid=483&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b",
+      "python_demo": "python examples/python/tencent_video_api_demo.py --cid <CID> --api1-tid 483 --json",
+      "go_demo": "go.exe -cid <CID> -api1-tid 483 -json",
+      "expected_highlights": [
+        "top-level errorno=0",
+        "cover title/type/pay_status stay empty while video_ids_count stays non-empty on the current 3-CID public matrix",
+        "the branch can still feed downstream canonical API2 detail chaining in the repository demos even though the cover shell stays thin"
+      ],
+      "notes": [
+        "`483` is currently a video_ids-led thin success shell, not a field-equivalent replacement for canonical tid=431.",
+        "On the current caller-facing confirmation set it repeated the same non-empty video_ids plus thin cover shell shape across `mzc00200idzf2m8`, `mzc00200xxpsogl`, and `mzc00200fobieel`."
+      ],
+      "evidence": [
+        "analysis/positive_tid_probe_456_521_summary_20260623.json",
+        "analysis/parameter_contract_quick_reference_20260621.json",
+        "analysis/api1_tid_shell_family_delta_20260623.json",
+        "analysis/demo_validation_incremental_tid483_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid483_20260623.json"
+      ]
+    },
+    {
       "name": "api1_single_cover_lookup_tid476_imgtag_ultra_thin_shell",
       "purpose": "Use API1 tid=476 to probe the dedicated imgtag-family ultra-thin success shell when you deliberately want that branch rather than canonical tid=431.",
       "interface": "api1",
@@ -277,6 +308,38 @@
         "analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json",
         "analysis/api2_extended_tid_capability_delta_20260623.json",
         "analysis/tid_richness_matrix_extended_20260623.json"
+      ]
+    },
+    {
+      "name": "api2_single_detail_xml_tid506_near_empty_success_shell",
+      "purpose": "Use API2 XML on tid=506 when you explicitly want to probe the dedicated near-empty success shell rather than a positive-detail branch.",
+      "interface": "api2",
+      "environment_scope": "same-day anonymous tested branch",
+      "canonical_parameters": {
+        "otype": "xml",
+        "tid": "506",
+        "idlist": "<single VID>",
+        "appid": "20001238",
+        "appkey": "6c03bbe9658448a4",
+        "union_platform": "3"
+      },
+      "curl": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=506&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID>",
+      "python_demo": "python examples/python/tencent_video_api_demo.py --vid <VID> --api2-tid 506 --json",
+      "go_demo": "go.exe -vids <VID> -api2-tid 506 -json",
+      "expected_highlights": [
+        "top-level errorno=0",
+        "retcode=0 on the confirmed sample",
+        "the caller-facing row stays effectively empty_shell=true on the dedicated demo and raw XML validation sample"
+      ],
+      "notes": [
+        "`506` is currently a stable near-empty success shell rather than a positive-detail recipe.",
+        "Current dedicated Python/Go and raw HTTP validation on `u41010ju5vc` confirms top-level success without non-empty caller-facing detail materialization."
+      ],
+      "evidence": [
+        "analysis/api2_extended_tid_capability_delta_20260623.json",
+        "analysis/positive_tid_probe_456_521_summary_20260623.json",
+        "analysis/demo_validation_incremental_api2_tid506_20260623.json",
+        "analysis/direct_call_raw_http_validation_api2_tid506_20260623.json"
       ]
     },
     {

@@ -20,7 +20,12 @@
         "--api2-union-platform",
         "--api2-callback",
         "--api2-batch-size",
+        "--env-json",
+        "--env-name",
         "--json"
+      ],
+      "notes": [
+        "The Python demo can consume a prebuilt replay environment JSON via `--env-json` and select a named environment via `--env-name`."
       ]
     },
     {
@@ -41,9 +46,12 @@
         "-api2-union-platform",
         "-api2-callback",
         "-api2-batch-size",
+        "-env-json",
+        "-env-name",
         "-json"
       ],
       "notes": [
+        "The Go demo can consume a prebuilt replay environment JSON via `-env-json` and select a named environment via `-env-name`.",
         "The Go demo distinguishes 'flag omitted' from 'explicit empty callback' for `-api2-callback`.",
         "This workspace already includes a runnable `go.exe` wrapper binary; current caller-facing examples use `go.exe -cid <CID> -json`."
       ]
@@ -64,7 +72,7 @@
         "--indent"
       ],
       "notes": [
-        "This runner is scoped to already-documented anonymous direct-call demo surfaces such as canonical XML, API1 tid=453 cover-shell-only branch, API1 tid=476 imgtag-family ultra-thin shell, API1 tid=506 empty-valued field shell, API1 tid=537 shell probe, JSONP callback override, alternate positive tid 488/502/540/541, canonical batch lookup, and the all-invalid JSONP consumer-rule path.",
+        "This runner is scoped to already-documented anonymous direct-call demo surfaces such as canonical XML, API1 tid=453 cover-shell-only branch, API1 tid=476 imgtag-family ultra-thin shell, API1 tid=483 video_ids-led thin shell, API1 tid=506 empty-valued field shell, API1 tid=537 shell probe, JSONP callback override, alternate positive tid 488/502/506/540/541, canonical batch lookup, and the all-invalid JSONP consumer-rule path.",
         "A passing rerun strengthens example replayability, but it does not close aged-cookie or login-state gaps by itself."
       ]
     },
@@ -82,8 +90,8 @@
       ],
       "notes": [
         "This runner validates raw HTTP behavior only in the current anonymous direct-call scope.",
-        "It now also includes the dedicated API1 tid=453 cover-shell-only row, tid=476 imgtag-family ultra-thin row, tid=506 empty-valued field shell row, and API1 tid=537 shell-probe row in addition to canonical API1 and API2 surfaces.",
-        "Alternate tid 488/502/540/541 rows are expected to succeed as caller-selected positive shells rather than canonical-full detail rows.",
+        "It now also includes the dedicated API1 tid=453 cover-shell-only row, tid=476 imgtag-family ultra-thin row, tid=483 video_ids-led thin shell row, tid=506 empty-valued field shell row, and API1 tid=537 shell-probe row in addition to canonical API1 and API2 surfaces.",
+        "Alternate tid 488/502/540/541 rows are expected to succeed as caller-selected positive shells rather than canonical-full detail rows, while API2 tid=506 is expected to stay on its near-empty success-shell profile.",
         "The current batch row is a canonical multi-VID spot-check on the known batch-capable branch, not a fresh 32-slot saturation replay."
       ]
     }
@@ -232,16 +240,18 @@
     },
     {
       "name": "demo_validation_entrypoint_and_override_rerun",
-      "intent": "Rerun the added entrypoint/override demo surfaces: URL chain, multi-CID, API1 tid=453/476/506/537 selected shells, batch-size, union_platform, and tid541+0003 spot-check.",
-      "command": "python tools/tencent_demo_validation_runner.py --surface python_url_canonical_chain,go_url_canonical_chain,python_api1_multi_cid_direct_batch,go_api1_multi_cid_direct_batch,python_api1_tid453_cover_shell_only,go_api1_tid453_cover_shell_only,python_api1_tid476_imgtag_ultra_thin_shell,go_api1_tid476_imgtag_ultra_thin_shell,python_api1_tid506_empty_valued_field_shell,go_api1_tid506_empty_valued_field_shell,python_api1_tid537_probe_shell,go_api1_tid537_probe_shell,python_api2_batch_size_override,go_api2_batch_size_override,python_api2_union_platform_override,go_api2_union_platform_override,python_api2_tid541_union0003_spotcheck,go_api2_tid541_union0003_spotcheck --timeout 180 --strict --output analysis/demo_validation_entrypoint_override_rerun_local.json",
+      "intent": "Rerun the added entrypoint/override demo surfaces: URL chain, multi-CID, API1 tid=453/476/483/506/537 selected shells, API2 tid=506 near-empty shell, batch-size, union_platform, and tid541+0003 spot-check.",
+      "command": "python tools/tencent_demo_validation_runner.py --surface python_url_canonical_chain,go_url_canonical_chain,python_api1_multi_cid_direct_batch,go_api1_multi_cid_direct_batch,python_api1_tid453_cover_shell_only,go_api1_tid453_cover_shell_only,python_api1_tid476_imgtag_ultra_thin_shell,go_api1_tid476_imgtag_ultra_thin_shell,python_api1_tid483_video_ids_led_thin_shell,go_api1_tid483_video_ids_led_thin_shell,python_api1_tid506_empty_valued_field_shell,go_api1_tid506_empty_valued_field_shell,python_api1_tid537_probe_shell,go_api1_tid537_probe_shell,python_api2_tid506_near_empty_success_shell,go_api2_tid506_near_empty_success_shell,python_api2_batch_size_override,go_api2_batch_size_override,python_api2_union_platform_override,go_api2_union_platform_override,python_api2_tid541_union0003_spotcheck,go_api2_tid541_union0003_spotcheck --timeout 180 --strict --output analysis/demo_validation_entrypoint_override_rerun_local.json",
       "primary_output": "analysis/demo_validation_entrypoint_override_rerun_local.json",
       "best_first_checks": [
         "Check that the URL surfaces extract the expected CID before the canonical API chain succeeds.",
         "Check that multi-CID and batch-size surfaces keep non-empty multi-row output instead of silently collapsing to a single-row path.",
         "Check that the tid=453 surfaces stay on the documented positive cover-shell-only branch with empty video_ids rather than silently behaving like canonical tid=431.",
         "Check that the tid=476 surfaces stay on the documented imgtag-family ultra-thin shell with qbox_imgtag={} rather than silently behaving like canonical tid=431 or tid=506.",
+        "Check that the tid=483 surfaces stay on the documented video_ids-led thin shell: video_ids remain non-empty while cover title/type/pay_status stay empty.",
         "Check that the tid=506 surfaces stay on the documented empty-valued field shell rather than silently behaving like canonical tid=431 or tid=476.",
         "Check that the tid=537 probe surfaces stay on the documented sample-less shell branch rather than silently behaving like canonical tid=431.",
+        "Check that the API2 tid=506 surfaces stay on the documented near-empty success shell rather than silently materializing a thicker positive-detail row.",
         "Check that union_platform override still stays on the documented anonymous branch and that tid=541+0003 remains a thin positive shell."
       ]
     },
@@ -294,6 +304,26 @@
       "best_first_checks": [
         "Check that errorno stays 0 while cover_title stays empty and video_ids_count stays 0.",
         "Check that the extra-field family stays on the 9-key empty-valued set and does not grow qbox_imgtag."
+      ]
+    },
+    {
+      "name": "raw_http_validation_tid483_video_ids_led_thin_shell",
+      "intent": "Rerun just the dedicated caller-facing raw HTTP API1 tid=483 video_ids-led thin shell row.",
+      "command": "python tools/tencent_raw_http_validation_runner.py --surface api1_tid483_video_ids_led_thin_shell --strict --output analysis/direct_call_raw_http_validation_tid483_20260623.json",
+      "primary_output": "analysis/direct_call_raw_http_validation_tid483_20260623.json",
+      "best_first_checks": [
+        "Check that errorno stays 0 while video_ids_count stays non-zero.",
+        "Check that cover title/type/pay_status stay empty so the row remains on the documented video_ids-led thin shell."
+      ]
+    },
+    {
+      "name": "raw_http_validation_api2_tid506_near_empty_success_shell",
+      "intent": "Rerun just the dedicated caller-facing raw HTTP API2 tid=506 near-empty success shell row.",
+      "command": "python tools/tencent_raw_http_validation_runner.py --surface api2_single_detail_xml_tid506_near_empty_success_shell --strict --output analysis/direct_call_raw_http_validation_api2_tid506_20260623.json",
+      "primary_output": "analysis/direct_call_raw_http_validation_api2_tid506_20260623.json",
+      "best_first_checks": [
+        "Check that top-level errorno stays 0 and row-level retcode stays 0 on the validated sample.",
+        "Check that the caller-facing row still stays effectively empty_shell=true rather than materializing a thicker positive-detail row."
       ]
     },
     {

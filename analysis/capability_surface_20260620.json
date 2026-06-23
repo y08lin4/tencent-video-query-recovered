@@ -344,7 +344,8 @@
   "remaining_notes": [
     "Anonymous real-cookie replay is now closed for the current contract matrix and the tested auth-ish/repeated-key anchor cases.",
     "The highest-value environment gap has narrowed to aged-cookie and login-state replay.",
-    "The currently confirmed positive API2 tid family is 535/540/541; broader sparse-cluster discovery is still open, but the anonymous 641-647 jump-scan did not produce a new positive lead.",
-    "Current capability evidence also says `541` is a valid alternate positive shell, but should not yet be treated as field-equivalent to canonical `535`."
+    "The currently confirmed caller-facing API1 tid shell family is 431/453/476/483/506/537: 431 remains canonical, 453 is a cover-shell-only branch, 476 is an imgtag-family ultra-thin shell, 483 is a video_ids-led thin shell, 506 is an empty-valued field shell, and 537 remains a sample-less success shell.",
+    "The currently confirmed caller-facing API2 positive tid family is 488/502/506/535/540/541; broader sparse-cluster discovery is still open, but the anonymous 641-647 jump-scan did not produce a new positive lead.",
+    "Current capability evidence says 488/502/506/540/541 are caller-selectable alternate shells, but they should not yet be treated as field-equivalent replacements for canonical 535."
   ]
 }

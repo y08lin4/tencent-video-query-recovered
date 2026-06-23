@@ -1,0 +1,120 @@
+{
+  "generated_at": "2026-06-23",
+  "scope": "Anonymous mid-corridor positive tid follow-up across API1/API2 tids 456-521 with 3 public sample confirmations",
+  "source_artifacts": [
+    "analysis/positive_tid_probe_456_521_20260623.json",
+    "analysis/positive_tid_probe_456_521_alt_sample_20260623.json",
+    "analysis/positive_tid_probe_456_521_third_sample_20260623.json"
+  ],
+  "samples": {
+    "api1_cids": [
+      "mzc00200idzf2m8",
+      "mzc00200xxpsogl",
+      "mzc002009qyd7nv"
+    ],
+    "api2_vids": [
+      "z4102qfi0x4",
+      "j4101ouc4ve",
+      "m4102tgsa8d"
+    ]
+  },
+  "stable_findings": {
+    "api1": {
+      "success_shell_without_sample_family": [
+        {
+          "tid": "476",
+          "shape": "top-level errorno=0 with effectively empty shell; current primary live fetch only exposed qbox_imgtag='{}' as a non-empty field"
+        },
+        {
+          "tid": "506",
+          "shape": "top-level errorno=0 with an all-empty shell on the tested public CID"
+        }
+      ],
+      "video_ids_led_thin_success_shell_family": [
+        {
+          "tid": "483",
+          "shape": "top-level errorno=0 with a thin success shell currently led by video_ids materialization on the tested public CID, without the canonical 431 cover shell"
+        }
+      ],
+      "stable_error_islands": [
+        {
+          "tid": "488",
+          "errorno": "10010048",
+          "errormsg": "key all illegal"
+        },
+        {
+          "tid": "490",
+          "errorno": "-111013",
+          "errormsg": "禁止外部访问接口"
+        },
+        {
+          "tid": "502",
+          "errorno": "10010048",
+          "errormsg": "key all illegal"
+        },
+        {
+          "tid": "514",
+          "errorno": "-111013",
+          "errormsg": "禁止外部访问接口"
+        }
+      ]
+    },
+    "api2": {
+      "stable_positive_tid_branches": [
+        {
+          "tid": "488",
+          "xml_shape": "title + url + picture shell on all 3 public VIDs",
+          "jsonp_shape": "same title + url + picture shell on all 3 public VIDs"
+        },
+        {
+          "tid": "502",
+          "xml_shape": "richer alternate positive shell with title + url + duration + type + vid + cover_list-family fields on all 3 public VIDs",
+          "jsonp_shape": "same richer alternate positive shell on all 3 public VIDs, with JSONP cover_list materializing as an array"
+        }
+      ],
+      "stable_success_shell_without_sample_family": [
+        {
+          "tid": "506",
+          "xml_shape": "top-level success with an effectively empty shell on all 3 public VIDs",
+          "jsonp_shape": "top-level success with an effectively empty shell on all 3 public VIDs; current probe heuristic marks it positive, but the tested primary live fetch still exposed no non-empty fields"
+        }
+      ],
+      "stable_error_islands": [
+        {
+          "tid": "476",
+          "errorno": "10010048",
+          "errormsg": "key all illegal"
+        },
+        {
+          "tid": "483",
+          "errorno": "10010048",
+          "errormsg": "key all illegal"
+        },
+        {
+          "tid": "490",
+          "errorno": "-111013",
+          "errormsg": "禁止外部访问接口"
+        },
+        {
+          "tid": "514",
+          "errorno": "-111013",
+          "errormsg": "禁止外部访问接口"
+        }
+      ]
+    }
+  },
+  "negative_space": {
+    "remaining_ordinary_error_band": "All other tested tids in 456-521 returned the ordinary -111005 error branch on the current 3-sample anonymous sweep."
+  },
+  "current_best_reading": [
+    "API1 tid=453 is not an isolated anonymous anomaly. The broader 456-521 corridor contains additional stable API1 noncanonical success-shell families at 476, 483, and 506, but they are all thinner than canonical 431 and thinner in different ways.",
+    "API2 positive tid space is no longer just 535/540/541 in the anonymous tested map. The 456-521 corridor adds stable alternate positive branches at 488 and 502, plus a stable success-shell family at 506.",
+    "The new 490 and 514 islands strengthen the idea that mid-band anonymous tid space contains both positive shells and forbidden-external local islands, not just a flat ordinary-error band.",
+    "API2 tid=506 should currently be read conservatively as a success-shell family rather than a proved richer positive branch, because the current primary live fetch still exposed no non-empty XML or JSONP fields despite top-level success."
+  ],
+  "follow_up_priority": [
+    "Promote API2 tid=488 and tid=502 into a dedicated capability-delta comparison against 535/540/541 before caller-facing tables are widened.",
+    "Promote API1 tid=476/483/506 into an API1 shell-family comparison against 431/453/537 before treating them as direct-call recipes.",
+    "Keep 490/514 as stable forbidden-external islands and avoid treating nearby ordinary -111005 tids as positive leads without a new branch signal."
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "generated_at": "2026-06-21",
+  "scope": "Compact live rerun summary for the newly added demo runner entrypoint/override surfaces.",
+  "runner": "tools/tencent_demo_validation_runner.py",
+  "runs": {
+    "python": {
+      "exit_code": 0,
+      "surfaces": [
+        {
+          "surface": "python_url_canonical_chain",
+          "result": "success",
+          "ok": true,
+          "attempt_count": 1,
+          "cid": "mzc00200idzf2m8",
+          "api2_tid": "535",
+          "api2_union_platform": "3",
+          "results_count": 1,
+          "first_result_vid": "z4102qfi0x4",
+          "first_result_retcode": "0",
+          "first_result_has_duration": true,
+          "first_result_has_state": true,
+          "first_result_has_upload_src": true,
+          "highlights": [
+            "extracted cid=mzc00200idzf2m8",
+            "API1 cover title=飞驰人生3",
+            "API1 video_ids_count=1",
+            "API2 first retcode=0",
+            "API2 canonical row includes fuller detail fields"
+          ]
+        },
+        {
+          "surface": "python_api1_multi_cid_direct_batch",
+          "result": "success",
+          "ok": true,
+          "attempt_count": 1,
+          "cid": "mzc00200idzf2m8,mzc00200xxpsogl",
+          "api2_tid": "535",
+          "api2_union_platform": "3",
+          "results_count": 32,
+          "first_result_vid": "z4102qfi0x4",
+          "first_result_retcode": "0",
+          "first_result_has_duration": true,
+          "first_result_has_state": true,
+          "first_result_has_upload_src": true,
+          "highlights": [
+            "cid=mzc00200idzf2m8,mzc00200xxpsogl",
+            "cover_title=飞驰人生3",
+            "cover_video_ids_count=32",
+            "results_count=32"
+          ]
+        },
+        {
+          "surface": "python_api2_batch_size_override",
+          "result": "success",
+          "ok": true,
+          "attempt_count": 1,
+          "cid": "",
+          "api2_tid": "535",
+          "api2_union_platform": "3",
+          "results_count": 2,
+          "first_result_vid": "z4102qfi0x4",
+          "first_result_retcode": "0",
+          "first_result_has_duration": true,
+          "first_result_has_state": true,
+          "first_result_has_upload_src": true,
+          "highlights": [
+            "results_count=2",
+            "seen_vids=['z4102qfi0x4', 'j4101ouc4ve']",
+            "batch returned at least one non-empty result"
+          ]
+        },
+        {
+          "surface": "python_api2_union_platform_override",
+          "result": "success",
+          "ok": true,
+          "attempt_count": 1,
+          "cid": "",
+          "api2_tid": "535",
+          "api2_union_platform": "999",
+          "results_count": 1,
+          "first_result_vid": "z4102qfi0x4",
+          "first_result_retcode": "0",
+          "first_result_has_duration": true,
+          "first_result_has_state": true,
+          "first_result_has_upload_src": true,
+          "highlights": [
+            "api2 union_platform=999",
+            "first retcode=0",
+            "explicit union_platform override still returned a fuller canonical row"
+          ]
+        },
+        {
+          "surface": "python_api2_tid541_union0003_spotcheck",
+          "result": "success_with_thin_positive_shell",
+          "ok": true,
+          "attempt_count": 1,
+          "cid": "",
+          "api2_tid": "541",
+          "api2_union_platform": "0003",
+          "results_count": 1,
+          "first_result_vid": "z4102qfi0x4",
+          "first_result_retcode": "0",
+          "first_result_has_duration": false,
+          "first_result_has_state": false,
+          "first_result_has_upload_src": false,
+          "highlights": [
+            "api2 tid=541",
+            "api2 union_platform=0003",
+            "first retcode=0",
+            "alternate positive shell is sparse on this sample"
+          ]
+        }
+      ]
+    },
+    "go": {
+      "exit_code": 0,
+      "surfaces": [
+        {
+          "surface": "go_url_canonical_chain",
+          "result": "success",
+          "ok": true,
+          "attempt_count": 1,
+          "cid": "mzc00200idzf2m8",
+          "api2_tid": "535",
+          "api2_union_platform": "3",
+          "results_count": 1,
+          "first_result_vid": "z4102qfi0x4",
+          "first_result_retcode": "0",
+          "first_result_has_duration": true,
+          "first_result_has_state": true,
+          "first_result_has_upload_src": true,
+          "highlights": [
+            "extracted cid=mzc00200idzf2m8",
+            "API1 cover title=飞驰人生3",
+            "API1 video_ids_count=1",
+            "API2 first retcode=0",
+            "API2 canonical row includes fuller detail fields"
+          ]
+        },
+        {
+          "surface": "go_api1_multi_cid_direct_batch",
+          "result": "success",
+          "ok": true,
+          "attempt_count": 1,
+          "cid": "mzc00200idzf2m8,mzc00200xxpsogl",
+          "api2_tid": "535",
+          "api2_union_platform": "3",
+          "results_count": 32,
+          "first_result_vid": "z4102qfi0x4",
+          "first_result_retcode": "0",
+          "first_result_has_duration": true,
+          "first_result_has_state": true,
+          "first_result_has_upload_src": true,
+          "highlights": [
+            "cid=mzc00200idzf2m8,mzc00200xxpsogl",
+            "cover_title=飞驰人生3",
+            "cover_video_ids_count=32",
+            "results_count=32"
+          ]
+        },
+        {
+          "surface": "go_api2_batch_size_override",
+          "result": "success",
+          "ok": true,
+          "attempt_count": 1,
+          "cid": "mzc00200idzf2m8,mzc00200xxpsogl",
+          "api2_tid": "535",
+          "api2_union_platform": "3",
+          "results_count": 32,
+          "first_result_vid": "z4102qfi0x4",
+          "first_result_retcode": "0",
+          "first_result_has_duration": true,
+          "first_result_has_state": true,
+          "first_result_has_upload_src": true,
+          "highlights": [
+            "cid=mzc00200idzf2m8,mzc00200xxpsogl",
+            "cover_title=飞驰人生3",
+            "cover_video_ids_count=32",
+            "results_count=32"
+          ]
+        },
+        {
+          "surface": "go_api2_union_platform_override",
+          "result": "success",
+          "ok": true,
+          "attempt_count": 1,
+          "cid": "",
+          "api2_tid": "535",
+          "api2_union_platform": "999",
+          "results_count": 1,
+          "first_result_vid": "z4102qfi0x4",
+          "first_result_retcode": "0",
+          "first_result_has_duration": true,
+          "first_result_has_state": true,
+          "first_result_has_upload_src": true,
+          "highlights": [
+            "api2 union_platform=999",
+            "first retcode=0",
+            "explicit union_platform override still returned a fuller canonical row"
+          ]
+        },
+        {
+          "surface": "go_api2_tid541_union0003_spotcheck",
+          "result": "success_with_thin_positive_shell",
+          "ok": true,
+          "attempt_count": 1,
+          "cid": "",
+          "api2_tid": "541",
+          "api2_union_platform": "0003",
+          "results_count": 1,
+          "first_result_vid": "z4102qfi0x4",
+          "first_result_retcode": "0",
+          "first_result_has_duration": false,
+          "first_result_has_state": false,
+          "first_result_has_upload_src": false,
+          "highlights": [
+            "api2 tid=541",
+            "api2 union_platform=0003",
+            "first retcode=0",
+            "alternate positive shell is sparse on this sample"
+          ]
+        }
+      ]
+    }
+  },
+  "current_reading": [
+    "The runner-covered URL, multi-CID, batch-size override, union_platform override, and tid=541+union_platform=0003 surfaces all reran successfully in the current anonymous direct-call scope.",
+    "The tid=541+union_platform=0003 row remains a thin positive shell rather than a fuller canonical detail row."
+  ]
+}

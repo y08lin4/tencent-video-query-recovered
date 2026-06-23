@@ -42,14 +42,16 @@ type requestOptions struct {
 }
 
 type coverInfo struct {
-	CID        string   `json:"cid"`
-	Title      string   `json:"title"`
-	Type       string   `json:"type"`
-	TypeName   string   `json:"type_name"`
-	VideoIDs   []string `json:"video_ids"`
-	PayStatus  string   `json:"pay_status"`
-	CoverPicHz string   `json:"cover_pic_hz"`
-	CoverPicVt string   `json:"cover_pic_vt"`
+	CID                 string            `json:"cid"`
+	Title               string            `json:"title"`
+	Type                string            `json:"type"`
+	TypeName            string            `json:"type_name"`
+	VideoIDs            []string          `json:"video_ids"`
+	PayStatus           string            `json:"pay_status"`
+	CoverPicHz          string            `json:"cover_pic_hz"`
+	CoverPicVt          string            `json:"cover_pic_vt"`
+	ExtraFieldKeys      []string          `json:"extra_field_keys"`
+	ExtraNonemptyFields map[string]string `json:"extra_nonempty_fields"`
 }
 
 type videoDetail struct {
@@ -220,7 +222,19 @@ func main() {
 		fmt.Printf("CID: %s\n", cover.CID)
 		fmt.Printf("标题: %s\n", cover.Title)
 		fmt.Printf("类型: %s (%s)\n", cover.TypeName, cover.Type)
-		fmt.Printf("VIDs: %s\n\n", strings.Join(cover.VideoIDs, ", "))
+		fmt.Printf("VIDs: %s\n", strings.Join(cover.VideoIDs, ", "))
+		if len(cover.ExtraFieldKeys) > 0 {
+			fmt.Printf("额外字段键数: %d\n", len(cover.ExtraFieldKeys))
+		}
+		if len(cover.ExtraNonemptyFields) > 0 {
+			pairs := make([]string, 0, len(cover.ExtraNonemptyFields))
+			for key, value := range cover.ExtraNonemptyFields {
+				pairs = append(pairs, fmt.Sprintf("%s=%s", key, value))
+			}
+			sort.Strings(pairs)
+			fmt.Printf("额外非空字段: %s\n", strings.Join(pairs, ", "))
+		}
+		fmt.Println()
 	} else if len(covers) > 1 {
 		diagnostics := summarizeAPI1Batch(requestedCIDs, covers)
 		fmt.Printf("CIDs: %s\n", strings.Join(requestedCIDs, ", "))
@@ -231,6 +245,17 @@ func main() {
 			fmt.Printf("    标题: %s\n", item.Title)
 			fmt.Printf("    类型: %s (%s)\n", item.TypeName, item.Type)
 			fmt.Printf("    VIDs: %s\n", strings.Join(item.VideoIDs, ", "))
+			if len(item.ExtraFieldKeys) > 0 {
+				fmt.Printf("    额外字段键数: %d\n", len(item.ExtraFieldKeys))
+			}
+			if len(item.ExtraNonemptyFields) > 0 {
+				pairs := make([]string, 0, len(item.ExtraNonemptyFields))
+				for key, value := range item.ExtraNonemptyFields {
+					pairs = append(pairs, fmt.Sprintf("%s=%s", key, value))
+				}
+				sort.Strings(pairs)
+				fmt.Printf("    额外非空字段: %s\n", strings.Join(pairs, ", "))
+			}
 		}
 		fmt.Println()
 	}
@@ -339,15 +364,52 @@ func fetchCoverInfos(cids []string, opts api1Options, requestOpts requestOptions
 		for _, raw := range allTagValues(fieldsXML, "video_ids") {
 			videoIDs = append(videoIDs, splitCSV(raw)...)
 		}
+		coreFieldTags := map[string]struct{}{
+			"cover_id":   {},
+			"title":      {},
+			"type":       {},
+			"type_name":  {},
+			"video_ids":  {},
+			"pay_status": {},
+			"new_pic_hz": {},
+			"new_pic_vt": {},
+		}
+		fieldTagPattern := regexp.MustCompile(`<([A-Za-z0-9_]+)>`)
+		extraFieldKeys := []string{}
+		extraNonemptyFields := map[string]string{}
+		seenExtraFieldKeys := map[string]struct{}{}
+		for _, fieldMatch := range fieldTagPattern.FindAllStringSubmatch(fieldsXML, -1) {
+			if len(fieldMatch) < 2 {
+				continue
+			}
+			tag := strings.TrimSpace(fieldMatch[1])
+			if tag == "" {
+				continue
+			}
+			if _, isCore := coreFieldTags[tag]; isCore {
+				continue
+			}
+			if _, seen := seenExtraFieldKeys[tag]; seen {
+				continue
+			}
+			seenExtraFieldKeys[tag] = struct{}{}
+			extraFieldKeys = append(extraFieldKeys, tag)
+			value := firstTagValue(fieldsXML, tag)
+			if strings.TrimSpace(value) != "" {
+				extraNonemptyFields[tag] = value
+			}
+		}
 		results = append(results, coverInfo{
-			CID:        firstNonEmpty(firstTagValue(fieldsXML, "cover_id"), firstTagValue(match[1], "id")),
-			Title:      firstTagValue(fieldsXML, "title"),
-			Type:       firstTagValue(fieldsXML, "type"),
-			TypeName:   firstTagValue(fieldsXML, "type_name"),
-			VideoIDs:   videoIDs,
-			PayStatus:  firstTagValue(fieldsXML, "pay_status"),
-			CoverPicHz: firstTagValue(fieldsXML, "new_pic_hz"),
-			CoverPicVt: firstTagValue(fieldsXML, "new_pic_vt"),
+			CID:                 firstNonEmpty(firstTagValue(fieldsXML, "cover_id"), firstTagValue(match[1], "id")),
+			Title:               firstTagValue(fieldsXML, "title"),
+			Type:                firstTagValue(fieldsXML, "type"),
+			TypeName:            firstTagValue(fieldsXML, "type_name"),
+			VideoIDs:            videoIDs,
+			PayStatus:           firstTagValue(fieldsXML, "pay_status"),
+			CoverPicHz:          firstTagValue(fieldsXML, "new_pic_hz"),
+			CoverPicVt:          firstTagValue(fieldsXML, "new_pic_vt"),
+			ExtraFieldKeys:      extraFieldKeys,
+			ExtraNonemptyFields: extraNonemptyFields,
 		})
 	}
 

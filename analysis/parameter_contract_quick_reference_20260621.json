@@ -1,0 +1,395 @@
+{
+  "generated_at": "2026-06-22",
+  "scope": "Direct-call quick reference for the two Tencent Video main interfaces, optimized for callers who need the current best-known parameter contract rather than the full closure ledger.",
+  "caution": [
+    "This file summarizes the current best direct-call contract in the tested anonymous direct-call scope plus the later real anonymous visitor-cookie replay where noted.",
+    "It is not proof that aged-cookie or login-state environments behave the same.",
+    "When a field is marked partially_closed or environment_open, keep the canonical values unless you are deliberately probing that branch."
+  ],
+  "api1": {
+    "endpoint": "https://data.video.qq.com/fcgi-bin/data",
+    "canonical_template": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b",
+    "current_best_use_cases": [
+      "CID -> cover title/type/pay_status/downright/positive_trailer/positive_content_id and video_ids",
+      "Batch CID lookup via one comma-separated idlist key"
+    ],
+    "parameters": [
+      {
+        "name": "tid",
+        "requiredness": "hard_required",
+        "recommended_value": "431",
+        "tested_positive_values": [
+          "431",
+          "453"
+        ],
+        "known_cover_shell_only_positive_values": [
+          "453"
+        ],
+        "known_video_ids_led_success_shell_values": [
+          "483"
+        ],
+        "known_nonempty_success_shell_values": [
+          "476",
+          "506",
+          "537"
+        ],
+        "shape_or_notes": "single query key; repeated tid currently behaves as first-value-wins in the tested anonymous branch",
+        "failure_signals": [
+          {
+            "when": "missing / 0 / abc",
+            "errorno": "-111003",
+            "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+          }
+        ],
+      "current_best_reading": "Primary routing selector. 431 is the stable canonical positive branch. 453 is a separate positive cover-shell-only branch: it returns a non-empty cover shell across 3 public CIDs but still no video_ids, so it is not a field-equivalent replacement for 431. 483 is a thinner success shell that currently materializes video_ids while cover title/type stay empty. 476, 506, and 537 currently stay in the success-shell-without-sample family on the 3-CID matrix.",
+      "environment_scope": "same-day anonymous matrix plus the extended 3-CID caller-facing richness matrix and the focused 446-455 / 456-521 follow-ups",
+        "status": "branch_partially_closed",
+        "still_open": [
+          "Whether API1 has another positive or success-shell tid beyond the current 431/453/476/483/506/537 family map remains unclosed."
+        ],
+        "evidence": [
+          "analysis/positive_tid_summary_20260621.json",
+          "analysis/positive_tid_probe_446_455_summary_20260623.json",
+          "analysis/positive_tid_probe_456_521_summary_20260623.json",
+          "analysis/tid_richness_matrix_20260622.json",
+          "analysis/tid_richness_matrix_extended_20260623.json",
+          "analysis/api1_tid_shell_family_delta_20260623.json"
+        ]
+      },
+      {
+        "name": "idlist",
+        "requiredness": "hard_required",
+        "recommended_value": "<CID> or cid1,cid2,...",
+        "tested_positive_values": [
+          "single valid CID",
+          "mixed valid+invalid CSV batch",
+          "duplicate+empty-slot CSV batch",
+          "32 non-empty CSV items"
+        ],
+        "shape_or_notes": "one comma-separated CID list; duplicate items are preserved; empty slots are ignored when surrounded by valid values; repeated same-name query keys currently first-value-win in the tested same-day anonymous plus real anonymous visitor-cookie replay collision cases",
+        "failure_signals": [
+          {
+            "when": "missing / empty / spaces",
+            "errorno": "-111004",
+            "errormsg": "错误的idlist"
+          },
+          {
+            "when": "\",\" or \",,\"",
+            "errorno": "10010039",
+            "errormsg": "keys empty"
+          },
+          {
+            "when": "33 non-empty items",
+            "errorno": "-111001",
+            "errormsg": "idlist个数错误, 为0或超过限制"
+          }
+        ],
+        "current_best_reading": "Use one idlist key with CSV payload. The tested clean positive upper bound is 32 non-empty items, and repeated same-name keys do not merge across query-string positions in the tested anonymous collision cases.",
+        "environment_scope": "same-day anonymous matrix plus real anonymous visitor-cookie replay collision cases",
+        "status": "mostly_closed",
+        "still_open": [
+          "Aged-cookie/login-state replay is still open for this row."
+        ]
+      },
+      {
+        "name": "appid",
+        "requiredness": "conditional_branch_parameter",
+        "recommended_value": "10001005",
+        "tested_positive_values": [
+          "10001005",
+          "missing",
+          "1",
+          "notanumber"
+        ],
+        "shape_or_notes": "canonical numeric appid activates the stricter documented appkey branch; missing/text-like values currently land on a looser tested anonymous branch",
+        "failure_signals": [
+          {
+            "when": "99999",
+            "errorno": "10010108",
+            "errormsg": "appid no find"
+          }
+        ],
+        "current_best_reading": "For stable direct calls, keep the canonical numeric appid. Alternate numeric space is not closed.",
+        "environment_scope": "same-day anonymous matrix",
+        "status": "partially_closed",
+        "still_open": [
+          "Positive behavior for other numeric appid values is not yet mapped."
+        ]
+      },
+      {
+        "name": "appkey",
+        "requiredness": "conditional_with_canonical_numeric_appid",
+        "recommended_value": "0d1a9ddd94de871b",
+        "tested_positive_values": [
+          "0d1a9ddd94de871b when appid=10001005",
+          "omitted when appid is missing/text in the tested anonymous branch"
+        ],
+        "shape_or_notes": "matters only when the canonical numeric appid branch is active",
+        "failure_signals": [
+          {
+            "when": "missing while appid=10001005",
+            "errorno": "10010110",
+            "errormsg": "appkey error"
+          },
+          {
+            "when": "wrong value while appid=10001005",
+            "errorno": "10010110",
+            "errormsg": "appkey error"
+          }
+        ],
+        "current_best_reading": "Treat this as part of the canonical documented pair with appid=10001005.",
+        "environment_scope": "same-day anonymous matrix",
+        "status": "partially_closed",
+        "still_open": [
+          "No evidence yet that appkey unlocks more than satisfying the canonical numeric-appid branch."
+        ]
+      }
+    ]
+  },
+  "api2": {
+    "endpoint": "https://union.video.qq.com/fcgi-bin/data",
+    "canonical_template": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID>",
+    "current_best_use_cases": [
+      "VID -> single detail row with duration/defn/state/upload_src",
+      "VID batch lookup via one comma-separated idlist key",
+      "JSONP wrapper mode when a caller explicitly needs JSONP"
+    ],
+    "parameters": [
+      {
+        "name": "otype",
+        "requiredness": "optional_wrapper_switch",
+        "recommended_value": "xml",
+        "tested_positive_values": [
+          "missing -> XML",
+          "xml -> XML",
+          "json -> JSONP"
+        ],
+        "shape_or_notes": "only exact lowercase json switches the branch into JSONP; repeated otype currently behaves as first-value-wins in tested anonymous branches",
+        "failure_signals": [],
+        "current_best_reading": "Leave it omitted or xml for normal callers. Use exact lowercase json only when you intentionally want JSONP.",
+        "environment_scope": "same-day anonymous matrix",
+        "status": "mostly_closed",
+        "still_open": [
+          "No positive wrapper value is confirmed beyond XML default and lowercase JSONP."
+        ]
+      },
+      {
+        "name": "tid",
+        "requiredness": "hard_required",
+        "recommended_value": "535",
+        "tested_positive_values": [
+          "488",
+          "502",
+          "535",
+          "540",
+          "541"
+        ],
+        "known_success_shell_values": [
+          "506"
+        ],
+        "shape_or_notes": "single query key; repeated tid currently behaves as first-value-wins in tested anonymous branches",
+        "failure_signals": [
+          {
+            "when": "missing / 0 / abc / -1",
+            "errorno": "-111003",
+            "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+          },
+          {
+            "when": "536",
+            "errorno": "-111005",
+            "errormsg": "获取配置错误"
+          },
+          {
+            "when": "431",
+            "errorno": "10010048",
+            "errormsg": "key all illegal"
+          }
+        ],
+      "current_best_reading": "535 is still the best default when you expect a fuller row. 502 is a richer alternate positive shell with duration+vid+cover_list, but still not a field-equivalent replacement for 535. 488, 540, and 541 currently behave like thinner title/url-led shells on the 3-public-VID matrix. 506 currently stays below the positive-detail threshold and is better read as a success shell.",
+      "environment_scope": "same-day anonymous matrix plus the extended 3-VID caller-facing richness matrix and the focused 456-521 follow-up",
+        "status": "branch_partially_closed",
+        "still_open": [
+          "Whether API2 has another positive or success-shell tid outside the current 488/502/506/535/540/541 family map remains unclosed."
+        ]
+      },
+      {
+        "name": "appid",
+        "requiredness": "conditional_branch_parameter",
+        "recommended_value": "20001238",
+        "tested_positive_values": [
+          "20001238",
+          "missing",
+          "1",
+          "notanumber"
+        ],
+        "shape_or_notes": "canonical numeric appid activates the stricter documented appkey branch; missing/text-like values currently land on a looser tested anonymous branch",
+        "failure_signals": [
+          {
+            "when": "99999",
+            "errorno": "10010108",
+            "errormsg": "appid no find"
+          }
+        ],
+        "current_best_reading": "For stable direct calls, keep the canonical numeric appid. Alternate numeric space is not closed.",
+        "environment_scope": "same-day anonymous matrix",
+        "status": "partially_closed",
+        "still_open": [
+          "Positive behavior for other numeric appid values is not yet mapped."
+        ]
+      },
+      {
+        "name": "appkey",
+        "requiredness": "conditional_with_canonical_numeric_appid",
+        "recommended_value": "6c03bbe9658448a4",
+        "tested_positive_values": [
+          "6c03bbe9658448a4 when appid=20001238",
+          "omitted when appid is missing/text in the tested anonymous branch"
+        ],
+        "shape_or_notes": "matters only when the canonical numeric appid branch is active",
+        "failure_signals": [
+          {
+            "when": "missing while appid=20001238",
+            "errorno": "10010110",
+            "errormsg": "appkey error"
+          },
+          {
+            "when": "wrong value while appid=20001238",
+            "errorno": "10010110",
+            "errormsg": "appkey error"
+          }
+        ],
+        "current_best_reading": "Treat this as part of the canonical documented pair with appid=20001238.",
+        "environment_scope": "same-day anonymous matrix",
+        "status": "partially_closed",
+        "still_open": [
+          "No evidence yet that appkey unlocks more than satisfying the canonical numeric-appid branch."
+        ]
+      },
+      {
+        "name": "union_platform",
+        "requiredness": "no_observed_effect_in_current_anonymous_scope",
+        "recommended_value": "3",
+        "tested_positive_values": [
+          "missing",
+          "",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "8",
+          "9",
+          "abc",
+          "999",
+          "-1",
+          "0003"
+        ],
+        "shape_or_notes": "present in canonical examples; repeated union_platform showed no observed order effect in the tested XML anonymous branch, and a later anonymous `535/540/541 × union_platform` sweep did not change the richer-vs-thinner field shape on the tested public vids",
+        "failure_signals": [],
+        "current_best_reading": "Keep 3 for canonical calls. Current evidence says changing or omitting union_platform shows no visible split in anonymous same-day runs, in the later real anonymous visitor-cookie replay, and in the tested `535/540/541 × union_platform` sweep on `z4102qfi0x4` and `j4101ouc4ve`. That is still scoped-negative evidence, not a global no-op proof.",
+        "environment_scope": "same-day anonymous matrix plus real anonymous visitor-cookie replay plus the tested anonymous `535/540/541 × union_platform` capability matrix",
+        "status": "environment_open",
+        "still_open": [
+          "Whether union_platform matters under aged-cookie or real login-state replay remains open.",
+          "Whether union_platform matters on broader untasted public vids remains open, even though the current anonymous `535/540/541` sweep shows no structural enrichment."
+        ]
+      },
+      {
+        "name": "idlist",
+        "requiredness": "hard_required",
+        "recommended_value": "<VID> or vid1,vid2,...",
+        "tested_positive_values": [
+          "single valid VID",
+          "mixed valid+invalid CSV batch",
+          "duplicate+empty-slot CSV batch",
+          "32 non-empty CSV items"
+        ],
+        "shape_or_notes": "one comma-separated VID list; duplicate items are preserved; empty slots are ignored when surrounded by valid values; repeated same-name query keys currently first-value-win in the tested same-day anonymous plus real anonymous visitor-cookie replay collision cases",
+        "failure_signals": [
+          {
+            "when": "missing / empty / spaces",
+            "errorno": "-111004",
+            "errormsg": "错误的idlist"
+          },
+          {
+            "when": "\",\" or \",,\"",
+            "errorno": "10010039",
+            "errormsg": "keys empty"
+          },
+          {
+            "when": "33 non-empty items",
+            "errorno": "-111001",
+            "errormsg": "idlist个数错误, 为0或超过限制"
+          }
+        ],
+        "current_best_reading": "Use one idlist key with CSV payload. The tested clean positive upper bound is 32 non-empty items, and repeated same-name keys do not merge across query-string positions in the tested anonymous collision cases.",
+        "environment_scope": "same-day anonymous matrix; JSONP mirror semantics plus repeated-idlist collision cases also replay-stable in the tested real anonymous visitor-cookie environment",
+        "status": "mostly_closed",
+        "still_open": [
+          "Aged-cookie/login-state replay is still open for this row."
+        ]
+      }
+    ]
+  },
+  "auxiliary_or_candidate_parameters": [
+    {
+      "name": "callback",
+      "interface": "api2_jsonp_only",
+      "recommended_use": "Only with otype=json, when you explicitly need a custom JSONP wrapper.",
+      "current_best_reading": "Many values raw-passthrough into the wrapper prefix. Empty callback falls back to the default QZOutputJson shell. Repeated callback now behaves as first-value-wins in the tested same-day anonymous JSONP collision cases, and wrong-appkey JSONP error shells still honor callback wrapper changes. Known parse-breaking representatives now include callback=a(, callback=((, callback=})();, and the later widened unmatched-delimiter / odd-prefix representatives callback=[(, callback={(, callback=/*(, callback=a[(, callback=)(, callback=](, and callback=}(, while callback=[ and callback=[[ still remain raw-passthrough in the tested branch.",
+      "status": "mostly_closed",
+      "environment_scope": "same-day anonymous matrix; callback precedence and wrong-appkey error-shell behavior also replay-stable in the tested real anonymous visitor-cookie PC Web and Mobile H5 environments",
+      "still_open": [
+        "Aged-cookie/login-state replay is still open for callback precedence and error-shell behavior.",
+        "Broader parser-breaking families remain open beyond the newly widened unmatched-delimiter / odd-prefix representatives, but they stay lower priority than the environment gap above."
+      ]
+    },
+    {
+      "name": "authish_extra_keys_family",
+      "interface": "api1_and_api2_candidate_parameters",
+      "tested_values": [
+        "token",
+        "sign",
+        "sig",
+        "appver",
+        "access_token",
+        "authkey",
+        "openid"
+      ],
+      "current_best_reading": "No observed effect in the tested anonymous canonical branches or the later real anonymous visitor-cookie replay on API1 tid=431 and API2 tid family 535/540/541.",
+      "status": "environment_open",
+      "environment_scope": "anonymous same-day matrix plus real anonymous visitor-cookie replay",
+      "still_open": [
+        "Aged-cookie replay",
+        "Real login-state replay",
+        "Whether any auth-leaning key only matters after login-state gating"
+      ]
+    },
+    {
+      "name": "reserved_extra_keys_family",
+      "interface": "api1_and_api2_candidate_parameters",
+      "tested_values": [
+        "format",
+        "output",
+        "version",
+        "v",
+        "platform",
+        "source"
+      ],
+      "current_best_reading": "No observed effect in the tested anonymous canonical branches.",
+      "status": "mostly_closed",
+      "environment_scope": "same-day anonymous matrix",
+      "still_open": [
+        "Whether a narrower reserved-looking key family exists outside the current tested set.",
+        "Whether any reserved-looking key changes behavior only under aged-cookie or login-state environments."
+      ]
+    }
+  ],
+  "primary_evidence": [
+    "analysis/api_param_inventory_20260620.json",
+    "analysis/parameter_closure_matrix_20260621.json",
+    "analysis/parameter_capability_index_20260621.json",
+    "analysis/param_query_semantics_20260620.json",
+    "analysis/environment_matrix_anonymous_real_cookie_summary_20260621.json"
+  ]
+}

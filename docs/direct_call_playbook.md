@@ -23,6 +23,10 @@
   [analysis/direct_call_raw_http_validation_tid537_20260622.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_tid537_20260622.json)
 - API1 `tid=453` 独立 raw validation：
   [analysis/direct_call_raw_http_validation_tid453_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_tid453_20260623.json)
+- API1 `tid=476` 独立 raw validation：
+  [analysis/direct_call_raw_http_validation_tid476_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_tid476_20260623.json)
+- API1 `tid=506` 独立 raw validation：
+  [analysis/direct_call_raw_http_validation_tid506_api1_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_tid506_api1_20260623.json)
 - API1 `tid=483` 独立 raw validation：
   [analysis/direct_call_raw_http_validation_tid483_20260623.json](C:/Users/lin/Documents/YM查询工具还原/analysis/direct_call_raw_http_validation_tid483_20260623.json)
 - API2 `tid=506` 独立 raw validation：
@@ -45,7 +49,7 @@ python tools/tencent_demo_validation_runner.py --output analysis/demo_validation
 它当前覆盖的是：
 
 - canonical `CID -> API1 -> API2 XML`
-- API1 `tid=453/483/537` 非 canonical caller-facing shells
+- API1 `tid=453/476/506/483/537` 非 canonical caller-facing shells
 - API2 JSONP callback override
 - API2 alternate positive tid `488/502/540/541`
 - API2 `tid=506` near-empty success shell
@@ -63,6 +67,8 @@ python tools/tencent_raw_http_validation_runner.py --timeout 60 --retries 3 --st
 - API1 canonical single-CID
 - API1 direct multi-CID
 - API1 `tid=453` cover-only positive shell
+- API1 `tid=476` imgtag-family ultra-thin shell
+- API1 `tid=506` empty-valued field shell
 - API1 `tid=483` video_ids-led thin shell
 - API1 `tid=537` sample-less shell probe
 - API2 canonical XML / JSONP
@@ -90,6 +96,18 @@ python tools/tencent_raw_http_validation_runner.py --surface api1_tid453_cover_s
 python tools/tencent_raw_http_validation_runner.py --surface api1_tid483_video_ids_led_thin_shell --strict --output analysis/direct_call_raw_http_validation_tid483_20260623.json
 ```
 
+如果你只想补跑 `API1 tid=476` 的 caller-facing raw 证据，不想重跑整套 raw matrix，直接用：
+
+```bash
+python tools/tencent_raw_http_validation_runner.py --surface api1_tid476_imgtag_ultra_thin_shell --strict --output analysis/direct_call_raw_http_validation_tid476_20260623.json
+```
+
+如果你只想补跑 `API1 tid=506` 的 caller-facing raw 证据，不想重跑整套 raw matrix，直接用：
+
+```bash
+python tools/tencent_raw_http_validation_runner.py --surface api1_tid506_empty_valued_field_shell --strict --output analysis/direct_call_raw_http_validation_tid506_api1_20260623.json
+```
+
 如果你只想补跑 `API2 tid=488/502` 的 caller-facing raw 证据，不想重跑整套 raw matrix，直接用：
 
 ```bash
@@ -105,6 +123,7 @@ python tools/tencent_raw_http_validation_runner.py --surface api2_single_detail_
 当前口径要收紧地读：
 
 - 这份 raw validation 只覆盖匿名 direct-call scope
+- `476` 和 `506` 当前都已经补到 dedicated demo/raw validation，并且它们在 raw 字段族上已能稳定区分：`476` 是 imgtag-family ultra-thin shell，`506` 是 empty-valued field shell
 - `488/540/541` 与 `541 + union_platform=0003` 仍然只应读成 thin positive shell，`502` 则应读成 richer alternate shell
 - `506` 当前已经补到 dedicated demo/raw validation，但验证结果是稳定 near-empty success shell，不是更厚的 positive-detail branch
 - batch 行当前是 canonical multi-VID branch spot-check，不是重新做了一次 `32/33` 饱和边界实验
@@ -221,6 +240,60 @@ go.exe -cid <CID> -api1-tid 483 -json
 - 到 `2026-06-23` 为止，它在 3 个 public CID 上都重复成了 `cover_title/type/pay_status` 为空、但 `video_ids` 非空的 thin shell
 - 对 raw API1 来说，这意味着它更像“只把节目链路往下游推给 `video_ids`”的成功壳
 - 对 Python/Go demo 来说，这条壳仍然能继续驱动 downstream canonical API2 详情查询，但这不等于 API1 自己已经恢复出 canonical `431` 的 cover 丰度
+
+如果你想显式探 API1 的独立 `tid=476` imgtag-family ultra-thin shell，而不是走 canonical `431`：
+
+raw API：
+
+```text
+https://data.video.qq.com/fcgi-bin/data?tid=476&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b
+```
+
+Python：
+
+```bash
+python examples/python/tencent_video_api_demo.py --cid <CID> --api1-tid 476 --json
+```
+
+Go：
+
+```bash
+go.exe -cid <CID> -api1-tid 476 -json
+```
+
+当前最稳读法：
+
+- 这不是 `431` 的等价替代
+- 到 `2026-06-23` 为止，它在 3 个 public CID 上都重复成 `title/type/video_ids` 为空的超薄成功壳
+- dedicated demo / raw validation 现在都能稳定看到 `25` 个 `*_imgtag` 字段键，以及唯一非空的 `qbox_imgtag={}`
+- 它和 `506` 不再只是“看起来都很空”：当前 raw 契约层里，`476` 是 imgtag-family ultra-thin shell，`506` 则是另一组 empty-valued field shell
+
+如果你想显式探 API1 的独立 `tid=506` empty-valued field shell，而不是走 canonical `431`：
+
+raw API：
+
+```text
+https://data.video.qq.com/fcgi-bin/data?tid=506&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b
+```
+
+Python：
+
+```bash
+python examples/python/tencent_video_api_demo.py --cid <CID> --api1-tid 506 --json
+```
+
+Go：
+
+```bash
+go.exe -cid <CID> -api1-tid 506 -json
+```
+
+当前最稳读法：
+
+- 这不是 `431` 的等价替代
+- 到 `2026-06-23` 为止，它在 3 个 public CID 上都重复成 `title/type/video_ids` 为空的空值字段壳
+- dedicated demo / raw validation 现在都能稳定看到 `10` 个总字段，其中 `9` 个会落入 `extra_field_keys`，并且没有非空 extra 字段
+- 它和 `476` 的差异已经可直接复跑：`506` 没有 `qbox_imgtag`，也没有那组 `*_imgtag` 家族，而是 `description/end_time/live_vid/.../user_id` 这条 empty-valued field shell
 
 如果你想显式探 API1 的独立 `tid=537` success shell，而不是走 canonical `431`：
 

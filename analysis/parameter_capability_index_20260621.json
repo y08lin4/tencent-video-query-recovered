@@ -17,18 +17,22 @@
       "category": "explicit_parameter",
       "requiredness": "hard_required",
       "current_status": "branch_partially_closed",
-      "role": "request routing or config selector; 431 is the canonical positive cover branch, 453 is a noncanonical cover-only positive shell, 483 is a video_ids-led thin shell, and 476/506/537 currently remain thinner success-shell families rather than caller-default replacements",
+      "role": "request routing or config selector; 431 is the canonical positive cover branch, 453 is a noncanonical cover-only positive shell, 476 is a caller-facing imgtag-family ultra-thin shell, 483 is a video_ids-led thin shell, 506 is now a caller-facing empty-valued field shell, and 537 remains a thinner success-shell family rather than a caller-default replacement",
       "unlocked_capabilities": [
         "api1_single_cover_lookup",
         "api1_batch_cover_lookup",
         "api1_success_shell_without_sample_tid_537",
         "api1_single_cover_lookup_tid453_cover_shell_only",
+        "api1_single_cover_lookup_tid476_imgtag_ultra_thin_shell",
+        "api1_single_cover_lookup_tid506_empty_valued_field_shell",
         "api1_single_cover_lookup_tid483_video_ids_led_thin_shell"
       ],
       "related_recipes": [
         "api1_single_cover_lookup",
         "api1_batch_cover_lookup",
         "api1_single_cover_lookup_tid453_cover_shell_only",
+        "api1_single_cover_lookup_tid476_imgtag_ultra_thin_shell",
+        "api1_single_cover_lookup_tid506_empty_valued_field_shell",
         "api1_single_cover_lookup_tid483_video_ids_led_thin_shell"
       ],
       "related_regression_samples": [
@@ -49,6 +53,10 @@
         "analysis/api1_tid_shell_family_delta_20260623.json",
         "analysis/demo_validation_incremental_tid453_20260623.json",
         "analysis/direct_call_raw_http_validation_tid453_20260623.json",
+        "analysis/demo_validation_incremental_tid476_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid476_20260623.json",
+        "analysis/demo_validation_incremental_tid506_api1_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid506_api1_20260623.json",
         "analysis/demo_validation_incremental_tid483_20260623.json",
         "analysis/direct_call_raw_http_validation_tid483_20260623.json"
       ],

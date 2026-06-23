@@ -1,0 +1,395 @@
+{
+  "generated_at": "2026-06-23",
+  "scope": "Runnable entrypoint quick reference for demos and core replay/probe tooling around the two Tencent Video interfaces",
+  "demos": [
+    {
+      "name": "python_demo",
+      "path": "examples/python/tencent_video_api_demo.py",
+      "intent": "Resolve URL/CID/VID into current API1/API2 output and print human or JSON summaries",
+      "core_flags": [
+        "--url",
+        "--cid",
+        "--vid",
+        "--api1-tid",
+        "--api1-appid",
+        "--api1-appkey",
+        "--api2-otype",
+        "--api2-tid",
+        "--api2-appid",
+        "--api2-appkey",
+        "--api2-union-platform",
+        "--api2-callback",
+        "--api2-batch-size",
+        "--json"
+      ]
+    },
+    {
+      "name": "go_demo",
+      "path": "examples/go/main.go",
+      "intent": "Go wrapper with the same public demo surfaces as the Python entrypoint",
+      "core_flags": [
+        "-url",
+        "-cid",
+        "-vids",
+        "-api1-tid",
+        "-api1-appid",
+        "-api1-appkey",
+        "-api2-otype",
+        "-api2-tid",
+        "-api2-appid",
+        "-api2-appkey",
+        "-api2-union-platform",
+        "-api2-callback",
+        "-api2-batch-size",
+        "-json"
+      ],
+      "notes": [
+        "The Go demo distinguishes 'flag omitted' from 'explicit empty callback' for `-api2-callback`.",
+        "This workspace already includes a runnable `go.exe` wrapper binary; current caller-facing examples use `go.exe -cid <CID> -json`."
+      ]
+    },
+    {
+      "name": "demo_validation_runner",
+      "path": "tools/tencent_demo_validation_runner.py",
+      "intent": "Replay the highest-value anonymous direct-call demo surfaces for Python/Go and emit one machine-readable validation summary",
+      "core_flags": [
+        "--surface",
+        "--demo",
+        "--python-bin",
+        "--go-bin",
+        "--timeout",
+        "--retries",
+        "--strict",
+        "--output",
+        "--indent"
+      ],
+      "notes": [
+        "This runner is scoped to already-documented anonymous direct-call demo surfaces such as canonical XML, API1 tid=453 cover-shell-only branch, API1 tid=476 imgtag-family ultra-thin shell, API1 tid=506 empty-valued field shell, API1 tid=537 shell probe, JSONP callback override, alternate positive tid 488/502/540/541, canonical batch lookup, and the all-invalid JSONP consumer-rule path.",
+        "A passing rerun strengthens example replayability, but it does not close aged-cookie or login-state gaps by itself."
+      ]
+    },
+    {
+      "name": "raw_http_validation_runner",
+      "path": "tools/tencent_raw_http_validation_runner.py",
+      "intent": "Replay the highest-value caller-facing raw HTTP rows directly against API1/API2 and emit one machine-readable validation summary",
+      "core_flags": [
+        "--surface",
+        "--timeout",
+        "--retries",
+        "--strict",
+        "--output",
+        "--indent"
+      ],
+      "notes": [
+        "This runner validates raw HTTP behavior only in the current anonymous direct-call scope.",
+        "It now also includes the dedicated API1 tid=453 cover-shell-only row, tid=476 imgtag-family ultra-thin row, tid=506 empty-valued field shell row, and API1 tid=537 shell-probe row in addition to canonical API1 and API2 surfaces.",
+        "Alternate tid 488/502/540/541 rows are expected to succeed as caller-selected positive shells rather than canonical-full detail rows.",
+        "The current batch row is a canonical multi-VID spot-check on the known batch-capable branch, not a fresh 32-slot saturation replay."
+      ]
+    }
+  ],
+  "environment_replay_tooling": [
+    {
+      "name": "cookie_env_builder",
+      "path": "tools/tencent_cookie_env_from_headers.py",
+      "intent": "Turn raw Cookie header material into replay env-json input",
+      "core_flags": [
+        "--mode",
+        "--desktop-cookie-file",
+        "--mobile-cookie-file",
+        "--desktop-cookie-header",
+        "--mobile-cookie-header",
+        "--output",
+        "--indent"
+      ]
+    },
+    {
+      "name": "environment_matrix_probe",
+      "path": "tools/tencent_environment_matrix_probe.py",
+      "intent": "Run API1/API2 contract cases plus representative page-shape comparison across header environments",
+      "core_flags": [
+        "--include-browser-like",
+        "--extra-env-json",
+        "--batch-size",
+        "--timeout",
+        "--http-retries",
+        "--retry-sleep",
+        "--output",
+        "--indent"
+      ]
+    },
+    {
+      "name": "replay_bundle_runner",
+      "path": "tools/tencent_replay_bundle_runner.py",
+      "intent": "One-command environment replay wrapper for env build, matrix replay, and semantics replay",
+      "core_flags": [
+        "--mode",
+        "--env-json",
+        "--desktop-cookie-file",
+        "--mobile-cookie-file",
+        "--desktop-cookie-header",
+        "--mobile-cookie-header",
+        "--skip-semantics",
+        "--skip-matrix",
+        "--semantics-profile",
+        "--probe-extra-callback-value",
+        "--probe-extra-callback-file",
+        "--artifact-output-dir",
+        "--subprocess-output-dir",
+        "--summary-output",
+        "--timeout",
+        "--http-retries",
+        "--retry-sleep"
+      ],
+      "notes": [
+        "When `--env-json` is provided, the runner trusts the env names stored in that file for semantics replay.",
+        "If child-process writes into workspace analysis paths are flaky, prefer `--artifact-output-dir` and `--subprocess-output-dir` under a temp directory."
+      ]
+    }
+  ],
+  "parameter_probes": [
+    {
+      "name": "param_semantics_probe",
+      "path": "tools/tencent_param_semantics_probe.py",
+      "intent": "Probe auth-ish keys, reserved keys, callback families, repeated-key order, and wrong-appkey branches",
+      "core_flags": [
+        "--api1-tid",
+        "--api1-idlist",
+        "--api2-tid",
+        "--api2-idlist",
+        "--case-profile",
+        "--extra-env-json",
+        "--env-name",
+        "--extra-callback-value",
+        "--extra-callback-file",
+        "--timeout",
+        "--http-retries",
+        "--output",
+        "--indent"
+      ],
+      "notes": [
+        "Use `--case-profile callback_contract` for the smallest high-value callback precedence and wrong-appkey error-shell matrix.",
+        "The current callback-contract conclusion is replay-stable in the tested real anonymous PC Web and Mobile H5 environments."
+      ]
+    },
+    {
+      "name": "positive_tid_probe",
+      "path": "tools/tencent_positive_tid_probe.py",
+      "intent": "Sweep candidate positive tid bands on API1/API2",
+      "core_flags": [
+        "--api1-tids",
+        "--api2-tids",
+        "--api1-cid",
+        "--api2-vid",
+        "--timeout",
+        "--http-retries",
+        "--output",
+        "--indent"
+      ],
+      "notes": [
+        "For lower-edge anonymous triage, the new 524-529 narrow-band probe found no new positive tid and isolated 525 as a stable -111013 local error-family island.",
+        "If a new narrow band produces anything other than ordinary -111005, rerun a second sample on the same band before treating it as a meaningful edge."
+      ]
+    }
+  ],
+  "current_best_usage_order": [
+    "Direct caller usage: start from the Python/Go demos.",
+    "If you need to revalidate the public Python/Go demo surfaces end to end, run the demo validation runner next.",
+    "If you need direct caller-facing proof at the raw HTTP layer, run the raw HTTP validation runner after the demo rerun.",
+    "Anonymous or replay contract comparisons: use the environment matrix probe.",
+    "Parameter behavior and callback-tail work: use the semantics probe directly or through the replay bundle runner; `callback_contract` is now the smallest dedicated wrapper-contract profile.",
+    "Positive tid band discovery: use the positive tid probe for narrow bands first; the current 524-529 anonymous lower-edge probe found no new positive tid and downgraded wider blind tid scanning priority."
+  ],
+  "ready_to_run_templates": [
+    {
+      "name": "demo_validation_full_rerun",
+      "intent": "Rerun the current anonymous direct-call demo surface set for Python and Go, then write one summary artifact.",
+      "command": "python tools/tencent_demo_validation_runner.py --output analysis/demo_validation_rerun_local.json --strict",
+      "primary_output": "analysis/demo_validation_rerun_local.json",
+      "best_first_checks": [
+        "Look at `failed_surfaces` first; it should stay empty on a clean anonymous rerun.",
+        "If an alternate tid surface flips from thin shell to fuller detail, treat that as fresh evidence to inspect rather than auto-upgrading the branch contract."
+      ]
+    },
+    {
+      "name": "demo_validation_entrypoint_and_override_rerun",
+      "intent": "Rerun the added entrypoint/override demo surfaces: URL chain, multi-CID, API1 tid=453/476/506/537 selected shells, batch-size, union_platform, and tid541+0003 spot-check.",
+      "command": "python tools/tencent_demo_validation_runner.py --surface python_url_canonical_chain,go_url_canonical_chain,python_api1_multi_cid_direct_batch,go_api1_multi_cid_direct_batch,python_api1_tid453_cover_shell_only,go_api1_tid453_cover_shell_only,python_api1_tid476_imgtag_ultra_thin_shell,go_api1_tid476_imgtag_ultra_thin_shell,python_api1_tid506_empty_valued_field_shell,go_api1_tid506_empty_valued_field_shell,python_api1_tid537_probe_shell,go_api1_tid537_probe_shell,python_api2_batch_size_override,go_api2_batch_size_override,python_api2_union_platform_override,go_api2_union_platform_override,python_api2_tid541_union0003_spotcheck,go_api2_tid541_union0003_spotcheck --timeout 180 --strict --output analysis/demo_validation_entrypoint_override_rerun_local.json",
+      "primary_output": "analysis/demo_validation_entrypoint_override_rerun_local.json",
+      "best_first_checks": [
+        "Check that the URL surfaces extract the expected CID before the canonical API chain succeeds.",
+        "Check that multi-CID and batch-size surfaces keep non-empty multi-row output instead of silently collapsing to a single-row path.",
+        "Check that the tid=453 surfaces stay on the documented positive cover-shell-only branch with empty video_ids rather than silently behaving like canonical tid=431.",
+        "Check that the tid=476 surfaces stay on the documented imgtag-family ultra-thin shell with qbox_imgtag={} rather than silently behaving like canonical tid=431 or tid=506.",
+        "Check that the tid=506 surfaces stay on the documented empty-valued field shell rather than silently behaving like canonical tid=431 or tid=476.",
+        "Check that the tid=537 probe surfaces stay on the documented sample-less shell branch rather than silently behaving like canonical tid=431.",
+        "Check that union_platform override still stays on the documented anonymous branch and that tid=541+0003 remains a thin positive shell."
+      ]
+    },
+    {
+      "name": "raw_http_validation_full_rerun",
+      "intent": "Rerun the current anonymous caller-facing raw HTTP surface set and write one summary artifact.",
+      "command": "python tools/tencent_raw_http_validation_runner.py --timeout 60 --retries 3 --strict --output analysis/direct_call_raw_http_validation_20260621.json",
+      "primary_output": "analysis/direct_call_raw_http_validation_20260621.json",
+      "best_first_checks": [
+        "Look at `failed_surfaces` first; it should stay empty on a clean anonymous raw rerun.",
+        "Read 540/541 and 541+0003 as thin positive shell confirmations, not canonical-full detail proofs.",
+        "Read the batch row as a canonical multi-VID spot-check on the known batch-capable branch, not as a fresh 32-slot saturation replay."
+      ]
+    },
+    {
+      "name": "raw_http_validation_tid537_probe",
+      "intent": "Rerun just the dedicated caller-facing raw HTTP API1 tid=537 shell probe row.",
+      "command": "python tools/tencent_raw_http_validation_runner.py --surface api1_tid537_probe_shell --strict --output analysis/direct_call_raw_http_validation_tid537_20260622.json",
+      "primary_output": "analysis/direct_call_raw_http_validation_tid537_20260622.json",
+      "best_first_checks": [
+        "Check that errorno stays 0 while cover_title stays empty and video_ids_count stays 0.",
+        "Treat success as shell-only probe success, not as a canonical positive cover row."
+      ]
+    },
+    {
+      "name": "raw_http_validation_tid453_cover_shell_only",
+      "intent": "Rerun just the dedicated caller-facing raw HTTP API1 tid=453 positive cover-shell-only row.",
+      "command": "python tools/tencent_raw_http_validation_runner.py --surface api1_tid453_cover_shell_only --strict --output analysis/direct_call_raw_http_validation_tid453_20260623.json",
+      "primary_output": "analysis/direct_call_raw_http_validation_tid453_20260623.json",
+      "best_first_checks": [
+        "Check that errorno stays 0 while cover_title stays non-empty and video_ids_count stays 0.",
+        "Treat success as a cover-only positive shell, not as canonical tid=431 parity."
+      ]
+    },
+    {
+      "name": "raw_http_validation_tid476_imgtag_ultra_thin_shell",
+      "intent": "Rerun just the dedicated caller-facing raw HTTP API1 tid=476 imgtag-family ultra-thin shell row.",
+      "command": "python tools/tencent_raw_http_validation_runner.py --surface api1_tid476_imgtag_ultra_thin_shell --strict --output analysis/direct_call_raw_http_validation_tid476_20260623.json",
+      "primary_output": "analysis/direct_call_raw_http_validation_tid476_20260623.json",
+      "best_first_checks": [
+        "Check that errorno stays 0 while cover_title stays empty and video_ids_count stays 0.",
+        "Check that qbox_imgtag remains non-empty as {} and that the imgtag-family extra-field set remains visible."
+      ]
+    },
+    {
+      "name": "raw_http_validation_tid506_empty_valued_field_shell",
+      "intent": "Rerun just the dedicated caller-facing raw HTTP API1 tid=506 empty-valued field shell row.",
+      "command": "python tools/tencent_raw_http_validation_runner.py --surface api1_tid506_empty_valued_field_shell --strict --output analysis/direct_call_raw_http_validation_tid506_api1_20260623.json",
+      "primary_output": "analysis/direct_call_raw_http_validation_tid506_api1_20260623.json",
+      "best_first_checks": [
+        "Check that errorno stays 0 while cover_title stays empty and video_ids_count stays 0.",
+        "Check that the extra-field family stays on the 9-key empty-valued set and does not grow qbox_imgtag."
+      ]
+    },
+    {
+      "name": "aged_cookie_env_build",
+      "intent": "Build env-json for the aged-cookie replay branch from a desktop Cookie header file.",
+      "command": "python tools/tencent_cookie_env_from_headers.py --mode aged --desktop-cookie-file examples/environment/pc_aged_cookie_header.template.txt --output analysis/aged_cookie_env_20260621.json",
+      "primary_output": "analysis/aged_cookie_env_20260621.json",
+      "followed_by": [
+        "aged_cookie_environment_matrix",
+        "aged_cookie_full_bundle"
+      ]
+    },
+    {
+      "name": "login_state_env_build",
+      "intent": "Build env-json for the login-state replay branch from a desktop Cookie header file.",
+      "command": "python tools/tencent_cookie_env_from_headers.py --mode login --desktop-cookie-file examples/environment/pc_login_cookie_header.template.txt --output analysis/login_state_env_20260621.json",
+      "primary_output": "analysis/login_state_env_20260621.json",
+      "followed_by": [
+        "login_state_environment_matrix",
+        "login_state_full_bundle"
+      ]
+    },
+    {
+      "name": "aged_cookie_environment_matrix",
+      "intent": "Replay the canonical API1/API2 contract matrix under the aged-cookie environment.",
+      "command": "python tools/tencent_environment_matrix_probe.py --extra-env-json analysis/aged_cookie_env_20260621.json --output analysis/environment_matrix_aged_cookie_20260621.json",
+      "primary_output": "analysis/environment_matrix_aged_cookie_20260621.json",
+      "best_first_checks": [
+        "api1 baseline_single_valid",
+        "api1 missing_tid",
+        "api1 canonical_appid_missing_appkey",
+        "api2 baseline_xml_single",
+        "api2 otype_json_single",
+        "api2 all_invalid_jsonp_batch",
+        "api2 duplicate_and_empty_slots_json",
+        "api2 dup33_json"
+      ]
+    },
+    {
+      "name": "login_state_environment_matrix",
+      "intent": "Replay the canonical API1/API2 contract matrix under the login-state environment.",
+      "command": "python tools/tencent_environment_matrix_probe.py --extra-env-json analysis/login_state_env_20260621.json --output analysis/environment_matrix_login_state_20260621.json",
+      "primary_output": "analysis/environment_matrix_login_state_20260621.json",
+      "best_first_checks": [
+        "api1 baseline_single_valid",
+        "api1 missing_tid",
+        "api1 canonical_appid_missing_appkey",
+        "api2 baseline_xml_single",
+        "api2 otype_json_single",
+        "api2 all_invalid_jsonp_batch",
+        "api2 duplicate_and_empty_slots_json",
+        "api2 dup33_json"
+      ]
+    },
+    {
+      "name": "aged_cookie_full_bundle",
+      "intent": "Run the aged-cookie full semantics bundle, including the highest-value parameter branches beyond the plain contract matrix.",
+      "command": "python tools/tencent_replay_bundle_runner.py --mode aged --env-json analysis/aged_cookie_env_20260621.json --semantics-profile full --artifact-output-dir analysis/replay_bundle_aged_cookie_20260621",
+      "primary_output": "analysis/replay_bundle_aged_cookie_20260621/<summary>.json",
+      "best_first_checks": [
+        "whether union_platform starts to matter",
+        "whether auth-ish extra keys start to matter",
+        "whether 540/541 shell thickness changes under aged-cookie"
+      ]
+    },
+    {
+      "name": "login_state_full_bundle",
+      "intent": "Run the login-state full semantics bundle, including the highest-value parameter branches beyond the plain contract matrix.",
+      "command": "python tools/tencent_replay_bundle_runner.py --mode login --env-json analysis/login_state_env_20260621.json --semantics-profile full --artifact-output-dir analysis/replay_bundle_login_state_20260621",
+      "primary_output": "analysis/replay_bundle_login_state_20260621/<summary>.json",
+      "best_first_checks": [
+        "whether union_platform starts to matter",
+        "whether auth-ish extra keys start to matter",
+        "whether 540/541 shell thickness changes under login-state"
+      ]
+    },
+    {
+      "name": "callback_contract_anonymous",
+      "intent": "Run the smallest callback precedence and wrong-appkey error-shell contract matrix in the anonymous direct-call scope.",
+      "command": "python tools/tencent_param_semantics_probe.py --case-profile callback_contract --output analysis/api2_jsonp_callback_contract_local.json",
+      "primary_output": "analysis/api2_jsonp_callback_contract_local.json",
+      "best_first_checks": [
+        "Check that repeated callback cases still show first-value-wins.",
+        "Check that wrong-appkey JSONP error shells still honor callback wrapper control."
+      ]
+    },
+    {
+      "name": "callback_contract_real_cookie_pc",
+      "intent": "Replay the callback contract matrix under the real anonymous PC Web visitor-cookie environment.",
+      "command": "python tools/tencent_param_semantics_probe.py --case-profile callback_contract --extra-env-json analysis/anonymous_real_cookie_env_20260621.json --env-name pc_web_real_cookie_replay --output analysis/api2_jsonp_callback_contract_real_cookie_pc_local.json",
+      "primary_output": "analysis/api2_jsonp_callback_contract_real_cookie_pc_local.json",
+      "best_first_checks": [
+        "Check that repeated callback still stays first-value-wins.",
+        "Check that wrong-appkey JSONP error shells still honor callback wrapper control instead of reverting to the default wrapper."
+      ]
+    },
+    {
+      "name": "callback_contract_real_cookie_mobile",
+      "intent": "Replay the callback contract matrix under the real anonymous Mobile H5 visitor-cookie environment.",
+      "command": "python tools/tencent_param_semantics_probe.py --case-profile callback_contract --extra-env-json analysis/anonymous_real_cookie_env_20260621.json --env-name mobile_h5_real_cookie_replay --output analysis/api2_jsonp_callback_contract_real_cookie_mobile_local.json",
+      "primary_output": "analysis/api2_jsonp_callback_contract_real_cookie_mobile_local.json",
+      "best_first_checks": [
+        "Check that repeated callback still stays first-value-wins.",
+        "Check that wrong-appkey JSONP error shells still honor callback wrapper control instead of reverting to the default wrapper."
+      ]
+    },
+    {
+      "name": "positive_tid_probe_api2_524_529",
+      "intent": "Run the current highest-value anonymous lower-edge API2 tid narrow band with one API1 positive control anchor.",
+      "command": "python tools/tencent_positive_tid_probe.py --api1-tids 431 --api2-tids 524-529 --output analysis/positive_tid_probe_524_529_local.json",
+      "primary_output": "analysis/positive_tid_probe_524_529_local.json",
+      "best_first_checks": [
+        "If 524 and 526-529 all stay on -111005 while 525 stays on -111013, read this as a tightened anonymous lower-edge error boundary rather than a new positive front.",
+        "Only if a nonstandard point appears, rerun the same narrow band on a second sample before broadening tid discovery again."
+      ]
+    }
+  ]
+}

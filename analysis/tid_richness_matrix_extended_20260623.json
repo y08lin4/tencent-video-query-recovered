@@ -1,0 +1,731 @@
+{
+  "generated_at": "2026-06-23T08:38:36",
+  "scope": "Multi-sample tid field-richness matrix for API1 431,453,476,483,506,537 and API2 488,502,506,535,540,541 using the repository demos",
+  "python_matrix": {
+    "api1": {
+      "431": {
+        "mzc00200idzf2m8": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "�ɳ�����3",
+            "type": "1",
+            "type_name": "��Ӱ",
+            "pay_status": "6",
+            "video_ids_count": 1,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 1,
+            "has_cover_pic_hz": true,
+            "shape": "positive_cover_branch"
+          }
+        },
+        "mzc00200xxpsogl": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "���� �ڶ���",
+            "type": "3",
+            "type_name": "����",
+            "pay_status": "6",
+            "video_ids_count": 31,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 31,
+            "has_cover_pic_hz": true,
+            "shape": "positive_cover_branch"
+          }
+        },
+        "mzc002009qyd7nv": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "�ܳ�û����������",
+            "type": "1",
+            "type_name": "��Ӱ",
+            "pay_status": "6",
+            "video_ids_count": 1,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 1,
+            "has_cover_pic_hz": true,
+            "shape": "positive_cover_branch"
+          }
+        }
+      },
+      "453": {
+        "mzc00200idzf2m8": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "�ɳ�����3",
+            "type": "1",
+            "type_name": "",
+            "pay_status": "",
+            "video_ids_count": 0,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 0,
+            "has_cover_pic_hz": true,
+            "shape": "cover_only_positive_shell"
+          }
+        },
+        "mzc00200xxpsogl": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "���� �ڶ���",
+            "type": "3",
+            "type_name": "",
+            "pay_status": "",
+            "video_ids_count": 0,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 0,
+            "has_cover_pic_hz": true,
+            "shape": "cover_only_positive_shell"
+          }
+        },
+        "mzc002009qyd7nv": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "�ܳ�û����������",
+            "type": "1",
+            "type_name": "",
+            "pay_status": "",
+            "video_ids_count": 0,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 0,
+            "has_cover_pic_hz": true,
+            "shape": "cover_only_positive_shell"
+          }
+        }
+      },
+      "476": {
+        "mzc00200idzf2m8": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "",
+            "type": "",
+            "type_name": "",
+            "pay_status": "",
+            "video_ids_count": 0,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 0,
+            "has_cover_pic_hz": false,
+            "shape": "success_shell_without_sample"
+          }
+        },
+        "mzc00200xxpsogl": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "",
+            "type": "",
+            "type_name": "",
+            "pay_status": "",
+            "video_ids_count": 0,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 0,
+            "has_cover_pic_hz": false,
+            "shape": "success_shell_without_sample"
+          }
+        },
+        "mzc002009qyd7nv": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "",
+            "type": "",
+            "type_name": "",
+            "pay_status": "",
+            "video_ids_count": 0,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 0,
+            "has_cover_pic_hz": false,
+            "shape": "success_shell_without_sample"
+          }
+        }
+      },
+      "483": {
+        "mzc00200idzf2m8": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "",
+            "type": "",
+            "type_name": "",
+            "pay_status": "",
+            "video_ids_count": 1,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 1,
+            "has_cover_pic_hz": false,
+            "shape": "video_ids_only_shell"
+          }
+        },
+        "mzc00200xxpsogl": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "",
+            "type": "",
+            "type_name": "",
+            "pay_status": "",
+            "video_ids_count": 31,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 31,
+            "has_cover_pic_hz": false,
+            "shape": "video_ids_only_shell"
+          }
+        },
+        "mzc002009qyd7nv": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "",
+            "type": "",
+            "type_name": "",
+            "pay_status": "",
+            "video_ids_count": 1,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 1,
+            "has_cover_pic_hz": false,
+            "shape": "video_ids_only_shell"
+          }
+        }
+      },
+      "506": {
+        "mzc00200idzf2m8": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "",
+            "type": "",
+            "type_name": "",
+            "pay_status": "",
+            "video_ids_count": 0,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 0,
+            "has_cover_pic_hz": false,
+            "shape": "success_shell_without_sample"
+          }
+        },
+        "mzc00200xxpsogl": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "",
+            "type": "",
+            "type_name": "",
+            "pay_status": "",
+            "video_ids_count": 0,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 0,
+            "has_cover_pic_hz": false,
+            "shape": "success_shell_without_sample"
+          }
+        },
+        "mzc002009qyd7nv": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "",
+            "type": "",
+            "type_name": "",
+            "pay_status": "",
+            "video_ids_count": 0,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 0,
+            "has_cover_pic_hz": false,
+            "shape": "success_shell_without_sample"
+          }
+        }
+      },
+      "537": {
+        "mzc00200idzf2m8": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "",
+            "type": "",
+            "type_name": "",
+            "pay_status": "",
+            "video_ids_count": 0,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 0,
+            "has_cover_pic_hz": true,
+            "shape": "success_shell_without_sample"
+          }
+        },
+        "mzc00200xxpsogl": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "",
+            "type": "",
+            "type_name": "",
+            "pay_status": "",
+            "video_ids_count": 0,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 0,
+            "has_cover_pic_hz": true,
+            "shape": "success_shell_without_sample"
+          }
+        },
+        "mzc002009qyd7nv": {
+          "demo_result": "success",
+          "summary": {
+            "cover_title": "",
+            "type": "",
+            "type_name": "",
+            "pay_status": "",
+            "video_ids_count": 0,
+            "cover_infos_count": 1,
+            "aggregated_video_ids_count": 0,
+            "has_cover_pic_hz": true,
+            "shape": "success_shell_without_sample"
+          }
+        }
+      }
+    },
+    "api2": {
+      "488": {
+        "z4102qfi0x4": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "�ɳ�����3",
+            "duration_seconds": "",
+            "url": "https://v.qq.com/x/page/z4102qfi0x4.html",
+            "has_title": true,
+            "has_duration": false,
+            "has_url": true,
+            "has_defn": false,
+            "has_state": false,
+            "has_upload_src": false,
+            "has_category_map": false,
+            "has_cover_list": false,
+            "has_vwh": false,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": false,
+            "has_create_time": false,
+            "empty_shell": false,
+            "richness_score": 2,
+            "shape": "thin_positive_shell"
+          }
+        },
+        "j4101ouc4ve": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "����2_01",
+            "duration_seconds": "",
+            "url": "https://v.qq.com/x/page/j4101ouc4ve.html",
+            "has_title": true,
+            "has_duration": false,
+            "has_url": true,
+            "has_defn": false,
+            "has_state": false,
+            "has_upload_src": false,
+            "has_category_map": false,
+            "has_cover_list": false,
+            "has_vwh": false,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": false,
+            "has_create_time": false,
+            "empty_shell": false,
+            "richness_score": 2,
+            "shape": "thin_positive_shell"
+          }
+        },
+        "m4102tgsa8d": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "�ܳ�û����������",
+            "duration_seconds": "",
+            "url": "https://v.qq.com/x/page/m4102tgsa8d.html",
+            "has_title": true,
+            "has_duration": false,
+            "has_url": true,
+            "has_defn": false,
+            "has_state": false,
+            "has_upload_src": false,
+            "has_category_map": false,
+            "has_cover_list": false,
+            "has_vwh": false,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": false,
+            "has_create_time": false,
+            "empty_shell": false,
+            "richness_score": 2,
+            "shape": "thin_positive_shell"
+          }
+        }
+      },
+      "502": {
+        "z4102qfi0x4": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "�ɳ�����3",
+            "duration_seconds": "7550",
+            "url": "https://v.qq.com/x/page/z4102qfi0x4.html",
+            "has_title": true,
+            "has_duration": true,
+            "has_url": true,
+            "has_defn": false,
+            "has_state": false,
+            "has_upload_src": false,
+            "has_category_map": false,
+            "has_cover_list": true,
+            "has_vwh": false,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": true,
+            "has_create_time": true,
+            "empty_shell": false,
+            "richness_score": 6,
+            "shape": "thin_positive_shell"
+          }
+        },
+        "j4101ouc4ve": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "����2_01",
+            "duration_seconds": "2116",
+            "url": "https://v.qq.com/x/page/j4101ouc4ve.html",
+            "has_title": true,
+            "has_duration": true,
+            "has_url": true,
+            "has_defn": false,
+            "has_state": false,
+            "has_upload_src": false,
+            "has_category_map": false,
+            "has_cover_list": true,
+            "has_vwh": false,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": true,
+            "has_create_time": true,
+            "empty_shell": false,
+            "richness_score": 6,
+            "shape": "thin_positive_shell"
+          }
+        },
+        "m4102tgsa8d": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "�ܳ�û����������",
+            "duration_seconds": "7056",
+            "url": "https://v.qq.com/x/page/m4102tgsa8d.html",
+            "has_title": true,
+            "has_duration": true,
+            "has_url": true,
+            "has_defn": false,
+            "has_state": false,
+            "has_upload_src": false,
+            "has_category_map": false,
+            "has_cover_list": true,
+            "has_vwh": false,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": true,
+            "has_create_time": true,
+            "empty_shell": false,
+            "richness_score": 6,
+            "shape": "thin_positive_shell"
+          }
+        }
+      },
+      "506": {
+        "z4102qfi0x4": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "",
+            "duration_seconds": "",
+            "url": "",
+            "has_title": false,
+            "has_duration": false,
+            "has_url": false,
+            "has_defn": false,
+            "has_state": false,
+            "has_upload_src": false,
+            "has_category_map": false,
+            "has_cover_list": false,
+            "has_vwh": false,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": false,
+            "has_create_time": false,
+            "empty_shell": true,
+            "richness_score": 0,
+            "shape": "success_shell_without_sample"
+          }
+        },
+        "j4101ouc4ve": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "",
+            "duration_seconds": "",
+            "url": "",
+            "has_title": false,
+            "has_duration": false,
+            "has_url": false,
+            "has_defn": false,
+            "has_state": false,
+            "has_upload_src": false,
+            "has_category_map": false,
+            "has_cover_list": false,
+            "has_vwh": false,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": false,
+            "has_create_time": false,
+            "empty_shell": true,
+            "richness_score": 0,
+            "shape": "success_shell_without_sample"
+          }
+        },
+        "m4102tgsa8d": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "",
+            "duration_seconds": "",
+            "url": "",
+            "has_title": false,
+            "has_duration": false,
+            "has_url": false,
+            "has_defn": false,
+            "has_state": false,
+            "has_upload_src": false,
+            "has_category_map": false,
+            "has_cover_list": false,
+            "has_vwh": false,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": false,
+            "has_create_time": false,
+            "empty_shell": true,
+            "richness_score": 0,
+            "shape": "success_shell_without_sample"
+          }
+        }
+      },
+      "535": {
+        "z4102qfi0x4": {
+          "demo_result": "command_failed",
+          "command": [
+            "C:\\Users\\lin\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+            "C:\\Users\\lin\\Documents\\YM查询工具还原\\examples\\python\\tencent_video_api_demo.py",
+            "--vid",
+            "z4102qfi0x4",
+            "--api2-tid",
+            "535",
+            "--json"
+          ],
+          "stderr_excerpt": "Traceback (most recent call last):\n  File \"C:\\Users\\lin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\urllib\\request.py\", line 1321, in do_open\n    h.request(req.get_method(), req.selector, req.data, headers,\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n              encode_chunked=req.has_header('Transfer-encoding'))\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\lin\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\http\\client.py\", line 1367, in request\n    self._send_request(method, url, body, headers, encode_chunked)\n    ~~~~~~~~~~~~~~~~~~^^^",
+          "stdout_excerpt": ""
+        },
+        "j4101ouc4ve": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "����2_01",
+            "duration_seconds": "2116",
+            "url": "https://v.qq.com/x/page/j4101ouc4ve.html",
+            "has_title": true,
+            "has_duration": true,
+            "has_url": true,
+            "has_defn": true,
+            "has_state": true,
+            "has_upload_src": true,
+            "has_category_map": true,
+            "has_cover_list": true,
+            "has_vwh": true,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": true,
+            "has_create_time": true,
+            "empty_shell": false,
+            "richness_score": 11,
+            "shape": "fuller_detail_row"
+          }
+        },
+        "m4102tgsa8d": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "�ܳ�û����������",
+            "duration_seconds": "7056",
+            "url": "https://v.qq.com/x/page/m4102tgsa8d.html",
+            "has_title": true,
+            "has_duration": true,
+            "has_url": true,
+            "has_defn": true,
+            "has_state": true,
+            "has_upload_src": true,
+            "has_category_map": true,
+            "has_cover_list": true,
+            "has_vwh": true,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": true,
+            "has_create_time": true,
+            "empty_shell": false,
+            "richness_score": 11,
+            "shape": "fuller_detail_row"
+          }
+        }
+      },
+      "540": {
+        "z4102qfi0x4": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "�ɳ�����3",
+            "duration_seconds": "7550",
+            "url": "https://v.qq.com/x/page/z4102qfi0x4.html",
+            "has_title": true,
+            "has_duration": true,
+            "has_url": true,
+            "has_defn": false,
+            "has_state": false,
+            "has_upload_src": false,
+            "has_category_map": false,
+            "has_cover_list": false,
+            "has_vwh": false,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": true,
+            "has_create_time": false,
+            "empty_shell": false,
+            "richness_score": 4,
+            "shape": "thin_positive_shell"
+          }
+        },
+        "j4101ouc4ve": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "����2_01",
+            "duration_seconds": "2116",
+            "url": "https://v.qq.com/x/page/j4101ouc4ve.html",
+            "has_title": true,
+            "has_duration": true,
+            "has_url": true,
+            "has_defn": false,
+            "has_state": false,
+            "has_upload_src": false,
+            "has_category_map": false,
+            "has_cover_list": false,
+            "has_vwh": false,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": true,
+            "has_create_time": false,
+            "empty_shell": false,
+            "richness_score": 4,
+            "shape": "thin_positive_shell"
+          }
+        },
+        "m4102tgsa8d": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "�ܳ�û����������",
+            "duration_seconds": "7056",
+            "url": "https://v.qq.com/x/page/m4102tgsa8d.html",
+            "has_title": true,
+            "has_duration": true,
+            "has_url": true,
+            "has_defn": false,
+            "has_state": false,
+            "has_upload_src": false,
+            "has_category_map": false,
+            "has_cover_list": false,
+            "has_vwh": false,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": true,
+            "has_create_time": false,
+            "empty_shell": false,
+            "richness_score": 4,
+            "shape": "thin_positive_shell"
+          }
+        }
+      },
+      "541": {
+        "z4102qfi0x4": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "�ɳ�����3",
+            "duration_seconds": "",
+            "url": "https://v.qq.com/x/page/z4102qfi0x4.html",
+            "has_title": true,
+            "has_duration": false,
+            "has_url": true,
+            "has_defn": false,
+            "has_state": false,
+            "has_upload_src": false,
+            "has_category_map": false,
+            "has_cover_list": false,
+            "has_vwh": false,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": true,
+            "has_create_time": false,
+            "empty_shell": false,
+            "richness_score": 3,
+            "shape": "thin_positive_shell"
+          }
+        },
+        "j4101ouc4ve": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "����2_01",
+            "duration_seconds": "",
+            "url": "https://v.qq.com/x/page/j4101ouc4ve.html",
+            "has_title": true,
+            "has_duration": false,
+            "has_url": true,
+            "has_defn": false,
+            "has_state": false,
+            "has_upload_src": false,
+            "has_category_map": false,
+            "has_cover_list": false,
+            "has_vwh": false,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": true,
+            "has_create_time": false,
+            "empty_shell": false,
+            "richness_score": 3,
+            "shape": "thin_positive_shell"
+          }
+        },
+        "m4102tgsa8d": {
+          "demo_result": "success",
+          "summary": {
+            "retcode": "0",
+            "title": "�ܳ�û����������",
+            "duration_seconds": "",
+            "url": "https://v.qq.com/x/page/m4102tgsa8d.html",
+            "has_title": true,
+            "has_duration": false,
+            "has_url": true,
+            "has_defn": false,
+            "has_state": false,
+            "has_upload_src": false,
+            "has_category_map": false,
+            "has_cover_list": false,
+            "has_vwh": false,
+            "has_pic": false,
+            "has_type": false,
+            "has_vid": true,
+            "has_create_time": false,
+            "empty_shell": false,
+            "richness_score": 3,
+            "shape": "thin_positive_shell"
+          }
+        }
+      }
+    }
+  },
+  "go_spotchecks": {},
+  "verdict": [
+    "This matrix is caller-facing evidence about output richness, not a proof that aged-cookie or login-state behave the same.",
+    "Different positive or top-level-success tid branches can still expose very different shell thickness; do not collapse them into one capability family without checking the row-level shape.",
+    "Canonical fuller-detail rows should stay the default for callers unless a thinner shell branch is being probed deliberately."
+  ]
+}

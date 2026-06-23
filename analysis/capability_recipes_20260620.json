@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-22",
-  "scope": "Directly usable Tencent Video API capability recipes refreshed through the 2026-06-21 positive-tid and anonymous real-cookie replay evidence.",
+  "generated_at": "2026-06-23",
+  "scope": "Directly usable Tencent Video API capability recipes refreshed through the 2026-06-23 positive-tid, caller-facing shell validation, and anonymous real-cookie replay evidence.",
   "recipes": [
     {
       "name": "api1_single_cover_lookup",
@@ -85,6 +85,68 @@
         "analysis/parameter_contract_quick_reference_20260621.json",
         "analysis/demo_validation_incremental_tid453_20260623.json",
         "analysis/direct_call_raw_http_validation_tid453_20260623.json"
+      ]
+    },
+    {
+      "name": "api1_single_cover_lookup_tid476_imgtag_ultra_thin_shell",
+      "purpose": "Use API1 tid=476 to probe the dedicated imgtag-family ultra-thin success shell when you deliberately want that branch rather than canonical tid=431.",
+      "interface": "api1",
+      "environment_scope": "same-day anonymous tested branch",
+      "canonical_parameters": {
+        "tid": "476",
+        "idlist": "<single CID>",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "curl": "https://data.video.qq.com/fcgi-bin/data?tid=476&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b",
+      "python_demo": "python examples/python/tencent_video_api_demo.py --cid <CID> --api1-tid 476 --json",
+      "go_demo": "go.exe -cid <CID> -api1-tid 476 -json",
+      "expected_highlights": [
+        "top-level errorno=0",
+        "cover title/type/pay_status and video_ids stay empty on the current 3-CID public matrix",
+        "the dedicated demo and raw validation sample expose a stable imgtag-family shell with 25 extra field keys and qbox_imgtag={}"
+      ],
+      "notes": [
+        "`476` is currently an imgtag-family ultra-thin success shell, not a field-equivalent replacement for canonical tid=431.",
+        "On the current caller-facing confirmation set it repeated the same imgtag-oriented extra-field family across `mzc00200idzf2m8`, `mzc00200xxpsogl`, and `mzc002009qyd7nv`."
+      ],
+      "evidence": [
+        "analysis/positive_tid_probe_456_521_summary_20260623.json",
+        "analysis/parameter_contract_quick_reference_20260621.json",
+        "analysis/api1_tid_shell_family_delta_20260623.json",
+        "analysis/demo_validation_incremental_tid476_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid476_20260623.json"
+      ]
+    },
+    {
+      "name": "api1_single_cover_lookup_tid506_empty_valued_field_shell",
+      "purpose": "Use API1 tid=506 to probe the dedicated empty-valued field shell when you deliberately want that branch rather than canonical tid=431.",
+      "interface": "api1",
+      "environment_scope": "same-day anonymous tested branch",
+      "canonical_parameters": {
+        "tid": "506",
+        "idlist": "<single CID>",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "curl": "https://data.video.qq.com/fcgi-bin/data?tid=506&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b",
+      "python_demo": "python examples/python/tencent_video_api_demo.py --cid <CID> --api1-tid 506 --json",
+      "go_demo": "go.exe -cid <CID> -api1-tid 506 -json",
+      "expected_highlights": [
+        "top-level errorno=0",
+        "cover title/type/pay_status and video_ids stay empty on the current 3-CID public matrix",
+        "the dedicated demo and raw validation sample expose a stable 10-field shell with a 9-key empty-valued extra-field family and no non-empty extras"
+      ],
+      "notes": [
+        "`506` is currently an empty-valued field shell, not a field-equivalent replacement for canonical tid=431.",
+        "On the current caller-facing confirmation set it repeated the same empty-valued field family across `mzc00200idzf2m8`, `mzc00200xxpsogl`, and `mzc002009qyd7nv`, and it is now stably distinguishable from the tid=476 imgtag-family shell."
+      ],
+      "evidence": [
+        "analysis/positive_tid_probe_456_521_summary_20260623.json",
+        "analysis/parameter_contract_quick_reference_20260621.json",
+        "analysis/api1_tid_shell_family_delta_20260623.json",
+        "analysis/demo_validation_incremental_tid506_api1_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid506_api1_20260623.json"
       ]
     },
     {

@@ -1,0 +1,116 @@
+{
+  "generated_at": "2026-06-23",
+  "scope": "Live raw HTTP validation summary for the highest-value Tencent Video direct-call rows in the current anonymous scope.",
+  "runner_inputs": {
+    "selected_surfaces": [
+      "api1_tid476_imgtag_ultra_thin_shell"
+    ],
+    "timeout_seconds": 30,
+    "retries": 2
+  },
+  "results": [
+    {
+      "surface": "api1_tid476_imgtag_ultra_thin_shell",
+      "intent": "Direct API1 tid=476 imgtag-family ultra-thin success shell on a public CID.",
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=476&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "result": "http_success",
+          "body_prefix": "<root><costtime>6</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1782200770</resptime><results><fields><ap"
+        }
+      ],
+      "summary": {
+        "errorno": "0",
+        "errormsg": "",
+        "cover_title": "",
+        "cover_type": "",
+        "pay_status": "",
+        "video_ids_count": 0,
+        "video_ids_head": [],
+        "field_count": 25,
+        "field_names": [
+          "apad_imgtag",
+          "aphone20_imgtag",
+          "aphone30_imgtag",
+          "aphone40_imgtag",
+          "aphone50_imgtag",
+          "aphone_imgtag",
+          "cli_imgtag",
+          "cliv96_imgtag",
+          "cliv9_imgtag",
+          "imgtag",
+          "imgtag_ver",
+          "ipad20_imgtag",
+          "ipad30_imgtag",
+          "ipad_imgtag",
+          "iphone20_imgtag",
+          "iphone30_imgtag",
+          "iphone40_imgtag",
+          "iphone_imgtag",
+          "mac_imgtag",
+          "pay_imgtag",
+          "pc_client_imgtag",
+          "qbox_imgtag",
+          "tvbox_imgtag",
+          "web20_imgtag",
+          "web_imgtag"
+        ],
+        "extra_field_keys": [
+          "apad_imgtag",
+          "aphone20_imgtag",
+          "aphone30_imgtag",
+          "aphone40_imgtag",
+          "aphone50_imgtag",
+          "aphone_imgtag",
+          "cli_imgtag",
+          "cliv96_imgtag",
+          "cliv9_imgtag",
+          "imgtag",
+          "imgtag_ver",
+          "ipad20_imgtag",
+          "ipad30_imgtag",
+          "ipad_imgtag",
+          "iphone20_imgtag",
+          "iphone30_imgtag",
+          "iphone40_imgtag",
+          "iphone_imgtag",
+          "mac_imgtag",
+          "pay_imgtag",
+          "pc_client_imgtag",
+          "qbox_imgtag",
+          "tvbox_imgtag",
+          "web20_imgtag",
+          "web_imgtag"
+        ],
+        "extra_nonempty_fields": {
+          "qbox_imgtag": "{}"
+        }
+      },
+      "result": "success_with_imgtag_family_ultra_thin_shell",
+      "ok": true,
+      "highlights": [
+        "errorno=0",
+        "cover_title=-",
+        "cover_type=-",
+        "pay_status=-",
+        "video_ids_count=0",
+        "field_count=25",
+        "extra_field_key_count=25",
+        "qbox_imgtag={}"
+      ]
+    }
+  ],
+  "failed_surfaces": [],
+  "current_reading": [
+    "This runner validates raw HTTP behavior only in the current anonymous direct-call scope.",
+    "API1 tid=476 should now be read as an imgtag-family ultra-thin success shell: on the dedicated raw sample it returns 25 imgtag-oriented fields with qbox_imgtag={}, but still no cover title and no video_ids.",
+    "API1 tid=483 should still be read as a video_ids-led thin shell: errorno=0 plus non-empty video_ids_count does not mean canonical 431 cover richness.",
+    "API2 tid=506 should still be read as a near-empty success shell: top-level success plus retcode=0 does not currently rise into caller-facing detail fields on the dedicated raw XML validation sample.",
+    "Alternate tid 488/502/540/541 rows are expected to succeed as positive shells rather than canonical-full detail rows.",
+    "Within that alternate family, tid=502 currently sits on a richer shell than tid=488/540/541, but still below canonical 535 detail fullness.",
+    "The all-invalid JSONP row is a consumer-rule validation, not a content-extraction success row.",
+    "The current batch row is a canonical multi-VID spot-check on the known batch-capable branch, not a fresh 32-slot saturation replay."
+  ]
+}

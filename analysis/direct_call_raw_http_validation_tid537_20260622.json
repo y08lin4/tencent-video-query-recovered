@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-06-22",
+  "scope": "Live raw HTTP validation summary for the highest-value Tencent Video direct-call rows in the current anonymous scope.",
+  "runner_inputs": {
+    "selected_surfaces": [
+      "api1_tid537_probe_shell"
+    ],
+    "timeout_seconds": 30,
+    "retries": 2
+  },
+  "results": [
+    {
+      "surface": "api1_tid537_probe_shell",
+      "intent": "Direct API1 tid=537 shell probe on a public CID.",
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=537&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "result": "http_success",
+          "body_prefix": "<root><costtime>9</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1782143474</resptime><results><fields><c_"
+        }
+      ],
+      "summary": {
+        "errorno": "0",
+        "errormsg": "",
+        "cover_title": "",
+        "cover_type": "",
+        "pay_status": "",
+        "video_ids_count": 0,
+        "video_ids_head": []
+      },
+      "result": "success_with_shell_only_probe",
+      "ok": true,
+      "highlights": [
+        "errorno=0",
+        "cover_title=-",
+        "video_ids_count=0"
+      ]
+    }
+  ],
+  "failed_surfaces": [],
+  "current_reading": [
+    "This runner validates raw HTTP behavior only in the current anonymous direct-call scope.",
+    "Alternate tid 540/541 rows are expected to succeed as thinner positive shells rather than canonical-full detail rows.",
+    "The all-invalid JSONP row is a consumer-rule validation, not a content-extraction success row.",
+    "The current batch row is a canonical multi-VID spot-check on the known batch-capable branch, not a fresh 32-slot saturation replay."
+  ]
+}

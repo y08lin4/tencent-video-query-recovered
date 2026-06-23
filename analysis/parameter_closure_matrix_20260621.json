@@ -1,0 +1,579 @@
+{
+  "generated_at": "2026-06-22",
+  "scope": "Parameter closure matrix for the two Tencent Video main interfaces, normalized from current canonical inventory and gap-priority artifacts.",
+  "status_legend": {
+    "closed": "作用/取值/依赖/错误形态/环境范围/能力面都已被当前证据充分覆盖",
+    "mostly_closed": "主行为已稳定，但仍有少量重复键或边缘分支待补",
+    "partially_closed": "主作用与关键错误形态已知，但仍缺重要值域或环境结论",
+    "branch_partially_closed": "主分支族已知，但正分支全集或能力差异仍未穷尽",
+    "environment_open": "匿名环境下已知，但跨环境闭环未完成"
+  },
+  "api1": [
+    {
+      "parameter": "tid",
+      "interface": "api1",
+      "requiredness": "hard_required",
+      "role": "request routing / config selector; `431` is the current canonical working example, not a proof that no other positive tid exists",
+      "working_examples": [
+        "431"
+      ],
+      "failing_examples": [
+        {
+          "value": "missing",
+          "errorno": "-111003",
+          "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+        },
+        {
+          "value": "0",
+          "errorno": "-111003",
+          "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+        },
+        {
+          "value": "abc",
+          "errorno": "-111003",
+          "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+        }
+      ],
+      "dependency_or_branching": [
+        "controls primary branch/routing family"
+      ],
+      "environment_scope": "same-day stable on the current anonymous matrix; the added 418-421, 522-525, and 526-536 probes only tightened local error boundaries, not positive hits, and the later 641-647 plus 636-640/648-652 follow-ups also stayed negative rather than opening a new positive family.",
+      "unlocked_capabilities": [
+        "API1 positive cover lookup on tid=431",
+        "API1 success-shell-without-sample branch on tid=537"
+      ],
+      "current_status": "branch_partially_closed",
+      "remaining_gaps": [
+        "Whether API1 has other positive tid values besides `431` is still not closed.",
+        "API1 tid=525 is now better read as a stable local `-111013` boundary artifact with 522-524 staying on ordinary `-111005`, not as a positive precursor.",
+        "The current 642-area follow-up is now tighter: 641-647 plus 636-640 and 648-652 do not open a new API1 positive branch."
+      ]
+    },
+    {
+      "parameter": "idlist",
+      "interface": "api1",
+      "requiredness": "hard_required",
+      "role": "comma-separated CID list",
+      "working_examples": [
+        "single valid CID",
+        "multi-CID batch",
+        "mixed valid + invalid CID batch"
+      ],
+      "failing_examples": [
+        {
+          "value": "missing",
+          "errorno": "-111004",
+          "errormsg": "错误的idlist"
+        },
+        {
+          "value": "",
+          "errorno": "-111004",
+          "errormsg": "错误的idlist"
+        },
+        {
+          "value": "  ",
+          "errorno": "-111004",
+          "errormsg": "错误的idlist"
+        },
+        {
+          "value": ",",
+          "errorno": "10010039",
+          "errormsg": "keys empty"
+        },
+        {
+          "value": ",,",
+          "errorno": "10010039",
+          "errormsg": "keys empty"
+        }
+      ],
+      "dependency_or_branching": [
+        "batch behavior, duplicate preservation, empty-slot ignore, mixed valid-invalid coexistence"
+      ],
+      "environment_scope": "current same-day anonymous matrix unless otherwise stated",
+      "unlocked_capabilities": [
+        "single lookup",
+        "batch lookup up to tested 32 non-empty items",
+        "mixed valid+invalid batch diagnostics"
+      ],
+      "current_status": "mostly_closed",
+      "remaining_gaps": [
+        "Aged-cookie/login-state replay is still open for this row, but repeated `idlist` already behaves as first-value-wins and does not merge across query-string positions in the tested same-day anonymous plus real anonymous visitor-cookie replay collision cases."
+      ]
+    },
+    {
+      "parameter": "appid",
+      "interface": "api1",
+      "requiredness": "conditional_branch_parameter",
+      "role": "numeric canonical appid enables the stable documented appkey-validation branch; missing / text / `1` currently land on a looser anonymous-compatibility branch in the tested cases",
+      "working_examples": [
+        "missing",
+        "1",
+        "notanumber",
+        "missing together with appkey"
+      ],
+      "failing_examples": [
+        {
+          "value": "99999",
+          "errorno": "10010108",
+          "errormsg": "appid no find"
+        }
+      ],
+      "dependency_or_branching": [
+        "switches between canonical numeric-appid branch and looser tested bypass branch"
+      ],
+      "environment_scope": "current same-day anonymous matrix unless otherwise stated",
+      "unlocked_capabilities": [
+        "canonical documented branch when paired with canonical appkey"
+      ],
+      "current_status": "partially_closed",
+      "remaining_gaps": [
+        "Positive behavior for non-canonical but valid numeric appid values is not yet mapped."
+      ]
+    },
+    {
+      "parameter": "appkey",
+      "interface": "api1",
+      "requiredness": "conditional_with_canonical_numeric_appid",
+      "role": "part of the stable documented branch when the canonical numeric appid is used",
+      "working_examples": [
+        "paired with `appid=10001005` and the canonical appkey",
+        "omitted when appid is missing in the tested anonymous branch",
+        "omitted when appid is text in the tested anonymous branch"
+      ],
+      "failing_examples": [
+        {
+          "value": "missing while `appid=10001005`",
+          "errorno": "10010110",
+          "errormsg": "appkey error"
+        },
+        {
+          "value": "wrong value while `appid=10001005`",
+          "errorno": "10010110",
+          "errormsg": "appkey error"
+        }
+      ],
+      "dependency_or_branching": [
+        "validated only when canonical numeric appid branch is active"
+      ],
+      "environment_scope": "current same-day anonymous matrix unless otherwise stated",
+      "unlocked_capabilities": [
+        "canonical documented branch when appid is canonical numeric value"
+      ],
+      "current_status": "partially_closed",
+      "remaining_gaps": [
+        "No evidence yet that appkey alone unlocks additional API1 capability beyond satisfying the canonical numeric-appid branch."
+      ]
+    }
+  ],
+  "api2": [
+    {
+      "parameter": "otype",
+      "interface": "api2",
+      "requiredness": "optional_wrapper_switch",
+      "role": "controls response wrapper; only exact lowercase `json` switches to JSONP",
+      "working_examples": [
+        "missing -> XML success body",
+        "xml -> XML body",
+        "json -> `QZOutputJson=...;` JSONP body"
+      ],
+      "failing_examples": [],
+      "dependency_or_branching": [
+        "exact lowercase json flips XML into JSONP wrapper branch"
+      ],
+      "environment_scope": "current same-day anonymous matrix unless otherwise stated",
+      "unlocked_capabilities": [
+        "XML default payload mode",
+        "JSONP wrapper mode"
+      ],
+      "current_status": "mostly_closed",
+      "remaining_gaps": [
+        "No evidence yet for any positive wrapper value besides XML default and lowercase JSONP."
+      ]
+    },
+    {
+      "parameter": "tid",
+      "interface": "api2",
+      "requiredness": "hard_required",
+      "role": "request routing / config selector; `535` is the current canonical good example value, while `535`, `540`, and `541` are the currently confirmed positive API2 tids",
+      "working_examples": [
+        "535",
+        "540",
+        "541"
+      ],
+      "failing_examples": [
+        {
+          "value": "missing",
+          "errorno": "-111003",
+          "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+        },
+        {
+          "value": "0",
+          "errorno": "-111003",
+          "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+        },
+        {
+          "value": "abc",
+          "errorno": "-111003",
+          "errormsg": "错误的tid, 如果新申请的接口,请等待10分钟"
+        },
+        {
+          "value": "536",
+          "errorno": "-111005",
+          "errormsg": "获取配置错误"
+        },
+        {
+          "value": "431",
+          "errorno": "10010048",
+          "errormsg": "key all illegal"
+        }
+      ],
+      "dependency_or_branching": [
+        "controls primary branch/routing family",
+        "anonymous 522-525 plus 524-529 lower-edge probes found no new positive hit; 522-524 stay on ordinary `-111005` while 525 now behaves like a stable cross-interface `-111013` error-family island across the tested public samples",
+        "the later 641-647 and 636-640/648-652 follow-ups did not expand the positive family beyond `535/540/541`; they instead reinforce `642` as a local anomaly island with ordinary `-111005` on both flanks"
+      ],
+      "environment_scope": "current same-day anonymous matrix unless otherwise stated",
+      "unlocked_capabilities": [
+        "API2 positive detail family on tid=535/540/541",
+        "API2 canonical full-detail default on tid=535",
+        "API2 alternate positive shell on tid=540/541"
+      ],
+      "current_status": "branch_partially_closed",
+      "remaining_gaps": [
+        "Whether API2 has any other positive tid values besides the currently confirmed `535/540/541` family is still open.",
+        "The anonymous lower-edge band is now tighter: 522-524 and 526-529 stay on ordinary `-111005` while 525 behaves like a stable cross-interface `-111013` error-family island, but positive tid space beyond 535/540/541 is still open elsewhere.",
+        "The current 642-area follow-up is also tighter: 641-647 plus 636-640 and 648-652 do not reveal a new positive cluster, so `642` is currently better treated as a local anomaly island than as an expansion lead."
+      ]
+    },
+    {
+      "parameter": "appid",
+      "interface": "api2",
+      "requiredness": "conditional_branch_parameter",
+      "role": "numeric canonical appid enables stricter appkey validation; missing / text / `1` currently bypass that stricter branch",
+      "working_examples": [
+        "missing",
+        "1",
+        "notanumber"
+      ],
+      "failing_examples": [
+        {
+          "value": "99999",
+          "errorno": "10010108",
+          "errormsg": "appid no find"
+        }
+      ],
+      "dependency_or_branching": [
+        "switches between canonical numeric-appid branch and looser tested bypass branch"
+      ],
+      "environment_scope": "current same-day anonymous matrix unless otherwise stated",
+      "unlocked_capabilities": [
+        "canonical documented branch when paired with canonical appkey"
+      ],
+      "current_status": "partially_closed",
+      "remaining_gaps": [
+        "Positive behavior for other numeric appid values is not yet mapped."
+      ]
+    },
+    {
+      "parameter": "appkey",
+      "interface": "api2",
+      "requiredness": "conditional_with_canonical_numeric_appid",
+      "role": "validated when the canonical numeric appid branch is active",
+      "working_examples": [
+        "paired with `appid=20001238` and the canonical appkey",
+        "omitted when appid is missing or text"
+      ],
+      "failing_examples": [
+        {
+          "value": "missing while `appid=20001238`",
+          "errorno": "10010110",
+          "errormsg": "appkey error"
+        },
+        {
+          "value": "wrong value while `appid=20001238`",
+          "errorno": "10010110",
+          "errormsg": "appkey error"
+        }
+      ],
+      "dependency_or_branching": [
+        "validated only when canonical numeric appid branch is active"
+      ],
+      "environment_scope": "current same-day anonymous matrix unless otherwise stated",
+      "unlocked_capabilities": [
+        "canonical documented branch when appid is canonical numeric value"
+      ],
+      "current_status": "partially_closed",
+      "remaining_gaps": [
+        "No evidence yet that appkey unlocks any API2 capability beyond satisfying the canonical numeric-appid branch."
+      ]
+    },
+    {
+      "parameter": "union_platform",
+      "interface": "api2",
+      "requiredness": "no_observed_effect_in_current_anonymous_canonical_branch",
+      "role": "present in canonical examples but not validated by the current tested branch set",
+      "working_examples": [
+        "missing",
+        "",
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "8",
+        "9",
+        "abc",
+        "999",
+        "-1",
+        "0003"
+      ],
+      "failing_examples": [],
+      "dependency_or_branching": [
+        "no visible effect in current anonymous and real-anonymous replay evidence",
+        "no visible effect on the richer `tid=535` row or the thinner `tid=540/541` rows across the tested anonymous `union_platform` sweep on `z4102qfi0x4` and `j4101ouc4ve`"
+      ],
+      "environment_scope": "current same-day anonymous matrix unless otherwise stated",
+      "unlocked_capabilities": [
+        "no distinct capability unlocked in current tested environments"
+      ],
+      "current_status": "environment_open",
+      "remaining_gaps": [
+        "Whether union_platform matters under aged-cookie or real login-state replay remains open.",
+        "Whether union_platform matters on broader untasted public vids remains open, even though the current anonymous `535/540/541` sweep shows no structural enrichment."
+      ]
+    },
+    {
+      "parameter": "idlist",
+      "interface": "api2",
+      "requiredness": "hard_required",
+      "role": "comma-separated VID list",
+      "working_examples": [
+        "single valid VID",
+        "mixed valid + invalid VID batch",
+        "duplicate + empty-slot batch",
+        "32 non-empty items"
+      ],
+      "failing_examples": [
+        {
+          "value": "missing",
+          "errorno": "-111004",
+          "errormsg": "错误的idlist"
+        },
+        {
+          "value": "",
+          "errorno": "-111004",
+          "errormsg": "错误的idlist"
+        },
+        {
+          "value": "  ",
+          "errorno": "-111004",
+          "errormsg": "错误的idlist"
+        },
+        {
+          "value": ",",
+          "errorno": "10010039",
+          "errormsg": "keys empty"
+        },
+        {
+          "value": ",,",
+          "errorno": "10010039",
+          "errormsg": "keys empty"
+        },
+        {
+          "value": "33 non-empty items",
+          "errorno": "-111001",
+          "errormsg": "idlist个数错误, 为0或超过限制"
+        }
+      ],
+      "dependency_or_branching": [
+        "batch behavior, duplicate preservation, empty-slot ignore, mixed valid-invalid coexistence"
+      ],
+      "environment_scope": "current same-day anonymous matrix unless otherwise stated",
+      "unlocked_capabilities": [
+        "single lookup",
+        "batch lookup up to tested 32 non-empty items",
+        "mixed valid+invalid batch diagnostics"
+      ],
+      "current_status": "mostly_closed",
+      "remaining_gaps": [
+        "Aged-cookie/login-state replay is still open for this row, but repeated `idlist` already behaves as first-value-wins and does not merge across query-string positions in the tested same-day anonymous plus real anonymous visitor-cookie replay collision cases."
+      ]
+    }
+  ],
+  "auxiliary_parameters": [
+    {
+      "parameter": "callback",
+      "interface": "api2_jsonp_only",
+      "requiredness": "optional_wrapper_parameter",
+      "role": "rewrites JSONP wrapper prefix in the tested JSONP branch",
+      "working_examples": [
+        "callback=cb1",
+        "callback=1",
+        "callback=my.func"
+      ],
+      "failing_examples": [],
+      "dependency_or_branching": [
+        "only meaningful when otype=json branch is active",
+        "repeated callback currently behaves as first-value-wins in the tested same-day anonymous JSONP collision cases",
+        "wide punctuation-heavy value families still tend to raw-passthrough into the wrapper prefix, and the 2026-06-22 unmatched-delimiter follow-up further tightened the boundary: `[` and `[[` still raw-passthrough, while `[(`, `{(`, `/*(`, `a[(`, `)(`, `](`, and `}(` now join the current parse-breaking representative family alongside earlier `a(` / `((` / `})();` cases",
+        "wrong-appkey JSONP error shells still honor callback wrapper selection in the tested same-day anonymous branch (`cb1` rewrites the wrapper; `a(` still creates a parse-breaking shell)",
+        "real anonymous visitor-cookie replay confirms the same callback precedence and wrong-appkey error-shell behavior on both PC Web and Mobile H5 for the tested cases"
+      ],
+      "environment_scope": "same-day anonymous plus real anonymous visitor-cookie replay (PC Web and Mobile H5) for the tested callback precedence and wrong-appkey error-shell cases",
+      "unlocked_capabilities": [
+        "custom JSONP callback wrapper"
+      ],
+      "current_status": "mostly_closed",
+      "remaining_gaps": [
+        "Aged-cookie/login-state replay is still open for callback precedence and error-shell behavior.",
+        "The parse-breaking family boundary is stronger after the 2026-06-22 unmatched-delimiter follow-up, but callback grammar closure is still open and remains lower priority than the environment gaps above."
+      ]
+    },
+    {
+      "parameter": "authish_extra_keys_family",
+      "interface": "api1_and_api2_candidate_parameters",
+      "requiredness": "not_required_in_current_anonymous_scope",
+      "role": "candidate auth/session-coupled query-key family tested as possible hidden parameters",
+      "working_examples": [
+        "token",
+        "sign",
+        "sig",
+        "appver",
+        "access_token",
+        "authkey",
+        "openid"
+      ],
+      "failing_examples": [],
+      "dependency_or_branching": [
+        "no observed effect across the tested anonymous canonical branches",
+        "no observed effect under the later real anonymous visitor-cookie replay on API1 tid=431 and API2 tid cluster 535/540/541"
+      ],
+      "environment_scope": "anonymous same-day matrix plus real anonymous visitor-cookie replay",
+      "unlocked_capabilities": [
+        "none observed in the current tested environments"
+      ],
+      "current_status": "environment_open",
+      "remaining_gaps": [
+        "aged-cookie replay under the same anonymous visitor flow",
+        "real login-state replay",
+        "whether any of these keys become meaningful only under aged-cookie or login-state environments"
+      ]
+    },
+    {
+      "parameter": "reserved_extra_keys_family",
+      "interface": "api1_and_api2_candidate_parameters",
+      "requiredness": "not_required_in_current_anonymous_scope",
+      "role": "candidate format/version/platform/source-like query-key family tested as possible hidden parameters",
+      "working_examples": [
+        "format",
+        "output",
+        "version",
+        "v",
+        "platform",
+        "source"
+      ],
+      "failing_examples": [],
+      "dependency_or_branching": [
+        "no observed effect across the tested anonymous canonical branches",
+        "no observed effect on API2 JSONP wrapper family away from the baseline QZOutputJson assignment shell"
+      ],
+      "environment_scope": "anonymous same-day matrix",
+      "unlocked_capabilities": [
+        "none observed in the current tested environments"
+      ],
+      "current_status": "mostly_closed",
+      "remaining_gaps": [
+        "whether a narrower reserved-looking key family exists outside the currently tested set",
+        "whether any reserved-looking key changes behavior only under aged-cookie or login-state environments"
+      ]
+    }
+  ],
+  "top_remaining_closure_gaps": [
+    {
+      "rank": 1,
+      "gap": "aged_cookie_and_login_matrix",
+      "why_it_matters": "Live anonymous visitor-cookie replay is now closed, so the highest-ROI remaining variable is whether older cookies or true login-state can still change the current parameter conclusions.",
+      "suggested_cases": [
+        "api1 baseline_single_valid",
+        "api1 missing_tid",
+        "api1 canonical_appid_missing_appkey",
+        "api2 baseline_xml_single",
+        "api2 otype_json_single",
+        "api2 all_invalid_jsonp_batch",
+        "api2 duplicate_and_empty_slots_json",
+        "api2 dup33_json"
+      ]
+    },
+    {
+      "rank": 2,
+      "gap": "api2_sparse_cluster_discovery_outside_535_540_541",
+      "why_it_matters": "The broader sweep now confirms API2 positives on `535`, `540`, and `541` in XML/JSONP. The later 641-647 jump-scan still does not reveal a new positive cluster, the second plus third samples both show `642 -> -111013` as a local error-family island, the 2026-06-22 636-640 / 648-652 flanking follow-up goes back to ordinary `-111005` throughout XML/JSONP, and the 2026-06-22 522-525 cross-interface follow-up now confirms `525 -> -111013` as another stable forbidden-external island on API1 and API2. Sparse-cluster discovery therefore remains open as a hypothesis-quality question rather than an active positive lead.",
+      "suggested_cases": [
+        "522-525 cross-interface follow-up already completed: 522-524 ordinary `-111005`, 525 stable `-111013` on API1/API2",
+        "641-647 anonymous jump-scan already completed with no positive hits",
+        "636-640 and 648-652 flanking follow-up already completed with no positive or `-111013` expansion",
+        "if future scans revisit this band, treat `642` as a local error-family follow-up rather than a positive-cluster lead",
+        "next only expand when a new sparse-cluster hypothesis appears outside the tested 420-445 / 530-550 / 641-647 / 636-640,648-652 bands"
+      ]
+    },
+    {
+      "rank": 3,
+      "gap": "api1_positive_tid_broader_search",
+      "why_it_matters": "API1 still has only one true positive (`431`) and one separate success-shell-without-sample branch (`537`). The newly added 418-421 and 526-536 probes tightened local error-family boundaries, the anonymous 641-647 jump-scan also came back fully negative, the 2026-06-22 636-640 / 648-652 flanking follow-up likewise returned ordinary `-111005` throughout, and the 2026-06-22 522-525 follow-up now shows API1 `525 -> -111013` with 522-524 staying ordinary `-111005`. Wider discovery outside the tested bands is still not mathematically closed, but the current lower-edge and 642-area negative boundaries are tighter.",
+      "suggested_cases": [
+        "focused 428-434 and 533-540 sweep already completed",
+        "522-525 follow-up already completed: API1 525 is a stable local `-111013` boundary artifact, not a positive lead",
+        "anonymous 641-647 jump-scan already completed with no new branch",
+        "636-640 and 648-652 flanking follow-up already completed with no new branch",
+        "only expand further if another branch family appears outside the current high-signal bands"
+      ]
+    },
+    {
+      "rank": 4,
+      "gap": "api1_534_535_536_second_cid_confirmation",
+      "why_it_matters": "The new API1 boundary slice shows `534 -> 535 -> 536` as `-111013 -> 10010048 -> -111005`, and that same pattern now repeats on the second canonical CID. The follow-up value is no longer re-confirmation, but deciding whether this local island changes how we prioritize future API1 discovery.",
+      "suggested_cases": [
+        "second-CID retest already completed with the same 534 -> 535 -> 536 pattern",
+        "treat API1 tid=535 as a stable local error-family boundary artifact, not a positive branch"
+      ]
+    },
+    {
+      "rank": 5,
+      "gap": "authish_extra_keys_under_aged_cookie_or_login_state",
+      "why_it_matters": "The anonymous canonical branch and the later real anonymous visitor-cookie replay now both stay unchanged for `token/sign/sig/appver/access_token/authkey/openid`, so the remaining value is specifically whether those keys only matter under aged-cookie or real login-state replay.",
+      "suggested_cases": [
+        "api2 XML + token=1 under aged-cookie jar",
+        "api2 XML + sign=1 under aged-cookie jar",
+        "api2 XML + appver=1.0.0 under login-state jar",
+        "api2 XML + openid=1 under login-state jar"
+      ]
+    },
+    {
+      "rank": 6,
+      "gap": "union_platform_under_aged_cookie_or_login_state",
+      "why_it_matters": "Current anonymous canonical evidence plus real anonymous visitor-cookie replay say `union_platform` shows no visible split, but aged-cookie or login-gated branches could still consume it differently.",
+      "suggested_cases": [
+        "api2 baseline XML with aged-cookie jar",
+        "api2 JSONP baseline with login-state jar",
+        "api2 repeated union_platform under the same aged-cookie or login-state jar"
+      ]
+    },
+    {
+      "rank": 7,
+      "gap": "api2_jsonp_callback_charset_sanitization_probe",
+      "why_it_matters": "The practical callback value-space now covers empty fallback, many raw-passthrough forms including slash/backslash/comment-like roots, plus a narrower pathological tail where closer-heavy punctuation still tends to raw-passthrough and `})();` joins the known parse-breaking family. The remaining uncertainty is now narrow and no longer blocks the main capability closure path.",
+      "suggested_cases": [
+        "2026-06-21 pathological tail follow-up already added `]/{/}/a]/a}/a))/a}})/a&b/a#b/a%20b/a>/a=` and `})();`",
+        "if callback probing continues, prioritize genuinely new unmatched-delimiter families rather than more closer-heavy raw-passthrough variants",
+        "only revisit environment behavior for callback after aged-cookie/login-state replay inputs exist"
+      ]
+    }
+  ],
+  "current_highest_value_blockers": [
+    "aged-cookie replay evidence is still missing",
+    "login-state replay evidence is still missing",
+    "API1 other positive tid values remain unclosed",
+    "API2 positive tid space beyond 535/540/541 remains unclosed",
+    "union_platform cross-environment behavior remains unclosed"
+  ]
+}

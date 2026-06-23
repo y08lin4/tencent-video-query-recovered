@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-06-21",
+  "scope": "Live validation summary for the public Python and Go demo entrypoints",
+  "validated_runs": [
+    {
+      "demo": "python",
+      "mode": "canonical_cid_chain_xml",
+      "command_shape": "python examples/python/tencent_video_api_demo.py --cid mzc00200idzf2m8 --json",
+      "result": "success",
+      "highlights": [
+        "API1 cover lookup returned 飞驰人生3 with video_ids=[z4102qfi0x4]",
+        "API2 canonical tid=535 returned a non-empty detail row with duration, defn, state, and upload_src"
+      ]
+    },
+    {
+      "demo": "go",
+      "mode": "canonical_cid_chain_xml",
+      "command_shape": "go run ./examples/go -cid mzc00200idzf2m8 -json",
+      "result": "success",
+      "highlights": [
+        "API1 cover lookup returned 飞驰人生3 with video_ids=[z4102qfi0x4]",
+        "API2 canonical tid=535 returned a non-empty detail row with duration, defn, state, and upload_src"
+      ]
+    },
+    {
+      "demo": "python",
+      "mode": "jsonp_callback_override",
+      "command_shape": "python examples/python/tencent_video_api_demo.py --vid z4102qfi0x4 --api2-otype json --api2-callback cb1 --json",
+      "result": "success",
+      "highlights": [
+        "API2 JSONP callback override path returned a non-empty row",
+        "caller-side batch diagnostics stayed normal"
+      ]
+    },
+    {
+      "demo": "go",
+      "mode": "jsonp_callback_override",
+      "command_shape": "go run ./examples/go -vids z4102qfi0x4 -api2-otype json -api2-callback cb1 -json",
+      "result": "success",
+      "highlights": [
+        "API2 JSONP callback override path returned a non-empty row",
+        "caller-side batch diagnostics stayed normal"
+      ]
+    },
+    {
+      "demo": "python",
+      "mode": "api2_alt_positive_tid_541",
+      "command_shape": "python examples/python/tencent_video_api_demo.py --vid j4101ouc4ve --api2-tid 541 --json",
+      "result": "success_with_thin_positive_shell",
+      "highlights": [
+        "API2 tid=541 returned retcode=0 for j4101ouc4ve",
+        "The row was positive but sparse: title and url present, while duration/defn/state/upload_src came back empty on this sample"
+      ]
+    },
+    {
+      "demo": "go",
+      "mode": "api2_alt_positive_tid_541",
+      "command_shape": "go run ./examples/go -vids j4101ouc4ve -api2-tid 541 -json",
+      "result": "success_with_thin_positive_shell",
+      "highlights": [
+        "API2 tid=541 returned retcode=0 for j4101ouc4ve",
+        "The row was positive but sparse: title and url present, while duration/defn/state/upload_src came back empty on this sample"
+      ]
+    }
+  ],
+  "current_reading": [
+    "The public Python and Go demos are still runnable against live canonical samples.",
+    "Canonical API2 tid=535 remains the best demo default when the user expects a fuller detail row.",
+    "Alternate API2 tid=541 is valid as a positive branch recipe, but it should not be documented as field-equivalent to canonical tid=535 without more coverage."
+  ]
+}

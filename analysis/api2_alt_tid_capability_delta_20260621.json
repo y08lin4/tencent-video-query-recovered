@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-06-21",
+  "scope": "Capability-facing comparison between canonical API2 tid=535 and alternate positive tids 540/541 using current live evidence",
+  "verdict": [
+    "Current live evidence supports reading `535/540/541` as the same positive-family at the branch level, but not yet as field-equivalent detail modes.",
+    "Canonical `tid=535` has already been validated on the public Python and Go demos with a full detail row on `z4102qfi0x4`, including duration, defn, state, and upload_src.",
+    "Alternate `tid=540` now has a 3-public-VID richness matrix plus Go spotcheck confirmation: the tested rows kept `retcode=0`, non-empty title, duration, and url, but stayed structurally thin with `richness_score=3` and empty `defn/state/upload_src/category_map/cover_list/vwh`.",
+    "Alternate `tid=541` now has a 3-public-VID richness matrix plus Go spotcheck confirmation: when the request succeeds, the row stays even thinner with `richness_score=2`, title and url present, and duration/defn/state/upload_src/category_map/cover_list/vwh all empty.",
+    "A new anonymous `union_platform` sweep across `\"\"/0/1/2/3/4/8/9/-1/999/0003` on `tid=535/540/541` did not enrich the thin `540/541` rows on the tested public vids, so the current best reading is that the field split is not explained by `union_platform` inside the present anonymous direct-access scope.",
+    "Therefore `tid=540` and `tid=541` should currently be documented as valid alternate positive shells, not as drop-in guarantees of the same field fullness as canonical `tid=535`."
+  ],
+  "evidence": {
+    "canonical_535_full_detail": [
+      "analysis/demo_validation_20260621.json",
+      "examples/python/tencent_video_api_demo.py live run on `mzc00200idzf2m8`",
+      "examples/go/main.go live run on `mzc00200idzf2m8`"
+    ],
+    "alternate_540_thin_positive_shell": [
+      "analysis/api2_tid540_demo_validation_20260621.json",
+      "examples/python/tencent_video_api_demo.py live runs on `z4102qfi0x4`, `j4101ouc4ve`, and `m4102tgsa8d` with `--api2-tid 540`",
+      "analysis/tid_richness_matrix_20260622.json"
+    ],
+    "alternate_541_thin_positive_shell": [
+      "analysis/demo_validation_20260621.json",
+      "examples/python/tencent_video_api_demo.py live runs on `z4102qfi0x4`, `j4101ouc4ve`, and `m4102tgsa8d` with `--api2-tid 541`",
+      "examples/go/main.go live run on `j4101ouc4ve` with `-api2-tid 541`",
+      "analysis/tid_richness_matrix_20260622.json"
+    ],
+    "alternate_shell_union_platform_sweep": [
+      "analysis/api2_union_platform_positive_tid_matrix_20260621.json"
+    ],
+    "positive_family_branch_confirmation": [
+      "analysis/positive_tid_summary_20260621.json",
+      "analysis/positive_tid_probe_20260621_alt_sample.json"
+    ]
+  },
+  "current_documentation_rule": [
+    "Use `tid=535` as the canonical recipe default when the caller expects the strongest chance of a fuller detail row.",
+      "Expose `540/541` as alternate positive tids for branch-level verification and compatibility experiments.",
+      "Do not promise field-equivalence between `540/541` and `535`; document `540` and `541` separately when shell thickness matters."
+  ],
+  "remaining_open_questions": [
+    "Whether `tid=540` can ever rise above the current score-3 shell on broader live samples or under different environments is still open.",
+    "Whether `tid=541` can ever rise above the current score-2 shell on broader live samples or under different environments is still open.",
+    "Whether any non-anonymous environment changes the current negative `union_platform` reading for `540/541` is still open."
+  ]
+}

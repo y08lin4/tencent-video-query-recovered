@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-06-23",
+  "scope": "Capability-facing comparison between canonical API1 tid=431 and the currently confirmed noncanonical shell families 453/476/483/506/537 using the repository demos plus focused raw follow-up evidence",
+  "verdict": [
+    "Current evidence no longer supports reading API1 as only one canonical positive branch plus one probe shell. The current anonymous map now contains at least five thinner noncanonical success-shell families alongside canonical tid=431.",
+    "Canonical tid=431 remains the only caller-default branch that stably exposes a non-empty cover shell together with non-empty video_ids across the current 3-CID public matrix.",
+    "tid=453 is the richest noncanonical API1 shell currently confirmed: it keeps a non-empty cover title and type while aggregated_video_ids_count stays 0 across the current 3-CID matrix.",
+    "tid=483 is thinner than 431 and 453 but thicker than the empty-valued shell families: on the current 3-CID matrix it keeps top-level success and non-empty video_ids materialization while cover title/type/pay_status stay empty.",
+    "tid=476, tid=506, and tid=537 all remain in the success-shell-without-sample family on the current 3-CID demo matrix, but the dedicated 2026-06-23 live validation now splits tid=476 from tid=506 at the raw-field-family layer: tid=476 is an imgtag-heavy ultra-thin shell with qbox_imgtag={}, while tid=506 is a 10-field empty-valued field shell with a smaller 9-key extra-field family and no non-empty extras."
+  ],
+  "branch_families": {
+    "431": {
+      "family_name": "canonical_positive_cover_branch",
+      "current_shape": "non-empty cover shell plus non-empty video_ids family",
+      "matrix_shape": "positive_cover_branch",
+      "current_role": "caller_default"
+    },
+    "453": {
+      "family_name": "cover_only_positive_shell",
+      "current_shape": "non-empty cover title/type shell with aggregated_video_ids_count=0",
+      "matrix_shape": "cover_only_positive_shell",
+      "current_role": "noncanonical_positive_shell"
+    },
+    "483": {
+      "family_name": "video_ids_led_thin_success_shell",
+      "current_shape": "video_ids materialize while cover title/type/pay_status stay empty",
+      "matrix_shape": "video_ids_only_shell",
+      "current_role": "noncanonical_success_shell"
+    },
+    "476": {
+      "family_name": "ultra_thin_success_shell",
+      "current_shape": "top-level success with no video_ids and no stable caller-facing cover fields in the demo matrix; dedicated demo/raw validation now exposes a 25-key imgtag family led by qbox_imgtag={}",
+      "matrix_shape": "success_shell_without_sample",
+      "current_role": "noncanonical_success_shell"
+    },
+    "506": {
+      "family_name": "empty_valued_field_shell",
+      "current_shape": "top-level success with an empty-valued 10-field shell, a 9-key extra-field family, and no stable caller-facing cover fields in the demo matrix",
+      "matrix_shape": "success_shell_without_sample",
+      "current_role": "noncanonical_success_shell"
+    },
+    "537": {
+      "family_name": "sample_less_success_shell",
+      "current_shape": "top-level success without sample-bearing cover materialization",
+      "matrix_shape": "success_shell_without_sample",
+      "current_role": "noncanonical_success_shell"
+    }
+  },
+  "matrix_evidence": {
+    "artifact": "analysis/tid_richness_matrix_extended_20260623.json",
+    "api1_shapes": {
+      "431": "positive_cover_branch on all 3 public CIDs",
+      "453": "cover_only_positive_shell on all 3 public CIDs",
+      "476": "success_shell_without_sample on all 3 public CIDs",
+      "483": "video_ids_only_shell on all 3 public CIDs",
+      "506": "success_shell_without_sample on all 3 public CIDs",
+      "537": "success_shell_without_sample on all 3 public CIDs"
+    }
+  },
+  "raw_follow_up_evidence": [
+    "analysis/positive_tid_probe_446_455_summary_20260623.json",
+    "analysis/positive_tid_probe_456_521_summary_20260623.json",
+    "analysis/demo_validation_incremental_tid453_20260623.json",
+    "analysis/direct_call_raw_http_validation_tid453_20260623.json",
+    "analysis/demo_validation_incremental_tid476_20260623.json",
+    "analysis/direct_call_raw_http_validation_tid476_20260623.json",
+    "analysis/demo_validation_incremental_tid506_api1_20260623.json",
+    "analysis/direct_call_raw_http_validation_tid506_api1_20260623.json"
+  ],
+  "documentation_rule": [
+    "Keep tid=431 as the stable caller-default recipe when the caller expects a cover shell plus video_ids.",
+    "Expose tid=453 as the strongest currently confirmed noncanonical cover-only shell.",
+    "Describe tid=483 as a video_ids-led thin success shell rather than a canonical positive branch.",
+    "Describe tid=476 as an imgtag-family ultra-thin success shell, distinct from the current tid=506 empty-valued field shell.",
+    "Describe tid=506 and tid=537 as thinner success-shell families for branch mapping, not as direct caller-default replacements."
+  ],
+  "remaining_open_questions": [
+    "Whether tid=483 ever materializes non-empty cover title/type on broader samples or under different environments remains open.",
+    "Whether any of these noncanonical API1 shell families change thickness under aged-cookie or login-state replay remains open."
+  ]
+}

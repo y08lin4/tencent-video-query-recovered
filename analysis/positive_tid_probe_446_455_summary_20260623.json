@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-06-23",
+  "scope": "Focused positive tid follow-up across 446-455, with second-sample and third-sample confirmation on the newly surfaced 453 branch",
+  "verdict": [
+    "The new 446-455 anonymous follow-up surfaces a previously unrecorded API1 positive branch on tid=453.",
+    "Unlike canonical API1 tid=431, tid=453 currently behaves as a cover-shell-only positive branch: errorno=0 and non-empty cover title/type persist across 3 public CIDs, but video_ids stay empty on all confirmed samples.",
+    "API1 tid=453 therefore upgrades from an untested band point into a caller-visible noncanonical positive cover-shell branch, but not into a field-equivalent replacement for tid=431.",
+    "Across the same 3 public samples, API2 tid=453 stays on the key-all-illegal branch in both XML and JSONP, so the new 453 branch is currently API1-only rather than a cross-interface positive family.",
+    "The flanking tids 446-452 and 454-455 remain on the ordinary -111005 branch on both interfaces in the primary anonymous sample, so the current best reading is a narrow local API1-positive island at 453 rather than a wider newly opened band."
+  ],
+  "tested_band": {
+    "api1": [
+      "446-455"
+    ],
+    "api2": [
+      "446-455"
+    ]
+  },
+  "confirmed_samples": {
+    "api1_cids": [
+      "mzc00200idzf2m8",
+      "mzc00200xxpsogl",
+      "mzc002009qyd7nv"
+    ],
+    "api2_vids": [
+      "z4102qfi0x4",
+      "j4101ouc4ve",
+      "m4102tgsa8d"
+    ]
+  },
+  "positive_hits": {
+    "api1": [
+      "453"
+    ],
+    "api1_branch_shape": {
+      "453": "positive_cover_shell_without_video_ids"
+    },
+    "api2_xml": [],
+    "api2_jsonp": []
+  },
+  "notable_boundaries": {
+    "api1_453": {
+      "errorno": "0",
+      "title": "non-empty on all 3 confirmed public CIDs",
+      "video_ids_count": 0,
+      "interpretation": "API1-only positive cover shell without video_ids"
+    },
+    "api2_453_xml": {
+      "errorno": "10010048",
+      "errormsg": "key all illegal"
+    },
+    "api2_453_jsonp": {
+      "errorno": "10010048",
+      "errormsg": "key all illegal"
+    },
+    "api1_446_452_454_455_band": {
+      "errorno": "-111005",
+      "errormsg": "获取配置错误"
+    },
+    "api2_446_452_454_455_band_xml": {
+      "errorno": "-111005",
+      "errormsg": "获取配置错误"
+    },
+    "api2_446_452_454_455_band_jsonp": {
+      "errorno": "-111005",
+      "errormsg": "获取配置错误"
+    }
+  },
+  "raw_artifacts": [
+    "analysis/positive_tid_probe_446_455_20260622.json",
+    "analysis/positive_tid_probe_453_alt_sample_20260623.json",
+    "analysis/positive_tid_probe_453_third_sample_20260623.json"
+  ],
+  "remaining_open_questions": [
+    "Whether API1 has another positive tid beyond 431 and 453 remains open.",
+    "Whether API2 has another positive tid outside 535/540/541 remains open.",
+    "Whether API1 tid=453 keeps the same cover-shell-only shape under aged-cookie or login-state replay remains open."
+  ]
+}

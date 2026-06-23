@@ -226,6 +226,32 @@ def parse_api1_summary(body: str) -> dict[str, Any]:
     raw_video_ids: list[str] = []
     for node in root.findall(".//video_ids"):
         raw_video_ids.extend(normalize_multi_value(node.text))
+    field_names: list[str] = []
+    extra_field_keys: list[str] = []
+    extra_nonempty_fields: OrderedDict[str, str] = OrderedDict()
+    core_field_tags = {
+        "cover_id",
+        "title",
+        "type",
+        "type_name",
+        "video_ids",
+        "pay_status",
+        "new_pic_hz",
+        "new_pic_vt",
+    }
+    fields_node = root.find(".//results/fields")
+    if fields_node is not None:
+        for child in list(fields_node):
+            tag = normalize_str(child.tag)
+            if not tag:
+                continue
+            field_names.append(tag)
+            if tag in core_field_tags:
+                continue
+            extra_field_keys.append(tag)
+            value = normalize_str(child.text)
+            if value:
+                extra_nonempty_fields[tag] = value
     return OrderedDict(
         (
             ("errorno", errorno),
@@ -235,6 +261,10 @@ def parse_api1_summary(body: str) -> dict[str, Any]:
             ("pay_status", pay_status),
             ("video_ids_count", len(raw_video_ids)),
             ("video_ids_head", raw_video_ids[:5]),
+            ("field_count", len(field_names)),
+            ("field_names", field_names),
+            ("extra_field_keys", extra_field_keys),
+            ("extra_nonempty_fields", extra_nonempty_fields),
         )
     )
 
@@ -309,6 +339,24 @@ def build_surface_specs() -> OrderedDict[str, dict[str, Any]]:
                     "parser": parse_api1_summary,
                     "validator": validate_api1_tid453_cover_shell_only,
                     "intent": "Direct API1 tid=453 positive cover-shell-only branch on a public CID.",
+                },
+            ),
+            (
+                "api1_tid476_imgtag_ultra_thin_shell",
+                {
+                    "url": f"{API1}?tid=476&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+                    "parser": parse_api1_summary,
+                    "validator": validate_api1_tid476_imgtag_ultra_thin_shell,
+                    "intent": "Direct API1 tid=476 imgtag-family ultra-thin success shell on a public CID.",
+                },
+            ),
+            (
+                "api1_tid506_empty_valued_field_shell",
+                {
+                    "url": f"{API1}?tid=506&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+                    "parser": parse_api1_summary,
+                    "validator": validate_api1_tid506_empty_valued_field_shell,
+                    "intent": "Direct API1 tid=506 empty-valued field shell on a public CID.",
                 },
             ),
             (
@@ -472,6 +520,76 @@ def validate_api1_tid453_cover_shell_only(summary: dict[str, Any]) -> tuple[bool
         f"video_ids_count={video_ids_count}",
     ]
     return ok, "success_with_cover_shell_only_branch" if ok else "failure", highlights
+
+
+def validate_api1_tid476_imgtag_ultra_thin_shell(summary: dict[str, Any]) -> tuple[bool, str, list[str]]:
+    video_ids_count = int(summary.get("video_ids_count") or 0)
+    field_count = int(summary.get("field_count") or 0)
+    extra_field_keys = summary.get("extra_field_keys") or []
+    if not isinstance(extra_field_keys, list):
+        extra_field_keys = []
+    extra_nonempty_fields = summary.get("extra_nonempty_fields") or {}
+    if not isinstance(extra_nonempty_fields, dict):
+        extra_nonempty_fields = {}
+    qbox_imgtag = normalize_str(extra_nonempty_fields.get("qbox_imgtag"))
+    ok = (
+        normalize_str(summary.get("errorno")) == "0"
+        and not has_value(summary.get("cover_title"))
+        and not has_value(summary.get("cover_type"))
+        and not has_value(summary.get("pay_status"))
+        and video_ids_count == 0
+        and "apad_imgtag" in extra_field_keys
+        and "qbox_imgtag" in extra_field_keys
+        and qbox_imgtag == "{}"
+        and field_count >= 20
+    )
+    highlights = [
+        f"errorno={normalize_str(summary.get('errorno')) or '-'}",
+        f"cover_title={normalize_str(summary.get('cover_title')) or '-'}",
+        f"cover_type={normalize_str(summary.get('cover_type')) or '-'}",
+        f"pay_status={normalize_str(summary.get('pay_status')) or '-'}",
+        f"video_ids_count={video_ids_count}",
+        f"field_count={field_count}",
+        f"extra_field_key_count={len(extra_field_keys)}",
+        f"qbox_imgtag={qbox_imgtag or '-'}",
+    ]
+    return ok, "success_with_imgtag_family_ultra_thin_shell" if ok else "failure", highlights
+
+
+def validate_api1_tid506_empty_valued_field_shell(summary: dict[str, Any]) -> tuple[bool, str, list[str]]:
+    video_ids_count = int(summary.get("video_ids_count") or 0)
+    field_count = int(summary.get("field_count") or 0)
+    extra_field_keys = summary.get("extra_field_keys") or []
+    if not isinstance(extra_field_keys, list):
+        extra_field_keys = []
+    extra_nonempty_fields = summary.get("extra_nonempty_fields") or {}
+    if not isinstance(extra_nonempty_fields, dict):
+        extra_nonempty_fields = {}
+    ok = (
+        normalize_str(summary.get("errorno")) == "0"
+        and not has_value(summary.get("cover_title"))
+        and not has_value(summary.get("cover_type"))
+        and not has_value(summary.get("pay_status"))
+        and video_ids_count == 0
+        and field_count == 10
+        and len(extra_field_keys) == 9
+        and "description" in extra_field_keys
+        and "playing_status" in extra_field_keys
+        and "user_id" in extra_field_keys
+        and "qbox_imgtag" not in extra_field_keys
+        and not extra_nonempty_fields
+    )
+    highlights = [
+        f"errorno={normalize_str(summary.get('errorno')) or '-'}",
+        f"cover_title={normalize_str(summary.get('cover_title')) or '-'}",
+        f"cover_type={normalize_str(summary.get('cover_type')) or '-'}",
+        f"pay_status={normalize_str(summary.get('pay_status')) or '-'}",
+        f"video_ids_count={video_ids_count}",
+        f"field_count={field_count}",
+        f"extra_field_key_count={len(extra_field_keys)}",
+        f"extra_nonempty_field_count={len(extra_nonempty_fields)}",
+    ]
+    return ok, "success_with_empty_valued_field_shell" if ok else "failure", highlights
 
 
 def validate_api1_tid483_video_ids_led_thin_shell(summary: dict[str, Any]) -> tuple[bool, str, list[str]]:
@@ -829,6 +947,8 @@ def build_report(args: argparse.Namespace, specs: OrderedDict[str, dict[str, Any
                 "current_reading",
                 [
                     "This runner validates raw HTTP behavior only in the current anonymous direct-call scope.",
+                    "API1 tid=476 should now be read as an imgtag-family ultra-thin success shell: on the dedicated raw sample it returns 25 imgtag-oriented fields with qbox_imgtag={}, but still no cover title and no video_ids.",
+                    "API1 tid=506 should now be read as an empty-valued field shell: on the dedicated raw sample it returns 10 empty-valued fields with a 9-key extra-field family (description/end_time/live_vid/.../user_id), but no qbox_imgtag and no video_ids.",
                     "API1 tid=483 should still be read as a video_ids-led thin shell: errorno=0 plus non-empty video_ids_count does not mean canonical 431 cover richness.",
                     "API2 tid=506 should still be read as a near-empty success shell: top-level success plus retcode=0 does not currently rise into caller-facing detail fields on the dedicated raw XML validation sample.",
                     "Alternate tid 488/502/540/541 rows are expected to succeed as positive shells rather than canonical-full detail rows.",

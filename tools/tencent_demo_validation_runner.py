@@ -188,6 +188,18 @@ def row_cover_list_count(row: dict[str, Any]) -> int:
     return len(covers) if isinstance(covers, list) else 0
 
 
+def cover_extra_field_keys(cover: dict[str, Any]) -> list[str]:
+    keys = dict_get(cover, "extra_field_keys", "extrafieldkeys")
+    if not isinstance(keys, list):
+        return []
+    return [normalize_str(key) for key in keys if normalize_str(key)]
+
+
+def cover_extra_nonempty_fields(cover: dict[str, Any]) -> dict[str, Any]:
+    mapping = dict_get(cover, "extra_nonempty_fields", "extranonemptyfields")
+    return mapping if isinstance(mapping, dict) else {}
+
+
 def summarize_payload(payload: dict[str, Any]) -> dict[str, Any]:
     cover = payload_cover_info(payload)
     covers = payload_cover_infos(payload)
@@ -202,6 +214,12 @@ def summarize_payload(payload: dict[str, Any]) -> dict[str, Any]:
             ("cid", normalize_str(dict_get(payload, "cid"))),
             ("cover_title", normalize_str(dict_get(cover, "title"))),
             ("cover_video_ids_count", len(dict_get(cover, "video_ids") or [])),
+            ("cover_extra_field_key_count", len(cover_extra_field_keys(cover))),
+            (
+                "cover_extra_nonempty_field_keys",
+                sorted(normalize_str(key) for key in cover_extra_nonempty_fields(cover) if normalize_str(key)),
+            ),
+            ("cover_qbox_imgtag", normalize_str(dict_get(cover_extra_nonempty_fields(cover), "qbox_imgtag"))),
             ("cover_infos_count", len(covers)),
             ("api1_requested_cid_count", int(dict_get(api1_diagnostics, "requested_cid_count") or 0)),
             ("api1_returned_cover_count", int(dict_get(api1_diagnostics, "returned_cover_count") or 0)),
@@ -326,6 +344,103 @@ def validate_api1_tid453_cover_shell(
         f"video_details_count={len(rows)}",
     ]
     return all(checks), "success_with_cover_shell_only_branch" if all(checks) else "failure", highlights
+
+
+def validate_api1_tid476_imgtag_ultra_thin_shell(
+    payload: dict[str, Any], expected_cid: str
+) -> tuple[bool, str, list[str]]:
+    cover = payload_cover_info(payload)
+    covers = payload_cover_infos(payload)
+    api1_params = payload_api1_params(payload)
+    api1_diagnostics = payload_api1_batch_diagnostics(payload)
+    rows = payload_video_details(payload)
+    actual_cid = normalize_str(dict_get(payload, "cid"))
+    actual_tid = normalize_str(dict_get(api1_params, "tid"))
+    cover_title = normalize_str(dict_get(cover, "title"))
+    cover_type = normalize_str(dict_get(cover, "type"))
+    pay_status = normalize_str(dict_get(cover, "pay_status"))
+    video_ids_count = len(dict_get(cover, "video_ids") or [])
+    aggregated_video_ids_count = int(dict_get(api1_diagnostics, "aggregated_video_ids_count") or 0)
+    extra_field_keys = cover_extra_field_keys(cover)
+    extra_nonempty_fields = cover_extra_nonempty_fields(cover)
+    qbox_imgtag = normalize_str(dict_get(extra_nonempty_fields, "qbox_imgtag"))
+    checks = [
+        actual_cid == expected_cid,
+        actual_tid == "476",
+        len(covers) > 0,
+        not has_value(cover_title),
+        not has_value(cover_type),
+        not has_value(pay_status),
+        video_ids_count == 0,
+        aggregated_video_ids_count == 0,
+        len(rows) == 0,
+        "apad_imgtag" in extra_field_keys,
+        "qbox_imgtag" in extra_field_keys,
+        qbox_imgtag == "{}",
+        len(extra_field_keys) >= 20,
+    ]
+    highlights = [
+        f"cid={actual_cid or '-'}",
+        f"api1 tid={actual_tid or '-'}",
+        f"cover_title={cover_title or '-'}",
+        f"cover_type={cover_type or '-'}",
+        f"pay_status={pay_status or '-'}",
+        f"cover_video_ids_count={video_ids_count}",
+        f"aggregated_video_ids_count={aggregated_video_ids_count}",
+        f"video_details_count={len(rows)}",
+        f"extra_field_key_count={len(extra_field_keys)}",
+        f"qbox_imgtag={qbox_imgtag or '-'}",
+    ]
+    return all(checks), "success_with_imgtag_family_ultra_thin_shell" if all(checks) else "failure", highlights
+
+
+def validate_api1_tid506_empty_valued_field_shell(
+    payload: dict[str, Any], expected_cid: str
+) -> tuple[bool, str, list[str]]:
+    cover = payload_cover_info(payload)
+    covers = payload_cover_infos(payload)
+    api1_params = payload_api1_params(payload)
+    api1_diagnostics = payload_api1_batch_diagnostics(payload)
+    rows = payload_video_details(payload)
+    actual_cid = normalize_str(dict_get(payload, "cid"))
+    actual_tid = normalize_str(dict_get(api1_params, "tid"))
+    cover_title = normalize_str(dict_get(cover, "title"))
+    cover_type = normalize_str(dict_get(cover, "type"))
+    pay_status = normalize_str(dict_get(cover, "pay_status"))
+    video_ids_count = len(dict_get(cover, "video_ids") or [])
+    aggregated_video_ids_count = int(dict_get(api1_diagnostics, "aggregated_video_ids_count") or 0)
+    extra_field_keys = cover_extra_field_keys(cover)
+    extra_nonempty_fields = cover_extra_nonempty_fields(cover)
+    checks = [
+        actual_cid == expected_cid,
+        actual_tid == "506",
+        len(covers) > 0,
+        not has_value(cover_title),
+        not has_value(cover_type),
+        not has_value(pay_status),
+        video_ids_count == 0,
+        aggregated_video_ids_count == 0,
+        len(rows) == 0,
+        "description" in extra_field_keys,
+        "playing_status" in extra_field_keys,
+        "user_id" in extra_field_keys,
+        "qbox_imgtag" not in extra_field_keys,
+        len(extra_field_keys) == 9,
+        not extra_nonempty_fields,
+    ]
+    highlights = [
+        f"cid={actual_cid or '-'}",
+        f"api1 tid={actual_tid or '-'}",
+        f"cover_title={cover_title or '-'}",
+        f"cover_type={cover_type or '-'}",
+        f"pay_status={pay_status or '-'}",
+        f"cover_video_ids_count={video_ids_count}",
+        f"aggregated_video_ids_count={aggregated_video_ids_count}",
+        f"video_details_count={len(rows)}",
+        f"extra_field_key_count={len(extra_field_keys)}",
+        f"extra_nonempty_field_count={len(extra_nonempty_fields)}",
+    ]
+    return all(checks), "success_with_empty_valued_field_shell" if all(checks) else "failure", highlights
 
 
 def validate_api1_tid483_video_ids_shell(
@@ -786,6 +901,42 @@ def build_surface_specs(args: argparse.Namespace) -> OrderedDict[str, dict[str, 
                 },
             ),
             (
+                "python_api1_tid476_imgtag_ultra_thin_shell",
+                {
+                    "demo": "python",
+                    "command": python_command(
+                        "--cid",
+                        "mzc00200idzf2m8",
+                        "--api1-tid",
+                        "476",
+                        "--json",
+                        python_bin=args.python_bin,
+                    ),
+                    "validator": lambda payload: validate_api1_tid476_imgtag_ultra_thin_shell(
+                        payload, "mzc00200idzf2m8"
+                    ),
+                    "intent": "API1 tid=476 imgtag-family ultra-thin success shell on a public CID.",
+                },
+            ),
+            (
+                "python_api1_tid506_empty_valued_field_shell",
+                {
+                    "demo": "python",
+                    "command": python_command(
+                        "--cid",
+                        "mzc00200idzf2m8",
+                        "--api1-tid",
+                        "506",
+                        "--json",
+                        python_bin=args.python_bin,
+                    ),
+                    "validator": lambda payload: validate_api1_tid506_empty_valued_field_shell(
+                        payload, "mzc00200idzf2m8"
+                    ),
+                    "intent": "API1 tid=506 empty-valued field shell on a public CID.",
+                },
+            ),
+            (
                 "python_api1_tid483_video_ids_led_thin_shell",
                 {
                     "demo": "python",
@@ -831,6 +982,42 @@ def build_surface_specs(args: argparse.Namespace) -> OrderedDict[str, dict[str, 
                     ),
                     "validator": lambda payload: validate_api1_tid453_cover_shell(payload, "mzc00200idzf2m8"),
                     "intent": "API1 tid=453 positive cover-shell-only branch on a public CID.",
+                },
+            ),
+            (
+                "go_api1_tid476_imgtag_ultra_thin_shell",
+                {
+                    "demo": "go",
+                    "command": go_command(
+                        "-cid",
+                        "mzc00200idzf2m8",
+                        "-api1-tid",
+                        "476",
+                        "-json",
+                        go_bin=args.go_bin,
+                    ),
+                    "validator": lambda payload: validate_api1_tid476_imgtag_ultra_thin_shell(
+                        payload, "mzc00200idzf2m8"
+                    ),
+                    "intent": "API1 tid=476 imgtag-family ultra-thin success shell on a public CID.",
+                },
+            ),
+            (
+                "go_api1_tid506_empty_valued_field_shell",
+                {
+                    "demo": "go",
+                    "command": go_command(
+                        "-cid",
+                        "mzc00200idzf2m8",
+                        "-api1-tid",
+                        "506",
+                        "-json",
+                        go_bin=args.go_bin,
+                    ),
+                    "validator": lambda payload: validate_api1_tid506_empty_valued_field_shell(
+                        payload, "mzc00200idzf2m8"
+                    ),
+                    "intent": "API1 tid=506 empty-valued field shell on a public CID.",
                 },
             ),
             (
@@ -1403,6 +1590,8 @@ def build_report(
                 [
                     "This runner is scoped to anonymous direct-call demo surfaces that already have documented evidence in the repository.",
                     "A passing rerun strengthens example replayability, but it does not close aged-cookie or login-state gaps by itself.",
+                    "API1 tid=476 should now be read as an imgtag-family ultra-thin success shell: on the dedicated demo validation sample it exposes a dense extra-field family led by qbox_imgtag={}, but still no cover title, no video_ids, and no downstream API2 rows.",
+                    "API1 tid=506 should now be read as an empty-valued field shell: on the dedicated demo validation sample it exposes a smaller 9-key empty field family (description/end_time/live_vid/.../user_id) with no non-empty extras, no video_ids, and no downstream API2 rows.",
                     "API1 tid=483 should still be read as a video_ids-led thin shell: the cover shell stays empty even though downstream canonical API2 detail materialization can succeed through the exposed video_ids family.",
                     "API2 tid=506 should still be read as a near-empty success shell: top-level success plus retcode=0 does not currently rise into caller-facing title/url/duration/state/upload_src fields on the dedicated demo validation sample.",
                     "Alternate positive tid 488/502/540/541 should still be read as positive shells, not as field-equivalent replacements for canonical tid=535.",

@@ -131,6 +131,70 @@
       ]
     },
     {
+      "name": "api1_single_cover_lookup_tid476_imgtag_ultra_thin_shell",
+      "intent": "CID -> explicit API1 tid=476 imgtag-family ultra-thin success shell",
+      "interface": "api1",
+      "preferred_path": {
+        "curl": "https://data.video.qq.com/fcgi-bin/data?tid=476&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b",
+        "python_demo": "python examples/python/tencent_video_api_demo.py --cid <CID> --api1-tid 476 --json",
+        "go_demo": "go.exe -cid <CID> -api1-tid 476 -json"
+      },
+      "canonical_parameters": {
+        "tid": "476",
+        "idlist": "<single CID>",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "expected_highlights": [
+        "errorno=0 on confirmed samples",
+        "cover title/type/pay_status and video_ids stay empty on the current public matrix",
+        "the dedicated demo and raw validation sample now expose a stable imgtag-family shell with 25 extra field keys and qbox_imgtag={}"
+      ],
+      "current_best_reading": "A separate imgtag-family ultra-thin success shell. Use it only when you intentionally need to probe tid=476; it is distinct from the current tid=506 empty-valued field shell, but neither is a caller-default replacement for tid=431.",
+      "environment_scope": "same-day anonymous tested branch plus the focused 3-CID confirmation and dedicated Python/Go plus raw HTTP live validation on the primary public sample",
+      "status": "branch_partially_closed",
+      "evidence": [
+        "analysis/capability_recipes_20260620.json",
+        "analysis/parameter_contract_quick_reference_20260621.json",
+        "analysis/positive_tid_probe_456_521_summary_20260623.json",
+        "analysis/api1_tid_shell_family_delta_20260623.json",
+        "analysis/demo_validation_incremental_tid476_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid476_20260623.json"
+      ]
+    },
+    {
+      "name": "api1_single_cover_lookup_tid506_empty_valued_field_shell",
+      "intent": "CID -> explicit API1 tid=506 empty-valued field shell",
+      "interface": "api1",
+      "preferred_path": {
+        "curl": "https://data.video.qq.com/fcgi-bin/data?tid=506&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b",
+        "python_demo": "python examples/python/tencent_video_api_demo.py --cid <CID> --api1-tid 506 --json",
+        "go_demo": "go.exe -cid <CID> -api1-tid 506 -json"
+      },
+      "canonical_parameters": {
+        "tid": "506",
+        "idlist": "<single CID>",
+        "appid": "10001005",
+        "appkey": "0d1a9ddd94de871b"
+      },
+      "expected_highlights": [
+        "errorno=0 on confirmed samples",
+        "cover title/type/pay_status and video_ids stay empty on the current public matrix",
+        "the dedicated demo and raw validation sample now expose a stable 10-field empty-valued shell with a 9-key extra-field family and no non-empty extras"
+      ],
+      "current_best_reading": "A separate empty-valued field shell. Use it only when you intentionally need to probe tid=506; it is distinct from the current tid=476 imgtag-family ultra-thin shell, but neither is a caller-default replacement for tid=431.",
+      "environment_scope": "same-day anonymous tested branch plus the focused 3-CID confirmation and dedicated Python/Go plus raw HTTP live validation on the primary public sample",
+      "status": "branch_partially_closed",
+      "evidence": [
+        "analysis/capability_recipes_20260620.json",
+        "analysis/parameter_contract_quick_reference_20260621.json",
+        "analysis/positive_tid_probe_456_521_summary_20260623.json",
+        "analysis/api1_tid_shell_family_delta_20260623.json",
+        "analysis/demo_validation_incremental_tid506_api1_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid506_api1_20260623.json"
+      ]
+    },
+    {
       "name": "api1_batch_cover_lookup",
       "intent": "CID batch -> multiple cover shells in one request",
       "interface": "api1",

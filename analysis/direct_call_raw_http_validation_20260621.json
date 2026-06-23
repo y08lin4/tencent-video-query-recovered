@@ -1,0 +1,542 @@
+{
+  "generated_at": "2026-06-21",
+  "scope": "Live raw HTTP validation summary for the highest-value Tencent Video direct-call rows in the current anonymous scope.",
+  "runner_inputs": {
+    "selected_surfaces": [
+      "api1_single_cover_lookup",
+      "api1_batch_cover_lookup",
+      "api2_single_detail_xml_canonical",
+      "api2_single_detail_xml_tid540_alt_positive_shell",
+      "api2_single_detail_xml_tid541_alt_positive_shell",
+      "api2_tid541_union0003_thin_shell_spotcheck",
+      "api2_single_detail_jsonp",
+      "api2_batch_lookup_up_to_32_nonempty_vids",
+      "api2_all_invalid_jsonp_batch_consumer_rule"
+    ],
+    "timeout_seconds": 60,
+    "retries": 3
+  },
+  "results": [
+    {
+      "surface": "api1_single_cover_lookup",
+      "intent": "Single CID canonical API1 raw lookup.",
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "result": "http_success",
+          "body_prefix": "<root><costtime>10</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1782050038</resptime><results><fields><c"
+        }
+      ],
+      "summary": {
+        "errorno": "0",
+        "errormsg": "",
+        "cover_title": "飞驰人生3",
+        "cover_type": "1",
+        "pay_status": "6",
+        "video_ids_count": 1,
+        "video_ids_head": [
+          "z4102qfi0x4"
+        ]
+      },
+      "result": "success",
+      "ok": true,
+      "highlights": [
+        "errorno=0",
+        "cover_title=飞驰人生3",
+        "video_ids_count=1"
+      ]
+    },
+    {
+      "surface": "api1_batch_cover_lookup",
+      "intent": "Direct multi-CID API1 raw lookup.",
+      "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8,mzc00200xxpsogl&appid=10001005&appkey=0d1a9ddd94de871b",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "result": "http_success",
+          "body_prefix": "<root><costtime>11</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1782050038</resptime><results><fields><c"
+        }
+      ],
+      "summary": {
+        "errorno": "0",
+        "errormsg": "",
+        "cover_title": "飞驰人生3",
+        "cover_type": "1",
+        "pay_status": "6",
+        "video_ids_count": 32,
+        "video_ids_head": [
+          "z4102qfi0x4",
+          "j4101ouc4ve",
+          "r4101sdqwpd",
+          "p4101tg0b9n",
+          "y41017boky7"
+        ]
+      },
+      "result": "success",
+      "ok": true,
+      "highlights": [
+        "errorno=0",
+        "cover_title=飞驰人生3",
+        "video_ids_count=32"
+      ]
+    },
+    {
+      "surface": "api2_single_detail_xml_canonical",
+      "intent": "Canonical API2 XML single-row lookup.",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "result": "http_success",
+          "body_prefix": "<root><costtime>6</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1782050038</resptime><results><fields><c_"
+        }
+      ],
+      "summary": {
+        "errorno": "0",
+        "rows": [
+          {
+            "result_id": "z4102qfi0x4",
+            "retcode": "0",
+            "vid": "z4102qfi0x4",
+            "title": "飞驰人生3",
+            "duration_seconds": "7550",
+            "url": "https://v.qq.com/x/page/z4102qfi0x4.html",
+            "cover_list": [
+              "mzc00200idzf2m8",
+              "mzc00200g9sqip1",
+              "mzc002007u6z7dn"
+            ],
+            "category_map": [
+              "10139",
+              "正片",
+              "1037",
+              "电影",
+              "1",
+              "电影"
+            ],
+            "state": "4",
+            "upload_src": "20",
+            "create_time": "2026-04-28 20:32:22",
+            "modify_time": "2026-04-28 20:32:22",
+            "vwh": [
+              "1920",
+              "814"
+            ],
+            "defn": {
+              "audio": 49836544,
+              "fhd": 4284008562,
+              "hd": 500215446,
+              "shd": 775278845,
+              "source": 39050354633,
+              "uhd": 13955191741
+            },
+            "empty_shell": false
+          }
+        ],
+        "results_count": 1,
+        "empty_shell_count": 0,
+        "all_results_empty_shell": false
+      },
+      "result": "success",
+      "ok": true,
+      "highlights": [
+        "errorno=0",
+        "retcode=0",
+        "title=飞驰人生3",
+        "has_duration=True",
+        "has_state=True",
+        "has_upload_src=True"
+      ]
+    },
+    {
+      "surface": "api2_single_detail_xml_tid540_alt_positive_shell",
+      "intent": "Alternate positive API2 tid=540 shell.",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=540&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "result": "http_success",
+          "body_prefix": "<root><costtime>5</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1782050038</resptime><results><fields><co"
+        }
+      ],
+      "summary": {
+        "errorno": "0",
+        "rows": [
+          {
+            "result_id": "z4102qfi0x4",
+            "retcode": "0",
+            "vid": "z4102qfi0x4",
+            "title": "飞驰人生3",
+            "duration_seconds": "7550",
+            "url": "https://v.qq.com/x/page/z4102qfi0x4.html",
+            "cover_list": [],
+            "category_map": [],
+            "state": "",
+            "upload_src": "",
+            "create_time": "",
+            "modify_time": "",
+            "vwh": [],
+            "defn": {},
+            "empty_shell": false
+          }
+        ],
+        "results_count": 1,
+        "empty_shell_count": 0,
+        "all_results_empty_shell": false
+      },
+      "result": "success_with_thin_positive_shell",
+      "ok": true,
+      "highlights": [
+        "retcode=0",
+        "title=飞驰人生3",
+        "has_url=True",
+        "has_duration=True",
+        "has_state=False",
+        "has_upload_src=False"
+      ]
+    },
+    {
+      "surface": "api2_single_detail_xml_tid541_alt_positive_shell",
+      "intent": "Alternate positive API2 tid=541 shell.",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=541&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=j4101ouc4ve",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "result": "http_success",
+          "body_prefix": "<root><costtime>6</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1782050039</resptime><results><fields><co"
+        }
+      ],
+      "summary": {
+        "errorno": "0",
+        "rows": [
+          {
+            "result_id": "j4101ouc4ve",
+            "retcode": "0",
+            "vid": "j4101ouc4ve",
+            "title": "剑来2_01",
+            "duration_seconds": "",
+            "url": "https://v.qq.com/x/page/j4101ouc4ve.html",
+            "cover_list": [],
+            "category_map": [],
+            "state": "",
+            "upload_src": "",
+            "create_time": "",
+            "modify_time": "",
+            "vwh": [],
+            "defn": {},
+            "empty_shell": false
+          }
+        ],
+        "results_count": 1,
+        "empty_shell_count": 0,
+        "all_results_empty_shell": false
+      },
+      "result": "success_with_thin_positive_shell",
+      "ok": true,
+      "highlights": [
+        "retcode=0",
+        "title=剑来2_01",
+        "has_url=True",
+        "has_duration=False",
+        "has_state=False",
+        "has_upload_src=False"
+      ]
+    },
+    {
+      "surface": "api2_tid541_union0003_thin_shell_spotcheck",
+      "intent": "Alternate positive API2 tid=541 with union_platform=0003.",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=541&appid=20001238&appkey=6c03bbe9658448a4&union_platform=0003&idlist=z4102qfi0x4",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "result": "http_success",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1782050039</resptime><results><fields><co"
+        }
+      ],
+      "summary": {
+        "errorno": "0",
+        "rows": [
+          {
+            "result_id": "z4102qfi0x4",
+            "retcode": "0",
+            "vid": "z4102qfi0x4",
+            "title": "飞驰人生3",
+            "duration_seconds": "",
+            "url": "https://v.qq.com/x/page/z4102qfi0x4.html",
+            "cover_list": [],
+            "category_map": [],
+            "state": "",
+            "upload_src": "",
+            "create_time": "",
+            "modify_time": "",
+            "vwh": [],
+            "defn": {},
+            "empty_shell": false
+          }
+        ],
+        "results_count": 1,
+        "empty_shell_count": 0,
+        "all_results_empty_shell": false
+      },
+      "result": "success_with_thin_positive_shell",
+      "ok": true,
+      "highlights": [
+        "retcode=0",
+        "title=飞驰人生3",
+        "has_url=True",
+        "has_duration=False",
+        "has_state=False",
+        "has_upload_src=False"
+      ]
+    },
+    {
+      "surface": "api2_single_detail_jsonp",
+      "intent": "Canonical API2 JSONP callback override row.",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=cb1",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "result": "http_success",
+          "body_prefix": "cb1({\"costtime\":5,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1782050039,\"results\":[{\"fields\":{\"c_covers\":\"mzc00200idzf2m8+mzc0"
+        }
+      ],
+      "summary": {
+        "errorno": "0",
+        "rows": [
+          {
+            "result_id": "z4102qfi0x4",
+            "retcode": "0",
+            "vid": "z4102qfi0x4",
+            "title": "飞驰人生3",
+            "duration_seconds": "7550",
+            "url": "https://v.qq.com/x/page/z4102qfi0x4.html",
+            "cover_list": [
+              "mzc00200idzf2m8",
+              "mzc00200g9sqip1",
+              "mzc002007u6z7dn"
+            ],
+            "category_map": [
+              "10139",
+              "正片",
+              "1037",
+              "电影",
+              "1",
+              "电影"
+            ],
+            "state": "4",
+            "upload_src": "20",
+            "create_time": "2026-04-28 20:32:22",
+            "modify_time": "2026-04-28 20:32:22",
+            "vwh": [
+              "1920",
+              "814"
+            ],
+            "defn": {
+              "audio": 49836544,
+              "fhd": 4284008562,
+              "hd": 500215446,
+              "shd": 775278845,
+              "source": 39050354633,
+              "uhd": 13955191741
+            },
+            "empty_shell": false
+          }
+        ],
+        "results_count": 1,
+        "empty_shell_count": 0,
+        "all_results_empty_shell": false,
+        "wrapper_prefix": "cb1({\"costtime\":5,\"errormsg\":\"\",\"errorno"
+      },
+      "result": "success",
+      "ok": true,
+      "highlights": [
+        "errorno=0",
+        "wrapper_prefix=cb1({\"costtime\":",
+        "retcode=0",
+        "title=飞驰人生3"
+      ]
+    },
+    {
+      "surface": "api2_batch_lookup_up_to_32_nonempty_vids",
+      "intent": "Canonical API2 XML multi-VID batch lookup.",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4,j4101ouc4ve",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "result": "http_success",
+          "body_prefix": "<root><costtime>7</costtime><errormsg></errormsg><errorno>0</errorno><resptime>1782050039</resptime><results><fields><c_"
+        }
+      ],
+      "summary": {
+        "errorno": "0",
+        "rows": [
+          {
+            "result_id": "z4102qfi0x4",
+            "retcode": "0",
+            "vid": "z4102qfi0x4",
+            "title": "飞驰人生3",
+            "duration_seconds": "7550",
+            "url": "https://v.qq.com/x/page/z4102qfi0x4.html",
+            "cover_list": [
+              "mzc00200idzf2m8",
+              "mzc00200g9sqip1",
+              "mzc002007u6z7dn"
+            ],
+            "category_map": [
+              "10139",
+              "正片",
+              "1037",
+              "电影",
+              "1",
+              "电影"
+            ],
+            "state": "4",
+            "upload_src": "20",
+            "create_time": "2026-04-28 20:32:22",
+            "modify_time": "2026-04-28 20:32:22",
+            "vwh": [
+              "1920",
+              "814"
+            ],
+            "defn": {
+              "audio": 49836544,
+              "fhd": 4284008562,
+              "hd": 500215446,
+              "shd": 775278845,
+              "source": 39050354633,
+              "uhd": 13955191741
+            },
+            "empty_shell": false
+          },
+          {
+            "result_id": "j4101ouc4ve",
+            "retcode": "0",
+            "vid": "j4101ouc4ve",
+            "title": "剑来2_01",
+            "duration_seconds": "2116",
+            "url": "https://v.qq.com/x/page/j4101ouc4ve.html",
+            "cover_list": [
+              "mzc00200xxpsogl"
+            ],
+            "category_map": [
+              "10994",
+              "正片",
+              "1204",
+              "动漫",
+              "3",
+              "动漫"
+            ],
+            "state": "4",
+            "upload_src": "129",
+            "create_time": "2025-12-24 22:50:16",
+            "modify_time": "2025-12-24 22:50:16",
+            "vwh": [
+              "1920",
+              "804"
+            ],
+            "defn": {
+              "audio": 13983252,
+              "fhd": 2115223243,
+              "hd": 189618116,
+              "shd": 308526800,
+              "source": 42040144621,
+              "uhd": 1599885271
+            },
+            "empty_shell": false
+          }
+        ],
+        "results_count": 2,
+        "empty_shell_count": 0,
+        "all_results_empty_shell": false
+      },
+      "result": "success",
+      "ok": true,
+      "highlights": [
+        "errorno=0",
+        "results_count=2",
+        "vids=['z4102qfi0x4', 'j4101ouc4ve']",
+        "all_results_empty_shell=False"
+      ]
+    },
+    {
+      "surface": "api2_all_invalid_jsonp_batch_consumer_rule",
+      "intent": "All-invalid JSONP batch consumer-rule path.",
+      "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=zzzzzzzzzzz,yyyyyyyyyyy",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "result": "http_success",
+          "body_prefix": "QZOutputJson={\"costtime\":13,\"errormsg\":\"\",\"errorno\":0,\"resptime\":1782050039,\"results\":[{\"fields\":{\"c_covers\":null,\"categ"
+        }
+      ],
+      "summary": {
+        "errorno": "0",
+        "rows": [
+          {
+            "result_id": "zzzzzzzzzzz",
+            "retcode": "0",
+            "vid": "",
+            "title": "",
+            "duration_seconds": "",
+            "url": "https://v.qq.com/x/page/zzzzzzzzzzz.html",
+            "cover_list": [],
+            "category_map": [],
+            "state": "",
+            "upload_src": "",
+            "create_time": "",
+            "modify_time": "",
+            "vwh": [],
+            "defn": {},
+            "empty_shell": true
+          },
+          {
+            "result_id": "yyyyyyyyyyy",
+            "retcode": "0",
+            "vid": "",
+            "title": "",
+            "duration_seconds": "",
+            "url": "https://v.qq.com/x/page/yyyyyyyyyyy.html",
+            "cover_list": [],
+            "category_map": [],
+            "state": "",
+            "upload_src": "",
+            "create_time": "",
+            "modify_time": "",
+            "vwh": [],
+            "defn": {},
+            "empty_shell": true
+          }
+        ],
+        "results_count": 2,
+        "empty_shell_count": 2,
+        "all_results_empty_shell": true,
+        "wrapper_prefix": "QZOutputJson={\"costtime\":13,\"errormsg\":\""
+      },
+      "result": "success",
+      "ok": true,
+      "highlights": [
+        "errorno=0",
+        "results_count=2",
+        "empty_shell_count=2",
+        "all_results_empty_shell=True"
+      ]
+    }
+  ],
+  "failed_surfaces": [],
+  "current_reading": [
+    "This runner validates raw HTTP behavior only in the current anonymous direct-call scope.",
+    "Alternate tid 540/541 rows are expected to succeed as thinner positive shells rather than canonical-full detail rows.",
+    "The all-invalid JSONP row is a consumer-rule validation, not a content-extraction success row.",
+    "The current batch row is a canonical multi-VID spot-check on the known batch-capable branch, not a fresh 32-slot saturation replay."
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-06-23",
+  "scope": "Capability-facing comparison between canonical API2 tid=535, the previously confirmed alternate positive tids 540/541, and the new mid-corridor findings 488/502/506",
+  "verdict": [
+    "Current anonymous direct-call evidence no longer supports reading API2 positive tid space as only 535/540/541. The 456-521 mid-corridor follow-up adds stable positive branches at 488 and 502, plus a stable success-shell family at 506.",
+    "Canonical tid=535 remains the strongest caller-default branch because it is still the only branch with stable fuller-detail rows that include defn/state/upload_src/category_map/cover_list/vwh on the established public matrix.",
+    "tid=488 is a stable thinner positive shell across the current 3-VID matrix: title and url stay present, but the branch does not currently rise into duration/defn/state/upload_src/category_map/cover_list fullness.",
+    "tid=502 is a stable richer alternate positive shell across the current 3-VID matrix: it materializes title/url/duration/vid/cover_list/create_time, but still does not reach canonical 535 richness.",
+    "tid=506 should currently stay in the success-shell family rather than the positive-branch family. The current 3-VID matrix gives top-level success in XML and JSONP, and the new dedicated Python/Go plus raw XML validation still confirms an effectively empty caller-facing shell on the primary public sample."
+  ],
+  "branch_families": {
+    "535": {
+      "family_name": "canonical_fuller_detail_branch",
+      "current_shape": "fuller detail row with defn/state/upload_src/category_map/cover_list/vwh",
+      "matrix_shape": "fuller_detail_row",
+      "current_role": "caller_default"
+    },
+    "502": {
+      "family_name": "richer_alternate_positive_shell",
+      "current_shape": "title + url + duration + vid + cover_list + create_time shell",
+      "matrix_shape": "thin_positive_shell",
+      "current_role": "alternate_positive_shell"
+    },
+    "540": {
+      "family_name": "duration_led_thin_positive_shell",
+      "current_shape": "title + duration + url shell",
+      "matrix_shape": "thin_positive_shell",
+      "current_role": "alternate_positive_shell"
+    },
+    "541": {
+      "family_name": "title_url_thin_positive_shell",
+      "current_shape": "title + url shell",
+      "matrix_shape": "thin_positive_shell",
+      "current_role": "alternate_positive_shell"
+    },
+    "488": {
+      "family_name": "thin_positive_shell",
+      "current_shape": "title + url shell in the demo matrix, with targeted raw follow-up additionally showing picture-field materialization on the primary public VID",
+      "matrix_shape": "thin_positive_shell",
+      "current_role": "alternate_positive_shell"
+    },
+    "506": {
+      "family_name": "near_empty_success_shell",
+      "current_shape": "top-level success with effectively empty XML/JSONP fields in the current demo matrix",
+      "matrix_shape": "success_shell_without_sample",
+      "current_role": "success_shell_family"
+    }
+  },
+  "matrix_evidence": {
+    "artifact": "analysis/tid_richness_matrix_extended_20260623.json",
+    "api2_shapes": {
+      "488": "thin_positive_shell on all 3 public VIDs",
+      "502": "thin_positive_shell on all 3 public VIDs, but with a higher richness_score than 488/540/541 thanks to duration/vid/cover_list/create_time",
+      "506": "success_shell_without_sample on all 3 public VIDs",
+      "535": "fuller_detail_row on the successful established public samples in the extended matrix, with the broader canonical proof anchored by the earlier matrix and demo-validation artifacts",
+      "540": "thin_positive_shell on all 3 public VIDs",
+      "541": "thin_positive_shell on all 3 public VIDs"
+    }
+  },
+  "supporting_evidence": [
+    "analysis/api2_alt_tid_capability_delta_20260621.json",
+    "analysis/positive_tid_probe_456_521_summary_20260623.json",
+    "analysis/tid_richness_matrix_extended_20260623.json",
+    "analysis/tid_richness_matrix_20260622.json",
+    "analysis/demo_validation_incremental_api2_tid506_20260623.json",
+    "analysis/direct_call_raw_http_validation_api2_tid506_20260623.json"
+  ],
+  "documentation_rule": [
+    "Keep tid=535 as the canonical caller-default when the caller expects the strongest chance of a fuller detail row.",
+    "Promote tid=488 and tid=502 into the documented alternate-positive family at the research and parameter-contract layers before upgrading them into direct caller-facing recipes.",
+    "Describe tid=502 as richer than 488/540/541, but still not field-equivalent to canonical tid=535.",
+    "Keep tid=506 below positive-detail recipe level; dedicated raw/demo validation now confirms a stable near-empty success shell rather than caller-facing non-empty field materialization."
+  ],
+  "remaining_open_questions": [
+    "Whether tid=488 can be upgraded from a thin positive shell to a more specific picture-shell family at the caller-facing validation layer remains open because the current demo parser does not surface picture fields directly.",
+    "Whether tid=502 can be promoted to a dedicated direct-call recipe before raw/demo validation parity is added remains open.",
+    "Whether tid=506 ever materializes stable non-empty caller-facing fields on broader samples or under aged-cookie/login-state replay remains open."
+  ]
+}

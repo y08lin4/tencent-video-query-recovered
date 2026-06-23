@@ -78,7 +78,11 @@
         "analysis/direct_call_raw_http_validation_api2_tid506_20260623.json",
         "analysis/demo_validation_incremental_api2_tid506_20260623.json",
         "analysis/api2_extended_tid_capability_delta_20260623.json",
-        "analysis/api1_tid_shell_family_delta_20260623.json"
+        "analysis/api1_tid_shell_family_delta_20260623.json",
+        "analysis/demo_validation_incremental_tid476_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid476_20260623.json",
+        "analysis/demo_validation_incremental_tid506_api1_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid506_api1_20260623.json"
       ],
       "best_use": "Choose the shortest stable path for URL/CID/VID/JSONP/batch/replay use cases, jump straight to the raw HTTP row for a known capability, and keep newer alternate-shell evidence such as API2 488/502 and API1 453/476/483/506/537 visible at the recipe layer instead of only in probe summaries.",
       "still_open": [
@@ -98,6 +102,10 @@
         "analysis/demo_validation_entrypoint_override_rerun_20260621.json",
         "analysis/direct_call_raw_http_validation_20260621.json",
         "analysis/direct_call_raw_http_validation_tid453_20260623.json",
+        "analysis/demo_validation_incremental_tid476_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid476_20260623.json",
+        "analysis/demo_validation_incremental_tid506_api1_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid506_api1_20260623.json",
         "analysis/direct_call_raw_http_validation_tid537_20260622.json",
         "analysis/demo_validation_incremental_tid483_20260623.json",
         "analysis/direct_call_raw_http_validation_tid483_20260623.json",
@@ -112,7 +120,7 @@
         "analysis/api2_extended_tid_capability_delta_20260623.json",
         "analysis/tid_richness_matrix_extended_20260623.json"
       ],
-      "best_use": "Run Python/Go examples, rerun the current anonymous demo surface set in one shot, rerun the raw HTTP caller-facing surface set, and check which entrypoints are merely supported versus live-validated. This now includes the explicit API1 tid=453 cover-shell-only branch, tid=483 video_ids-led thin shell, tid=537 shell-probe branch, the caller-facing API2 tid=488/502 alternate shells, and the newly dedicated API2 tid=506 near-empty success-shell validation layer.",
+      "best_use": "Run Python/Go examples, rerun the current anonymous demo surface set in one shot, rerun the raw HTTP caller-facing surface set, and check which entrypoints are merely supported versus live-validated. This now includes the explicit API1 tid=453 cover-shell-only branch, tid=476 imgtag-family ultra-thin shell, tid=506 empty-valued field shell, tid=483 video_ids-led thin shell, tid=537 shell-probe branch, the caller-facing API2 tid=488/502 alternate shells, and the newly dedicated API2 tid=506 near-empty success-shell validation layer.",
       "still_open": [
         "No dedicated aged-cookie/login-state example replay validation yet."
       ]

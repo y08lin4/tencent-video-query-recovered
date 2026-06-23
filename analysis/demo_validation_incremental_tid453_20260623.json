@@ -1,0 +1,146 @@
+{
+  "generated_at": "2026-06-23T00:10:22",
+  "runner_script": "C:\\Users\\lin\\Documents\\YM查询工具还原\\tools\\tencent_demo_validation_runner.py",
+  "runner_go_execution_mode": "powershell_wrapped_toolchain_go_run_when_go_bin_is_go",
+  "scope": "Rerunnable validation summary for the repository's Python and Go direct-call demo surfaces.",
+  "runner_inputs": {
+    "selected_surfaces": [
+      "python_api1_tid453_cover_shell_only",
+      "go_api1_tid453_cover_shell_only"
+    ],
+    "demo_filter": "both",
+    "python_bin": "C:\\Users\\lin\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "go_bin": "go",
+    "timeout_seconds": 60,
+    "retries": 2
+  },
+  "results": [
+    {
+      "surface": "python_api1_tid453_cover_shell_only",
+      "demo": "python",
+      "intent": "API1 tid=453 positive cover-shell-only branch on a public CID.",
+      "command": [
+        "C:\\Users\\lin\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "C:\\Users\\lin\\Documents\\YM查询工具还原\\examples\\python\\tencent_video_api_demo.py",
+        "--cid",
+        "mzc00200idzf2m8",
+        "--api1-tid",
+        "453",
+        "--json"
+      ],
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "stderr_excerpt": "",
+          "attempt": 1
+        }
+      ],
+      "exit_code": 0,
+      "stderr_excerpt": "",
+      "payload_summary": {
+        "cid": "mzc00200idzf2m8",
+        "cover_title": "飞驰人生3",
+        "cover_video_ids_count": 0,
+        "cover_infos_count": 1,
+        "api1_requested_cid_count": 1,
+        "api1_returned_cover_count": 1,
+        "api1_returned_cids": [
+          "mzc00200idzf2m8"
+        ],
+        "api1_aggregated_video_ids_count": 0,
+        "api1_tid": "453",
+        "api2_tid": "535",
+        "api2_otype": "xml",
+        "api2_union_platform": "3",
+        "api2_callback": "",
+        "results_count": 0,
+        "first_result_vid": "",
+        "first_result_retcode": "",
+        "first_result_title": "",
+        "first_result_empty_shell": false,
+        "first_result_has_duration": false,
+        "first_result_has_state": false,
+        "first_result_has_upload_src": false,
+        "first_result_has_defn": false,
+        "batch_all_results_empty_shell": false
+      },
+      "result": "success_with_cover_shell_only_branch",
+      "ok": true,
+      "highlights": [
+        "cid=mzc00200idzf2m8",
+        "api1 tid=453",
+        "cover_title=飞驰人生3",
+        "cover_infos_count=1",
+        "cover_video_ids_count=0",
+        "aggregated_video_ids_count=0",
+        "video_details_count=0"
+      ]
+    },
+    {
+      "surface": "go_api1_tid453_cover_shell_only",
+      "demo": "go",
+      "intent": "API1 tid=453 positive cover-shell-only branch on a public CID.",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-Command",
+        "[Console]::OutputEncoding=[System.Text.Encoding]::UTF8; go run .\\examples\\go\\main.go '-cid' 'mzc00200idzf2m8' '-api1-tid' '453' '-json'"
+      ],
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "stderr_excerpt": "",
+          "attempt": 1
+        }
+      ],
+      "exit_code": 0,
+      "stderr_excerpt": "",
+      "payload_summary": {
+        "cid": "mzc00200idzf2m8",
+        "cover_title": "飞驰人生3",
+        "cover_video_ids_count": 0,
+        "cover_infos_count": 1,
+        "api1_requested_cid_count": 1,
+        "api1_returned_cover_count": 1,
+        "api1_returned_cids": [
+          "mzc00200idzf2m8"
+        ],
+        "api1_aggregated_video_ids_count": 0,
+        "api1_tid": "453",
+        "api2_tid": "535",
+        "api2_otype": "xml",
+        "api2_union_platform": "3",
+        "api2_callback": "",
+        "results_count": 0,
+        "first_result_vid": "",
+        "first_result_retcode": "",
+        "first_result_title": "",
+        "first_result_empty_shell": false,
+        "first_result_has_duration": false,
+        "first_result_has_state": false,
+        "first_result_has_upload_src": false,
+        "first_result_has_defn": false,
+        "batch_all_results_empty_shell": false
+      },
+      "result": "success_with_cover_shell_only_branch",
+      "ok": true,
+      "highlights": [
+        "cid=mzc00200idzf2m8",
+        "api1 tid=453",
+        "cover_title=飞驰人生3",
+        "cover_infos_count=1",
+        "cover_video_ids_count=0",
+        "aggregated_video_ids_count=0",
+        "video_details_count=0"
+      ]
+    }
+  ],
+  "failed_surfaces": [],
+  "current_reading": [
+    "This runner is scoped to anonymous direct-call demo surfaces that already have documented evidence in the repository.",
+    "A passing rerun strengthens example replayability, but it does not close aged-cookie or login-state gaps by itself.",
+    "Alternate positive tid 540/541 should still be read as positive shells, not as field-equivalent replacements for canonical tid=535."
+  ]
+}

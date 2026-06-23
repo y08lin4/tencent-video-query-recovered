@@ -164,12 +164,32 @@ def parse_api1_cover_result(result_node: ET.Element) -> dict:
     if field is None:
         return {}
 
+    core_field_tags = {
+        "cover_id",
+        "title",
+        "type",
+        "type_name",
+        "video_ids",
+        "pay_status",
+        "new_pic_hz",
+        "new_pic_vt",
+    }
     video_ids = [
         part.strip()
         for node in field.findall("./video_ids")
         for part in (node.text or "").split(",")
         if part.strip()
     ]
+    extra_field_keys: list[str] = []
+    extra_nonempty_fields: dict[str, str] = {}
+    for child in list(field):
+        tag = str(child.tag or "").strip()
+        if not tag or tag in core_field_tags:
+            continue
+        extra_field_keys.append(tag)
+        value = (child.text or "").strip()
+        if value:
+            extra_nonempty_fields[tag] = value
     cid = (field.findtext("./cover_id") or result_node.findtext("./id") or "").strip()
     return {
         "cid": cid,
@@ -180,6 +200,8 @@ def parse_api1_cover_result(result_node: ET.Element) -> dict:
         "pay_status": (field.findtext("./pay_status") or "").strip(),
         "cover_pic_hz": (field.findtext("./new_pic_hz") or "").strip(),
         "cover_pic_vt": (field.findtext("./new_pic_vt") or "").strip(),
+        "extra_field_keys": extra_field_keys,
+        "extra_nonempty_fields": extra_nonempty_fields,
     }
 
 
@@ -520,6 +542,15 @@ def main() -> None:
             print(f"标题: {cover_info['title']}")
             print(f"类型: {cover_info['type_name']} ({cover_info['type']})")
             print(f"VIDs: {', '.join(cover_info['video_ids']) or '-'}")
+            extra_field_keys = cover_info.get("extra_field_keys") or []
+            extra_nonempty_fields = cover_info.get("extra_nonempty_fields") or {}
+            if extra_field_keys:
+                print(f"额外字段键数: {len(extra_field_keys)}")
+            if extra_nonempty_fields:
+                extra_preview = ", ".join(
+                    f"{key}={value}" for key, value in extra_nonempty_fields.items()
+                )
+                print(f"额外非空字段: {extra_preview}")
         else:
             diagnostics = summarize_api1_batch(cids, cover_infos)
             print(f"CIDs: {', '.join(cids)}")
@@ -531,6 +562,15 @@ def main() -> None:
                 print(f"    标题: {cover['title']}")
                 print(f"    类型: {cover['type_name']} ({cover['type']})")
                 print(f"    VIDs: {', '.join(cover['video_ids']) or '-'}")
+                extra_field_keys = cover.get("extra_field_keys") or []
+                extra_nonempty_fields = cover.get("extra_nonempty_fields") or {}
+                if extra_field_keys:
+                    print(f"    额外字段键数: {len(extra_field_keys)}")
+                if extra_nonempty_fields:
+                    extra_preview = ", ".join(
+                        f"{key}={value}" for key, value in extra_nonempty_fields.items()
+                    )
+                    print(f"    额外非空字段: {extra_preview}")
         print()
 
     if details:

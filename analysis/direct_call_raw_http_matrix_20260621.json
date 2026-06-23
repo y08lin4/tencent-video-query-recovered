@@ -1,0 +1,486 @@
+{
+  "generated_at": "2026-06-22",
+  "scope": "Caller-facing raw HTTP matrix for the two Tencent Video main interfaces in the current anonymous direct-call scope.",
+  "purpose": [
+    "Give one raw direct-call row per already-demonstrated capability surface.",
+    "Keep example URL, success discriminator, failure discriminator, and branch caveat together so the caller does not have to join multiple artifacts by hand.",
+    "Do not upgrade anonymous direct-call evidence into aged-cookie or login-state closure."
+  ],
+  "rows": [
+    {
+      "capability_id": "api1_single_cover_lookup",
+      "interface": "api1",
+      "method": "GET",
+      "raw_url_template": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b",
+      "example": {
+        "sample_kind": "movie_single_cover",
+        "cid": "mzc00200idzf2m8",
+        "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b"
+      },
+      "required_parameters": [
+        "tid",
+        "idlist",
+        "appid",
+        "appkey"
+      ],
+      "success_discriminator": [
+        "top-level errorno=0",
+        "cover row title non-empty",
+        "video_ids family non-empty"
+      ],
+      "failure_discriminator": [
+        "missing/illegal tid -> errorno=-111003",
+        "missing/empty idlist -> errorno=-111004"
+      ],
+      "known_caveats": [
+        "API1 other positive tid values beyond the confirmed 431/453 branches are not fully closed.",
+        "This row is scoped to the current anonymous direct-call branch."
+      ],
+      "evidence": [
+        "analysis/direct_call_parameter_total_table_20260621.json",
+        "analysis/direct_call_capability_table_20260621.json",
+        "analysis/regression_samples_20260620.json"
+      ]
+    },
+    {
+      "capability_id": "api1_batch_cover_lookup",
+      "interface": "api1",
+      "method": "GET",
+      "raw_url_template": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=<CID1>,<CID2>,...&appid=10001005&appkey=0d1a9ddd94de871b",
+      "example": {
+        "sample_kind": "multi_cid_direct_batch",
+        "cid_list": "mzc00200idzf2m8,mzc00200xxpsogl",
+        "url": "https://data.video.qq.com/fcgi-bin/data?tid=431&idlist=mzc00200idzf2m8,mzc00200xxpsogl&appid=10001005&appkey=0d1a9ddd94de871b"
+      },
+      "required_parameters": [
+        "tid",
+        "idlist",
+        "appid",
+        "appkey"
+      ],
+      "success_discriminator": [
+        "top-level errorno=0",
+        "at least one cover row resolves",
+        "mixed valid+invalid CID batches still keep valid-side rows"
+      ],
+      "failure_discriminator": [
+        "33 non-empty CID slots exceed current tested boundary",
+        "all-invalid CID batches do not become useful positive cover rows"
+      ],
+      "known_caveats": [
+        "The Python/Go demo exposes this as a side path that expands into API2 detail rows; use raw API1 when you want the cleanest cover-only contract view.",
+        "Current tested boundary is 32 non-empty slots success, 33 fail."
+      ],
+      "evidence": [
+        "analysis/regression_samples_20260620.json",
+        "analysis/direct_call_capability_table_20260621.json",
+        "analysis/demo_validation_incremental_20260621c.json"
+      ]
+    },
+    {
+      "capability_id": "api1_tid537_probe_shell",
+      "interface": "api1",
+      "method": "GET",
+      "raw_url_template": "https://data.video.qq.com/fcgi-bin/data?tid=537&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b",
+      "example": {
+        "sample_kind": "api1_tid537_shell_probe",
+        "cid": "mzc00200idzf2m8",
+        "url": "https://data.video.qq.com/fcgi-bin/data?tid=537&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b"
+      },
+      "required_parameters": [
+        "tid",
+        "idlist",
+        "appid",
+        "appkey"
+      ],
+      "success_discriminator": [
+        "top-level errorno=0",
+        "cover_title can stay empty",
+        "video_ids_count stays 0 on the current public probe sample"
+      ],
+      "failure_discriminator": [
+        "do not require canonical tid=431 video_ids success on this branch",
+        "a sample-less shell should not be upgraded into a positive cover branch"
+      ],
+      "known_caveats": [
+        "Current best reading is a success-shell-without-sample branch, not a canonical replacement for tid=431.",
+        "This row is scoped to the current anonymous direct-call branch and the current public probe sample family."
+      ],
+      "evidence": [
+        "analysis/tid_richness_matrix_20260622.json",
+        "analysis/demo_validation_incremental_tid537_20260622.json",
+        "analysis/direct_call_raw_http_validation_tid537_20260622.json",
+        "analysis/direct_call_capability_table_20260621.json"
+      ]
+    },
+    {
+      "capability_id": "api1_tid453_cover_shell_only",
+      "interface": "api1",
+      "method": "GET",
+      "raw_url_template": "https://data.video.qq.com/fcgi-bin/data?tid=453&idlist=<CID>&appid=10001005&appkey=0d1a9ddd94de871b",
+      "example": {
+        "sample_kind": "api1_tid453_cover_shell_only",
+        "cid": "mzc00200idzf2m8",
+        "url": "https://data.video.qq.com/fcgi-bin/data?tid=453&idlist=mzc00200idzf2m8&appid=10001005&appkey=0d1a9ddd94de871b"
+      },
+      "required_parameters": [
+        "tid",
+        "idlist",
+        "appid",
+        "appkey"
+      ],
+      "success_discriminator": [
+        "top-level errorno=0",
+        "cover_title stays non-empty",
+        "video_ids_count stays 0 on the current public probe samples"
+      ],
+      "failure_discriminator": [
+        "do not require canonical tid=431 video_ids success on this branch",
+        "a non-empty title without video_ids should be read as a cover-only positive shell, not as canonical cover lookup parity"
+      ],
+      "known_caveats": [
+        "Current best reading is an API1-only positive cover-shell branch without video_ids, not a canonical replacement for tid=431.",
+        "The current 3-public-sample check still leaves aged-cookie/login-state parity open for this branch."
+      ],
+      "evidence": [
+        "analysis/positive_tid_probe_446_455_summary_20260623.json",
+        "analysis/demo_validation_incremental_tid453_20260623.json",
+        "analysis/direct_call_raw_http_validation_tid453_20260623.json",
+        "analysis/direct_call_capability_table_20260621.json"
+      ]
+    },
+    {
+      "capability_id": "api2_single_detail_xml_canonical",
+      "interface": "api2",
+      "method": "GET",
+      "raw_url_template": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID>",
+      "example": {
+        "sample_kind": "movie_single_video",
+        "vid": "z4102qfi0x4",
+        "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4"
+      },
+      "required_parameters": [
+        "otype",
+        "tid",
+        "appid",
+        "appkey",
+        "union_platform",
+        "idlist"
+      ],
+      "success_discriminator": [
+        "row-level retcode=0",
+        "title non-empty",
+        "canonical fuller-detail fields visible such as duration/defn/state/upload_src"
+      ],
+      "failure_discriminator": [
+        "missing/illegal tid does not stay on canonical positive branch",
+        "do not rely on top-level shell alone; inspect row-level retcode and row richness"
+      ],
+      "known_caveats": [
+        "This is still the best caller default when you expect fuller detail.",
+        "union_platform currently shows scoped-negative behavior only in tested anonymous environments."
+      ],
+      "evidence": [
+        "analysis/direct_call_capability_table_20260621.json",
+        "analysis/demo_validation_20260621.json",
+        "analysis/tooling_entrypoint_quick_reference_20260621.json"
+      ]
+    },
+    {
+      "capability_id": "api2_single_detail_xml_tid488_alt_positive_shell",
+      "interface": "api2",
+      "method": "GET",
+      "raw_url_template": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=488&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID>",
+      "example": {
+        "sample_kind": "alt_positive_shell",
+        "vid": "z4102qfi0x4",
+        "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=488&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4"
+      },
+      "required_parameters": [
+        "otype",
+        "tid",
+        "appid",
+        "appkey",
+        "union_platform",
+        "idlist"
+      ],
+      "success_discriminator": [
+        "row-level retcode=0",
+        "title/url present",
+        "row is positive but can stay thinner than 540/502 and far thinner than canonical 535"
+      ],
+      "failure_discriminator": [
+        "do not require vid/duration/cover_list/create_time on tid=488 positive rows",
+        "do not treat this branch as field-equivalent to tid=535 or tid=502"
+      ],
+      "known_caveats": [
+        "Current best reading is the thinnest validated alternate positive shell in the caller-facing recipe layer, not a canonical replacement."
+      ],
+      "evidence": [
+        "analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json",
+        "analysis/api2_extended_tid_capability_delta_20260623.json",
+        "analysis/direct_call_capability_table_20260621.json"
+      ]
+    },
+    {
+      "capability_id": "api2_single_detail_xml_tid502_alt_positive_shell",
+      "interface": "api2",
+      "method": "GET",
+      "raw_url_template": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=502&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID>",
+      "example": {
+        "sample_kind": "alt_positive_shell",
+        "vid": "j4101ouc4ve",
+        "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=502&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=j4101ouc4ve"
+      },
+      "required_parameters": [
+        "otype",
+        "tid",
+        "appid",
+        "appkey",
+        "union_platform",
+        "idlist"
+      ],
+      "success_discriminator": [
+        "row-level retcode=0",
+        "title/url/vid/duration present",
+        "cover_list and create_time are currently present on the validated public sample"
+      ],
+      "failure_discriminator": [
+        "do not treat tid=502 as field-equivalent to tid=535",
+        "missing state/upload_src/defn/category_map on a positive row is still expected on this branch"
+      ],
+      "known_caveats": [
+        "Current best reading is the richest validated alternate positive shell, but still not a canonical replacement."
+      ],
+      "evidence": [
+        "analysis/direct_call_raw_http_validation_api2_tid488_502_20260623.json",
+        "analysis/api2_extended_tid_capability_delta_20260623.json",
+        "analysis/direct_call_capability_table_20260621.json"
+      ]
+    },
+    {
+      "capability_id": "api2_single_detail_xml_tid540_alt_positive_shell",
+      "interface": "api2",
+      "method": "GET",
+      "raw_url_template": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=540&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID>",
+      "example": {
+        "sample_kind": "alt_positive_shell",
+        "vid": "z4102qfi0x4",
+        "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=540&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4"
+      },
+      "required_parameters": [
+        "otype",
+        "tid",
+        "appid",
+        "appkey",
+        "union_platform",
+        "idlist"
+      ],
+      "success_discriminator": [
+        "row-level retcode=0",
+        "title/url present",
+        "row is positive but can be thinner than canonical 535"
+      ],
+      "failure_discriminator": [
+        "do not treat tid=540 as field-equivalent to tid=535",
+        "missing state/upload_src/defn on a positive row is expected on this branch"
+      ],
+      "known_caveats": [
+        "Current best reading is alternate positive shell, not canonical replacement."
+      ],
+      "evidence": [
+        "analysis/api2_alt_tid_capability_delta_20260621.json",
+        "analysis/demo_parity_alt_tid_matrix_20260621.json",
+        "analysis/direct_call_capability_table_20260621.json"
+      ]
+    },
+    {
+      "capability_id": "api2_single_detail_xml_tid541_alt_positive_shell",
+      "interface": "api2",
+      "method": "GET",
+      "raw_url_template": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=541&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID>",
+      "example": {
+        "sample_kind": "alt_positive_shell",
+        "vid": "j4101ouc4ve",
+        "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=541&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=j4101ouc4ve"
+      },
+      "required_parameters": [
+        "otype",
+        "tid",
+        "appid",
+        "appkey",
+        "union_platform",
+        "idlist"
+      ],
+      "success_discriminator": [
+        "row-level retcode=0",
+        "title/url present",
+        "thin positive shell is acceptable on this branch"
+      ],
+      "failure_discriminator": [
+        "do not require duration/state/upload_src/defn on tid=541 positive rows",
+        "do not treat sparse row shape as parser failure by itself"
+      ],
+      "known_caveats": [
+        "Current best reading is alternate positive shell, not canonical replacement."
+      ],
+      "evidence": [
+        "analysis/api2_alt_tid_capability_delta_20260621.json",
+        "analysis/demo_parity_alt_tid_matrix_20260621.json",
+        "analysis/direct_call_capability_table_20260621.json"
+      ]
+    },
+    {
+      "capability_id": "api2_tid541_union0003_thin_shell_spotcheck",
+      "interface": "api2",
+      "method": "GET",
+      "raw_url_template": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=541&appid=20001238&appkey=6c03bbe9658448a4&union_platform=0003&idlist=<VID>",
+      "example": {
+        "sample_kind": "alt_positive_union_override",
+        "vid": "z4102qfi0x4",
+        "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=541&appid=20001238&appkey=6c03bbe9658448a4&union_platform=0003&idlist=z4102qfi0x4"
+      },
+      "required_parameters": [
+        "otype",
+        "tid",
+        "appid",
+        "appkey",
+        "union_platform",
+        "idlist"
+      ],
+      "success_discriminator": [
+        "row-level retcode=0",
+        "title/url present",
+        "thin-shell profile remains stable under explicit union_platform=0003 in the tested anonymous scope"
+      ],
+      "failure_discriminator": [
+        "do not upgrade this spot-check into a global union_platform no-op proof",
+        "this row does not prove aged-cookie/login-state behavior"
+      ],
+      "known_caveats": [
+        "This is a scoped spot-check, not a full union_platform closure row."
+      ],
+      "evidence": [
+        "analysis/demo_parity_alt_tid_matrix_20260621.json",
+        "analysis/api2_union_platform_positive_tid_matrix_20260621.json"
+      ]
+    },
+    {
+      "capability_id": "api2_single_detail_jsonp",
+      "interface": "api2",
+      "method": "GET",
+      "raw_url_template": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID>&callback=<CALLBACK>",
+      "example": {
+        "sample_kind": "jsonp_callback_override",
+        "vid": "z4102qfi0x4",
+        "callback": "cb1",
+        "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4&callback=cb1"
+      },
+      "required_parameters": [
+        "otype",
+        "tid",
+        "appid",
+        "appkey",
+        "union_platform",
+        "idlist"
+      ],
+      "success_discriminator": [
+        "wrapper reflects JSONP mode",
+        "payload object parses",
+        "row-level retcode=0 with non-empty row"
+      ],
+      "failure_discriminator": [
+        "callback=a( / (( / })(); plus the widened unmatched-delimiter representatives [( / {( / /*( / a[( / )( / ]( / }( are known parse-breaking representatives",
+        "callback=[ / [[ currently remain raw-passthrough counterexamples",
+        "empty callback falls back to default QZOutputJson shell"
+      ],
+      "known_caveats": [
+        "JSONP changes the outer shell only; current tested batch semantics stay aligned with XML."
+      ],
+      "evidence": [
+        "analysis/demo_validation_20260621.json",
+        "analysis/api2_jsonp_callback_pathological_tail_20260621.json",
+        "analysis/api2_jsonp_callback_unmatched_delimiter_summary_20260622.json",
+        "analysis/direct_call_capability_table_20260621.json"
+      ]
+    },
+    {
+      "capability_id": "api2_batch_lookup_up_to_32_nonempty_vids",
+      "interface": "api2",
+      "method": "GET",
+      "raw_url_template": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<VID1>,<VID2>,...<VID32>",
+      "example": {
+        "sample_kind": "two_vid_batch",
+        "vid_list": "z4102qfi0x4,j4101ouc4ve",
+        "url": "https://union.video.qq.com/fcgi-bin/data?otype=xml&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=z4102qfi0x4,j4101ouc4ve"
+      },
+      "required_parameters": [
+        "otype",
+        "tid",
+        "appid",
+        "appkey",
+        "union_platform",
+        "idlist"
+      ],
+      "success_discriminator": [
+        "row count matches the intended non-empty slot count",
+        "non-empty rows keep row-level retcode=0",
+        "caller-side diagnostics show all_results_empty_shell=false"
+      ],
+      "failure_discriminator": [
+        "33 non-empty slots exceed the current tested boundary",
+        "mixed valid+invalid batches require row-level inspection rather than top-level shell trust"
+      ],
+      "known_caveats": [
+        "Current tested hard boundary is 32 non-empty slots success, 33 fail.",
+        "Repeated or empty slots do not automatically mean top-level failure."
+      ],
+      "evidence": [
+        "analysis/regression_samples_20260620.json",
+        "analysis/direct_call_capability_table_20260621.json",
+        "analysis/api2_jsonp_batch_matrix_20260620.json"
+      ]
+    },
+    {
+      "capability_id": "api2_all_invalid_jsonp_batch_consumer_rule",
+      "interface": "api2",
+      "method": "GET",
+      "raw_url_template": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=<BAD_VID1>,<BAD_VID2>",
+      "example": {
+        "sample_kind": "all_invalid_jsonp_batch",
+        "vid_list": "zzzzzzzzzzz,yyyyyyyyyyy",
+        "url": "https://union.video.qq.com/fcgi-bin/data?otype=json&tid=535&appid=20001238&appkey=6c03bbe9658448a4&union_platform=3&idlist=zzzzzzzzzzz,yyyyyyyyyyy"
+      },
+      "required_parameters": [
+        "otype",
+        "tid",
+        "appid",
+        "appkey",
+        "union_platform",
+        "idlist"
+      ],
+      "success_discriminator": [
+        "top-level shell still returns a payload object",
+        "every row is empty_shell=true",
+        "caller-side diagnostics show all_results_empty_shell=true"
+      ],
+      "failure_discriminator": [
+        "do not treat top-level success as a usable positive batch",
+        "do not rely on row retcode alone without empty-shell diagnostics"
+      ],
+      "known_caveats": [
+        "This is a consumer-rule row: the point is recognizing an all-invalid batch, not extracting useful content."
+      ],
+      "evidence": [
+        "analysis/api2_all_invalid_jsonp_consumer_rule_20260620.json",
+        "analysis/regression_samples_20260620.json",
+        "analysis/demo_validation_incremental_20260621b.json"
+      ]
+    }
+  ],
+  "still_open": [
+    "aged-cookie/login-state replay is still required before any environment-sensitive row can be upgraded into a global calling rule.",
+    "API1 positive tid space beyond the confirmed 431/453 branches remains open.",
+    "API2 positive or success-shell tid space beyond the current 488/502/506/535/540/541 family map remains open."
+  ]
+}

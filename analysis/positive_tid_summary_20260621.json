@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-06-22",
+  "scope": "Broader positive tid sweep summary across 420-445 and 530-550, plus later 641-647 jump-scan and 636-640/648-652 flanking follow-up around the current 642 local anomaly",
+  "verdict": [
+    "API1 still shows only one true positive content branch on `tid=431` within the broader 420-445 and 530-550 sweep, while `tid=537` remains a separate `success_shell_without_sample` branch.",
+    "API2 now has confirmed positive branches on `tid=535`, `tid=540`, and newly `tid=541` in both XML and JSONP wrappers.",
+    "The new `tid=541` API2 branch is not a one-sample accident: it also stays positive on a second sample (`vid=j4101ouc4ve`), while API1 `tid=541` stays on the `key all illegal` branch.",
+    "Within the current broadened upper window, `tid=542-550` fall back to standard `-111005` on API2 XML/JSONP, so the 54x positive edge is currently narrowed to `540-541` rather than an open-ended upward run.",
+    "The later 522-525 cross-interface follow-up does not add a new positive hit either: 522-524 stay on ordinary `-111005`, while 525 is now confirmed as a cross-interface `-111013` island on API1, API2 XML, and API2 JSONP across two public samples.",
+    "The later `636-640` and `648-652` flanking follow-up returns standard `-111005` on API1 and API2 XML/JSONP throughout, which strengthens the reading that `642` is currently a local anomaly island rather than the edge of a broader positive cluster or a wider `-111013` family."
+  ],
+  "tested_band": {
+    "api1": [
+      "420-445",
+      "530-550"
+    ],
+    "api2": [
+      "420-445",
+      "530-550"
+    ]
+  },
+  "positive_hits": {
+    "api1": [
+      "431"
+    ],
+    "api1_success_shell_without_sample": [
+      "537"
+    ],
+    "api2_xml": [
+      "535",
+      "540",
+      "541"
+    ],
+    "api2_jsonp": [
+      "535",
+      "540",
+      "541"
+    ]
+  },
+  "second_sample_confirmation": {
+    "api1_cid": "mzc00200xxpsogl",
+    "api2_vid": "j4101ouc4ve",
+    "api1": {
+      "431": "positive_tid_branch",
+      "537": "success_shell_without_sample"
+    },
+    "api2_xml": {
+      "535": "positive_tid_branch",
+      "540": "positive_tid_branch",
+      "541": "positive_tid_branch"
+    },
+    "api2_jsonp": {
+      "535": "positive_tid_branch",
+      "540": "positive_tid_branch",
+      "541": "positive_tid_branch"
+    }
+  },
+  "notable_boundaries": {
+    "api1_530": {
+      "errorno": "-111013",
+      "errormsg": "禁止外部访问接口"
+    },
+    "api1_541": {
+      "errorno": "10010048",
+      "errormsg": "key all illegal"
+    },
+    "api2_530_xml": {
+      "errorno": "-111013",
+      "errormsg": "禁止外部访问接口"
+    },
+    "api1_525": {
+      "errorno": "-111013",
+      "errormsg": "禁止外部访问接口"
+    },
+    "api2_525_xml": {
+      "errorno": "-111013",
+      "errormsg": "禁止外部访问接口"
+    },
+    "api2_537_xml": {
+      "errorno": "10010048",
+      "errormsg": "key all illegal"
+    },
+    "api2_542_xml": {
+      "errorno": "-111005",
+      "errormsg": "获取配置错误"
+    },
+    "api2_550_xml": {
+      "errorno": "-111005",
+      "errormsg": "获取配置错误"
+    },
+    "api1_636_640_648_652_band": {
+      "errorno": "-111005",
+      "errormsg": "获取配置错误"
+    },
+    "api2_636_640_648_652_band_xml": {
+      "errorno": "-111005",
+      "errormsg": "获取配置错误"
+    },
+    "api2_636_640_648_652_band_jsonp": {
+      "errorno": "-111005",
+      "errormsg": "获取配置错误"
+    }
+  },
+  "raw_artifacts": [
+    "analysis/positive_tid_probe_20260621_broad.json",
+    "analysis/positive_tid_probe_20260621_alt_sample.json",
+    "analysis/positive_tid_probe_522_525_summary_20260622.json",
+    "analysis/positive_tid_probe_641_647_summary_20260621.json",
+    "analysis/positive_tid_probe_636_640_648_652_20260622.json"
+  ]
+}

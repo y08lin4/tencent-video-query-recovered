@@ -128,6 +128,7 @@ func main() {
 	envJSON := flag.String("env-json", "", "Path to a replay environment JSON file")
 	envName := flag.String("env-name", "", "Environment name inside -env-json, such as pc_web_real_cookie_replay")
 	timeoutSeconds := flag.Int("timeout", 10, "HTTP timeout in seconds")
+	explainPairsOnly := flag.Bool("explain-pairs-only", false, "Print API1/API2 appid+appkey pair guidance without sending requests")
 	jsonOutput := flag.Bool("json", false, "Print JSON output")
 	flag.Parse()
 
@@ -158,6 +159,25 @@ func main() {
 	if api2Opts.OType != "xml" && api2Opts.OType != "json" {
 		fmt.Fprintln(os.Stderr, "-api2-otype must be xml or json")
 		os.Exit(1)
+	}
+	if *explainPairsOnly {
+		payload := map[string]any{
+			"api1_params": api1Opts,
+			"api2_params": api2Opts,
+			"pair_guidance": []pairGuidance{
+				buildPairGuidanceForAPI("api1", api1Opts.AppID, api1Opts.AppKey, "10001005", "0d1a9ddd94de871b"),
+				buildPairGuidanceForAPI("api2", api2Opts.AppID, api2Opts.AppKey, "20001238", "6c03bbe9658448a4"),
+			},
+		}
+		if *jsonOutput {
+			enc := json.NewEncoder(os.Stdout)
+			enc.SetEscapeHTML(false)
+			enc.SetIndent("", "  ")
+			_ = enc.Encode(payload)
+			return
+		}
+		printPairGuidanceText(payload["pair_guidance"].([]pairGuidance))
+		return
 	}
 	requestOpts, resolvedEnvName, err := loadRequestOptions(*envJSON, *envName, time.Duration(*timeoutSeconds)*time.Second)
 	if err != nil {
@@ -333,6 +353,19 @@ func buildPairGuidanceForAPI(apiLabel, currentAppID, currentAppKey, canonicalApp
 		UsingCanonicalPair: usingCanonicalPair,
 		OverrideShape:      overrideShape,
 		Advisories:         advisories,
+	}
+}
+
+func printPairGuidanceText(items []pairGuidance) {
+	for _, item := range items {
+		fmt.Printf("%s:\n", item.API)
+		fmt.Printf("  canonical: %s + %s\n", item.CanonicalPair["appid"], item.CanonicalPair["appkey"])
+		fmt.Printf("  current:   %s + %s\n", item.CurrentPair["appid"], item.CurrentPair["appkey"])
+		fmt.Printf("  shape:     %s\n", item.OverrideShape)
+		for _, advisory := range item.Advisories {
+			fmt.Printf("  note:      %s\n", advisory)
+		}
+		fmt.Println()
 	}
 }
 

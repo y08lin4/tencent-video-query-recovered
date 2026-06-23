@@ -91,6 +91,26 @@ def build_pair_guidance(
     ]
 
 
+def print_pair_guidance_text(items: list[dict[str, object]]) -> None:
+    for item in items:
+        canonical_pair = item["canonical_pair"]
+        current_pair = item["current_pair"]
+        print(f"{item['api']}:")
+        print(
+            "  canonical: "
+            f"{canonical_pair['appid']} + {canonical_pair['appkey']}"
+        )
+        print(
+            "  current:   "
+            f"{current_pair['appid']} + {current_pair['appkey']}"
+        )
+        print(f"  shape:     {item['override_shape']}")
+        advisories = item.get("advisories") or []
+        for advisory in advisories:
+            print(f"  note:      {advisory}")
+        print()
+
+
 def has_meaningful_value(value: object) -> bool:
     if isinstance(value, dict):
         return bool(value)
@@ -511,6 +531,7 @@ def main() -> None:
     parser.add_argument("--env-json", help="Path to a replay environment JSON file")
     parser.add_argument("--env-name", help="Environment name inside --env-json, such as pc_web_real_cookie_replay")
     parser.add_argument("--timeout", type=int, default=10, help="HTTP timeout in seconds")
+    parser.add_argument("--explain-pairs-only", action="store_true", help="Print API1/API2 appid+appkey pair guidance without sending requests")
     parser.add_argument("--json", action="store_true", help="Print JSON output")
     args = parser.parse_args()
 
@@ -519,6 +540,18 @@ def main() -> None:
         cid_from_url = extract_cid_from_url(args.url)
         if cid_from_url:
             cids = [cid_from_url]
+    if args.explain_pairs_only:
+        payload = {
+            "api1_params": api1_params,
+            "api2_params": api2_params,
+            "pair_guidance": build_pair_guidance(api1_params, api2_params),
+        }
+        if args.json:
+            print(json.dumps(payload, ensure_ascii=False, indent=2))
+            return
+        print_pair_guidance_text(payload["pair_guidance"])
+        return
+
     if not cids and not args.vids:
         raise SystemExit("Provide --url, --cid, or at least one --vid")
 

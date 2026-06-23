@@ -16,6 +16,13 @@
 
 demo 现在会直接给出 pair 级提示，提醒你把它们当成一个 branch-gating pair 来读，而不是两个独立调参旋钮。
 
+如果你只是想离线检查自己现在填的 pair 是不是偏离 canonical，不想真的发请求，也可以直接跑：
+
+```bash
+python examples/python/tencent_video_api_demo.py --explain-pairs-only --json
+go.exe -explain-pairs-only -json
+```
+
 ## 0. 先看这些
 
 - 参数 quick reference：

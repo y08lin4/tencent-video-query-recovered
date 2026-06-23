@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-06-23",
+  "scope": "Reserved-looking extra query-key replay summary extracted from the existing real anonymous visitor-cookie semantics artifact.",
+  "source_artifact": "analysis/param_query_semantics_anonymous_real_cookie_20260621.json",
+  "environment": {
+    "extra_env_json": "analysis/anonymous_real_cookie_env_20260621.json",
+    "env_name": "pc_web_real_cookie_replay"
+  },
+  "tested_keys": [
+    "format",
+    "output",
+    "version",
+    "v",
+    "platform",
+    "source"
+  ],
+  "verdict": [
+    "Under the existing real anonymous visitor-cookie replay, adding `format/output/version/v/platform/source` produced no observed visible split on API1 XML, API2 XML, or API2 JSONP.",
+    "For the tested API2 JSONP branch, these reserved-looking keys also did not change the wrapper root away from the baseline `QZOutputJson` family.",
+    "This upgrades the reserved-looking extra-key family from same-day anonymous only to same-day anonymous plus real anonymous visitor-cookie replay in the current evidence graph."
+  ],
+  "cases": {
+    "api1": {
+      "extra_format": "extra_key_ignored_in_tested_branch",
+      "extra_output": "extra_key_ignored_in_tested_branch",
+      "extra_version": "extra_key_ignored_in_tested_branch",
+      "extra_v": "extra_key_ignored_in_tested_branch",
+      "extra_platform": "extra_key_ignored_in_tested_branch",
+      "extra_source": "extra_key_ignored_in_tested_branch"
+    },
+    "api2_xml": {
+      "extra_format_xml": "extra_key_ignored_in_tested_branch",
+      "extra_output_xml": "extra_key_ignored_in_tested_branch",
+      "extra_version_xml": "extra_key_ignored_in_tested_branch",
+      "extra_v_xml": "extra_key_ignored_in_tested_branch",
+      "extra_platform_xml": "extra_key_ignored_in_tested_branch",
+      "extra_source_xml": "extra_key_ignored_in_tested_branch"
+    },
+    "api2_json": {
+      "extra_format_json": "extra_key_ignored_in_tested_branch",
+      "extra_output_json": "extra_key_ignored_in_tested_branch",
+      "extra_version_json": "extra_key_ignored_in_tested_branch",
+      "extra_v_json": "extra_key_ignored_in_tested_branch",
+      "extra_platform_json": "extra_key_ignored_in_tested_branch",
+      "extra_source_json": "extra_key_ignored_in_tested_branch"
+    }
+  }
+}

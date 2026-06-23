@@ -489,7 +489,7 @@
       "key_evidence": [
         "analysis/reserved_extra_key_sweep_20260620.json",
         "analysis/parameter_closure_matrix_20260621.json",
-        "analysis/param_query_semantics_anonymous_real_cookie_20260621.json"
+        "analysis/reserved_extra_key_replay_anonymous_real_cookie_summary_20260623.json"
       ],
       "remaining_gaps": [
         "Whether a narrower reserved-looking key family exists outside the currently tested set.",
